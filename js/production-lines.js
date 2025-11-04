@@ -669,6 +669,47 @@ const productionLines = {
     }
 };
 
+function integrateProductionLinesWithSearch() {
+    if (typeof categoryKeywords !== 'undefined') {
+        const keywords = new Set(categoryKeywords['production-lines'] || []);
+
+        productionLineGroups.forEach(group => {
+            Object.values(group.title).forEach(value => keywords.add(value));
+            Object.values(group.description).forEach(value => keywords.add(value));
+        });
+
+        Object.values(productionLines).forEach(group => {
+            (group.lines || []).forEach(line => {
+                Object.values(line.title).forEach(value => keywords.add(value));
+                Object.values(line.description).forEach(value => keywords.add(value));
+            });
+        });
+
+        categoryKeywords['production-lines'] = Array.from(keywords);
+    }
+
+    if (typeof equipmentData !== 'undefined') {
+        const aggregated = [];
+
+        productionLineGroups.forEach(group => {
+            const lines = (productionLines[group.id] && productionLines[group.id].lines) || [];
+            lines.forEach(line => {
+                aggregated.push({
+                    name: line.title,
+                    description: line.description,
+                    pdfUrl: line.pdfUrl
+                });
+            });
+        });
+
+        if (aggregated.length > 0) {
+            equipmentData['production-lines'] = aggregated;
+        }
+    }
+}
+
+integrateProductionLinesWithSearch();
+
 function buildProductionLineCard(group, lang) {
     const card = document.createElement('div');
     card.className = 'category-card';

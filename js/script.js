@@ -1138,6 +1138,15 @@ function scrollToSection(sectionId) {
     }
 }
 
+function goToIndex(event, sectionId) {
+    if (event) {
+        event.preventDefault();
+    }
+    closeMobileMenu();
+    window.location.href = `index.html#${sectionId}`;
+    return false;
+}
+
 function navigateToProductionLines() {
     window.location.href = 'production-lines.html';
 }
@@ -1463,8 +1472,39 @@ function showRelatedEquipments(categoryId) {
                         currentLanguage === 'ps' ? 'بیرته' : 'Back';
         
         // Get equipment data for this category
-        const categoryEquipmentData = equipmentData[categoryId] || [];
-        
+        let categoryEquipmentData = equipmentData[categoryId] || [];
+
+        if (categoryId === 'production-lines' && typeof productionLines !== 'undefined') {
+            const aggregated = [];
+
+            if (typeof productionLineGroups !== 'undefined') {
+                productionLineGroups.forEach(group => {
+                    const lines = (productionLines[group.id] && productionLines[group.id].lines) || [];
+                    lines.forEach(line => {
+                        aggregated.push({
+                            name: line.title,
+                            description: line.description,
+                            pdfUrl: line.pdfUrl
+                        });
+                    });
+                });
+            } else {
+                Object.values(productionLines).forEach(group => {
+                    (group.lines || []).forEach(line => {
+                        aggregated.push({
+                            name: line.title,
+                            description: line.description,
+                            pdfUrl: line.pdfUrl
+                        });
+                    });
+                });
+            }
+
+            if (aggregated.length > 0) {
+                categoryEquipmentData = aggregated;
+            }
+        }
+
         let equipmentHtml = '';
         if (categoryEquipmentData.length > 0) {
             equipmentHtml = '<div class="equipment-grid">';
