@@ -426,7 +426,59 @@ const categories = {
 
 // Category keywords for search
 const categoryKeywords = {
-    'production-lines': ['خطوط تولید و راه‌اندازی فابریکه', 'Production Lines & Factory Setup', 'راه‌اندازی فابریکه', 'production lines', 'تولید لینونه', 'factory setup'],
+    'production-lines': [
+        'خطوط تولید و راه‌اندازی فابریکه',
+        'Production Lines & Factory Setup',
+        'راه‌اندازی فابریکه',
+        'production lines',
+        'تولید لینونه',
+        'factory setup',
+        'Food Processing Lines',
+        'خطوط تولید مواد غذایی',
+        'د خوراکي موادو د پروسس لینونه',
+        'Consumer Goods Lines',
+        'خطوط تولید کالاهای مصرفی',
+        'د مصرفي توکو د تولید لینونه',
+        'Construction Materials Lines',
+        'خطوط تولید مصالح ساختمانی',
+        'د ساختماني موادو د تولید لینونه',
+        'Textile & Garments Lines',
+        'خطوط تولید نساجی و پوشاک',
+        'د نساجۍ او جامو د تولید لینونه',
+        'Industrial Recycling Lines',
+        'خطوط بازیافت صنعتی',
+        'صنعتي د بیاکارونې لینونه',
+        'Disposable Products Lines',
+        'خطوط تولید محصولات یکبارمصرف',
+        'د یو ځل کارېدونکو محصولاتو د تولید لینونه',
+        'Light Industry Lines',
+        'خطوط صنایع سبک و چوبی',
+        'د سپکو صنعتونو د تولید لینونه',
+        'Cereal Production Line',
+        'خط تولید غلات صبحانه',
+        'د ناشته د غلو تولید لین',
+        'Baby Food / Cerelac Line',
+        'خط تولید غذای کودک/سرلاک',
+        'د ماشوم د خوراک / سرلاک تولید لین',
+        'Dairy Processing Line',
+        'خط فرآوری لبنیات',
+        'د لبنیاتو د پروسس لین',
+        'Beverage Production Line',
+        'خط تولید نوشیدنی',
+        'د مشروباتو تولید لین',
+        'Bakery & Biscuits Line',
+        'خط تولید نان و بیسکویت',
+        'د ډوډۍ او بسکټو تولید لین',
+        'Meat Processing Line',
+        'خط فرآوری گوشت',
+        'د غوښې د پروسس لین',
+        'Fruit & Vegetable Processing Line',
+        'خط فرآوری میوه و سبزی',
+        'د میوو او سبزیو د پروسس لین',
+        'Edible Oil Production Line',
+        'خط تولید روغن خوراکی',
+        'د خوراکي غوړ د تولید لین'
+    ],
     'printing-machines': ['دستگاه های چاپ', 'Printing Machines', 'چاپ', 'printing', 'چاپ ماشینونه', 'Printing Machines'],
     'sports-equipment': ['تجهیزات ورزشی', 'Sports Equipment', 'ورزشی', 'sports', 'ورزشي تجهیزات', 'Sports Equipment'],
     'metallurgy': ['متالورژی و فلزکاری', 'Metallurgy & Metalworking', 'متالورژی', 'metallurgy', 'فلزکاری', 'metalworking', 'د فلزاتو علم', 'metallurgy', 'فلزکاري', 'metalworking'],
@@ -452,29 +504,44 @@ const categoryKeywords = {
 const equipmentData = {
     'production-lines': [
         {
-            name: { fa: 'خط تولید نمک‌گیری', en: 'Salt Refinery Production Line', ps: 'د نمک تصفیه تولید لین' },
-            description: { fa: 'خط تولید کامل برای تصفیه و بسته‌بندی نمک', en: 'Complete production line for salt refining and packaging', ps: 'د نمک تصفیه او بسته بندي لپاره بشپړ تولید لین' },
-            pdfUrl: 'pdfs/production-lines/salt-refinery.pdf'
+            name: { fa: 'خط تولید غلات صبحانه', en: 'Cereal Production Line', ps: 'د ناشته د غلو تولید لین' },
+            description: { fa: 'فرآیند کامل از پاک‌سازی دانه تا اکسترود، روکش و بسته‌بندی غلات صبحانه.', en: 'Complete process from grain cleaning to extrusion, coating and cereal packaging.', ps: 'له دانې پاکولو، اکسترود او پوښښ څخه تر د ناشته غلو بسته بندۍ پورې بشپړ بهیر.' },
+            pdfUrl: 'pdfs/production-lines/food-processing/cereal-production-line.pdf'
         },
         {
-            name: { fa: 'خط تولید میله‌کشی', en: 'Wire Rod Production Line', ps: 'د سیم میله تولید لین' },
-            description: { fa: 'خط تولید برای تولید میله‌های فلزی', en: 'Production line for manufacturing metal wire rods', ps: 'د فلزي سیم میلو تولید لپاره تولید لین' },
-            pdfUrl: 'pdfs/production-lines/wire-rod.pdf'
+            name: { fa: 'خط تولید غذای کودک/سرلاک', en: 'Baby Food / Cerelac Line', ps: 'د ماشوم د خوراک / سرلاک تولید لین' },
+            description: { fa: 'میکسینگ دقیق، خشک‌کن غلتکی و بسته‌بندی استریل غذای کودک.', en: 'Precise mixing, drum drying and sterile packing for baby cereal products.', ps: 'د ماشوم د خوراک لپاره دقیق مخلوط، ډرم وچول او استریل بسته بندي.' },
+            pdfUrl: 'pdfs/production-lines/food-processing/baby-food-cerelac-line.pdf'
         },
         {
-            name: { fa: 'خط تولید آدامس', en: 'Gum Production Line', ps: 'د لوسي تولید لین' },
-            description: { fa: 'خط تولید کامل برای انواع آدامس', en: 'Complete production line for various types of gum', ps: 'د مختلف ډولو لوسو لپاره بشپړ تولید لین' },
-            pdfUrl: 'pdfs/production-lines/gum.pdf'
+            name: { fa: 'خط فرآوری لبنیات', en: 'Dairy Processing Line', ps: 'د لبنیاتو د پروسس لین' },
+            description: { fa: 'پاستوریزه، هموژنیزه، تخمیر و بسته‌بندی شیر، ماست و پنیر.', en: 'Pasteurisation, homogenisation, fermentation and packaging for milk, yogurt and cheese.', ps: 'د شیدو، مستې او پنیر لپاره پاستور، هموژن، تخمیر او بسته بندي.' },
+            pdfUrl: 'pdfs/production-lines/food-processing/dairy-processing-line.pdf'
         },
         {
-            name: { fa: 'خط تولید پنبه', en: 'Cotton Production Line', ps: 'د پنبه تولید لین' },
-            description: { fa: 'خط تولید برای پردازش پنبه', en: 'Production line for cotton processing', ps: 'د پنبه پروسس لپاره تولید لین' },
-            pdfUrl: 'pdfs/production-lines/cotton.pdf'
+            name: { fa: 'خط تولید نوشیدنی', en: 'Beverage Production Line', ps: 'د مشروباتو تولید لین' },
+            description: { fa: 'اختلاط، تصفیه، پرکن و درب‌بندی نوشیدنی‌های غیرالکلی.', en: 'Mixing, filtration, filling and capping for non-alcoholic beverages.', ps: 'د غیر الکولي مشروباتو لپاره مخلوط، فلټراسیون، ډکول او سرپوش کول.' },
+            pdfUrl: 'pdfs/production-lines/food-processing/beverage-production-line.pdf'
         },
         {
-            name: { fa: 'خط تولید چیپس سیب‌زمینی', en: 'Potato Chips Production Line', ps: 'د سیب‌زمیني چیپس تولید لین' },
-            description: { fa: 'خط تولید برای چیپس سیب‌زمینی', en: 'Production line for potato chips', ps: 'د سیب‌زمیني چیپس لپاره تولید لین' },
-            pdfUrl: 'pdfs/production-lines/potato-chips.pdf'
+            name: { fa: 'خط تولید نان و بیسکویت', en: 'Bakery & Biscuits Line', ps: 'د ډوډۍ او بسکټو تولید لین' },
+            description: { fa: 'آماده‌سازی خمیر، تخمیرکنترل‌شده، پخت، سردکردن و بسته‌بندی نان و بیسکویت.', en: 'Dough preparation, controlled proofing, baking, cooling and packing for bread and biscuits.', ps: 'د خمیر چمتووالی، کنټرول شوی پخېدنه، پخول، یخول او بسته بندي د ډوډۍ او بسکټو لپاره.' },
+            pdfUrl: 'pdfs/production-lines/food-processing/bakery-biscuits-line.pdf'
+        },
+        {
+            name: { fa: 'خط فرآوری گوشت', en: 'Meat Processing Line', ps: 'د غوښې د پروسس لین' },
+            description: { fa: 'خردکردن، مخلوط، پرکن، دودی و بسته‌بندی محصولات گوشتی.', en: 'Grinding, blending, filling, smoking and packaging for processed meat products.', ps: 'د غوښې د محصولاتو لپاره ګراینډ، مخلوط، ډکول، سګرټ کول او بسته بندي.' },
+            pdfUrl: 'pdfs/production-lines/food-processing/meat-processing-line.pdf'
+        },
+        {
+            name: { fa: 'خط فرآوری میوه و سبزی', en: 'Fruit & Vegetable Processing Line', ps: 'د میوو او سبزیو د پروسس لین' },
+            description: { fa: 'شستشو، پوست‌گیری، برش، بلانچینگ و بسته‌بندی تازه یا IQF.', en: 'Washing, peeling, cutting, blanching and packaging for fresh or IQF produce.', ps: 'د میوو او سبزیو لپاره مینځل، پوستکښ، پرې کول، بلانچینګ او بسته بندي.' },
+            pdfUrl: 'pdfs/production-lines/food-processing/fruit-vegetable-processing-line.pdf'
+        },
+        {
+            name: { fa: 'خط تولید روغن خوراکی', en: 'Edible Oil Production Line', ps: 'د خوراکي غوړ د تولید لین' },
+            description: { fa: 'استخراج، تصفیه، بی‌بو کردن و بسته‌بندی انواع روغن نباتی.', en: 'Extraction, refining, deodorising and bottling of vegetable cooking oils.', ps: 'د خوراکي نباتي غوړ لپاره استخراج، تصفیه، بوی لرې کول او بوتل بندي.' },
+            pdfUrl: 'pdfs/production-lines/food-processing/edible-oil-line.pdf'
         }
     ],
     'printing-machines': [
@@ -775,6 +842,7 @@ const translations = {
     },
     'start-cooperation': { fa: 'شروع همکاری', en: 'Start Cooperation', ps: 'همکاري پیل کړئ' },
     'view-services': { fa: 'مشاهده خدمات', en: 'View Services', ps: 'خدمتونه وګورئ' },
+    'view-production-lines': { fa: 'مشاهده خطوط تولید', en: 'View Production Lines', ps: 'د تولید لینونه وګورئ' },
     
     // Search
     'search-title': { 
