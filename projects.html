@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پروژه های تحت کار | Arya Industrial Vision Group (AIV)</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <meta name="description" content="پروژه های تحت کار Arya Industrial Vision Group">
+    <meta name="keywords" content="پروژه های تحت کار, صنعتی, افغانستان">
+    <meta name="author" content="Arya Industrial Vision Group">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <style>
+        .projects-section {
+            padding: 80px 0;
+            background: #f8fafc;
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .project-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .project-header {
+            background: linear-gradient(135deg, #1a3a5f, #f26522);
+            color: white;
+            padding: 20px;
+            position: relative;
+            height: 80px;
+        }
+        
+        .project-status {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(255,255,255,0.2);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .project-status.in-progress {
+            background: rgba(255,193,7,0.8);
+        }
+        
+        .project-status.completed {
+            background: rgba(40,167,69,0.8);
+        }
+        
+        .project-body {
+            padding: 25px;
+        }
+        
+        .project-title {
+            font-size: 1.3rem;
+            color: #1a3a5f;
+            margin-bottom: 15px;
+        }
+        
+        .project-description {
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .project-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .project-actions a {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .project-actions .btn-primary {
+            background: #f26522;
+            color: white;
+        }
+        
+        .project-actions .btn-primary:hover {
+            background: #d9561e;
+        }
+        
+        .project-actions .btn-secondary {
+            background: #1a3a5f;
+            color: white;
+        }
+        
+        .project-actions .btn-secondary:hover {
+            background: #0d2440;
+        }
+        
+        .back-to-home {
+            display: inline-block;
+            margin-bottom: 30px;
+            color: #1a3a5f;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .back-to-home:hover {
+            color: #f26522;
+        }
+        
+        .back-to-home i {
+            margin-left: 5px;
+        }
+        
+        .page-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .page-header h1 {
+            font-size: 2.5rem;
+            color: #1a3a5f;
+            margin-bottom: 15px;
+        }
+        
+        .page-header p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        @media (max-width: 768px) {
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            
+            .page-header p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-to-home"><i class="fas fa-arrow-right"></i> بازگشت به صفحه اصلی</a>
+        
+        <div class="page-header">
+            <h1>پروژه های تحت کار</h1>
+            <p>در اینجا می‌توانید لیست پروژه‌های در حال اجرا و تکمیل شده ما را مشاهده کنید</p>
+        </div>
+        
+        <section class="projects-section">
+            <div class="projects-grid" id="projectsGrid">
+                <!-- Projects will be loaded here by JavaScript -->
+            </div>
+        </section>
+    </div>
+    
+    <!-- Custom JS -->
+    <script src="js/projects.js"></script>
+</body>
+</html>
