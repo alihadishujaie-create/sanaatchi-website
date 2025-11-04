@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>شرکت چشم‌انداز صنعتی صنعتچی | خط تولید، ماشین‌آلات و راهکارهای صنعتی در افغانستان</title>
+    <title>خطوط تولید و راه‌اندازی فابریکه در افغانستان | Sanaatchi</title>
     <link rel="icon" type="image/png" href="images/favicon.png">
-    <meta name="description" content="شرکت چشم‌انداز صنعتی صنعتچی راهکارهای جامع صنعتی برای افغانستان ارائه می‌دهد؛ از طراحی و راه‌اندازی خط تولید و فابریکه تا تأمین ماشین‌آلات نو و دست دوم، مواد اولیه و خدمات کارگو.">
-    <meta name="keywords" content="صنعتچی, راه‌اندازی فابریکه در افغانستان, خط تولید افغانستان, ماشین‌آلات صنعتی افغانستان, مواد اولیه صنعتی افغانستان">
+    <meta name="description" content="طراحی، تأمین و نصب خطوط تولید صنایع غذایی، شوینده، پلاستیک، نساجی و مصالح ساختمانی در افغانستان با تمرکز بر راه‌اندازی کامل فابریکه از مشاوره تا تولید.">
+    <meta name="keywords" content="خطوط تولید افغانستان, راه‌اندازی فابریکه, production lines Afghanistan, Sanaatchi">
     <meta name="author" content="Sanaatchi Industrial Vision">
-    <meta property="og:title" content="شرکت چشم‌انداز صنعتی صنعتچی | راهکارهای صنعتی در افغانستان">
-    <meta property="og:description" content="از ایده تا اولین محصول، Sanaatchi Industrial Vision همراه شما در راه‌اندازی خط تولید و فابریکه در افغانستان است.">
+    <meta property="og:title" content="خطوط تولید و راه‌اندازی فابریکه در افغانستان | Sanaatchi">
+    <meta property="og:description" content="راهکارهای تخصصی Sanaatchi برای طراحی، تأمین و اجرای خطوط تولید صنایع کلیدی افغانستان.">
     <meta property="og:image" content="images/aiv-og-image.jpg">
-    <meta property="og:url" content="https://sanaatchi.com">
+    <meta property="og:url" content="https://sanaatchi.com/production-lines">
     <meta name="twitter:card" content="summary_large_image">
     
     <!-- Font Awesome -->
@@ -29,13 +29,13 @@
             <div class="main-header">
                 <img src="images/logo.png" alt="لوگوی Sanaatchi Industrial Vision" class="logo">
                 
-              <nav class="nav" id="mainNav">
-    <a href="#home" onclick="scrollToSection('hero')" data-translate="home">خانه</a>
-    <a href="#services" onclick="scrollToSection('services')" data-translate="services">خدمات</a>
-    <a href="#about" onclick="scrollToSection('why-aiv')" data-translate="about">درباره ما</a>
-    <a href="projects.html" data-translate="projects">پروژه های تحت کار</a>
-    <a href="#contact" onclick="scrollToSection('footer')" data-translate="contact">تماس با ما</a>
-</nav>
+                <nav class="nav" id="mainNav">
+                    <a href="index.html#hero" onclick="return goToIndex(event, 'hero')" data-translate="home">خانه</a>
+                    <a href="index.html#services" onclick="return goToIndex(event, 'services')" data-translate="services">خدمات</a>
+                    <a href="index.html#why-aiv" onclick="return goToIndex(event, 'why-aiv')" data-translate="about">درباره ما</a>
+                    <a href="projects.html" data-translate="projects">پروژه های تحت کار</a>
+                    <a href="index.html#footer" onclick="return goToIndex(event, 'footer')" data-translate="contact">تماس با ما</a>
+                </nav>
                 
                 <div class="header-actions">
                     <select class="language-switcher" onchange="switchLanguage(this.value)" aria-label="تغییر زبان">
@@ -67,7 +67,7 @@
                 
                 <div class="hero-buttons">
                     <button class="btn-primary" onclick="showSalesContactModal()" data-translate="start-cooperation">شروع همکاری</button>
-                    <button class="btn-secondary" onclick="scrollToSection('services')" data-translate="view-services">مشاهده خدمات</button>
+                    <button class="btn-secondary" onclick="scrollToSection('categories')" data-translate="view-production-lines">مشاهده خطوط تولید</button>
                 </div>
             </div>
             
@@ -94,137 +94,15 @@
     </div>
 </section>
         
-        <section id="services" class="services">
-            <div class="container">
-                <div class="section-title">
-                    <h2 data-translate="services-title">دامنه خدمات جامع ما</h2>
-                    <p data-translate="services-subtitle">خدمات جامع ما در چهار فاز اصلی و به هم پیوسته ارائه می‌شود</p>
-                </div>
-                
-                <div class="services-grid">
-                    <div class="service-card" onclick="showPhaseModal(1)" role="button" tabindex="0" onkeypress="if(event.key==='Enter') showPhaseModal(1)">
-                        <span class="service-icon">⚙️</span>
-                        <h3 data-translate="phase1-title">فاز 1</h3>
-                        <div class="subtitle" data-translate="phase1-subtitle">مهندسی و طراحی</div>
-                        <p data-translate="phase1-desc">از ایده تا نقشه</p>
-                        <p data-translate="phase1-details">مشاوره و امکان‌سنجی فنی و اقتصادی، طراحی مفهومی و پایه خط تولید</p>
-                    </div>
-                    
-                    <div class="service-card" onclick="showPhaseModal(2)" role="button" tabindex="0" onkeypress="if(event.key==='Enter') showPhaseModal(2)">
-                        <span class="service-icon">🚛</span>
-                        <h3 data-translate="phase2-title">فاز 2</h3>
-                        <div class="subtitle" data-translate="phase2-subtitle">تأمین و لجستیک جهانی</div>
-                        <p data-translate="phase2-desc">از کارخانه مبدأ تا سایت شما</p>
-                        <p data-translate="phase2-details">شناسایی و اعتبارسنجی تأمین‌کنندگان جهانی، مدیریت کامل فرآیند خرید</p>
-                    </div>
-                    
-                    <div class="service-card" onclick="showPhaseModal(3)" role="button" tabindex="0" onkeypress="if(event.key==='Enter') showPhaseModal(3)">
-                        <span class="service-icon">🏭</span>
-                        <h3 data-translate="phase3-title">فاز 3</h3>
-                        <div class="subtitle" data-translate="phase3-subtitle">اجرا و ساخت</div>
-                        <p data-translate="phase3-desc">از نقشه تا واقعیت</p>
-                        <p data-translate="phase3-details">مدیریت پروژه و نظارت بر ساخت‌وساز، تأمین و تحویل کلیه ماشین‌آلات</p>
-                    </div>
-                    
-                    <div class="service-card" onclick="showPhaseModal(4)" role="button" tabindex="0" onkeypress="if(event.key==='Enter') showPhaseModal(4)">
-                        <span class="service-icon">🔧</span>
-                        <h3 data-translate="phase4-title">فاز 4</h3>
-                        <div class="subtitle" data-translate="phase4-subtitle">راه‌اندازی و پشتیبانی</div>
-                        <p data-translate="phase4-desc">از اولین محصول تا تولید پایدار</p>
-                        <p data-translate="phase4-details">پیش‌راه‌اندازی و تست‌های نهایی، آموزش کامل تیم فنی و اپراتورها</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
         <section id="categories" class="categories">
             <div class="container">
-                <div class="section-title">
-                    <h2 data-translate="categories-title">دسته بندی ها</h2>
-                    <p data-translate="categories-subtitle">از لیست دسته بندی ها به محصولات مورد نظر خود دسترسی پیدا کنید</p>
-                </div>
                 
-                <div class="categories-grid">
-                    <div class="category-card" onclick="navigateToProductionLines()" role="button" tabindex="0" onkeypress="if(event.key==='Enter') navigateToProductionLines()">
-                        <span class="icon">🏭</span>
-                        <h4 data-translate="cat-production-lines">خطوط تولید و راه‌اندازی فابریکه</h4>
-                    </div>
-                    <div class="category-card" onclick="showRelatedEquipments('printing-machines')" role="button" tabindex="0" onkeypress="if(event.key==='Enter') showRelatedEquipments('printing-machines')">
-                        <span class="icon">🖨️</span>
-                        <h4 data-translate="cat-printing-machines">دستگاه های چاپ</h4>
-                    </div>
-                    <div class="category-card" onclick="showRelatedEquipments('sports-equipment')" role="button" tabindex="0" onkeypress="if(event.key==='Enter') showRelatedEquipments('sports-equipment')">
-                        <span class="icon">⚽</span>
-                        <h4 data-translate="cat-sports-equipment">تجهیزات ورزشی</h4>
-                    </div>
-                    <div class="category-card" onclick="showRelatedEquipments('metallurgy')" role="button" tabindex="0" onkeypress="if(event.key==='Enter') showRelatedEquipments('metallurgy')">
-                        <span class="icon">🔩</span>
-                        <h4 data-translate="cat-metallurgy-full">متالورژی و فلزکاری</h4>
-                    </div>
-                    <div class="category-card" onclick="showRelatedEquipments('construction-materials')" role="button" tabindex="0" onkeypress="if(event.key==='Enter') showRelatedEquipments('construction-materials')">
-                        <span class="icon">🧱</span>
-                        <h4 data-translate="cat-construction-materials">ماشین آلات مصالح ساخت</h4>
-                    </div>
-                    <div class="category-card" onclick="showRelatedEquipments('plastic-processing')" role="button" tabindex="0" onkeypress="if(event.key==='Enter') showRelatedEquipments('plastic-processing')">
-                        <span class="icon">♻️</span>
-                        <h4 data-translate="cat-plastic-processing">دستگاه های فرآوری پلاستیک</h4>
-                    </div>
-                    <div class="category-card" onclick="showRelatedEquipments('paint-coating')" role="button" tabindex="0" onkeypress="if(event.key==='Enter') showRelatedEquipments('paint-coating')">
-                        <span class="icon">🎨</span>
-                        <h4 data-translate="cat-paint-coating">ماشین آلات رنگ و کوتینگ</h4>
-                    </div>
-                    <div class="category-card" onclick="showRelatedEquipments('foam-sponge')" role="button" tabindex="0" onkeypress="if(event.key==='Enter') showRelatedEquipments('foam-sponge')">
-                        <span class="icon">🧽</span>
-                        <h4 data-translate="cat-foam-sponge">ماشین آلات لوم و اسفنج</h4>
-                    </div>
-                    <div class="category-card" onclick="showRelatedEquipments('tobacco')" role="button" tabindex="0" onkeypress="if(event.key==='Enter') showRelatedEquipments('tobacco')">
-                        <span class="icon">🚬</span>
-                        <h4 data-translate="cat-tobacco">ماشین آلات تناکو و سیگار</h4>
-                    </div>
-                    <div class="category-card" onclick="showRelatedEquipments('cooling-heating')" role="button" tabindex="0" onkeypress="if(event.key==='Enter') showRelatedEquipments('cooling-heating')">
-                        <span class="icon">❄️</span>
-                        <h4 data-translate="cat-cooling-heating">دستگاه های سرمایش و گرمایش</h4>
-                    </div>
-                    <div class="category-card" onclick="showRelatedEquipments('pumps-compressors')" role="button" tabindex="0" onkeypress="if(event.key==='Enter') showRelatedEquipments('pumps-compressors')">
-                        <span class="icon">🔧</span>
-                        <h4 data-translate="cat-pumps-compressors">پمپ ها و کمپرسور ها صنعتی</h4>
-                    </div>
-                    <div class="category-card" onclick="showRelatedEquipments('industrial-laser')" role="button" tabindex="0" onkeypress="if(event.key==='Enter') showRelatedEquipments('industrial-laser')">
-                        <span class="icon">⚡</span>
-                        <h4 data-translate="cat-industrial-laser">لیزر صنعتی</h4>
-                    </div>
-                    <div class="category-card" onclick="showRelatedEquipments('tanks')" role="button" tabindex="0" onkeypress="if(event.key==='Enter') showRelatedEquipments('tanks')">
-                        <span class="icon">🛢️</span>
-                        <h4 data-translate="cat-tanks">مخازن</h4>
-                    </div>
-                    <div class="category-card" onclick="showRelatedEquipments('packaging')" role="button" tabindex="0" onkeypress="if(event.key==='Enter') showRelatedEquipments('packaging')">
-                        <span class="icon">📦</span>
-                        <h4 data-translate="cat-packaging">بسته بندی</h4>
-                    </div>
-                    <div class="category-card" onclick="showRelatedEquipments('chemical-pharma')" role="button" tabindex="0" onkeypress="if(event.key==='Enter') showRelatedEquipments('chemical-pharma')">
-                        <span class="icon">🧪</span>
-                        <h4 data-translate="cat-chemical-pharma">ماشین آلات شیمیایی و دارویی</h4>
-                    </div>
-                    <div class="category-card" onclick="showRelatedEquipments('machinery-parts')" role="button" tabindex="0" onkeypress="if(event.key==='Enter') showRelatedEquipments('machinery-parts')">
-                        <span class="icon">🔧</span>
-                        <h4 data-translate="cat-machinery-parts">قطعات و لوازم ماشین آلات</h4>
-                    </div>
-                    <div class="category-card" onclick="showRelatedEquipments('paper-pulp')" role="button" tabindex="0" onkeypress="if(event.key==='Enter') showRelatedEquipments('paper-pulp')">
-                        <span class="icon">📄</span>
-                        <h4 data-translate="cat-paper-pulp">ماشین آلات کاغذ و سلولوز</h4>
-                    </div>
-                    <div class="category-card" onclick="showRelatedEquipments('electronic-machinery')" role="button" tabindex="0" onkeypress="if(event.key==='Enter') showRelatedEquipments('electronic-machinery')">
-                        <span class="icon">💻</span>
-                        <h4 data-translate="cat-electronic-machinery">ماشین آلات الکترونیکی</h4>
-                    </div>
-                    <div class="category-card" onclick="showRelatedEquipments('telecom-parts')" role="button" tabindex="0" onkeypress="if(event.key==='Enter') showRelatedEquipments('telecom-parts')">
-                        <span class="icon">📡</span>
-                        <h4 data-translate="cat-telecom-parts">قطعات و لوازم اینترنتی و مخابراتی</h4>
-                    </div>
-                    <div class="category-card" onclick="showRelatedEquipments('second-hand')" role="button" tabindex="0" onkeypress="if(event.key==='Enter') showRelatedEquipments('second-hand')">
-                        <span class="icon">🔄</span>
-                        <h4 data-translate="cat-second-hand">ماشین آلات دست دوم</h4>
-                    </div>
+                <div class="section-title">
+                    <h2 data-translate="production-lines-categories-title">گروه‌های خطوط تولید</h2>
+                    <p data-translate="production-lines-categories-subtitle">صنایع کلیدی را انتخاب کنید تا خطوط تولید و فایل‌های فنی مرتبط نمایش داده شود</p>
+                </div>
+
+                <div id="productionLinesGrid" class="categories-grid">
                 </div>
             </div>
         </section>
