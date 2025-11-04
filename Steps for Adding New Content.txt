@@ -1,0 +1,197 @@
+Part 1: Adding a New Category
+Let's say you want to add a new category called "دستگاه های بسته بندی مواد غذایی" (Food Packaging Machines).
+
+
+
+Step 1: Update the JavaScript (script.js)
+Add the new category to the categories object:
+
+
+// Add this to the categories object in script.js
+'food-packaging': {
+    icon: '🍱',
+    title: {
+        fa: 'دستگاه های بسته بندی مواد غذایی',
+        en: 'Food Packaging Machines',
+        ps: 'د خوراک بسته بندي ماشینونه'
+    },
+    description: {
+        fa: 'تجهیزات بسته بندی پیشرفته برای مواد غذایی با رعایت اصول بهداشتی',
+        en: 'Advanced packaging equipment for food products following hygiene principles',
+        ps: 'د خوراکي محصولاتو لپاره پرمختللي بسته بندي تجهیزات چې د بهداشت اصول په پام کې نیسي'
+    }
+}
+
+
+Add the new category to the categoryKeywords object:
+
+// Add this to the categoryKeywords object in script.js
+'food-packaging': ['دستگاه های بسته بندی مواد غذایی', 'Food Packaging Machines', 'خوراک بسته بندي', 'food packaging', 'د خوراک بسته بندي ماشینونه', 'Food Packaging Machines']
+
+
+
+Add equipment data for the new category:
+
+// Add this to the equipmentData object in script.js
+'food-packaging': [
+    {
+        name: { fa: 'دستگاه بسته بندی وکیوم', en: 'Vacuum Packaging Machine', ps: 'د وکیوم بسته بندي ماشین' },
+        description: { fa: 'دستگاه بسته بندی وکیوم برای مواد غذایی', en: 'Vacuum packaging machine for food products', ps: 'د خوراکي محصولاتو لپاره د وکیوم بسته بندي ماشین' },
+        pdfUrl: 'pdfs/food-packaging/vacuum-packaging.pdf'
+    },
+    {
+        name: { fa: 'دستگاه بسته بندی اتوماتیک', en: 'Automatic Packaging Machine', ps: 'د اوتوماتیک بسته بندي ماشین' },
+        description: { fa: 'دستگاه بسته بندی اتوماتیک خط تولید', en: 'Automatic production line packaging machine', ps: 'د تولید لین اوتوماتیک بسته بندي ماشین' },
+        pdfUrl: 'pdfs/food-packaging/automatic-packaging.pdf'
+    }
+]
+
+
+
+Step 2: Update the HTML (index.html)
+Add the new category card to the categories section:
+
+
+<!-- Add this to the categories-grid div in index.html -->
+<div class="category-card" onclick="showRelatedEquipments('food-packaging')" role="button" tabindex="0" onkeypress="if(event.key==='Enter') showRelatedEquipments('food-packaging')">
+    <span class="icon">🍱</span>
+    <h4 data-translate="cat-food-packaging">دستگاه های بسته بندی مواد غذایی</h4>
+</div>
+
+
+
+Step 3: Add Translations
+Add the translation for the new category in the translations object:
+
+
+// Add this to the translations object in script.js
+'cat-food-packaging': { 
+    fa: 'دستگاه های بسته بندی مواد غذایی', 
+    en: 'Food Packaging Machines', 
+    ps: 'د خوراک بسته بندي ماشینونه' 
+}
+
+
+Step 4: Create PDF Directory and Files
+Create the directory structure:
+
+pdfs/
+└── food-packaging/
+    ├── vacuum-packaging.pdf
+    └── automatic-packaging.pdf
+
+
+Part 2: Adding a New Item to an Existing Category
+
+
+
+Let's say you want to add a new item to the existing "construction-materials" category called "بیل مکانیکی" (Mechanical Shovel).
+
+Step 1: Update the JavaScript (script.js)
+Add the new equipment item to the existing category:
+
+// Add this to the equipmentData['construction-materials'] array in script.js
+{
+    name: { fa: 'بیل مکانیکی', en: 'Mechanical Shovel', ps: 'میکانیکی بیل' },
+    description: { fa: 'بیل مکانیکی برای کارهای ساختمانی', en: 'Mechanical shovel for construction work', ps: 'د ساختمان کارونو لپاره میکانیکی بیل' },
+    pdfUrl: 'pdfs/construction-materials/mechanical-shovel.pdf'
+}
+
+Step 2: Create the PDF File
+Create the PDF file in the appropriate directory:
+
+pdfs/
+└── construction-materials/
+    └── mechanical-shovel.pdf
+
+
+
+Complete Example: Adding Both a New Category and New Items
+
+Here's a complete example of adding a new category "دستگاه های بسته بندی مواد غذایی" with two items and adding a new item to the existing "construction-materials" category.
+
+1. Updated JavaScript (script.js) - Categories Section
+
+
+// Add this to the categories object
+'food-packaging': {
+    icon: '🍱',
+    title: {
+        fa: 'دستگاه های بسته بندی مواد غذایی',
+        en: 'Food Packaging Machines',
+        ps: 'د خوراک بسته بندي ماشینونه'
+    },
+    description: {
+        fa: 'تجهیزات بسته بندی پیشرفته برای مواد غذایی با رعایت اصول بهداشتی',
+        en: 'Advanced packaging equipment for food products following hygiene principles',
+        ps: 'د خوراکي محصولاتو لپاره پرمختللي بسته بندي تجهیزات چې د بهداشت اصول په پام کې نیسي'
+    }
+}
+
+2. Updated JavaScript (script.js) - Category Keywords Section
+
+
+// Add this to the categoryKeywords object
+'food-packaging': ['دستگاه های بسته بندی مواد غذایی', 'Food Packaging Machines', 'خوراک بسته بندي', 'food packaging', 'د خوراک بسته بندي ماشینونه', 'Food Packaging Machines']
+
+3. Updated JavaScript (script.js) - Equipment Data Section
+
+
+// Add this to the equipmentData object
+'food-packaging': [
+    {
+        name: { fa: 'دستگاه بسته بندی وکیوم', en: 'Vacuum Packaging Machine', ps: 'د وکیوم بسته بندي ماشین' },
+        description: { fa: 'دستگاه بسته بندی وکیوم برای مواد غذایی', en: 'Vacuum packaging machine for food products', ps: 'د خوراکي محصولاتو لپاره د وکیوم بسته بندي ماشین' },
+        pdfUrl: 'pdfs/food-packaging/vacuum-packaging.pdf'
+    },
+    {
+        name: { fa: 'دستگاه بسته بندی اتوماتیک', en: 'Automatic Packaging Machine', ps: 'د اوتوماتیک بسته بندي ماشین' },
+        description: { fa: 'دستگاه بسته بندی اتوماتیک خط تولید', en: 'Automatic production line packaging machine', ps: 'د تولید لین اوتوماتیک بسته بندي ماشین' },
+        pdfUrl: 'pdfs/food-packaging/automatic-packaging.pdf'
+    }
+]
+
+// Add this to the existing construction-materials array
+{
+    name: { fa: 'بیل مکانیکی', en: 'Mechanical Shovel', ps: 'میکانیکی بیل' },
+    description: { fa: 'بیل مکانیکی برای کارهای ساختمانی', en: 'Mechanical shovel for construction work', ps: 'د ساختمان کارونو لپاره میکانیکی بیل' },
+    pdfUrl: 'pdfs/construction-materials/mechanical-shovel.pdf'
+}
+
+
+4. Updated HTML (index.html
+
+<!-- Add this to the categories-grid div -->
+<div class="category-card" onclick="showRelatedEquipments('food-packaging')" role="button" tabindex="0" onkeypress="if(event.key==='Enter') showRelatedEquipments('food-packaging')">
+    <span class="icon">🍱</span>
+    <h4 data-translate="cat-food-packaging">دستگاه های بسته بندی مواد غذایی</h4>
+</div>
+
+5. Updated Translations (script.js)
+
+// Add this to the translations object
+'cat-food-packaging': { 
+    fa: 'دستگاه های بسته بندی مواد غذایی', 
+    en: 'Food Packaging Machines', 
+    ps: 'د خوراک بسته بندي ماشینونه' 
+}
+
+6. Create PDF Directory Structure
+
+pdfs/
+├── food-packaging/
+│   ├── vacuum-packaging.pdf
+│   └── automatic-packaging.pdf
+└── construction-materials/
+    ├── concrete-block.pdf
+    ├── asphalt.pdf
+    ├── excavator.pdf
+    ├── crane.pdf
+    ├── loader.pdf
+    ├── materials.pdf
+    └── mechanical-shovel.pdf
+
+
+
+
+
