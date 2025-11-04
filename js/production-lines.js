@@ -42,6 +42,20 @@ const productionLineGroups = [
         }
     },
     {
+        id: 'textile-garments-lines',
+        icon: '👕',
+        title: {
+            fa: 'خطوط تولید نساجی و پوشاک',
+            en: 'Textile & Garments Lines',
+            ps: 'د نساجۍ او جامو د تولید لینونه'
+        },
+        description: {
+            fa: 'از ریسندگی و بافندگی تا دوخت تی‌شرت، جین، حوله و فرش‌های دستباف صنعتی.',
+            en: 'From spinning and weaving to automated T-shirt, denim, towel and carpet production.',
+            ps: 'له سپننې او اوبدلو څخه تر د ټي شرټ، جین، تولیي او غالۍ صنعتي تولید پورې.'
+        }
+    },
+    {
         id: 'recycling-lines',
         icon: '♻️',
         title: {
@@ -53,6 +67,20 @@ const productionLineGroups = [
             fa: 'بازیافت پلاستیک، کاغذ، تایر و فلزات با تجهیزات خردایش، شستشو و گرانول‌سازی.',
             en: 'Plastic, paper, tire and metal recycling with shredding, washing and pelletising systems.',
             ps: 'د پلاستیک، کاغذ، ټایر او فلزاتو بیاکارونې لپاره د پرېکولو، مینځلو او ګرینول کولو سیسټمونه.'
+        }
+    },
+    {
+        id: 'disposable-products-lines',
+        icon: '🥤',
+        title: {
+            fa: 'خطوط تولید محصولات یکبارمصرف',
+            en: 'Disposable Products Lines',
+            ps: 'د یو ځل کارېدونکو محصولاتو د تولید لینونه'
+        },
+        description: {
+            fa: 'تجهیز خطوط تولید لیوان، بشقاب، قاشق و بطری پلاستیکی برای صنایع خدماتی.',
+            en: 'Equip production lines for cups, plates, cutlery and PET packaging for service industries.',
+            ps: 'د کپ، پشقاب، کارد او PET بوتلونو د تولید لپاره بشپړ تجهیزات.'
         }
     },
     {
@@ -365,6 +393,71 @@ const productionLines = {
             }
         ]
     },
+    'textile-garments-lines': {
+        title: {
+            fa: 'خطوط تولید نساجی و پوشاک',
+            en: 'Textile & Garments Lines',
+            ps: 'د نساجۍ او جامو د تولید لینونه'
+        },
+        lines: [
+            {
+                id: 't-shirt-production-line',
+                title: {
+                    fa: 'خط تولید تی‌شرت',
+                    en: 'T-Shirt Production Line',
+                    ps: 'د ټي شرټ د تولید لین'
+                },
+                description: {
+                    fa: 'برش خودکار، دوخت، چاپ و کنترل کیفیت برای تولید تی‌شرت در حجم بالا.',
+                    en: 'Automated cutting, sewing, printing and QC for high-volume T-shirt manufacturing.',
+                    ps: 'د ټي شرټ د لوړ تولید لپاره اتومات پرې کول، ګنډل، چاپ او د کیفیت کنټرول.'
+                },
+                pdfUrl: 'pdfs/production-lines/textile-garments/t-shirt-production-line.pdf'
+            },
+            {
+                id: 'jeans-production-line',
+                title: {
+                    fa: 'خط تولید شلوار جین',
+                    en: 'Jeans Production Line',
+                    ps: 'د جین پتلون د تولید لین'
+                },
+                description: {
+                    fa: 'آماده‌سازی پارچه، دوخت صنعتی، شستشوی آنزیمی و پرداخت نهایی شلوار جین.',
+                    en: 'Fabric prep, industrial sewing, enzyme washing and finishing for denim jeans.',
+                    ps: 'د جین لپاره د ټوکر چمتووالی، صنعتي ګنډل، انزایمي مینځل او وروستی فینش.'
+                },
+                pdfUrl: 'pdfs/production-lines/textile-garments/jeans-production-line.pdf'
+            },
+            {
+                id: 'towel-production-line',
+                title: {
+                    fa: 'خط تولید حوله و منسوجات',
+                    en: 'Towel Production Line',
+                    ps: 'د تولیو د تولید لین'
+                },
+                description: {
+                    fa: 'ریسندگی، بافندگی حوله‌ای، رنگرزی و بسته‌بندی برای هتل‌ها و بازار مصرف.',
+                    en: 'Spinning, terry weaving, dyeing and packaging tailored for hospitality and retail.',
+                    ps: 'د ریسېدو، حوله اوبدلو، رنګولو او بسته بندۍ بشپړ سیستم د بازار لپاره.'
+                },
+                pdfUrl: 'pdfs/production-lines/textile-garments/towel-production-line.pdf'
+            },
+            {
+                id: 'carpet-weaving-line',
+                title: {
+                    fa: 'خط تولید قالین ماشینی',
+                    en: 'Carpet Weaving Line',
+                    ps: 'د غالۍ د تولید لین'
+                },
+                description: {
+                    fa: 'ماشین‌های بافندگی، فینیشینگ و برش برای تولید فرش ماشینی و دستباف صنعتی.',
+                    en: 'Power looms, finishing and cutting solutions for machine-made and semi-handmade carpets.',
+                    ps: 'د ماشین اوبدلو، وروستي فینش او پرې کولو سیستم د غالۍ تولید لپاره.'
+                },
+                pdfUrl: 'pdfs/production-lines/textile-garments/carpet-weaving-line.pdf'
+            }
+        ]
+    },
     'recycling-lines': {
         title: {
             fa: 'خطوط بازیافت صنعتی',
@@ -427,6 +520,85 @@ const productionLines = {
                     ps: 'د اوسپنې او غیر اوسپنې فلزاتو لپاره پریس، پرې کول، مقناطیسي بېلول او بسته بندي.'
                 },
                 pdfUrl: 'pdfs/production-lines/recycling/metal-recycling-line.pdf'
+            }
+        ]
+    },
+    'disposable-products-lines': {
+        title: {
+            fa: 'خطوط تولید محصولات یکبارمصرف',
+            en: 'Disposable Products Lines',
+            ps: 'د یو ځل کارېدونکو محصولاتو د تولید لینونه'
+        },
+        lines: [
+            {
+                id: 'disposable-cups-line',
+                title: {
+                    fa: 'خط تولید لیوان یکبارمصرف',
+                    en: 'Disposable Cups Line',
+                    ps: 'د یو ځل کارېدونکو جامونو تولید لین'
+                },
+                description: {
+                    fa: 'فرم‌دهی، ترموفرمینگ و بسته‌بندی لیوان پلاستیکی و کاغذی برای سرویس نوشیدنی.',
+                    en: 'Forming, thermoforming and packing plastic and paper cups for beverage service.',
+                    ps: 'د پلاستیکي او کاغذي جامونو لپاره تشکیل، ترموفورمینګ او بسته بندي.'
+                },
+                pdfUrl: 'pdfs/production-lines/disposable-products/disposable-cups-line.pdf'
+            },
+            {
+                id: 'disposable-plates-line',
+                title: {
+                    fa: 'خط تولید بشقاب یکبارمصرف',
+                    en: 'Disposable Plates Line',
+                    ps: 'د یو ځل کارېدونکو پشقابونو تولید لین'
+                },
+                description: {
+                    fa: 'پرس حرارتی، برش و بسته‌بندی بشقاب‌های پلاستیکی یا فومی برای پذیرایی.',
+                    en: 'Heat pressing, trimming and wrapping disposable plastic or foam plates for catering.',
+                    ps: 'د پلاستیکي یا فومي پشقابونو لپاره د حرارتي پریس، پرې کولو او بسته بندۍ سیستم.'
+                },
+                pdfUrl: 'pdfs/production-lines/disposable-products/disposable-plates-line.pdf'
+            },
+            {
+                id: 'disposable-cutlery-line',
+                title: {
+                    fa: 'خط تولید قاشق و چنگال یکبارمصرف',
+                    en: 'Disposable Cutlery Line',
+                    ps: 'د یو ځل کارېدونکو قاشق او چنګک تولید لین'
+                },
+                description: {
+                    fa: 'تزریق پلاستیک، پرداخت و بسته‌بندی قاشق، چنگال و کارد یکبارمصرف.',
+                    en: 'Plastic injection, finishing and packing disposable spoons, forks and knives.',
+                    ps: 'د پلاستیک انجیکشن، فینش او بسته بندي د یو ځل کارېدونکو چمچو، څانګو او چړو لپاره.'
+                },
+                pdfUrl: 'pdfs/production-lines/disposable-products/disposable-cutlery-line.pdf'
+            },
+            {
+                id: 'plastic-bottles-line',
+                title: {
+                    fa: 'خط تولید بطری پلاستیکی',
+                    en: 'Plastic Bottles Line',
+                    ps: 'د پلاستیکي بوتلونو تولید لین'
+                },
+                description: {
+                    fa: 'قالب‌گیری دمشی، تست نشت و بسته‌بندی بطری‌های PET و HDPE.',
+                    en: 'Blow moulding, leak testing and packaging PET and HDPE bottles.',
+                    ps: 'د PET او HDPE بوتلونو لپاره بلو مولډنګ، د لیک ازموینه او بسته بندي.'
+                },
+                pdfUrl: 'pdfs/production-lines/disposable-products/plastic-bottles-line.pdf'
+            },
+            {
+                id: 'plastic-bags-line',
+                title: {
+                    fa: 'خط تولید کیسه پلاستیکی',
+                    en: 'Plastic Bags Line',
+                    ps: 'د پلاستیکي کڅوړو تولید لین'
+                },
+                description: {
+                    fa: 'اکسترودر فیلم، چاپ فلکسو و برش-دوخت اتوماتیک برای کیسه‌های فروشگاهی.',
+                    en: 'Film extrusion, flexo printing and auto cut-seal for retail shopping bags.',
+                    ps: 'د فلم اکسترودر، فلکسو چاپ او اتومات پرې کول-ګنډل د پلورنځي کڅوړو لپاره.'
+                },
+                pdfUrl: 'pdfs/production-lines/disposable-products/plastic-bags-line.pdf'
             }
         ]
     },

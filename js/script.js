@@ -1132,6 +1132,9 @@ function scrollToSection(sectionId) {
         section.scrollIntoView({ behavior: 'smooth' });
         // Close mobile menu if open
         closeMobileMenu();
+    } else {
+        closeMobileMenu();
+        window.location.href = `index.html#${sectionId}`;
     }
 }
 
