@@ -1,0 +1,600 @@
+const productionLineGroups = [
+    {
+        id: 'food-processing-lines',
+        icon: '🥘',
+        title: {
+            fa: 'خطوط تولید مواد غذایی',
+            en: 'Food Processing Lines',
+            ps: 'د خوراکي موادو د پروسس لینونه'
+        },
+        description: {
+            fa: 'راه‌حل‌های کامل برای تولید غلات صبحانه، لبنیات، نوشیدنی، نان و محصولات پروتئینی.',
+            en: 'Complete solutions for cereals, dairy, beverages, bakery and protein processing.',
+            ps: 'د ناشته غلو، لبنیاتو، مشروباتو، ډوډۍ او پروټیني محصولاتو لپاره بشپړې حل لارې.'
+        }
+    },
+    {
+        id: 'consumer-goods-lines',
+        icon: '🧴',
+        title: {
+            fa: 'خطوط تولید کالاهای مصرفی',
+            en: 'Consumer Goods Lines',
+            ps: 'د مصرفي توکو د تولید لینونه'
+        },
+        description: {
+            fa: 'راه‌اندازی خطوط شوینده، محصولات بهداشتی شخصی، آرایشی و بهداشت خانگی.',
+            en: 'Turnkey lines for detergents, personal care, cosmetics and hygiene goods.',
+            ps: 'د صابون، شیمپو، ښکلايي او کورني حفظ الصحې محصولاتو د تولید حل لارې.'
+        }
+    },
+    {
+        id: 'construction-materials-lines',
+        icon: '🏗️',
+        title: {
+            fa: 'خطوط تولید مصالح ساختمانی',
+            en: 'Construction Materials Lines',
+            ps: 'د ساختماني موادو د تولید لینونه'
+        },
+        description: {
+            fa: 'از سیمان و آجر تا بلوک بتنی، فولادسازی سبک و پنل‌های گچی آماده.',
+            en: 'From cement and bricks to concrete blocks, light steel fabrication and gypsum panels.',
+            ps: 'له سمنټو او خښتو څخه تر کانکریټ بلاکونو، سپکو فولادي جوړښتونو او جپسم تختو پورې.'
+        }
+    },
+    {
+        id: 'recycling-lines',
+        icon: '♻️',
+        title: {
+            fa: 'خطوط بازیافت صنعتی',
+            en: 'Industrial Recycling Lines',
+            ps: 'صنعتي د بیاکارونې لینونه'
+        },
+        description: {
+            fa: 'بازیافت پلاستیک، کاغذ، تایر و فلزات با تجهیزات خردایش، شستشو و گرانول‌سازی.',
+            en: 'Plastic, paper, tire and metal recycling with shredding, washing and pelletising systems.',
+            ps: 'د پلاستیک، کاغذ، ټایر او فلزاتو بیاکارونې لپاره د پرېکولو، مینځلو او ګرینول کولو سیسټمونه.'
+        }
+    },
+    {
+        id: 'light-industry-lines',
+        icon: '🪑',
+        title: {
+            fa: 'خطوط صنایع سبک و چوبی',
+            en: 'Light Industry Lines',
+            ps: 'د سپکو صنعتونو د تولید لینونه'
+        },
+        description: {
+            fa: 'تولید مبلمان منزل، مدرسه و اداره به همراه تجهیزات ورزشی نرم.',
+            en: 'Furniture manufacturing for home, school and office plus soft sports equipment.',
+            ps: 'د کور، ښوونځي او دفتر فرنیچر او نرم ورزشي تجهیزاتو د تولید حل لارې.'
+        }
+    }
+];
+
+const productionLines = {
+    'food-processing-lines': {
+        title: {
+            fa: 'خطوط تولید مواد غذایی',
+            en: 'Food Processing Lines',
+            ps: 'د خوراکي موادو د پروسس لینونه'
+        },
+        lines: [
+            {
+                id: 'cereal-production-line',
+                title: {
+                    fa: 'خط تولید غلات صبحانه',
+                    en: 'Cereal Production Line',
+                    ps: 'د ناشته د غلو تولید لین'
+                },
+                description: {
+                    fa: 'فرآیند کامل از پاک‌سازی دانه تا اکسترود، روکش و بسته‌بندی غلات صبحانه.',
+                    en: 'Complete process from grain cleaning to extrusion, coating and cereal packaging.',
+                    ps: 'له دانې پاکولو، اکسترود او پوښښ څخه تر د ناشته غلو بسته بندۍ پورې بشپړ بهیر.'
+                },
+                pdfUrl: 'pdfs/production-lines/food-processing/cereal-production-line.pdf'
+            },
+            {
+                id: 'baby-food-cerelac-line',
+                title: {
+                    fa: 'خط تولید غذای کودک/سرلاک',
+                    en: 'Baby Food / Cerelac Line',
+                    ps: 'د ماشوم د خوراک / سرلاک تولید لین'
+                },
+                description: {
+                    fa: 'میکسینگ دقیق، خشک‌کن غلتکی و بسته‌بندی استریل غذای کودک.',
+                    en: 'Precise mixing, drum drying and sterile packing for baby cereal products.',
+                    ps: 'د ماشوم د خوراک لپاره دقیق مخلوط، ډرم وچول او استریل بسته بندي.'
+                },
+                pdfUrl: 'pdfs/production-lines/food-processing/baby-food-cerelac-line.pdf'
+            },
+            {
+                id: 'dairy-processing-line',
+                title: {
+                    fa: 'خط فرآوری لبنیات',
+                    en: 'Dairy Processing Line',
+                    ps: 'د لبنیاتو د پروسس لین'
+                },
+                description: {
+                    fa: 'پاستوریزه، هموژنیزه، تخمیر و بسته‌بندی شیر، ماست و پنیر.',
+                    en: 'Pasteurisation, homogenisation, fermentation and packaging for milk, yogurt and cheese.',
+                    ps: 'د شیدو، مستې او پنیر لپاره پاستور، هموژن، تخمیر او بسته بندي.'
+                },
+                pdfUrl: 'pdfs/production-lines/food-processing/dairy-processing-line.pdf'
+            },
+            {
+                id: 'beverage-production-line',
+                title: {
+                    fa: 'خط تولید نوشیدنی',
+                    en: 'Beverage Production Line',
+                    ps: 'د مشروباتو تولید لین'
+                },
+                description: {
+                    fa: 'اختلاط، تصفیه، پرکن و درب‌بندی نوشیدنی‌های غیرالکلی.',
+                    en: 'Mixing, filtration, filling and capping for non-alcoholic beverages.',
+                    ps: 'د غیر الکولي مشروباتو لپاره مخلوط، فلټراسیون، ډکول او سرپوش کول.'
+                },
+                pdfUrl: 'pdfs/production-lines/food-processing/beverage-production-line.pdf'
+            },
+            {
+                id: 'bakery-biscuits-line',
+                title: {
+                    fa: 'خط تولید نان و بیسکویت',
+                    en: 'Bakery & Biscuits Line',
+                    ps: 'د ډوډۍ او بسکټو تولید لین'
+                },
+                description: {
+                    fa: 'آماده‌سازی خمیر، تخمیرکنترل‌شده، پخت، سردکردن و بسته‌بندی نان و بیسکویت.',
+                    en: 'Dough preparation, controlled proofing, baking, cooling and packing for bread and biscuits.',
+                    ps: 'د خمیر چمتووالی، کنټرول شوی پخېدنه، پخول، یخول او بسته بندي د ډوډۍ او بسکټو لپاره.'
+                },
+                pdfUrl: 'pdfs/production-lines/food-processing/bakery-biscuits-line.pdf'
+            },
+            {
+                id: 'meat-processing-line',
+                title: {
+                    fa: 'خط فرآوری گوشت',
+                    en: 'Meat Processing Line',
+                    ps: 'د غوښې د پروسس لین'
+                },
+                description: {
+                    fa: 'خردکردن، مخلوط، پرکن، دودی و بسته‌بندی محصولات گوشتی.',
+                    en: 'Grinding, blending, filling, smoking and packaging for processed meat products.',
+                    ps: 'د غوښې د محصولاتو لپاره ګراینډ، مخلوط، ډکول، سګرټ کول او بسته بندي.'
+                },
+                pdfUrl: 'pdfs/production-lines/food-processing/meat-processing-line.pdf'
+            },
+            {
+                id: 'fruit-vegetable-processing-line',
+                title: {
+                    fa: 'خط فرآوری میوه و سبزی',
+                    en: 'Fruit & Vegetable Processing Line',
+                    ps: 'د میوو او سبزیو د پروسس لین'
+                },
+                description: {
+                    fa: 'شستشو، پوست‌گیری، برش، بلانچینگ و بسته‌بندی تازه یا IQF.',
+                    en: 'Washing, peeling, cutting, blanching and packaging for fresh or IQF produce.',
+                    ps: 'د میوو او سبزیو لپاره مینځل، پوستکښ، پرې کول، بلانچینګ او بسته بندي.'
+                },
+                pdfUrl: 'pdfs/production-lines/food-processing/fruit-vegetable-processing-line.pdf'
+            },
+            {
+                id: 'edible-oil-line',
+                title: {
+                    fa: 'خط تولید روغن خوراکی',
+                    en: 'Edible Oil Production Line',
+                    ps: 'د خوراکي غوړ د تولید لین'
+                },
+                description: {
+                    fa: 'استخراج، تصفیه، بی‌بو کردن و بسته‌بندی انواع روغن نباتی.',
+                    en: 'Extraction, refining, deodorising and bottling of vegetable cooking oils.',
+                    ps: 'د خوراکي نباتي غوړ لپاره استخراج، تصفیه، بوی لرې کول او بوتل بندي.'
+                },
+                pdfUrl: 'pdfs/production-lines/food-processing/edible-oil-line.pdf'
+            }
+        ]
+    },
+    'consumer-goods-lines': {
+        title: {
+            fa: 'خطوط تولید کالاهای مصرفی',
+            en: 'Consumer Goods Lines',
+            ps: 'د مصرفي توکو د تولید لینونه'
+        },
+        lines: [
+            {
+                id: 'shampoo-production-line',
+                title: {
+                    fa: 'خط تولید شامپو',
+                    en: 'Shampoo Production Line',
+                    ps: 'د شیمپو تولید لین'
+                },
+                description: {
+                    fa: 'میکسینگ، همگن‌سازی، پرکن و درب‌بندی شامپو و نرم‌کننده.',
+                    en: 'Mixing, homogenising, filling and capping for shampoos and conditioners.',
+                    ps: 'د شیمپو او نرمونکو لپاره مخلوط، همجنس کول، ډکول او سرپوښ.'
+                },
+                pdfUrl: 'pdfs/production-lines/consumer-goods/shampoo-production-line.pdf'
+            },
+            {
+                id: 'detergent-production-line',
+                title: {
+                    fa: 'خط تولید مواد شوینده مایع',
+                    en: 'Detergent Production Line',
+                    ps: 'د مایع ډیټرژن تولید لین'
+                },
+                description: {
+                    fa: 'سری‌سازی، مخلوط پیوسته، پرکن چندنازله و لیبل‌زنی شوینده‌ها.',
+                    en: 'Batch formulation, continuous mixing, multi-head filling and labelling for detergents.',
+                    ps: 'د ډیټرژنټ لپاره فارمول جوړونه، دوامداره مخلوط، څو سری ډکول او لیبل لګول.'
+                },
+                pdfUrl: 'pdfs/production-lines/consumer-goods/detergent-production-line.pdf'
+            },
+            {
+                id: 'soap-production-line',
+                title: {
+                    fa: 'خط تولید صابون جامد',
+                    en: 'Soap Production Line',
+                    ps: 'د صابون تولید لین'
+                },
+                description: {
+                    fa: 'خمیرگیری، اکسترودر صابون، قالب‌گیری، چاپ و بسته‌بندی قالبی.',
+                    en: 'Saponification, soap extrusion, stamping, imprinting and flow-wrapping.',
+                    ps: 'د صابون جوړولو، اکسترود، ټاپه کولو او فلو-رېپ بسته بندۍ بشپړ بهیر.'
+                },
+                pdfUrl: 'pdfs/production-lines/consumer-goods/soap-production-line.pdf'
+            },
+            {
+                id: 'toothpaste-production-line',
+                title: {
+                    fa: 'خط تولید خمیردندان',
+                    en: 'Toothpaste Production Line',
+                    ps: 'د غاښونو کریم تولید لین'
+                },
+                description: {
+                    fa: 'میکسینگ خلأ، دیگ‌های دوجداره، پرکن تیوپ و بسته‌بندی مقوایی.',
+                    en: 'Vacuum mixers, jacketed kettles, tube filling and carton packing.',
+                    ps: 'د خلا مخلوطونه، دوپوسته کټلونه، ټیوپ ډکول او کارټوني بسته بندي.'
+                },
+                pdfUrl: 'pdfs/production-lines/consumer-goods/toothpaste-production-line.pdf'
+            },
+            {
+                id: 'cosmetics-production-line',
+                title: {
+                    fa: 'خط تولید محصولات آرایشی',
+                    en: 'Cosmetics Production Line',
+                    ps: 'د سینګار محصولاتو تولید لین'
+                },
+                description: {
+                    fa: 'فرمولاسیون وکیوم، پرکن کرم و پنکک، درب‌بندی و تست کنترل کیفیت.',
+                    en: 'Vacuum formulation, cream and compact filling, sealing and QC testing.',
+                    ps: 'د خلا فارمول، د کریم او کمپکت ډکول، سیل کول او د کیفیت ازموینې.'
+                },
+                pdfUrl: 'pdfs/production-lines/consumer-goods/cosmetics-production-line.pdf'
+            },
+            {
+                id: 'sanitary-napkins-line',
+                title: {
+                    fa: 'خط تولید نوار بهداشتی',
+                    en: 'Sanitary Napkins Line',
+                    ps: 'د حفظ الصحې پیډونو تولید لین'
+                },
+                description: {
+                    fa: 'برش وب، جذب پودر SAP، تا، بسته‌بندی و استریل محصولات بهداشتی بانوان.',
+                    en: 'Web cutting, SAP dosing, folding, wrapping and sterilising feminine hygiene pads.',
+                    ps: 'د حفظ الصحې پیډونو لپاره د ویب پرې کول، د SAP پوډر اچول، تاوول، بسته بندي او استریل کول.'
+                },
+                pdfUrl: 'pdfs/production-lines/consumer-goods/sanitary-napkins-line.pdf'
+            }
+        ]
+    },
+    'construction-materials-lines': {
+        title: {
+            fa: 'خطوط تولید مصالح ساختمانی',
+            en: 'Construction Materials Lines',
+            ps: 'د ساختماني موادو د تولید لینونه'
+        },
+        lines: [
+            {
+                id: 'cement-production-line',
+                title: {
+                    fa: 'خط تولید سیمان',
+                    en: 'Cement Production Line',
+                    ps: 'د سمنټو تولید لین'
+                },
+                description: {
+                    fa: 'سنگ‌شکنی، آسیاب مواد، پخت کلینکر و بسته‌بندی سیمان در کیسه یا بگ‌ها.',
+                    en: 'Crushing, raw milling, clinker kiln and cement packing into bags or bulk.',
+                    ps: 'د سمنټو لپاره د ډبرو ماتول، خام مل، کلینکر تنور او بسته بندي.'
+                },
+                pdfUrl: 'pdfs/production-lines/construction-materials/cement-production-line.pdf'
+            },
+            {
+                id: 'brick-making-line',
+                title: {
+                    fa: 'خط تولید آجر',
+                    en: 'Brick Making Line',
+                    ps: 'د خښتو جوړولو لین'
+                },
+                description: {
+                    fa: 'آماده‌سازی خاک، اکسترودر آجر، برش وایری، خشک‌کن و کوره تونلی.',
+                    en: 'Clay preparation, brick extrusion, wire cutting, dryer and tunnel kiln.',
+                    ps: 'د خټې چمتووالی، خښتو اکسترود، د وایر پرې کول، وچول او تونلي بټۍ.'
+                },
+                pdfUrl: 'pdfs/production-lines/construction-materials/brick-making-line.pdf'
+            },
+            {
+                id: 'concrete-blocks-line',
+                title: {
+                    fa: 'خط تولید بلوک بتنی',
+                    en: 'Concrete Blocks Line',
+                    ps: 'د کانکریټ بلاک تولید لین'
+                },
+                description: {
+                    fa: 'میکسینگ اتوماتیک، قالب‌گیری پرس، عمل‌آوری و پالتایزینگ بلوک‌های بتنی.',
+                    en: 'Automated mixing, hydraulic moulding, curing and palletising of concrete blocks.',
+                    ps: 'اتومات مخلوط، هایدرولیک قالب، درملنه او د کانکریټ بلاکونو پالت ایزه کول.'
+                },
+                pdfUrl: 'pdfs/production-lines/construction-materials/concrete-blocks-line.pdf'
+            },
+            {
+                id: 'steel-fabrication-line',
+                title: {
+                    fa: 'خط تولید سازه‌های فولادی سبک',
+                    en: 'Steel Fabrication Line',
+                    ps: 'د فولادي جوړښتونو تولید لین'
+                },
+                description: {
+                    fa: 'برش CNC، خم، جوش و مونتاژ سازه‌های فلزی برای پروژه‌های ساختمانی.',
+                    en: 'CNC cutting, bending, welding and assembly of structural steel components.',
+                    ps: 'د ساختماني فولادي برخو لپاره CNC پرې کول، خم، ویلډنګ او مونتاژ.'
+                },
+                pdfUrl: 'pdfs/production-lines/construction-materials/steel-fabrication-line.pdf'
+            },
+            {
+                id: 'gypsum-board-line',
+                title: {
+                    fa: 'خط تولید پنل و تایل گچی',
+                    en: 'Gypsum Board Line',
+                    ps: 'د جپسم تختو تولید لین'
+                },
+                description: {
+                    fa: 'دستگاه میکسر دوغاب، خط شکل‌دهی، خشک‌کن پیوسته و بسته‌بندی پنل‌ها.',
+                    en: 'Slurry mixers, forming line, continuous dryer and panel packaging.',
+                    ps: 'د دوغاب مخلوط، بڼه ورکولو لین، دوامداره وچوونکې او د تختو بسته بندي.'
+                },
+                pdfUrl: 'pdfs/production-lines/construction-materials/gypsum-board-line.pdf'
+            }
+        ]
+    },
+    'recycling-lines': {
+        title: {
+            fa: 'خطوط بازیافت صنعتی',
+            en: 'Industrial Recycling Lines',
+            ps: 'صنعتي د بیاکارونې لینونه'
+        },
+        lines: [
+            {
+                id: 'plastic-recycling-line',
+                title: {
+                    fa: 'خط بازیافت پلاستیک',
+                    en: 'Plastic Recycling Line',
+                    ps: 'د پلاستیک د بیاکارونې لین'
+                },
+                description: {
+                    fa: 'خردکن، شستشو، خشک‌کن و گرانول‌سازی برای ضایعات پلاستیکی.',
+                    en: 'Shredding, washing, drying and pelletising for plastic scrap.',
+                    ps: 'د پلاستیک ضایعاتو لپاره پرېکول، مینځل، وچول او ګرینول کول.'
+                },
+                pdfUrl: 'pdfs/production-lines/recycling/plastic-recycling-line.pdf'
+            },
+            {
+                id: 'paper-recycling-line',
+                title: {
+                    fa: 'خط بازیافت کاغذ و کارتن',
+                    en: 'Paper Recycling Line',
+                    ps: 'د کاغذ بیاکارونې لین'
+                },
+                description: {
+                    fa: 'پالپر، حوضچه شستشو، دی‌اینکینگ و تولید رول یا شیت کاغذ بازیافتی.',
+                    en: 'Pulper, washing tanks, de-inking and recycled paper sheet or roll production.',
+                    ps: 'پالپر، د مینځلو حوضونه، د رنګ ایستل او د بیا کارېدونکي کاغذ تولید.'
+                },
+                pdfUrl: 'pdfs/production-lines/recycling/paper-recycling-line.pdf'
+            },
+            {
+                id: 'tire-recycling-line',
+                title: {
+                    fa: 'خط بازیافت تایر',
+                    en: 'Tire Recycling Line',
+                    ps: 'د ټایر بیاکارونې لین'
+                },
+                description: {
+                    fa: 'برید کردن، سیم‌جداکن، آسیاب و طبقه‌بندی گرانول لاستیک.',
+                    en: 'Bead cutting, steel separation, granulation and grading of rubber crumb.',
+                    ps: 'د ټایر لپاره کړۍ پرې کول، د فولادو جلا کول، ګرینول او درجه بندي.'
+                },
+                pdfUrl: 'pdfs/production-lines/recycling/tire-recycling-line.pdf'
+            },
+            {
+                id: 'metal-recycling-line',
+                title: {
+                    fa: 'خط بازیافت فلزات',
+                    en: 'Metal Recycling Line',
+                    ps: 'د فلزاتو بیاکارونې لین'
+                },
+                description: {
+                    fa: 'پرس ضایعات، خردایش، تفکیک مغناطیسی و بسته‌بندی برای فلزات آهنی و غیرآهنی.',
+                    en: 'Scrap baling, shredding, magnetic separation and packing for ferrous and non-ferrous metals.',
+                    ps: 'د اوسپنې او غیر اوسپنې فلزاتو لپاره پریس، پرې کول، مقناطیسي بېلول او بسته بندي.'
+                },
+                pdfUrl: 'pdfs/production-lines/recycling/metal-recycling-line.pdf'
+            }
+        ]
+    },
+    'light-industry-lines': {
+        title: {
+            fa: 'خطوط صنایع سبک و چوبی',
+            en: 'Light Industry Lines',
+            ps: 'د سپکو صنعتونو د تولید لینونه'
+        },
+        lines: [
+            {
+                id: 'furniture-manufacturing-line',
+                title: {
+                    fa: 'خط تولید مبلمان منزل',
+                    en: 'Furniture Manufacturing Line',
+                    ps: 'د کورني فرنیچر تولید لین'
+                },
+                description: {
+                    fa: 'اره‌کاری CNC، لبه‌چسبان، سنباده و مونتاژ مبلمان چوبی و MDF.',
+                    en: 'CNC cutting, edge-banding, sanding and assembly for wood and MDF furniture.',
+                    ps: 'د لرګي او MDF فرنیچر لپاره CNC پرې کول، څنډه چسپول، سنډر او مونتاژ.'
+                },
+                pdfUrl: 'pdfs/production-lines/light-industry/furniture-manufacturing-line.pdf'
+            },
+            {
+                id: 'school-furniture-line',
+                title: {
+                    fa: 'خط تولید مبلمان آموزشی',
+                    en: 'School Furniture Line',
+                    ps: 'د ښوونځي فرنیچر تولید لین'
+                },
+                description: {
+                    fa: 'برش لوله، خم CNC، رنگ پودری و مونتاژ نیمکت و صندلی مدارس.',
+                    en: 'Tube cutting, CNC bending, powder coating and assembly for desks and chairs.',
+                    ps: 'د پایپ پرې کول، CNC خم، پوډر رنګ او د میزونو او چوکۍو مونتاژ.'
+                },
+                pdfUrl: 'pdfs/production-lines/light-industry/school-furniture-line.pdf'
+            },
+            {
+                id: 'office-furniture-line',
+                title: {
+                    fa: 'خط تولید مبلمان اداری',
+                    en: 'Office Furniture Line',
+                    ps: 'د اداري فرنیچر تولید لین'
+                },
+                description: {
+                    fa: 'لیزر برش فلز، برش MDF، روکش، پرس گرم و مونتاژ مبلمان اداری.',
+                    en: 'Metal laser cutting, MDF machining, laminating, hot pressing and assembly for office sets.',
+                    ps: 'د فلزي لیزر پرې کول، MDF ماشینونه، لامینټ، ګرم پرس او د اداري سیټونو مونتاژ.'
+                },
+                pdfUrl: 'pdfs/production-lines/light-industry/office-furniture-line.pdf'
+            },
+            {
+                id: 'sports-equipment-line',
+                title: {
+                    fa: 'خط تولید تجهیزات ورزشی سبک',
+                    en: 'Sports Equipment Line',
+                    ps: 'د ورزشي تجهیزاتو تولید لین'
+                },
+                description: {
+                    fa: 'دوخت توپ، قالب‌گیری فوم، چاپ و بسته‌بندی تجهیزات ورزشی نرم.',
+                    en: 'Ball stitching, foam moulding, printing and packaging for soft sports gear.',
+                    ps: 'د توپ ګنډل، د فوم قالب، چاپ او بسته بندي د نرم ورزشي تجهیزاتو لپاره.'
+                },
+                pdfUrl: 'pdfs/production-lines/light-industry/sports-equipment-line.pdf'
+            }
+        ]
+    }
+};
+
+function buildProductionLineCard(group, lang) {
+    const card = document.createElement('div');
+    card.className = 'category-card';
+    card.setAttribute('role', 'button');
+    card.setAttribute('tabindex', '0');
+    card.dataset.groupId = group.id;
+
+    const title = group.title[lang] || group.title.fa;
+    const description = group.description[lang] || group.description.fa;
+
+    card.innerHTML = `
+        <span class="icon">${group.icon}</span>
+        <h4>${title}</h4>
+        <p>${description}</p>
+    `;
+
+    const openModal = () => showProductionLineModal(group.id);
+    card.addEventListener('click', openModal);
+    card.addEventListener('keypress', event => {
+        if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            openModal();
+        }
+    });
+
+    return card;
+}
+
+function renderProductionLineGroups(lang = typeof currentLanguage !== 'undefined' ? currentLanguage : 'fa') {
+    const grid = document.getElementById('productionLinesGrid');
+    if (!grid) {
+        return;
+    }
+
+    grid.innerHTML = '';
+    productionLineGroups.forEach(group => {
+        grid.appendChild(buildProductionLineCard(group, lang));
+    });
+}
+
+function showProductionLineModal(groupId) {
+    const modal = document.getElementById('equipmentModal');
+    const modalContent = document.getElementById('equipmentModalContent');
+    const data = productionLines[groupId];
+
+    if (!modal || !modalContent || !data) {
+        return;
+    }
+
+    const lang = typeof currentLanguage !== 'undefined' ? currentLanguage : 'fa';
+    const title = data.title[lang] || data.title.fa;
+
+    const backText = lang === 'fa' ? 'بازگشت' : (lang === 'ps' ? 'بیرته' : 'Back');
+    const viewText = lang === 'fa' ? 'مشاهده PDF' : (lang === 'ps' ? 'PDF وګورئ' : 'View PDF');
+    const downloadText = lang === 'fa' ? 'دانلود' : (lang === 'ps' ? 'ډاونلوډ' : 'Download');
+
+    let cardsHtml = '<div class="equipment-grid">';
+    data.lines.forEach(line => {
+        const lineTitle = line.title[lang] || line.title.fa;
+        const lineDesc = line.description[lang] || line.description.fa;
+        cardsHtml += `
+            <div class="equipment-card">
+                <div class="equipment-icon">📄</div>
+                <h4>${lineTitle}</h4>
+                <p>${lineDesc}</p>
+                <div class="equipment-actions">
+                    <a href="${line.pdfUrl}" target="_blank" class="btn-primary">
+                        <i class="fas fa-file-pdf"></i> ${viewText}
+                    </a>
+                    <a href="${line.pdfUrl}" download class="btn-secondary">
+                        <i class="fas fa-download"></i> ${downloadText}
+                    </a>
+                </div>
+            </div>
+        `;
+    });
+    cardsHtml += '</div>';
+
+    modalContent.innerHTML = `
+        <div class="equipment-modal-header">
+            <button class="back-btn" onclick="closeEquipmentModal()">${backText}</button>
+            <h3>${title}</h3>
+        </div>
+        ${cardsHtml}
+    `;
+
+    modal.style.display = 'block';
+    modal.setAttribute('aria-hidden', 'false');
+}
+
+function updateProductionLineCards() {
+    const lang = typeof currentLanguage !== 'undefined' ? currentLanguage : 'fa';
+    renderProductionLineGroups(lang);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    updateProductionLineCards();
+});
+
+window.showProductionLineModal = showProductionLineModal;
+window.updateProductionLineCards = updateProductionLineCards;
