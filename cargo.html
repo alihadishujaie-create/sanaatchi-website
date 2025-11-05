@@ -37,7 +37,7 @@
             --logo-blue: #004aad; /* اگر رنگ اصلی لوگو فرق دارد، اینجا تغییر بده */
         }
 
-        /* ===== Hero (همان لِی‌آوت قبلی + تصویر پس‌زمینه) ===== */
+        /* ===== Hero با بک‌گراند Transportation.webp ===== */
         .category-hero {
             padding: 3.5rem 0 3.5rem;
             text-align: center;
@@ -88,6 +88,16 @@
         }
 
         /* ===== کارت‌های مسیر کارگو ===== */
+        .subcategory-grid-section {
+            padding: 3.5rem 0;
+        }
+
+        .subcategory-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+        }
+
         .subcategory-card {
             background-color: #ffffff;
             border: 1px solid #e5e7eb;
@@ -164,6 +174,12 @@
         }
 
         /* ===== SEO & FAQ ===== */
+        .seo-section,
+        .faq-section,
+        .cta-section {
+            padding: 3.5rem 0;
+        }
+
         .section-title {
             font-size: 1.5rem;
             margin-bottom: 0.75rem;
@@ -201,6 +217,71 @@
             color: #4b5563;
             line-height: 1.8;
         }
+
+        .cta-section {
+            background: linear-gradient(135deg, #0f172a, #f97316);
+            color: #f9fafb;
+            text-align: center;
+        }
+
+        .cta-section .cta-buttons {
+            margin-top: 1.5rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary,
+        .btn-secondary {
+            padding: 0.7rem 1.4rem;
+            border-radius: 999px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid transparent;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-primary {
+            background-color: #f97316;
+            color: #ffffff;
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: #f9fafb;
+            border-color: rgba(249, 250, 251, 0.6);
+        }
+
+        .btn-primary:hover {
+            background-color: #ea580c;
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(15, 23, 42, 0.2);
+        }
+
+        /* Footer extra small tweaks */
+        .phone-container {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .whatsapp-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .whatsapp-link i {
+            font-size: 1rem;
+        }
     </style>
 
     <!-- Schema.org: WebPage + Service -->
@@ -230,7 +311,7 @@
     }
     </script>
 
-    <!-- Schema.org: FAQPage -->
+    <!-- Schema.org: FAQPage (سوالات متداول) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -365,7 +446,6 @@
         <!-- Cargo Routes Cards -->
         <section class="subcategory-grid-section" id="services">
             <div class="container">
-                <!-- تیتر تکراری اینجا حذف شده است -->
                 <div class="subcategory-grid">
                     <!-- Card 1: Rail China–Hairatan -->
                     <article class="subcategory-card">
@@ -668,5 +748,16 @@
     
     <!-- JS مخصوص صفحه کارگو -->
     <script src="js/cargo.js"></script>
+
+    <!-- فایل‌های باینری لازم (خودت باید بسازی / آپلود کنی)
+        images/Transportation.webp
+        pdf/route-rail-china-hairatan-rate.pdf
+        pdf/route-road-china-hairatan-rate.pdf
+        pdf/route-road-hairatan-afghanistan-rate.pdf
+        pdf/route-sea-china-bandar-abbas-rate.pdf
+        pdf/route-sea-china-chabahar-rate.pdf
+        pdf/customs-services-rate.pdf
+        pdf/insurance-coverage-rate.pdf
+    -->
 </body>
 </html>
