@@ -77,49 +77,28 @@ const projects = [
     }
 ];
 
-// Initialize projects page
-document.addEventListener('DOMContentLoaded', function() {
-    // Check for saved language preference
-    const savedLanguage = localStorage.getItem('preferredLanguage');
-    let currentLanguage = 'fa'; // Default language
-    
-    if (savedLanguage && (savedLanguage === 'fa' || savedLanguage === 'en' || savedLanguage === 'ps')) {
-        currentLanguage = savedLanguage;
-        
-        // Set HTML attributes based on language
-        const html = document.documentElement;
-        const body = document.body;
-        
-        if (currentLanguage === 'en') {
-            html.setAttribute('lang', 'en');
-            html.setAttribute('dir', 'ltr');
-            body.style.direction = 'ltr';
-            body.style.textAlign = 'left';
-        } else {
-            html.setAttribute('lang', currentLanguage);
-            html.setAttribute('dir', 'rtl');
-            body.style.direction = 'rtl';
-            body.style.textAlign = 'right';
-        }
-    }
-    
-    // Load projects
-    loadProjects(currentLanguage);
-});
+const projectsMetaDescriptions = {
+    fa: 'پروژه‌های در حال اجرا و تکمیل‌شده Sanaatchi Industrial Vision در افغانستان؛ شامل راه‌اندازی فابریکه، خطوط تولید و خدمات لجستیک.',
+    en: 'Discover Sanaatchi Industrial Vision’s ongoing and completed industrial projects across Afghanistan, spanning factory setup, production lines and logistics services.',
+    ps: 'په افغانستان کې د Sanaatchi Industrial Vision روانې او بشپړې صنعتي پروژې وګورئ؛ د فابریکې جوړول، تولیدي لینونه او لوجستیکي خدمتونه.'
+};
 
-// Load projects
-function loadProjects(currentLanguage) {
+// Render projects grid
+function renderProjects(currentLanguage) {
     const projectsGrid = document.getElementById('projectsGrid');
+    if (!projectsGrid) {
+        return;
+    }
     projectsGrid.innerHTML = '';
-    
+
     projects.forEach(project => {
-        const statusText = project.status === 'in-progress' ? 
-            (currentLanguage === 'fa' ? 'در حال اجرا' : 
-             currentLanguage === 'ps' ? 'په اجرا کې' : 'In Progress') : 
-            (currentLanguage === 'fa' ? 'تکمیل شده' : 
+        const statusText = project.status === 'in-progress' ?
+            (currentLanguage === 'fa' ? 'در حال اجرا' :
+             currentLanguage === 'ps' ? 'په اجرا کې' : 'In Progress') :
+            (currentLanguage === 'fa' ? 'تکمیل شده' :
              currentLanguage === 'ps' ? 'کامل شوی' : 'Completed');
-        
-        const viewText = currentLanguage === 'fa' ? 'مشاهده PDF' : 
+
+        const viewText = currentLanguage === 'fa' ? 'مشاهده PDF' :
                        currentLanguage === 'ps' ? 'PDF وګورئ' : 'View PDF';
         
         const projectCard = document.createElement('div');
@@ -132,7 +111,7 @@ function loadProjects(currentLanguage) {
                 <h3 class="project-title">${project.title[currentLanguage]}</h3>
                 <p class="project-description">${project.description[currentLanguage]}</p>
                 <div class="project-actions">
-                    <a href="${project.pdfUrl}" target="_blank" class="btn-primary">
+                    <a href="${project.pdfUrl}" target="_blank" rel="noopener" class="btn-primary">
                         <i class="fas fa-file-pdf"></i> ${viewText}
                     </a>
                 </div>
@@ -142,3 +121,18 @@ function loadProjects(currentLanguage) {
         projectsGrid.appendChild(projectCard);
     });
 }
+
+// Update projects content based on current language
+function updateProjectsContent() {
+    const lang = typeof window.currentLanguage !== 'undefined' ? window.currentLanguage : 'fa';
+    renderProjects(lang);
+
+}
+
+// Expose update function for global language switcher
+window.updateProjectsContent = updateProjectsContent;
+
+// Initialize projects page
+document.addEventListener('DOMContentLoaded', function() {
+    updateProjectsContent();
+});

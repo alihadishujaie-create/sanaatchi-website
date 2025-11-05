@@ -1,5 +1,11 @@
 let currentLanguage = 'fa';
 
+// Preserve the original meta description so language changes do not mutate SEO copy
+const metaDescriptionTag = document.querySelector('meta[name="description"]');
+if (metaDescriptionTag && !metaDescriptionTag.dataset.originalContent) {
+    metaDescriptionTag.dataset.originalContent = metaDescriptionTag.getAttribute('content') || '';
+}
+
 // Phase data
 const phases = {
     1: {
@@ -823,9 +829,26 @@ const translations = {
     'contact': { fa: 'تماس با ما', en: 'Contact Us', ps: 'مونږ سره اړیکه' },
     'free-consultation': { fa: 'مشاوره رایگان', en: 'Free Consultation', ps: 'رایگان مشوره' },
     'projects': { fa: 'پروژه های تحت کار', en: 'Projects Underway', ps: 'د کار پروژې' },
-    
+    'nav-cargo': { fa: 'کارگو و حمل‌ونقل', en: 'Cargo & Transport', ps: 'کارګو او ترانسپورت' },
+    'nav_cargo': { fa: 'کارگو و حمل‌ونقل', en: 'Cargo & Transport', ps: 'کارګو او ترانسپورت' },
+    'projects-back-link': {
+        fa: 'بازگشت به صفحه اصلی',
+        en: 'Back to Home',
+        ps: 'بېرته کورپاڼې ته'
+    },
+    'projects-page-title': {
+        fa: 'پروژه های تحت کار',
+        en: 'Projects Underway',
+        ps: 'د روانو پروژو لست'
+    },
+    'projects-page-subtitle': {
+        fa: 'در اینجا می‌توانید لیست پروژه‌های در حال اجرا و تکمیل شده ما را مشاهده کنید',
+        en: 'Explore our current and completed industrial projects across Afghanistan',
+        ps: 'دلته زموږ روان او بشپړ صنعتي پروژې وینئ'
+    },
+
     // Hero
-    'hero-title': { 
+    'hero-title': {
         fa: 'چشم‌انداز شما، تخصص ما', 
         en: 'Your Vision, Our Expertise',
         ps: 'ستاسو لید، زموږ تخصص'
@@ -1100,11 +1123,6 @@ function switchLanguage(lang) {
         // Update all translatable elements
         updateTranslations('en');
         
-        // Update meta description
-        const metaDescription = document.querySelector('meta[name="description"]');
-        if (metaDescription) {
-            metaDescription.setAttribute('content', 'Providing comprehensive industrial solutions from design to production in Afghanistan');
-        }
     } else if (lang === 'ps') {
         html.setAttribute('lang', 'ps');
         html.setAttribute('dir', 'rtl');
@@ -1114,11 +1132,6 @@ function switchLanguage(lang) {
         // Update all translatable elements
         updateTranslations('ps');
         
-        // Update meta description
-        const metaDescription = document.querySelector('meta[name="description"]');
-        if (metaDescription) {
-            metaDescription.setAttribute('content', 'د ډیزاین څخه تولید پورې په افغانستان کې بشپړ صنعت حل لارے وړاندیز کول');
-        }
     } else {
         html.setAttribute('lang', 'fa');
         html.setAttribute('dir', 'rtl');
@@ -1128,11 +1141,6 @@ function switchLanguage(lang) {
         // Update all translatable elements
         updateTranslations('fa');
         
-        // Update meta description
-        const metaDescription = document.querySelector('meta[name="description"]');
-        if (metaDescription) {
-            metaDescription.setAttribute('content', 'ارائه راهکارهای کامل صنعتی از طراحی تا تولید در افغانستان');
-        }
     }
     
     // Update the language selector to reflect the current language
@@ -1190,6 +1198,17 @@ function updateTranslations(lang) {
 
     if (typeof updateProductionLineCards === 'function') {
         updateProductionLineCards();
+    }
+    if (typeof updateCargoContent === 'function') {
+        const metaTag = document.querySelector('meta[name="description"]');
+        const originalContent = metaTag ? (metaTag.dataset.originalContent || metaTag.getAttribute('content') || '') : '';
+        updateCargoContent();
+        if (metaTag) {
+            metaTag.setAttribute('content', originalContent);
+        }
+    }
+    if (typeof updateProjectsContent === 'function') {
+        updateProjectsContent();
     }
 }
 

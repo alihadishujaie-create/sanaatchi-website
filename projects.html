@@ -8,184 +8,187 @@
     <meta name="description" content="پروژه‌های در حال اجرا و تکمیل‌شده شرکت چشم‌انداز صنعتی صنعتچی در افغانستان">
     <meta name="keywords" content="پروژه صنعتی افغانستان, Sanaatchi, راهکارهای صنعتی">
     <meta name="author" content="Sanaatchi Industrial Vision">
-    
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/styles.css">
-    
-    <style>
-        .projects-section {
-            padding: 80px 0;
-            background: #f8fafc;
-        }
-        
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-        
-        .project-card {
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            overflow: hidden;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-        }
-        
-        .project-header {
-            background: linear-gradient(135deg, #1a3a5f, #f26522);
-            color: white;
-            padding: 20px;
-            position: relative;
-            height: 80px;
-        }
-        
-        .project-status {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            background: rgba(255,255,255,0.2);
-            padding: 5px 10px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-        }
-        
-        .project-status.in-progress {
-            background: rgba(255,193,7,0.8);
-        }
-        
-        .project-status.completed {
-            background: rgba(40,167,69,0.8);
-        }
-        
-        .project-body {
-            padding: 25px;
-        }
-        
-        .project-title {
-            font-size: 1.3rem;
-            color: #1a3a5f;
-            margin-bottom: 15px;
-        }
-        
-        .project-description {
-            color: #666;
-            margin-bottom: 20px;
-            line-height: 1.6;
-        }
-        
-        .project-actions {
-            display: flex;
-            gap: 10px;
-            margin-top: 20px;
-        }
-        
-        .project-actions a {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            padding: 8px 15px;
-            border-radius: 5px;
-            font-size: 0.9rem;
-            text-decoration: none;
-            transition: all 0.3s;
-        }
-        
-        .project-actions .btn-primary {
-            background: #f26522;
-            color: white;
-        }
-        
-        .project-actions .btn-primary:hover {
-            background: #d9561e;
-        }
-        
-        .project-actions .btn-secondary {
-            background: #1a3a5f;
-            color: white;
-        }
-        
-        .project-actions .btn-secondary:hover {
-            background: #0d2440;
-        }
-        
-        .back-to-home {
-            display: inline-block;
-            margin-bottom: 30px;
-            color: #1a3a5f;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        
-        .back-to-home:hover {
-            color: #f26522;
-        }
-        
-        .back-to-home i {
-            margin-left: 5px;
-        }
-        
-        .page-header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-        
-        .page-header h1 {
-            font-size: 2.5rem;
-            color: #1a3a5f;
-            margin-bottom: 15px;
-        }
-        
-        .page-header p {
-            font-size: 1.2rem;
-            color: #666;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        @media (max-width: 768px) {
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .page-header h1 {
-                font-size: 2rem;
-            }
-            
-            .page-header p {
-                font-size: 1rem;
-            }
-        }
-    </style>
 </head>
 <body>
-    <div class="container">
-        <a href="index.html" class="back-to-home"><i class="fas fa-arrow-right"></i> بازگشت به صفحه اصلی</a>
-        
-        <div class="page-header">
-            <h1>پروژه های تحت کار</h1>
-            <p>در اینجا می‌توانید لیست پروژه‌های در حال اجرا و تکمیل شده ما را مشاهده کنید</p>
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-link">پرش به محتوای اصلی</a>
+
+    <header class="header">
+        <div class="container">
+            <div class="main-header">
+                <img src="images/logo.png" alt="لوگوی Sanaatchi Industrial Vision" class="logo">
+
+                <nav class="nav" id="mainNav">
+                    <a href="index.html#hero" onclick="return goToIndex(event, 'hero')" data-translate="home">خانه</a>
+                    <a href="index.html#services" onclick="return goToIndex(event, 'services')" data-translate="services">خدمات</a>
+                    <a href="index.html#why-aiv" onclick="return goToIndex(event, 'why-aiv')" data-translate="about">درباره ما</a>
+                    <a href="projects.html" class="active" data-translate="projects">پروژه های تحت کار</a>
+                    <a href="cargo.html" data-translate="nav_cargo">کارگو و حمل‌ونقل</a>
+                    <a href="index.html#footer" onclick="return goToIndex(event, 'footer')" data-translate="contact">تماس با ما</a>
+                </nav>
+
+                <div class="header-actions">
+                    <select class="language-switcher" onchange="switchLanguage(this.value)" aria-label="تغییر زبان">
+                        <option value="fa">فارسی (fa)</option>
+                        <option value="en">English (en)</option>
+                        <option value="ps">پشتو (ps)</option>
+                    </select>
+                    <button class="cta-button" onclick="showContactModal()" aria-label="درخواست مشاوره رایگان" data-translate="free-consultation">مشاوره رایگان</button>
+                    <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="منوی موبایل">☰</button>
+                </div>
+            </div>
         </div>
-        
-        <section class="projects-section">
-            <div class="projects-grid" id="projectsGrid">
-                <!-- Projects will be loaded here by JavaScript -->
+    </header>
+
+    <main id="main-content">
+        <section class="projects-hero">
+            <div class="container">
+                <a href="index.html#hero" onclick="return goToIndex(event, 'hero')" class="projects-back-link">
+                    <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                    <span data-translate="projects-back-link">بازگشت به صفحه اصلی</span>
+                </a>
+                <div class="projects-hero-content">
+                    <h1 data-translate="projects-page-title">پروژه های تحت کار</h1>
+                    <p data-translate="projects-page-subtitle">در اینجا می‌توانید لیست پروژه‌های در حال اجرا و تکمیل شده ما را مشاهده کنید</p>
+                </div>
             </div>
         </section>
+
+        <section class="projects-section">
+            <div class="container">
+                <div class="projects-grid" id="projectsGrid" aria-live="polite"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <img src="images/logo.png" alt="لوگوی Sanaatchi" class="footer-logo">
+                    <p data-translate="footer-description">شرکت چشم‌انداز صنعتی صنعتچی راهکارهای جامع صنعتی برای افغانستان ارائه می‌دهد؛ از طراحی و راه‌اندازی خط تولید و فابریکه تا تأمین ماشین‌آلات نو و دست دوم، مواد اولیه و خدمات کارگو.</p>
+                    <div class="footer-social">
+                        <a href="https://www.linkedin.com" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.facebook.com" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.youtube.com" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.twitter.com" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <h3 data-translate="footer-quick-links">لینک های سریع</h3>
+                    <ul>
+                        <li><a href="index.html#hero" onclick="return goToIndex(event, 'hero')" data-translate="home">خانه</a></li>
+                        <li><a href="index.html#services" onclick="return goToIndex(event, 'services')" data-translate="services">خدمات</a></li>
+                        <li><a href="index.html#categories" onclick="return goToIndex(event, 'categories')" data-translate="categories-title">دسته بندی ها</a></li>
+                        <li><a href="production-lines.html" data-translate="cat-production-lines">خطوط تولید و راه‌اندازی فابریکه</a></li>
+                        <li><a href="projects.html" class="active" data-translate="projects">پروژه های تحت کار</a></li>
+                        <li><a href="cargo.html" data-translate="nav_cargo">کارگو و حمل‌ونقل</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact">
+                    <h3 data-translate="footer-contact-title">دفتر افغانستان</h3>
+                    <p data-translate="footer-contact-desc">برای مشاوره رایگان و دریافت اطلاعات بیشتر با ما در ارتباط باشید</p>
+                    <div class="phone-container">
+                        <a href="tel:+93779819820" class="phone-link" data-translate="afghanistan-phone">+93 779 819 820</a>
+                        <a href="https://wa.me/93779819820" target="_blank" rel="noopener" class="whatsapp-link" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                    <p data-translate="footer-email">info@sanaatchi.com</p>
+                    <p data-translate="footer-address">کابل، افغانستان</p>
+                </div>
+
+                <div class="footer-newsletter">
+                    <h3 data-translate="footer-newsletter-title">عضویت در خبرنامه</h3>
+                    <p data-translate="footer-newsletter-desc">جدیدترین پروژه‌ها، ماشین‌آلات و فرصت‌های سرمایه‌گذاری را دریافت کنید</p>
+                    <form id="newsletterForm">
+                        <input type="email" placeholder="ایمیل خود را وارد کنید" aria-label="ایمیل" required>
+                        <button type="submit" data-translate="footer-newsletter-btn">عضویت</button>
+                    </form>
+                    <h3 data-translate="footer-china-office">دفتر هماهنگی چین</h3>
+                    <p data-translate="china-phone">+86 188 8888 8888</p>
+                    <p data-translate="china-email">china@sanaatchi.com</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p data-translate="footer-hours">شنبه تا پنج‌شنبه: ۹:۰۰ صبح تا ۶:۰۰ عصر</p>
+                <p data-translate="copyright">&copy; 2024 Sanaatchi Industrial Vision. تمامی حقوق محفوظ است.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Sanaatchi Industrial Vision",
+      "url": "https://sanaatchi.com",
+      "logo": "https://sanaatchi.com/images/logo.png",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+93779819820",
+        "contactType": "customer service",
+        "availableLanguage": ["Persian", "English", "Pashto"]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "Afghanistan",
+        "addressLocality": "Kabul"
+      }
+    }
+    </script>
+
+    <!-- Phase Modal -->
+    <div id="phaseModal" class="modal" role="dialog" aria-labelledby="phaseModalTitle" aria-hidden="true">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal()" aria-label="بستن">&times;</span>
+            <div id="modalContent"></div>
+        </div>
     </div>
-    
+
+    <!-- Contact Modal -->
+    <div id="contactModal" class="modal" role="dialog" aria-labelledby="contactModalTitle" aria-hidden="true">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeContactModal()" aria-label="بستن">&times;</span>
+            <div id="contactModalContent"></div>
+        </div>
+    </div>
+
+    <!-- Sales Contact Modal -->
+    <div id="salesContactModal" class="modal" role="dialog" aria-labelledby="salesContactModalTitle" aria-hidden="true">
+        <div class="modal-content sales-contact-modal-content">
+            <span class="modal-close" onclick="closeSalesContactModal()" aria-label="بستن">&times;</span>
+            <div id="salesContactModalContent"></div>
+        </div>
+    </div>
+
+    <!-- Search Result Modal -->
+    <div id="searchResultModal" class="modal" role="dialog" aria-labelledby="searchResultModalTitle" aria-hidden="true">
+        <div class="modal-content search-result-modal-content">
+            <span class="modal-close" onclick="closeSearchResultModal()" aria-label="بستن">&times;</span>
+            <div id="searchResultModalContent"></div>
+        </div>
+    </div>
+
+    <!-- Equipment Modal -->
+    <div id="equipmentModal" class="modal" role="dialog" aria-labelledby="equipmentModalTitle" aria-hidden="true">
+        <div class="equipment-modal-content">
+            <span class="modal-close" onclick="closeEquipmentModal()" aria-label="بستن">&times;</span>
+            <div id="equipmentModalContent"></div>
+        </div>
+    </div>
+
     <!-- Custom JS -->
+    <script src="js/script.js"></script>
     <script src="js/projects.js"></script>
 </body>
 </html>
