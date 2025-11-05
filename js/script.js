@@ -1,5 +1,11 @@
 let currentLanguage = 'fa';
 
+// Preserve the original meta description so language changes do not mutate SEO copy
+const metaDescriptionTag = document.querySelector('meta[name="description"]');
+if (metaDescriptionTag && !metaDescriptionTag.dataset.originalContent) {
+    metaDescriptionTag.dataset.originalContent = metaDescriptionTag.getAttribute('content') || '';
+}
+
 // Phase data
 const phases = {
     1: {
@@ -360,14 +366,14 @@ const categories = {
     'machinery-parts': {
         icon: '🔧',
         title: {
-            fa: 'قطعات و لوازم ماشین آلات',
-            en: 'Machinery Parts & Accessories',
-            ps: 'د ماشینونو برخې او لوازم'
+            fa: 'پرزه‌جات ماشین‌آلات',
+            en: 'Machinery Spare Parts',
+            ps: 'د ماشینونو پرزې'
         },
         description: {
-            fa: 'قطعات یدکی و لوازم جانبی برای انواع ماشین آلات صنعتی. از تسمه نقاله تا یاتاقان‌های صنعتی.',
-            en: 'Spare parts and accessories for various industrial machinery. From conveyor belts to industrial bearings.',
-            ps: 'د مختلفو صنعت ماشینونو لپاره ځانګړي برخې او لوازم. له تسمه نقاله څخه تر صنعت برګرونو پورې.'
+            fa: 'پرزه‌جات صنعتی برای نگهداری خطوط تولید؛ شامل یاتاقان، فیلتر، تسمه، قالب و گیربکس.',
+            en: 'Industrial spare parts that keep production lines running: bearings, filters, belts, moulds and gearboxes.',
+            ps: 'صنعتي پرزې چې د تولید لینونه فعال ساتي؛ یاتاقانونه، فلټرونه، تسمې، قالبونه او ګیربکسونه.'
         }
     },
     'paper-pulp': {
@@ -414,19 +420,71 @@ const categories = {
         title: {
             fa: 'ماشین آلات دست دوم',
             en: 'Second Hand Machinery',
-            ps: 'د دوهم ځل لپاره ماشینونه'
+            ps: 'د دوهم لاس ماشینونه'
         },
         description: {
             fa: 'ماشین آلات صنعتی دست دوم با کیفیت تضمین شده. از بازسازی تا گارانتی، با قیمت مناسب.',
             en: 'Second-hand industrial machinery with guaranteed quality. From refurbishment to warranty, at affordable prices.',
-            ps: 'د تضمین شوي کیفیت سره د دوهم ځل لپاره صنعت ماشینونه. له بیا جوړولو څخه تر تضمین پورې، د مناسبه قیمت سره.'
+            ps: 'د تضمین شوي کیفیت سره د دوهم لاس صنعت ماشینونه. له بیا جوړولو څخه تر تضمین پورې، د مناسبه قیمت سره.'
         }
     }
 };
 
 // Category keywords for search
 const categoryKeywords = {
-    'production-lines': ['خط تولید', 'Production Lines', 'تولید', 'production', 'تولید لینې', 'Production Lines'],
+    'production-lines': [
+        'خطوط تولید و راه‌اندازی فابریکه',
+        'Production Lines & Factory Setup',
+        'راه‌اندازی فابریکه',
+        'production lines',
+        'تولید لینونه',
+        'factory setup',
+        'Food Processing Lines',
+        'خطوط تولید مواد غذایی',
+        'د خوراکي موادو د پروسس لینونه',
+        'Consumer Goods Lines',
+        'خطوط تولید کالاهای مصرفی',
+        'د مصرفي توکو د تولید لینونه',
+        'Construction Materials Lines',
+        'خطوط تولید مصالح ساختمانی',
+        'د ساختماني موادو د تولید لینونه',
+        'Textile & Garments Lines',
+        'خطوط تولید نساجی و پوشاک',
+        'د نساجۍ او جامو د تولید لینونه',
+        'Industrial Recycling Lines',
+        'خطوط بازیافت صنعتی',
+        'صنعتي د بیاکارونې لینونه',
+        'Disposable Products Lines',
+        'خطوط تولید محصولات یکبارمصرف',
+        'د یو ځل کارېدونکو محصولاتو د تولید لینونه',
+        'Light Industry Lines',
+        'خطوط صنایع سبک و چوبی',
+        'د سپکو صنعتونو د تولید لینونه',
+        'Cereal Production Line',
+        'خط تولید غلات صبحانه',
+        'د ناشته د غلو تولید لین',
+        'Baby Food / Cerelac Line',
+        'خط تولید غذای کودک/سرلاک',
+        'د ماشوم د خوراک / سرلاک تولید لین',
+        'Dairy Processing Line',
+        'خط فرآوری لبنیات',
+        'د لبنیاتو د پروسس لین',
+        'Beverage Production Line',
+        'خط تولید نوشیدنی',
+        'د مشروباتو تولید لین',
+        'Bakery & Biscuits Line',
+        'خط تولید نان و بیسکویت',
+        'د ډوډۍ او بسکټو تولید لین',
+        'Meat Processing Line',
+        'خط فرآوری گوشت',
+        'د غوښې د پروسس لین',
+        'Fruit & Vegetable Processing Line',
+        'خط فرآوری میوه و سبزی',
+        'د میوو او سبزیو د پروسس لین',
+        'Edible Oil Production Line',
+        'خط تولید روغن خوراکی',
+        'د خوراکي غوړ د تولید لین'
+    ],
     'printing-machines': ['دستگاه های چاپ', 'Printing Machines', 'چاپ', 'printing', 'چاپ ماشینونه', 'Printing Machines'],
     'sports-equipment': ['تجهیزات ورزشی', 'Sports Equipment', 'ورزشی', 'sports', 'ورزشي تجهیزات', 'Sports Equipment'],
     'metallurgy': ['متالورژی و فلزکاری', 'Metallurgy & Metalworking', 'متالورژی', 'metallurgy', 'فلزکاری', 'metalworking', 'د فلزاتو علم', 'metallurgy', 'فلزکاري', 'metalworking'],
@@ -441,40 +499,55 @@ const categoryKeywords = {
     'tanks': ['مخازن', 'Tanks', 'مخزن', 'tank', 'تنکونه', 'Tanks'],
     'packaging': ['بسته بندی', 'Packaging', 'بسته', 'package', 'بسته بندي', 'Packaging'],
     'chemical-pharma': ['ماشین آلات شیمیایی و دارویی', 'Chemical & Pharmaceutical Machinery', 'شیمیایی', 'chemical', 'دارویی', 'pharmaceutical', 'د کیمیاوي او درملو ماشینونه', 'Chemical & Pharmaceutical Machinery'],
-    'machinery-parts': ['قطعات و لوازم ماشین آلات', 'Machinery Parts & Accessories', 'قطعات', 'parts', 'د ماشینونو برخې', 'Machinery Parts & Accessories'],
+    'machinery-parts': ['پرزه‌جات ماشین‌آلات', 'Machinery Spare Parts', 'پرزه‌جات', 'spare parts', 'د ماشینونو پرزې', 'Machinery Spare Parts'],
     'paper-pulp': ['ماشین آلات کاغذ و سلولوز', 'Paper & Pulp Machinery', 'کاغذ', 'paper', 'د کاغذ او پالپ ماشینونه', 'Paper & Pulp Machinery'],
     'electronic-machinery': ['ماشین آلات الکترونیکی', 'Electronic Machinery', 'الکترونیک', 'electronic', 'د الکترونیک ماشینونه', 'Electronic Machinery'],
     'telecom-parts': ['قطعات و لوازم اینترنتی و مخابراتی', 'Internet & Telecommunication Parts', 'مخابراتی', 'telecom', 'اینترنت', 'internet', 'د انترنت او مخابراتي برخې', 'Internet & Telecommunication Parts'],
-    'second-hand': ['ماشین آلات دست دوم', 'Second Hand Machinery', 'دست دوم', 'second hand', 'د دوهم ځل لپاره ماشینونه', 'Second Hand Machinery']
+    'second-hand': ['ماشین آلات دست دوم', 'Second Hand Machinery', 'دست دوم', 'second hand', 'د دوهم لاس ماشینونه', 'Second Hand Machinery']
 };
 
 // Equipment data for each category
 const equipmentData = {
     'production-lines': [
         {
-            name: { fa: 'خط تولید نمک‌گیری', en: 'Salt Refinery Production Line', ps: 'د نمک تصفیه تولید لین' },
-            description: { fa: 'خط تولید کامل برای تصفیه و بسته‌بندی نمک', en: 'Complete production line for salt refining and packaging', ps: 'د نمک تصفیه او بسته بندي لپاره بشپړ تولید لین' },
-            pdfUrl: 'pdfs/production-lines/salt-refinery.pdf'
+            name: { fa: 'خط تولید غلات صبحانه', en: 'Cereal Production Line', ps: 'د ناشته د غلو تولید لین' },
+            description: { fa: 'فرآیند کامل از پاک‌سازی دانه تا اکسترود، روکش و بسته‌بندی غلات صبحانه.', en: 'Complete process from grain cleaning to extrusion, coating and cereal packaging.', ps: 'له دانې پاکولو، اکسترود او پوښښ څخه تر د ناشته غلو بسته بندۍ پورې بشپړ بهیر.' },
+            pdfUrl: 'pdfs/production-lines/food-processing/cereal-production-line.pdf'
         },
         {
-            name: { fa: 'خط تولید میله‌کشی', en: 'Wire Rod Production Line', ps: 'د سیم میله تولید لین' },
-            description: { fa: 'خط تولید برای تولید میله‌های فلزی', en: 'Production line for manufacturing metal wire rods', ps: 'د فلزي سیم میلو تولید لپاره تولید لین' },
-            pdfUrl: 'pdfs/production-lines/wire-rod.pdf'
+            name: { fa: 'خط تولید غذای کودک/سرلاک', en: 'Baby Food / Cerelac Line', ps: 'د ماشوم د خوراک / سرلاک تولید لین' },
+            description: { fa: 'میکسینگ دقیق، خشک‌کن غلتکی و بسته‌بندی استریل غذای کودک.', en: 'Precise mixing, drum drying and sterile packing for baby cereal products.', ps: 'د ماشوم د خوراک لپاره دقیق مخلوط، ډرم وچول او استریل بسته بندي.' },
+            pdfUrl: 'pdfs/production-lines/food-processing/baby-food-cerelac-line.pdf'
         },
         {
-            name: { fa: 'خط تولید آدامس', en: 'Gum Production Line', ps: 'د لوسي تولید لین' },
-            description: { fa: 'خط تولید کامل برای انواع آدامس', en: 'Complete production line for various types of gum', ps: 'د مختلف ډولو لوسو لپاره بشپړ تولید لین' },
-            pdfUrl: 'pdfs/production-lines/gum.pdf'
+            name: { fa: 'خط فرآوری لبنیات', en: 'Dairy Processing Line', ps: 'د لبنیاتو د پروسس لین' },
+            description: { fa: 'پاستوریزه، هموژنیزه، تخمیر و بسته‌بندی شیر، ماست و پنیر.', en: 'Pasteurisation, homogenisation, fermentation and packaging for milk, yogurt and cheese.', ps: 'د شیدو، مستې او پنیر لپاره پاستور، هموژن، تخمیر او بسته بندي.' },
+            pdfUrl: 'pdfs/production-lines/food-processing/dairy-processing-line.pdf'
         },
         {
-            name: { fa: 'خط تولید پنبه', en: 'Cotton Production Line', ps: 'د پنبه تولید لین' },
-            description: { fa: 'خط تولید برای پردازش پنبه', en: 'Production line for cotton processing', ps: 'د پنبه پروسس لپاره تولید لین' },
-            pdfUrl: 'pdfs/production-lines/cotton.pdf'
+            name: { fa: 'خط تولید نوشیدنی', en: 'Beverage Production Line', ps: 'د مشروباتو تولید لین' },
+            description: { fa: 'اختلاط، تصفیه، پرکن و درب‌بندی نوشیدنی‌های غیرالکلی.', en: 'Mixing, filtration, filling and capping for non-alcoholic beverages.', ps: 'د غیر الکولي مشروباتو لپاره مخلوط، فلټراسیون، ډکول او سرپوش کول.' },
+            pdfUrl: 'pdfs/production-lines/food-processing/beverage-production-line.pdf'
         },
         {
-            name: { fa: 'خط تولید چیپس سیب‌زمینی', en: 'Potato Chips Production Line', ps: 'د سیب‌زمیني چیپس تولید لین' },
-            description: { fa: 'خط تولید برای چیپس سیب‌زمینی', en: 'Production line for potato chips', ps: 'د سیب‌زمیني چیپس لپاره تولید لین' },
-            pdfUrl: 'pdfs/production-lines/potato-chips.pdf'
+            name: { fa: 'خط تولید نان و بیسکویت', en: 'Bakery & Biscuits Line', ps: 'د ډوډۍ او بسکټو تولید لین' },
+            description: { fa: 'آماده‌سازی خمیر، تخمیرکنترل‌شده، پخت، سردکردن و بسته‌بندی نان و بیسکویت.', en: 'Dough preparation, controlled proofing, baking, cooling and packing for bread and biscuits.', ps: 'د خمیر چمتووالی، کنټرول شوی پخېدنه، پخول، یخول او بسته بندي د ډوډۍ او بسکټو لپاره.' },
+            pdfUrl: 'pdfs/production-lines/food-processing/bakery-biscuits-line.pdf'
+        },
+        {
+            name: { fa: 'خط فرآوری گوشت', en: 'Meat Processing Line', ps: 'د غوښې د پروسس لین' },
+            description: { fa: 'خردکردن، مخلوط، پرکن، دودی و بسته‌بندی محصولات گوشتی.', en: 'Grinding, blending, filling, smoking and packaging for processed meat products.', ps: 'د غوښې د محصولاتو لپاره ګراینډ، مخلوط، ډکول، سګرټ کول او بسته بندي.' },
+            pdfUrl: 'pdfs/production-lines/food-processing/meat-processing-line.pdf'
+        },
+        {
+            name: { fa: 'خط فرآوری میوه و سبزی', en: 'Fruit & Vegetable Processing Line', ps: 'د میوو او سبزیو د پروسس لین' },
+            description: { fa: 'شستشو، پوست‌گیری، برش، بلانچینگ و بسته‌بندی تازه یا IQF.', en: 'Washing, peeling, cutting, blanching and packaging for fresh or IQF produce.', ps: 'د میوو او سبزیو لپاره مینځل، پوستکښ، پرې کول، بلانچینګ او بسته بندي.' },
+            pdfUrl: 'pdfs/production-lines/food-processing/fruit-vegetable-processing-line.pdf'
+        },
+        {
+            name: { fa: 'خط تولید روغن خوراکی', en: 'Edible Oil Production Line', ps: 'د خوراکي غوړ د تولید لین' },
+            description: { fa: 'استخراج، تصفیه، بی‌بو کردن و بسته‌بندی انواع روغن نباتی.', en: 'Extraction, refining, deodorising and bottling of vegetable cooking oils.', ps: 'د خوراکي نباتي غوړ لپاره استخراج، تصفیه، بوی لرې کول او بوتل بندي.' },
+            pdfUrl: 'pdfs/production-lines/food-processing/edible-oil-line.pdf'
         }
     ],
     'printing-machines': [
@@ -720,28 +793,28 @@ const equipmentData = {
     ],
     'second-hand': [
         {
-            name: { fa: 'دستگاه چاپ دست دوم', en: 'Second Hand Printing Machine', ps: 'د دوهم ځل لپاره چاپ ماشین' },
-            description: { fa: 'دستگاه چاپ دست دوم با کیفیت عالی', en: 'Second hand printing machine in excellent condition', ps: 'د عالي حالت سره د دوهم ځل لپاره چاپ ماشین' },
+            name: { fa: 'دستگاه چاپ دست دوم', en: 'Second Hand Printing Machine', ps: 'د دوهم لاس چاپ ماشین' },
+            description: { fa: 'دستگاه چاپ دست دوم با کیفیت عالی', en: 'Second hand printing machine in excellent condition', ps: 'د عالي حالت سره د دوهم لاس چاپ ماشین' },
             pdfUrl: 'pdfs/second-hand/printing-machine.pdf'
         },
         {
-            name: { fa: 'دستگاه بسته‌بندی دست دوم', en: 'Second Hand Packaging Machine', ps: 'د دوهم ځل لپاره بسته بندي ماشین' },
-            description: { fa: 'دستگاه بسته‌بندی دست دوم با کیفیت عالی', en: 'Second hand packaging machine in excellent condition', ps: 'د عالي حالت سره د دوهم ځل لپاره بسته بندي ماشین' },
+            name: { fa: 'دستگاه بسته‌بندی دست دوم', en: 'Second Hand Packaging Machine', ps: 'د دوهم لاس بسته بندي ماشین' },
+            description: { fa: 'دستگاه بسته‌بندی دست دوم با کیفیت عالی', en: 'Second hand packaging machine in excellent condition', ps: 'د عالي حالت سره د دوهم لاس بسته بندي ماشین' },
             pdfUrl: 'pdfs/second-hand/packaging-machine.pdf'
         },
         {
-            name: { fa: 'اکسکاویتور دست دوم', en: 'Second Hand Excavator', ps: 'د دوهم ځل لپاره اکسکاویټر' },
-            description: { fa: 'اکسکاویتور دست دوم با کیفیت عالی', en: 'Second hand excavator in excellent condition', ps: 'د عالي حالت سره د دوهم ځل لپاره اکسکاویټر' },
+            name: { fa: 'اکسکاویتور دست دوم', en: 'Second Hand Excavator', ps: 'د دوهم لاس اکسکاویټر' },
+            description: { fa: 'اکسکاویتور دست دوم با کیفیت عالی', en: 'Second hand excavator in excellent condition', ps: 'د عالي حالت سره د دوهم لاس اکسکاویټر' },
             pdfUrl: 'pdfs/second-hand/excavator.pdf'
         },
         {
-            name: { fa: 'کرین دست دوم', en: 'Second Hand Crane', ps: 'د دوهم ځل لپاره کرین' },
-            description: { fa: 'کرین دست دوم با کیفیت عالی', en: 'Second hand crane in excellent condition', ps: 'د عالي حالت سره د دوهم ځل لپاره کرین' },
+            name: { fa: 'کرین دست دوم', en: 'Second Hand Crane', ps: 'د دوهم لاس کرین' },
+            description: { fa: 'کرین دست دوم با کیفیت عالی', en: 'Second hand crane in excellent condition', ps: 'د عالي حالت سره د دوهم لاس کرین' },
             pdfUrl: 'pdfs/second-hand/crane.pdf'
         },
         {
-            name: { fa: 'کامیون و کامیونت دست دوم', en: 'Second Hand Trucks and Lorries', ps: 'د دوهم ځل لپاره ټرک او لوري' },
-            description: { fa: 'کامیون و کامیونت دست دوم با کیفیت عالی', en: 'Second hand trucks and lorries in excellent condition', ps: 'د عالي حالت سره د دوهم ځل لپاره ټرک او لوري' },
+            name: { fa: 'کامیون و کامیونت دست دوم', en: 'Second Hand Trucks and Lorries', ps: 'د دوهم لاس ټرک او لاري' },
+            description: { fa: 'کامیون و کامیونت دست دوم با کیفیت عالی', en: 'Second hand trucks and lorries in excellent condition', ps: 'د عالي حالت سره د دوهم لاس ټرک او لاري' },
             pdfUrl: 'pdfs/second-hand/trucks-lorries.pdf'
         }
     ]
@@ -756,17 +829,34 @@ const translations = {
     'contact': { fa: 'تماس با ما', en: 'Contact Us', ps: 'مونږ سره اړیکه' },
     'free-consultation': { fa: 'مشاوره رایگان', en: 'Free Consultation', ps: 'رایگان مشوره' },
     'projects': { fa: 'پروژه های تحت کار', en: 'Projects Underway', ps: 'د کار پروژې' },
-    
+    'nav-cargo': { fa: 'کارگو و حمل‌ونقل', en: 'Cargo & Transport', ps: 'کارګو او ترانسپورت' },
+    'nav_cargo': { fa: 'کارگو و حمل‌ونقل', en: 'Cargo & Transport', ps: 'کارګو او ترانسپورت' },
+    'projects-back-link': {
+        fa: 'بازگشت به صفحه اصلی',
+        en: 'Back to Home',
+        ps: 'بېرته کورپاڼې ته'
+    },
+    'projects-page-title': {
+        fa: 'پروژه های تحت کار',
+        en: 'Projects Underway',
+        ps: 'د روانو پروژو لست'
+    },
+    'projects-page-subtitle': {
+        fa: 'در اینجا می‌توانید لیست پروژه‌های در حال اجرا و تکمیل شده ما را مشاهده کنید',
+        en: 'Explore our current and completed industrial projects across Afghanistan',
+        ps: 'دلته زموږ روان او بشپړ صنعتي پروژې وینئ'
+    },
+
     // Hero
-    'hero-title': { 
+    'hero-title': {
         fa: 'چشم‌انداز شما، تخصص ما', 
         en: 'Your Vision, Our Expertise',
         ps: 'ستاسو لید، زموږ تخصص'
     },
-    'hero-subtitle': { 
-        fa: 'ارائه راهکارهای کامل صنعتی از طراحی تا تولید در افغانستان', 
-        en: 'Providing comprehensive industrial solutions from design to production in Afghanistan',
-        ps: 'د ډیزاین څخه تولید پورې په افغانستان کې بشپړ صنعت حل لارې وړاندیز کول'
+    'hero-subtitle': {
+        fa: 'راهکارهای صنعتی و راه‌اندازی فابریکه در افغانستان',
+        en: 'Industrial Solutions & Factory Setup for Afghanistan',
+        ps: 'صنعتي حل لارې او په افغانستان کې د فابریکو جوړول'
     },
     'hero-quote': { 
         fa: '«شما فقط ایده و سرمایه را بیاورید، ما از طراحی اولیه تا اولین محصول خروجی از خط تولید، تمام مسیر را مدیریت می‌کنیم.»', 
@@ -775,6 +865,7 @@ const translations = {
     },
     'start-cooperation': { fa: 'شروع همکاری', en: 'Start Cooperation', ps: 'همکاري پیل کړئ' },
     'view-services': { fa: 'مشاهده خدمات', en: 'View Services', ps: 'خدمتونه وګورئ' },
+    'view-production-lines': { fa: 'مشاهده خطوط تولید', en: 'View Production Lines', ps: 'د تولید لینونه وګورئ' },
     
     // Search
     'search-title': { 
@@ -851,12 +942,22 @@ const translations = {
     
     // Categories
     'categories-title': { fa: 'دسته بندی ها', en: 'Categories', ps: 'کټګوري' },
-    'categories-subtitle': { 
-        fa: 'از لیست دسته بندی ها به محصولات مورد نظر خود دسترسی پیدا کنید', 
+    'categories-subtitle': {
+        fa: 'از لیست دسته بندی ها به محصولات مورد نظر خود دسترسی پیدا کنید',
         en: 'Access your desired products from the category list',
         ps: 'د کټګوري لیست څخه خپل غوښتلي محصولاتو ته لاسرسی پیدا کړئ'
     },
-    'cat-production-lines': { fa: 'خط تولید', en: 'Production Lines', ps: 'تولید لینې' },
+    'production-lines-categories-title': {
+        fa: 'گروه‌های خطوط تولید',
+        en: 'Production Line Groups',
+        ps: 'د تولید لینونو ډلې'
+    },
+    'production-lines-categories-subtitle': {
+        fa: 'صنایع کلیدی را انتخاب کنید تا خطوط تولید و فایل‌های فنی مرتبط نمایش داده شود',
+        en: 'Select a key industry to view the related production lines and technical PDFs',
+        ps: 'کلیدي صنعت وټاکئ تر څو اړوند تولیدي لینونه او تخنیکي PDF فایلونه ښکاره شي'
+    },
+    'cat-production-lines': { fa: 'خطوط تولید و راه‌اندازی فابریکه', en: 'Production Lines & Factory Setup', ps: 'د تولید لینونه او د فابریکې جوړول' },
     'cat-printing-machines': { fa: 'دستگاه های چاپ', en: 'Printing Machines', ps: 'چاپ ماشینونه' },
     'cat-sports-equipment': { fa: 'تجهیزات ورزشی', en: 'Sports Equipment', ps: 'ورزشي تجهیزات' },
     'cat-metallurgy-full': { fa: 'متالورژی و فلزکاری', en: 'Metallurgy & Metalworking', ps: 'د فلزاتو علم او فلزکاري' },
@@ -871,30 +972,30 @@ const translations = {
     'cat-tanks': { fa: 'مخازن', en: 'Tanks', ps: 'تنکونه' },
     'cat-packaging': { fa: 'بسته بندی', en: 'Packaging', ps: 'بسته بندي' },
     'cat-chemical-pharma': { fa: 'ماشین آلات شیمیایی و دارویی', en: 'Chemical & Pharmaceutical Machinery', ps: 'د کیمیاوي او درملو ماشینونه' },
-    'cat-machinery-parts': { fa: 'قطعات و لوازم ماشین آلات', en: 'Machinery Parts & Accessories', ps: 'د ماشینونو برخې او لوازم' },
+    'cat-machinery-parts': { fa: 'پرزه‌جات ماشین‌آلات', en: 'Machinery Spare Parts', ps: 'د ماشینونو پرزې' },
     'cat-paper-pulp': { fa: 'ماشین آلات کاغذ و سلولوز', en: 'Paper & Pulp Machinery', ps: 'د کاغذ او پالپ ماشینونه' },
     'cat-electronic-machinery': { fa: 'ماشین آلات الکترونیکی', en: 'Electronic Machinery', ps: 'د الکترونیک ماشینونه' },
     'cat-telecom-parts': { fa: 'قطعات و لوازم اینترنتی و مخابراتی', en: 'Internet & Telecommunication Parts', ps: 'د انترنت او مخابراتي برخې' },
-    'cat-second-hand': { fa: 'ماشین آلات دست دوم', en: 'Second Hand Machinery', ps: 'د دوهم ځل لپاره ماشینونه' },
+    'cat-second-hand': { fa: 'ماشین آلات دست دوم', en: 'Second Hand Machinery', ps: 'د دوهم لاس ماشینونه' },
     
     // CTA
-    'cta-title': { 
-        fa: 'قول ما در AIV ساده است', 
-        en: 'Our Promise at AIV is Simple',
-        ps: 'زموږ په AIV کې ژمنه ساده ده'
+    'cta-title': {
+        fa: 'قول ما در صنعتچی ساده است',
+        en: 'Our Promise at Sanaatchi is Simple',
+        ps: 'زموږ په صنعتچي کې ژمنه ساده ده'
     },
-    'cta-subtitle': { 
-        fa: 'شما چشم‌انداز را مشخص کنید، ما تمام مسیر تحقق آن را هموار می‌سازیم', 
-        en: 'You define the vision, we pave the entire path to its realization',
-        ps: 'تاسو لید مشخصوئ، موږ د هغه تحقیق لپاره ټوله لاره هموار کوو'
+    'cta-subtitle': {
+        fa: 'شما چشم‌انداز را مشخص کنید، ما مسیر تحقق آن را از طراحی تا تولید هموار می‌کنیم',
+        en: 'You define the vision; we pave the path from design to first production',
+        ps: 'تاسو لید ټاکئ، موږ له ډیزاین څخه تر تولید پورې ټول ګامونه هوار کوو'
     },
     
-    // Why AIV
-    'why-title': { fa: 'چرا AIV؟', en: 'Why AIV?', ps: 'وله AIV؟' },
-    'why-subtitle': { 
-        fa: 'مزایای همکاری با گروه چشم‌انداز صنعتی آریا', 
-        en: 'Benefits of partnering with Arya Industrial Vision Group',
-        ps: 'د آریا صنعت لید ډلې سره همکاري ګټې'
+    // Why Sanaatchi
+    'why-title': { fa: 'چرا صنعتچی؟', en: 'Why Sanaatchi?', ps: 'ولې صنعتچي؟' },
+    'why-subtitle': {
+        fa: 'مزایای همکاری با شرکت چشم‌انداز صنعتی صنعتچی',
+        en: 'Benefits of partnering with Sanaatchi Industrial Vision',
+        ps: 'له صنعتچي صنعتي لید سره د همکارۍ ګټې'
     },
     'why-trust': { fa: 'اعتماد مشتریان', en: 'Customer Trust', ps: 'د پیرودونکی اعتماد' },
     'why-trust-desc': { 
@@ -922,10 +1023,10 @@ const translations = {
     },
     
     // Footer
-    'footer-description': { 
-        fa: 'گروه چشم‌انداز صنعتی آریا با سال‌ها تجربه در زمینه ارائه راهکارهای صنعتی، آماده همکاری با شماست. ما از ایده تا اجرا، تمام مراحل پروژه‌های صنعتی شما را مدیریت می‌کنیم.', 
-        en: 'Arya Industrial Vision Group with years of experience in providing industrial solutions is ready to cooperate with you. We manage all stages of your industrial projects from idea to implementation.',
-        ps: 'د صنعت لید آریا ډله چې د صنعت حل لارو د وړاندیز کولو په برخه کې د کلونو تجربه لري، د تاسو سره همکاري ته اماده ده. موږ له نظره څخه تر اجرا پورې د ستاسو د صنعت پروژو ټول پړاو مدیریت کوو.'
+    'footer-description': {
+        fa: 'شرکت چشم‌انداز صنعتی صنعتچی با سال‌ها تجربه در ارائه راهکارهای صنعتی، از مشاوره تا راه‌اندازی فابریکه در کنار شماست و تمام مراحل پروژه‌های صنعتی را مدیریت می‌کند.',
+        en: 'Sanaatchi Industrial Vision combines years of experience delivering industrial solutions, supporting you from consultation to factory commissioning across every project stage.',
+        ps: 'صنعتچي صنعتي لید د صنعتي حل لارو په وړاندې کولو کې د کلونو تجربې سره، له سلا مشورې څخه تر د فابریکې فعالولو پورې له تاسو سره ولاړ دی او د پروژو ټول پړاوونه سمبالوي.'
     },
     'newsletter-title': { fa: 'عضویت در خبرنامه', en: 'Newsletter Subscription', ps: 'خبرنامه اشتراک' },
     'newsletter-subtitle': { 
@@ -941,7 +1042,7 @@ const translations = {
     'newsletter-btn': { fa: 'عضویت', en: 'Subscribe', ps: 'اشتراک' },
     'afghanistan-office': { fa: 'دفتر افغانستان', en: 'Afghanistan Office', ps: 'د افغانستان دفتر' },
     'afghanistan-address': { fa: 'کابل، افغانستان', en: 'Kabul, Afghanistan', ps: 'کابل، افغانستان' },
-    'afghanistan-phone': { fa: '+۹۳ ۷۹ ۹۲۱ ۶۱۱۹', en: '+93 79 921 6119', ps: '+93 79 921 6119' },
+    'afghanistan-phone': { fa: '+۹۳ ۷۷۹ ۸۱۹ ۸۲۰', en: '+93 779 819 820', ps: '+93 779 819 820' },
     'afghanistan-hours1': { 
         fa: 'شنبه تا چهارشنبه: ۹:۰۰ تا ۱۷:۰۰', 
         en: 'Saturday to Wednesday: 9:00 to 17:00',
@@ -960,10 +1061,10 @@ const translations = {
         en: 'Saturday to Friday: 9:00 to 18:00',
         ps: 'شنبه څخه جمعه پورې: ۹:۰۰ څخه ۱۸:۰۰ پورې'
     },
-    'copyright': { 
-        fa: '&copy; 2024 Arya Industrial Vision Group. تمامی حقوق محفوظ است.', 
-        en: '&copy; 2024 Arya Industrial Vision Group. All rights reserved.',
-        ps: '&copy; 2024 Arya Industrial Vision Group. ټول حقونه خوندي دي.'
+    'copyright': {
+        fa: '&copy; 2024 Sanaatchi Industrial Vision. تمامی حقوق محفوظ است.',
+        en: '&copy; 2024 Sanaatchi Industrial Vision. All rights reserved.',
+        ps: '&copy; 2024 Sanaatchi Industrial Vision. ټول حقونه خوندي دي.'
     },
     
     // New translation for the search result button
@@ -1022,11 +1123,6 @@ function switchLanguage(lang) {
         // Update all translatable elements
         updateTranslations('en');
         
-        // Update meta description
-        const metaDescription = document.querySelector('meta[name="description"]');
-        if (metaDescription) {
-            metaDescription.setAttribute('content', 'Providing comprehensive industrial solutions from design to production in Afghanistan');
-        }
     } else if (lang === 'ps') {
         html.setAttribute('lang', 'ps');
         html.setAttribute('dir', 'rtl');
@@ -1036,11 +1132,6 @@ function switchLanguage(lang) {
         // Update all translatable elements
         updateTranslations('ps');
         
-        // Update meta description
-        const metaDescription = document.querySelector('meta[name="description"]');
-        if (metaDescription) {
-            metaDescription.setAttribute('content', 'د ډیزاین څخه تولید پورې په افغانستان کې بشپړ صنعت حل لارے وړاندیز کول');
-        }
     } else {
         html.setAttribute('lang', 'fa');
         html.setAttribute('dir', 'rtl');
@@ -1050,11 +1141,6 @@ function switchLanguage(lang) {
         // Update all translatable elements
         updateTranslations('fa');
         
-        // Update meta description
-        const metaDescription = document.querySelector('meta[name="description"]');
-        if (metaDescription) {
-            metaDescription.setAttribute('content', 'ارائه راهکارهای کامل صنعتی از طراحی تا تولید در افغانستان');
-        }
     }
     
     // Update the language selector to reflect the current language
@@ -1109,6 +1195,21 @@ function updateTranslations(lang) {
             }
         }
     });
+
+    if (typeof updateProductionLineCards === 'function') {
+        updateProductionLineCards();
+    }
+    if (typeof updateCargoContent === 'function') {
+        const metaTag = document.querySelector('meta[name="description"]');
+        const originalContent = metaTag ? (metaTag.dataset.originalContent || metaTag.getAttribute('content') || '') : '';
+        updateCargoContent();
+        if (metaTag) {
+            metaTag.setAttribute('content', originalContent);
+        }
+    }
+    if (typeof updateProjectsContent === 'function') {
+        updateProjectsContent();
+    }
 }
 
 // Scroll to section
@@ -1118,7 +1219,23 @@ function scrollToSection(sectionId) {
         section.scrollIntoView({ behavior: 'smooth' });
         // Close mobile menu if open
         closeMobileMenu();
+    } else {
+        closeMobileMenu();
+        window.location.href = `index.html#${sectionId}`;
     }
+}
+
+function goToIndex(event, sectionId) {
+    if (event) {
+        event.preventDefault();
+    }
+    closeMobileMenu();
+    window.location.href = `index.html#${sectionId}`;
+    return false;
+}
+
+function navigateToProductionLines() {
+    window.location.href = 'production-lines.html';
 }
 
 // Show phase modal
@@ -1266,15 +1383,15 @@ function showSalesContactModal() {
                 <div class="contact-item">
                     <i class="fas fa-phone"></i>
                     <div class="phone-container">
-                        <a href="tel:+93799216119" class="phone-link">+۹۳ ۷۹ ۹۲۱ ۶۱۱۹</a>
-                        <a href="https://wa.me/93799216119" target="_blank" class="whatsapp-link" title="WhatsApp" aria-label="واتساپ">
+                        <a href="tel:+93779819820" class="phone-link">+۹۳ ۷۷۹ ۸۱۹ ۸۲۰</a>
+                        <a href="https://wa.me/93779819820" target="_blank" class="whatsapp-link" title="WhatsApp" aria-label="واتساپ">
                             <i class="fab fa-whatsapp"></i>
                         </a>
                     </div>
                 </div>
                 <div class="contact-item">
                     <i class="fas fa-envelope"></i>
-                    <span>info@aivgroup.com</span>
+                    <span>info@sanaatchi.com</span>
                 </div>
                 <div class="contact-item">
                     <i class="fas fa-clock"></i>
@@ -1297,7 +1414,7 @@ function showSalesContactModal() {
                 </div>
                 <div class="contact-item">
                     <i class="fas fa-envelope"></i>
-                    <span>china@aivgroup.com</span>
+                    <span>china@sanaatchi.com</span>
                 </div>
                 <div class="contact-item">
                     <i class="fas fa-clock"></i>
@@ -1442,8 +1559,39 @@ function showRelatedEquipments(categoryId) {
                         currentLanguage === 'ps' ? 'بیرته' : 'Back';
         
         // Get equipment data for this category
-        const categoryEquipmentData = equipmentData[categoryId] || [];
-        
+        let categoryEquipmentData = equipmentData[categoryId] || [];
+
+        if (categoryId === 'production-lines' && typeof productionLines !== 'undefined') {
+            const aggregated = [];
+
+            if (typeof productionLineGroups !== 'undefined') {
+                productionLineGroups.forEach(group => {
+                    const lines = (productionLines[group.id] && productionLines[group.id].lines) || [];
+                    lines.forEach(line => {
+                        aggregated.push({
+                            name: line.title,
+                            description: line.description,
+                            pdfUrl: line.pdfUrl
+                        });
+                    });
+                });
+            } else {
+                Object.values(productionLines).forEach(group => {
+                    (group.lines || []).forEach(line => {
+                        aggregated.push({
+                            name: line.title,
+                            description: line.description,
+                            pdfUrl: line.pdfUrl
+                        });
+                    });
+                });
+            }
+
+            if (aggregated.length > 0) {
+                categoryEquipmentData = aggregated;
+            }
+        }
+
         let equipmentHtml = '';
         if (categoryEquipmentData.length > 0) {
             equipmentHtml = '<div class="equipment-grid">';
