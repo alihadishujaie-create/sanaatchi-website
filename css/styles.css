@@ -545,6 +545,14 @@ body {
     border: 2px solid transparent;
     border: none;
 }
+.category-card.is-active {
+    background: #1a3a5f;
+    color: #ffffff;
+    box-shadow: 0 15px 35px rgba(26,58,95,0.2);
+}
+.category-card.is-active p {
+    color: #ffffff;
+}
 .category-card:hover {
     background: #1a3a5f;
     color: white;
@@ -1261,6 +1269,218 @@ body {
     background: #f8fafc;
     border-radius: 10px;
     border: 1px dashed #ddd;
+}
+
+/* Second-hand page */
+.second-hand-hero .hero-bg {
+    background-image:
+        linear-gradient(135deg, rgba(26,58,95,0.85) 0%, rgba(242,101,34,0.78) 100%),
+        url('../images/background.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-blend-mode: overlay;
+}
+
+.second-hand-page .hero-points {
+    list-style: none;
+    padding: 0;
+    margin: 25px 0;
+    display: grid;
+    gap: 12px;
+}
+
+.second-hand-page .hero-points li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255,255,255,0.9);
+    color: #1a3a5f;
+    border-radius: 10px;
+    padding: 12px 18px;
+    font-weight: 500;
+    line-height: 1.6;
+}
+
+.second-hand-page .hero-points li::before {
+    content: '✔';
+    color: #f26522;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-right: 8px;
+}
+
+[dir="ltr"] .second-hand-page .hero-points li::before {
+    margin-right: 0;
+    margin-left: 8px;
+}
+
+.second-hand-inventory .equipment-card {
+    text-align: initial;
+}
+
+.second-hand-inventory-category {
+    margin-bottom: 50px;
+}
+
+.second-hand-inventory-category:last-of-type {
+    margin-bottom: 0;
+}
+
+.inventory-category-title {
+    font-size: 1.5rem;
+    color: #1a3a5f;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.second-hand-card .equipment-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border-radius: 12px;
+    background: rgba(242,101,34,0.12);
+    color: #f26522;
+    font-size: 1.8rem;
+    margin-bottom: 18px;
+}
+
+.second-hand-page .equipment-card h4 {
+    text-align: inherit;
+}
+
+.second-hand-page .equipment-card p {
+    text-align: inherit;
+}
+
+.second-hand-meta {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.second-hand-meta li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    background: rgba(26,58,95,0.06);
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 0.9rem;
+}
+
+.second-hand-meta li span {
+    color: #4a5568;
+    font-weight: 500;
+}
+
+.second-hand-meta li strong {
+    color: #1a3a5f;
+    font-weight: 700;
+}
+
+.second-hand-overview {
+    padding: 80px 0;
+    background: #f8fafc;
+}
+
+.second-hand-process {
+    padding: 80px 0;
+    background: #ffffff;
+}
+
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.process-card {
+    background: #f8fafc;
+    border-radius: 15px;
+    padding: 25px 25px 30px;
+    box-shadow: 0 20px 40px rgba(26,58,95,0.12);
+    border: 1px solid rgba(26,58,95,0.08);
+    position: relative;
+    overflow: hidden;
+}
+
+.process-card .step {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #f26522;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.process-card h3 {
+    color: #1a3a5f;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.process-card p {
+    color: #4a5568;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.process-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.process-card ul li {
+    position: relative;
+    padding-right: 18px;
+    margin-bottom: 10px;
+    color: #2d3748;
+    line-height: 1.6;
+}
+
+[dir="ltr"] .process-card ul li {
+    padding-right: 0;
+    padding-left: 18px;
+}
+
+.process-card ul li::before {
+    content: '•';
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #f26522;
+    font-weight: 700;
+}
+
+[dir="ltr"] .process-card ul li::before {
+    right: auto;
+    left: 0;
+}
+
+@media (max-width: 768px) {
+    .second-hand-page .hero-points {
+        margin: 20px 0;
+    }
+
+    .second-hand-page .hero-points li {
+        padding: 10px 14px;
+    }
 }
 
 /* Mobile Footer Styles */
