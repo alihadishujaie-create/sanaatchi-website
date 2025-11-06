@@ -827,47 +827,6 @@
         return `<ul class="second-hand-meta">${items}</ul>`;
     }
 
-    function renderInventory(lang) {
-        const title = document.getElementById('rawMaterialsInventoryTitle');
-        const subtitle = document.getElementById('rawMaterialsInventorySubtitle');
-        const grid = document.getElementById('rawMaterialsInventoryGrid');
-
-        if (title) {
-            title.textContent = content.inventoryTitle[lang] || content.inventoryTitle.fa;
-        }
-        if (subtitle) {
-            subtitle.textContent = content.inventorySubtitle[lang] || content.inventorySubtitle.fa;
-        }
-        if (!grid) {
-            return;
-        }
-
-        grid.innerHTML = '';
-        inventory.forEach(item => {
-            const card = document.createElement('div');
-            card.className = 'equipment-card';
-            const viewText = lang === 'fa' ? 'مشاهده PDF' : (lang === 'ps' ? 'PDF وګورئ' : 'View PDF');
-            const downloadText = lang === 'fa' ? 'دانلود' : (lang === 'ps' ? 'ډاونلوډ' : 'Download');
-
-            card.innerHTML = `
-                <div class="equipment-icon">${item.icon || '📄'}</div>
-                <h4>${item.name[lang] || item.name.fa}</h4>
-                <p>${item.description[lang] || item.description.fa}</p>
-                ${buildMetaList(item.meta, lang)}
-                <div class="equipment-actions">
-                    <a href="${item.pdfUrl}" target="_blank" class="btn-primary">
-                        <i class="fas fa-file-pdf"></i> ${viewText}
-                    </a>
-                    <a href="${item.pdfUrl}" download class="btn-secondary">
-                        <i class="fas fa-download"></i> ${downloadText}
-                    </a>
-                </div>
-            `;
-
-            grid.appendChild(card);
-        });
-    }
-
     function renderAssurance(lang) {
         const title = document.getElementById('rawMaterialsAssuranceTitle');
         const subtitle = document.getElementById('rawMaterialsAssuranceSubtitle');
@@ -1023,7 +982,6 @@
         setHero(lang);
         renderHighlights(lang);
         renderCategories(lang);
-        renderInventory(lang);
         renderAssurance(lang);
         renderProcess(lang);
     }
