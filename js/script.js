@@ -430,6 +430,411 @@ const categories = {
     }
 };
 
+const secondHandInventoryData = [
+    {
+        id: 'heidelberg-sm74',
+        category: 'printing-machines',
+        icon: '🖶',
+        name: {
+            fa: 'چاپ افست Heidelberg SM74 پنج رنگ',
+            en: 'Heidelberg SM74 Five-Colour Offset Press',
+            ps: 'هايدلبرګ SM74 پنځه رنګه افست ماشین'
+        },
+        description: {
+            fa: 'دستگاه چاپ افست ۲۰۱۸ با سرویس کامل و اتوماسیون صفحه‌گذاری.',
+            en: '2018 offset press with full service history and automated plate change.',
+            ps: 'د ۲۰۱۸ افست چاپ ماشین د بشپړ خدمت تاریخ او اتومات پلیټ بدلون سره.'
+        },
+        meta: [
+            {
+                label: { fa: 'سال ساخت', en: 'Year', ps: 'د جوړېدو کال' },
+                value: { fa: '۲۰۱۸ (اروپا)', en: '2018 (EU)', ps: '۲۰۱۸ (اروپا)' }
+            },
+            {
+                label: { fa: 'ساعت کارکرد', en: 'Run Hours', ps: 'کاري ساعتونه' },
+                value: { fa: '۴٬۵۰۰ ساعت', en: '4,500 h', ps: '۴٬۵۰۰ ساعته' }
+            },
+            {
+                label: { fa: 'همراه با', en: 'Includes', ps: 'شامل' },
+                value: { fa: 'CIP3، کولر پلیت، ست کامل غلتک', en: 'CIP3, plate chiller, full roller set', ps: 'CIP3، د پلیټ یخچال، د رولر بشپړ سیټ' }
+            }
+        ],
+        pdfUrl: 'pdfs/second-hand/printing-machines/heidelberg-speedmaster.pdf'
+    },
+    {
+        id: 'flexo-roll-printing',
+        category: 'printing-machines',
+        icon: '🖨️',
+        name: {
+            fa: 'ماشین چاپ فلکسو رول‌به‌رول ۶ رنگ',
+            en: 'Six-Colour Roll-to-Roll Flexo Press',
+            ps: 'شپږ رنګه د رول څخه رول فلیکسو ماشین'
+        },
+        description: {
+            fa: 'چاپ فلکسو با رجیستر اتوماتیک و خشک‌کن UV برای فیلم، فویل و لیبل.',
+            en: 'Flexo press with automatic register control and UV dryers for film, foil, and labels.',
+            ps: 'فلیکسو چاپ چې د اتومات ثبت کنټرول او UV وچوونکي لري د فلم، فویل او لیبل لپاره.'
+        },
+        meta: [
+            {
+                label: { fa: 'عرض چاپ', en: 'Web Width', ps: 'د چاپ سور' },
+                value: { fa: '۱٬۳۰۰ میلی‌متر', en: '1,300 mm', ps: '۱٬۳۰۰ ملي متر' }
+            },
+            {
+                label: { fa: 'سرعت تولید', en: 'Production Speed', ps: 'د تولید سرعت' },
+                value: { fa: '۱۵۰ متر/دقیقه', en: '150 m/min', ps: '۱۵۰ متره/دقیقه' }
+            }
+        ],
+        pdfUrl: 'pdfs/second-hand/printing-machines/printing-machine.pdf'
+    },
+    {
+        id: 'combibloc-aseptic-filler',
+        category: 'food-beverage',
+        icon: '📦',
+        name: {
+            fa: 'دستگاه پرکن آسپتیک Combibloc',
+            en: 'Combibloc Aseptic Filler',
+            ps: 'کمبی بلاک سترېل ډکونکی'
+        },
+        description: {
+            fa: 'پرکن آسپتیک ۱۲٬۰۰۰ بطری/ساعت با سیستم CIP و استریلیزاسیون بخار.',
+            en: '12,000 bph aseptic filler with CIP circuit and steam sterilisation.',
+            ps: '۱۲٬۰۰۰ بوتله/ساعت سترېل ډکونکی د CIP او د بخار سترېلایزیشن سره.'
+        },
+        meta: [
+            {
+                label: { fa: 'ظرفیت', en: 'Capacity', ps: 'ظرفیت' },
+                value: { fa: '۱۲٬۰۰۰ بطری/ساعت', en: '12,000 bph', ps: '۱۲٬۰۰۰ بوتله/ساعت' }
+            },
+            {
+                label: { fa: 'مدارک', en: 'Documentation', ps: 'اسناد' },
+                value: { fa: 'Manual، تست IQ/OQ', en: 'Manual, IQ/OQ validation', ps: 'لارښود او د IQ/OQ تایید' }
+            }
+        ],
+        pdfUrl: 'pdfs/second-hand/food-beverage/aseptic-filler.pdf'
+    },
+    {
+        id: 'dairy-uht-line',
+        category: 'food-beverage',
+        icon: '🥛',
+        name: {
+            fa: 'خط کامل UHT لبنیات',
+            en: 'Complete Dairy UHT Line',
+            ps: 'د لبنیاتو بشپړ UHT لاین'
+        },
+        description: {
+            fa: 'پاستور، استریلیزاسیون و بسته‌بندی تتراپک برای شیر و محصولات طعم‌دار.',
+            en: 'Pasteurisation, sterilisation, and Tetra Pak packaging for milk and flavoured drinks.',
+            ps: 'د شیدو او خوند لرونکو مشروباتو لپاره پاستور، سترېلایز او ټیټراپک بسته بندي.'
+        },
+        meta: [
+            {
+                label: { fa: 'ظرفیت', en: 'Capacity', ps: 'ظرفیت' },
+                value: { fa: '۸٬۰۰۰ لیتر/ساعت', en: '8,000 L/h', ps: '۸٬۰۰۰ لیتر/ساعت' }
+            },
+            {
+                label: { fa: 'سال ساخت', en: 'Year', ps: 'کال' },
+                value: { fa: '۲۰۱۶', en: '2016', ps: '۲۰۱۶' }
+            }
+        ],
+        pdfUrl: 'pdfs/second-hand/food-beverage/dairy-uht-line.pdf'
+    },
+    {
+        id: 'krones-carbonated-line',
+        category: 'food-beverage',
+        icon: '🍾',
+        name: {
+            fa: 'لاین نوشابه گازدار Krones',
+            en: 'Krones Carbonated Beverage Line',
+            ps: 'د کرونیس ګاز لرونکي مشروباتو لاین'
+        },
+        description: {
+            fa: 'بلندر، پرکن ایزوبر و بسته‌بندی کارتن برای نوشابه و انرژی‌درینک.',
+            en: 'Blending, isobaric filling, and carton packing for soft and energy drinks.',
+            ps: 'د نرم او انرژي مشروباتو لپاره مخلوط، ایزو باریک ډکول او د کارتن بسته بندي.'
+        },
+        meta: [
+            {
+                label: { fa: 'ظرفیت', en: 'Throughput', ps: 'تولید' },
+                value: { fa: '۱۸٬۰۰۰ بطری/ساعت', en: '18,000 bph', ps: '۱۸٬۰۰۰ بوتله/ساعت' }
+            },
+            {
+                label: { fa: 'پک کامل', en: 'Package', ps: 'بسته' },
+                value: { fa: 'پرکن، لیبل‌زن، شرینک‌پک', en: 'Filler, labeller, shrink packer', ps: 'ډکونکی، لیبلر، شرینک پیکر' }
+            }
+        ],
+        pdfUrl: 'pdfs/second-hand/food-beverage/carbonated-beverage-line.pdf'
+    },
+    {
+        id: 'liquid-packaging-line',
+        category: 'food-beverage',
+        icon: '🥤',
+        name: {
+            fa: 'خط بسته‌بندی مایعات چندنازله',
+            en: 'Multi-Nozzle Liquid Packaging Line',
+            ps: 'د مایعاتو څو نوزله بسته بندۍ لاین'
+        },
+        description: {
+            fa: 'پرکن پیستونی، درب‌بند و شرینک‌پک برای سس، روغن و نوشیدنی.',
+            en: 'Piston filler, capper, and shrink packer for sauces, oils, and beverages.',
+            ps: 'د پسټون ډکونکي، سرپوش او شرینک پیک سره د ساس، غوړ او مشروباتو لپاره.'
+        },
+        meta: [
+            {
+                label: { fa: 'ظرفیت', en: 'Capacity', ps: 'ظرفیت' },
+                value: { fa: '۳٬۶۰۰ بطری/ساعت', en: '3,600 bph', ps: '۳٬۶۰۰ بوتله/ساعت' }
+            },
+            {
+                label: { fa: 'قابلیت بسته‌بندی', en: 'Packaging Formats', ps: 'د بسته بندۍ ډولونه' },
+                value: { fa: 'PET، شیشه، HDPE', en: 'PET, glass, HDPE', ps: 'PET، ښیښه، HDPE' }
+            }
+        ],
+        pdfUrl: 'pdfs/second-hand/food-beverage/packaging-machine.pdf'
+    },
+    {
+        id: 'pp-pe-pelletising',
+        category: 'plastic-processing',
+        icon: '🆗',
+        name: {
+            fa: 'لاین گرانول‌سازی PP/PE',
+            en: 'PP/PE Pelletising Line',
+            ps: 'د PP/PE ګرانول لاین'
+        },
+        description: {
+            fa: 'خردکن، شست‌وشو، اکسترودر و گرانولایزر دو مرحله‌ای بازبینی شده.',
+            en: 'Refurbished shredder, washer, twin-stage extruder, and pelletiser.',
+            ps: 'ترمیم شوی پرېکوونکی، مینځونکی، دوه پړاوه اکسترودر او ګرانول جوړوونکی.'
+        },
+        meta: [
+            {
+                label: { fa: 'خروجی', en: 'Output', ps: 'حاصل' },
+                value: { fa: '۶۰۰ کیلوگرم/ساعت', en: '600 kg/h', ps: '۶۰۰ کیلو/ساعت' }
+            },
+            {
+                label: { fa: 'تجهیزات تکمیلی', en: 'Auxiliaries', ps: 'مرستندویه' },
+                value: { fa: 'سیلو ذخیره، خشک‌کن گازگرم', en: 'Storage silos, hot-air dryer', ps: 'د ذخیرې سایلونه، د ګرمو هوا وچوونکی' }
+            }
+        ],
+        pdfUrl: 'pdfs/second-hand/plastic-processing/plastic-pelletizing.pdf'
+    },
+    {
+        id: 'pet-washing',
+        category: 'plastic-processing',
+        icon: '🧼',
+        name: {
+            fa: 'خط شست‌وشوی PET',
+            en: 'PET Washing Line',
+            ps: 'د PET د مینځلو لاین'
+        },
+        description: {
+            fa: 'تفکیک، آسیاب، وان شست‌وشو و خشک‌کن سانتریفیوژی با بازیافت آب.',
+            en: 'Sorting, grinding, hot washing, and centrifugal drying with water recovery.',
+            ps: 'جلا کول، ګراینډر، ګرمه مینځل او سانتریفیوژ وچول د اوبو بیا کارولو سره.'
+        },
+        meta: [
+            {
+                label: { fa: 'مصرف آب', en: 'Water Usage', ps: 'د اوبو مصرف' },
+                value: { fa: 'بازیافت تا ۷۰٪', en: 'Up to 70% recycle loop', ps: 'تر ۷۰٪ پورې بېرته کارېدونکې اوبه' }
+            }
+        ],
+        pdfUrl: 'pdfs/second-hand/plastic-processing/pet-washing.pdf'
+    },
+    {
+        id: 'santoni-circular-knitting',
+        category: 'textile-garments',
+        icon: '🧵',
+        name: {
+            fa: 'ماشین گردباف Santoni',
+            en: 'Santoni Circular Knitting Machine',
+            ps: 'سانتوني دایروي اوبدلو ماشین'
+        },
+        description: {
+            fa: 'قطر ۳۰ اینچ، گیج ۲۸، بازبینی کامل با سوزن و جک نو.',
+            en: '30-inch diameter, gauge 28, fully overhauled with new needles and jacks.',
+            ps: '۳۰ انچه قطر، ګیج ۲۸، په بشپړه توګه ترمیم شوی د نويو ستنو او جکونو سره.'
+        },
+        meta: [
+            {
+                label: { fa: 'سرعت', en: 'Speed', ps: 'چټکتیا' },
+                value: { fa: '۳۰ دور/دقیقه', en: '30 rpm', ps: '۳۰ دور/دقیقه' }
+            },
+            {
+                label: { fa: 'آپشن‌ها', en: 'Options', ps: 'اختیارات' },
+                value: { fa: 'Jumbo Roll Taker، سیستم روغن‌کاری اتومات', en: 'Jumbo roll taker, automatic lubrication', ps: 'د جمبو رول اخیستونکی، اتومات غوړول' }
+            }
+        ],
+        pdfUrl: 'pdfs/second-hand/textile-garments/circular-knitting.pdf'
+    },
+    {
+        id: 'automatic-garment-cutter',
+        category: 'textile-garments',
+        icon: '✂️',
+        name: {
+            fa: 'کاتر اتومات اسپردر + CAD',
+            en: 'Automatic Cutter with Spreader & CAD',
+            ps: 'اتومات پرېکوونکی له سپریډر او CAD سره'
+        },
+        description: {
+            fa: 'سیستم برش ۹۰ میلی‌متری، میز ۱۸ متری و نرم‌افزار مارکرینگ.',
+            en: '90 mm cutting system, 18 m table, and integrated CAD marker software.',
+            ps: '۹۰ ملي متري پرې کولو سیسټم، ۱۸ متره مېز او مدغم CAD مارکر سافټویر.'
+        },
+        meta: [
+            {
+                label: { fa: 'سازنده', en: 'Manufacturer', ps: 'جوړونکی' },
+                value: { fa: 'Lectra - فرانسه', en: 'Lectra - France', ps: 'لیکټرا - فرانسه' }
+            }
+        ],
+        pdfUrl: 'pdfs/second-hand/textile-garments/garment-cutting.pdf'
+    },
+    {
+        id: 'hyundai-excavator',
+        category: 'construction-machinery',
+        icon: '🚜',
+        name: {
+            fa: 'اکسکاویتور Hyundai R220LC-9S',
+            en: 'Hyundai R220LC-9S Excavator',
+            ps: 'د هیونډای R220LC-9S اکسکاویټر'
+        },
+        description: {
+            fa: 'مدل ۲۰۱۷ با بوم بلند، سیستم هیدرولیک اورجینال و آماده کار.',
+            en: '2017 model with long boom, original hydraulics, and ready-for-work condition.',
+            ps: '۲۰۱۷ ماډل د اوږده بازو، اصلي هایدرولیک او د کار لپاره چمتو حالت سره.'
+        },
+        meta: [
+            {
+                label: { fa: 'ساعت کارکرد', en: 'Run Hours', ps: 'کاري ساعتونه' },
+                value: { fa: '۵٬۸۰۰ ساعت', en: '5,800 h', ps: '۵٬۸۰۰ ساعته' }
+            },
+            {
+                label: { fa: 'ضمائم', en: 'Attachments', ps: 'ضمیمه' },
+                value: { fa: 'چکش هیدرولیک + پاکت ۱٫۲ مترمکعب', en: 'Hydraulic hammer + 1.2 m³ bucket', ps: 'هایدرولیک چکش + ۱٫۲ م³ بېلچه' }
+            }
+        ],
+        pdfUrl: 'pdfs/second-hand/construction-machinery/excavator.pdf'
+    },
+    {
+        id: 'liebherr-tower-crane',
+        category: 'construction-machinery',
+        icon: '🏗️',
+        name: {
+            fa: 'جرثقیل برجی Liebherr 132 EC-H',
+            en: 'Liebherr 132 EC-H Tower Crane',
+            ps: 'لیبهیر 132 EC-H برج کرین'
+        },
+        description: {
+            fa: 'بازه ۶۰ متری، ظرفیت ۸ تن، سرویس کامل با تمام سکشن‌ها.',
+            en: '60 m jib, 8 t capacity, fully serviced with complete mast sections.',
+            ps: '۶۰ متره بازه، ۸ ټنه ظرفیت، بشپړ سرویس او ټول ماست برخې.'
+        },
+        meta: [
+            {
+                label: { fa: 'ارتفاع آزاد', en: 'Free Height', ps: 'ازاد لوړوالی' },
+                value: { fa: '۴۵ متر', en: '45 m', ps: '۴۵ متره' }
+            }
+        ],
+        pdfUrl: 'pdfs/second-hand/construction-machinery/crane.pdf'
+    },
+    {
+        id: 'hino-truck-fleet',
+        category: 'logistics-utilities',
+        icon: '🚚',
+        name: {
+            fa: 'کامیونت‌های Hino Euro IV',
+            en: 'Hino Euro IV Truck Fleet',
+            ps: 'د هینو Euro IV لاریو بېړۍ'
+        },
+        description: {
+            fa: 'بیست دستگاه ۶ تن با سرویس کامل، آماده حمل بین‌شهری.',
+            en: 'Fleet of twenty 6-ton trucks with full service records, ready for haulage.',
+            ps: 'د شلو ۶ ټنه لاریو بېړۍ د بشپړ خدمت ریکارډونو سره، د لېږد لپاره چمتو.'
+        },
+        meta: [
+            {
+                label: { fa: 'میانگین کارکرد', en: 'Average Mileage', ps: 'اوسط مزل' },
+                value: { fa: '۱۲۰٬۰۰۰ کیلومتر', en: '120,000 km', ps: '۱۲۰٬۰۰۰ کیلومتره' }
+            },
+            {
+                label: { fa: 'امکانات', en: 'Features', ps: 'ځانګړتیاوې' },
+                value: { fa: 'GPS، صندوق یخچالی، بیمه معتبر', en: 'GPS, refrigerated box, valid insurance', ps: 'GPS، یخچالي صندوق، معتبر بیمه' }
+            }
+        ],
+        pdfUrl: 'pdfs/second-hand/logistics-utilities/trucks-lorries.pdf'
+    },
+    {
+        id: 'cummins-diesel-generator',
+        category: 'logistics-utilities',
+        icon: '🔌',
+        name: {
+            fa: 'ژنراتور دیزلی Cummins 500kVA',
+            en: 'Cummins 500 kVA Diesel Generator',
+            ps: 'د کمینز ۵۰۰ kVA ډیزلي جنراتور'
+        },
+        description: {
+            fa: 'اورهال کامل، کنترل هوشمند، مناسب برای کارخانه و پروژه‌های معدنی.',
+            en: 'Fully overhauled with smart control, ideal for plants and mining projects.',
+            ps: 'بشپړ ترمیم شوی د هوښیار کنټرول سره، د فابریکو او کانونو لپاره مناسب.'
+        },
+        meta: [
+            {
+                label: { fa: 'ساعت کارکرد', en: 'Run Hours', ps: 'کاري ساعتونه' },
+                value: { fa: '۳٬۲۰۰ ساعت پس از اورهال', en: '3,200 h after overhaul', ps: '۳٬۲۰۰ ساعته د ترمیم وروسته' }
+            },
+            {
+                label: { fa: 'شامل', en: 'Includes', ps: 'شامل' },
+                value: { fa: 'ATS، تانک دوجداره، صداگیر', en: 'ATS, double-wall fuel tank, sound enclosure', ps: 'ATS، دوه جداره د تېلو ټانک، غږ بندول' }
+            }
+        ],
+        pdfUrl: 'pdfs/second-hand/logistics-utilities/diesel-generator.pdf'
+    },
+    {
+        id: 'atlas-copco-air-compressor',
+        category: 'logistics-utilities',
+        icon: '⚙️',
+        name: {
+            fa: 'ایستگاه کمپرسور هوای Atlas Copco',
+            en: 'Atlas Copco Air Compressor Station',
+            ps: 'د اټلس کوپکو د هوا کمپرسور سټېشن'
+        },
+        description: {
+            fa: 'دو دستگاه GA90 با خشک‌کن جذبی و مخزن ۳٬۰۰۰ لیتری آماده بهره‌برداری.',
+            en: 'Twin GA90 compressors with adsorption dryer and 3,000 L receiver tank.',
+            ps: 'د GA90 دوه کمپرسورونه د جذب وچوونکي او ۳٬۰۰۰ لیتره ټانک سره.'
+        },
+        meta: [
+            {
+                label: { fa: 'فشار کاری', en: 'Working Pressure', ps: 'کاري فشار' },
+                value: { fa: '۱۲ بار', en: '12 bar', ps: '۱۲ بار' }
+            }
+        ],
+        pdfUrl: 'pdfs/second-hand/logistics-utilities/air-compressor.pdf'
+    },
+    {
+        id: 'toyota-electric-forklift',
+        category: 'logistics-utilities',
+        icon: '🪜',
+        name: {
+            fa: 'فورک‌لیف برقی ۳ تن Toyota',
+            en: 'Toyota 3 Ton Electric Forklifts',
+            ps: 'د تویوتا درې ټنه برقي فورک لیفټونه'
+        },
+        description: {
+            fa: '۱۲ دستگاه بازسازی‌شده با باتری لیتیومی و شارژر سریع.',
+            en: '12 refurbished units with lithium batteries and fast chargers.',
+            ps: '۱۲ ترمیم شوي واحدونه د لیتیوم بیټرۍ او چټک چارجرو سره.'
+        },
+        meta: [
+            {
+                label: { fa: 'ارتفاع لیفت', en: 'Lift Height', ps: 'د پورته کولو لوړوالی' },
+                value: { fa: '۶ متر', en: '6 m', ps: '۶ متره' }
+            }
+        ],
+        pdfUrl: 'pdfs/second-hand/logistics-utilities/electric-forklift.pdf'
+    }
+];
+
+window.secondHandInventoryData = secondHandInventoryData;
+
 // Category keywords for search
 const categoryKeywords = {
     'production-lines': [
@@ -791,33 +1196,11 @@ const equipmentData = {
             pdfUrl: 'pdfs/telecom-parts/network-cable.pdf'
         }
     ],
-    'second-hand': [
-        {
-            name: { fa: 'دستگاه چاپ دست دوم', en: 'Second Hand Printing Machine', ps: 'د دوهم لاس چاپ ماشین' },
-            description: { fa: 'دستگاه چاپ دست دوم با کیفیت عالی', en: 'Second hand printing machine in excellent condition', ps: 'د عالي حالت سره د دوهم لاس چاپ ماشین' },
-            pdfUrl: 'pdfs/second-hand/printing-machine.pdf'
-        },
-        {
-            name: { fa: 'دستگاه بسته‌بندی دست دوم', en: 'Second Hand Packaging Machine', ps: 'د دوهم لاس بسته بندي ماشین' },
-            description: { fa: 'دستگاه بسته‌بندی دست دوم با کیفیت عالی', en: 'Second hand packaging machine in excellent condition', ps: 'د عالي حالت سره د دوهم لاس بسته بندي ماشین' },
-            pdfUrl: 'pdfs/second-hand/packaging-machine.pdf'
-        },
-        {
-            name: { fa: 'اکسکاویتور دست دوم', en: 'Second Hand Excavator', ps: 'د دوهم لاس اکسکاویټر' },
-            description: { fa: 'اکسکاویتور دست دوم با کیفیت عالی', en: 'Second hand excavator in excellent condition', ps: 'د عالي حالت سره د دوهم لاس اکسکاویټر' },
-            pdfUrl: 'pdfs/second-hand/excavator.pdf'
-        },
-        {
-            name: { fa: 'کرین دست دوم', en: 'Second Hand Crane', ps: 'د دوهم لاس کرین' },
-            description: { fa: 'کرین دست دوم با کیفیت عالی', en: 'Second hand crane in excellent condition', ps: 'د عالي حالت سره د دوهم لاس کرین' },
-            pdfUrl: 'pdfs/second-hand/crane.pdf'
-        },
-        {
-            name: { fa: 'کامیون و کامیونت دست دوم', en: 'Second Hand Trucks and Lorries', ps: 'د دوهم لاس ټرک او لاري' },
-            description: { fa: 'کامیون و کامیونت دست دوم با کیفیت عالی', en: 'Second hand trucks and lorries in excellent condition', ps: 'د عالي حالت سره د دوهم لاس ټرک او لاري' },
-            pdfUrl: 'pdfs/second-hand/trucks-lorries.pdf'
-        }
-    ]
+    'second-hand': secondHandInventoryData.map(item => ({
+        name: item.name,
+        description: item.description,
+        pdfUrl: item.pdfUrl
+    }))
 };
 
 // Translation dictionary
@@ -1250,6 +1633,10 @@ function goToIndex(event, sectionId) {
 
 function navigateToProductionLines() {
     window.location.href = 'production-lines.html';
+}
+
+function navigateToSecondHand() {
+    window.location.href = 'second-hand.html';
 }
 
 // Show phase modal

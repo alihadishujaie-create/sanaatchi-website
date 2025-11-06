@@ -1319,6 +1319,23 @@ body {
     text-align: initial;
 }
 
+.second-hand-inventory-category {
+    margin-bottom: 50px;
+}
+
+.second-hand-inventory-category:last-of-type {
+    margin-bottom: 0;
+}
+
+.inventory-category-title {
+    font-size: 1.5rem;
+    color: #1a3a5f;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
 .second-hand-card .equipment-icon {
     display: inline-flex;
     align-items: center;

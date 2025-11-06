@@ -1,47 +1,89 @@
 (function() {
-    const heroContent = {
-        title: {
-            fa: 'ماشین‌آلات دست دوم تایید شده برای خطوط تولید افغانستان',
-            en: 'Certified Second-Hand Machinery for Afghan Production Lines',
-            ps: 'د افغانستان د تولیدي لینونو لپاره تایید شوي دوهم لاس ماشینونه'
-        },
-        subtitle: {
-            fa: 'از چاپ و بسته‌بندی تا تجهیزات سنگین؛ هر دستگاه با گزارش فنی، سرویس کامل و تضمین راه‌اندازی تحویل می‌شود.',
-            en: 'From printing and packaging to heavy equipment—each asset arrives with technical reports, full servicing, and commissioning support.',
-            ps: 'له چاپ او بسته بندۍ څخه تر درندو تجهیزاتو پورې — هر ماشین له تخنیکي راپور، بشپړ سرویس او د فعالولو ملاتړ سره سپارل کېږي.'
-        },
-        quote: {
-            fa: 'پیش از ارسال، ماشین‌آلات توسط تیم بازرسی Sanaatchi در کارخانه فروشنده تست، به‌روزرسانی و آماده نصب می‌شوند.',
-            en: 'Before shipping, every machine is inspected, upgraded, and prepared for installation by Sanaatchi’s on-site auditors.',
-            ps: 'د لېږد وړاندې هر ماشین زموږ د صنعتچي د پلټنې ټیم له خوا ازمویل، نوى کېږي او د نصب لپاره چمتو کېږي.'
-        },
-        points: [
-            {
-                fa: 'گزارش سلامت فنی و ویدیو از تست عملکرد پیش از خرید',
-                en: 'Full mechanical health report and pre-purchase test video',
-                ps: 'د میخانیکي حالت بشپړ راپور او د پېر مخکینی ټسټ ویډیو'
+    const content = {
+        hero: {
+            title: {
+                fa: 'ماشین‌آلات دست دوم تایید شده برای خطوط تولید افغانستان',
+                en: 'Certified Second-Hand Machinery for Afghan Production Lines',
+                ps: 'د افغانستان د تولیدي لینونو لپاره تایید شوي دوهم لاس ماشینونه'
             },
-            {
-                fa: 'امکان رزرو کارشناسان Sanaatchi برای بازدید حضوری کارخانه فروشنده',
-                en: 'Reserve Sanaatchi inspectors for on-site seller factory visits',
-                ps: 'د صنعتچي د تفتیش ټیم له خوا د پلورونکي فابریکې حضوري کتنه'
+            subtitle: {
+                fa: 'از چاپ و بسته‌بندی تا تجهیزات سنگین؛ هر دستگاه با گزارش فنی، سرویس کامل و تضمین راه‌اندازی تحویل می‌شود.',
+                en: 'From printing and packaging to heavy equipment—each asset arrives with technical reports, full servicing, and commissioning support.',
+                ps: 'له چاپ او بسته بندۍ څخه تر درنو تجهیزاتو پورې — هر ماشین له تخنیکي راپور، بشپړ سرویس او د فعالولو ملاتړ سره سپارل کېږي.'
             },
-            {
-                fa: 'هماهنگی حمل، گمرک و نصب دوباره در افغانستان',
-                en: 'Coordinated logistics, customs clearance, and re-installation in Afghanistan',
-                ps: 'همغږي ترانسپورت، ګمرک او په افغانستان کې بیا نصب'
+            quote: {
+                fa: 'پیش از ارسال، ماشین‌آلات توسط تیم بازرسی Sanaatchi در کارخانه فروشنده تست، به‌روزرسانی و آماده نصب می‌شوند.',
+                en: 'Before shipping, every machine is inspected, upgraded, and prepared for installation by Sanaatchi’s on-site auditors.',
+                ps: 'د لېږد وړاندې هر ماشین زموږ د صنعتچي د پلټنې ټیم له خوا ازمویل، نوى کېږي او د نصب لپاره چمتو کېږي.'
+            },
+            points: [
+                {
+                    fa: 'گزارش سلامت فنی و ویدیو از تست عملکرد پیش از خرید',
+                    en: 'Full mechanical health report and pre-purchase test video',
+                    ps: 'د میخانیکي حالت بشپړ راپور او د پېر مخکینی ټسټ ویډیو'
+                },
+                {
+                    fa: 'امکان رزرو کارشناسان Sanaatchi برای بازدید حضوری کارخانه فروشنده',
+                    en: 'Reserve Sanaatchi inspectors for on-site seller factory visits',
+                    ps: 'د صنعتچي د تفتیش ټیم له خوا د پلورونکي فابریکې حضوري کتنه'
+                },
+                {
+                    fa: 'هماهنگی حمل، گمرک و نصب دوباره در افغانستان',
+                    en: 'Coordinated logistics, customs clearance, and re-installation in Afghanistan',
+                    ps: 'همغږي ترانسپورت، ګمرک او په افغانستان کې بیا نصب'
+                }
+            ],
+            secondaryCta: {
+                fa: 'مشاهده موجودی دست دوم',
+                en: 'Browse Available Inventory',
+                ps: 'شته دوهم لاس وسایل وګورئ'
             }
-        ],
-        secondaryCta: {
-            fa: 'مشاهده موجودی دست دوم',
-            en: 'Browse Available Inventory',
-            ps: 'شته دوهم لاس وسایل وګورئ'
+        },
+        categoriesTitle: {
+            fa: 'دسته‌بندی ماشین‌آلات دست دوم',
+            en: 'Second-Hand Machinery Categories',
+            ps: 'د دوهم لاس ماشینونو کټګورۍ'
+        },
+        categoriesSubtitle: {
+            fa: 'بر اساس حوزه فعالیت تجهیزات بازبینی شده را مرور کنید.',
+            en: 'Explore refurbished equipment grouped by industrial focus.',
+            ps: 'ترمیم شوي وسایل د صنعتي تمرکز له مخې وپلټئ.'
+        },
+        inventoryTitle: {
+            fa: 'موجودی تایید شده برای تحویل سریع',
+            en: 'Certified Inventory Ready to Deploy',
+            ps: 'تاييد شوې زیرمې د چټک نصب لپاره چمتو'
+        },
+        inventorySubtitle: {
+            fa: 'برای هر دستگاه خلاصه فنی و فایل PDF دفترچه را بررسی کنید.',
+            en: 'Review technical summaries and download the dossier PDF for each asset.',
+            ps: 'د هر ماشین تخنیکي لنډیز وګورئ او د PDF دوسیه ډاونلوډ کړئ.'
+        },
+        assuranceTitle: {
+            fa: 'چه چیزی همراه ماشین‌آلات تحویل می‌دهیم؟',
+            en: 'What Accompanies Every Machine?',
+            ps: 'له هر ماشین سره څه درکوو؟'
+        },
+        assuranceSubtitle: {
+            fa: 'از بازرسی مستقل تا نصب مجدد و آموزش، Sanaatchi تمام مراحل را پوشش می‌دهد.',
+            en: 'From independent inspection to recommissioning and training, Sanaatchi covers every step.',
+            ps: 'له خپلواکې پلټنې څخه تر بیا فعالولو او روزنې پورې، صنعتچي ټول پړاوونه سمبالوي.'
+        },
+        processTitle: {
+            fa: 'روند تأمین ماشین‌آلات دست دوم',
+            en: 'Second-Hand Procurement Roadmap',
+            ps: 'د دوهم لاس تجهیزاتو د تدارک بهیر'
+        },
+        processSubtitle: {
+            fa: 'گام‌به‌گام همراه شما از تعریف نیاز تا راه‌اندازی در افغانستان.',
+            en: 'Step-by-step guidance from defining requirements to commissioning in Afghanistan.',
+            ps: 'له اړتیا ټاکلو څخه تر په افغانستان کې فعالولو پورې ګام په ګام ملاتړ.'
         }
     };
 
     const categories = [
         {
-            id: 'printing-packaging',
+            id: 'printing-machines',
             icon: '🖨️',
             title: {
                 fa: 'چاپ و بسته‌بندی',
@@ -49,9 +91,9 @@
                 ps: 'چاپ او بسته بندي'
             },
             description: {
-                fa: 'ماشین‌آلات چاپ افست، فلکسو، بسته‌بندی مایع و جامد همراه با تجهیزات تکمیل.',
-                en: 'Offset, flexo, and liquid/solid packaging machinery with finishing equipment.',
-                ps: 'د افست او فلیکسو چاپ ماشینونه او د مايع او جامد بسته بندۍ تجهیزات.'
+                fa: 'ماشین‌آلات افست، فلکسو و خطوط بسته‌بندی مایع و جامد با تجهیزات تکمیلی.',
+                en: 'Offset, flexo, and liquid or solid packaging systems with finishing equipment.',
+                ps: 'د افست، فلیکسو او د مايع او جامد بسته بندۍ سیسټمونه د بشپړولو تجهیزاتو سره.'
             }
         },
         {
@@ -63,13 +105,13 @@
                 ps: 'د خوړو او مشروباتو پروسس'
             },
             description: {
-                fa: 'خطوط پرکن، UHT، پاستوریزاسیون و بسته‌بندی برای محصولات لبنی و نوشیدنی.',
-                en: 'Filling, UHT, pasteurisation, and packaging lines for dairy and beverages.',
-                ps: 'د ډکولو، UHT، پاستور او د لبنیاتو او مشروباتو د بسته بندۍ لینونه.'
+                fa: 'خطوط پرکن، UHT، پاستور و بسته‌بندی نوشیدنی و لبنیات.',
+                en: 'Filling, UHT, pasteurisation, and packaging for beverages and dairy.',
+                ps: 'د مشروباتو او لبنیاتو لپاره د ډکولو، UHT، پاستور او بسته بندۍ لینونه.'
             }
         },
         {
-            id: 'plastic-recycling',
+            id: 'plastic-processing',
             icon: '♻️',
             title: {
                 fa: 'پلاستیک و بازیافت',
@@ -79,7 +121,7 @@
             description: {
                 fa: 'سیستم‌های شست‌وشو، خردایش و گرانول‌سازی برای PET، PP و PE.',
                 en: 'Washing, shredding, and pelletising systems for PET, PP, and PE.',
-                ps: 'د PET، PP او PE لپاره د مینځلو، پرې کولو او ګرانول کولو سیستمونه.'
+                ps: 'د PET، PP او PE لپاره د مینځلو، پرې کولو او ګرینول کولو سیستمونه.'
             }
         },
         {
@@ -91,13 +133,13 @@
                 ps: 'نساجي او کالي'
             },
             description: {
-                fa: 'ماشین‌آلات بافندگی، دوخت اتومات و تجهیزات تکمیل پوشاک.',
-                en: 'Knitting, automated sewing, and garment finishing equipment.',
-                ps: 'د اوبدلو، اتومات ګنډلو او د کالیو د بشپړولو تجهیزات.'
+                fa: 'ماشین‌آلات بافندگی، برش اتومات و تجهیزات تکمیل پوشاک.',
+                en: 'Knitting machines, automatic cutting, and garment finishing equipment.',
+                ps: 'د اوبدلو ماشینونه، اتومات پرې کول او د کالیو بشپړولو تجهیزات.'
             }
         },
         {
-            id: 'construction-heavy',
+            id: 'construction-machinery',
             icon: '🏗️',
             title: {
                 fa: 'ماشین‌آلات سنگین ساختمانی',
@@ -105,9 +147,9 @@
                 ps: 'د ودانیزو درنو ماشینونه'
             },
             description: {
-                fa: 'اکسکاویتور، جرثقیل، لودر و ماشین‌آلات عمرانی آماده کار.',
-                en: 'Excavators, cranes, loaders, and construction-ready fleets.',
-                ps: 'اکسکاویټرونه، کرینونه، لوډرونه او د ساختماني چارو لپاره چمتو ماشینونه.'
+                fa: 'اکسکاویتور، جرثقیل و تجهیزات پروژه‌های عمرانی با سرویس کامل.',
+                en: 'Excavators, cranes, and construction equipment delivered fully serviced.',
+                ps: 'اکسکاویټرونه، کرینونه او د ساختماني چارو تجهیزات د بشپړ خدمت سره.'
             }
         },
         {
@@ -120,346 +162,11 @@
             },
             description: {
                 fa: 'کامیون، لیفتراک، ژنراتور و کمپرسورهای صنعتی آماده بهره‌برداری.',
-                en: 'Truck fleets, forklifts, generators, and industrial compressors.',
-                ps: 'د ټرکونو بېړۍ، فورک لیفټونه، جنراتورونه او صنعتي کمپرسورونه.'
+                en: 'Truck fleets, forklifts, generators, and industrial compressors ready to deploy.',
+                ps: 'د ټرکونو بېړۍ، فورک لیفټونه، جنراتورونه او صنعتي کمپرسورونه د کار لپاره چمتو.'
             }
         }
     ];
-
-    const inventory = {
-        'printing-packaging': [
-            {
-                icon: '🖶',
-                name: {
-                    fa: 'Heidelberg SM74 پنج رنگ',
-                    en: 'Heidelberg SM74 Five-Colour',
-                    ps: 'هايدلبرګ SM74 پنځه رنګه'
-                },
-                summary: {
-                    fa: 'دستگاه چاپ افست ۲۰۱8 با سرویس کامل و اتوماسیون صفحه‌گذاری.',
-                    en: '2018 offset press with full service history and automated plate change.',
-                    ps: 'د ۲۰۱۸ افست چاپ ماشین چې بشپړ خدمت تاریخچه او اتومات پلیټ بدلون لري.'
-                },
-                meta: [
-                    {
-                        label: { fa: 'سال ساخت', en: 'Year', ps: 'د جوړېدو کال' },
-                        value: { fa: '2018 (اروپا)', en: '2018 (EU)', ps: '۲۰۱۸ (اروپا)' }
-                    },
-                    {
-                        label: { fa: 'ساعت کارکرد', en: 'Run Hours', ps: 'کاري ساعتونه' },
-                        value: { fa: '۴۵۰۰ ساعت', en: '4,500 h', ps: '۴۵۰۰ ساعته' }
-                    },
-                    {
-                        label: { fa: 'همراه با', en: 'Includes', ps: 'شامل' },
-                        value: { fa: 'CIP3، کولر پلیت، ست کامل غلتک', en: 'CIP3, plate chiller, full roller set', ps: 'CIP3، د پلیټ یخچال، د رولر بشپړ سیټ' }
-                    }
-                ],
-                pdfUrl: 'pdfs/second-hand/heidelberg-speedmaster.pdf'
-            },
-            {
-                icon: '📦',
-                name: {
-                    fa: 'دستگاه پرکن آسپتیک Combibloc',
-                    en: 'Combibloc Aseptic Filler',
-                    ps: 'کمبی بلاک سترېل ډکونکی'
-                },
-                summary: {
-                    fa: 'پرکن آسپتیک ۱۲۰۰۰ بطری/ساعت با CIP و استریلیزاسیون بخار.',
-                    en: '12,000 bph aseptic filler with CIP and steam sterilisation.',
-                    ps: '۱۲٬۰۰۰ بوتله/ساعت سترېل ډکونکی د CIP او د بخار سترېلایزېشن سره.'
-                },
-                meta: [
-                    {
-                        label: { fa: 'ظرفیت', en: 'Capacity', ps: 'ظرفیت' },
-                        value: { fa: '۱۲٬۰۰۰ بطری/ساعت', en: '12,000 bph', ps: '۱۲٬۰۰۰ بوتله/ساعت' }
-                    },
-                    {
-                        label: { fa: 'مدارک', en: 'Documentation', ps: 'اسناد' },
-                        value: { fa: 'Manual, Validation IQ/OQ', en: 'Manual, IQ/OQ validation', ps: 'لارښود، د IQ/OQ تایید' }
-                    }
-                ],
-                pdfUrl: 'pdfs/second-hand/aseptic-filler.pdf'
-            }
-        ],
-        'food-beverage': [
-            {
-                icon: '🥛',
-                name: {
-                    fa: 'خط کامل UHT لبنیات',
-                    en: 'Complete Dairy UHT Line',
-                    ps: 'د لبنیاتو بشپړ UHT لاین'
-                },
-                summary: {
-                    fa: 'پاستور، استریلیزاسیون و بسته‌بندی تتراپک برای شیر و شیر طعم‌دار.',
-                    en: 'Pasteurisation, sterilisation, and Tetra Pak packaging for milk products.',
-                    ps: 'د شیدو لپاره پاستور، سترېلایز او ټیټراپک بسته بندي.'
-                },
-                meta: [
-                    {
-                        label: { fa: 'ظرفیت', en: 'Capacity', ps: 'ظرفیت' },
-                        value: { fa: '۸٬۰۰۰ لیتر/ساعت', en: '8,000 L/h', ps: '۸٬۰۰۰ لیتر/ساعت' }
-                    },
-                    {
-                        label: { fa: 'سال ساخت', en: 'Year', ps: 'کال' },
-                        value: { fa: '2016', en: '2016', ps: '۲۰۱۶' }
-                    }
-                ],
-                pdfUrl: 'pdfs/second-hand/dairy-uht-line.pdf'
-            },
-            {
-                icon: '🍾',
-                name: {
-                    fa: 'لاین نوشابه گازدار Krones',
-                    en: 'Krones Carbonated Beverage Line',
-                    ps: 'د کرونیس ګاز لرونکي مشروباتو لاین'
-                },
-                summary: {
-                    fa: 'بلندر، پرکن ایزوبر و بسته‌بندی کارتن برای نوشابه و انرژی‌درینک.',
-                    en: 'Blending, isobaric filling, and carton packing for soft drinks and energy beverages.',
-                    ps: 'د نرم مشروباتو لپاره مخلوط، ایزو باریک ډکول او د کارتن بسته بندي.'
-                },
-                meta: [
-                    {
-                        label: { fa: 'ظرفیت', en: 'Throughput', ps: 'تولید' },
-                        value: { fa: '۱۸٬۰۰۰ بطری/ساعت', en: '18,000 bph', ps: '۱۸٬۰۰۰ بوتله/ساعت' }
-                    },
-                    {
-                        label: { fa: 'پک کامل', en: 'Package', ps: 'بسته' },
-                        value: { fa: 'پرکن، لیبل‌زن، شرینک‌پک', en: 'Filler, labeller, shrink packer', ps: 'ډکونکی، لیبلر، شرینک پیکر' }
-                    }
-                ],
-                pdfUrl: 'pdfs/second-hand/carbonated-beverage-line.pdf'
-            }
-        ],
-        'plastic-recycling': [
-            {
-                icon: '🆗',
-                name: {
-                    fa: 'لاین گرانول‌سازی PP/PE',
-                    en: 'PP/PE Pelletising Line',
-                    ps: 'د PP/PE ګرانول لاین'
-                },
-                summary: {
-                    fa: 'خردکن، شست‌وشو، اکسترودر و گرانولایزر دو مرحله‌ای بازبینی شده.',
-                    en: 'Refurbished shredder, washer, twin-stage extruder, and pelletiser.',
-                    ps: 'تعمیر شوی پرېکوونکی، مینځونکی، دوه پړاوه اکسترودر او ګرانول جوړوونکی.'
-                },
-                meta: [
-                    {
-                        label: { fa: 'ظرفیت', en: 'Output', ps: 'حاصل' },
-                        value: { fa: '۶۰۰ کیلوگرم/ساعت', en: '600 kg/h', ps: '۶۰۰ کیلو/ساعت' }
-                    },
-                    {
-                        label: { fa: 'تجهیزات تکمیلی', en: 'Auxiliaries', ps: 'مرستندویه' },
-                        value: { fa: 'سیلو ذخیره، سیستم خشک‌کن گازگرم', en: 'Storage silos, hot-air dryer', ps: 'د ذخیرې سایلونه، د ګرمو هوا وچوونکی' }
-                    }
-                ],
-                pdfUrl: 'pdfs/second-hand/plastic-pelletizing.pdf'
-            },
-            {
-                icon: '🧼',
-                name: {
-                    fa: 'خط شست‌وشوی PET',
-                    en: 'PET Washing Line',
-                    ps: 'د PET د مینځلو لاین'
-                },
-                summary: {
-                    fa: 'شامل تفکیک، آسیاب، وان شست‌وشو و خشک‌کن سانتریفیوژی.',
-                    en: 'Includes sorting, grinding, hot washing, and centrifugal drying.',
-                    ps: 'د جلا کولو، ګراینډر، ګرمو مینځلو او سانتریفیوژ وچولو سره.'
-                },
-                meta: [
-                    {
-                        label: { fa: 'مصرف آب', en: 'Water Usage', ps: 'د اوبو مصرف' },
-                        value: { fa: 'قابل بازیافت تا ۷۰٪', en: 'Up to 70% recycling loop', ps: 'تر ۷۰٪ پورې بېرته کارېدونکې اوبه' }
-                    }
-                ],
-                pdfUrl: 'pdfs/second-hand/pet-washing.pdf'
-            }
-        ],
-        'textile-garments': [
-            {
-                icon: '🧵',
-                name: {
-                    fa: 'ماشین بافندگی گردباف Santoni',
-                    en: 'Santoni Circular Knitting Machine',
-                    ps: 'سانتوني دایروي اوبدلو ماشین'
-                },
-                summary: {
-                    fa: 'قطر ۳۰ اینچ، گیج ۲۸، بازبینی کامل و تعویض سوزن و جک.',
-                    en: '30-inch diameter, gauge 28, fully overhauled with new needles and jacks.',
-                    ps: '۳۰ انچه قطر، ګیج ۲۸، په بشپړه توګه ترمیم شوی د نويو ستنو او جکونو سره.'
-                },
-                meta: [
-                    {
-                        label: { fa: 'سرعت', en: 'Speed', ps: 'چټکتیا' },
-                        value: { fa: '۳۰ دور/دقیقه', en: '30 rpm', ps: '۳۰ دور/دقیقه' }
-                    },
-                    {
-                        label: { fa: 'آپشن‌ها', en: 'Options', ps: 'اختیارات' },
-                        value: { fa: 'Jumbo Roll Taker, سیستم روغن‌کاری اتومات', en: 'Jumbo roll taker, automatic lubrication', ps: 'د جمبو رول اخیستونکی، اتومات غوړول' }
-                    }
-                ],
-                pdfUrl: 'pdfs/second-hand/circular-knitting.pdf'
-            },
-            {
-                icon: '✂️',
-                name: {
-                    fa: 'کاتر اتومات اسپردر + CAD',
-                    en: 'Automatic Cutter with Spreader & CAD',
-                    ps: 'اتومات پرېکوونکی له سپریډر او CAD سره'
-                },
-                summary: {
-                    fa: 'سیستم برش ۹۰ میلی‌متری، میز ۱۸ متری و نرم‌افزار مارکرینگ.',
-                    en: '90 mm cutting system, 18 m table, integrated CAD marker making.',
-                    ps: '۹۰ ملي متري پرې کولو سیسټم، ۱۸ متره مېز او یوځای CAD مارکر جوړونه.'
-                },
-                meta: [
-                    {
-                        label: { fa: 'سازنده', en: 'Manufacturer', ps: 'جوړونکی' },
-                        value: { fa: 'Lectra - فرانسه', en: 'Lectra - France', ps: 'لیکټرا - فرانسه' }
-                    }
-                ],
-                pdfUrl: 'pdfs/second-hand/garment-cutting.pdf'
-            }
-        ],
-        'construction-heavy': [
-            {
-                icon: '🚜',
-                name: {
-                    fa: 'اکسکاویتور Hyundai R220LC-9S',
-                    en: 'Hyundai R220LC-9S Excavator',
-                    ps: 'د هیونډای R220LC-9S اکسکاویټر'
-                },
-                summary: {
-                    fa: 'مدل ۲۰۱7 با بوم بلند، سیستم هیدرولیک اوریجینال و آماده کار.',
-                    en: '2017 model with long boom, original hydraulics, and ready-for-work status.',
-                    ps: '۲۰۱۷ ماډل د اوږده بازو، اصلي هایدرولیک او د کار لپاره چمتو حالت سره.'
-                },
-                meta: [
-                    {
-                        label: { fa: 'ساعت کارکرد', en: 'Run Hours', ps: 'کاري ساعتونه' },
-                        value: { fa: '۵٬۸۰۰ ساعت', en: '5,800 h', ps: '۵٬۸۰۰ ساعته' }
-                    },
-                    {
-                        label: { fa: 'ضمائم', en: 'Attachments', ps: 'ضمیمه' },
-                        value: { fa: 'چکش هیدرولیک + پاکت ۱٫۲ مترمکعب', en: 'Hydraulic hammer + 1.2 m³ bucket', ps: 'هایدرولیک چکش + ۱٫۲ م³ بېلچه' }
-                    }
-                ],
-                pdfUrl: 'pdfs/second-hand/excavator.pdf'
-            },
-            {
-                icon: '🏗️',
-                name: {
-                    fa: 'جرثقیل برجی Liebherr 132 EC-H',
-                    en: 'Liebherr 132 EC-H Tower Crane',
-                    ps: 'لیبهیر 132 EC-H د برج کرین'
-                },
-                summary: {
-                    fa: 'بازه ۶۰ متری، ظرفیت ۸ تن، سرویس کامل و تمامی سکشن‌ها موجود.',
-                    en: '60 m jib, 8 t capacity, fully serviced with complete mast sections.',
-                    ps: '۶۰ متره بازه، ۸ ټنه ظرفیت، بشپړ سرویس او ټول ماست برخې لري.'
-                },
-                meta: [
-                    {
-                        label: { fa: 'ارتفاع آزاد', en: 'Free Height', ps: 'ازاد لوړوالی' },
-                        value: { fa: '۴۵ متر', en: '45 m', ps: '۴۵ متره' }
-                    }
-                ],
-                pdfUrl: 'pdfs/second-hand/crane.pdf'
-            }
-        ],
-        'logistics-utilities': [
-            {
-                icon: '🚚',
-                name: {
-                    fa: 'کامیونت‌های Hino Euro IV',
-                    en: 'Hino Euro IV Trucks',
-                    ps: 'د هینو Euro IV لاري'
-                },
-                summary: {
-                    fa: 'بیست دستگاه ۶ تن با سرویس کامل، آماده حمل بین‌شهری.',
-                    en: 'Fleet of twenty 6-ton trucks with complete service records, ready for haulage.',
-                    ps: 'د شلو ۶ ټنه لاریو بېړۍ د بشپړ خدمت ریکارډونو سره.'
-                },
-                meta: [
-                    {
-                        label: { fa: 'میانگین کارکرد', en: 'Average Mileage', ps: 'اوسط مزل' },
-                        value: { fa: '۱۲۰٬۰۰۰ کیلومتر', en: '120,000 km', ps: '۱۲۰٬۰۰۰ کیلومتره' }
-                    },
-                    {
-                        label: { fa: 'امکانات', en: 'Features', ps: 'ځانګړتیاوې' },
-                        value: { fa: 'GPS، صندوق یخچالی، بیمه معتبر', en: 'GPS, refrigerated box, valid insurance', ps: 'GPS، یخچالي صندوق، معتبر بیمه' }
-                    }
-                ],
-                pdfUrl: 'pdfs/second-hand/trucks-lorries.pdf'
-            },
-            {
-                icon: '🔌',
-                name: {
-                    fa: 'ژنراتور دیزلی Cummins 500kVA',
-                    en: 'Cummins 500 kVA Diesel Generator',
-                    ps: 'د کمینز ۵۰۰ kVA ډیزلي جنراتور'
-                },
-                summary: {
-                    fa: 'اورهال کامل، کنترل هوشمند، مناسب برای کارخانه و پروژه‌های معدنی.',
-                    en: 'Fully overhauled with smart control, ideal for plants and mining sites.',
-                    ps: 'بشپړ ترمیم شوی د هوښیار کنټرول سره، د فابریکو او کانونو لپاره مناسب.'
-                },
-                meta: [
-                    {
-                        label: { fa: 'ساعت کارکرد', en: 'Run Hours', ps: 'کاري ساعتونه' },
-                        value: { fa: '۳٬۲۰۰ ساعت پس از اورهال', en: '3,200 h after overhaul', ps: '۳٬۲۰۰ ساعته د ترمیم وروسته' }
-                    },
-                    {
-                        label: { fa: 'شامل', en: 'Includes', ps: 'شامل' },
-                        value: { fa: 'ATS، تانک سوخت دو جداره، صداگیر', en: 'ATS, double-wall fuel tank, sound enclosure', ps: 'ATS، دوه جداره د تېلو ټانک، غږ بندول' }
-                    }
-                ],
-                pdfUrl: 'pdfs/second-hand/diesel-generator.pdf'
-            },
-            {
-                icon: '⚙️',
-                name: {
-                    fa: 'ایستگاه کمپرسور هوای Atlas Copco',
-                    en: 'Atlas Copco Air Compressor Station',
-                    ps: 'د اټلس کوپکو د هوا کمپرسور سټېشن'
-                },
-                summary: {
-                    fa: 'دو دستگاه GA90 با خشک‌کن جذبی و مخزن ۳۰۰۰ لیتری آماده بهره‌برداری.',
-                    en: 'Twin GA90 compressors with adsorption dryer and 3000 L receiver tank.',
-                    ps: 'د GA90 دوه کمپرسورونه د جذب وچوونکي او ۳۰۰۰ لیتره ټانک سره.'
-                },
-                meta: [
-                    {
-                        label: { fa: 'فشار کاری', en: 'Working Pressure', ps: 'کاري فشار' },
-                        value: { fa: '۱۲ بار', en: '12 bar', ps: '۱۲ بار' }
-                    }
-                ],
-                pdfUrl: 'pdfs/second-hand/air-compressor.pdf'
-            },
-            {
-                icon: '🪜',
-                name: {
-                    fa: 'فورک‌لیف برقی ۳ تن Toyota',
-                    en: 'Toyota 3 Ton Electric Forklifts',
-                    ps: 'د تویوتا درې ټنه برقي فورک لیفټونه'
-                },
-                summary: {
-                    fa: '۱۲ دستگاه بازسازی شده با باتری لیتیومی و شارژر سریع.',
-                    en: '12 refurbished units with lithium batteries and fast chargers.',
-                    ps: '۱۲ ترمیم شوي واحدونه د لیتیوم بیټرۍ او چټک چارجرو سره.'
-                },
-                meta: [
-                    {
-                        label: { fa: 'ارتفاع لیفت', en: 'Lift Height', ps: 'د پورته کولو لوړوالی' },
-                        value: { fa: '۶ متر', en: '6 m', ps: '۶ متره' }
-                    }
-                ],
-                pdfUrl: 'pdfs/second-hand/electric-forklift.pdf'
-            }
-        ]
-    };
 
     const assuranceHighlights = [
         {
@@ -471,7 +178,7 @@
             },
             description: {
                 fa: 'ماشین‌آلات پس از تعویض قطعات مصرفی و سرویس استاندارد به همراه لیست کارهای انجام‌شده تحویل می‌گردد.',
-                en: 'Machines are delivered after replacing consumables and performing standard servicing with a documented checklist.',
+                en: 'Machines are delivered after replacing consumables and completing standard servicing with a documented checklist.',
                 ps: 'ماشینونه د مصرفي پرزو له بدلون او معیاري خدمت وروسته د ترسره شویو کارونو له لېست سره سپارل کېږي.'
             }
         },
@@ -558,286 +265,344 @@
                 {
                     fa: 'تهیه گزارش فنی چندزبانه',
                     en: 'Deliver multilingual technical dossier',
-                    ps: 'څو ژبی تخنیکي راپور برابرول'
+                    ps: 'چند ژبه تخنیکي دوسیه وړاندې کول'
                 },
                 {
-                    fa: 'مذاکره قیمت و شرایط تحویل با فروشنده',
-                    en: 'Negotiate pricing and delivery terms with the seller',
-                    ps: 'له پلورونکي سره د بیې او سپارلو شرایطو خبرې اترې'
+                    fa: 'بررسی قطعات یدکی و خدمات پس از فروش',
+                    en: 'Evaluate spare parts and after-sales support',
+                    ps: 'د سپیر پارټو او وروسته خدمت ارزونه'
                 }
             ]
         },
         {
             step: '03',
             title: {
-                fa: 'حمل، نصب و راه‌اندازی',
-                en: 'Shipping, Installation & Start-up',
-                ps: 'لېږد، نصب او فعالول'
+                fa: 'خرید، لجستیک و گمرک',
+                en: 'Purchase, Logistics & Customs',
+                ps: 'پېرود، لوژستیک او ګمرک'
             },
             description: {
-                fa: 'مدیریت حمل دریایی/زمینی، ترخیص در افغانستان و نصب دوباره تا تحویل خط فعال.',
-                en: 'Manage sea/land logistics, Afghan customs clearance, and reinstall lines until production-ready.',
-                ps: 'د سمندري/ځمکني لېږد، د افغانستان ګمرکي تصفیه او بیا نصب تر تولید پورې مدیریت.'
+                fa: 'قرارداد فروش، بیمه حمل، رزرو کانتینر، فوم‌پک و آماده‌سازی اسناد گمرکی انجام می‌شود.',
+                en: 'Manage sales contract, cargo insurance, container booking, protective packing, and customs paperwork.',
+                ps: 'د پلور قرارداد، د بار بیمه، کانټینر رزرف، ساتندوی بسته بندي او ګمرکي اسناد چمتو کوو.'
             },
             bullets: [
                 {
-                    fa: 'آموزش تیم بهره‌بردار و تحویل مستندات',
-                    en: 'Train operating team and handover documentation',
-                    ps: 'د عملیاتو ټیم روزل او اسناد سپارل'
+                    fa: 'نظارت بر بارگیری و ارسال به افغانستان',
+                    en: 'Supervise loading and dispatch to Afghanistan',
+                    ps: 'بار چک او افغانستان ته لېږد څارنه'
                 },
                 {
-                    fa: 'پشتیبانی پس از راه‌اندازی و تامین قطعات یدکی',
-                    en: 'Post-start-up support and spare part sourcing',
-                    ps: 'د فعالېدو وروسته ملاتړ او د پرزو برابرول'
+                    fa: 'هماهنگی ترخیص در گمرک افغانستان',
+                    en: 'Coordinate clearance with Afghan customs',
+                    ps: 'د افغانستان له ګمرک سره د تصفیې همغږي'
+                }
+            ]
+        },
+        {
+            step: '04',
+            title: {
+                fa: 'نصب، تست و آموزش',
+                en: 'Installation, Testing & Training',
+                ps: 'نصب، ټسټ او روزنه'
+            },
+            description: {
+                fa: 'تیم Sanaatchi نصب، هم‌راستایی، تست تولید و آموزش اپراتورها را در محل شما انجام می‌دهد.',
+                en: 'Sanaatchi deploys technicians for installation, alignment, production tests, and operator training on site.',
+                ps: 'صنعتچي خپل تخنیکران ټاکي تر څو نصب، الاینمنټ، د تولید ټسټ او د اپریټرانو روزنه په ساحه کې ترسره کړي.'
+            },
+            bullets: [
+                {
+                    fa: 'تحویل مستندات بهره‌برداری و نگهداری',
+                    en: 'Provide operation and maintenance documentation',
+                    ps: 'د چلولو او ساتنې مستندات سپارل'
+                },
+                {
+                    fa: 'پشتیبانی پس از راه‌اندازی برای تامین قطعات',
+                    en: 'Post-startup support for spare parts sourcing',
+                    ps: 'له فعالېدو وروسته د سپیر پارټو ملاتړ'
                 }
             ]
         }
     ];
 
-    let activeCategory = categories.length ? categories[0].id : null;
+    const inventory = Array.isArray(window.secondHandInventoryData) ? window.secondHandInventoryData : [];
 
-    function getLanguage() {
-        if (typeof currentLanguage !== 'undefined') {
-            return currentLanguage;
-        }
-        const htmlLang = document.documentElement.getAttribute('lang');
-        return htmlLang === 'en' || htmlLang === 'ps' ? htmlLang : 'fa';
-    }
+    const getLanguage = () => (typeof currentLanguage !== 'undefined' ? currentLanguage : 'fa');
 
-    function updateHero(lang) {
+    function setHero(lang) {
         const title = document.getElementById('secondHandHeroTitle');
         const subtitle = document.getElementById('secondHandHeroSubtitle');
         const quote = document.getElementById('secondHandHeroQuote');
         const pointsList = document.getElementById('secondHandHeroPoints');
-        const inventoryButton = document.getElementById('viewInventoryButton');
+        const viewInventoryButton = document.getElementById('viewInventoryButton');
 
         if (title) {
-            title.textContent = heroContent.title[lang];
+            title.textContent = content.hero.title[lang] || content.hero.title.fa;
         }
         if (subtitle) {
-            subtitle.textContent = heroContent.subtitle[lang];
+            subtitle.textContent = content.hero.subtitle[lang] || content.hero.subtitle.fa;
         }
         if (quote) {
-            quote.textContent = heroContent.quote[lang];
+            quote.textContent = content.hero.quote[lang] || content.hero.quote.fa;
         }
         if (pointsList) {
             pointsList.innerHTML = '';
-            heroContent.points.forEach(point => {
-                const li = document.createElement('li');
-                li.textContent = point[lang];
-                pointsList.appendChild(li);
+            content.hero.points.forEach(point => {
+                const item = document.createElement('li');
+                item.textContent = point[lang] || point.fa;
+                pointsList.appendChild(item);
             });
         }
-        if (inventoryButton) {
-            inventoryButton.textContent = heroContent.secondaryCta[lang];
-            inventoryButton.onclick = function() {
-                scrollToSection('second-hand-inventory');
-            };
+        if (viewInventoryButton) {
+            viewInventoryButton.textContent = content.hero.secondaryCta[lang] || content.hero.secondaryCta.fa;
         }
     }
 
     function renderCategories(lang) {
-        const grid = document.getElementById('secondHandCategories');
-        if (!grid) return;
+        const wrapper = document.getElementById('secondHandCategories');
+        const title = document.getElementById('secondHandCategoriesTitle');
+        const subtitle = document.getElementById('secondHandCategoriesSubtitle');
 
-        grid.innerHTML = '';
-
-        categories.forEach(category => {
-            const card = document.createElement('div');
-            card.className = 'category-card';
-            if (category.id === activeCategory) {
-                card.classList.add('is-active');
-            }
-            card.setAttribute('role', 'button');
-            card.setAttribute('tabindex', '0');
-            card.dataset.categoryId = category.id;
-
-            card.innerHTML = `
-                <span class="icon">${category.icon}</span>
-                <h4>${category.title[lang]}</h4>
-                <p>${category.description[lang]}</p>
-            `;
-
-            card.addEventListener('click', () => {
-                activeCategory = category.id;
-                renderCategories(lang);
-                renderInventory(lang);
-            });
-
-            card.addEventListener('keypress', event => {
-                if (event.key === 'Enter' || event.key === ' ') {
-                    event.preventDefault();
-                    activeCategory = category.id;
-                    renderCategories(lang);
-                    renderInventory(lang);
-                }
-            });
-
-            grid.appendChild(card);
-        });
-    }
-
-    function renderInventory(lang) {
-        const grid = document.getElementById('secondHandInventoryGrid');
-        if (!grid) return;
-
-        const items = inventory[activeCategory] || [];
-        grid.innerHTML = '';
-
-        if (!items.length) {
-            const empty = document.createElement('div');
-            empty.className = 'no-equipment';
-            empty.textContent = lang === 'fa' ? 'در حال حاضر موجودی برای این دسته ثبت نشده است.' :
-                                 lang === 'ps' ? 'اوس مهال په دې کټګورۍ کې کوم موجودي نشته.' :
-                                 'Inventory for this category is not yet available.';
-            grid.appendChild(empty);
+        if (title) {
+            title.textContent = content.categoriesTitle[lang] || content.categoriesTitle.fa;
+        }
+        if (subtitle) {
+            subtitle.textContent = content.categoriesSubtitle[lang] || content.categoriesSubtitle.fa;
+        }
+        if (!wrapper) {
             return;
         }
 
-        items.forEach(item => {
+        wrapper.innerHTML = '';
+        categories.forEach(category => {
             const card = document.createElement('div');
-            card.className = 'equipment-card second-hand-card';
-
-            const metaList = (item.meta || []).map(meta => `
-                <li>
-                    <span>${meta.label[lang]}</span>
-                    <strong>${meta.value[lang]}</strong>
-                </li>
-            `).join('');
-
-            const viewLabel = lang === 'fa' ? 'جزئیات فنی' : lang === 'ps' ? 'تخنیکي معلومات' : 'Technical Dossier';
-            const downloadLabel = lang === 'fa' ? 'دانلود' : lang === 'ps' ? 'ډاونلوډ' : 'Download';
+            card.className = 'category-card';
+            card.setAttribute('role', 'button');
+            card.setAttribute('tabindex', '0');
 
             card.innerHTML = `
-                <div class="equipment-icon">${item.icon || '🏭'}</div>
-                <h4>${item.name[lang]}</h4>
-                <p>${item.summary[lang]}</p>
-                ${metaList ? `<ul class="second-hand-meta">${metaList}</ul>` : ''}
-                <div class="equipment-actions">
-                    <a href="${item.pdfUrl}" target="_blank" class="btn-primary">
-                        <i class="fas fa-file-alt"></i> ${viewLabel}
-                    </a>
-                    <a href="${item.pdfUrl}" download class="btn-secondary">
-                        <i class="fas fa-download"></i> ${downloadLabel}
-                    </a>
-                </div>
+                <span class="icon">${category.icon}</span>
+                <h4>${category.title[lang] || category.title.fa}</h4>
+                <p>${category.description[lang] || category.description.fa}</p>
             `;
 
-            grid.appendChild(card);
+            const scrollToCategory = () => {
+                const section = document.getElementById(`inventory-category-${category.id}`);
+                if (section) {
+                    section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            };
+
+            card.addEventListener('click', scrollToCategory);
+            card.addEventListener('keypress', event => {
+                if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    scrollToCategory();
+                }
+            });
+
+            wrapper.appendChild(card);
+        });
+    }
+
+    function buildMetaList(meta, lang) {
+        if (!meta || !meta.length) {
+            return '';
+        }
+        const items = meta.map(entry => {
+            const label = entry.label?.[lang] || entry.label?.fa || '';
+            const value = entry.value?.[lang] || entry.value?.fa || '';
+            return `<li><span>${label}</span><strong>${value}</strong></li>`;
+        }).join('');
+        return `<ul class="second-hand-meta">${items}</ul>`;
+    }
+
+    function openSecondHandModal(item, lang) {
+        const modal = document.getElementById('equipmentModal');
+        const modalContent = document.getElementById('equipmentModalContent');
+
+        if (!modal || !modalContent || !item) {
+            return;
+        }
+
+        const backText = lang === 'fa' ? 'بازگشت' : (lang === 'ps' ? 'بیرته' : 'Back');
+        const viewText = lang === 'fa' ? 'مشاهده PDF' : (lang === 'ps' ? 'PDF وګورئ' : 'View PDF');
+        const downloadText = lang === 'fa' ? 'دانلود' : (lang === 'ps' ? 'ډاونلوډ' : 'Download');
+
+        const metaList = buildMetaList(item.meta, lang);
+
+        modalContent.innerHTML = `
+            <div class="equipment-modal-header">
+                <button class="back-btn" onclick="closeEquipmentModal()">${backText}</button>
+                <h3>${item.name[lang] || item.name.fa}</h3>
+            </div>
+            <div class="equipment-modal-body">
+                <p>${item.description[lang] || item.description.fa}</p>
+                ${metaList}
+                <div class="equipment-actions">
+                    <a href="${item.pdfUrl}" target="_blank" class="btn-primary">
+                        <i class="fas fa-file-pdf"></i> ${viewText}
+                    </a>
+                    <a href="${item.pdfUrl}" download class="btn-secondary">
+                        <i class="fas fa-download"></i> ${downloadText}
+                    </a>
+                </div>
+            </div>
+        `;
+
+        modal.style.display = 'block';
+        modal.setAttribute('aria-hidden', 'false');
+    }
+
+    function renderInventory(lang) {
+        const wrapper = document.getElementById('secondHandInventoryGrid');
+        const title = document.getElementById('secondHandInventoryTitle');
+        const subtitle = document.getElementById('secondHandInventorySubtitle');
+
+        if (title) {
+            title.textContent = content.inventoryTitle[lang] || content.inventoryTitle.fa;
+        }
+        if (subtitle) {
+            subtitle.textContent = content.inventorySubtitle[lang] || content.inventorySubtitle.fa;
+        }
+        if (!wrapper) {
+            return;
+        }
+
+        wrapper.innerHTML = '';
+        categories.forEach(category => {
+            const items = inventory.filter(item => item.category === category.id);
+            if (items.length === 0) {
+                return;
+            }
+
+            const section = document.createElement('section');
+            section.className = 'second-hand-inventory-category';
+            section.id = `inventory-category-${category.id}`;
+
+            const heading = document.createElement('h3');
+            heading.className = 'inventory-category-title';
+            heading.innerHTML = `${category.icon} ${category.title[lang] || category.title.fa}`;
+            section.appendChild(heading);
+
+            const grid = document.createElement('div');
+            grid.className = 'equipment-grid';
+
+            items.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'equipment-card';
+                card.classList.add('second-hand-card');
+                card.setAttribute('role', 'button');
+                card.setAttribute('tabindex', '0');
+
+                card.innerHTML = `
+                    <div class="equipment-icon">${item.icon || '📄'}</div>
+                    <h4>${item.name[lang] || item.name.fa}</h4>
+                    <p>${item.description[lang] || item.description.fa}</p>
+                    ${buildMetaList(item.meta, lang)}
+                `;
+
+                const openModal = () => openSecondHandModal(item, lang);
+                card.addEventListener('click', openModal);
+                card.addEventListener('keypress', event => {
+                    if (event.key === 'Enter' || event.key === ' ') {
+                        event.preventDefault();
+                        openModal();
+                    }
+                });
+
+                grid.appendChild(card);
+            });
+
+            section.appendChild(grid);
+            wrapper.appendChild(section);
         });
     }
 
     function renderAssurance(lang) {
+        const title = document.getElementById('secondHandAssuranceTitle');
+        const subtitle = document.getElementById('secondHandAssuranceSubtitle');
         const grid = document.getElementById('secondHandAssuranceGrid');
-        if (!grid) return;
+
+        if (title) {
+            title.textContent = content.assuranceTitle[lang] || content.assuranceTitle.fa;
+        }
+        if (subtitle) {
+            subtitle.textContent = content.assuranceSubtitle[lang] || content.assuranceSubtitle.fa;
+        }
+        if (!grid) {
+            return;
+        }
 
         grid.innerHTML = '';
-        assuranceHighlights.forEach(highlight => {
+        assuranceHighlights.forEach(item => {
             const card = document.createElement('div');
             card.className = 'feature-card';
             card.innerHTML = `
-                <span class="feature-icon">${highlight.icon}</span>
-                <h3>${highlight.title[lang]}</h3>
-                <p>${highlight.description[lang]}</p>
+                <span class="feature-icon">${item.icon}</span>
+                <h3>${item.title[lang] || item.title.fa}</h3>
+                <p>${item.description[lang] || item.description.fa}</p>
             `;
             grid.appendChild(card);
         });
     }
 
     function renderProcess(lang) {
+        const title = document.getElementById('secondHandProcessTitle');
+        const subtitle = document.getElementById('secondHandProcessSubtitle');
         const timeline = document.getElementById('secondHandProcessTimeline');
-        if (!timeline) return;
+
+        if (title) {
+            title.textContent = content.processTitle[lang] || content.processTitle.fa;
+        }
+        if (subtitle) {
+            subtitle.textContent = content.processSubtitle[lang] || content.processSubtitle.fa;
+        }
+        if (!timeline) {
+            return;
+        }
 
         timeline.innerHTML = '';
         processStages.forEach(stage => {
             const card = document.createElement('div');
             card.className = 'process-card';
-
-            const bullets = (stage.bullets || []).map(bullet => `<li>${bullet[lang]}</li>`).join('');
-
+            const bullets = stage.bullets?.map(bullet => `<li>${bullet[lang] || bullet.fa}</li>`).join('') || '';
             card.innerHTML = `
                 <div class="step">${stage.step}</div>
-                <h3>${stage.title[lang]}</h3>
-                <p>${stage.description[lang]}</p>
+                <h3>${stage.title[lang] || stage.title.fa}</h3>
+                <p>${stage.description[lang] || stage.description.fa}</p>
                 ${bullets ? `<ul>${bullets}</ul>` : ''}
             `;
-
             timeline.appendChild(card);
         });
     }
 
-    function updateSectionTitles(lang) {
-        const categoriesTitle = document.getElementById('secondHandCategoriesTitle');
-        const categoriesSubtitle = document.getElementById('secondHandCategoriesSubtitle');
-        const inventoryTitle = document.getElementById('secondHandInventoryTitle');
-        const inventorySubtitle = document.getElementById('secondHandInventorySubtitle');
-        const assuranceTitle = document.getElementById('secondHandAssuranceTitle');
-        const assuranceSubtitle = document.getElementById('secondHandAssuranceSubtitle');
-        const processTitle = document.getElementById('secondHandProcessTitle');
-        const processSubtitle = document.getElementById('secondHandProcessSubtitle');
-
-        if (categoriesTitle) {
-            categoriesTitle.textContent = lang === 'fa' ? 'گروه‌های ماشین‌آلات دست دوم' :
-                                           lang === 'ps' ? 'د دوهم لاس ماشین آلات ډلې' :
-                                           'Second-Hand Machinery Groups';
-        }
-        if (categoriesSubtitle) {
-            categoriesSubtitle.textContent = lang === 'fa' ? 'دسته مناسب را انتخاب کنید تا فهرست کامل ماشین‌آلات آماده تحویل نمایش داده شود.' :
-                                                 lang === 'ps' ? 'مناسبه ډله وټاکئ تر څو د سپارلو لپاره چمتو ماشینونه ووینئ.' :
-                                                 'Choose a category to review the ready-to-ship machinery.';
-        }
-        if (inventoryTitle) {
-            inventoryTitle.textContent = lang === 'fa' ? 'فهرست ماشین‌آلات بازبینی‌شده' :
-                                            lang === 'ps' ? 'د بیاکتل شویو ماشینونو لست' :
-                                            'Refurbished Inventory';
-        }
-        if (inventorySubtitle) {
-            inventorySubtitle.textContent = lang === 'fa' ? 'هر مورد با مشخصات فنی، گزینه‌های تحویل و فایل PDF ارائه شده است.' :
-                                                  lang === 'ps' ? 'هر توکی له تخنیکي ځانګړتیاوو، د سپارلو انتخابونو او PDF فایل سره وړاندې کېږي.' :
-                                                  'Each listing includes technical specs, delivery options, and a PDF dossier.';
-        }
-        if (assuranceTitle) {
-            assuranceTitle.textContent = lang === 'fa' ? 'چطور کیفیت ماشین‌آلات دست دوم را تضمین می‌کنیم' :
-                                            lang === 'ps' ? 'موږ د دوهم لاس ماشینونو کیفیت څنګه تضمینوو' :
-                                            'How We Guarantee Second-Hand Quality';
-        }
-        if (assuranceSubtitle) {
-            assuranceSubtitle.textContent = lang === 'fa' ? 'پروتکل‌های فنی Sanaatchi برای بازسازی، بازرسی و پشتیبانی را مشاهده کنید.' :
-                                                  lang === 'ps' ? 'د صنعتچي تخنیکي پروتوکولونه د رغونې، پلټنې او ملاتړ لپاره وګورئ.' :
-                                                  'Explore Sanaatchi protocols for refurbishment, inspection, and support.';
-        }
-        if (processTitle) {
-            processTitle.textContent = lang === 'fa' ? 'مراحل تأمین ماشین‌آلات دست دوم' :
-                                          lang === 'ps' ? 'د دوهم لاس ماشین آلاتو د تدارک مراحلو' :
-                                          'Second-Hand Procurement Stages';
-        }
-        if (processSubtitle) {
-            processSubtitle.textContent = lang === 'fa' ? 'سه گام عملی از تعریف نیاز تا نصب نهایی با مدیریت Sanaatchi.' :
-                                                   lang === 'ps' ? 'له اړتیا څخه تر نصب پورې درې عملي ګامونه د صنعتچي په مدیریت.' :
-                                                   'Three practical phases from requirements to commissioning under Sanaatchi management.';
-        }
-    }
-
-    function updateSecondHandPageInternal() {
-        const lang = getLanguage();
-        updateHero(lang);
-        updateSectionTitles(lang);
+    function updateSecondHandPage(lang = getLanguage()) {
+        setHero(lang);
         renderCategories(lang);
         renderInventory(lang);
         renderAssurance(lang);
         renderProcess(lang);
     }
 
-    window.updateSecondHandPage = function() {
-        if (!document.body.classList.contains('second-hand-page')) {
-            return;
+    function setupInteractions() {
+        const viewInventoryButton = document.getElementById('viewInventoryButton');
+        if (viewInventoryButton) {
+            viewInventoryButton.addEventListener('click', event => {
+                event.preventDefault();
+                const inventorySection = document.getElementById('second-hand-inventory');
+                if (inventorySection) {
+                    inventorySection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
         }
-        updateSecondHandPageInternal();
-    };
+    }
 
-    document.addEventListener('DOMContentLoaded', function() {
-        if (document.body.classList.contains('second-hand-page')) {
-            updateSecondHandPageInternal();
-        }
+    document.addEventListener('DOMContentLoaded', () => {
+        updateSecondHandPage();
+        setupInteractions();
     });
+
+    window.updateSecondHandPage = updateSecondHandPage;
 })();
