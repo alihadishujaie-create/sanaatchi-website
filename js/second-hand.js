@@ -16,23 +16,6 @@
                 en: 'Before shipping, every machine is inspected, upgraded, and prepared for installation by Sanaatchi’s on-site auditors.',
                 ps: 'د لېږد وړاندې هر ماشین زموږ د صنعتچي د پلټنې ټیم له خوا ازمویل، نوى کېږي او د نصب لپاره چمتو کېږي.'
             },
-            points: [
-                {
-                    fa: 'گزارش سلامت فنی و ویدیو از تست عملکرد پیش از خرید',
-                    en: 'Full mechanical health report and pre-purchase test video',
-                    ps: 'د میخانیکي حالت بشپړ راپور او د پېر مخکینی ټسټ ویډیو'
-                },
-                {
-                    fa: 'امکان رزرو کارشناسان Sanaatchi برای بازدید حضوری کارخانه فروشنده',
-                    en: 'Reserve Sanaatchi inspectors for on-site seller factory visits',
-                    ps: 'د صنعتچي د تفتیش ټیم له خوا د پلورونکي فابریکې حضوري کتنه'
-                },
-                {
-                    fa: 'هماهنگی حمل، گمرک و نصب دوباره در افغانستان',
-                    en: 'Coordinated logistics, customs clearance, and re-installation in Afghanistan',
-                    ps: 'همغږي ترانسپورت، ګمرک او په افغانستان کې بیا نصب'
-                }
-            ],
             secondaryCta: {
                 fa: 'مشاهده موجودی دست دوم',
                 en: 'Browse Available Inventory',
@@ -334,7 +317,6 @@
         const title = document.getElementById('secondHandHeroTitle');
         const subtitle = document.getElementById('secondHandHeroSubtitle');
         const quote = document.getElementById('secondHandHeroQuote');
-        const pointsList = document.getElementById('secondHandHeroPoints');
         const viewInventoryButton = document.getElementById('viewInventoryButton');
 
         if (title) {
@@ -345,14 +327,6 @@
         }
         if (quote) {
             quote.textContent = content.hero.quote[lang] || content.hero.quote.fa;
-        }
-        if (pointsList) {
-            pointsList.innerHTML = '';
-            content.hero.points.forEach(point => {
-                const item = document.createElement('li');
-                item.textContent = point[lang] || point.fa;
-                pointsList.appendChild(item);
-            });
         }
         if (viewInventoryButton) {
             viewInventoryButton.textContent = content.hero.secondaryCta[lang] || content.hero.secondaryCta.fa;

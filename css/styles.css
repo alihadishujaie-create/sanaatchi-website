@@ -1282,39 +1282,6 @@ body {
     background-blend-mode: overlay;
 }
 
-.second-hand-page .hero-points {
-    list-style: none;
-    padding: 0;
-    margin: 25px 0;
-    display: grid;
-    gap: 12px;
-}
-
-.second-hand-page .hero-points li {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    background: rgba(255,255,255,0.9);
-    color: #1a3a5f;
-    border-radius: 10px;
-    padding: 12px 18px;
-    font-weight: 500;
-    line-height: 1.6;
-}
-
-.second-hand-page .hero-points li::before {
-    content: '✔';
-    color: #f26522;
-    font-weight: 700;
-    font-size: 1rem;
-    margin-right: 8px;
-}
-
-[dir="ltr"] .second-hand-page .hero-points li::before {
-    margin-right: 0;
-    margin-left: 8px;
-}
-
 .second-hand-inventory .equipment-card {
     text-align: initial;
 }
