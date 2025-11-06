@@ -2797,18 +2797,6 @@ const equipmentData = {
             category: 'industrial-vehicles'
         }
     ],
-    'plastic-processing': [
-        {
-            name: { fa: 'دستگاه اکسترودر پلاستیک', en: 'Plastic Extruder Machine', ps: 'د پلاستیک اکسترودر ماشین' },
-            description: { fa: 'دستگاه اکسترودر برای فرآوری پلاستیک', en: 'Extruder machine for plastic processing', ps: 'د پلاستیک پروسس لپاره اکسترودر ماشین' },
-            pdfUrl: 'pdfs/plastic-processing/extruder.pdf'
-        },
-        {
-            name: { fa: 'دستگاه تزریق پلاستیک', en: 'Plastic Injection Machine', ps: 'د پلاستیک تزریق ماشین' },
-            description: { fa: 'دستگاه تزریق برای تولید قطعات پلاستیکی', en: 'Injection machine for producing plastic parts', ps: 'د پلاستیکي برخو تولید لپاره تزریق ماشین' },
-            pdfUrl: 'pdfs/plastic-processing/injection.pdf'
-        }
-    ],
     'paint-coating': [
         {
             name: { fa: 'دستگاه پودرپاشی', en: 'Powder Coating Machine', ps: 'د پوډر پوښښت ماشین' },
@@ -2895,14 +2883,226 @@ const equipmentData = {
     ],
     'packaging': [
         {
-            name: { fa: 'دستگاه بسته‌بندی اتوماتیک', en: 'Automatic Packaging Machine', ps: 'د اوتوماتیک بسته بندي ماشین' },
-            description: { fa: 'دستگاه بسته‌بندی اتوماتیک', en: 'Automatic packaging machine', ps: 'اوتوماتیک بسته بندي ماشین' },
-            pdfUrl: 'pdfs/packaging/automatic-packaging.pdf'
+            category: 'automatic-packaging',
+            name: { fa: 'ماشین پرکن اتوماتیک', en: 'Automatic Filling Machine', ps: 'اتومات ډکولو ماشین' },
+            description: {
+                fa: 'پرکن پیستونی با PLC و نازل‌های قابل تنظیم برای مایعات غلیظ و رقیق.',
+                en: 'Piston filler with PLC control and adjustable nozzles for viscous or free-flowing liquids.',
+                ps: 'د PLC کنټرول لرونکی پیستوني ډکونکی د غلیظ او روانو مایعاتو لپاره.'
+            },
+            pdfUrl: 'pdfs/packaging/automatic-packaging/filling-machine.pdf'
         },
         {
-            name: { fa: 'دستگاه بسته‌بندی وکیوم', en: 'Vacuum Packaging Machine', ps: 'د وکیوم بسته بندي ماشین' },
-            description: { fa: 'دستگاه بسته‌بندی با سیستم وکیوم', en: 'Vacuum packaging machine', ps: 'د وکیوم سیسټم سره بسته بندي ماشین' },
-            pdfUrl: 'pdfs/packaging/vacuum-packaging.pdf'
+            category: 'automatic-packaging',
+            name: { fa: 'ماشین درزگیر اتوماتیک', en: 'Automatic Sealing Machine', ps: 'اتومات سیلر ماشین' },
+            description: {
+                fa: 'سیستم درزگیری حرارتی با کنترل دما و تسمه انتقال ضد چروک.',
+                en: 'Thermal sealing system with precision temperature control and wrinkle-free conveyors.',
+                ps: 'حرارتي سیلر د دقیق تودوخې کنټرول او بې چین تسمې سره.'
+            },
+            pdfUrl: 'pdfs/packaging/automatic-packaging/sealing-machine.pdf'
+        },
+        {
+            category: 'automatic-packaging',
+            name: { fa: 'ماشین برچسب‌زن اتوماتیک', en: 'Automatic Labelling Machine', ps: 'اتومات لیبل ماشین' },
+            description: {
+                fa: 'لیبل‌زن روتاری با سیستم سنجش موقعیت و تنظیم سرعت هماهنگ با خط تولید.',
+                en: 'Rotary labeller with position sensing and synchronised speed control with the production line.',
+                ps: 'د موقعیت سنجونې او د تولید له لین سره همغږي سرعت کنټرول لرونکی روتري لیبلر.'
+            },
+            pdfUrl: 'pdfs/packaging/automatic-packaging/labeling-machine.pdf'
+        },
+        {
+            category: 'vacuum-packaging',
+            name: { fa: 'وکیوم سیلر رومیزی', en: 'Tabletop Vacuum Sealer', ps: 'میز وړ وکیوم سیلر' },
+            description: {
+                fa: 'مناسب بسته‌بندی کوچک با پمپ قدرتمند و تنظیم زمان و دما.',
+                en: 'Compact vacuum sealing with high-performance pump and adjustable time and heat.',
+                ps: 'د ځواکمن پمپ او د وخت او تودوخې د تنظیم وړ کوچنی وکیوم سیلر.'
+            },
+            pdfUrl: 'pdfs/packaging/vacuum-packaging/vacuum-sealer.pdf'
+        },
+        {
+            category: 'vacuum-packaging',
+            name: { fa: 'دستگاه وکیوم اتاقکی', en: 'Vacuum Chamber Machine', ps: 'د وکیوم چیمبر ماشین' },
+            description: {
+                fa: 'چمبر استیل دو محفظه با برنامه‌ریزی گاز تزریق و کنترل سنسور.',
+                en: 'Dual-chamber stainless unit with gas flushing programmes and sensor controls.',
+                ps: 'دوه خونې لرونکی سټینلیس یونټ د ګاز د داخلېدو پروګرام او سینسر کنټرول سره.'
+            },
+            pdfUrl: 'pdfs/packaging/vacuum-packaging/vacuum-chamber.pdf'
+        },
+        {
+            category: 'vacuum-packaging',
+            name: { fa: 'کیسه وکیوم چندلایه', en: 'Multi-Layer Vacuum Bag', ps: 'چند پوړیز وکیوم کڅوړه' },
+            description: {
+                fa: 'کیسه‌های چندلایه مقاوم در برابر سوراخ، مناسب مواد غذایی و صنعتی.',
+                en: 'Puncture-resistant multilayer bags suitable for food and industrial packaging.',
+                ps: 'څو پوړیزې سوراخ ضد کڅوړې چې د خوراکي او صنعتي بسته بندۍ لپاره مناسبې دي.'
+            },
+            pdfUrl: 'pdfs/packaging/vacuum-packaging/vacuum-bag.pdf'
+        },
+        {
+            category: 'wrapping-packaging',
+            name: { fa: 'ماشین استرچ رپینگ', en: 'Stretch Wrapping Machine', ps: 'سټریچ لفافه ماشین' },
+            description: {
+                fa: 'پالت‌پیچ خودکار با ترمز فیلم قابل تنظیم و حسگر ارتفاع بار.',
+                en: 'Automatic pallet wrapper with adjustable film tension and load height sensors.',
+                ps: 'اتومات پالت لفاف د فلم د تاوولو د تنظیم او د بار د ارتفاع سینسرونو سره.'
+            },
+            pdfUrl: 'pdfs/packaging/wrapping-packaging/stretch-wrapping.pdf'
+        },
+        {
+            category: 'wrapping-packaging',
+            name: { fa: 'ماشین شرینک تونلی', en: 'Tunnel Shrink Wrapper', ps: 'ټنل شرینک ماشین' },
+            description: {
+                fa: 'تونل حرارتی با جریان هوای یکنواخت و کانویور مقاوم به حرارت.',
+                en: 'Heat tunnel with uniform airflow and heat-resistant conveyor for retail packs.',
+                ps: 'حرارتي تونل د یوشان هوا جریان او د تودوخې پر وړاندې مقاومت لرونکي کونوییر سره.'
+            },
+            pdfUrl: 'pdfs/packaging/wrapping-packaging/shrink-wrapping.pdf'
+        },
+        {
+            category: 'wrapping-packaging',
+            name: { fa: 'ماشین تسمه‌کشی صنعتی', en: 'Industrial Strapping Machine', ps: 'صنعتي تسمه ماشین' },
+            description: {
+                fa: 'سیستم تسمه‌کشی فول اتومات با هدایت تسمه و کشش قابل برنامه‌ریزی.',
+                en: 'Fully automatic strapping with programmable tension and strap guidance.',
+                ps: 'په بشپړ ډول اتومات تسمه ماشین د پروګرام وړ کشش او تسمې لارښود سره.'
+            },
+            pdfUrl: 'pdfs/packaging/wrapping-packaging/strapping-machine.pdf'
+        }
+    ],
+    'plastic-processing': [
+        {
+            category: 'extruder',
+            name: { fa: 'اکسترودر لوله پلاستیکی', en: 'Plastic Pipe Extruder', ps: 'د پلاستیک پایپ اکسترودر' },
+            description: {
+                fa: 'خط اکسترودر همراه با کالیبراتور، تانک خلأ و کشنده برای تولید لوله.',
+                en: 'Extrusion line with calibrator, vacuum tank and haul-off for pipe production.',
+                ps: 'د کالیبریټر، وکیوم ټانک او کشولو واحد سره اکسترودر د پایپ تولید لپاره.'
+            },
+            pdfUrl: 'pdfs/plastic-processing/extruder/pipe-extruder.pdf'
+        },
+        {
+            category: 'extruder',
+            name: { fa: 'اکسترودر فیلم پلاستیکی', en: 'Plastic Film Extruder', ps: 'د پلاستیک فلم اکسترودر' },
+            description: {
+                fa: 'اکسترودر دمشی یا تخت برای تولید رول فیلم بسته‌بندی با ضخامت یکنواخت.',
+                en: 'Blown or cast film extruder delivering consistent gauge packaging films.',
+                ps: 'د بلو یا کاسټ فلم اکسترودر چې همغږي ضخامت لرونکي بسته بندۍ فلمونه تولیدوي.'
+            },
+            pdfUrl: 'pdfs/plastic-processing/extruder/film-extruder.pdf'
+        },
+        {
+            category: 'extruder',
+            name: { fa: 'اکسترودر پروفایل پلاستیکی', en: 'Plastic Profile Extruder', ps: 'د پلاستیک پروفایل اکسترودر' },
+            description: {
+                fa: 'تولید پروفایل و قطعات فنی با قالب‌های قابل تعویض و کنترل دقیق دما.',
+                en: 'Profile extrusion with interchangeable dies and precise temperature zoning.',
+                ps: 'د بدلېدونکو قالبونو او دقیق تودوخې زونونو سره د پروفایل اکسترودر.'
+            },
+            pdfUrl: 'pdfs/plastic-processing/extruder/profile-extruder.pdf'
+        },
+        {
+            category: 'injection',
+            name: { fa: 'ماشین تزریق پلاستیک', en: 'Plastic Injection Moulding Machine', ps: 'د پلاستیک انجکشن مولډنګ ماشین' },
+            description: {
+                fa: 'ماشین تزریق با کنترل سروو و واحد گیره قوی برای قالب‌های چند حفره.',
+                en: 'Servo-controlled injection unit with high clamping force for multi-cavity moulds.',
+                ps: 'د سرو کنټرول لرونکی انجکشن یونټ د څو حفره لرونکو قالبونو لپاره د قوي کلمپینګ ځواک سره.'
+            },
+            pdfUrl: 'pdfs/plastic-processing/injection/injection-molding.pdf'
+        },
+        {
+            category: 'injection',
+            name: { fa: 'ماشین دمشی پلاستیک', en: 'Plastic Blow Moulding Machine', ps: 'د پلاستیک بلو مولډنګ ماشین' },
+            description: {
+                fa: 'سیستم دمشی برای تولید بطری، مخزن و قطعات توخالی با کنترل ضخامت دیواره.',
+                en: 'Blow moulding system for bottles, tanks and hollow parts with wall-thickness control.',
+                ps: 'د بوتلونو، ټانکونو او تشو پرزو لپاره بلو مولډنګ د دیوال ضخامت کنټرول سره.'
+            },
+            pdfUrl: 'pdfs/plastic-processing/injection/blow-molding.pdf'
+        },
+        {
+            category: 'injection',
+            name: { fa: 'قطعات مصرفی تزریق', en: 'Injection Moulding Spare Parts', ps: 'د انجکشن مولډنګ اضافي پرزې' },
+            description: {
+                fa: 'ست نازل، پیچ، بوش و حلقه‌های آب‌بندی برای نگهداری دوره‌ای ماشین تزریق.',
+                en: 'Nozzle, screw, bushing and seal kits that keep injection moulding machines running.',
+                ps: 'د نوزل، پیچ، بوش او سیل کټونه چې د انجکشن ماشینونه فعال ساتي.'
+            },
+            pdfUrl: 'pdfs/plastic-processing/injection/injection-parts.pdf'
+        },
+        {
+            category: 'recycling',
+            name: { fa: 'خط بازیافت پلاستیک', en: 'Plastic Recycling Line', ps: 'د پلاستیک ریسایکل لاین' },
+            description: {
+                fa: 'از تفکیک تا خشک‌کن سانتریفیوژ برای بازیافت ضایعات بسته‌بندی و تولید گرانول.',
+                en: 'Complete recycling line from sorting to centrifugal drying for pellet output.',
+                ps: 'بشپړ ریسایکل لاین له تفکیک څخه تر سنټرفیوژ وچولو پورې د پلېټ تولید لپاره.'
+            },
+            pdfUrl: 'pdfs/plastic-processing/recycling/plastic-recycling.pdf'
+        },
+        {
+            category: 'recycling',
+            name: { fa: 'شردر پلاستیک صنعتی', en: 'Industrial Plastic Shredder', ps: 'صنعتي پلاستیک شریدر' },
+            description: {
+                fa: 'شردر دو شافت با تیغه‌های آلیاژی و کنترل سرعت برای آماده‌سازی خوراک بازیافت.',
+                en: 'Twin-shaft shredder with alloy blades and variable speed for recycling feedstock.',
+                ps: 'دوه شافټ لرونکی شریدر د الیاژ تیغونو او د سرعت تنظیم سره د ریسایکل موادو لپاره.'
+            },
+            pdfUrl: 'pdfs/plastic-processing/recycling/shredder.pdf'
+        },
+        {
+            category: 'recycling',
+            name: { fa: 'خط شستشو و خشک‌کن پلاستیک', en: 'Plastic Washing & Drying Line', ps: 'د پلاستیک مینځلو او وچولو لاین' },
+            description: {
+                fa: 'حوض شستشو، اسکرو انتقال و خشک‌کن حرارتی برای کاهش آلودگی ضایعات.',
+                en: 'Washing tanks, screw conveyors and thermal dryers reduce contamination before extrusion.',
+                ps: 'د مینځلو حوضونه، سکرو انتقال او حرارتي وچوونکي د اکسترودر دمخه ککړتیا کموي.'
+            },
+            pdfUrl: 'pdfs/plastic-processing/recycling/washing-line.pdf'
+        },
+        {
+            category: 'recycling',
+            name: { fa: 'خط پلت‌سازی پلاستیک', en: 'Plastic Pelletizing Line', ps: 'د پلاستیک پلېټ جوړولو لاین' },
+            description: {
+                fa: 'گرانولایزر و کاتر با سیستم خنک‌کاری برای تبدیل ضایعات به گرانول باکیفیت.',
+                en: 'Granulator and cutter with cooling loop converting scrap into uniform pellets.',
+                ps: 'ګرانیولیټر او کټر د یخولو سیسټم سره د ضایعاتو څخه منظم پلېټونه جوړوي.'
+            },
+            pdfUrl: 'pdfs/plastic-processing/recycling/pelletizing-line.pdf'
+        },
+        {
+            category: 'printing-packaging',
+            name: { fa: 'ماشین چاپ فلکسو', en: 'Flexographic Printing Machine', ps: 'د فلکسو چاپ ماشین' },
+            description: {
+                fa: 'ماشین فلکسو رول به رول با رجیستر دقیق و خشک‌کن هوای گرم برای چاپ بسته‌بندی.',
+                en: 'Roll-to-roll flexo press with precise registration and hot-air dryers for packaging films.',
+                ps: 'رول په رول فلکسو پریس د دقیق رجسټر او د ګرمې هوا وچولو سره د بسته بندۍ فلمونو لپاره.'
+            },
+            pdfUrl: 'pdfs/plastic-processing/printing-packaging/flexo-printing.pdf'
+        },
+        {
+            category: 'printing-packaging',
+            name: { fa: 'خط پاکت‌سازی', en: 'Bag Making Line', ps: 'د کڅوړې جوړولو لاین' },
+            description: {
+                fa: 'از رول تا پاکت با ایستگاه‌های تا، دوخت و پانچ برای تولید پاکت‌های چندلایه.',
+                en: 'From roll to finished bag with folding, sealing and punching stations for multilayer bags.',
+                ps: 'له رول څخه تر بشپړې کڅوړې پورې د تا کولو، سیل کولو او پنچ کولو سټېشنونو سره.'
+            },
+            pdfUrl: 'pdfs/plastic-processing/printing-packaging/bag-making.pdf'
+        },
+        {
+            category: 'printing-packaging',
+            name: { fa: 'خط درزگیری و برش', en: 'Sealing & Cutting Line', ps: 'د سیل کولو او پرې کولو لاین' },
+            description: {
+                fa: 'سیستم برش و درزگیری با کنترل سروو برای تولید رول‌های بسته‌بندی باکیفیت.',
+                en: 'Servo-controlled sealing and cutting modules delivering precise packaging rolls.',
+                ps: 'د سرو کنټرول لرونکي سیل او پرې کولو ماډلونه چې دقیق بسته بندۍ رولونه جوړوي.'
+            },
+            pdfUrl: 'pdfs/plastic-processing/printing-packaging/sealing-cutting.pdf'
         }
     ],
     'chemical-pharma': [
@@ -3698,6 +3898,9 @@ function updateTranslations(lang) {
     if (typeof updateConstructionMaterialsPage === 'function') {
         updateConstructionMaterialsPage();
     }
+    if (typeof updatePackagingPage === 'function') {
+        updatePackagingPage();
+    }
     if (typeof updateTransportationPage === 'function') {
         updateTransportationPage();
     }
@@ -3757,6 +3960,10 @@ function navigateToMachineryParts() {
 
 function navigateToConstructionMaterials() {
     window.location.href = 'construction-materials.html';
+}
+
+function navigateToPackaging() {
+    window.location.href = 'packaging.html';
 }
 
 function navigateToTires() {
