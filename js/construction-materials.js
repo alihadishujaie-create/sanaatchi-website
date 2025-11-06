@@ -461,32 +461,51 @@
             card.className = 'category-card';
             card.setAttribute('role', 'button');
             card.setAttribute('tabindex', '0');
+            const titleText = localise(category.title, lang);
+            const descriptionText = localise(category.description, lang);
+            const detailText = lang === 'fa' ? 'مشاهده جزئیات' : (lang === 'ps' ? 'جزییات وګورئ' : 'View Details');
+            const detailLabel = lang === 'fa'
+                ? `مشاهده جزئیات ${titleText}`
+                : (lang === 'ps' ? `د ${titleText} جزییات وګورئ` : `View details for ${titleText}`);
+
             card.innerHTML = `
                 <span class="icon">${category.icon}</span>
-                <h4>${localise(category.title, lang)}</h4>
-                <p>${localise(category.description, lang)}</p>
+                <h4>${titleText}</h4>
+                <p>${descriptionText}</p>
+                <div class="category-card-actions">
+                    <a class="category-card-link" href="#" role="button" aria-label="${detailLabel}">
+                        <span>${detailText}</span>
+                        <i class="fas fa-arrow-left"></i>
+                    </a>
+                </div>
             `;
-            card.addEventListener('click', () => scrollToInventoryCategory(category.id));
+
+            const openModal = () => showConstructionMaterialsCategoryModal(category.id, lang);
+
+            card.addEventListener('click', openModal);
             card.addEventListener('keypress', (event) => {
-                if (event.key === 'Enter') {
-                    scrollToInventoryCategory(category.id);
+                if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    openModal();
                 }
             });
+
+            const link = card.querySelector('.category-card-link');
+            if (link) {
+                const handleInteraction = event => {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    openModal();
+                };
+                link.addEventListener('click', handleInteraction);
+                link.addEventListener('keypress', event => {
+                    if (event.key === 'Enter' || event.key === ' ') {
+                        handleInteraction(event);
+                    }
+                });
+            }
             grid.appendChild(card);
         });
-    }
-
-    function scrollToInventoryCategory(categoryId) {
-        const target = document.querySelector(`[data-category="${categoryId}"]`);
-        if (target) {
-            target.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            const previousOutline = target.style.outline;
-            target.style.outline = '2px solid var(--primary-color, #ff6f3c)';
-            target.style.transition = 'outline 0.3s ease';
-            setTimeout(() => {
-                target.style.outline = previousOutline || '';
-            }, 1200);
-        }
     }
 
     function normaliseInventoryItem(item) {
@@ -539,10 +558,76 @@
         return `<div class="equipment-grid">${cards}</div>`;
     }
 
+    function showConstructionMaterialsCategoryModal(categoryId, lang = getLanguage()) {
+        const modal = document.getElementById('equipmentModal');
+        const modalContent = document.getElementById('equipmentModalContent');
+        const category = categories.find(entry => entry.id === categoryId);
+        const items = inventory.filter(item => item.category === categoryId);
+
+        if (!modal || !modalContent || !category) {
+            return;
+        }
+
+        const title = localise(category.title, lang);
+        const backText = lang === 'fa' ? 'بازگشت' : (lang === 'ps' ? 'بیرته' : 'Back');
+        const cardsHtml = buildInventoryCardsHtml(items, lang);
+
+        modalContent.innerHTML = `
+            <div class="equipment-modal-header">
+                <button class="back-btn" onclick="closeEquipmentModal()">${backText}</button>
+                <h3>${title}</h3>
+            </div>
+            ${cardsHtml}
+        `;
+
+        modal.style.display = 'block';
+        modal.setAttribute('aria-hidden', 'false');
+    }
+
+    function showConstructionMaterialsInventoryModal(lang = getLanguage()) {
+        const modal = document.getElementById('equipmentModal');
+        const modalContent = document.getElementById('equipmentModalContent');
+
+        if (!modal || !modalContent) {
+            return;
+        }
+
+        const backText = lang === 'fa' ? 'بازگشت' : (lang === 'ps' ? 'بیرته' : 'Back');
+        const sectionTitle = localise(content.inventoryTitle, lang);
+
+        const sectionsHtml = categories.map(category => {
+            const items = inventory.filter(item => item.category === category.id);
+            const categoryTitle = `${category.icon} ${localise(category.title, lang)}`;
+            const description = localise(category.description, lang);
+            const descriptionMarkup = description ? `<p class="inventory-category-description">${description}</p>` : '';
+            return `
+                <section class="second-hand-inventory-category">
+                    <h4 class="inventory-category-title">${categoryTitle}</h4>
+                    ${descriptionMarkup}
+                    ${buildInventoryCardsHtml(items, lang)}
+                </section>
+            `;
+        }).join('');
+
+        modalContent.innerHTML = `
+            <div class="equipment-modal-header">
+                <button class="back-btn" onclick="closeEquipmentModal()">${backText}</button>
+                <h3>${sectionTitle}</h3>
+            </div>
+            <div class="second-hand-inventory-modal">
+                ${sectionsHtml}
+            </div>
+        `;
+
+        modal.style.display = 'block';
+        modal.setAttribute('aria-hidden', 'false');
+    }
+
     function renderInventory(lang) {
         const title = document.getElementById('constructionMaterialsInventoryTitle');
         const subtitle = document.getElementById('constructionMaterialsInventorySubtitle');
         const container = document.getElementById('constructionMaterialsInventoryGrid');
+        const section = document.getElementById('construction-materials-inventory');
 
         if (title) {
             title.textContent = localise(content.inventoryTitle, lang);
@@ -550,44 +635,12 @@
         if (subtitle) {
             subtitle.textContent = localise(content.inventorySubtitle, lang);
         }
-        if (!container) {
-            return;
+        if (section) {
+            section.setAttribute('hidden', 'true');
         }
-
-        if (inventory.length === 0) {
-            const emptyText = lang === 'fa'
-                ? 'برای این دسته‌بندی هنوز فایلی ثبت نشده است.'
-                : lang === 'ps'
-                    ? 'د دې کټګورۍ لپاره لا فایل ثبت شوی نه دی.'
-                    : 'No datasheets have been registered for this category yet.';
-            container.innerHTML = `<div class="no-equipment">${emptyText}</div>`;
-            return;
+        if (container) {
+            container.innerHTML = '';
         }
-
-        const grouped = inventory.reduce((acc, item) => {
-            const categoryId = item.category || 'materials';
-            if (!acc[categoryId]) {
-                acc[categoryId] = [];
-            }
-            acc[categoryId].push(item);
-            return acc;
-        }, {});
-
-        const sectionsHtml = Object.keys(grouped).map(categoryId => {
-            const categoryDetails = categories.find(cat => cat.id === categoryId);
-            const titleText = categoryDetails ? localise(categoryDetails.title, lang) : '';
-            const descriptionText = categoryDetails ? localise(categoryDetails.description, lang) : '';
-            const descriptionMarkup = descriptionText ? `<p class="inventory-category-description">${descriptionText}</p>` : '';
-            return `
-                <section class="second-hand-inventory-category" data-category="${categoryId}">
-                    <h4 class="inventory-category-title">${titleText}</h4>
-                    ${descriptionMarkup}
-                    ${buildInventoryCardsHtml(grouped[categoryId], lang)}
-                </section>
-            `;
-        }).join('');
-
-        container.innerHTML = `<div class="second-hand-inventory-modal">${sectionsHtml}</div>`;
     }
 
     function renderAssurance(lang) {
@@ -660,15 +713,12 @@
 
     function setupInteractions() {
         const cta = document.getElementById('viewConstructionMaterialsButton');
-        if (cta && !cta.dataset.boundScroll) {
+        if (cta && !cta.dataset.boundModal) {
             cta.addEventListener('click', event => {
                 event.preventDefault();
-                const inventorySection = document.getElementById('construction-materials-inventory');
-                if (inventorySection) {
-                    inventorySection.scrollIntoView({ behavior: 'smooth' });
-                }
+                showConstructionMaterialsInventoryModal(getLanguage());
             });
-            cta.dataset.boundScroll = 'true';
+            cta.dataset.boundModal = 'true';
         }
     }
 
@@ -681,4 +731,6 @@
         updatePage();
         setupInteractions();
     };
+    window.showConstructionMaterialsCategoryModal = showConstructionMaterialsCategoryModal;
+    window.showConstructionMaterialsInventoryModal = showConstructionMaterialsInventoryModal;
 })();
