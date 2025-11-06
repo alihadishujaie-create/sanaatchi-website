@@ -2195,7 +2195,25 @@ const categoryKeywords = {
     'tanks': ['مخازن', 'Tanks', 'مخزن', 'tank', 'تنکونه', 'Tanks'],
     'packaging': ['بسته بندی', 'Packaging', 'بسته', 'package', 'بسته بندي', 'Packaging'],
     'chemical-pharma': ['ماشین آلات شیمیایی و دارویی', 'Chemical & Pharmaceutical Machinery', 'شیمیایی', 'chemical', 'دارویی', 'pharmaceutical', 'د کیمیاوي او درملو ماشینونه', 'Chemical & Pharmaceutical Machinery'],
-    'machinery-parts': ['پرزه‌جات ماشین‌آلات', 'Machinery Spare Parts', 'پرزه‌جات', 'spare parts', 'د ماشینونو پرزې', 'Machinery Spare Parts'],
+    'machinery-parts': [
+        'پرزه‌جات ماشین‌آلات', 'Machinery Spare Parts', 'پرزه‌جات', 'spare parts', 'د ماشینونو پرزې', 'Machinery Spare Parts',
+        'باکت بیل مکانیکی', 'Excavator Bucket', 'د اکسکاویټر باکت',
+        'شیلنگ هیدرولیک', 'Hydraulic Hose', 'هایډرولیک نلۍ',
+        'زنجیر شنی', 'Track Chain', 'د ټراک زنځیر',
+        'قطعات موتور دیزلی', 'Diesel Engine Parts', 'د ډیزل انجن پرزې',
+        'قالب تزریق', 'Injection Mold', 'د انجکشن قالب',
+        'تیغه برش', 'Cutting Blade', 'د پرې کولو تیغ',
+        'کنترلر CNC', 'CNC Controller', 'د CNC کنټرولر',
+        'موتور و گیربکس', 'Motor Gearbox', 'موټر او ګیرباکس',
+        'شفت تراکتور', 'Tractor Shaft', 'د ټراکټر شافټ',
+        'تیغه دروگر', 'Harvester Blade', 'د دروګر تیغه',
+        'پمپ آب کشاورزی', 'Irrigation Pump', 'د اوبه خور پمپ',
+        'بذرپاش', 'Seed Drill', 'د بذرپاش سیسټم',
+        'یاتاقان صنعتی', 'Industrial Bearings', 'صنعتي یاتاقانونه',
+        'فیلتر صنعتی', 'Industrial Filters', 'صنعتي فلټرونه',
+        'باتری صنعتی', 'Industrial Batteries', 'صنعتي بیټرۍ',
+        'تسمه انتقال نیرو', 'Power Transmission Belt', 'د ځواک لېږد تسمه'
+    ],
     'paper-pulp': ['ماشین آلات کاغذ و سلولوز', 'Paper & Pulp Machinery', 'کاغذ', 'paper', 'د کاغذ او پالپ ماشینونه', 'Paper & Pulp Machinery'],
     'electronic-machinery': ['ماشین آلات الکترونیکی', 'Electronic Machinery', 'الکترونیک', 'electronic', 'د الکترونیک ماشینونه', 'Electronic Machinery'],
     'telecom-parts': ['قطعات و لوازم اینترنتی و مخابراتی', 'Internet & Telecommunication Parts', 'مخابراتی', 'telecom', 'اینترنت', 'internet', 'د انترنت او مخابراتي برخې', 'Internet & Telecommunication Parts'],
@@ -2458,14 +2476,164 @@ const equipmentData = {
     ],
     'machinery-parts': [
         {
-            name: { fa: 'تسمه نقاله', en: 'Conveyor Belt', ps: 'د تسمه نقاله' },
-            description: { fa: 'تسمه نقاله برای خطوط تولید', en: 'Conveyor belt for production lines', ps: 'د تولید لینو لپاره تسمه نقاله' },
-            pdfUrl: 'pdfs/machinery-parts/conveyor-belt.pdf'
+            category: 'construction-parts',
+            name: { fa: 'باکت بیل مکانیکی', en: 'Excavator Bucket', ps: 'د اکسکاویټر باکت' },
+            description: {
+                fa: 'باکت‌های ضدسایش برای حفاری، بارگیری و استخراج معدن.',
+                en: 'Wear-resistant excavator buckets for digging, loading and quarry duties.',
+                ps: 'د اغوستلو پر وړاندې مقاومت لرونکي باکتونه د کیندلو، بارولو او کان کیندنې لپاره.'
+            },
+            pdfUrl: 'pdfs/machinery-parts/construction-parts/excavator-bucket.pdf'
         },
         {
-            name: { fa: 'یاتاقان صنعتی', en: 'Industrial Bearing', ps: 'د صنعت برګر' },
-            description: { fa: 'یاتاقان برای ماشین آلات صنعتی', en: 'Bearing for industrial machinery', ps: 'د صنعت ماشینونو لپاره برګر' },
-            pdfUrl: 'pdfs/machinery-parts/industrial-bearing.pdf'
+            category: 'construction-parts',
+            name: { fa: 'شیلنگ هیدرولیک فشارقوی', en: 'High-Pressure Hydraulic Hose', ps: 'د لوړ فشار هایدرولیک نلۍ' },
+            description: {
+                fa: 'شیلنگ‌های چندلایه با اتصالات استاندارد برای سیستم‌های هیدرولیک سنگین.',
+                en: 'Multilayer hoses with standard fittings for heavy-duty hydraulic systems.',
+                ps: 'څو پوړیز هایدرولیک نلونه د معیاري نښلونکو سره د درنو سیسټمونو لپاره.'
+            },
+            pdfUrl: 'pdfs/machinery-parts/construction-parts/hydraulic-hose.pdf'
+        },
+        {
+            category: 'construction-parts',
+            name: { fa: 'زنجیر شنی ماشین‌آلات', en: 'Crawler Track Chain', ps: 'د ټراک زنځیر' },
+            description: {
+                fa: 'زنجیر کامل بولدوزر و بیل مکانیکی با پین سخت‌کاری‌شده و بوش ضدسایش.',
+                en: 'Complete dozer and excavator chains with hardened pins and wear-resistant bushes.',
+                ps: 'د بلدوزر او اکسکاویټر بشپړ زنځیرونه د سختو پینو او ضد اغوستلو بوشونو سره.'
+            },
+            pdfUrl: 'pdfs/machinery-parts/construction-parts/track-chain.pdf'
+        },
+        {
+            category: 'construction-parts',
+            name: { fa: 'قطعات موتور دیزلی سنگین', en: 'Heavy-Duty Engine Parts', ps: 'د درنو ډیزل انجن پرزې' },
+            description: {
+                fa: 'لوازم اورهال موتور شامل پیستون، رینگ، یاتاقان و سوپاپ برای ماشین‌آلات راهسازی.',
+                en: 'Overhaul kits with pistons, rings, bearings and valves for construction engines.',
+                ps: 'د اورهال کڅوړې چې پستونونه، رینګونه، یاتاقانونه او والوګان د ساختماني انجنونو لپاره لري.'
+            },
+            pdfUrl: 'pdfs/machinery-parts/construction-parts/engine-parts.pdf'
+        },
+        {
+            category: 'production-parts',
+            name: { fa: 'قالب تزریق پلاستیک', en: 'Plastic Injection Mold', ps: 'د پلاستیک انجکشن قالب' },
+            description: {
+                fa: 'قالب‌های چندحفره فولادی با خنک‌کننده کانفورمال برای تولید سریع قطعات.',
+                en: 'Multi-cavity steel molds with conformal cooling for rapid plastic part production.',
+                ps: 'چند حفره لرونکي فولادي قالبونه د کانفورمال یخولو سره د چټک پلاستیک تولید لپاره.'
+            },
+            pdfUrl: 'pdfs/machinery-parts/production-parts/injection-mold.pdf'
+        },
+        {
+            category: 'production-parts',
+            name: { fa: 'تیغه برش صنعتی', en: 'Industrial Cutting Blade', ps: 'صنعتي د پرې کولو تیغ' },
+            description: {
+                fa: 'تیغه‌های فولادی آلیاژی برای خطوط برش ورق، چوب و مواد غذایی.',
+                en: 'Alloy-steel blades engineered for sheet, wood and food cutting lines.',
+                ps: 'د مصر فولادو تیغونه د پاڼې، لرګي او خوړو د پرې کولو لینونو لپاره.'
+            },
+            pdfUrl: 'pdfs/machinery-parts/production-parts/cutting-blade.pdf'
+        },
+        {
+            category: 'production-parts',
+            name: { fa: 'کنترلر CNC صنعتی', en: 'Industrial CNC Controller', ps: 'صنعتي د CNC کنټرولر' },
+            description: {
+                fa: 'کنترلر چندمحوره با نرم‌افزار به‌روزرسانی‌شده برای مراکز ماشینکاری و برش.',
+                en: 'Multi-axis controller with updated software for machining centres and cutting systems.',
+                ps: 'چند محوره کنټرولر د نوې سافټویر سره د ماشینکارۍ مرکزونو او پرې کولو سیسټمونو لپاره.'
+            },
+            pdfUrl: 'pdfs/machinery-parts/production-parts/cnc-controller.pdf'
+        },
+        {
+            category: 'production-parts',
+            name: { fa: 'موتور و گیربکس صنعتی', en: 'Industrial Motor & Gearbox', ps: 'صنعتي موټر او ګیرباکس' },
+            description: {
+                fa: 'ست‌های الکتروگیربکس با نسبت‌های مختلف برای نوار نقاله و ماشین‌آلات بسته‌بندی.',
+                en: 'Electro-gearbox sets in multiple ratios for conveyors and packaging machinery.',
+                ps: 'برقي ګیربکس سیټونه د بېلابېلو نسبتونو سره د نوار نقاله او بسته بندۍ ماشینونو لپاره.'
+            },
+            pdfUrl: 'pdfs/machinery-parts/production-parts/motor-gearbox.pdf'
+        },
+        {
+            category: 'agricultural-parts',
+            name: { fa: 'شفت PTO تراکتور', en: 'Tractor PTO Shaft', ps: 'د ټراکټر PTO شافټ' },
+            description: {
+                fa: 'شفت‌های تلسکوپی با مفصل‌های ایمن برای انتقال توان ادوات کشاورزی.',
+                en: 'Telescopic shafts with guarded joints for powering farm implements.',
+                ps: 'تلسکوپي شافټونه د خوندي مفصلونو سره د کرنیزو وسایلو د ځواک لپاره.'
+            },
+            pdfUrl: 'pdfs/machinery-parts/agricultural-parts/tractor-shaft.pdf'
+        },
+        {
+            category: 'agricultural-parts',
+            name: { fa: 'تیغه دروگر کمباین', en: 'Combine Harvester Blade', ps: 'د کمباین د درو تیغه' },
+            description: {
+                fa: 'تیغه‌های سخت‌کاری‌شده با تراز بالانس برای برداشت گندم، برنج و جو.',
+                en: 'Hardened blades with balanced alignment for wheat, rice and barley harvesting.',
+                ps: 'سخت کړل شوي تیغونه د توازون سره د غنمو، وریجو او اوربشو د راټولولو لپاره.'
+            },
+            pdfUrl: 'pdfs/machinery-parts/agricultural-parts/harvester-blade.pdf'
+        },
+        {
+            category: 'agricultural-parts',
+            name: { fa: 'پمپ آب آبیاری', en: 'Irrigation Water Pump', ps: 'د اوبه خور پمپ' },
+            description: {
+                fa: 'پمپ‌های گریز از مرکز و دیزلی با هد بالا برای سیستم‌های آبیاری مزرعه.',
+                en: 'Centrifugal and diesel-driven pumps delivering high head for field irrigation.',
+                ps: 'سنټرفیوګ او ډیزلي پمپونه د لوړې سرکښې سره د کرنیزو اوبه خور سیستمونو لپاره.'
+            },
+            pdfUrl: 'pdfs/machinery-parts/agricultural-parts/water-pump.pdf'
+        },
+        {
+            category: 'agricultural-parts',
+            name: { fa: 'سامانه بذرپاش', en: 'Seed Drill Assembly', ps: 'د بذرپاش سیسټم' },
+            description: {
+                fa: 'کیت کامل بذرپاش ردیفی با جعبه دنده، دیسک و لوله بذر رسان.',
+                en: 'Complete row seeder kits with gearbox, discs and seed tubes.',
+                ps: 'بشپړ د کرلو کټونه د ګیر بکس، ډیسکونو او د تخم لولیو سره.'
+            },
+            pdfUrl: 'pdfs/machinery-parts/agricultural-parts/seed-drill.pdf'
+        },
+        {
+            category: 'general-parts',
+            name: { fa: 'یاتاقان صنعتی سنگین', en: 'Heavy Industrial Bearings', ps: 'د درنو ماشینونو یاتاقانونه' },
+            description: {
+                fa: 'یاتاقان‌های شفت و بلبرینگ غلتکی با گریس نسوز برای خطوط تولید مداوم.',
+                en: 'Shaft bearings and roller assemblies with high-temperature grease for continuous lines.',
+                ps: 'د شافټ یاتاقانونه او رولرونه د لوړ تودوخې ګریس سره د دوامدارو لینونو لپاره.'
+            },
+            pdfUrl: 'pdfs/machinery-parts/general-parts/industrial-bearings.pdf'
+        },
+        {
+            category: 'general-parts',
+            name: { fa: 'فیلترهای صنعتی', en: 'Industrial Filtration Set', ps: 'صنعتي فلټر سیټ' },
+            description: {
+                fa: 'فیلتر هوا، روغن و هیدرولیک برای کمپرسور، ژنراتور و ماشین‌آلات تولیدی.',
+                en: 'Air, oil and hydraulic filters tailored for compressors, generators and processing machines.',
+                ps: 'د هوا، تیلو او هایدرولیک فلټرونه د کمپرسورونو، جنراتورونو او پروسس ماشینونو لپاره.'
+            },
+            pdfUrl: 'pdfs/machinery-parts/general-parts/filters.pdf'
+        },
+        {
+            category: 'general-parts',
+            name: { fa: 'باتری صنعتی عمیق‌چرخه', en: 'Deep-Cycle Industrial Batteries', ps: 'صنعتي ژور دورې بیټرۍ' },
+            description: {
+                fa: 'باتری‌های AGM و ژل برای لیفتراک، UPS و سیستم‌های برق پشتیبان.',
+                en: 'AGM and gel batteries powering forklifts, UPS units and backup systems.',
+                ps: 'د AGM او جیل بیټرۍ د فورک لیفټ، UPS او شاتړ بریښنا سیسټمونو لپاره.'
+            },
+            pdfUrl: 'pdfs/machinery-parts/general-parts/batteries.pdf'
+        },
+        {
+            category: 'general-parts',
+            name: { fa: 'تسمه‌های انتقال نیرو', en: 'Power Transmission Belts', ps: 'د ځواک لېږد تسمې' },
+            description: {
+                fa: 'تسمه‌های V، تایمینگ و تخت با ترکیب لاستیک تقویت‌شده برای موتورها و نقاله‌ها.',
+                en: 'V, timing and flat belts reinforced for motors, conveyors and fabrication lines.',
+                ps: 'V، ټایمینګ او فلیټ تسمې د پیاوړي ربړ سره د موترو، نوار نقالو او تولیدي لینونو لپاره.'
+            },
+            pdfUrl: 'pdfs/machinery-parts/general-parts/belts.pdf'
         }
     ],
     'paper-pulp': [
@@ -3079,6 +3247,9 @@ function updateTranslations(lang) {
     if (typeof updateIndustrialRawMaterialsPage === 'function') {
         updateIndustrialRawMaterialsPage();
     }
+    if (typeof updateMachineryPartsPage === 'function') {
+        updateMachineryPartsPage();
+    }
     if (typeof updateCargoContent === 'function') {
         const metaTag = document.querySelector('meta[name="description"]');
         const originalContent = metaTag ? (metaTag.dataset.originalContent || metaTag.getAttribute('content') || '') : '';
@@ -3124,6 +3295,10 @@ function navigateToSecondHand() {
 
 function navigateToIndustrialRawMaterials() {
     window.location.href = 'industrial-raw-materials.html';
+}
+
+function navigateToMachineryParts() {
+    window.location.href = 'machinery-parts.html';
 }
 
 // Show phase modal

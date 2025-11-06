@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پرزه‌جات و قطعات ماشین‌آلات صنعتی | صنعتچی</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <meta name="description" content="تأمین باکت، شیلنگ هیدرولیک، قالب تزریق، گیربکس، قطعات کشاورزی و مصرفی برای نگهداری خطوط تولید و ماشین‌آلات صنعتی در افغانستان.">
+    <meta name="keywords" content="پرزه‌جات ماشین آلات, قطعات صنعتی افغانستان, machinery parts afghanistan, sanaatchi">
+    <meta name="author" content="Sanaatchi Industrial Vision">
+    <meta property="og:title" content="پرزه‌جات و قطعات ماشین‌آلات صنعتی | صنعتچی">
+    <meta property="og:description" content="شبکه تأمین صنعتچی، قطعات یدکی تخصصی برای ماشین‌آلات ساختمانی، خطوط تولید و کشاورزی را به سرعت فراهم می‌کند.">
+    <meta property="og:image" content="images/aiv-og-image.jpg">
+    <meta property="og:url" content="https://sanaatchi.com/machinery-parts">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="machinery-parts-page">
+    <a href="#main-content" class="skip-link">پرش به محتوای اصلی</a>
+
+    <header class="header">
+        <div class="container">
+            <div class="main-header">
+                <img src="images/logo.png" alt="لوگوی صنعتچی Industrial Vision" class="logo">
+
+                <nav class="nav" id="mainNav">
+                    <a href="index.html#hero" onclick="return goToIndex(event, 'hero')" data-translate="home">خانه</a>
+                    <a href="index.html#services" onclick="return goToIndex(event, 'services')" data-translate="services">خدمات</a>
+                    <a href="index.html#why-aiv" onclick="return goToIndex(event, 'why-aiv')" data-translate="about">درباره ما</a>
+                    <a href="projects.html" data-translate="projects">پروژه های تحت کار</a>
+                    <a href="cargo.html" data-translate="nav_cargo">کارگو و حمل‌ونقل</a>
+                    <a href="industrial-raw-materials.html" data-translate="cat-industrial-raw-materials">مواد اولیه صنعتی</a>
+                    <a href="index.html#footer" onclick="return goToIndex(event, 'footer')" data-translate="contact">تماس با ما</a>
+                </nav>
+
+                <div class="header-actions">
+                    <select class="language-switcher" onchange="switchLanguage(this.value)" aria-label="تغییر زبان">
+                        <option value="fa">فارسی (fa)</option>
+                        <option value="en">English (en)</option>
+                        <option value="ps">پشتو (ps)</option>
+                    </select>
+                    <button class="cta-button" onclick="showContactModal()" aria-label="درخواست مشاوره رایگان" data-translate="free-consultation">مشاوره رایگان</button>
+                    <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="منوی موبایل">☰</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section id="hero" class="hero hero-with-search category-hero machinery-parts-hero">
+            <div class="hero-bg"></div>
+            <img class="hero-gif" src="images/background.webp" alt="Industrial Background" loading="lazy">
+            <div class="hero-animation"></div>
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1 id="machineryPartsHeroTitle">قطعات یدکی تخصصی برای تداوم تولید</h1>
+                        <p id="machineryPartsHeroSubtitle">از باکت و زنجیر شنی تا قالب تزریق و گیربکس؛ قطعات اورجینال با لجستیک سریع تحویل می‌شوند.</p>
+
+                        <div class="quote-box">
+                            <p id="machineryPartsHeroQuote">هر مجموعه قطعه با ضمانت اصالت، گزارش بازرسی و پشتیبانی نصب توسط تیم صنعتچی ارائه می‌شود.</p>
+                        </div>
+
+                        <div class="hero-buttons">
+                            <button class="btn-primary" onclick="showSalesContactModal()" data-translate="start-cooperation">شروع همکاری</button>
+                            <button class="btn-secondary" id="viewMachineryPartsButton">مشاهده فهرست قطعات</button>
+                        </div>
+                    </div>
+
+                    <div class="hero-search">
+                        <h3 data-translate="search-title">دستگاه یا کالای مورد نظرتان را بین دسته بندی صنعتی</h3>
+                        <p data-translate="search-subtitle">جستجو کنید و بهترین ها را بیابید.</p>
+
+                        <div class="search-box">
+                            <input type="text" id="searchInput" data-translate-placeholder="search-placeholder" placeholder="دنبال چه محصولی هستید؟" aria-label="جستجو برای محصولات">
+                            <button onclick="performSearch()" data-translate="search-btn" aria-label="جستجو">جستجو</button>
+                        </div>
+
+                        <div class="popular-categories" data-translate="popular-categories">دسته‌بندی‌های محبوب:</div>
+                        <div class="category-tags">
+                            <span class="category-tag" onclick="performSearch('پرزه‌جات ماشین‌آلات')" role="button" tabindex="0" onkeypress="if(event.key==='Enter') performSearch('پرزه‌جات ماشین‌آلات')">پرزه‌جات ماشین‌آلات</span>
+                            <span class="category-tag" onclick="performSearch('قطعات هیدرولیک')" role="button" tabindex="0" onkeypress="if(event.key==='Enter') performSearch('قطعات هیدرولیک')">قطعات هیدرولیک</span>
+                            <span class="category-tag" onclick="performSearch('قالب و گیربکس')" role="button" tabindex="0" onkeypress="if(event.key==='Enter') performSearch('قالب و گیربکس')">قالب و گیربکس</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="category-overview machinery-parts-overview">
+            <div class="container">
+                <div class="section-title">
+                    <h2 id="machineryPartsHighlightsTitle">چرا قطعات را از صنعتچی تهیه کنیم؟</h2>
+                    <p id="machineryPartsHighlightsSubtitle">از تأمین سریع تا نصب و راه‌اندازی؛ هر قطعه همراه با خدمات فنی و لجستیکی کامل ارائه می‌شود.</p>
+                </div>
+                <div id="machineryPartsHighlightsGrid" class="features-grid"></div>
+            </div>
+        </section>
+
+        <section id="machinery-parts-categories" class="categories machinery-parts-categories">
+            <div class="container">
+                <div class="section-title">
+                    <h2 id="machineryPartsCategoriesTitle">گروه‌های اصلی قطعات</h2>
+                    <p id="machineryPartsCategoriesSubtitle">براساس نوع ماشین‌آلات خود، قطعات ساختمانی، تولیدی، کشاورزی یا عمومی را انتخاب کنید.</p>
+                </div>
+                <div id="machineryPartsCategoriesGrid" class="categories-grid"></div>
+            </div>
+        </section>
+
+        <section id="machinery-parts-inventory" class="category-lines machinery-parts-inventory">
+            <div class="container">
+                <div class="section-title">
+                    <h2 id="machineryPartsInventoryTitle">فهرست قطعات آماده تأمین</h2>
+                    <p id="machineryPartsInventorySubtitle">جزئیات فنی هر قطعه را بررسی و فایل PDF مشخصات را دانلود کنید.</p>
+                </div>
+                <div id="machineryPartsInventoryGrid"></div>
+            </div>
+        </section>
+
+        <section class="second-hand-overview machinery-parts-assurance">
+            <div class="container">
+                <div class="section-title">
+                    <h2 id="machineryPartsAssuranceTitle">خدمات همراه قطعات یدکی</h2>
+                    <p id="machineryPartsAssuranceSubtitle">تضمین اصالت، کنترل کیفیت و آموزش نصب برای تیم نگهداری شما.</p>
+                </div>
+                <div id="machineryPartsAssuranceGrid" class="features-grid"></div>
+            </div>
+        </section>
+
+        <section id="machinery-parts-process" class="second-hand-process machinery-parts-process">
+            <div class="container">
+                <div class="section-title">
+                    <h2 id="machineryPartsProcessTitle">روند تأمین قطعات</h2>
+                    <p id="machineryPartsProcessSubtitle">از ثبت نیاز تا تحویل و نصب در سایت شما را پوشش می‌دهیم.</p>
+                </div>
+                <div id="machineryPartsProcessTimeline" class="process-grid"></div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <h2 data-translate="cta-title">قول ما در صنعتچی ساده است</h2>
+                <p data-translate="cta-subtitle">شما چشم‌انداز را مشخص کنید، ما تمام مسیر تحقق آن را هموار می‌سازیم</p>
+                <div class="cta-buttons">
+                    <button class="btn-primary" onclick="showSalesContactModal()" data-translate="start-cooperation">شروع همکاری</button>
+                    <button class="btn-secondary" onclick="showContactModal()" data-translate="free-consultation">مشاوره رایگان</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="why-aiv" class="why-aiv">
+            <div class="container">
+                <div class="section-title">
+                    <h2 data-translate="why-title">چرا صنعتچی؟</h2>
+                    <p data-translate="why-subtitle">مزایای همکاری با گروه چشم‌انداز صنعتچی </p>
+                </div>
+
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <span class="feature-icon">✓</span>
+                        <h3 data-translate="why-trust">اعتماد مشتریان</h3>
+                        <p data-translate="why-trust-desc">سابقه درخشان ما در اجرای موفق پروژه‌ها، بزرگترین تضمین برای آرامش خاطر شماست.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <span class="feature-icon">💰</span>
+                        <h3 data-translate="why-transparency">شفافیت و قیمت رقابتی</h3>
+                        <p data-translate="why-transparency-desc">ما با ارائه تحلیل دقیق هزینه‌ها و قیمت‌های رقابتی، فرآیند تصمیم‌گیری را برای شما آسان و شفاف می‌سازیم.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <span class="feature-icon">⏰</span>
+                        <h3 data-translate="why-timeline">تعهد به زمان‌بندی</h3>
+                        <p data-translate="why-timeline-desc">ما برای وقت شما ارزش قائلیم و متعهد به تکمیل و تحویل پروژه‌ها در کوتاه‌ترین زمان ممکن هستیم.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <span class="feature-icon">🌍</span>
+                        <h3 data-translate="why-network">شبکه تامین جهانی</h3>
+                        <p data-translate="why-network-desc">با پیگیری مستمر و ارتباط مستقیم با معتبرترین تامین‌کنندگان جهانی، کیفیت و اصالت تجهیزات شما را تضمین می‌کنیم.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer" class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3 data-translate="footer-about">درباره صنعتچی</h3>
+                    <p data-translate="footer-about-desc">صنعتچی Industrial Vision شریک مطمئن شما در راه‌اندازی فابریکه، خطوط تولید، تأمین مواد اولیه و ماشین‌آلات در افغانستان است.</p>
+                </div>
+
+                <div class="footer-column">
+                    <h3 data-translate="footer-services">خدمات ما</h3>
+                    <ul>
+                        <li><a href="production-lines.html" data-translate="footer-production-lines">خطوط تولید</a></li>
+                        <li><a href="second-hand.html" data-translate="footer-second-hand">ماشین آلات دست دوم</a></li>
+                        <li><a href="industrial-raw-materials.html" data-translate="footer-raw-materials">مواد اولیه صنعتی</a></li>
+                        <li><a href="machinery-parts.html" data-translate="cat-machinery-parts">پرزه‌جات ماشین‌آلات</a></li>
+                        <li><a href="cargo.html" data-translate="footer-cargo">کارگو و حمل‌ونقل</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3 data-translate="footer-contact">تماس با ما</h3>
+                    <p data-translate="footer-address">کابل، افغانستان - دفتر هماهنگی پروژه‌های صنعتی</p>
+                    <p data-translate="footer-phone">تلفن: +93 (0) 700 000 000</p>
+                    <p data-translate="footer-email">ایمیل: info@sanaatchi.com</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> صنعتچی Industrial Vision. <span data-translate="all-rights">تمام حقوق محفوظ است.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="contactModal" class="modal" role="dialog" aria-labelledby="contactModalTitle" aria-hidden="true">
+        <div class="modal-content contact-modal-content">
+            <span class="modal-close" onclick="closeContactModal()" aria-label="بستن">&times;</span>
+            <div id="contactModalContent"></div>
+        </div>
+    </div>
+
+    <div id="salesContactModal" class="modal" role="dialog" aria-labelledby="salesContactModalTitle" aria-hidden="true">
+        <div class="modal-content sales-contact-modal-content">
+            <span class="modal-close" onclick="closeSalesContactModal()" aria-label="بستن">&times;</span>
+            <div id="salesContactModalContent"></div>
+        </div>
+    </div>
+
+    <div id="searchResultModal" class="modal" role="dialog" aria-labelledby="searchResultModalTitle" aria-hidden="true">
+        <div class="modal-content search-result-modal-content">
+            <span class="modal-close" onclick="closeSearchResultModal()" aria-label="بستن">&times;</span>
+            <div id="searchResultModalContent"></div>
+        </div>
+    </div>
+
+    <div id="equipmentModal" class="modal" role="dialog" aria-labelledby="equipmentModalTitle" aria-hidden="true">
+        <div class="equipment-modal-content">
+            <span class="modal-close" onclick="closeEquipmentModal()" aria-label="بستن">&times;</span>
+            <div id="equipmentModalContent"></div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script src="js/machinery-parts.js"></script>
+</body>
+</html>
