@@ -248,6 +248,101 @@
         }
     }
 
+    function buildInventoryCardsHtml(items, lang) {
+        if (!items || !items.length) {
+            const emptyText = lang === 'fa'
+                ? 'هیچ دستگاهی در این دسته موجود نیست.'
+                : (lang === 'ps'
+                    ? 'په دې کټګورۍ کې کوم ماشین شتون نلري.'
+                    : 'No equipment available in this category.');
+            return `<div class="no-equipment">${emptyText}</div>`;
+        }
+
+        const viewText = lang === 'fa' ? 'مشاهده PDF' : (lang === 'ps' ? 'PDF وګورئ' : 'View PDF');
+        const downloadText = lang === 'fa' ? 'دانلود' : (lang === 'ps' ? 'ډاونلوډ' : 'Download');
+
+        const cards = items.map(item => `
+            <div class="equipment-card">
+                <div class="equipment-icon">${item.icon || '📄'}</div>
+                <h4>${item.name[lang] || item.name.fa}</h4>
+                <p>${item.description[lang] || item.description.fa}</p>
+                ${buildMetaList(item.meta, lang)}
+                <div class="equipment-actions">
+                    <a href="${item.pdfUrl}" target="_blank" class="btn-primary">
+                        <i class="fas fa-file-pdf"></i> ${viewText}
+                    </a>
+                    <a href="${item.pdfUrl}" download class="btn-secondary">
+                        <i class="fas fa-download"></i> ${downloadText}
+                    </a>
+                </div>
+            </div>
+        `).join('');
+
+        return `<div class="equipment-grid">${cards}</div>`;
+    }
+
+    function showSecondHandCategoryModal(categoryId, lang = getLanguage()) {
+        const modal = document.getElementById('equipmentModal');
+        const modalContent = document.getElementById('equipmentModalContent');
+        const category = categories.find(entry => entry.id === categoryId);
+        const items = inventory.filter(item => item.category === categoryId);
+
+        if (!modal || !modalContent || !category) {
+            return;
+        }
+
+        const title = category.title[lang] || category.title.fa;
+        const backText = lang === 'fa' ? 'بازگشت' : (lang === 'ps' ? 'بیرته' : 'Back');
+        const cardsHtml = buildInventoryCardsHtml(items, lang);
+
+        modalContent.innerHTML = `
+            <div class="equipment-modal-header">
+                <button class="back-btn" onclick="closeEquipmentModal()">${backText}</button>
+                <h3>${title}</h3>
+            </div>
+            ${cardsHtml}
+        `;
+
+        modal.style.display = 'block';
+        modal.setAttribute('aria-hidden', 'false');
+    }
+
+    function showSecondHandInventoryModal(lang = getLanguage()) {
+        const modal = document.getElementById('equipmentModal');
+        const modalContent = document.getElementById('equipmentModalContent');
+
+        if (!modal || !modalContent) {
+            return;
+        }
+
+        const backText = lang === 'fa' ? 'بازگشت' : (lang === 'ps' ? 'بیرته' : 'Back');
+        const sectionTitle = content.inventoryTitle[lang] || content.inventoryTitle.fa;
+
+        const sectionsHtml = categories.map(category => {
+            const items = inventory.filter(item => item.category === category.id);
+            const categoryTitle = `${category.icon} ${category.title[lang] || category.title.fa}`;
+            return `
+                <section class="second-hand-inventory-category">
+                    <h4 class="inventory-category-title">${categoryTitle}</h4>
+                    ${buildInventoryCardsHtml(items, lang)}
+                </section>
+            `;
+        }).join('');
+
+        modalContent.innerHTML = `
+            <div class="equipment-modal-header">
+                <button class="back-btn" onclick="closeEquipmentModal()">${backText}</button>
+                <h3>${sectionTitle}</h3>
+            </div>
+            <div class="second-hand-inventory-modal">
+                ${sectionsHtml}
+            </div>
+        `;
+
+        modal.style.display = 'block';
+        modal.setAttribute('aria-hidden', 'false');
+    }
+
     function renderCategories(lang) {
         const wrapper = document.getElementById('secondHandCategories');
         const title = document.getElementById('secondHandCategoriesTitle');
@@ -270,26 +365,49 @@
             card.setAttribute('role', 'button');
             card.setAttribute('tabindex', '0');
 
+            const titleText = category.title[lang] || category.title.fa;
+            const descriptionText = category.description[lang] || category.description.fa;
+            const detailText = lang === 'fa' ? 'مشاهده جزئیات' : (lang === 'ps' ? 'جزییات وګورئ' : 'View Details');
+            const detailLabel = lang === 'fa'
+                ? `مشاهده جزئیات ${titleText}`
+                : (lang === 'ps' ? `د ${titleText} جزییات وګورئ` : `View details for ${titleText}`);
+
             card.innerHTML = `
                 <span class="icon">${category.icon}</span>
-                <h4>${category.title[lang] || category.title.fa}</h4>
-                <p>${category.description[lang] || category.description.fa}</p>
+                <h4>${titleText}</h4>
+                <p>${descriptionText}</p>
+                <div class="category-card-actions">
+                    <a class="category-card-link" href="#" role="button" aria-label="${detailLabel}">
+                        <span>${detailText}</span>
+                        <i class="fas fa-arrow-left"></i>
+                    </a>
+                </div>
             `;
 
-            const scrollToCategory = () => {
-                const section = document.getElementById(`inventory-category-${category.id}`);
-                if (section) {
-                    section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            };
+            const openModal = () => showSecondHandCategoryModal(category.id, lang);
 
-            card.addEventListener('click', scrollToCategory);
+            card.addEventListener('click', openModal);
             card.addEventListener('keypress', event => {
                 if (event.key === 'Enter' || event.key === ' ') {
                     event.preventDefault();
-                    scrollToCategory();
+                    openModal();
                 }
             });
+
+            const link = card.querySelector('.category-card-link');
+            if (link) {
+                const handleLinkInteraction = event => {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    openModal();
+                };
+                link.addEventListener('click', handleLinkInteraction);
+                link.addEventListener('keypress', event => {
+                    if (event.key === 'Enter' || event.key === ' ') {
+                        handleLinkInteraction(event);
+                    }
+                });
+            }
 
             wrapper.appendChild(card);
         });
@@ -307,47 +425,11 @@
         return `<ul class="second-hand-meta">${items}</ul>`;
     }
 
-    function openSecondHandModal(item, lang) {
-        const modal = document.getElementById('equipmentModal');
-        const modalContent = document.getElementById('equipmentModalContent');
-
-        if (!modal || !modalContent || !item) {
-            return;
-        }
-
-        const backText = lang === 'fa' ? 'بازگشت' : (lang === 'ps' ? 'بیرته' : 'Back');
-        const viewText = lang === 'fa' ? 'مشاهده PDF' : (lang === 'ps' ? 'PDF وګورئ' : 'View PDF');
-        const downloadText = lang === 'fa' ? 'دانلود' : (lang === 'ps' ? 'ډاونلوډ' : 'Download');
-
-        const metaList = buildMetaList(item.meta, lang);
-
-        modalContent.innerHTML = `
-            <div class="equipment-modal-header">
-                <button class="back-btn" onclick="closeEquipmentModal()">${backText}</button>
-                <h3>${item.name[lang] || item.name.fa}</h3>
-            </div>
-            <div class="equipment-modal-body">
-                <p>${item.description[lang] || item.description.fa}</p>
-                ${metaList}
-                <div class="equipment-actions">
-                    <a href="${item.pdfUrl}" target="_blank" class="btn-primary">
-                        <i class="fas fa-file-pdf"></i> ${viewText}
-                    </a>
-                    <a href="${item.pdfUrl}" download class="btn-secondary">
-                        <i class="fas fa-download"></i> ${downloadText}
-                    </a>
-                </div>
-            </div>
-        `;
-
-        modal.style.display = 'block';
-        modal.setAttribute('aria-hidden', 'false');
-    }
-
     function renderInventory(lang) {
         const wrapper = document.getElementById('secondHandInventoryGrid');
         const title = document.getElementById('secondHandInventoryTitle');
         const subtitle = document.getElementById('secondHandInventorySubtitle');
+        const section = document.getElementById('second-hand-inventory');
 
         if (title) {
             title.textContent = content.inventoryTitle[lang] || content.inventoryTitle.fa;
@@ -355,58 +437,14 @@
         if (subtitle) {
             subtitle.textContent = content.inventorySubtitle[lang] || content.inventorySubtitle.fa;
         }
+        if (section) {
+            section.setAttribute('hidden', 'true');
+        }
         if (!wrapper) {
             return;
         }
 
         wrapper.innerHTML = '';
-        categories.forEach(category => {
-            const items = inventory.filter(item => item.category === category.id);
-            if (items.length === 0) {
-                return;
-            }
-
-            const section = document.createElement('section');
-            section.className = 'second-hand-inventory-category';
-            section.id = `inventory-category-${category.id}`;
-
-            const heading = document.createElement('h3');
-            heading.className = 'inventory-category-title';
-            heading.innerHTML = `${category.icon} ${category.title[lang] || category.title.fa}`;
-            section.appendChild(heading);
-
-            const grid = document.createElement('div');
-            grid.className = 'equipment-grid';
-
-            items.forEach(item => {
-                const card = document.createElement('div');
-                card.className = 'equipment-card';
-                card.classList.add('second-hand-card');
-                card.setAttribute('role', 'button');
-                card.setAttribute('tabindex', '0');
-
-                card.innerHTML = `
-                    <div class="equipment-icon">${item.icon || '📄'}</div>
-                    <h4>${item.name[lang] || item.name.fa}</h4>
-                    <p>${item.description[lang] || item.description.fa}</p>
-                    ${buildMetaList(item.meta, lang)}
-                `;
-
-                const openModal = () => openSecondHandModal(item, lang);
-                card.addEventListener('click', openModal);
-                card.addEventListener('keypress', event => {
-                    if (event.key === 'Enter' || event.key === ' ') {
-                        event.preventDefault();
-                        openModal();
-                    }
-                });
-
-                grid.appendChild(card);
-            });
-
-            section.appendChild(grid);
-            wrapper.appendChild(section);
-        });
     }
 
     function renderAssurance(lang) {
@@ -480,10 +518,7 @@
         if (viewInventoryButton) {
             viewInventoryButton.addEventListener('click', event => {
                 event.preventDefault();
-                const inventorySection = document.getElementById('second-hand-inventory');
-                if (inventorySection) {
-                    inventorySection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
+                showSecondHandInventoryModal(getLanguage());
             });
         }
     }
@@ -494,4 +529,5 @@
     });
 
     window.updateSecondHandPage = updateSecondHandPage;
+    window.showSecondHandCategoryModal = showSecondHandCategoryModal;
 })();
