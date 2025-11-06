@@ -2407,7 +2407,7 @@ Object.assign(translations, {
     'search-title': { 
         fa: 'دستگاه یا کالای مورد نظرتان را بین دسته بندی صنعتی', 
         en: 'Search for your desired equipment or goods among industrial categories',
-        ps: 'خپل غوښتلي تجهیزات یا توکي د صنعتي ک٫ګوریو څخه ولټوئ'
+        ps: 'خپل غوښتلي تجهیزات یا توکي د صنعتي کتګوریو څخه ولټوئ'
     },
     'search-subtitle': { 
         fa: 'جستجو کنید و بهترین ها را بیابید.', 
