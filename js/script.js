@@ -427,6 +427,19 @@ const categories = {
             en: 'Second-hand industrial machinery with guaranteed quality. From refurbishment to warranty, at affordable prices.',
             ps: 'د تضمین شوي کیفیت سره د دوهم لاس صنعت ماشینونه. له بیا جوړولو څخه تر تضمین پورې، د مناسبه قیمت سره.'
         }
+    },
+    'industrial-raw-materials': {
+        icon: '⛏️',
+        title: {
+            fa: 'مواد اولیه صنعتی',
+            en: 'Industrial Raw Materials',
+            ps: 'صنعتي خام مواد'
+        },
+        description: {
+            fa: 'فولاد، پلیمر، مواد شیمیایی و مواد معدنی استاندارد جهانی برای تغذیه خطوط تولید افغانستان.',
+            en: 'Global-standard steel, polymers, chemicals and minerals to feed Afghan production lines.',
+            ps: 'نړیوال معیار لرونکي فولاد، پولیمرونه، کیمیاوي او معدني مواد د افغانستان د تولید لینونو لپاره.'
+        }
     }
 };
 
@@ -2186,7 +2199,24 @@ const categoryKeywords = {
     'paper-pulp': ['ماشین آلات کاغذ و سلولوز', 'Paper & Pulp Machinery', 'کاغذ', 'paper', 'د کاغذ او پالپ ماشینونه', 'Paper & Pulp Machinery'],
     'electronic-machinery': ['ماشین آلات الکترونیکی', 'Electronic Machinery', 'الکترونیک', 'electronic', 'د الکترونیک ماشینونه', 'Electronic Machinery'],
     'telecom-parts': ['قطعات و لوازم اینترنتی و مخابراتی', 'Internet & Telecommunication Parts', 'مخابراتی', 'telecom', 'اینترنت', 'internet', 'د انترنت او مخابراتي برخې', 'Internet & Telecommunication Parts'],
-    'second-hand': ['ماشین آلات دست دوم', 'Second Hand Machinery', 'دست دوم', 'second hand', 'د دوهم لاس ماشینونه', 'Second Hand Machinery']
+    'second-hand': ['ماشین آلات دست دوم', 'Second Hand Machinery', 'دست دوم', 'second hand', 'د دوهم لاس ماشینونه', 'Second Hand Machinery'],
+    'industrial-raw-materials': [
+        'مواد اولیه صنعتی',
+        'Industrial Raw Materials',
+        'خام مواد',
+        'raw materials',
+        'مواد خام',
+        'feedstock',
+        'فولاد',
+        'steel',
+        'پلیمر',
+        'polymer',
+        'مواد شیمیایی',
+        'chemicals',
+        'مواد معدنی',
+        'minerals',
+        'صنعتي خام مواد'
+    ]
 };
 
 // Equipment data for each category
@@ -2474,12 +2504,178 @@ const equipmentData = {
             pdfUrl: 'pdfs/telecom-parts/network-cable.pdf'
         }
     ],
+    'industrial-raw-materials': [
+        {
+            name: { fa: 'کویل‌های فولادی', en: 'Steel Coils', ps: 'د فولادو کويلونه' },
+            description: {
+                fa: 'کویل گرم و سرد با ضخامت ۰.۸ تا 8 میلی‌متر برای ساخت قطعات و پروفیل.',
+                en: 'Hot and cold rolled coils ranging 0.8–8 mm for fabrication and profiling.',
+                ps: 'ګرم او سوړ کویلونه د ۰.۸ تر ۸ ملي مترو پورې د پرزو جوړولو لپاره.'
+            },
+            pdfUrl: 'pdfs/raw-materials/metals/steel-coils.pdf'
+        },
+        {
+            name: { fa: 'ورق‌های آلومینیومی', en: 'Aluminium Sheets', ps: 'د المونیم ورقونه' },
+            description: {
+                fa: 'ورق آلیاژی سری 3003 و 5052 با پرداخت آینه‌ای و مات برای صنایع غذایی و ساختمانی.',
+                en: 'Alloy 3003/5052 sheets in mirror and matte finishes for food and construction uses.',
+                ps: 'د 3003/5052 الیاژ پاڼې په مټ او انعکاسي پای سره د خوړو او ودانۍ لپاره.'
+            },
+            pdfUrl: 'pdfs/raw-materials/metals/aluminum-sheets.pdf'
+        },
+        {
+            name: { fa: 'سیم مسی', en: 'Copper Wire', ps: 'د مسو تار' },
+            description: {
+                fa: 'کاتد الکترولیتیک با خلوص 99.97٪ مناسب برای کابل‌سازی و تجهیزات برقی.',
+                en: 'Electrolytic cathode copper at 99.97% purity for cabling and electrical hardware.',
+                ps: '۹۹.۹۷٪ خالص الکترولیتیک مس د کیبل او برقي تجهیزاتو لپاره.'
+            },
+            pdfUrl: 'pdfs/raw-materials/metals/copper-wire.pdf'
+        },
+        {
+            name: { fa: 'سنگ آهن', en: 'Iron Ore (62% Fe)', ps: 'د اوسپنې کان (۶۲٪)' },
+            description: {
+                fa: 'کلوخه و دانه‌بندی شده ۰ تا ۱۰ میلی‌متر با عیار ۶۲ درصد برای واحدهای احیای مستقیم.',
+                en: 'Lump and fines 0–10 mm at 62% Fe grade for direct reduction plants.',
+                ps: '۰ تر ۱۰ ملي مترو دانې او ټوټې د ۶۲٪ اوسپنې درجې سره د مستقیم احیا فابریکو لپاره.'
+            },
+            pdfUrl: 'pdfs/raw-materials/metals/iron-ore.pdf'
+        },
+        {
+            name: { fa: 'گرانول پت (PET)', en: 'PET Pellets', ps: 'پت ګرینول' },
+            description: {
+                fa: 'گرانول بطری درجه A برای تولید پریفرم، الیاف و ورق‌های شفاف.',
+                en: 'Bottle-grade PET pellets for preforms, fibres and clear sheets.',
+                ps: 'د بوتل درجې PET ګرینول د پریفرم، فایبر او شفاف پاڼو لپاره.'
+            },
+            pdfUrl: 'pdfs/raw-materials/plastics/pet-pellets.pdf'
+        },
+        {
+            name: { fa: 'گرانول اچ‌دی‌پی‌ای (HDPE)', en: 'HDPE Granules', ps: 'اچ ډي پي اې ګرينول' },
+            description: {
+                fa: 'گرید بادی و تزریقی برای تولید مخازن، بطری و قطعات صنعتی مقاوم.',
+                en: 'Blow and injection grades for tanks, bottles and robust industrial parts.',
+                ps: 'د بلو او انجکشن ګریډونه د ټانکونو، بوتلونو او قوي صنعتي پرزو لپاره.'
+            },
+            pdfUrl: 'pdfs/raw-materials/plastics/hdpe-granules.pdf'
+        },
+        {
+            name: { fa: 'لوله‌های پی‌وی‌سی', en: 'PVC Pipes', ps: 'د پی وي سي لولې' },
+            description: {
+                fa: 'لوله U-PVC و C-PVC در سایز 20 تا 250 میلی‌متر با اتصالات کامل.',
+                en: 'U-PVC and C-PVC pipes from 20 to 250 mm with matching fittings.',
+                ps: 'د U-PVC او C-PVC پایپونه د ۲۰ تر ۲۵۰ ملي مترو پورې له بشپړو فټینګونو سره.'
+            },
+            pdfUrl: 'pdfs/raw-materials/plastics/pvc-pipes.pdf'
+        },
+        {
+            name: { fa: 'گرانول پی‌پی (PP)', en: 'PP Granules', ps: 'پی پي ګرينول' },
+            description: {
+                fa: 'گرید تزریق، الیاف و فیلم با شاخص مذاب متفاوت برای بسته‌بندی و قطعات.',
+                en: 'Injection, fibre and film grades with tailored melt flow for packaging and components.',
+                ps: 'د انجکشن، فایبر او فلم ګریډونه د بسته بندۍ او پرزو لپاره د ځانګړي مذاب جریان سره.'
+            },
+            pdfUrl: 'pdfs/raw-materials/plastics/pp-granules.pdf'
+        },
+        {
+            name: { fa: 'گرانول ای‌بی‌اس (ABS)', en: 'ABS Granules', ps: 'اې بي ايس ګرينول' },
+            description: {
+                fa: 'گرید مقاوم به ضربه و حرارت برای تزریق قطعات لوازم خانگی و الکترونیک.',
+                en: 'Impact and heat resistant grades for appliance and electronics moulding.',
+                ps: 'د ضربې او تودوخې پر وړاندې مقاومت لرونکي ګریډونه د کورنیو وسایلو او برقي پرزو لپاره.'
+            },
+            pdfUrl: 'pdfs/raw-materials/plastics/abs-granules.pdf'
+        },
+        {
+            name: { fa: 'رزین ای‌وی‌ای (EVA)', en: 'EVA Resin', ps: 'اې وي اې رزين' },
+            description: {
+                fa: 'گرید 18% و 28% برای کفش، چسب حرارتی و فیلم‌های لمینتی.',
+                en: '18% and 28% grades for footwear foam, hot-melt adhesives and lamination films.',
+                ps: '۱۸٪ او ۲۸٪ ګریډونه د بوټونو فوم، ګرم چسپ او لامینیشن فلمونو لپاره.'
+            },
+            pdfUrl: 'pdfs/raw-materials/plastics/eva-resin.pdf'
+        },
+        {
+            name: { fa: 'اسید سولفوریک', en: 'Sulfuric Acid 98%', ps: 'سلفوریک اسيد ۹۸٪' },
+            description: {
+                fa: 'اسید سولفوریک غلیظ برای صنایع باتری‌سازی، استخراج فلزات و کود شیمیایی.',
+                en: 'Concentrated sulfuric acid for battery, metal extraction and fertiliser industries.',
+                ps: 'متمرکز سلفوریک اسید د بیټرۍ، فلز استخراج او سرې صنعت لپاره.'
+            },
+            pdfUrl: 'pdfs/raw-materials/chemicals/sulfuric-acid.pdf'
+        },
+        {
+            name: { fa: 'سود سوزآور', en: 'Sodium Hydroxide (Caustic Soda)', ps: 'سود سوزآور' },
+            description: {
+                fa: 'پرک و مایع 50٪ برای صابون‌سازی، تصفیه آب و صنایع کاغذ.',
+                en: 'Flakes and 50% liquid for soap making, water treatment and pulp industries.',
+                ps: 'فلیکي او ۵۰٪ مایع د صابون جوړولو، د اوبو تصفیه او پالپ صنعت لپاره.'
+            },
+            pdfUrl: 'pdfs/raw-materials/chemicals/sodium-hydroxide.pdf'
+        },
+        {
+            name: { fa: 'آمونیاک', en: 'Anhydrous Ammonia', ps: 'امونيا' },
+            description: {
+                fa: 'آمونیاک بی‌آب با فشار بالا برای کود شیمیایی و سیستم‌های تبرید صنعتی.',
+                en: 'Anhydrous ammonia supplied under pressure for fertiliser and industrial refrigeration.',
+                ps: 'بې اوبو امونیا د سرې او صنعتي یخچال سیستمونو لپاره تر فشار لاندې برابریږي.'
+            },
+            pdfUrl: 'pdfs/raw-materials/chemicals/ammonia.pdf'
+        },
+        {
+            name: { fa: 'متانول', en: 'Methanol 99.9%', ps: 'میتانول ۹۹.۹٪' },
+            description: {
+                fa: 'متانول خالص برای تولید رزین، حلال‌ها و سوخت سبز با بسته‌بندی تانکری.',
+                en: 'High-purity methanol for resins, solvents and green fuel supplied in tankers.',
+                ps: 'لوړ خالص میتانول د رالونو، محلولو او شین سونګ لپاره په ټانکرونو کې.'
+            },
+            pdfUrl: 'pdfs/raw-materials/chemicals/methanol.pdf'
+        },
+        {
+            name: { fa: 'سنگ آهک', en: 'Limestone', ps: 'د اهک ډبره' },
+            description: {
+                fa: 'سنگ آهک خرد شده CaCO₃ 95٪ برای تولید سیمان و آهک هیدراته.',
+                en: 'Crushed limestone at 95% CaCO₃ for cement and hydrated lime plants.',
+                ps: 'ماتو شوی اهک ډبره د ۹۵٪ CaCO₃ سره د سمنټو او هیدرېټ شوی اهک فابریکو لپاره.'
+            },
+            pdfUrl: 'pdfs/raw-materials/industrial-minerals/limestone.pdf'
+        },
+        {
+            name: { fa: 'گچ ساختمانی', en: 'Gypsum', ps: 'ګچ' },
+            description: {
+                fa: 'سنگ گچ با خلوص 90٪ برای تولید پنل، سیمان و ملات‌های ویژه.',
+                en: 'Gypsum stone at 90% purity for panels, cement and speciality plasters.',
+                ps: '۹۰٪ خالص ګچ د تختو، سمنټو او ځانګړو ملاتونو لپاره.'
+            },
+            pdfUrl: 'pdfs/raw-materials/industrial-minerals/gypsum.pdf'
+        },
+        {
+            name: { fa: 'شن سیلیسی', en: 'Silica Sand', ps: 'سيليکا خږه' },
+            description: {
+                fa: 'شن سیلیسی شسته شده با SiO₂ بالای 97٪ برای شیشه و ریخته‌گری.',
+                en: 'Washed silica sand with >97% SiO₂ for glassmaking and foundry.',
+                ps: 'مینځل شوې سیلیکا شګه له ۹۷٪ څخه لوړه SiO₂ سره د ښیښې او کاسټینګ لپاره.'
+            },
+            pdfUrl: 'pdfs/raw-materials/industrial-minerals/silica-sand.pdf'
+        },
+        {
+            name: { fa: 'خاک کائولن', en: 'Kaolin Clay', ps: 'کاولن خاوره' },
+            description: {
+                fa: 'کائولن سفید با روشنایی 86٪ برای سرامیک، کاغذ و رنگ.',
+                en: 'White kaolin clay with 86% brightness for ceramics, paper and coatings.',
+                ps: 'سپین کایولن خاوره د ۸۶٪ روښانتیا سره د سرامیک، کاغذ او رنګ لپاره.'
+            },
+            pdfUrl: 'pdfs/raw-materials/industrial-minerals/kaolin-clay.pdf'
+        }
+    ],
     'second-hand': secondHandInventoryData.map(item => ({
         name: item.name,
         description: item.description,
         pdfUrl: item.pdfUrl
     }))
 };
+
+window.industrialRawMaterialsInventory = window.industrialRawMaterialsInventory || equipmentData['industrial-raw-materials'];
 
 // Translation dictionary
 window.translations = window.translations || {};
@@ -2642,7 +2838,8 @@ Object.assign(translations, {
     'cat-electronic-machinery': { fa: 'ماشین آلات الکترونیکی', en: 'Electronic Machinery', ps: 'د الکترونیک ماشینونه' },
     'cat-telecom-parts': { fa: 'قطعات و لوازم اینترنتی و مخابراتی', en: 'Internet & Telecommunication Parts', ps: 'د انترنت او مخابراتي برخې' },
     'cat-second-hand': { fa: 'ماشین آلات دست دوم', en: 'Second Hand Machinery', ps: 'د دوهم لاس ماشینونه' },
-    
+    'cat-industrial-raw-materials': { fa: 'مواد اولیه صنعتی', en: 'Industrial Raw Materials', ps: 'صنعتي خام مواد' },
+
     // CTA
     'cta-title': {
         fa: 'قول ما در صنعتچی ساده است',
@@ -2693,6 +2890,10 @@ Object.assign(translations, {
         en: 'Sanaatchi Industrial Vision combines years of experience delivering industrial solutions, supporting you from consultation to factory commissioning across every project stage.',
         ps: 'صنعتچي صنعتي لید د صنعتي حل لارو په وړاندې کولو کې د کلونو تجربې سره، له سلا مشورې څخه تر د فابریکې فعالولو پورې له تاسو سره ولاړ دی او د پروژو ټول پړاوونه سمبالوي.'
     },
+    'footer-production-lines': { fa: 'خطوط تولید', en: 'Production Lines', ps: 'د تولید لینونه' },
+    'footer-second-hand': { fa: 'ماشین آلات دست دوم', en: 'Second Hand Machinery', ps: 'د دوهم لاس ماشینونه' },
+    'footer-raw-materials': { fa: 'مواد اولیه صنعتی', en: 'Industrial Raw Materials', ps: 'صنعتي خام مواد' },
+    'footer-cargo': { fa: 'کارگو و حمل‌ونقل', en: 'Cargo & Logistics', ps: 'کارګو او ترانسپورټ' },
     'newsletter-title': { fa: 'عضویت در خبرنامه', en: 'Newsletter Subscription', ps: 'خبرنامه اشتراک' },
     'newsletter-subtitle': { 
         fa: 'برای دریافت آخرین اخبار و به‌روزرسانی‌ها عضو خبرنامه ما شوید.', 
@@ -2875,6 +3076,9 @@ function updateTranslations(lang) {
     if (typeof updateSecondHandPage === 'function') {
         updateSecondHandPage();
     }
+    if (typeof updateIndustrialRawMaterialsPage === 'function') {
+        updateIndustrialRawMaterialsPage();
+    }
     if (typeof updateCargoContent === 'function') {
         const metaTag = document.querySelector('meta[name="description"]');
         const originalContent = metaTag ? (metaTag.dataset.originalContent || metaTag.getAttribute('content') || '') : '';
@@ -2916,6 +3120,10 @@ function navigateToProductionLines() {
 
 function navigateToSecondHand() {
     window.location.href = 'second-hand.html';
+}
+
+function navigateToIndustrialRawMaterials() {
+    window.location.href = 'industrial-raw-materials.html';
 }
 
 // Show phase modal
