@@ -99,6 +99,18 @@ const productionLineGroups = [
     }
 ];
 
+const productionLineCategoryRoutes = window.productionLineCategoryRoutes || {
+    'food-processing-lines': 'food-processing-lines.html',
+    'consumer-goods-lines': 'consumer-goods-lines.html',
+    'construction-materials-lines': 'construction-materials-lines.html',
+    'textile-garments-lines': 'textile-garments-lines.html',
+    'recycling-lines': 'recycling-lines.html',
+    'disposable-products-lines': 'disposable-products-lines.html',
+    'light-industry-lines': 'light-industry-lines.html'
+};
+
+window.productionLineCategoryRoutes = productionLineCategoryRoutes;
+
 const productionLines = {
     'food-processing-lines': {
         title: {
@@ -720,11 +732,30 @@ function buildProductionLineCard(group, lang) {
     const title = group.title[lang] || group.title.fa;
     const description = group.description[lang] || group.description.fa;
 
-    card.innerHTML = `
+    const route = productionLineCategoryRoutes[group.id];
+    const detailText = lang === 'fa' ? 'مشاهده جزئیات' : (lang === 'ps' ? 'جزییات وګورئ' : 'View Details');
+    const detailLabel = lang === 'fa'
+        ? `مشاهده صفحه جزئیات ${title}`
+        : (lang === 'ps' ? `${title} تفصيلي پاڼه وګورئ` : `View detailed page for ${title}`);
+
+    let cardHtml = `
         <span class="icon">${group.icon}</span>
         <h4>${title}</h4>
         <p>${description}</p>
     `;
+
+    if (route) {
+        cardHtml += `
+            <div class="category-card-actions">
+                <a class="category-card-link" href="${route}" aria-label="${detailLabel}">
+                    <span>${detailText}</span>
+                    <i class="fas fa-arrow-left"></i>
+                </a>
+            </div>
+        `;
+    }
+
+    card.innerHTML = cardHtml;
 
     const openModal = () => showProductionLineModal(group.id);
     card.addEventListener('click', openModal);
@@ -734,6 +765,15 @@ function buildProductionLineCard(group, lang) {
             openModal();
         }
     });
+
+    if (route) {
+        const link = card.querySelector('.category-card-link');
+        if (link) {
+            const stopPropagation = event => event.stopPropagation();
+            link.addEventListener('click', stopPropagation);
+            link.addEventListener('keypress', stopPropagation);
+        }
+    }
 
     return card;
 }
