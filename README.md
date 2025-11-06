@@ -8,7 +8,7 @@ The repository keeps references to hero imagery and logistics PDFs (for example
 assets themselves are not tracked. Create or supply these files manually during
 deployment so that all download links and background images function as
 intended.
-he cargo page layout is final do not makw any changes but only improve and debug can be done. make sure the SEO are all applied.
+the cargo page layout is final do not makw any changes but only improve and debug can be done. make sure the SEO are all applied.
 the translaton in pashto and english still shows persian text on  hero, overview, routes title, CTA, FAQ title etc fix them.
 the project footer is not well designed some text colors are not clear and consistent, the contact numbers in persian and pashto show invers from right to left fixt them
 [Updated cargo cargo text .txt](https://github.com/user-attachments/files/23387429/Updated.cargo.cargo.text.txt)مستند محتوای صفحه کارگو
