@@ -233,6 +233,32 @@ const categories = {
             ps: 'د ساختماني پروژو لپاره د ساختماني موادو تولید تجهیزات. له بلوک تولید څخه تر بتن تجهیزاتو پورې، د انرژي مصرف بهینه کولو سره.'
         }
     },
+    'tires': {
+        icon: '🛞',
+        title: {
+            fa: 'تایرهای صنعتی و ناوگان',
+            en: 'Industrial & Fleet Tyres',
+            ps: 'صنعتي او ناوګان ټایرونه'
+        },
+        description: {
+            fa: 'تایر تخصصی برای تریلر، کامیون، ماشین‌آلات سنگین، کشاورزی و وسایل صنعتی با خدمات نصب و بالانس.',
+            en: 'Specialist tyres for trailers, trucks, heavy machinery, agricultural and industrial vehicles with installation and balancing services.',
+            ps: 'د ټریلر، لاریو، درنو ماشینونو، کرنیزو او صنعتي وسایطو لپاره ځانګړي ټایرونه د نصب او بالانس خدمتونو سره.'
+        }
+    },
+    'transportation': {
+        icon: '🚛',
+        title: {
+            fa: 'ماشین آلات حمل‌ونقل',
+            en: 'Transportation Machinery',
+            ps: 'د ترانسپورت ماشینونه'
+        },
+        description: {
+            fa: 'ناوگان تریلر، کامیون و لیفتراک با پشتیبانی فنی، لجستیک و آموزش برای عملیات حمل‌ونقل افغانستان.',
+            en: 'Trailer, truck and forklift fleets delivered with engineering support, logistics and training for Afghan transport operations.',
+            ps: 'د ټریلر، لارۍ او فورک لیفټ ناوګان د انجینري ملاتړ، لوژستیک او روزنې سره د افغانستان د ترانسپورت لپاره.'
+        }
+    },
     'plastic-processing': {
         icon: '♻️',
         title: {
@@ -2187,6 +2213,43 @@ const categoryKeywords = {
         'میلگرد فولادی',
         'Waterproofing Systems'
     ],
+    'transportation': [
+        'ماشین آلات حمل‌ونقل',
+        'Transportation Machinery',
+        'ناوگان حمل و نقل',
+        'Logistics Fleet',
+        'تریلر',
+        'Trailer',
+        'کامیون',
+        'Truck',
+        'لیفتراک',
+        'Forklift',
+        'حمل جاده‌ای',
+        'Road Logistics',
+        'ترانسپورت افغانستان',
+        'Afghanistan Transport'
+    ],
+    'tires': [
+        'تایرهای صنعتی',
+        'Industrial Tyres',
+        'تایر ناوگان',
+        'Fleet Tyres',
+        'تایر تریلر',
+        'Trailer Tyre',
+        'تایر کامیون',
+        'Truck Tyre',
+        'تایر ماشین آلات سنگین',
+        'Heavy Equipment Tyre',
+        'تایر کشاورزی',
+        'Agricultural Tyre',
+        'تایر لیفتراک',
+        'Forklift Tyre',
+        'ټایر',
+        'Tyre',
+        'ټایر ناوګان',
+        'Fleet Tire',
+        'Sanaatchi Tires'
+    ],
     'plastic-processing': ['دستگاه های فرآوری پلاستیک', 'Plastic Processing Machines', 'پلاستیک', 'plastic', 'د پلاستیک پروسس ماشینونه', 'Plastic Processing Machines'],
     'paint-coating': ['ماشین آلات رنگ و کوتینگ', 'Paint & Coating Machinery', 'رنگ', 'paint', 'کوتینگ', 'coating', 'د رنګ او پوښښت ماشینونه', 'Paint & Coating Machinery'],
     'foam-sponge': ['ماشین آلات لوم و اسفنج', 'Foam & Sponge Machinery', 'اسفنج', 'foam', 'لوم', 'sponge', 'د فوم او اسفنج ماشینونه', 'Foam & Sponge Machinery'],
@@ -2568,16 +2631,170 @@ const equipmentData = {
             category: 'formwork'
         }
     ],
-    'plastic-processing': [
+    'transportation': [
         {
-            name: { fa: 'دستگاه اکسترودر پلاستیک', en: 'Plastic Extruder Machine', ps: 'د پلاستیک اکسترودر ماشین' },
-            description: { fa: 'دستگاه اکسترودر برای فرآوری پلاستیک', en: 'Extruder machine for plastic processing', ps: 'د پلاستیک پروسس لپاره اکسترودر ماشین' },
-            pdfUrl: 'pdfs/plastic-processing/extruder.pdf'
+            name: { fa: 'تریلر مسطح', en: 'Flatbed Trailer', ps: 'مسحه ټریلر' },
+            description: { fa: 'کفی تقویت‌شده با قفل کانتینر و تسمه‌بند برای حمل بار عمومی و سازه‌ای.', en: 'Reinforced deck with container locks and tie-down gear for general cargo and steel structures.', ps: 'پیاوړی پوړ د کانتینر قلفونو او د بار تړلو تجهیزاتو سره د عمومي او فولادي بار لپاره.' },
+            pdfUrl: 'pdfs/transportation/trailers/flatbed-trailer.pdf',
+            category: 'trailers'
         },
         {
-            name: { fa: 'دستگاه تزریق پلاستیک', en: 'Plastic Injection Machine', ps: 'د پلاستیک تزریق ماشین' },
-            description: { fa: 'دستگاه تزریق برای تولید قطعات پلاستیکی', en: 'Injection machine for producing plastic parts', ps: 'د پلاستیکي برخو تولید لپاره تزریق ماشین' },
-            pdfUrl: 'pdfs/plastic-processing/injection.pdf'
+            name: { fa: 'تریلر کم‌ارتفاع', en: 'Lowbed Trailer', ps: 'لوېد ټریلر' },
+            description: { fa: 'سطح بارگیری پایین با رمپ هیدرولیک برای حمل ماشین‌آلات سنگین و بارهای ارتفاع‌دار.', en: 'Low loading deck with hydraulic ramps to move heavy machinery and over-height equipment.', ps: 'ټیټ بار بردار پوړ د هایدرولیک رمپونو سره د درنو ماشینونو او لوړ تجهیزاتو لېږد لپاره.' },
+            pdfUrl: 'pdfs/transportation/trailers/lowbed-trailer.pdf',
+            category: 'trailers'
+        },
+        {
+            name: { fa: 'تریلر تانکر', en: 'Tanker Trailer', ps: 'تانکر ټریلر' },
+            description: { fa: 'تانکر چندمحفظه با سیستم پمپ و سنجش سطح برای حمل سوخت و مایعات صنعتی.', en: 'Multi-compartment tanker with pumping and level monitoring for fuel and industrial liquids.', ps: 'څو خونې لرونکی تانکر د پمپ او د سطحې د څارنې سیستم سره د سون توکو او صنعتي مایعاتو لپاره.' },
+            pdfUrl: 'pdfs/transportation/trailers/tanker-trailer.pdf',
+            category: 'trailers'
+        },
+        {
+            name: { fa: 'تریلر کانتینربر', en: 'Container Carrier Trailer', ps: 'کانتینر ټریلر' },
+            description: { fa: 'شاسی کانتینری با قفل‌های Twist-Lock و سیستم تعلیق بادی برای حمل ۲۰ و ۴۰ فوت.', en: 'Container chassis with twist-locks and air suspension for 20ft and 40ft units.', ps: 'د کانتینر چاسیس د ټویسټ لاکونو او د هوا تعلیق سره د ۲۰ او ۴۰ فوټو کانتینرونو لپاره.' },
+            pdfUrl: 'pdfs/transportation/trailers/container-trailer.pdf',
+            category: 'trailers'
+        },
+        {
+            name: { fa: 'تریلر یخچالدار', en: 'Refrigerated Trailer', ps: 'یخچال لرونکی ټریلر' },
+            description: { fa: 'اتاق عایق با یونیت سردخانه، ثبت دما و برق کمکی برای حمل زنجیره سرد.', en: 'Insulated van with refrigeration unit, temperature logging and standby power for cold-chain loads.', ps: 'عایق بکس د یخچال یونټ، د تودوخې ثبت او د برېښنا ملاتړ سره د سړې زنځیر بار لپاره.' },
+            pdfUrl: 'pdfs/transportation/trailers/refrigerated-trailer.pdf',
+            category: 'trailers'
+        },
+        {
+            name: { fa: 'کامیون دامپر', en: 'Dump Truck', ps: 'ډمپر کامیون' },
+            description: { fa: 'کابین تقویت‌شده با جعبه تخلیه هیدرولیک برای عملیات معدنی و پروژه‌های عمرانی.', en: 'Reinforced cab with hydraulic tipping body for mining and construction haulage.', ps: 'پیاوړی کابین د هایدرولیک ټیپنګ باډۍ سره د کان کیندنې او ساختماني بار لپاره.' },
+            pdfUrl: 'pdfs/transportation/trucks/dump-truck.pdf',
+            category: 'trucks'
+        },
+        {
+            name: { fa: 'کامیون بارکش', en: 'Cargo Haulage Truck', ps: 'بارکش کامیون' },
+            description: { fa: 'شاسی طولانی با سیستم بادی، تلمبه سوخت ذخیره و جعبه ابزار برای حمل بار عمومی.', en: 'Long-wheelbase chassis with air system, auxiliary fuel tank and tool storage for general freight.', ps: 'اوږده چاسیس د هوا سیستم، اضافي د سون ټانک او د وسیلو بکس سره د عمومي بار لپاره.' },
+            pdfUrl: 'pdfs/transportation/trucks/cargo-truck.pdf',
+            category: 'trucks'
+        },
+        {
+            name: { fa: 'کامیون یدک‌کش', en: 'Tow Recovery Truck', ps: 'ډکړ کامیون' },
+            description: { fa: 'وینچ هیدرولیک، بازوی جرثقیل و بوم متحرک برای امداد و حمل وسایل نقلیه.', en: 'Hydraulic winch, crane boom and adjustable underlift for vehicle recovery operations.', ps: 'هایډرولیک وینچ، د کرین بازو او متحرک انډرلفټ سره د وسایطو د ژغورنې لپاره.' },
+            pdfUrl: 'pdfs/transportation/trucks/tow-truck.pdf',
+            category: 'trucks'
+        },
+        {
+            name: { fa: 'لیفتراک برقی', en: 'Electric Forklift', ps: 'برقي لیفتراک' },
+            description: { fa: 'سیستم باتری لیتیوم، شارژر سریع و فرمان ارگونومیک برای محیط‌های بسته.', en: 'Lithium battery system, fast charger and ergonomic steering ideal for indoor terminals.', ps: 'د لیتیوم بیټرۍ سیستم، چټک چارج او ارګونومیک سټیرنګ د سالون کار لپاره.' },
+            pdfUrl: 'pdfs/transportation/forklifts/electric-forklift.pdf',
+            category: 'forklifts'
+        },
+        {
+            name: { fa: 'لیفتراک دیزلی', en: 'Diesel Forklift', ps: 'دیزلي لیفتراک' },
+            description: { fa: 'موتور پرقدرت، دکل برق و دکل مقاوم برای عملیات بیرونی و بار سنگین.', en: 'High-torque engine with robust mast and lighting kit for outdoor heavy-duty handling.', ps: 'لوړ تورک انجن د قوي مَست او څراغونو سره د درنو بهرنیو عملیاتو لپاره.' },
+            pdfUrl: 'pdfs/transportation/forklifts/diesel-forklift.pdf',
+            category: 'forklifts'
+        },
+        {
+            name: { fa: 'لیفتراک خاکی', en: 'Rough Terrain Forklift', ps: 'خاکی لیفتراک' },
+            description: { fa: 'محور چهارچرخ محرک، لاستیک آفرود و گارد محافظ برای سایت‌های ساخت و معادن.', en: 'Four-wheel drive axles, off-road tyres and protective guard for construction and mining sites.', ps: 'څلور څرخ محرک، د ناهموارو ټایرونه او محافظتي چوکاټ د ساختماني او کانونو ساحو لپاره.' },
+            pdfUrl: 'pdfs/transportation/forklifts/rough-terrain-forklift.pdf',
+            category: 'forklifts'
+        }
+    ],
+    'tires': [
+        {
+            name: { fa: 'تایر نیمه تریلر', en: 'Semi-Trailer Tyre', ps: 'نیمه ټریلر ټایر' },
+            description: { fa: 'شاخص بار بالا و طراحی برای محورهای محرک و یدک برای مسیرهای طولانی.', en: 'High load index casing engineered for drive and trailer axles on long-haul routes.', ps: 'لوړ بار شاخص لرونکی قشر د اوږده سفر لپاره د محرک او ټریلر اکسلو لپاره.' },
+            pdfUrl: 'pdfs/tires/transportation-trailers/semi-trailer-tire.pdf',
+            category: 'transportation-trailers'
+        },
+        {
+            name: { fa: 'تایر تریلر مسطح', en: 'Flatbed Trailer Tyre', ps: 'مسحه ټریلر ټایر' },
+            description: { fa: 'الگوی آج مقاوم در برابر بریدگی با شانه تقویت‌شده برای حمل بار فولادی و کانتینری.', en: 'Cut-resistant tread with reinforced shoulders for steel and container haulage.', ps: 'د پرې کېدو ضد نقش د پیاوړو اوږو سره د فولادو او کانتینر بار لپاره.' },
+            pdfUrl: 'pdfs/tires/transportation-trailers/flatbed-trailer-tire.pdf',
+            category: 'transportation-trailers'
+        },
+        {
+            name: { fa: 'تایر تریلر تانکر', en: 'Tanker Trailer Tyre', ps: 'تانکر ټریلر ټایر' },
+            description: { fa: 'دیواره تقویت‌شده و ترکیب ضد لغزش برای حمل مایعات و مواد خطرناک.', en: 'Reinforced casing and anti-slip compound for liquid and hazardous freight.', ps: 'پیاوړی قشر او د خطا ضد مرکب د مایعاتو او خطرناکو بارونو لپاره.' },
+            pdfUrl: 'pdfs/tires/transportation-trailers/tanker-trailer-tire.pdf',
+            category: 'transportation-trailers'
+        },
+        {
+            name: { fa: 'تایر تریلر کانتینر', en: 'Container Trailer Tyre', ps: 'کانتینر ټریلر ټایر' },
+            description: { fa: 'پروفیل ویژه پیچ و خم با دیواره جانبی مقاوم برای حمل کانتینر ۲۰ و ۴۰ فوت.', en: 'Twist-resistant profile with strong sidewalls for 20ft and 40ft container haulage.', ps: 'د تاو پر وړاندې مقاومت لرونکی نقش د قوي اړخونو سره د ۲۰ او ۴۰ فوټ کانتینر لپاره.' },
+            pdfUrl: 'pdfs/tires/transportation-trailers/container-trailer-tire.pdf',
+            category: 'transportation-trailers'
+        },
+        {
+            name: { fa: 'تایر کامیون سنگین', en: 'Heavy-Duty Truck Tyre', ps: 'دروند کامیون ټایر' },
+            description: { fa: 'آج عمقی با ترکیب مقاوم در برابر حرارت و دیواره چندلایه برای بارهای سنگین.', en: 'Deep lug tread with heat-resistant compound and multi-ply casing for heavy loads.', ps: 'ژور نقش د تودوخې ضد مرکب او څو پرت قشر سره د درنو بارونو لپاره.' },
+            pdfUrl: 'pdfs/tires/truck-bus/heavy-duty-truck-tire.pdf',
+            category: 'truck-bus'
+        },
+        {
+            name: { fa: 'تایر کامیون سبک', en: 'Light Truck Tyre', ps: 'سپک کامیون ټایر' },
+            description: { fa: 'آج چندمنظوره شهری با مقاومت بالا در برابر سوراخ شدن.', en: 'Multi-purpose urban tread delivering high puncture resistance.', ps: 'چندګونې ښاري نقش چې لوړ د سوري ضد وړتیا لري.' },
+            pdfUrl: 'pdfs/tires/truck-bus/light-truck-tire.pdf',
+            category: 'truck-bus'
+        },
+        {
+            name: { fa: 'تایر اتوبوس', en: 'Bus Tyre', ps: 'بس ټایر' },
+            description: { fa: 'شانه سرد با نویز پایین و دیواره تقویت‌شده برای خطوط مسافری.', en: 'Cool running shoulder, low noise and reinforced casing for passenger routes.', ps: 'سړه اوږه، کم شور او پیاوړی قشر د مسافر وړونکو کرښو لپاره.' },
+            pdfUrl: 'pdfs/tires/truck-bus/bus-tire.pdf',
+            category: 'truck-bus'
+        },
+        {
+            name: { fa: 'تایر بیل مکانیکی', en: 'Excavator Tyre', ps: 'بیل مکانیکی ټایر' },
+            description: { fa: 'آج بلوکی با ترکیب ضد پارگی و دیواره ضخیم برای سایت‌های معدنی.', en: 'Block tread with tear-resistant compound and thick sidewalls for mining sites.', ps: 'بلوکي نقش د څیرې ضد مرکب او غټ اړخونو سره د کانونو ساحو لپاره.' },
+            pdfUrl: 'pdfs/tires/heavy-construction-machinery/excavator-tire.pdf',
+            category: 'heavy-construction-machinery'
+        },
+        {
+            name: { fa: 'تایر لودر', en: 'Loader Tyre', ps: 'لودر ټایر' },
+            description: { fa: 'الگوی L-5 با عمق زیاد و مقاومت در برابر سایش برای باربرداری سنگین.', en: 'Deep L-5 pattern delivering extreme wear resistance for heavy loading.', ps: 'ژور L-5 نقش چې د درنو پورته کولو لپاره لوړ سايښ ضد وړتیا لري.' },
+            pdfUrl: 'pdfs/tires/heavy-construction-machinery/loader-tire.pdf',
+            category: 'heavy-construction-machinery'
+        },
+        {
+            name: { fa: 'تایر جرثقیل', en: 'Crane Tyre', ps: 'جرثقیل ټایر' },
+            description: { fa: 'پروفیل صاف با ساختار مقاوم جانبی برای پایداری در حین بلند کردن بار.', en: 'Smooth tread with reinforced side structure for stability during lifts.', ps: 'هوار نقش د پیاوړي اړخ جوړښت سره د پورته کولو پر مهال ثبات لپاره.' },
+            pdfUrl: 'pdfs/tires/heavy-construction-machinery/crane-tire.pdf',
+            category: 'heavy-construction-machinery'
+        },
+        {
+            name: { fa: 'تایر تراکتور', en: 'Tractor Tyre', ps: 'ټرکټر ټایر' },
+            description: { fa: 'آج عمیق V شکل با چسبندگی بالا برای خاک نرم و زمین‌های کشاورزی.', en: 'Deep V-lug delivering high traction on soft soil and farmland.', ps: 'ژور V نقش چې په نرمه خاوره او کرنیزه ځمکه کې لوړه نیونه برابروي.' },
+            pdfUrl: 'pdfs/tires/agricultural-machineries/tractor-tire.pdf',
+            category: 'agricultural-machineries'
+        },
+        {
+            name: { fa: 'تایر دروگر', en: 'Harvester Tyre', ps: 'دروګر ټایر' },
+            description: { fa: 'پروفیل مخصوص وزن توزیع شده و دیواره تقویت‌شده برای جلوگیری از فشردگی خاک.', en: 'Special profile spreading load with reinforced carcass to limit soil compaction.', ps: 'ځانګړی نقش چې وزن وېشي او پیاوړی قشر د خاورې د فشار مخه نیسي.' },
+            pdfUrl: 'pdfs/tires/agricultural-machineries/harvester-tire.pdf',
+            category: 'agricultural-machineries'
+        },
+        {
+            name: { fa: 'تایر سمپاش', en: 'Sprayer Tyre', ps: 'سمپاش ټایر' },
+            description: { fa: 'ردیف باریک با مقاومت شیمیایی بالا و فشار زمین کم برای ماشین‌های سمپاش.', en: 'Narrow row tyre with high chemical resistance and low ground pressure for sprayers.', ps: 'تنګ قطار ټایر د کیمیاوي مقاومت او د ځمکې ټیټ فشار سره د سپرې ماشینونو لپاره.' },
+            pdfUrl: 'pdfs/tires/agricultural-machineries/sprayer-tire.pdf',
+            category: 'agricultural-machineries'
+        },
+        {
+            name: { fa: 'تایر لیفتراک', en: 'Forklift Tyre', ps: 'لیفتراک ټایر' },
+            description: { fa: 'ترکیب ضدسوراخ با دیواره مستحکم برای عملیات انبار و محوطه صنعتی.', en: 'Puncture-resistant compound with sturdy sidewalls for warehouse and yard work.', ps: 'سوري ضد مرکب د قوي اړخونو سره د ګودام او صنعتي انګړ لپاره.' },
+            pdfUrl: 'pdfs/tires/industrial-vehicles/forklift-tire.pdf',
+            category: 'industrial-vehicles'
+        },
+        {
+            name: { fa: 'تایر اسکید استیر', en: 'Skid Steer Tyre', ps: 'اسکيد استیر ټایر' },
+            description: { fa: 'آج تهاجمی و ترکیب مقاوم در برابر بریدگی برای محوطه‌های ساختمانی.', en: 'Aggressive tread with cut-resistant compound for construction yards.', ps: 'تیز نقش د پرې کېدو ضد مرکب سره د ساختماني انګړ لپاره.' },
+            pdfUrl: 'pdfs/tires/industrial-vehicles/skid-steer-tire.pdf',
+            category: 'industrial-vehicles'
+        },
+        {
+            name: { fa: 'تایر تلهندلر', en: 'Telehandler Tyre', ps: 'تلهندلر ټایر' },
+            description: { fa: 'آج چندمنظوره و دیواره مستحکم برای کار در ارتفاع و محیط‌های ناهموار.', en: 'Multi-purpose tread with strong carcass for elevated and uneven terrain work.', ps: 'چند مهار نقش د قوي قشر سره د لوړوالي او ناهموارو ځایونو لپاره.' },
+            pdfUrl: 'pdfs/tires/industrial-vehicles/telehandler-tire.pdf',
+            category: 'industrial-vehicles'
         }
     ],
     'paint-coating': [
@@ -2618,14 +2835,88 @@ const equipmentData = {
     ],
     'cooling-heating': [
         {
-            name: { fa: 'دستگاه چیلر', en: 'Chiller Unit', ps: 'د چیلر واحد' },
-            description: { fa: 'دستگاه چیلر برای سرمایش صنعتی', en: 'Chiller unit for industrial cooling', ps: 'د صنعت سړښت لپاره چیلر واحد' },
-            pdfUrl: 'pdfs/cooling-heating/chiller.pdf'
+            name: { fa: 'چیلر هواخنک', en: 'Air-Cooled Chiller', ps: 'د هوا یخ چیلر' },
+            description: { fa: 'چیلر هواخنک با کمپرسور اینورتر و کندانسور فین‌دار برای اقلیم گرم و خشک.', en: 'Air-cooled chiller with inverter compressors and finned condensers for hot, dry climates.', ps: 'د هوا یخ چیلر د انورټر کمپرسورونو او فین لرونکو کندنسرو سره د ګرم وچ اقلیم لپاره.' },
+            pdfUrl: 'pdfs/cooling-heating/chiller/air-cooled-chiller.pdf',
+            category: 'chiller',
+            icon: '❄️'
         },
         {
-            name: { fa: 'دستگاه بویلر', en: 'Boiler Unit', ps: 'د بویلر واحد' },
-            description: { fa: 'دستگاه بویلر برای گرمایش صنعتی', en: 'Boiler unit for industrial heating', ps: 'د صنعت تودوخې لپاره بویلر واحد' },
-            pdfUrl: 'pdfs/cooling-heating/boiler.pdf'
+            name: { fa: 'چیلر آب‌خنک', en: 'Water-Cooled Chiller', ps: 'د اوبو یخ چیلر' },
+            description: { fa: 'چیلر آب‌خنک با اواپراتور پوسته-لوله و برج خنک‌کن هماهنگ برای فرآیندهای پیوسته.', en: 'Water-cooled chiller pairing shell-and-tube evaporators with matched cooling towers for continuous duty.', ps: 'د اوبو یخ چیلر د پوسته-پایپ ایواپراتور او د یخولو برج سره د دوامداره کار لپاره.' },
+            pdfUrl: 'pdfs/cooling-heating/chiller/water-cooled-chiller.pdf',
+            category: 'chiller',
+            icon: '💧'
+        },
+        {
+            name: { fa: 'قطعات یدکی چیلر', en: 'Chiller Spare Parts Kit', ps: 'د چیلر اضافي پرزې' },
+            description: { fa: 'فیلتر درایر، سنسور فشار، شیر انبساط و برد کنترل برای سرویس دوره‌ای چیلر.', en: 'Filter driers, pressure sensors, expansion valves and control boards for planned chiller maintenance.', ps: 'فلټر ډرایرونه، د فشار سینسرونه، د پراخېدو والونه او کنټرول بورډونه د چیلر منظم ساتنې لپاره.' },
+            pdfUrl: 'pdfs/cooling-heating/chiller/chiller-parts.pdf',
+            category: 'chiller',
+            icon: '🧰'
+        },
+        {
+            name: { fa: 'بویلر بخار', en: 'Steam Boiler', ps: 'د بخار بویلر' },
+            description: { fa: 'بویلر لوله‌آتشی با مشعل دوگانه‌سوز، کنترل سطح آب و سیستم ایمنی شعله برای خطوط صنعتی.', en: 'Fire-tube steam boiler with dual-fuel burner, water level control and flame safety for industrial lines.', ps: 'اورلوله بخار بویلر د دوه ډوله سون سوځونکي، د اوبو د سطح کنټرول او د لمبې خوندیتوب سره د صنعتي لینونو لپاره.' },
+            pdfUrl: 'pdfs/cooling-heating/boiler/steam-boiler.pdf',
+            category: 'boiler',
+            icon: '🌫️'
+        },
+        {
+            name: { fa: 'بویلر آب‌گرم', en: 'Hot-Water Boiler', ps: 'د ګرمو اوبو بویلر' },
+            description: { fa: 'بویلر مدولار آب‌گرم با پمپ سیرکولاسیون کم‌مصرف و کنترل دمای خروجی.', en: 'Modular hot-water boiler with efficient circulation pumps and outlet temperature control.', ps: 'مدولر د ګرمو اوبو بویلر د موثرو دوراني پمپونو او د وتلو د حرارت کنټرول سره.' },
+            pdfUrl: 'pdfs/cooling-heating/boiler/hot-water-boiler.pdf',
+            category: 'boiler',
+            icon: '🔥'
+        },
+        {
+            name: { fa: 'قطعات یدکی بویلر', en: 'Boiler Spare Parts Kit', ps: 'د بویلر اضافي پرزې' },
+            description: { fa: 'پمپ تغذیه، مشعل، گیج و لوله‌های آتشدان برای حفظ پایداری سیستم گرمایش.', en: 'Feed pumps, burners, gauges and furnace tubes keeping heating systems reliable.', ps: 'فیډ پمپونه، سوځونکي، ګیجونه او د اور خونو پایپونه د تودوخې سیستم باثباته ساتي.' },
+            pdfUrl: 'pdfs/cooling-heating/boiler/boiler-parts.pdf',
+            category: 'boiler',
+            icon: '🔩'
+        },
+        {
+            name: { fa: 'فن برج خنک‌کن', en: 'Cooling Tower Fan Assembly', ps: 'د یخولو برج فین ټولګه' },
+            description: { fa: 'فن فایبرگلاس با موتور ضدزنگ و توازن دینامیکی برای گردش هوای یکنواخت.', en: 'Fiberglass fan with anti-corrosion motor and dynamic balancing for uniform airflow.', ps: 'د فایبر ګلاس فین د زنګ ضد موټور او متحرک توازن سره د یوشان هوا جریان لپاره.' },
+            pdfUrl: 'pdfs/cooling-heating/cooling-tower/tower-fan.pdf',
+            category: 'cooling-tower',
+            icon: '🌬️'
+        },
+        {
+            name: { fa: 'پکینگ و مدیا برج', en: 'Cooling Tower Fill Media', ps: 'د یخولو برج ډکول' },
+            description: { fa: 'مدیا PVC ضد رسوب با سطح انتقال حرارت بالا و مقاومت UV.', en: 'Anti-fouling PVC fill media with large heat-transfer surface and UV resistance.', ps: 'د رسوب ضد PVC ډکول د پراخ تودوخې د انتقال سطحې او د UV مقاومت سره.' },
+            pdfUrl: 'pdfs/cooling-heating/cooling-tower/tower-filling.pdf',
+            category: 'cooling-tower',
+            icon: '🧱'
+        },
+        {
+            name: { fa: 'قطعات یدکی برج خنک‌کن', en: 'Cooling Tower Spare Parts Kit', ps: 'د یخولو برج اضافي پرزې' },
+            description: { fa: 'نازل پاشش، قطره‌گیر، موتور و گیربکس برای نگهداری برج خنک‌کن.', en: 'Spray nozzles, drift eliminators, motors and gearboxes for tower upkeep.', ps: 'د سپرې نوزلونه، د څاڅکو مخنیوی کوونکي، موټورونه او ګیربکسونه د برج د ساتنې لپاره.' },
+            pdfUrl: 'pdfs/cooling-heating/cooling-tower/tower-parts.pdf',
+            category: 'cooling-tower',
+            icon: '⚙️'
+        },
+        {
+            name: { fa: 'مبدل حرارتی صفحه‌ای', en: 'Plate Heat Exchanger', ps: 'د پلیټ د تودوخې مبادله کوونکی' },
+            description: { fa: 'مبدل صفحه‌ای گسکت‌دار با قابلیت CIP و طراحی جریان مخالف برای راندمان بالا.', en: 'Gasketed plate heat exchanger with CIP capability and counterflow design for high efficiency.', ps: 'د ګاسکټ لرونکی پلیټ مبادله کوونکی د CIP وړتیا او د مقابل جریان ډیزاین سره د لوړې موثریت لپاره.' },
+            pdfUrl: 'pdfs/cooling-heating/heat-exchanger/plate-heat-exchanger.pdf',
+            category: 'heat-exchanger',
+            icon: '♨️'
+        },
+        {
+            name: { fa: 'مبدل حرارتی پوسته-لوله', en: 'Shell & Tube Heat Exchanger', ps: 'د پوسته او پایپ د تودوخې مبادله کوونکی' },
+            description: { fa: 'مبدل پوسته-لوله با باندل قابل تعویض، بافل ضد لرزش و تست هیدرواستاتیک کامل.', en: 'Shell-and-tube exchanger with removable bundle, anti-vibration baffles and complete hydrostatic testing.', ps: 'د پوسته او پایپ مبادله کوونکی د بدلیدونکي بونډل، د لړزې ضد بفلونو او بشپړې هایدروستاتیک ازموینې سره.' },
+            pdfUrl: 'pdfs/cooling-heating/heat-exchanger/shell-tube-exchanger.pdf',
+            category: 'heat-exchanger',
+            icon: '🛢️'
+        },
+        {
+            name: { fa: 'قطعات یدکی مبدل حرارتی', en: 'Heat Exchanger Service Kit', ps: 'د تودوخې مبادله کوونکي خدمت کټ' },
+            description: { fa: 'گسکت، پیچ و ابزار سرویس برای نگهداری دوره‌ای مبدل‌های حرارتی.', en: 'Gaskets, bolts and service tools supporting planned exchanger maintenance.', ps: 'ګاسکټونه، بولټونه او د خدمت وسایل چې د مبدلونو منظم ساتنه اسانه کوي.' },
+            pdfUrl: 'pdfs/cooling-heating/heat-exchanger/exchanger-parts.pdf',
+            category: 'heat-exchanger',
+            icon: '🔧'
         }
     ],
     'pumps-compressors': [
@@ -2666,14 +2957,226 @@ const equipmentData = {
     ],
     'packaging': [
         {
-            name: { fa: 'دستگاه بسته‌بندی اتوماتیک', en: 'Automatic Packaging Machine', ps: 'د اوتوماتیک بسته بندي ماشین' },
-            description: { fa: 'دستگاه بسته‌بندی اتوماتیک', en: 'Automatic packaging machine', ps: 'اوتوماتیک بسته بندي ماشین' },
-            pdfUrl: 'pdfs/packaging/automatic-packaging.pdf'
+            category: 'automatic-packaging',
+            name: { fa: 'ماشین پرکن اتوماتیک', en: 'Automatic Filling Machine', ps: 'اتومات ډکولو ماشین' },
+            description: {
+                fa: 'پرکن پیستونی با PLC و نازل‌های قابل تنظیم برای مایعات غلیظ و رقیق.',
+                en: 'Piston filler with PLC control and adjustable nozzles for viscous or free-flowing liquids.',
+                ps: 'د PLC کنټرول لرونکی پیستوني ډکونکی د غلیظ او روانو مایعاتو لپاره.'
+            },
+            pdfUrl: 'pdfs/packaging/automatic-packaging/filling-machine.pdf'
         },
         {
-            name: { fa: 'دستگاه بسته‌بندی وکیوم', en: 'Vacuum Packaging Machine', ps: 'د وکیوم بسته بندي ماشین' },
-            description: { fa: 'دستگاه بسته‌بندی با سیستم وکیوم', en: 'Vacuum packaging machine', ps: 'د وکیوم سیسټم سره بسته بندي ماشین' },
-            pdfUrl: 'pdfs/packaging/vacuum-packaging.pdf'
+            category: 'automatic-packaging',
+            name: { fa: 'ماشین درزگیر اتوماتیک', en: 'Automatic Sealing Machine', ps: 'اتومات سیلر ماشین' },
+            description: {
+                fa: 'سیستم درزگیری حرارتی با کنترل دما و تسمه انتقال ضد چروک.',
+                en: 'Thermal sealing system with precision temperature control and wrinkle-free conveyors.',
+                ps: 'حرارتي سیلر د دقیق تودوخې کنټرول او بې چین تسمې سره.'
+            },
+            pdfUrl: 'pdfs/packaging/automatic-packaging/sealing-machine.pdf'
+        },
+        {
+            category: 'automatic-packaging',
+            name: { fa: 'ماشین برچسب‌زن اتوماتیک', en: 'Automatic Labelling Machine', ps: 'اتومات لیبل ماشین' },
+            description: {
+                fa: 'لیبل‌زن روتاری با سیستم سنجش موقعیت و تنظیم سرعت هماهنگ با خط تولید.',
+                en: 'Rotary labeller with position sensing and synchronised speed control with the production line.',
+                ps: 'د موقعیت سنجونې او د تولید له لین سره همغږي سرعت کنټرول لرونکی روتري لیبلر.'
+            },
+            pdfUrl: 'pdfs/packaging/automatic-packaging/labeling-machine.pdf'
+        },
+        {
+            category: 'vacuum-packaging',
+            name: { fa: 'وکیوم سیلر رومیزی', en: 'Tabletop Vacuum Sealer', ps: 'میز وړ وکیوم سیلر' },
+            description: {
+                fa: 'مناسب بسته‌بندی کوچک با پمپ قدرتمند و تنظیم زمان و دما.',
+                en: 'Compact vacuum sealing with high-performance pump and adjustable time and heat.',
+                ps: 'د ځواکمن پمپ او د وخت او تودوخې د تنظیم وړ کوچنی وکیوم سیلر.'
+            },
+            pdfUrl: 'pdfs/packaging/vacuum-packaging/vacuum-sealer.pdf'
+        },
+        {
+            category: 'vacuum-packaging',
+            name: { fa: 'دستگاه وکیوم اتاقکی', en: 'Vacuum Chamber Machine', ps: 'د وکیوم چیمبر ماشین' },
+            description: {
+                fa: 'چمبر استیل دو محفظه با برنامه‌ریزی گاز تزریق و کنترل سنسور.',
+                en: 'Dual-chamber stainless unit with gas flushing programmes and sensor controls.',
+                ps: 'دوه خونې لرونکی سټینلیس یونټ د ګاز د داخلېدو پروګرام او سینسر کنټرول سره.'
+            },
+            pdfUrl: 'pdfs/packaging/vacuum-packaging/vacuum-chamber.pdf'
+        },
+        {
+            category: 'vacuum-packaging',
+            name: { fa: 'کیسه وکیوم چندلایه', en: 'Multi-Layer Vacuum Bag', ps: 'چند پوړیز وکیوم کڅوړه' },
+            description: {
+                fa: 'کیسه‌های چندلایه مقاوم در برابر سوراخ، مناسب مواد غذایی و صنعتی.',
+                en: 'Puncture-resistant multilayer bags suitable for food and industrial packaging.',
+                ps: 'څو پوړیزې سوراخ ضد کڅوړې چې د خوراکي او صنعتي بسته بندۍ لپاره مناسبې دي.'
+            },
+            pdfUrl: 'pdfs/packaging/vacuum-packaging/vacuum-bag.pdf'
+        },
+        {
+            category: 'wrapping-packaging',
+            name: { fa: 'ماشین استرچ رپینگ', en: 'Stretch Wrapping Machine', ps: 'سټریچ لفافه ماشین' },
+            description: {
+                fa: 'پالت‌پیچ خودکار با ترمز فیلم قابل تنظیم و حسگر ارتفاع بار.',
+                en: 'Automatic pallet wrapper with adjustable film tension and load height sensors.',
+                ps: 'اتومات پالت لفاف د فلم د تاوولو د تنظیم او د بار د ارتفاع سینسرونو سره.'
+            },
+            pdfUrl: 'pdfs/packaging/wrapping-packaging/stretch-wrapping.pdf'
+        },
+        {
+            category: 'wrapping-packaging',
+            name: { fa: 'ماشین شرینک تونلی', en: 'Tunnel Shrink Wrapper', ps: 'ټنل شرینک ماشین' },
+            description: {
+                fa: 'تونل حرارتی با جریان هوای یکنواخت و کانویور مقاوم به حرارت.',
+                en: 'Heat tunnel with uniform airflow and heat-resistant conveyor for retail packs.',
+                ps: 'حرارتي تونل د یوشان هوا جریان او د تودوخې پر وړاندې مقاومت لرونکي کونوییر سره.'
+            },
+            pdfUrl: 'pdfs/packaging/wrapping-packaging/shrink-wrapping.pdf'
+        },
+        {
+            category: 'wrapping-packaging',
+            name: { fa: 'ماشین تسمه‌کشی صنعتی', en: 'Industrial Strapping Machine', ps: 'صنعتي تسمه ماشین' },
+            description: {
+                fa: 'سیستم تسمه‌کشی فول اتومات با هدایت تسمه و کشش قابل برنامه‌ریزی.',
+                en: 'Fully automatic strapping with programmable tension and strap guidance.',
+                ps: 'په بشپړ ډول اتومات تسمه ماشین د پروګرام وړ کشش او تسمې لارښود سره.'
+            },
+            pdfUrl: 'pdfs/packaging/wrapping-packaging/strapping-machine.pdf'
+        }
+    ],
+    'plastic-processing': [
+        {
+            category: 'extruder',
+            name: { fa: 'اکسترودر لوله پلاستیکی', en: 'Plastic Pipe Extruder', ps: 'د پلاستیک پایپ اکسترودر' },
+            description: {
+                fa: 'خط اکسترودر همراه با کالیبراتور، تانک خلأ و کشنده برای تولید لوله.',
+                en: 'Extrusion line with calibrator, vacuum tank and haul-off for pipe production.',
+                ps: 'د کالیبریټر، وکیوم ټانک او کشولو واحد سره اکسترودر د پایپ تولید لپاره.'
+            },
+            pdfUrl: 'pdfs/plastic-processing/extruder/pipe-extruder.pdf'
+        },
+        {
+            category: 'extruder',
+            name: { fa: 'اکسترودر فیلم پلاستیکی', en: 'Plastic Film Extruder', ps: 'د پلاستیک فلم اکسترودر' },
+            description: {
+                fa: 'اکسترودر دمشی یا تخت برای تولید رول فیلم بسته‌بندی با ضخامت یکنواخت.',
+                en: 'Blown or cast film extruder delivering consistent gauge packaging films.',
+                ps: 'د بلو یا کاسټ فلم اکسترودر چې همغږي ضخامت لرونکي بسته بندۍ فلمونه تولیدوي.'
+            },
+            pdfUrl: 'pdfs/plastic-processing/extruder/film-extruder.pdf'
+        },
+        {
+            category: 'extruder',
+            name: { fa: 'اکسترودر پروفایل پلاستیکی', en: 'Plastic Profile Extruder', ps: 'د پلاستیک پروفایل اکسترودر' },
+            description: {
+                fa: 'تولید پروفایل و قطعات فنی با قالب‌های قابل تعویض و کنترل دقیق دما.',
+                en: 'Profile extrusion with interchangeable dies and precise temperature zoning.',
+                ps: 'د بدلېدونکو قالبونو او دقیق تودوخې زونونو سره د پروفایل اکسترودر.'
+            },
+            pdfUrl: 'pdfs/plastic-processing/extruder/profile-extruder.pdf'
+        },
+        {
+            category: 'injection',
+            name: { fa: 'ماشین تزریق پلاستیک', en: 'Plastic Injection Moulding Machine', ps: 'د پلاستیک انجکشن مولډنګ ماشین' },
+            description: {
+                fa: 'ماشین تزریق با کنترل سروو و واحد گیره قوی برای قالب‌های چند حفره.',
+                en: 'Servo-controlled injection unit with high clamping force for multi-cavity moulds.',
+                ps: 'د سرو کنټرول لرونکی انجکشن یونټ د څو حفره لرونکو قالبونو لپاره د قوي کلمپینګ ځواک سره.'
+            },
+            pdfUrl: 'pdfs/plastic-processing/injection/injection-molding.pdf'
+        },
+        {
+            category: 'injection',
+            name: { fa: 'ماشین دمشی پلاستیک', en: 'Plastic Blow Moulding Machine', ps: 'د پلاستیک بلو مولډنګ ماشین' },
+            description: {
+                fa: 'سیستم دمشی برای تولید بطری، مخزن و قطعات توخالی با کنترل ضخامت دیواره.',
+                en: 'Blow moulding system for bottles, tanks and hollow parts with wall-thickness control.',
+                ps: 'د بوتلونو، ټانکونو او تشو پرزو لپاره بلو مولډنګ د دیوال ضخامت کنټرول سره.'
+            },
+            pdfUrl: 'pdfs/plastic-processing/injection/blow-molding.pdf'
+        },
+        {
+            category: 'injection',
+            name: { fa: 'قطعات مصرفی تزریق', en: 'Injection Moulding Spare Parts', ps: 'د انجکشن مولډنګ اضافي پرزې' },
+            description: {
+                fa: 'ست نازل، پیچ، بوش و حلقه‌های آب‌بندی برای نگهداری دوره‌ای ماشین تزریق.',
+                en: 'Nozzle, screw, bushing and seal kits that keep injection moulding machines running.',
+                ps: 'د نوزل، پیچ، بوش او سیل کټونه چې د انجکشن ماشینونه فعال ساتي.'
+            },
+            pdfUrl: 'pdfs/plastic-processing/injection/injection-parts.pdf'
+        },
+        {
+            category: 'recycling',
+            name: { fa: 'خط بازیافت پلاستیک', en: 'Plastic Recycling Line', ps: 'د پلاستیک ریسایکل لاین' },
+            description: {
+                fa: 'از تفکیک تا خشک‌کن سانتریفیوژ برای بازیافت ضایعات بسته‌بندی و تولید گرانول.',
+                en: 'Complete recycling line from sorting to centrifugal drying for pellet output.',
+                ps: 'بشپړ ریسایکل لاین له تفکیک څخه تر سنټرفیوژ وچولو پورې د پلېټ تولید لپاره.'
+            },
+            pdfUrl: 'pdfs/plastic-processing/recycling/plastic-recycling.pdf'
+        },
+        {
+            category: 'recycling',
+            name: { fa: 'شردر پلاستیک صنعتی', en: 'Industrial Plastic Shredder', ps: 'صنعتي پلاستیک شریدر' },
+            description: {
+                fa: 'شردر دو شافت با تیغه‌های آلیاژی و کنترل سرعت برای آماده‌سازی خوراک بازیافت.',
+                en: 'Twin-shaft shredder with alloy blades and variable speed for recycling feedstock.',
+                ps: 'دوه شافټ لرونکی شریدر د الیاژ تیغونو او د سرعت تنظیم سره د ریسایکل موادو لپاره.'
+            },
+            pdfUrl: 'pdfs/plastic-processing/recycling/shredder.pdf'
+        },
+        {
+            category: 'recycling',
+            name: { fa: 'خط شستشو و خشک‌کن پلاستیک', en: 'Plastic Washing & Drying Line', ps: 'د پلاستیک مینځلو او وچولو لاین' },
+            description: {
+                fa: 'حوض شستشو، اسکرو انتقال و خشک‌کن حرارتی برای کاهش آلودگی ضایعات.',
+                en: 'Washing tanks, screw conveyors and thermal dryers reduce contamination before extrusion.',
+                ps: 'د مینځلو حوضونه، سکرو انتقال او حرارتي وچوونکي د اکسترودر دمخه ککړتیا کموي.'
+            },
+            pdfUrl: 'pdfs/plastic-processing/recycling/washing-line.pdf'
+        },
+        {
+            category: 'recycling',
+            name: { fa: 'خط پلت‌سازی پلاستیک', en: 'Plastic Pelletizing Line', ps: 'د پلاستیک پلېټ جوړولو لاین' },
+            description: {
+                fa: 'گرانولایزر و کاتر با سیستم خنک‌کاری برای تبدیل ضایعات به گرانول باکیفیت.',
+                en: 'Granulator and cutter with cooling loop converting scrap into uniform pellets.',
+                ps: 'ګرانیولیټر او کټر د یخولو سیسټم سره د ضایعاتو څخه منظم پلېټونه جوړوي.'
+            },
+            pdfUrl: 'pdfs/plastic-processing/recycling/pelletizing-line.pdf'
+        },
+        {
+            category: 'printing-packaging',
+            name: { fa: 'ماشین چاپ فلکسو', en: 'Flexographic Printing Machine', ps: 'د فلکسو چاپ ماشین' },
+            description: {
+                fa: 'ماشین فلکسو رول به رول با رجیستر دقیق و خشک‌کن هوای گرم برای چاپ بسته‌بندی.',
+                en: 'Roll-to-roll flexo press with precise registration and hot-air dryers for packaging films.',
+                ps: 'رول په رول فلکسو پریس د دقیق رجسټر او د ګرمې هوا وچولو سره د بسته بندۍ فلمونو لپاره.'
+            },
+            pdfUrl: 'pdfs/plastic-processing/printing-packaging/flexo-printing.pdf'
+        },
+        {
+            category: 'printing-packaging',
+            name: { fa: 'خط پاکت‌سازی', en: 'Bag Making Line', ps: 'د کڅوړې جوړولو لاین' },
+            description: {
+                fa: 'از رول تا پاکت با ایستگاه‌های تا، دوخت و پانچ برای تولید پاکت‌های چندلایه.',
+                en: 'From roll to finished bag with folding, sealing and punching stations for multilayer bags.',
+                ps: 'له رول څخه تر بشپړې کڅوړې پورې د تا کولو، سیل کولو او پنچ کولو سټېشنونو سره.'
+            },
+            pdfUrl: 'pdfs/plastic-processing/printing-packaging/bag-making.pdf'
+        },
+        {
+            category: 'printing-packaging',
+            name: { fa: 'خط درزگیری و برش', en: 'Sealing & Cutting Line', ps: 'د سیل کولو او پرې کولو لاین' },
+            description: {
+                fa: 'سیستم برش و درزگیری با کنترل سروو برای تولید رول‌های بسته‌بندی باکیفیت.',
+                en: 'Servo-controlled sealing and cutting modules delivering precise packaging rolls.',
+                ps: 'د سرو کنټرول لرونکي سیل او پرې کولو ماډلونه چې دقیق بسته بندۍ رولونه جوړوي.'
+            },
+            pdfUrl: 'pdfs/plastic-processing/printing-packaging/sealing-cutting.pdf'
         }
     ],
     'chemical-pharma': [
@@ -3205,6 +3708,8 @@ Object.assign(translations, {
     'cat-sports-equipment': { fa: 'تجهیزات ورزشی', en: 'Sports Equipment', ps: 'ورزشي تجهیزات' },
     'cat-metallurgy-full': { fa: 'متالورژی و فلزکاری', en: 'Metallurgy & Metalworking', ps: 'د فلزاتو علم او فلزکاري' },
     'cat-construction-materials': { fa: 'ماشین آلات مصالح ساخت', en: 'Construction Materials Machinery', ps: 'د ساختماني موادو ماشینونه' },
+    'cat-tires': { fa: 'تایرهای صنعتی', en: 'Industrial Tyres', ps: 'صنعتي ټایرونه' },
+    'cat-transportation': { fa: 'ماشین آلات حمل‌ونقل', en: 'Transportation Machinery', ps: 'د ترانسپورت ماشینونه' },
     'cat-plastic-processing': { fa: 'دستگاه های فرآوری پلاستیک', en: 'Plastic Processing Machines', ps: 'د پلاستیک پروسس ماشینونه' },
     'cat-paint-coating': { fa: 'ماشین آلات رنگ و کوتینگ', en: 'Paint & Coating Machinery', ps: 'د رنګ او پوښښت ماشینونه' },
     'cat-foam-sponge': { fa: 'ماشین آلات لوم و اسفنج', en: 'Foam & Sponge Machinery', ps: 'د فوم او اسفنج ماشینونه' },
@@ -3467,6 +3972,18 @@ function updateTranslations(lang) {
     if (typeof updateConstructionMaterialsPage === 'function') {
         updateConstructionMaterialsPage();
     }
+    if (typeof updatePackagingPage === 'function') {
+        updatePackagingPage();
+    }
+    if (typeof updateCoolingHeatingPage === 'function') {
+        updateCoolingHeatingPage();
+    }
+    if (typeof updateTransportationPage === 'function') {
+        updateTransportationPage();
+    }
+    if (typeof updateTiresPage === 'function') {
+        updateTiresPage();
+    }
     if (typeof updateCargoContent === 'function') {
         const metaTag = document.querySelector('meta[name="description"]');
         const originalContent = metaTag ? (metaTag.dataset.originalContent || metaTag.getAttribute('content') || '') : '';
@@ -3520,6 +4037,22 @@ function navigateToMachineryParts() {
 
 function navigateToConstructionMaterials() {
     window.location.href = 'construction-materials.html';
+}
+
+function navigateToPackaging() {
+    window.location.href = 'packaging.html';
+}
+
+function navigateToCoolingHeating() {
+    window.location.href = 'cooling-heating.html';
+}
+
+function navigateToTires() {
+    window.location.href = 'tires.html';
+}
+
+function navigateToTransportation() {
+    window.location.href = 'transportation-machineries.html';
 }
 
 // Show phase modal

@@ -1379,7 +1379,8 @@ body {
     overflow: hidden;
 }
 
-.process-card .step {
+.process-card .step,
+.process-card .process-step {
     width: 56px;
     height: 56px;
     border-radius: 50%;
