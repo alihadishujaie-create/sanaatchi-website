@@ -1207,6 +1207,9 @@ function updateTranslations(lang) {
     if (typeof updateProductionLineCards === 'function') {
         updateProductionLineCards();
     }
+    if (typeof updateProductionCategoryPage === 'function') {
+        updateProductionCategoryPage();
+    }
     if (typeof updateCargoContent === 'function') {
         const metaTag = document.querySelector('meta[name="description"]');
         const originalContent = metaTag ? (metaTag.dataset.originalContent || metaTag.getAttribute('content') || '') : '';
