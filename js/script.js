@@ -2835,14 +2835,88 @@ const equipmentData = {
     ],
     'cooling-heating': [
         {
-            name: { fa: 'دستگاه چیلر', en: 'Chiller Unit', ps: 'د چیلر واحد' },
-            description: { fa: 'دستگاه چیلر برای سرمایش صنعتی', en: 'Chiller unit for industrial cooling', ps: 'د صنعت سړښت لپاره چیلر واحد' },
-            pdfUrl: 'pdfs/cooling-heating/chiller.pdf'
+            name: { fa: 'چیلر هواخنک', en: 'Air-Cooled Chiller', ps: 'د هوا یخ چیلر' },
+            description: { fa: 'چیلر هواخنک با کمپرسور اینورتر و کندانسور فین‌دار برای اقلیم گرم و خشک.', en: 'Air-cooled chiller with inverter compressors and finned condensers for hot, dry climates.', ps: 'د هوا یخ چیلر د انورټر کمپرسورونو او فین لرونکو کندنسرو سره د ګرم وچ اقلیم لپاره.' },
+            pdfUrl: 'pdfs/cooling-heating/chiller/air-cooled-chiller.pdf',
+            category: 'chiller',
+            icon: '❄️'
         },
         {
-            name: { fa: 'دستگاه بویلر', en: 'Boiler Unit', ps: 'د بویلر واحد' },
-            description: { fa: 'دستگاه بویلر برای گرمایش صنعتی', en: 'Boiler unit for industrial heating', ps: 'د صنعت تودوخې لپاره بویلر واحد' },
-            pdfUrl: 'pdfs/cooling-heating/boiler.pdf'
+            name: { fa: 'چیلر آب‌خنک', en: 'Water-Cooled Chiller', ps: 'د اوبو یخ چیلر' },
+            description: { fa: 'چیلر آب‌خنک با اواپراتور پوسته-لوله و برج خنک‌کن هماهنگ برای فرآیندهای پیوسته.', en: 'Water-cooled chiller pairing shell-and-tube evaporators with matched cooling towers for continuous duty.', ps: 'د اوبو یخ چیلر د پوسته-پایپ ایواپراتور او د یخولو برج سره د دوامداره کار لپاره.' },
+            pdfUrl: 'pdfs/cooling-heating/chiller/water-cooled-chiller.pdf',
+            category: 'chiller',
+            icon: '💧'
+        },
+        {
+            name: { fa: 'قطعات یدکی چیلر', en: 'Chiller Spare Parts Kit', ps: 'د چیلر اضافي پرزې' },
+            description: { fa: 'فیلتر درایر، سنسور فشار، شیر انبساط و برد کنترل برای سرویس دوره‌ای چیلر.', en: 'Filter driers, pressure sensors, expansion valves and control boards for planned chiller maintenance.', ps: 'فلټر ډرایرونه، د فشار سینسرونه، د پراخېدو والونه او کنټرول بورډونه د چیلر منظم ساتنې لپاره.' },
+            pdfUrl: 'pdfs/cooling-heating/chiller/chiller-parts.pdf',
+            category: 'chiller',
+            icon: '🧰'
+        },
+        {
+            name: { fa: 'بویلر بخار', en: 'Steam Boiler', ps: 'د بخار بویلر' },
+            description: { fa: 'بویلر لوله‌آتشی با مشعل دوگانه‌سوز، کنترل سطح آب و سیستم ایمنی شعله برای خطوط صنعتی.', en: 'Fire-tube steam boiler with dual-fuel burner, water level control and flame safety for industrial lines.', ps: 'اورلوله بخار بویلر د دوه ډوله سون سوځونکي، د اوبو د سطح کنټرول او د لمبې خوندیتوب سره د صنعتي لینونو لپاره.' },
+            pdfUrl: 'pdfs/cooling-heating/boiler/steam-boiler.pdf',
+            category: 'boiler',
+            icon: '🌫️'
+        },
+        {
+            name: { fa: 'بویلر آب‌گرم', en: 'Hot-Water Boiler', ps: 'د ګرمو اوبو بویلر' },
+            description: { fa: 'بویلر مدولار آب‌گرم با پمپ سیرکولاسیون کم‌مصرف و کنترل دمای خروجی.', en: 'Modular hot-water boiler with efficient circulation pumps and outlet temperature control.', ps: 'مدولر د ګرمو اوبو بویلر د موثرو دوراني پمپونو او د وتلو د حرارت کنټرول سره.' },
+            pdfUrl: 'pdfs/cooling-heating/boiler/hot-water-boiler.pdf',
+            category: 'boiler',
+            icon: '🔥'
+        },
+        {
+            name: { fa: 'قطعات یدکی بویلر', en: 'Boiler Spare Parts Kit', ps: 'د بویلر اضافي پرزې' },
+            description: { fa: 'پمپ تغذیه، مشعل، گیج و لوله‌های آتشدان برای حفظ پایداری سیستم گرمایش.', en: 'Feed pumps, burners, gauges and furnace tubes keeping heating systems reliable.', ps: 'فیډ پمپونه، سوځونکي، ګیجونه او د اور خونو پایپونه د تودوخې سیستم باثباته ساتي.' },
+            pdfUrl: 'pdfs/cooling-heating/boiler/boiler-parts.pdf',
+            category: 'boiler',
+            icon: '🔩'
+        },
+        {
+            name: { fa: 'فن برج خنک‌کن', en: 'Cooling Tower Fan Assembly', ps: 'د یخولو برج فین ټولګه' },
+            description: { fa: 'فن فایبرگلاس با موتور ضدزنگ و توازن دینامیکی برای گردش هوای یکنواخت.', en: 'Fiberglass fan with anti-corrosion motor and dynamic balancing for uniform airflow.', ps: 'د فایبر ګلاس فین د زنګ ضد موټور او متحرک توازن سره د یوشان هوا جریان لپاره.' },
+            pdfUrl: 'pdfs/cooling-heating/cooling-tower/tower-fan.pdf',
+            category: 'cooling-tower',
+            icon: '🌬️'
+        },
+        {
+            name: { fa: 'پکینگ و مدیا برج', en: 'Cooling Tower Fill Media', ps: 'د یخولو برج ډکول' },
+            description: { fa: 'مدیا PVC ضد رسوب با سطح انتقال حرارت بالا و مقاومت UV.', en: 'Anti-fouling PVC fill media with large heat-transfer surface and UV resistance.', ps: 'د رسوب ضد PVC ډکول د پراخ تودوخې د انتقال سطحې او د UV مقاومت سره.' },
+            pdfUrl: 'pdfs/cooling-heating/cooling-tower/tower-filling.pdf',
+            category: 'cooling-tower',
+            icon: '🧱'
+        },
+        {
+            name: { fa: 'قطعات یدکی برج خنک‌کن', en: 'Cooling Tower Spare Parts Kit', ps: 'د یخولو برج اضافي پرزې' },
+            description: { fa: 'نازل پاشش، قطره‌گیر، موتور و گیربکس برای نگهداری برج خنک‌کن.', en: 'Spray nozzles, drift eliminators, motors and gearboxes for tower upkeep.', ps: 'د سپرې نوزلونه، د څاڅکو مخنیوی کوونکي، موټورونه او ګیربکسونه د برج د ساتنې لپاره.' },
+            pdfUrl: 'pdfs/cooling-heating/cooling-tower/tower-parts.pdf',
+            category: 'cooling-tower',
+            icon: '⚙️'
+        },
+        {
+            name: { fa: 'مبدل حرارتی صفحه‌ای', en: 'Plate Heat Exchanger', ps: 'د پلیټ د تودوخې مبادله کوونکی' },
+            description: { fa: 'مبدل صفحه‌ای گسکت‌دار با قابلیت CIP و طراحی جریان مخالف برای راندمان بالا.', en: 'Gasketed plate heat exchanger with CIP capability and counterflow design for high efficiency.', ps: 'د ګاسکټ لرونکی پلیټ مبادله کوونکی د CIP وړتیا او د مقابل جریان ډیزاین سره د لوړې موثریت لپاره.' },
+            pdfUrl: 'pdfs/cooling-heating/heat-exchanger/plate-heat-exchanger.pdf',
+            category: 'heat-exchanger',
+            icon: '♨️'
+        },
+        {
+            name: { fa: 'مبدل حرارتی پوسته-لوله', en: 'Shell & Tube Heat Exchanger', ps: 'د پوسته او پایپ د تودوخې مبادله کوونکی' },
+            description: { fa: 'مبدل پوسته-لوله با باندل قابل تعویض، بافل ضد لرزش و تست هیدرواستاتیک کامل.', en: 'Shell-and-tube exchanger with removable bundle, anti-vibration baffles and complete hydrostatic testing.', ps: 'د پوسته او پایپ مبادله کوونکی د بدلیدونکي بونډل، د لړزې ضد بفلونو او بشپړې هایدروستاتیک ازموینې سره.' },
+            pdfUrl: 'pdfs/cooling-heating/heat-exchanger/shell-tube-exchanger.pdf',
+            category: 'heat-exchanger',
+            icon: '🛢️'
+        },
+        {
+            name: { fa: 'قطعات یدکی مبدل حرارتی', en: 'Heat Exchanger Service Kit', ps: 'د تودوخې مبادله کوونکي خدمت کټ' },
+            description: { fa: 'گسکت، پیچ و ابزار سرویس برای نگهداری دوره‌ای مبدل‌های حرارتی.', en: 'Gaskets, bolts and service tools supporting planned exchanger maintenance.', ps: 'ګاسکټونه، بولټونه او د خدمت وسایل چې د مبدلونو منظم ساتنه اسانه کوي.' },
+            pdfUrl: 'pdfs/cooling-heating/heat-exchanger/exchanger-parts.pdf',
+            category: 'heat-exchanger',
+            icon: '🔧'
         }
     ],
     'pumps-compressors': [
@@ -3901,6 +3975,9 @@ function updateTranslations(lang) {
     if (typeof updatePackagingPage === 'function') {
         updatePackagingPage();
     }
+    if (typeof updateCoolingHeatingPage === 'function') {
+        updateCoolingHeatingPage();
+    }
     if (typeof updateTransportationPage === 'function') {
         updateTransportationPage();
     }
@@ -3964,6 +4041,10 @@ function navigateToConstructionMaterials() {
 
 function navigateToPackaging() {
     window.location.href = 'packaging.html';
+}
+
+function navigateToCoolingHeating() {
+    window.location.href = 'cooling-heating.html';
 }
 
 function navigateToTires() {
