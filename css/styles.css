@@ -418,6 +418,10 @@ body {
         gap: 30px;
         text-align: center;
     }
+
+    .hero-with-search .hero-content {
+        grid-template-columns: 1fr;
+    }
     
     .hero-text h1 {
         font-size: 2.5rem;
@@ -428,13 +432,36 @@ body {
         align-items: center;
     }
     
-    .hero-with-search .hero-search {
-        padding: 20px;
-        margin-bottom: 40px;
-    }
-    
     .hero {
-        padding-bottom: 50px;
+        min-height: auto;
+        padding: 60px 0 90px;
+        overflow: visible;
+    }
+
+    .hero-with-search .hero-search {
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto 20px;
+        padding: 20px;
+    }
+
+    .hero-search {
+        margin-top: 10px;
+    }
+
+    .search-box {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .search-box input,
+    .search-box button {
+        width: 100%;
+        border-radius: 8px;
+    }
+
+    .search-box button {
+        padding: 14px;
     }
 }
 
