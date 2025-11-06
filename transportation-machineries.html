@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ماشین‌آلات حمل‌ونقل و لجستیک | صنعتچی</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <meta name="description" content="تریلر، کامیون و لیفتراک‌های تخصصی با خدمات لجستیک، نصب و آموزش برای عملیات حمل‌ونقل در افغانستان توسط صنعتچی."/>
+    <meta name="keywords" content="ماشین آلات حمل و نقل, transportation machinery afghanistan, trailers, trucks, forklifts, sanaatchi">
+    <meta name="author" content="Sanaatchi Industrial Vision">
+    <meta property="og:title" content="ماشین‌آلات حمل‌ونقل و لجستیک | صنعتچی">
+    <meta property="og:description" content="راهکار کامل صنعتچی برای تأمین تریلر، کامیون و لیفتراک با پشتیبانی فنی و عملیات لجستیکی در افغانستان.">
+    <meta property="og:image" content="images/aiv-og-image.jpg">
+    <meta property="og:url" content="https://sanaatchi.com/transportation">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="transportation-page">
+    <a href="#main-content" class="skip-link">پرش به محتوای اصلی</a>
+
+    <header class="header">
+        <div class="container">
+            <div class="main-header">
+                <img src="images/logo.png" alt="لوگوی صنعتچی Industrial Vision" class="logo">
+
+                <nav class="nav" id="mainNav">
+                    <a href="index.html#hero" onclick="return goToIndex(event, 'hero')" data-translate="home">خانه</a>
+                    <a href="index.html#services" onclick="return goToIndex(event, 'services')" data-translate="services">خدمات</a>
+                    <a href="index.html#why-aiv" onclick="return goToIndex(event, 'why-aiv')" data-translate="about">درباره ما</a>
+                    <a href="projects.html" data-translate="projects">پروژه های تحت کار</a>
+                    <a href="cargo.html" data-translate="nav_cargo">کارگو و حمل‌ونقل</a>
+                    <a href="industrial-raw-materials.html" data-translate="cat-industrial-raw-materials">مواد اولیه صنعتی</a>
+                    <a href="index.html#footer" onclick="return goToIndex(event, 'footer')" data-translate="contact">تماس با ما</a>
+                </nav>
+
+                <div class="header-actions">
+                    <select class="language-switcher" onchange="switchLanguage(this.value)" aria-label="تغییر زبان">
+                        <option value="fa">فارسی (fa)</option>
+                        <option value="en">English (en)</option>
+                        <option value="ps">پشتو (ps)</option>
+                    </select>
+                    <button class="cta-button" onclick="showContactModal()" aria-label="درخواست مشاوره رایگان" data-translate="free-consultation">مشاوره رایگان</button>
+                    <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="منوی موبایل">☰</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section id="hero" class="hero hero-with-search category-hero transportation-hero">
+            <div class="hero-bg"></div>
+            <img class="hero-gif" src="images/background.webp" alt="Transportation Background" loading="lazy">
+            <div class="hero-animation"></div>
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1 id="transportationHeroTitle">ناوگان حمل‌ونقل صنعتی آماده تحویل</h1>
+                        <p id="transportationHeroSubtitle">تریلر، کامیون و لیفتراک‌های تخصصی با خدمات ترخیص، نصب و آموزش برای عملیات لجستیک افغانستان.</p>
+
+                        <div class="quote-box">
+                            <p id="transportationHeroQuote">هر تجهیز با ارزیابی فنی، قطعات یدکی بحرانی و برنامه تحویل درب انبار شما ارسال می‌شود.</p>
+                        </div>
+
+                        <div class="hero-buttons">
+                            <button class="btn-primary" onclick="showSalesContactModal()" data-translate="start-cooperation">شروع همکاری</button>
+                            <button class="btn-secondary" id="viewTransportationInventoryButton">مشاهده ناوگان حمل‌ونقل</button>
+                        </div>
+                    </div>
+
+                    <div class="hero-search">
+                        <h3 data-translate="search-title">دستگاه یا کالای مورد نظرتان را بین دسته بندی صنعتی</h3>
+                        <p data-translate="search-subtitle">جستجو کنید و بهترین ها را بیابید.</p>
+
+                        <div class="search-box">
+                            <input type="text" id="searchInput" data-translate-placeholder="search-placeholder" placeholder="دنبال چه محصولی هستید؟" aria-label="جستجو برای محصولات">
+                            <button onclick="performSearch()" data-translate="search-btn" aria-label="جستجو">جستجو</button>
+                        </div>
+
+                        <div class="popular-categories" data-translate="popular-categories">دسته‌بندی‌های محبوب:</div>
+                        <div class="category-tags">
+                            <span class="category-tag" onclick="performSearch('تریلر')" role="button" tabindex="0" onkeypress="if(event.key==='Enter') performSearch('تریلر')">تریلر</span>
+                            <span class="category-tag" onclick="performSearch('کامیون')" role="button" tabindex="0" onkeypress="if(event.key==='Enter') performSearch('کامیون')">کامیون</span>
+                            <span class="category-tag" onclick="performSearch('لیفتراک')" role="button" tabindex="0" onkeypress="if(event.key==='Enter') performSearch('لیفتراک')">لیفتراک</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="category-overview transportation-overview">
+            <div class="container">
+                <div class="section-title">
+                    <h2 id="transportationHighlightsTitle">چرا ناوگان حمل‌ونقل را از صنعتچی تامین کنیم؟</h2>
+                    <p id="transportationHighlightsSubtitle">انتخاب ناوگان جاده‌ای با پشتیبانی فنی، لجستیک فرامرزی و آموزش بهره‌برداری به زبان‌های محلی.</p>
+                </div>
+                <div id="transportationHighlightsGrid" class="features-grid"></div>
+            </div>
+        </section>
+
+        <section id="transportation-categories" class="categories transportation-categories">
+            <div class="container">
+                <div class="section-title">
+                    <h2 id="transportationCategoriesTitle">گروه‌های اصلی ناوگان حمل‌ونقل</h2>
+                    <p id="transportationCategoriesSubtitle">بر اساس نوع عملیات خود، تریلر، کامیون یا لیفتراک مناسب را انتخاب کنید.</p>
+                </div>
+                <div id="transportationCategoriesGrid" class="categories-grid"></div>
+            </div>
+        </section>
+
+        <section id="transportation-inventory" class="category-lines transportation-inventory">
+            <div class="container">
+                <div class="section-title">
+                    <h2 id="transportationInventoryTitle">فایل‌های فنی آماده دانلود</h2>
+                    <p id="transportationInventorySubtitle">مشخصات فنی هر ناوگان را بررسی کنید و فایل PDF سه‌زبانه را دریافت نمایید.</p>
+                </div>
+                <div id="transportationInventoryGrid"></div>
+            </div>
+        </section>
+
+        <section class="second-hand-overview transportation-assurance">
+            <div class="container">
+                <div class="section-title">
+                    <h2 id="transportationAssuranceTitle">بسته خدمات لجستیک و بهره‌برداری</h2>
+                    <p id="transportationAssuranceSubtitle">پشتیبانی از خرید تا بهره‌برداری شامل بیمه، قطعات یدکی و آموزش راننده.</p>
+                </div>
+                <div id="transportationAssuranceGrid" class="features-grid"></div>
+            </div>
+        </section>
+
+        <section id="transportation-process" class="second-hand-process transportation-process">
+            <div class="container">
+                <div class="section-title">
+                    <h2 id="transportationProcessTitle">روند تامین ناوگان حمل‌ونقل</h2>
+                    <p id="transportationProcessSubtitle">از انتخاب پیکربندی تا تحویل در مقصد و آموزش تیم شما، همه مراحل توسط صنعتچی مدیریت می‌شود.</p>
+                </div>
+                <div id="transportationProcessTimeline" class="process-grid"></div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <h2 data-translate="cta-title">قول ما در صنعتچی ساده است</h2>
+                <p data-translate="cta-subtitle">شما چشم‌انداز را مشخص کنید، ما تمام مسیر تحقق آن را هموار می‌سازیم</p>
+                <div class="cta-buttons">
+                    <button class="btn-primary" onclick="showSalesContactModal()" data-translate="start-cooperation">شروع همکاری</button>
+                    <button class="btn-secondary" onclick="showContactModal()" data-translate="free-consultation">مشاوره رایگان</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="why-aiv" class="why-aiv">
+            <div class="container">
+                <div class="section-title">
+                    <h2 data-translate="why-title">چرا صنعتچی؟</h2>
+                    <p data-translate="why-subtitle">مزایای همکاری با گروه چشم‌انداز صنعتی صنعتچی </p>
+                </div>
+
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <span class="feature-icon">✓</span>
+                        <h3 data-translate="why-trust">اعتماد مشتریان</h3>
+                        <p data-translate="why-trust-desc">سابقه درخشان ما در اجرای موفق پروژه‌ها، بزرگترین تضمین برای آرامش خاطر شماست.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <span class="feature-icon">💰</span>
+                        <h3 data-translate="why-transparency">شفافیت و قیمت رقابتی</h3>
+                        <p data-translate="why-transparency-desc">ما با ارائه تحلیل دقیق هزینه‌ها و قیمت‌های رقابتی، فرآیند تصمیم‌گیری را برای شما آسان و شفاف می‌سازیم.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <span class="feature-icon">⏰</span>
+                        <h3 data-translate="why-timeline">تعهد به زمان‌بندی</h3>
+                        <p data-translate="why-timeline-desc">ما برای وقت شما ارزش قائلیم و متعهد به تکمیل و تحویل پروژه‌ها در کوتاه‌ترین زمان ممکن هستیم.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <span class="feature-icon">🌍</span>
+                        <h3 data-translate="why-network">شبکه تامین جهانی</h3>
+                        <p data-translate="why-network-desc">با پیگیری مستمر و ارتباط مستقیم با معتبرترین تامین‌کنندگان جهانی، کیفیت و اصالت تجهیزات شما را تضمین می‌کنیم.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="images/logo.png" alt="لوگوی صنعتچی Industrial Vision">
+                    </div>
+                    <p class="footer-description" data-translate="footer-description">
+                        گروه چشم‌انداز صنعتی صنعتچی با سال‌ها تجربه در زمینه ارائه راهکارهای صنعتی، آماده همکاری با شماست. ما از ایده تا اجرا، تمام مراحل پروژه‌های صنعتی شما را مدیریت می‌کنیم.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" title="فیس‌بوک" aria-label="فیس‌بوک">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" title="لینکدین" aria-label="لینکدین">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" title="اینستاگرام" aria-label="اینستاگرام">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3 data-translate="footer-quick-links">لینک‌های سریع</h3>
+                    <ul>
+                        <li><a href="production-lines.html" data-translate="cat-production-lines">خطوط تولید</a></li>
+                        <li><a href="second-hand.html" data-translate="cat-second-hand">ماشین آلات دست دوم</a></li>
+                        <li><a href="industrial-raw-materials.html" data-translate="cat-industrial-raw-materials">مواد اولیه صنعتی</a></li>
+                        <li><a href="machinery-parts.html" data-translate="cat-machinery-parts">پرزه‌جات ماشین‌آلات</a></li>
+                        <li><a href="construction-materials.html" data-translate="cat-construction-materials">ماشین آلات مصالح ساخت</a></li>
+                        <li><a href="cargo.html" data-translate="footer-cargo">کارگو و حمل‌ونقل</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3 data-translate="footer-contact">تماس با ما</h3>
+                    <p data-translate="footer-address">کابل، افغانستان - دفتر هماهنگی پروژه‌های صنعتی</p>
+                    <div class="phone-container">
+                        <span class="icon">📞</span>
+                        <div>
+                            <a href="tel:+937999990000" class="phone-link" data-translate="afghanistan-phone">+93 799 999 0000</a>
+                            <a href="https://wa.me/937999990000" target="_blank" class="whatsapp-link" aria-label="WhatsApp">واتس‌اپ</a>
+                        </div>
+                    </div>
+                    <div class="phone-container">
+                        <span class="icon">🌏</span>
+                        <div>
+                            <a href="tel:+8613800000000" class="phone-link" data-translate="china-phone">+86 138 0000 0000</a>
+                            <a href="https://wa.me/8613800000000" target="_blank" class="whatsapp-link" aria-label="WhatsApp">WeChat/WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3 data-translate="newsletter">با ما همراه باشید</h3>
+                    <p data-translate="newsletter-desc">برای دریافت تازه‌ترین خبرها و پیشنهادهای ویژه، ایمیل خود را وارد کنید.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="ایمیل شما" data-translate-placeholder="newsletter-placeholder" aria-label="ایمیل">
+                        <button type="submit" data-translate="newsletter-submit">ثبت</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p data-translate="footer-copy">© 2024 Sanaatchi Industrial Vision. تمامی حقوق محفوظ است.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="contactModal" class="modal" role="dialog" aria-labelledby="contactModalTitle" aria-hidden="true">
+        <div class="modal-content contact-modal-content">
+            <span class="modal-close" onclick="closeContactModal()" aria-label="بستن">&times;</span>
+            <div id="contactModalContent"></div>
+        </div>
+    </div>
+
+    <div id="salesContactModal" class="modal" role="dialog" aria-labelledby="salesContactModalTitle" aria-hidden="true">
+        <div class="modal-content sales-contact-modal-content">
+            <span class="modal-close" onclick="closeSalesContactModal()" aria-label="بستن">&times;</span>
+            <div id="salesContactModalContent"></div>
+        </div>
+    </div>
+
+    <div id="searchResultModal" class="modal" role="dialog" aria-labelledby="searchResultModalTitle" aria-hidden="true">
+        <div class="modal-content search-result-modal-content">
+            <span class="modal-close" onclick="closeSearchResultModal()" aria-label="بستن">&times;</span>
+            <div id="searchResultModalContent"></div>
+        </div>
+    </div>
+
+    <div id="equipmentModal" class="modal" role="dialog" aria-labelledby="equipmentModalTitle" aria-hidden="true">
+        <div class="equipment-modal-content">
+            <span class="modal-close" onclick="closeEquipmentModal()" aria-label="بستن">&times;</span>
+            <div id="equipmentModalContent"></div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script src="js/transportation.js"></script>
+</body>
+</html>

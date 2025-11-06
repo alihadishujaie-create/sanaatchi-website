@@ -233,6 +233,19 @@ const categories = {
             ps: 'د ساختماني پروژو لپاره د ساختماني موادو تولید تجهیزات. له بلوک تولید څخه تر بتن تجهیزاتو پورې، د انرژي مصرف بهینه کولو سره.'
         }
     },
+    'transportation': {
+        icon: '🚛',
+        title: {
+            fa: 'ماشین آلات حمل‌ونقل',
+            en: 'Transportation Machinery',
+            ps: 'د ترانسپورت ماشینونه'
+        },
+        description: {
+            fa: 'ناوگان تریلر، کامیون و لیفتراک با پشتیبانی فنی، لجستیک و آموزش برای عملیات حمل‌ونقل افغانستان.',
+            en: 'Trailer, truck and forklift fleets delivered with engineering support, logistics and training for Afghan transport operations.',
+            ps: 'د ټریلر، لارۍ او فورک لیفټ ناوګان د انجینري ملاتړ، لوژستیک او روزنې سره د افغانستان د ترانسپورت لپاره.'
+        }
+    },
     'plastic-processing': {
         icon: '♻️',
         title: {
@@ -2187,6 +2200,22 @@ const categoryKeywords = {
         'میلگرد فولادی',
         'Waterproofing Systems'
     ],
+    'transportation': [
+        'ماشین آلات حمل‌ونقل',
+        'Transportation Machinery',
+        'ناوگان حمل و نقل',
+        'Logistics Fleet',
+        'تریلر',
+        'Trailer',
+        'کامیون',
+        'Truck',
+        'لیفتراک',
+        'Forklift',
+        'حمل جاده‌ای',
+        'Road Logistics',
+        'ترانسپورت افغانستان',
+        'Afghanistan Transport'
+    ],
     'plastic-processing': ['دستگاه های فرآوری پلاستیک', 'Plastic Processing Machines', 'پلاستیک', 'plastic', 'د پلاستیک پروسس ماشینونه', 'Plastic Processing Machines'],
     'paint-coating': ['ماشین آلات رنگ و کوتینگ', 'Paint & Coating Machinery', 'رنگ', 'paint', 'کوتینگ', 'coating', 'د رنګ او پوښښت ماشینونه', 'Paint & Coating Machinery'],
     'foam-sponge': ['ماشین آلات لوم و اسفنج', 'Foam & Sponge Machinery', 'اسفنج', 'foam', 'لوم', 'sponge', 'د فوم او اسفنج ماشینونه', 'Foam & Sponge Machinery'],
@@ -2566,6 +2595,74 @@ const equipmentData = {
             description: { fa: 'گیره، بولت، اسپیسر و روغن قالب برای نگهداری و افزایش عمر سیستم.', en: 'Clamps, bolts, spacers and release oils to maintain and extend formwork life.', ps: 'کلپونه، بولټونه، سپېسرونه او د قالب غوړي د سیستم د ساتنې او اوږد عمر لپاره.' },
             pdfUrl: 'pdfs/construction-materials/formwork/formwork-accessories.pdf',
             category: 'formwork'
+        }
+    ],
+    'transportation': [
+        {
+            name: { fa: 'تریلر مسطح', en: 'Flatbed Trailer', ps: 'مسحه ټریلر' },
+            description: { fa: 'کفی تقویت‌شده با قفل کانتینر و تسمه‌بند برای حمل بار عمومی و سازه‌ای.', en: 'Reinforced deck with container locks and tie-down gear for general cargo and steel structures.', ps: 'پیاوړی پوړ د کانتینر قلفونو او د بار تړلو تجهیزاتو سره د عمومي او فولادي بار لپاره.' },
+            pdfUrl: 'pdfs/transportation/trailers/flatbed-trailer.pdf',
+            category: 'trailers'
+        },
+        {
+            name: { fa: 'تریلر کم‌ارتفاع', en: 'Lowbed Trailer', ps: 'لوېد ټریلر' },
+            description: { fa: 'سطح بارگیری پایین با رمپ هیدرولیک برای حمل ماشین‌آلات سنگین و بارهای ارتفاع‌دار.', en: 'Low loading deck with hydraulic ramps to move heavy machinery and over-height equipment.', ps: 'ټیټ بار بردار پوړ د هایدرولیک رمپونو سره د درنو ماشینونو او لوړ تجهیزاتو لېږد لپاره.' },
+            pdfUrl: 'pdfs/transportation/trailers/lowbed-trailer.pdf',
+            category: 'trailers'
+        },
+        {
+            name: { fa: 'تریلر تانکر', en: 'Tanker Trailer', ps: 'تانکر ټریلر' },
+            description: { fa: 'تانکر چندمحفظه با سیستم پمپ و سنجش سطح برای حمل سوخت و مایعات صنعتی.', en: 'Multi-compartment tanker with pumping and level monitoring for fuel and industrial liquids.', ps: 'څو خونې لرونکی تانکر د پمپ او د سطحې د څارنې سیستم سره د سون توکو او صنعتي مایعاتو لپاره.' },
+            pdfUrl: 'pdfs/transportation/trailers/tanker-trailer.pdf',
+            category: 'trailers'
+        },
+        {
+            name: { fa: 'تریلر کانتینربر', en: 'Container Carrier Trailer', ps: 'کانتینر ټریلر' },
+            description: { fa: 'شاسی کانتینری با قفل‌های Twist-Lock و سیستم تعلیق بادی برای حمل ۲۰ و ۴۰ فوت.', en: 'Container chassis with twist-locks and air suspension for 20ft and 40ft units.', ps: 'د کانتینر چاسیس د ټویسټ لاکونو او د هوا تعلیق سره د ۲۰ او ۴۰ فوټو کانتینرونو لپاره.' },
+            pdfUrl: 'pdfs/transportation/trailers/container-trailer.pdf',
+            category: 'trailers'
+        },
+        {
+            name: { fa: 'تریلر یخچالدار', en: 'Refrigerated Trailer', ps: 'یخچال لرونکی ټریلر' },
+            description: { fa: 'اتاق عایق با یونیت سردخانه، ثبت دما و برق کمکی برای حمل زنجیره سرد.', en: 'Insulated van with refrigeration unit, temperature logging and standby power for cold-chain loads.', ps: 'عایق بکس د یخچال یونټ، د تودوخې ثبت او د برېښنا ملاتړ سره د سړې زنځیر بار لپاره.' },
+            pdfUrl: 'pdfs/transportation/trailers/refrigerated-trailer.pdf',
+            category: 'trailers'
+        },
+        {
+            name: { fa: 'کامیون دامپر', en: 'Dump Truck', ps: 'ډمپر کامیون' },
+            description: { fa: 'کابین تقویت‌شده با جعبه تخلیه هیدرولیک برای عملیات معدنی و پروژه‌های عمرانی.', en: 'Reinforced cab with hydraulic tipping body for mining and construction haulage.', ps: 'پیاوړی کابین د هایدرولیک ټیپنګ باډۍ سره د کان کیندنې او ساختماني بار لپاره.' },
+            pdfUrl: 'pdfs/transportation/trucks/dump-truck.pdf',
+            category: 'trucks'
+        },
+        {
+            name: { fa: 'کامیون بارکش', en: 'Cargo Haulage Truck', ps: 'بارکش کامیون' },
+            description: { fa: 'شاسی طولانی با سیستم بادی، تلمبه سوخت ذخیره و جعبه ابزار برای حمل بار عمومی.', en: 'Long-wheelbase chassis with air system, auxiliary fuel tank and tool storage for general freight.', ps: 'اوږده چاسیس د هوا سیستم، اضافي د سون ټانک او د وسیلو بکس سره د عمومي بار لپاره.' },
+            pdfUrl: 'pdfs/transportation/trucks/cargo-truck.pdf',
+            category: 'trucks'
+        },
+        {
+            name: { fa: 'کامیون یدک‌کش', en: 'Tow Recovery Truck', ps: 'ډکړ کامیون' },
+            description: { fa: 'وینچ هیدرولیک، بازوی جرثقیل و بوم متحرک برای امداد و حمل وسایل نقلیه.', en: 'Hydraulic winch, crane boom and adjustable underlift for vehicle recovery operations.', ps: 'هایډرولیک وینچ، د کرین بازو او متحرک انډرلفټ سره د وسایطو د ژغورنې لپاره.' },
+            pdfUrl: 'pdfs/transportation/trucks/tow-truck.pdf',
+            category: 'trucks'
+        },
+        {
+            name: { fa: 'لیفتراک برقی', en: 'Electric Forklift', ps: 'برقي لیفتراک' },
+            description: { fa: 'سیستم باتری لیتیوم، شارژر سریع و فرمان ارگونومیک برای محیط‌های بسته.', en: 'Lithium battery system, fast charger and ergonomic steering ideal for indoor terminals.', ps: 'د لیتیوم بیټرۍ سیستم، چټک چارج او ارګونومیک سټیرنګ د سالون کار لپاره.' },
+            pdfUrl: 'pdfs/transportation/forklifts/electric-forklift.pdf',
+            category: 'forklifts'
+        },
+        {
+            name: { fa: 'لیفتراک دیزلی', en: 'Diesel Forklift', ps: 'دیزلي لیفتراک' },
+            description: { fa: 'موتور پرقدرت، دکل برق و دکل مقاوم برای عملیات بیرونی و بار سنگین.', en: 'High-torque engine with robust mast and lighting kit for outdoor heavy-duty handling.', ps: 'لوړ تورک انجن د قوي مَست او څراغونو سره د درنو بهرنیو عملیاتو لپاره.' },
+            pdfUrl: 'pdfs/transportation/forklifts/diesel-forklift.pdf',
+            category: 'forklifts'
+        },
+        {
+            name: { fa: 'لیفتراک خاکی', en: 'Rough Terrain Forklift', ps: 'خاکی لیفتراک' },
+            description: { fa: 'محور چهارچرخ محرک، لاستیک آفرود و گارد محافظ برای سایت‌های ساخت و معادن.', en: 'Four-wheel drive axles, off-road tyres and protective guard for construction and mining sites.', ps: 'څلور څرخ محرک، د ناهموارو ټایرونه او محافظتي چوکاټ د ساختماني او کانونو ساحو لپاره.' },
+            pdfUrl: 'pdfs/transportation/forklifts/rough-terrain-forklift.pdf',
+            category: 'forklifts'
         }
     ],
     'plastic-processing': [
@@ -3205,6 +3302,7 @@ Object.assign(translations, {
     'cat-sports-equipment': { fa: 'تجهیزات ورزشی', en: 'Sports Equipment', ps: 'ورزشي تجهیزات' },
     'cat-metallurgy-full': { fa: 'متالورژی و فلزکاری', en: 'Metallurgy & Metalworking', ps: 'د فلزاتو علم او فلزکاري' },
     'cat-construction-materials': { fa: 'ماشین آلات مصالح ساخت', en: 'Construction Materials Machinery', ps: 'د ساختماني موادو ماشینونه' },
+    'cat-transportation': { fa: 'ماشین آلات حمل‌ونقل', en: 'Transportation Machinery', ps: 'د ترانسپورت ماشینونه' },
     'cat-plastic-processing': { fa: 'دستگاه های فرآوری پلاستیک', en: 'Plastic Processing Machines', ps: 'د پلاستیک پروسس ماشینونه' },
     'cat-paint-coating': { fa: 'ماشین آلات رنگ و کوتینگ', en: 'Paint & Coating Machinery', ps: 'د رنګ او پوښښت ماشینونه' },
     'cat-foam-sponge': { fa: 'ماشین آلات لوم و اسفنج', en: 'Foam & Sponge Machinery', ps: 'د فوم او اسفنج ماشینونه' },
@@ -3467,6 +3565,9 @@ function updateTranslations(lang) {
     if (typeof updateConstructionMaterialsPage === 'function') {
         updateConstructionMaterialsPage();
     }
+    if (typeof updateTransportationPage === 'function') {
+        updateTransportationPage();
+    }
     if (typeof updateCargoContent === 'function') {
         const metaTag = document.querySelector('meta[name="description"]');
         const originalContent = metaTag ? (metaTag.dataset.originalContent || metaTag.getAttribute('content') || '') : '';
@@ -3520,6 +3621,10 @@ function navigateToMachineryParts() {
 
 function navigateToConstructionMaterials() {
     window.location.href = 'construction-materials.html';
+}
+
+function navigateToTransportation() {
+    window.location.href = 'transportation-machineries.html';
 }
 
 // Show phase modal
