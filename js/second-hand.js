@@ -64,7 +64,8 @@
         }
     };
 
-    const categories = Array.isArray(window.secondHandCategories) ? window.secondHandCategories : [];
+    const categories = (Array.isArray(window.secondHandCategories) ? window.secondHandCategories : [])
+        .filter(category => category?.id !== 'industrial-raw-materials');
 
     const assuranceHighlights = [
         {
@@ -224,7 +225,8 @@
         }
     ];
 
-    const inventory = Array.isArray(window.secondHandInventoryData) ? window.secondHandInventoryData : [];
+    const inventory = (Array.isArray(window.secondHandInventoryData) ? window.secondHandInventoryData : [])
+        .filter(item => item?.category !== 'industrial-raw-materials');
 
     const getLanguage = () => (typeof currentLanguage !== 'undefined' ? currentLanguage : 'fa');
 
