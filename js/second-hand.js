@@ -3,7 +3,7 @@
         hero: {
             title: {
                 fa: 'ماشین‌آلات دست دوم تایید شده برای خطوط تولید افغانستان',
-                en: 'Certified Second-Hand Machinery for Afghan Production Lines',
+                en: 'Certified Second-Hand Machinery',
                 ps: 'د افغانستان د تولیدي لینونو لپاره تایید شوي دوهم لاس ماشینونه'
             },
             subtitle: {
@@ -64,92 +64,7 @@
         }
     };
 
-    const categories = [
-        {
-            id: 'printing-machines',
-            icon: '🖨️',
-            title: {
-                fa: 'چاپ و بسته‌بندی',
-                en: 'Printing & Packaging',
-                ps: 'چاپ او بسته بندي'
-            },
-            description: {
-                fa: 'ماشین‌آلات افست، فلکسو و خطوط بسته‌بندی مایع و جامد با تجهیزات تکمیلی.',
-                en: 'Offset, flexo, and liquid or solid packaging systems with finishing equipment.',
-                ps: 'د افست، فلیکسو او د مايع او جامد بسته بندۍ سیسټمونه د بشپړولو تجهیزاتو سره.'
-            }
-        },
-        {
-            id: 'food-beverage',
-            icon: '🥘',
-            title: {
-                fa: 'فرآوری غذا و نوشیدنی',
-                en: 'Food & Beverage Processing',
-                ps: 'د خوړو او مشروباتو پروسس'
-            },
-            description: {
-                fa: 'خطوط پرکن، UHT، پاستور و بسته‌بندی نوشیدنی و لبنیات.',
-                en: 'Filling, UHT, pasteurisation, and packaging for beverages and dairy.',
-                ps: 'د مشروباتو او لبنیاتو لپاره د ډکولو، UHT، پاستور او بسته بندۍ لینونه.'
-            }
-        },
-        {
-            id: 'plastic-processing',
-            icon: '♻️',
-            title: {
-                fa: 'پلاستیک و بازیافت',
-                en: 'Plastics & Recycling',
-                ps: 'پلاستیک او ریسایکل'
-            },
-            description: {
-                fa: 'سیستم‌های شست‌وشو، خردایش و گرانول‌سازی برای PET، PP و PE.',
-                en: 'Washing, shredding, and pelletising systems for PET, PP, and PE.',
-                ps: 'د PET، PP او PE لپاره د مینځلو، پرې کولو او ګرینول کولو سیستمونه.'
-            }
-        },
-        {
-            id: 'textile-garments',
-            icon: '👕',
-            title: {
-                fa: 'نساجی و پوشاک',
-                en: 'Textile & Garments',
-                ps: 'نساجي او کالي'
-            },
-            description: {
-                fa: 'ماشین‌آلات بافندگی، برش اتومات و تجهیزات تکمیل پوشاک.',
-                en: 'Knitting machines, automatic cutting, and garment finishing equipment.',
-                ps: 'د اوبدلو ماشینونه، اتومات پرې کول او د کالیو بشپړولو تجهیزات.'
-            }
-        },
-        {
-            id: 'construction-machinery',
-            icon: '🏗️',
-            title: {
-                fa: 'ماشین‌آلات سنگین ساختمانی',
-                en: 'Construction Heavy Equipment',
-                ps: 'د ودانیزو درنو ماشینونه'
-            },
-            description: {
-                fa: 'اکسکاویتور، جرثقیل و تجهیزات پروژه‌های عمرانی با سرویس کامل.',
-                en: 'Excavators, cranes, and construction equipment delivered fully serviced.',
-                ps: 'اکسکاویټرونه، کرینونه او د ساختماني چارو تجهیزات د بشپړ خدمت سره.'
-            }
-        },
-        {
-            id: 'logistics-utilities',
-            icon: '🚚',
-            title: {
-                fa: 'لجستیک و نیروگاهی',
-                en: 'Logistics & Utilities',
-                ps: 'لوژستیک او انرژي'
-            },
-            description: {
-                fa: 'کامیون، لیفتراک، ژنراتور و کمپرسورهای صنعتی آماده بهره‌برداری.',
-                en: 'Truck fleets, forklifts, generators, and industrial compressors ready to deploy.',
-                ps: 'د ټرکونو بېړۍ، فورک لیفټونه، جنراتورونه او صنعتي کمپرسورونه د کار لپاره چمتو.'
-            }
-        }
-    ];
+    const categories = Array.isArray(window.secondHandCategories) ? window.secondHandCategories : [];
 
     const assuranceHighlights = [
         {
