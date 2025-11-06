@@ -365,10 +365,23 @@
             card.setAttribute('role', 'button');
             card.setAttribute('tabindex', '0');
 
+            const titleText = category.title[lang] || category.title.fa;
+            const descriptionText = category.description[lang] || category.description.fa;
+            const detailText = lang === 'fa' ? 'مشاهده جزئیات' : (lang === 'ps' ? 'جزییات وګورئ' : 'View Details');
+            const detailLabel = lang === 'fa'
+                ? `مشاهده جزئیات ${titleText}`
+                : (lang === 'ps' ? `د ${titleText} جزییات وګورئ` : `View details for ${titleText}`);
+
             card.innerHTML = `
                 <span class="icon">${category.icon}</span>
-                <h4>${category.title[lang] || category.title.fa}</h4>
-                <p>${category.description[lang] || category.description.fa}</p>
+                <h4>${titleText}</h4>
+                <p>${descriptionText}</p>
+                <div class="category-card-actions">
+                    <a class="category-card-link" href="#" role="button" aria-label="${detailLabel}">
+                        <span>${detailText}</span>
+                        <i class="fas fa-arrow-left"></i>
+                    </a>
+                </div>
             `;
 
             const openModal = () => showSecondHandCategoryModal(category.id, lang);
@@ -380,6 +393,21 @@
                     openModal();
                 }
             });
+
+            const link = card.querySelector('.category-card-link');
+            if (link) {
+                const handleLinkInteraction = event => {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    openModal();
+                };
+                link.addEventListener('click', handleLinkInteraction);
+                link.addEventListener('keypress', event => {
+                    if (event.key === 'Enter' || event.key === ' ') {
+                        handleLinkInteraction(event);
+                    }
+                });
+            }
 
             wrapper.appendChild(card);
         });
