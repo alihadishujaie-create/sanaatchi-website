@@ -1,6 +1,6 @@
 [Complete file structure .txt](https://github.com/user-attachments/files/23327307/Complete.file.structure.txt)
 [SEO.txt](https://github.com/user-attachments/files/23327309/SEO.txt)
-
+when coding the the all the remaining of the categories pages mimic the production line structure   to display categories and items. 
 ## Binary asset reminder
 
 The repository keeps references to hero imagery and logistics PDFs (for example
