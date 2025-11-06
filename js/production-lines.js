@@ -96,6 +96,20 @@ const productionLineGroups = [
             en: 'Furniture manufacturing for home, school and office plus soft sports equipment.',
             ps: 'د کور، ښوونځي او دفتر فرنیچر او نرم ورزشي تجهیزاتو د تولید حل لارې.'
         }
+    },
+    {
+        id: 'second-hand',
+        icon: '🔄',
+        title: {
+            fa: 'ماشین آلات دست دوم تایید شده',
+            en: 'Certified Second-Hand Machinery',
+            ps: 'تایید شوي دوهم لاس ماشینونه'
+        },
+        description: {
+            fa: 'دستگاه‌های بازبینی‌شده چاپ، بسته‌بندی، پلاستیک، نساجی و ماشین‌آلات سنگین آماده تحویل.',
+            en: 'Inspected printing, packaging, plastics, textile, and heavy machinery ready to deploy.',
+            ps: 'تر پلټنې وروسته چمتو شوي د چاپ، بسته بندۍ، پلاستیک، نساجۍ او درنو ماشینونو بشپړ انتخاب.'
+        }
     }
 ];
 
@@ -106,7 +120,8 @@ const productionLineCategoryRoutes = window.productionLineCategoryRoutes || {
     'textile-garments-lines': 'textile-garments-lines.html',
     'recycling-lines': 'recycling-lines.html',
     'disposable-products-lines': 'disposable-products-lines.html',
-    'light-industry-lines': 'light-industry-lines.html'
+    'light-industry-lines': 'light-industry-lines.html',
+    'second-hand': 'second-hand.html'
 };
 
 window.productionLineCategoryRoutes = productionLineCategoryRoutes;
@@ -757,7 +772,13 @@ function buildProductionLineCard(group, lang) {
 
     card.innerHTML = cardHtml;
 
-    const openModal = () => showProductionLineModal(group.id);
+    const openModal = () => {
+        if (productionLines[group.id] && productionLines[group.id].lines) {
+            showProductionLineModal(group.id);
+        } else if (route) {
+            window.location.href = route;
+        }
+    };
     card.addEventListener('click', openModal);
     card.addEventListener('keypress', event => {
         if (event.key === 'Enter' || event.key === ' ') {
