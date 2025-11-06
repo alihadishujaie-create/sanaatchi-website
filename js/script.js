@@ -3533,10 +3533,13 @@ document.addEventListener('DOMContentLoaded', function() {
     // Ensure category detail pages stay off the primary navigation
     const mainNav = document.getElementById('mainNav');
     if (mainNav) {
-        const productionLinesNavLink = mainNav.querySelector('a[href*="production-lines"]');
-        if (productionLinesNavLink) {
-            productionLinesNavLink.remove();
-        }
+        ['production-lines', 'second-hand', 'industrial-raw-materials'].forEach((pattern) => {
+            let navLink = mainNav.querySelector(`a[href*="${pattern}"]`);
+            while (navLink) {
+                navLink.remove();
+                navLink = mainNav.querySelector(`a[href*="${pattern}"]`);
+            }
+        });
     }
 
     // Check for saved language preference
