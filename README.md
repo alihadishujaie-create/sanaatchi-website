@@ -9,4 +9,4 @@ The repository keeps references to hero imagery and logistics PDFs (for example
 assets themselves are not tracked. Create or supply these files manually during
 deployment so that all download links and background images function as
 intended.
-
+do not use any categories page on header navigation bar
