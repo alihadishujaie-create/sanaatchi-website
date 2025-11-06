@@ -2172,6 +2172,89 @@ const categoryKeywords = {
     'sports-equipment': ['تجهیزات ورزشی', 'Sports Equipment', 'ورزشی', 'sports', 'ورزشي تجهیزات', 'Sports Equipment'],
     'metallurgy': ['متالورژی و فلزکاری', 'Metallurgy & Metalworking', 'متالورژی', 'metallurgy', 'فلزکاری', 'metalworking', 'د فلزاتو علم', 'metallurgy', 'فلزکاري', 'metalworking'],
     'construction-materials': [
+        'ماشین آلات مصالح ساخت',
+        'Construction Materials Machinery',
+        'مصالح ساختمانی',
+        'construction materials',
+        'د ساختماني موادو ماشینونه',
+        'Construction Materials Machinery',
+        'Concrete Block Machines',
+        'قالب بلوک بتنی',
+        'بچینگ آسفالت',
+        'Asphalt Plant',
+        'جرثقیل کارگاهی',
+        'لودر ساختمانی',
+        'میلگرد فولادی',
+        'Waterproofing Systems'
+    ],
+    'plastic-processing': ['دستگاه های فرآوری پلاستیک', 'Plastic Processing Machines', 'پلاستیک', 'plastic', 'د پلاستیک پروسس ماشینونه', 'Plastic Processing Machines'],
+    'paint-coating': ['ماشین آلات رنگ و کوتینگ', 'Paint & Coating Machinery', 'رنگ', 'paint', 'کوتینگ', 'coating', 'د رنګ او پوښښت ماشینونه', 'Paint & Coating Machinery'],
+    'foam-sponge': ['ماشین آلات لوم و اسفنج', 'Foam & Sponge Machinery', 'اسفنج', 'foam', 'لوم', 'sponge', 'د فوم او اسفنج ماشینونه', 'Foam & Sponge Machinery'],
+    'tobacco': ['ماشین آلات تناکو و سیگار', 'Tobacco & Cigarette Machinery', 'تناکو', 'tobacco', 'سیگار', 'cigarette', 'د توتون او سیګر ماشینونه', 'Tobacco & Cigarette Machinery'],
+    'cooling-heating': ['دستگاه های سرمایش و گرمایش', 'Cooling & Heating Equipment', 'سرمایش', 'cooling', 'گرمایش', 'heating', 'د سړښت او تودوخه تجهیزات', 'Cooling & Heating Equipment'],
+    'pumps-compressors': ['پمپ ها و کمپرسور ها صنعتی', 'Industrial Pumps & Compressors', 'پمپ', 'pump', 'کمپرسور', 'compressor', 'د صنعت پمپونه او کمپرسورونه', 'Industrial Pumps & Compressors'],
+    'industrial-laser': ['لیزر صنعتی', 'Industrial Laser', 'لیزر', 'laser', 'صنعت لیزر', 'Industrial Laser'],
+    'metallurgy-equipment': ['تجهیزات متالورژی دست دوم', 'Metallurgy Equipment', 'متالورژی', 'metallurgy', 'فلزکاری', 'metal working', 'د فلزاتو تجهیزات', 'Metallurgy Equipment'],
+    'textile-machinery': ['ماشین آلات نساجی دست دوم', 'Textile Machinery', 'نساجی', 'textile', 'ماشین بافندگی', 'weaving', 'د نساجۍ ماشینونه', 'Textile Machinery'],
+    'food-processing': ['ماشین آلات فرآوری غذا', 'Food Processing Machinery', 'غذا', 'food', 'فرآوری', 'processing', 'د خوړو پروسس', 'Food Processing Machinery'],
+    'packaging-machinery': ['ماشین آلات بسته بندی', 'Packaging Machinery', 'بسته بندی', 'packaging', 'پرکن', 'filling', 'د بسته بندۍ ماشینونه', 'Packaging Machinery'],
+    'agricultural-machinery': ['ماشین آلات کشاورزی', 'Agricultural Machinery', 'کشاورزی', 'agriculture', 'تراکتور', 'tractor', 'د کرنې ماشینونه', 'Agricultural Machinery'],
+    'laboratory-equipment': ['تجهیزات آزمایشگاهی', 'Laboratory Equipment', 'آزمایشگاه', 'laboratory', 'آزمایش', 'testing', 'لابراتوار تجهیزات', 'Laboratory Equipment'],
+    'material-handling': ['تجهیزات جابجایی مواد', 'Material Handling Equipment', 'جابجایی', 'material handling', 'لیفتراک', 'forklift', 'د موادو لېږد', 'Material Handling Equipment'],
+    'wood-working': ['ماشین آلات نجاری', 'Wood Working Machinery', 'چوب', 'wood', 'نجاری', 'carpentry', 'د لرګيو ماشینونه', 'Wood Working Machinery'],
+    'rubber-processing': ['ماشین آلات لاستیک', 'Rubber Processing Machinery', 'لاستیک', 'rubber', 'ولکانیزه', 'vulcanizing', 'د ربړ پروسس', 'Rubber Processing Machinery'],
+    'glass-ceramics': ['ماشین آلات شیشه و سرامیک', 'Glass & Ceramics Machinery', 'شیشه', 'glass', 'سرامیک', 'ceramics', 'د ښیښې او سرامیک ماشینونه', 'Glass & Ceramics Machinery'],
+    'leather-footwear': ['ماشین آلات چرم و کفش', 'Leather & Footwear Machinery', 'چرم', 'leather', 'کفش', 'footwear', 'د چرم او بوټانو ماشینونه', 'Leather & Footwear Machinery'],
+    'trucks-lorries': ['کامیون و لاری', 'Trucks & Lorries', 'کامیون', 'truck', 'لاری', 'lorry', 'لارۍ', 'trucks'],
+    'generators': ['ژنراتور دست دوم', 'Generators', 'ژنراتور', 'generator', 'برق اضطراری', 'backup power', 'جنراتورونه', 'Generators'],
+    'tanks': ['مخازن', 'Tanks', 'مخزن', 'tank', 'تنکونه', 'Tanks'],
+    'packaging': ['بسته بندی', 'Packaging', 'بسته', 'package', 'بسته بندي', 'Packaging'],
+    'chemical-pharma': ['ماشین آلات شیمیایی و دارویی', 'Chemical & Pharmaceutical Machinery', 'شیمیایی', 'chemical', 'دارویی', 'pharmaceutical', 'د کیمیاوي او درملو ماشینونه', 'Chemical & Pharmaceutical Machinery'],
+    'machinery-parts': [
+        'پرزه‌جات ماشین‌آلات', 'Machinery Spare Parts', 'پرزه‌جات', 'spare parts', 'د ماشینونو پرزې', 'Machinery Spare Parts',
+        'باکت بیل مکانیکی', 'Excavator Bucket', 'د اکسکاویټر باکت',
+        'شیلنگ هیدرولیک', 'Hydraulic Hose', 'هایډرولیک نلۍ',
+        'زنجیر شنی', 'Track Chain', 'د ټراک زنځیر',
+        'قطعات موتور دیزلی', 'Diesel Engine Parts', 'د ډیزل انجن پرزې',
+        'قالب تزریق', 'Injection Mold', 'د انجکشن قالب',
+        'تیغه برش', 'Cutting Blade', 'د پرې کولو تیغ',
+        'کنترلر CNC', 'CNC Controller', 'د CNC کنټرولر',
+        'موتور و گیربکس', 'Motor Gearbox', 'موټر او ګیرباکس',
+        'شفت تراکتور', 'Tractor Shaft', 'د ټراکټر شافټ',
+        'تیغه دروگر', 'Harvester Blade', 'د دروګر تیغه',
+        'پمپ آب کشاورزی', 'Irrigation Pump', 'د اوبه خور پمپ',
+        'بذرپاش', 'Seed Drill', 'د بذرپاش سیسټم',
+        'یاتاقان صنعتی', 'Industrial Bearings', 'صنعتي یاتاقانونه',
+        'فیلتر صنعتی', 'Industrial Filters', 'صنعتي فلټرونه',
+        'باتری صنعتی', 'Industrial Batteries', 'صنعتي بیټرۍ',
+        'تسمه انتقال نیرو', 'Power Transmission Belt', 'د ځواک لېږد تسمه'
+    ],
+    'paper-pulp': ['ماشین آلات کاغذ و سلولوز', 'Paper & Pulp Machinery', 'کاغذ', 'paper', 'د کاغذ او پالپ ماشینونه', 'Paper & Pulp Machinery'],
+    'electronic-machinery': ['ماشین آلات الکترونیکی', 'Electronic Machinery', 'الکترونیک', 'electronic', 'د الکترونیک ماشینونه', 'Electronic Machinery'],
+    'telecom-parts': ['قطعات و لوازم اینترنتی و مخابراتی', 'Internet & Telecommunication Parts', 'مخابراتی', 'telecom', 'اینترنت', 'internet', 'د انترنت او مخابراتي برخې', 'Internet & Telecommunication Parts'],
+    'second-hand': ['ماشین آلات دست دوم', 'Second Hand Machinery', 'دست دوم', 'second hand', 'د دوهم لاس ماشینونه', 'Second Hand Machinery'],
+    'industrial-raw-materials': [
+        'مواد اولیه صنعتی',
+        'Industrial Raw Materials',
+        'خام مواد',
+        'raw materials',
+        'مواد خام',
+        'feedstock',
+        'فولاد',
+        'steel',
+        'پلیمر',
+        'polymer',
+        'مواد شیمیایی',
+        'chemicals',
+        'مواد معدنی',
+        'minerals',
+        'صنعتي خام مواد'
+    ]
+};
+
+// Equipment data for each category
+const equipmentData = {
+    'production-lines': [
         {
             name: { fa: 'قالب‌گیری بلوک بتنی', en: 'Concrete Block Molding Station', ps: 'د کانکریټ بلاک قالب جوړولو سټېشن' },
             description: { fa: 'پرس هیدرولیک، قالب‌های استاندارد و سیستم تغذیه مواد برای تولید بلوک توپر و توخالی.', en: 'Hydraulic press, standard mould sets and aggregate feed system for solid and hollow block production.', ps: 'هایډرولیک پرس، معیاري قالبونه او د موادو تغذیه سیستم د کلک او تشو بلاکونو تولید لپاره.' },
@@ -2259,6 +2342,96 @@ const categoryKeywords = {
         {
             name: { fa: 'قطعات و الحاقات لودر', en: 'Loader Attachments & Spares', ps: 'د لوډر ملحقات او سپیر پرزې' },
             description: { fa: 'ست کامل تایر، جک، بوش و الحاقات ویژه برای کاربری‌های مختلف.', en: 'Full kit of tyres, cylinders, bushings and specialised attachments for varied operations.', ps: 'د ټایرونو، جکونو، بوشونو او ځانګړو ملحقاتو بشپړ کټ د بېلابېلو کارونو لپاره.' },
+            pdfUrl: 'pdfs/construction-materials/loader/loader-parts.pdf',
+            category: 'loader'
+        },
+        {
+            name: { fa: 'قالب‌گیری بلوک بتنی', en: 'Concrete Block Molding Station', ps: 'د کانکریټ بلاک قالب جوړولو سټېشن' },
+            description: { fa: 'پرس هیدرولیک، قالب‌های استاندارد و سیستم تغذیه مواد برای تولید بلوک توپر و توخالی.', en: 'Hydraulic press, standard mould sets and aggregate feed system for solid and hollow block production.', ps: 'هایډرولیک پرس، معیاري قالبونه او د موادو تغذیه سیستم د کلک او تشو بلاکونو تولید لپاره.' },
+            pdfUrl: 'pdfs/construction-materials/concrete-block/block-molding.pdf',
+            category: 'concrete-block'
+        },
+        {
+            name: { fa: 'عمل‌آوری و بخاردهی بلوک', en: 'Concrete Block Curing System', ps: 'د کانکریټ بلاک د عمل آوري سیستم' },
+            description: { fa: 'تونل عمل‌آوری با کنترل رطوبت و دما برای تسریع مقاومت نهایی بلوک.', en: 'Curing tunnel with humidity and temperature control to accelerate final block strength.', ps: 'د رطوبت او تودوخې کنټرول لرونکی تونل چې د بلاک وروستۍ مقاومت چټکوي.' },
+            pdfUrl: 'pdfs/construction-materials/concrete-block/block-curing.pdf',
+            category: 'concrete-block'
+        },
+        {
+            name: { fa: 'سیستم پالت‌گذاری و بسته‌بندی بلوک', en: 'Concrete Block Palletising Line', ps: 'د کانکریټ بلاک د پالت کولو لاین' },
+            description: { fa: 'انتقال، چیدمان و تسمه‌پیچی خودکار برای آماده‌سازی حمل بلوک.', en: 'Automated transfer, stacking and strapping for dispatch-ready block bundles.', ps: 'د بلاکونو د لېږلو لپاره اتومات انتقال، څپېړل او تسمه کول.' },
+            pdfUrl: 'pdfs/construction-materials/concrete-block/block-palletizing.pdf',
+            category: 'concrete-block'
+        },
+        {
+            name: { fa: 'بچینگ و میکسینگ آسفالت', en: 'Asphalt Mixing Plant', ps: 'د اسفالټ د مخلوط فابریکه' },
+            description: { fa: 'بچینگ گرم با سیستم توزین دقیق، کنترل PLC و فیلتر کیسه‌ای برای کاهش آلودگی.', en: 'Hot-mix batching plant with precise weighing, PLC control and baghouse filtration.', ps: 'د دقیق وزن، PLC کنټرول او د دوړو د فلټر کولو سیستم لرونکې ګرمې مخلوط فابریکه.' },
+            pdfUrl: 'pdfs/construction-materials/asphalt/asphalt-mixing.pdf',
+            category: 'asphalt'
+        },
+        {
+            name: { fa: 'فینیشر و آسفالت‌ریز', en: 'Asphalt Paver', ps: 'د اسفالټ ایښودلو ماشین' },
+            description: { fa: 'فینیشر زنجیری با سیستم توزیع یکنواخت و کنترل ضخامت لایه آسفالت.', en: 'Tracked asphalt paver with uniform distribution and layer thickness control.', ps: 'د زنځیر لرونکی اسفالټ فینیشر چې یکنواخت توزیع او د طبقي ضخامت کنټرول لري.' },
+            pdfUrl: 'pdfs/construction-materials/asphalt/asphalt-paving.pdf',
+            category: 'asphalt'
+        },
+        {
+            name: { fa: 'غلتک فشرده‌سازی آسفالت', en: 'Asphalt Compaction Roller', ps: 'د اسفالټ کمپکشن رولر' },
+            description: { fa: 'غلتک ویبره‌ای دو درام با سیستم پاشش آب و مانیتورینگ تراکم.', en: 'Dual-drum vibratory roller with water spray and compaction monitoring.', ps: 'دوه ډرم لرونکی ویبرېشن رولر د اوبو د شیندلو او تراکم څارنې سره.' },
+            pdfUrl: 'pdfs/construction-materials/asphalt/asphalt-compacting.pdf',
+            category: 'asphalt'
+        },
+        {
+            name: { fa: 'بیل مکانیکی ۲۰ تنی', en: '20-Ton Crawler Excavator', ps: '۲۰ ټنه چینجي اکسکاویټر' },
+            description: { fa: 'بیل مکانیکی استاندارد با موتور کم‌مصرف، سیستم هیدرولیک پیشرفته و کابین محافظ.', en: 'Standard crawler excavator featuring fuel-efficient engine, advanced hydraulics and ROPS cabin.', ps: 'معیاري چینجي اکسکاویټر د کم مصرف انجن، پرمختللي هایدرولیک او خوندي کابین سره.' },
+            pdfUrl: 'pdfs/construction-materials/excavator/excavator.pdf',
+            category: 'excavator'
+        },
+        {
+            name: { fa: 'مینی بیل مکانیکی', en: 'Mini Excavator 5-Ton', ps: '۵ ټنه میني اکسکاویټر' },
+            description: { fa: 'مناسب برای پروژه‌های شهری با شعاع چرخش کم، قابلیت حمل آسان و ابزار متنوع.', en: 'Compact excavator with tight swing radius, easy transport and versatile attachments for urban jobs.', ps: 'کمپکټ اکسکاویټر چې کوچنی تاو، اسانه لېږد او بېلابېل ملحقات د ښاري پروژو لپاره لري.' },
+            pdfUrl: 'pdfs/construction-materials/excavator/mini-excavator.pdf',
+            category: 'excavator'
+        },
+        {
+            name: { fa: 'کیت و قطعات بیل مکانیکی', en: 'Excavator Wear Parts Kit', ps: 'د اکسکاویټر د استهلاکي پرزو کټ' },
+            description: { fa: 'ست کامل بوش، باکت، دندانه و شیلنگ هیدرولیک برای نگهداری دوره‌ای.', en: 'Complete kit of bushes, buckets, teeth and hydraulic hoses for planned maintenance.', ps: 'د بوشونو، باکت، غاښونو او هایدرولیک نلونو بشپړ کټ د منظم ساتنې لپاره.' },
+            pdfUrl: 'pdfs/construction-materials/excavator/excavator-parts.pdf',
+            category: 'excavator'
+        },
+        {
+            name: { fa: 'جرثقیل کارگاهی ۵۰ تنی', en: '50-Ton Mobile Crane', ps: '۵۰ ټنه ګرځنده جرثقیل' },
+            description: { fa: 'جرثقیل بوم تلسکوپی با سیستم تثبیت، کنترل ایمنی لحظه‌ای و کابین دوگانه.', en: 'Telescopic mobile crane with outrigger stabilisation, real-time safety control and dual cab.', ps: 'د تلسکوپي بوم ګرځنده جرثقیل د تثبیت برښو، د خوندیتوب سمدستي کنټرول او دوه ګونه کابین سره.' },
+            pdfUrl: 'pdfs/construction-materials/crane/crane.pdf',
+            category: 'crane'
+        },
+        {
+            name: { fa: 'تاور کرین پروژه‌های بلندمرتبه', en: 'Tower Crane for High-Rise Projects', ps: 'د لوړ پوړو پروژو لپاره تاور کرین' },
+            description: { fa: 'تاورکرین با طول فلش متغیر، کابین اپراتوری پیشرفته و سیستم ضد باد.', en: 'Tower crane with variable jib lengths, advanced operator cabin and wind resistance system.', ps: 'تاور کرین د بدلېدونکي بازو، پرمختللي کابین او د باد پر وړاندې د خوندیتوب سیستم سره.' },
+            pdfUrl: 'pdfs/construction-materials/crane/tower-crane.pdf',
+            category: 'crane'
+        },
+        {
+            name: { fa: 'قطعات و اسلیو جرثقیل', en: 'Crane Spare Parts & Slewing Rings', ps: 'د جرثقیل سپیر پرزې او سلوی رینګونه' },
+            description: { fa: 'مجموعه گیربکس، موتور، اسلیو و کابل‌های جرثقیل برای کاهش توقف پروژه.', en: 'Gearboxes, motors, slewing rings and cabling packages to minimise crane downtime.', ps: 'ګیربکسونه، موټورونه، سلوی رینګونه او کیبل پیکجونه د جرثقیل د درېدو مخنیوي لپاره.' },
+            pdfUrl: 'pdfs/construction-materials/crane/crane-parts.pdf',
+            category: 'crane'
+        },
+        {
+            name: { fa: 'لودر چرخ‌دار صنعتی', en: 'Industrial Wheel Loader', ps: 'صنعتي څرخ لرونکی لوډر' },
+            description: { fa: 'لودر با سطل چندمنظوره، سیستم توزین دیجیتال و محور تقویت‌شده.', en: 'Wheel loader with multi-purpose bucket, digital weighing and reinforced axles.', ps: 'د څو منظوره سطل، ډیجیټل وزن او پیاوړي محورونو لرونکی څرخ لرونکی لوډر.' },
+            pdfUrl: 'pdfs/construction-materials/loader/loader.pdf',
+            category: 'loader'
+        },
+        {
+            name: { fa: 'لودر چرخ‌دار معدنی', en: 'Heavy-Duty Wheel Loader', ps: 'دروند څرخ لرونکی لوډر' },
+            description: { fa: 'لودر پرقدرت برای معادن و پروژه‌های حجیم با سیستم خنک‌کاری تقویت‌شده.', en: 'High-power loader for mining and bulk projects with reinforced cooling system.', ps: 'د کانونو او درنو پروژو لپاره قوي لوډر د پیاوړي یخول سیستم سره.' },
+            pdfUrl: 'pdfs/construction-materials/loader/wheel-loader.pdf',
+            category: 'loader'
+        },
+        {
+            name: { fa: 'قطعات و الحاقات لودر', en: 'Loader Attachments & Spares', ps: 'د لوډر ملحقات او سپیر پرزې' },
+            description: { fa: 'ست کامل تایر، جک، بوش و الحاقات ویژه برای کاربری‌های مختلف.', en: 'Full kit of tyres, cylinders, bushings and specialised attachments for varied operations.', ps: 'د ټایرونو، جکونو، بوشونو او ځانګړو ملحقاتو بشپړ کټ د بېلابېلو کاروو لپاره.' },
             pdfUrl: 'pdfs/construction-materials/loader/loader-parts.pdf',
             category: 'loader'
         },
@@ -3253,6 +3426,10 @@ function navigateToIndustrialRawMaterials() {
 
 function navigateToMachineryParts() {
     window.location.href = 'machinery-parts.html';
+}
+
+function navigateToConstructionMaterials() {
+    window.location.href = 'construction-materials.html';
 }
 
 // Show phase modal
