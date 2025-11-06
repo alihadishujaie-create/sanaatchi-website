@@ -2044,6 +2044,15 @@ function closeEquipmentModal() {
 
 // Initialize page
 document.addEventListener('DOMContentLoaded', function() {
+    // Ensure category detail pages stay off the primary navigation
+    const mainNav = document.getElementById('mainNav');
+    if (mainNav) {
+        const productionLinesNavLink = mainNav.querySelector('a[href*="production-lines"]');
+        if (productionLinesNavLink) {
+            productionLinesNavLink.remove();
+        }
+    }
+
     // Check for saved language preference
     const savedLanguage = localStorage.getItem('preferredLanguage');
     if (savedLanguage && (savedLanguage === 'fa' || savedLanguage === 'en' || savedLanguage === 'ps')) {
