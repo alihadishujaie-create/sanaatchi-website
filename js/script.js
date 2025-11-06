@@ -233,6 +233,32 @@ const categories = {
             ps: 'د ساختماني پروژو لپاره د ساختماني موادو تولید تجهیزات. له بلوک تولید څخه تر بتن تجهیزاتو پورې، د انرژي مصرف بهینه کولو سره.'
         }
     },
+    'tires': {
+        icon: '🛞',
+        title: {
+            fa: 'تایرهای صنعتی و ناوگان',
+            en: 'Industrial & Fleet Tyres',
+            ps: 'صنعتي او ناوګان ټایرونه'
+        },
+        description: {
+            fa: 'تایر تخصصی برای تریلر، کامیون، ماشین‌آلات سنگین، کشاورزی و وسایل صنعتی با خدمات نصب و بالانس.',
+            en: 'Specialist tyres for trailers, trucks, heavy machinery, agricultural and industrial vehicles with installation and balancing services.',
+            ps: 'د ټریلر، لاریو، درنو ماشینونو، کرنیزو او صنعتي وسایطو لپاره ځانګړي ټایرونه د نصب او بالانس خدمتونو سره.'
+        }
+    },
+    'transportation': {
+        icon: '🚛',
+        title: {
+            fa: 'ماشین آلات حمل‌ونقل',
+            en: 'Transportation Machinery',
+            ps: 'د ترانسپورت ماشینونه'
+        },
+        description: {
+            fa: 'ناوگان تریلر، کامیون و لیفتراک با پشتیبانی فنی، لجستیک و آموزش برای عملیات حمل‌ونقل افغانستان.',
+            en: 'Trailer, truck and forklift fleets delivered with engineering support, logistics and training for Afghan transport operations.',
+            ps: 'د ټریلر، لارۍ او فورک لیفټ ناوګان د انجینري ملاتړ، لوژستیک او روزنې سره د افغانستان د ترانسپورت لپاره.'
+        }
+    },
     'plastic-processing': {
         icon: '♻️',
         title: {
@@ -2187,6 +2213,43 @@ const categoryKeywords = {
         'میلگرد فولادی',
         'Waterproofing Systems'
     ],
+    'transportation': [
+        'ماشین آلات حمل‌ونقل',
+        'Transportation Machinery',
+        'ناوگان حمل و نقل',
+        'Logistics Fleet',
+        'تریلر',
+        'Trailer',
+        'کامیون',
+        'Truck',
+        'لیفتراک',
+        'Forklift',
+        'حمل جاده‌ای',
+        'Road Logistics',
+        'ترانسپورت افغانستان',
+        'Afghanistan Transport'
+    ],
+    'tires': [
+        'تایرهای صنعتی',
+        'Industrial Tyres',
+        'تایر ناوگان',
+        'Fleet Tyres',
+        'تایر تریلر',
+        'Trailer Tyre',
+        'تایر کامیون',
+        'Truck Tyre',
+        'تایر ماشین آلات سنگین',
+        'Heavy Equipment Tyre',
+        'تایر کشاورزی',
+        'Agricultural Tyre',
+        'تایر لیفتراک',
+        'Forklift Tyre',
+        'ټایر',
+        'Tyre',
+        'ټایر ناوګان',
+        'Fleet Tire',
+        'Sanaatchi Tires'
+    ],
     'plastic-processing': ['دستگاه های فرآوری پلاستیک', 'Plastic Processing Machines', 'پلاستیک', 'plastic', 'د پلاستیک پروسس ماشینونه', 'Plastic Processing Machines'],
     'paint-coating': ['ماشین آلات رنگ و کوتینگ', 'Paint & Coating Machinery', 'رنگ', 'paint', 'کوتینگ', 'coating', 'د رنګ او پوښښت ماشینونه', 'Paint & Coating Machinery'],
     'foam-sponge': ['ماشین آلات لوم و اسفنج', 'Foam & Sponge Machinery', 'اسفنج', 'foam', 'لوم', 'sponge', 'د فوم او اسفنج ماشینونه', 'Foam & Sponge Machinery'],
@@ -2566,6 +2629,172 @@ const equipmentData = {
             description: { fa: 'گیره، بولت، اسپیسر و روغن قالب برای نگهداری و افزایش عمر سیستم.', en: 'Clamps, bolts, spacers and release oils to maintain and extend formwork life.', ps: 'کلپونه، بولټونه، سپېسرونه او د قالب غوړي د سیستم د ساتنې او اوږد عمر لپاره.' },
             pdfUrl: 'pdfs/construction-materials/formwork/formwork-accessories.pdf',
             category: 'formwork'
+        }
+    ],
+    'transportation': [
+        {
+            name: { fa: 'تریلر مسطح', en: 'Flatbed Trailer', ps: 'مسحه ټریلر' },
+            description: { fa: 'کفی تقویت‌شده با قفل کانتینر و تسمه‌بند برای حمل بار عمومی و سازه‌ای.', en: 'Reinforced deck with container locks and tie-down gear for general cargo and steel structures.', ps: 'پیاوړی پوړ د کانتینر قلفونو او د بار تړلو تجهیزاتو سره د عمومي او فولادي بار لپاره.' },
+            pdfUrl: 'pdfs/transportation/trailers/flatbed-trailer.pdf',
+            category: 'trailers'
+        },
+        {
+            name: { fa: 'تریلر کم‌ارتفاع', en: 'Lowbed Trailer', ps: 'لوېد ټریلر' },
+            description: { fa: 'سطح بارگیری پایین با رمپ هیدرولیک برای حمل ماشین‌آلات سنگین و بارهای ارتفاع‌دار.', en: 'Low loading deck with hydraulic ramps to move heavy machinery and over-height equipment.', ps: 'ټیټ بار بردار پوړ د هایدرولیک رمپونو سره د درنو ماشینونو او لوړ تجهیزاتو لېږد لپاره.' },
+            pdfUrl: 'pdfs/transportation/trailers/lowbed-trailer.pdf',
+            category: 'trailers'
+        },
+        {
+            name: { fa: 'تریلر تانکر', en: 'Tanker Trailer', ps: 'تانکر ټریلر' },
+            description: { fa: 'تانکر چندمحفظه با سیستم پمپ و سنجش سطح برای حمل سوخت و مایعات صنعتی.', en: 'Multi-compartment tanker with pumping and level monitoring for fuel and industrial liquids.', ps: 'څو خونې لرونکی تانکر د پمپ او د سطحې د څارنې سیستم سره د سون توکو او صنعتي مایعاتو لپاره.' },
+            pdfUrl: 'pdfs/transportation/trailers/tanker-trailer.pdf',
+            category: 'trailers'
+        },
+        {
+            name: { fa: 'تریلر کانتینربر', en: 'Container Carrier Trailer', ps: 'کانتینر ټریلر' },
+            description: { fa: 'شاسی کانتینری با قفل‌های Twist-Lock و سیستم تعلیق بادی برای حمل ۲۰ و ۴۰ فوت.', en: 'Container chassis with twist-locks and air suspension for 20ft and 40ft units.', ps: 'د کانتینر چاسیس د ټویسټ لاکونو او د هوا تعلیق سره د ۲۰ او ۴۰ فوټو کانتینرونو لپاره.' },
+            pdfUrl: 'pdfs/transportation/trailers/container-trailer.pdf',
+            category: 'trailers'
+        },
+        {
+            name: { fa: 'تریلر یخچالدار', en: 'Refrigerated Trailer', ps: 'یخچال لرونکی ټریلر' },
+            description: { fa: 'اتاق عایق با یونیت سردخانه، ثبت دما و برق کمکی برای حمل زنجیره سرد.', en: 'Insulated van with refrigeration unit, temperature logging and standby power for cold-chain loads.', ps: 'عایق بکس د یخچال یونټ، د تودوخې ثبت او د برېښنا ملاتړ سره د سړې زنځیر بار لپاره.' },
+            pdfUrl: 'pdfs/transportation/trailers/refrigerated-trailer.pdf',
+            category: 'trailers'
+        },
+        {
+            name: { fa: 'کامیون دامپر', en: 'Dump Truck', ps: 'ډمپر کامیون' },
+            description: { fa: 'کابین تقویت‌شده با جعبه تخلیه هیدرولیک برای عملیات معدنی و پروژه‌های عمرانی.', en: 'Reinforced cab with hydraulic tipping body for mining and construction haulage.', ps: 'پیاوړی کابین د هایدرولیک ټیپنګ باډۍ سره د کان کیندنې او ساختماني بار لپاره.' },
+            pdfUrl: 'pdfs/transportation/trucks/dump-truck.pdf',
+            category: 'trucks'
+        },
+        {
+            name: { fa: 'کامیون بارکش', en: 'Cargo Haulage Truck', ps: 'بارکش کامیون' },
+            description: { fa: 'شاسی طولانی با سیستم بادی، تلمبه سوخت ذخیره و جعبه ابزار برای حمل بار عمومی.', en: 'Long-wheelbase chassis with air system, auxiliary fuel tank and tool storage for general freight.', ps: 'اوږده چاسیس د هوا سیستم، اضافي د سون ټانک او د وسیلو بکس سره د عمومي بار لپاره.' },
+            pdfUrl: 'pdfs/transportation/trucks/cargo-truck.pdf',
+            category: 'trucks'
+        },
+        {
+            name: { fa: 'کامیون یدک‌کش', en: 'Tow Recovery Truck', ps: 'ډکړ کامیون' },
+            description: { fa: 'وینچ هیدرولیک، بازوی جرثقیل و بوم متحرک برای امداد و حمل وسایل نقلیه.', en: 'Hydraulic winch, crane boom and adjustable underlift for vehicle recovery operations.', ps: 'هایډرولیک وینچ، د کرین بازو او متحرک انډرلفټ سره د وسایطو د ژغورنې لپاره.' },
+            pdfUrl: 'pdfs/transportation/trucks/tow-truck.pdf',
+            category: 'trucks'
+        },
+        {
+            name: { fa: 'لیفتراک برقی', en: 'Electric Forklift', ps: 'برقي لیفتراک' },
+            description: { fa: 'سیستم باتری لیتیوم، شارژر سریع و فرمان ارگونومیک برای محیط‌های بسته.', en: 'Lithium battery system, fast charger and ergonomic steering ideal for indoor terminals.', ps: 'د لیتیوم بیټرۍ سیستم، چټک چارج او ارګونومیک سټیرنګ د سالون کار لپاره.' },
+            pdfUrl: 'pdfs/transportation/forklifts/electric-forklift.pdf',
+            category: 'forklifts'
+        },
+        {
+            name: { fa: 'لیفتراک دیزلی', en: 'Diesel Forklift', ps: 'دیزلي لیفتراک' },
+            description: { fa: 'موتور پرقدرت، دکل برق و دکل مقاوم برای عملیات بیرونی و بار سنگین.', en: 'High-torque engine with robust mast and lighting kit for outdoor heavy-duty handling.', ps: 'لوړ تورک انجن د قوي مَست او څراغونو سره د درنو بهرنیو عملیاتو لپاره.' },
+            pdfUrl: 'pdfs/transportation/forklifts/diesel-forklift.pdf',
+            category: 'forklifts'
+        },
+        {
+            name: { fa: 'لیفتراک خاکی', en: 'Rough Terrain Forklift', ps: 'خاکی لیفتراک' },
+            description: { fa: 'محور چهارچرخ محرک، لاستیک آفرود و گارد محافظ برای سایت‌های ساخت و معادن.', en: 'Four-wheel drive axles, off-road tyres and protective guard for construction and mining sites.', ps: 'څلور څرخ محرک، د ناهموارو ټایرونه او محافظتي چوکاټ د ساختماني او کانونو ساحو لپاره.' },
+            pdfUrl: 'pdfs/transportation/forklifts/rough-terrain-forklift.pdf',
+            category: 'forklifts'
+        }
+    ],
+    'tires': [
+        {
+            name: { fa: 'تایر نیمه تریلر', en: 'Semi-Trailer Tyre', ps: 'نیمه ټریلر ټایر' },
+            description: { fa: 'شاخص بار بالا و طراحی برای محورهای محرک و یدک برای مسیرهای طولانی.', en: 'High load index casing engineered for drive and trailer axles on long-haul routes.', ps: 'لوړ بار شاخص لرونکی قشر د اوږده سفر لپاره د محرک او ټریلر اکسلو لپاره.' },
+            pdfUrl: 'pdfs/tires/transportation-trailers/semi-trailer-tire.pdf',
+            category: 'transportation-trailers'
+        },
+        {
+            name: { fa: 'تایر تریلر مسطح', en: 'Flatbed Trailer Tyre', ps: 'مسحه ټریلر ټایر' },
+            description: { fa: 'الگوی آج مقاوم در برابر بریدگی با شانه تقویت‌شده برای حمل بار فولادی و کانتینری.', en: 'Cut-resistant tread with reinforced shoulders for steel and container haulage.', ps: 'د پرې کېدو ضد نقش د پیاوړو اوږو سره د فولادو او کانتینر بار لپاره.' },
+            pdfUrl: 'pdfs/tires/transportation-trailers/flatbed-trailer-tire.pdf',
+            category: 'transportation-trailers'
+        },
+        {
+            name: { fa: 'تایر تریلر تانکر', en: 'Tanker Trailer Tyre', ps: 'تانکر ټریلر ټایر' },
+            description: { fa: 'دیواره تقویت‌شده و ترکیب ضد لغزش برای حمل مایعات و مواد خطرناک.', en: 'Reinforced casing and anti-slip compound for liquid and hazardous freight.', ps: 'پیاوړی قشر او د خطا ضد مرکب د مایعاتو او خطرناکو بارونو لپاره.' },
+            pdfUrl: 'pdfs/tires/transportation-trailers/tanker-trailer-tire.pdf',
+            category: 'transportation-trailers'
+        },
+        {
+            name: { fa: 'تایر تریلر کانتینر', en: 'Container Trailer Tyre', ps: 'کانتینر ټریلر ټایر' },
+            description: { fa: 'پروفیل ویژه پیچ و خم با دیواره جانبی مقاوم برای حمل کانتینر ۲۰ و ۴۰ فوت.', en: 'Twist-resistant profile with strong sidewalls for 20ft and 40ft container haulage.', ps: 'د تاو پر وړاندې مقاومت لرونکی نقش د قوي اړخونو سره د ۲۰ او ۴۰ فوټ کانتینر لپاره.' },
+            pdfUrl: 'pdfs/tires/transportation-trailers/container-trailer-tire.pdf',
+            category: 'transportation-trailers'
+        },
+        {
+            name: { fa: 'تایر کامیون سنگین', en: 'Heavy-Duty Truck Tyre', ps: 'دروند کامیون ټایر' },
+            description: { fa: 'آج عمقی با ترکیب مقاوم در برابر حرارت و دیواره چندلایه برای بارهای سنگین.', en: 'Deep lug tread with heat-resistant compound and multi-ply casing for heavy loads.', ps: 'ژور نقش د تودوخې ضد مرکب او څو پرت قشر سره د درنو بارونو لپاره.' },
+            pdfUrl: 'pdfs/tires/truck-bus/heavy-duty-truck-tire.pdf',
+            category: 'truck-bus'
+        },
+        {
+            name: { fa: 'تایر کامیون سبک', en: 'Light Truck Tyre', ps: 'سپک کامیون ټایر' },
+            description: { fa: 'آج چندمنظوره شهری با مقاومت بالا در برابر سوراخ شدن.', en: 'Multi-purpose urban tread delivering high puncture resistance.', ps: 'چندګونې ښاري نقش چې لوړ د سوري ضد وړتیا لري.' },
+            pdfUrl: 'pdfs/tires/truck-bus/light-truck-tire.pdf',
+            category: 'truck-bus'
+        },
+        {
+            name: { fa: 'تایر اتوبوس', en: 'Bus Tyre', ps: 'بس ټایر' },
+            description: { fa: 'شانه سرد با نویز پایین و دیواره تقویت‌شده برای خطوط مسافری.', en: 'Cool running shoulder, low noise and reinforced casing for passenger routes.', ps: 'سړه اوږه، کم شور او پیاوړی قشر د مسافر وړونکو کرښو لپاره.' },
+            pdfUrl: 'pdfs/tires/truck-bus/bus-tire.pdf',
+            category: 'truck-bus'
+        },
+        {
+            name: { fa: 'تایر بیل مکانیکی', en: 'Excavator Tyre', ps: 'بیل مکانیکی ټایر' },
+            description: { fa: 'آج بلوکی با ترکیب ضد پارگی و دیواره ضخیم برای سایت‌های معدنی.', en: 'Block tread with tear-resistant compound and thick sidewalls for mining sites.', ps: 'بلوکي نقش د څیرې ضد مرکب او غټ اړخونو سره د کانونو ساحو لپاره.' },
+            pdfUrl: 'pdfs/tires/heavy-construction-machinery/excavator-tire.pdf',
+            category: 'heavy-construction-machinery'
+        },
+        {
+            name: { fa: 'تایر لودر', en: 'Loader Tyre', ps: 'لودر ټایر' },
+            description: { fa: 'الگوی L-5 با عمق زیاد و مقاومت در برابر سایش برای باربرداری سنگین.', en: 'Deep L-5 pattern delivering extreme wear resistance for heavy loading.', ps: 'ژور L-5 نقش چې د درنو پورته کولو لپاره لوړ سايښ ضد وړتیا لري.' },
+            pdfUrl: 'pdfs/tires/heavy-construction-machinery/loader-tire.pdf',
+            category: 'heavy-construction-machinery'
+        },
+        {
+            name: { fa: 'تایر جرثقیل', en: 'Crane Tyre', ps: 'جرثقیل ټایر' },
+            description: { fa: 'پروفیل صاف با ساختار مقاوم جانبی برای پایداری در حین بلند کردن بار.', en: 'Smooth tread with reinforced side structure for stability during lifts.', ps: 'هوار نقش د پیاوړي اړخ جوړښت سره د پورته کولو پر مهال ثبات لپاره.' },
+            pdfUrl: 'pdfs/tires/heavy-construction-machinery/crane-tire.pdf',
+            category: 'heavy-construction-machinery'
+        },
+        {
+            name: { fa: 'تایر تراکتور', en: 'Tractor Tyre', ps: 'ټرکټر ټایر' },
+            description: { fa: 'آج عمیق V شکل با چسبندگی بالا برای خاک نرم و زمین‌های کشاورزی.', en: 'Deep V-lug delivering high traction on soft soil and farmland.', ps: 'ژور V نقش چې په نرمه خاوره او کرنیزه ځمکه کې لوړه نیونه برابروي.' },
+            pdfUrl: 'pdfs/tires/agricultural-machineries/tractor-tire.pdf',
+            category: 'agricultural-machineries'
+        },
+        {
+            name: { fa: 'تایر دروگر', en: 'Harvester Tyre', ps: 'دروګر ټایر' },
+            description: { fa: 'پروفیل مخصوص وزن توزیع شده و دیواره تقویت‌شده برای جلوگیری از فشردگی خاک.', en: 'Special profile spreading load with reinforced carcass to limit soil compaction.', ps: 'ځانګړی نقش چې وزن وېشي او پیاوړی قشر د خاورې د فشار مخه نیسي.' },
+            pdfUrl: 'pdfs/tires/agricultural-machineries/harvester-tire.pdf',
+            category: 'agricultural-machineries'
+        },
+        {
+            name: { fa: 'تایر سمپاش', en: 'Sprayer Tyre', ps: 'سمپاش ټایر' },
+            description: { fa: 'ردیف باریک با مقاومت شیمیایی بالا و فشار زمین کم برای ماشین‌های سمپاش.', en: 'Narrow row tyre with high chemical resistance and low ground pressure for sprayers.', ps: 'تنګ قطار ټایر د کیمیاوي مقاومت او د ځمکې ټیټ فشار سره د سپرې ماشینونو لپاره.' },
+            pdfUrl: 'pdfs/tires/agricultural-machineries/sprayer-tire.pdf',
+            category: 'agricultural-machineries'
+        },
+        {
+            name: { fa: 'تایر لیفتراک', en: 'Forklift Tyre', ps: 'لیفتراک ټایر' },
+            description: { fa: 'ترکیب ضدسوراخ با دیواره مستحکم برای عملیات انبار و محوطه صنعتی.', en: 'Puncture-resistant compound with sturdy sidewalls for warehouse and yard work.', ps: 'سوري ضد مرکب د قوي اړخونو سره د ګودام او صنعتي انګړ لپاره.' },
+            pdfUrl: 'pdfs/tires/industrial-vehicles/forklift-tire.pdf',
+            category: 'industrial-vehicles'
+        },
+        {
+            name: { fa: 'تایر اسکید استیر', en: 'Skid Steer Tyre', ps: 'اسکيد استیر ټایر' },
+            description: { fa: 'آج تهاجمی و ترکیب مقاوم در برابر بریدگی برای محوطه‌های ساختمانی.', en: 'Aggressive tread with cut-resistant compound for construction yards.', ps: 'تیز نقش د پرې کېدو ضد مرکب سره د ساختماني انګړ لپاره.' },
+            pdfUrl: 'pdfs/tires/industrial-vehicles/skid-steer-tire.pdf',
+            category: 'industrial-vehicles'
+        },
+        {
+            name: { fa: 'تایر تلهندلر', en: 'Telehandler Tyre', ps: 'تلهندلر ټایر' },
+            description: { fa: 'آج چندمنظوره و دیواره مستحکم برای کار در ارتفاع و محیط‌های ناهموار.', en: 'Multi-purpose tread with strong carcass for elevated and uneven terrain work.', ps: 'چند مهار نقش د قوي قشر سره د لوړوالي او ناهموارو ځایونو لپاره.' },
+            pdfUrl: 'pdfs/tires/industrial-vehicles/telehandler-tire.pdf',
+            category: 'industrial-vehicles'
         }
     ],
     'plastic-processing': [
@@ -3205,6 +3434,8 @@ Object.assign(translations, {
     'cat-sports-equipment': { fa: 'تجهیزات ورزشی', en: 'Sports Equipment', ps: 'ورزشي تجهیزات' },
     'cat-metallurgy-full': { fa: 'متالورژی و فلزکاری', en: 'Metallurgy & Metalworking', ps: 'د فلزاتو علم او فلزکاري' },
     'cat-construction-materials': { fa: 'ماشین آلات مصالح ساخت', en: 'Construction Materials Machinery', ps: 'د ساختماني موادو ماشینونه' },
+    'cat-tires': { fa: 'تایرهای صنعتی', en: 'Industrial Tyres', ps: 'صنعتي ټایرونه' },
+    'cat-transportation': { fa: 'ماشین آلات حمل‌ونقل', en: 'Transportation Machinery', ps: 'د ترانسپورت ماشینونه' },
     'cat-plastic-processing': { fa: 'دستگاه های فرآوری پلاستیک', en: 'Plastic Processing Machines', ps: 'د پلاستیک پروسس ماشینونه' },
     'cat-paint-coating': { fa: 'ماشین آلات رنگ و کوتینگ', en: 'Paint & Coating Machinery', ps: 'د رنګ او پوښښت ماشینونه' },
     'cat-foam-sponge': { fa: 'ماشین آلات لوم و اسفنج', en: 'Foam & Sponge Machinery', ps: 'د فوم او اسفنج ماشینونه' },
@@ -3467,6 +3698,12 @@ function updateTranslations(lang) {
     if (typeof updateConstructionMaterialsPage === 'function') {
         updateConstructionMaterialsPage();
     }
+    if (typeof updateTransportationPage === 'function') {
+        updateTransportationPage();
+    }
+    if (typeof updateTiresPage === 'function') {
+        updateTiresPage();
+    }
     if (typeof updateCargoContent === 'function') {
         const metaTag = document.querySelector('meta[name="description"]');
         const originalContent = metaTag ? (metaTag.dataset.originalContent || metaTag.getAttribute('content') || '') : '';
@@ -3520,6 +3757,14 @@ function navigateToMachineryParts() {
 
 function navigateToConstructionMaterials() {
     window.location.href = 'construction-materials.html';
+}
+
+function navigateToTires() {
+    window.location.href = 'tires.html';
+}
+
+function navigateToTransportation() {
+    window.location.href = 'transportation-machineries.html';
 }
 
 // Show phase modal
