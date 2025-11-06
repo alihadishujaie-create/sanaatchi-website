@@ -430,410 +430,1546 @@ const categories = {
     }
 };
 
-const secondHandInventoryData = [
-    {
-        id: 'heidelberg-sm74',
-        category: 'printing-machines',
-        icon: '🖶',
-        name: {
-            fa: 'چاپ افست Heidelberg SM74 پنج رنگ',
-            en: 'Heidelberg SM74 Five-Colour Offset Press',
-            ps: 'هايدلبرګ SM74 پنځه رنګه افست ماشین'
-        },
-        description: {
-            fa: 'دستگاه چاپ افست ۲۰۱۸ با سرویس کامل و اتوماسیون صفحه‌گذاری.',
-            en: '2018 offset press with full service history and automated plate change.',
-            ps: 'د ۲۰۱۸ افست چاپ ماشین د بشپړ خدمت تاریخ او اتومات پلیټ بدلون سره.'
-        },
-        meta: [
-            {
-                label: { fa: 'سال ساخت', en: 'Year', ps: 'د جوړېدو کال' },
-                value: { fa: '۲۰۱۸ (اروپا)', en: '2018 (EU)', ps: '۲۰۱۸ (اروپا)' }
-            },
-            {
-                label: { fa: 'ساعت کارکرد', en: 'Run Hours', ps: 'کاري ساعتونه' },
-                value: { fa: '۴٬۵۰۰ ساعت', en: '4,500 h', ps: '۴٬۵۰۰ ساعته' }
-            },
-            {
-                label: { fa: 'همراه با', en: 'Includes', ps: 'شامل' },
-                value: { fa: 'CIP3، کولر پلیت، ست کامل غلتک', en: 'CIP3, plate chiller, full roller set', ps: 'CIP3، د پلیټ یخچال، د رولر بشپړ سیټ' }
-            }
-        ],
-        pdfUrl: 'pdfs/second-hand/printing-machines/heidelberg-speedmaster.pdf'
-    },
-    {
-        id: 'flexo-roll-printing',
-        category: 'printing-machines',
-        icon: '🖨️',
-        name: {
-            fa: 'ماشین چاپ فلکسو رول‌به‌رول ۶ رنگ',
-            en: 'Six-Colour Roll-to-Roll Flexo Press',
-            ps: 'شپږ رنګه د رول څخه رول فلیکسو ماشین'
-        },
-        description: {
-            fa: 'چاپ فلکسو با رجیستر اتوماتیک و خشک‌کن UV برای فیلم، فویل و لیبل.',
-            en: 'Flexo press with automatic register control and UV dryers for film, foil, and labels.',
-            ps: 'فلیکسو چاپ چې د اتومات ثبت کنټرول او UV وچوونکي لري د فلم، فویل او لیبل لپاره.'
-        },
-        meta: [
-            {
-                label: { fa: 'عرض چاپ', en: 'Web Width', ps: 'د چاپ سور' },
-                value: { fa: '۱٬۳۰۰ میلی‌متر', en: '1,300 mm', ps: '۱٬۳۰۰ ملي متر' }
-            },
-            {
-                label: { fa: 'سرعت تولید', en: 'Production Speed', ps: 'د تولید سرعت' },
-                value: { fa: '۱۵۰ متر/دقیقه', en: '150 m/min', ps: '۱۵۰ متره/دقیقه' }
-            }
-        ],
-        pdfUrl: 'pdfs/second-hand/printing-machines/printing-machine.pdf'
-    },
-    {
-        id: 'combibloc-aseptic-filler',
-        category: 'food-beverage',
-        icon: '📦',
-        name: {
-            fa: 'دستگاه پرکن آسپتیک Combibloc',
-            en: 'Combibloc Aseptic Filler',
-            ps: 'کمبی بلاک سترېل ډکونکی'
-        },
-        description: {
-            fa: 'پرکن آسپتیک ۱۲٬۰۰۰ بطری/ساعت با سیستم CIP و استریلیزاسیون بخار.',
-            en: '12,000 bph aseptic filler with CIP circuit and steam sterilisation.',
-            ps: '۱۲٬۰۰۰ بوتله/ساعت سترېل ډکونکی د CIP او د بخار سترېلایزیشن سره.'
-        },
-        meta: [
-            {
-                label: { fa: 'ظرفیت', en: 'Capacity', ps: 'ظرفیت' },
-                value: { fa: '۱۲٬۰۰۰ بطری/ساعت', en: '12,000 bph', ps: '۱۲٬۰۰۰ بوتله/ساعت' }
-            },
-            {
-                label: { fa: 'مدارک', en: 'Documentation', ps: 'اسناد' },
-                value: { fa: 'Manual، تست IQ/OQ', en: 'Manual, IQ/OQ validation', ps: 'لارښود او د IQ/OQ تایید' }
-            }
-        ],
-        pdfUrl: 'pdfs/second-hand/food-beverage/aseptic-filler.pdf'
-    },
-    {
-        id: 'dairy-uht-line',
-        category: 'food-beverage',
-        icon: '🥛',
-        name: {
-            fa: 'خط کامل UHT لبنیات',
-            en: 'Complete Dairy UHT Line',
-            ps: 'د لبنیاتو بشپړ UHT لاین'
-        },
-        description: {
-            fa: 'پاستور، استریلیزاسیون و بسته‌بندی تتراپک برای شیر و محصولات طعم‌دار.',
-            en: 'Pasteurisation, sterilisation, and Tetra Pak packaging for milk and flavoured drinks.',
-            ps: 'د شیدو او خوند لرونکو مشروباتو لپاره پاستور، سترېلایز او ټیټراپک بسته بندي.'
-        },
-        meta: [
-            {
-                label: { fa: 'ظرفیت', en: 'Capacity', ps: 'ظرفیت' },
-                value: { fa: '۸٬۰۰۰ لیتر/ساعت', en: '8,000 L/h', ps: '۸٬۰۰۰ لیتر/ساعت' }
-            },
-            {
-                label: { fa: 'سال ساخت', en: 'Year', ps: 'کال' },
-                value: { fa: '۲۰۱۶', en: '2016', ps: '۲۰۱۶' }
-            }
-        ],
-        pdfUrl: 'pdfs/second-hand/food-beverage/dairy-uht-line.pdf'
-    },
-    {
-        id: 'krones-carbonated-line',
-        category: 'food-beverage',
-        icon: '🍾',
-        name: {
-            fa: 'لاین نوشابه گازدار Krones',
-            en: 'Krones Carbonated Beverage Line',
-            ps: 'د کرونیس ګاز لرونکي مشروباتو لاین'
-        },
-        description: {
-            fa: 'بلندر، پرکن ایزوبر و بسته‌بندی کارتن برای نوشابه و انرژی‌درینک.',
-            en: 'Blending, isobaric filling, and carton packing for soft and energy drinks.',
-            ps: 'د نرم او انرژي مشروباتو لپاره مخلوط، ایزو باریک ډکول او د کارتن بسته بندي.'
-        },
-        meta: [
-            {
-                label: { fa: 'ظرفیت', en: 'Throughput', ps: 'تولید' },
-                value: { fa: '۱۸٬۰۰۰ بطری/ساعت', en: '18,000 bph', ps: '۱۸٬۰۰۰ بوتله/ساعت' }
-            },
-            {
-                label: { fa: 'پک کامل', en: 'Package', ps: 'بسته' },
-                value: { fa: 'پرکن، لیبل‌زن، شرینک‌پک', en: 'Filler, labeller, shrink packer', ps: 'ډکونکی، لیبلر، شرینک پیکر' }
-            }
-        ],
-        pdfUrl: 'pdfs/second-hand/food-beverage/carbonated-beverage-line.pdf'
-    },
-    {
-        id: 'liquid-packaging-line',
-        category: 'food-beverage',
-        icon: '🥤',
-        name: {
-            fa: 'خط بسته‌بندی مایعات چندنازله',
-            en: 'Multi-Nozzle Liquid Packaging Line',
-            ps: 'د مایعاتو څو نوزله بسته بندۍ لاین'
-        },
-        description: {
-            fa: 'پرکن پیستونی، درب‌بند و شرینک‌پک برای سس، روغن و نوشیدنی.',
-            en: 'Piston filler, capper, and shrink packer for sauces, oils, and beverages.',
-            ps: 'د پسټون ډکونکي، سرپوش او شرینک پیک سره د ساس، غوړ او مشروباتو لپاره.'
-        },
-        meta: [
-            {
-                label: { fa: 'ظرفیت', en: 'Capacity', ps: 'ظرفیت' },
-                value: { fa: '۳٬۶۰۰ بطری/ساعت', en: '3,600 bph', ps: '۳٬۶۰۰ بوتله/ساعت' }
-            },
-            {
-                label: { fa: 'قابلیت بسته‌بندی', en: 'Packaging Formats', ps: 'د بسته بندۍ ډولونه' },
-                value: { fa: 'PET، شیشه، HDPE', en: 'PET, glass, HDPE', ps: 'PET، ښیښه، HDPE' }
-            }
-        ],
-        pdfUrl: 'pdfs/second-hand/food-beverage/packaging-machine.pdf'
-    },
-    {
-        id: 'pp-pe-pelletising',
-        category: 'plastic-processing',
-        icon: '🆗',
-        name: {
-            fa: 'لاین گرانول‌سازی PP/PE',
-            en: 'PP/PE Pelletising Line',
-            ps: 'د PP/PE ګرانول لاین'
-        },
-        description: {
-            fa: 'خردکن، شست‌وشو، اکسترودر و گرانولایزر دو مرحله‌ای بازبینی شده.',
-            en: 'Refurbished shredder, washer, twin-stage extruder, and pelletiser.',
-            ps: 'ترمیم شوی پرېکوونکی، مینځونکی، دوه پړاوه اکسترودر او ګرانول جوړوونکی.'
-        },
-        meta: [
-            {
-                label: { fa: 'خروجی', en: 'Output', ps: 'حاصل' },
-                value: { fa: '۶۰۰ کیلوگرم/ساعت', en: '600 kg/h', ps: '۶۰۰ کیلو/ساعت' }
-            },
-            {
-                label: { fa: 'تجهیزات تکمیلی', en: 'Auxiliaries', ps: 'مرستندویه' },
-                value: { fa: 'سیلو ذخیره، خشک‌کن گازگرم', en: 'Storage silos, hot-air dryer', ps: 'د ذخیرې سایلونه، د ګرمو هوا وچوونکی' }
-            }
-        ],
-        pdfUrl: 'pdfs/second-hand/plastic-processing/plastic-pelletizing.pdf'
-    },
-    {
-        id: 'pet-washing',
-        category: 'plastic-processing',
-        icon: '🧼',
-        name: {
-            fa: 'خط شست‌وشوی PET',
-            en: 'PET Washing Line',
-            ps: 'د PET د مینځلو لاین'
-        },
-        description: {
-            fa: 'تفکیک، آسیاب، وان شست‌وشو و خشک‌کن سانتریفیوژی با بازیافت آب.',
-            en: 'Sorting, grinding, hot washing, and centrifugal drying with water recovery.',
-            ps: 'جلا کول، ګراینډر، ګرمه مینځل او سانتریفیوژ وچول د اوبو بیا کارولو سره.'
-        },
-        meta: [
-            {
-                label: { fa: 'مصرف آب', en: 'Water Usage', ps: 'د اوبو مصرف' },
-                value: { fa: 'بازیافت تا ۷۰٪', en: 'Up to 70% recycle loop', ps: 'تر ۷۰٪ پورې بېرته کارېدونکې اوبه' }
-            }
-        ],
-        pdfUrl: 'pdfs/second-hand/plastic-processing/pet-washing.pdf'
-    },
-    {
-        id: 'santoni-circular-knitting',
-        category: 'textile-garments',
-        icon: '🧵',
-        name: {
-            fa: 'ماشین گردباف Santoni',
-            en: 'Santoni Circular Knitting Machine',
-            ps: 'سانتوني دایروي اوبدلو ماشین'
-        },
-        description: {
-            fa: 'قطر ۳۰ اینچ، گیج ۲۸، بازبینی کامل با سوزن و جک نو.',
-            en: '30-inch diameter, gauge 28, fully overhauled with new needles and jacks.',
-            ps: '۳۰ انچه قطر، ګیج ۲۸، په بشپړه توګه ترمیم شوی د نويو ستنو او جکونو سره.'
-        },
-        meta: [
-            {
-                label: { fa: 'سرعت', en: 'Speed', ps: 'چټکتیا' },
-                value: { fa: '۳۰ دور/دقیقه', en: '30 rpm', ps: '۳۰ دور/دقیقه' }
-            },
-            {
-                label: { fa: 'آپشن‌ها', en: 'Options', ps: 'اختیارات' },
-                value: { fa: 'Jumbo Roll Taker، سیستم روغن‌کاری اتومات', en: 'Jumbo roll taker, automatic lubrication', ps: 'د جمبو رول اخیستونکی، اتومات غوړول' }
-            }
-        ],
-        pdfUrl: 'pdfs/second-hand/textile-garments/circular-knitting.pdf'
-    },
-    {
-        id: 'automatic-garment-cutter',
-        category: 'textile-garments',
-        icon: '✂️',
-        name: {
-            fa: 'کاتر اتومات اسپردر + CAD',
-            en: 'Automatic Cutter with Spreader & CAD',
-            ps: 'اتومات پرېکوونکی له سپریډر او CAD سره'
-        },
-        description: {
-            fa: 'سیستم برش ۹۰ میلی‌متری، میز ۱۸ متری و نرم‌افزار مارکرینگ.',
-            en: '90 mm cutting system, 18 m table, and integrated CAD marker software.',
-            ps: '۹۰ ملي متري پرې کولو سیسټم، ۱۸ متره مېز او مدغم CAD مارکر سافټویر.'
-        },
-        meta: [
-            {
-                label: { fa: 'سازنده', en: 'Manufacturer', ps: 'جوړونکی' },
-                value: { fa: 'Lectra - فرانسه', en: 'Lectra - France', ps: 'لیکټرا - فرانسه' }
-            }
-        ],
-        pdfUrl: 'pdfs/second-hand/textile-garments/garment-cutting.pdf'
-    },
-    {
-        id: 'hyundai-excavator',
-        category: 'construction-machinery',
-        icon: '🚜',
-        name: {
-            fa: 'اکسکاویتور Hyundai R220LC-9S',
-            en: 'Hyundai R220LC-9S Excavator',
-            ps: 'د هیونډای R220LC-9S اکسکاویټر'
-        },
-        description: {
-            fa: 'مدل ۲۰۱۷ با بوم بلند، سیستم هیدرولیک اورجینال و آماده کار.',
-            en: '2017 model with long boom, original hydraulics, and ready-for-work condition.',
-            ps: '۲۰۱۷ ماډل د اوږده بازو، اصلي هایدرولیک او د کار لپاره چمتو حالت سره.'
-        },
-        meta: [
-            {
-                label: { fa: 'ساعت کارکرد', en: 'Run Hours', ps: 'کاري ساعتونه' },
-                value: { fa: '۵٬۸۰۰ ساعت', en: '5,800 h', ps: '۵٬۸۰۰ ساعته' }
-            },
-            {
-                label: { fa: 'ضمائم', en: 'Attachments', ps: 'ضمیمه' },
-                value: { fa: 'چکش هیدرولیک + پاکت ۱٫۲ مترمکعب', en: 'Hydraulic hammer + 1.2 m³ bucket', ps: 'هایدرولیک چکش + ۱٫۲ م³ بېلچه' }
-            }
-        ],
-        pdfUrl: 'pdfs/second-hand/construction-machinery/excavator.pdf'
-    },
-    {
-        id: 'liebherr-tower-crane',
-        category: 'construction-machinery',
-        icon: '🏗️',
-        name: {
-            fa: 'جرثقیل برجی Liebherr 132 EC-H',
-            en: 'Liebherr 132 EC-H Tower Crane',
-            ps: 'لیبهیر 132 EC-H برج کرین'
-        },
-        description: {
-            fa: 'بازه ۶۰ متری، ظرفیت ۸ تن، سرویس کامل با تمام سکشن‌ها.',
-            en: '60 m jib, 8 t capacity, fully serviced with complete mast sections.',
-            ps: '۶۰ متره بازه، ۸ ټنه ظرفیت، بشپړ سرویس او ټول ماست برخې.'
-        },
-        meta: [
-            {
-                label: { fa: 'ارتفاع آزاد', en: 'Free Height', ps: 'ازاد لوړوالی' },
-                value: { fa: '۴۵ متر', en: '45 m', ps: '۴۵ متره' }
-            }
-        ],
-        pdfUrl: 'pdfs/second-hand/construction-machinery/crane.pdf'
-    },
-    {
-        id: 'hino-truck-fleet',
-        category: 'logistics-utilities',
-        icon: '🚚',
-        name: {
-            fa: 'کامیونت‌های Hino Euro IV',
-            en: 'Hino Euro IV Truck Fleet',
-            ps: 'د هینو Euro IV لاریو بېړۍ'
-        },
-        description: {
-            fa: 'بیست دستگاه ۶ تن با سرویس کامل، آماده حمل بین‌شهری.',
-            en: 'Fleet of twenty 6-ton trucks with full service records, ready for haulage.',
-            ps: 'د شلو ۶ ټنه لاریو بېړۍ د بشپړ خدمت ریکارډونو سره، د لېږد لپاره چمتو.'
-        },
-        meta: [
-            {
-                label: { fa: 'میانگین کارکرد', en: 'Average Mileage', ps: 'اوسط مزل' },
-                value: { fa: '۱۲۰٬۰۰۰ کیلومتر', en: '120,000 km', ps: '۱۲۰٬۰۰۰ کیلومتره' }
-            },
-            {
-                label: { fa: 'امکانات', en: 'Features', ps: 'ځانګړتیاوې' },
-                value: { fa: 'GPS، صندوق یخچالی، بیمه معتبر', en: 'GPS, refrigerated box, valid insurance', ps: 'GPS، یخچالي صندوق، معتبر بیمه' }
-            }
-        ],
-        pdfUrl: 'pdfs/second-hand/logistics-utilities/trucks-lorries.pdf'
-    },
-    {
-        id: 'cummins-diesel-generator',
-        category: 'logistics-utilities',
-        icon: '🔌',
-        name: {
-            fa: 'ژنراتور دیزلی Cummins 500kVA',
-            en: 'Cummins 500 kVA Diesel Generator',
-            ps: 'د کمینز ۵۰۰ kVA ډیزلي جنراتور'
-        },
-        description: {
-            fa: 'اورهال کامل، کنترل هوشمند، مناسب برای کارخانه و پروژه‌های معدنی.',
-            en: 'Fully overhauled with smart control, ideal for plants and mining projects.',
-            ps: 'بشپړ ترمیم شوی د هوښیار کنټرول سره، د فابریکو او کانونو لپاره مناسب.'
-        },
-        meta: [
-            {
-                label: { fa: 'ساعت کارکرد', en: 'Run Hours', ps: 'کاري ساعتونه' },
-                value: { fa: '۳٬۲۰۰ ساعت پس از اورهال', en: '3,200 h after overhaul', ps: '۳٬۲۰۰ ساعته د ترمیم وروسته' }
-            },
-            {
-                label: { fa: 'شامل', en: 'Includes', ps: 'شامل' },
-                value: { fa: 'ATS، تانک دوجداره، صداگیر', en: 'ATS, double-wall fuel tank, sound enclosure', ps: 'ATS، دوه جداره د تېلو ټانک، غږ بندول' }
-            }
-        ],
-        pdfUrl: 'pdfs/second-hand/logistics-utilities/diesel-generator.pdf'
-    },
-    {
-        id: 'atlas-copco-air-compressor',
-        category: 'logistics-utilities',
-        icon: '⚙️',
-        name: {
-            fa: 'ایستگاه کمپرسور هوای Atlas Copco',
-            en: 'Atlas Copco Air Compressor Station',
-            ps: 'د اټلس کوپکو د هوا کمپرسور سټېشن'
-        },
-        description: {
-            fa: 'دو دستگاه GA90 با خشک‌کن جذبی و مخزن ۳٬۰۰۰ لیتری آماده بهره‌برداری.',
-            en: 'Twin GA90 compressors with adsorption dryer and 3,000 L receiver tank.',
-            ps: 'د GA90 دوه کمپرسورونه د جذب وچوونکي او ۳٬۰۰۰ لیتره ټانک سره.'
-        },
-        meta: [
-            {
-                label: { fa: 'فشار کاری', en: 'Working Pressure', ps: 'کاري فشار' },
-                value: { fa: '۱۲ بار', en: '12 bar', ps: '۱۲ بار' }
-            }
-        ],
-        pdfUrl: 'pdfs/second-hand/logistics-utilities/air-compressor.pdf'
-    },
-    {
-        id: 'toyota-electric-forklift',
-        category: 'logistics-utilities',
-        icon: '🪜',
-        name: {
-            fa: 'فورک‌لیف برقی ۳ تن Toyota',
-            en: 'Toyota 3 Ton Electric Forklifts',
-            ps: 'د تویوتا درې ټنه برقي فورک لیفټونه'
-        },
-        description: {
-            fa: '۱۲ دستگاه بازسازی‌شده با باتری لیتیومی و شارژر سریع.',
-            en: '12 refurbished units with lithium batteries and fast chargers.',
-            ps: '۱۲ ترمیم شوي واحدونه د لیتیوم بیټرۍ او چټک چارجرو سره.'
-        },
-        meta: [
-            {
-                label: { fa: 'ارتفاع لیفت', en: 'Lift Height', ps: 'د پورته کولو لوړوالی' },
-                value: { fa: '۶ متر', en: '6 m', ps: '۶ متره' }
-            }
-        ],
-        pdfUrl: 'pdfs/second-hand/logistics-utilities/electric-forklift.pdf'
-    }
-];
+const secondHandDefaultDescription = {
+    fa: 'برای مشخصات فنی کامل، فایل PDF ضمیمه را بررسی کنید.',
+    en: 'Refer to the attached PDF dossier for detailed specifications.',
+    ps: 'د بشپړو تخنیکي ځانګړنو لپاره ضمیمه PDF وګورئ.'
+};
 
+const secondHandCatalog = {
+    'printing-machines': {
+        icon: '🖨️',
+        title: {
+            fa: 'ماشین‌آلات چاپ دست دوم',
+            en: 'Second-Hand Printing Machines',
+            ps: 'د چاپ دوهم لاس ماشینونه'
+        },
+        description: {
+            fa: 'انتخابی از دستگاه‌های افست، دیجیتال و فلکسو که بازبینی فنی شده‌اند و آماده نصب می‌باشند.',
+            en: 'Curated offset, digital, and flexo presses inspected and ready for installation.',
+            ps: 'د افست، ډیجیټل او فلیکسو تایید شوي چاپ ماشینونه چې د نصب لپاره چمتو دي.'
+        },
+        items: [
+            {
+                id: 'offset-printing-machine',
+                name: {
+                    fa: 'ماشین چاپ افست دست دوم',
+                    en: 'Second-Hand Offset Printing Machine',
+                    ps: 'دوهم ځل افست چاپ ماشین'
+                },
+                pdfUrl: 'pdfs/second-hand/printing-machines/offset-printing-machine.pdf'
+            },
+            {
+                id: 'digital-printing-machine',
+                name: {
+                    fa: 'ماشین چاپ دیجیتال دست دوم',
+                    en: 'Second-Hand Digital Printing Machine',
+                    ps: 'دوهم ځل ډیجیټل چاپ ماشین'
+                },
+                pdfUrl: 'pdfs/second-hand/printing-machines/digital-printing-machine.pdf'
+            },
+            {
+                id: 'flexo-printing-machine',
+                name: {
+                    fa: 'ماشین چاپ فلکسو دست دوم',
+                    en: 'Second-Hand Flexo Printing Machine',
+                    ps: 'دوهم ځل فلکسو چاپ ماشین'
+                },
+                pdfUrl: 'pdfs/second-hand/printing-machines/flexo-printing-machine.pdf'
+            }
+        ]
+    },
+    'plastic-processing': {
+        icon: '♻️',
+        title: {
+            fa: 'ماشین‌آلات فرآوری پلاستیک دست دوم',
+            en: 'Second-Hand Plastic Processing Machinery',
+            ps: 'د پلاستیک د پروسس دوهم لاس ماشینونه'
+        },
+        description: {
+            fa: 'اکسترودر، تزریق، دمشی و خطوط بازیافت با گزارش سلامت کامل.',
+            en: 'Extruders, injection, blow moulding, and recycling lines with full inspection reports.',
+            ps: 'اکسترودرونه، انجکشن، بلو مولډینګ او د بیا کارونې لینونه د بشپړ تفتیش راپورونو سره.'
+        },
+        items: [
+            {
+                id: 'extruder-machine',
+                name: {
+                    fa: 'ماشین اکسترودر دست دوم',
+                    en: 'Second-Hand Extruder Machine',
+                    ps: 'دوهم ځل اکسترودر ماشین'
+                },
+                pdfUrl: 'pdfs/second-hand/plastic-processing/extruder-machine.pdf'
+            },
+            {
+                id: 'injection-molding-machine',
+                name: {
+                    fa: 'ماشین تزریق دست دوم',
+                    en: 'Second-Hand Injection Moulding Machine',
+                    ps: 'دوهم ځل انجکشن ماشین'
+                },
+                pdfUrl: 'pdfs/second-hand/plastic-processing/injection-molding-machine.pdf'
+            },
+            {
+                id: 'blow-molding-machine',
+                name: {
+                    fa: 'ماشین دمشی دست دوم',
+                    en: 'Second-Hand Blow Moulding Machine',
+                    ps: 'دوهم ځل بلو مولډینګ ماشین'
+                },
+                pdfUrl: 'pdfs/second-hand/plastic-processing/blow-molding-machine.pdf'
+            },
+            {
+                id: 'plastic-recycling-line',
+                name: {
+                    fa: 'خط بازیافت پلاستیک دست دوم',
+                    en: 'Second-Hand Plastic Recycling Line',
+                    ps: 'دوهم ځل پلاستیک بیا کارول لین'
+                },
+                pdfUrl: 'pdfs/second-hand/plastic-processing/plastic-recycling-line.pdf'
+            },
+            {
+                id: 'shredder-machine',
+                name: {
+                    fa: 'ماشین خردکن دست دوم',
+                    en: 'Second-Hand Shredder Machine',
+                    ps: 'دوهم ځل خوردګر ماشین'
+                },
+                pdfUrl: 'pdfs/second-hand/plastic-processing/shredder-machine.pdf'
+            },
+            {
+                id: 'pelletizing-line',
+                name: {
+                    fa: 'خط پلت‌سازی دست دوم',
+                    en: 'Second-Hand Pelletizing Line',
+                    ps: 'دوهم ځل پلیټ لین'
+                },
+                pdfUrl: 'pdfs/second-hand/plastic-processing/pelletizing-line.pdf'
+            }
+        ]
+    },
+    'construction-machinery': {
+        icon: '🏗️',
+        title: {
+            fa: 'ماشین‌آلات ساختمانی دست دوم',
+            en: 'Second-Hand Construction Machinery',
+            ps: 'د ساختماني دوهم لاس ماشینونه'
+        },
+        description: {
+            fa: 'بیل مکانیکی، جرثقیل، لودر و تجهیزات راهسازی با پشتیبانی نصب مجدد.',
+            en: 'Excavators, cranes, loaders, and roadwork equipment with recommissioning support.',
+            ps: 'اکسکاویټرونه، کرینونه، لوډرونه او د سړک جوړونې تجهیزات د بیا فعالولو ملاتړ سره.'
+        },
+        items: [
+            {
+                id: 'excavator',
+                name: {
+                    fa: 'بیل مکانیکی دست دوم',
+                    en: 'Second-Hand Excavator',
+                    ps: 'دوهم ځل بیل مکانیکی'
+                },
+                pdfUrl: 'pdfs/second-hand/construction-machinery/excavator.pdf'
+            },
+            {
+                id: 'mini-excavator',
+                name: {
+                    fa: 'بیل مکانیکی کوچک دست دوم',
+                    en: 'Second-Hand Mini Excavator',
+                    ps: 'دوهم ځل کوچنی بیل مکانیکی'
+                },
+                pdfUrl: 'pdfs/second-hand/construction-machinery/mini-excavator.pdf'
+            },
+            {
+                id: 'loader',
+                name: {
+                    fa: 'لودر دست دوم',
+                    en: 'Second-Hand Loader',
+                    ps: 'دوهم ځل لودر'
+                },
+                pdfUrl: 'pdfs/second-hand/construction-machinery/loader.pdf'
+            },
+            {
+                id: 'backhoe-loader',
+                name: {
+                    fa: 'لودر بکهو دست دوم',
+                    en: 'Second-Hand Backhoe Loader',
+                    ps: 'دوهم ځل بکهو لودر'
+                },
+                pdfUrl: 'pdfs/second-hand/construction-machinery/backhoe-loader.pdf'
+            },
+            {
+                id: 'crane',
+                name: {
+                    fa: 'جرثقیل دست دوم',
+                    en: 'Second-Hand Crane',
+                    ps: 'دوهم ځل جرثقیل'
+                },
+                pdfUrl: 'pdfs/second-hand/construction-machinery/crane.pdf'
+            },
+            {
+                id: 'tower-crane',
+                name: {
+                    fa: 'جرثقیل برجی دست دوم',
+                    en: 'Second-Hand Tower Crane',
+                    ps: 'دوهم ځل برجي جرثقیل'
+                },
+                pdfUrl: 'pdfs/second-hand/construction-machinery/tower-crane.pdf'
+            },
+            {
+                id: 'mobile-crane',
+                name: {
+                    fa: 'جرثقیل متحرک دست دوم',
+                    en: 'Second-Hand Mobile Crane',
+                    ps: 'دوهم ځل متحرک جرثقیل'
+                },
+                pdfUrl: 'pdfs/second-hand/construction-machinery/mobile-crane.pdf'
+            },
+            {
+                id: 'concrete-mixer',
+                name: {
+                    fa: 'بتن‌ساز دست دوم',
+                    en: 'Second-Hand Concrete Mixer',
+                    ps: 'دوهم ځل بټن جوړونکی'
+                },
+                pdfUrl: 'pdfs/second-hand/construction-machinery/concrete-mixer.pdf'
+            },
+            {
+                id: 'road-roller',
+                name: {
+                    fa: 'غلتک دست دوم',
+                    en: 'Second-Hand Road Roller',
+                    ps: 'دوهم ځل غلتک'
+                },
+                pdfUrl: 'pdfs/second-hand/construction-machinery/road-roller.pdf'
+            },
+            {
+                id: 'asphalt-paver',
+                name: {
+                    fa: 'آسفالت‌پخش‌کن دست دوم',
+                    en: 'Second-Hand Asphalt Paver',
+                    ps: 'دوهم ځل اسفالت پخشونکی'
+                },
+                pdfUrl: 'pdfs/second-hand/construction-machinery/asphalt-paver.pdf'
+            }
+        ]
+    },
+    'metallurgy-equipment': {
+        icon: '⚙️',
+        title: {
+            fa: 'تجهیزات متالورژی دست دوم',
+            en: 'Second-Hand Metallurgy Equipment',
+            ps: 'د متالورژۍ دوهم لاس تجهیزات'
+        },
+        description: {
+            fa: 'کوره‌های القایی و قوس، خطوط نورد و ماشین‌آلات برش فلز بازرسی شده.',
+            en: 'Induction and arc furnaces, rolling lines, and metal cutting machines with inspection reports.',
+            ps: 'القایي او قوسي کوره، د نورد لینونه او د فلز پرې کولو ماشینونه د تفتیش راپورونو سره.'
+        },
+        items: [
+            {
+                id: 'induction-furnace',
+                name: {
+                    fa: 'کوره القایی دست دوم',
+                    en: 'Second-Hand Induction Furnace',
+                    ps: 'دوهم ځل القایی کوره'
+                },
+                pdfUrl: 'pdfs/second-hand/metallurgy-equipment/induction-furnace.pdf'
+            },
+            {
+                id: 'arc-furnace',
+                name: {
+                    fa: 'کوره قوس الکتریکی دست دوم',
+                    en: 'Second-Hand Electric Arc Furnace',
+                    ps: 'دوهم ځل قوس الکتریک کوره'
+                },
+                pdfUrl: 'pdfs/second-hand/metallurgy-equipment/arc-furnace.pdf'
+            },
+            {
+                id: 'rolling-mill',
+                name: {
+                    fa: 'نورد دست دوم',
+                    en: 'Second-Hand Rolling Mill',
+                    ps: 'دوهم ځل نورد'
+                },
+                pdfUrl: 'pdfs/second-hand/metallurgy-equipment/rolling-mill.pdf'
+            },
+            {
+                id: 'hot-rolling-machine',
+                name: {
+                    fa: 'ماشین نورد گرم دست دوم',
+                    en: 'Second-Hand Hot Rolling Machine',
+                    ps: 'دوهم ځل گرم نورد ماشین'
+                },
+                pdfUrl: 'pdfs/second-hand/metallurgy-equipment/hot-rolling-machine.pdf'
+            },
+            {
+                id: 'cold-rolling-machine',
+                name: {
+                    fa: 'ماشین نورد سرد دست دوم',
+                    en: 'Second-Hand Cold Rolling Machine',
+                    ps: 'دوهم ځل سرد نورد ماشین'
+                },
+                pdfUrl: 'pdfs/second-hand/metallurgy-equipment/cold-rolling-machine.pdf'
+            },
+            {
+                id: 'band-saw-machine',
+                name: {
+                    fa: 'ماشین اره نواری دست دوم',
+                    en: 'Second-Hand Band Saw Machine',
+                    ps: 'دوهم ځل بانډ سا ماشین'
+                },
+                pdfUrl: 'pdfs/second-hand/metallurgy-equipment/band-saw-machine.pdf'
+            },
+            {
+                id: 'metal-cutting-machine',
+                name: {
+                    fa: 'ماشین برش فلز دست دوم',
+                    en: 'Second-Hand Metal Cutting Machine',
+                    ps: 'دوهم ځل فلز برش ماشین'
+                },
+                pdfUrl: 'pdfs/second-hand/metallurgy-equipment/metal-cutting-machine.pdf'
+            }
+        ]
+    },
+    'textile-machinery': {
+        icon: '🧵',
+        title: {
+            fa: 'ماشین‌آلات نساجی دست دوم',
+            en: 'Second-Hand Textile Machinery',
+            ps: 'د نساجۍ دوهم لاس ماشینونه'
+        },
+        description: {
+            fa: 'ریسندگی، بافندگی، رنگرزی و تکمیل پارچه با گزارش فنی تایید شده.',
+            en: 'Spinning, weaving, dyeing, and finishing equipment with certified inspections.',
+            ps: 'د سپنلو، اوبدلو، رنګولو او بشپړولو تجهیزات د تایید شويو راپورونو سره.'
+        },
+        items: [
+            {
+                id: 'spinning-machine',
+                name: {
+                    fa: 'ماشین ریسندگی دست دوم',
+                    en: 'Second-Hand Spinning Machine',
+                    ps: 'دوهم ځل ریسندل ماشین'
+                },
+                pdfUrl: 'pdfs/second-hand/textile-machinery/spinning-machine.pdf'
+            },
+            {
+                id: 'weaving-machine',
+                name: {
+                    fa: 'ماشین بافندگی دست دوم',
+                    en: 'Second-Hand Weaving Machine',
+                    ps: 'دوهم ځل بافتل ماشین'
+                },
+                pdfUrl: 'pdfs/second-hand/textile-machinery/weaving-machine.pdf'
+            },
+            {
+                id: 'knitting-machine',
+                name: {
+                    fa: 'ماشین بافنی دست دوم',
+                    en: 'Second-Hand Knitting Machine',
+                    ps: 'دوهم ځل نیتینګ ماشین'
+                },
+                pdfUrl: 'pdfs/second-hand/textile-machinery/knitting-machine.pdf'
+            },
+            {
+                id: 'dyeing-machine',
+                name: {
+                    fa: 'ماشین رنگ‌آمیزی دست دوم',
+                    en: 'Second-Hand Dyeing Machine',
+                    ps: 'دوهم ځل رنګول ماشین'
+                },
+                pdfUrl: 'pdfs/second-hand/textile-machinery/dyeing-machine.pdf'
+            },
+            {
+                id: 'stenter-frame',
+                name: {
+                    fa: 'استنتر فریم دست دوم',
+                    en: 'Second-Hand Stenter Frame',
+                    ps: 'دوهم ځل سټنټر فریم'
+                },
+                pdfUrl: 'pdfs/second-hand/textile-machinery/stenter-frame.pdf'
+            },
+            {
+                id: 'carding-machine',
+                name: {
+                    fa: 'ماشین کاردینگ دست دوم',
+                    en: 'Second-Hand Carding Machine',
+                    ps: 'دوهم ځل کارډینګ ماشین'
+                },
+                pdfUrl: 'pdfs/second-hand/textile-machinery/carding-machine.pdf'
+            }
+        ]
+    },
+    'food-processing': {
+        icon: '🥘',
+        title: {
+            fa: 'ماشین‌آلات فرآوری غذا دست دوم',
+            en: 'Second-Hand Food Processing Machinery',
+            ps: 'د خوړو د پروسس دوهم لاس ماشینونه'
+        },
+        description: {
+            fa: 'تجهیزات نانوایی، لبنیات، نوشیدنی و فرآوری مواد غذایی آماده بهره‌برداری.',
+            en: 'Bakery, dairy, beverage, and food processing equipment ready to deploy.',
+            ps: 'د نانوايي، لبنیاتو، مشروباتو او د خوړو د پروسس تجهیزات د کار لپاره چمتو.'
+        },
+        items: [
+            {
+                id: 'bread-oven',
+                name: {
+                    fa: 'فر نان دست دوم',
+                    en: 'Second-Hand Bread Oven',
+                    ps: 'دوهم ځل نان فر'
+                },
+                pdfUrl: 'pdfs/second-hand/food-processing/bread-oven.pdf'
+            },
+            {
+                id: 'dough-mixer',
+                name: {
+                    fa: 'خمیرزن دست دوم',
+                    en: 'Second-Hand Dough Mixer',
+                    ps: 'دوهم ځل خمیر زن'
+                },
+                pdfUrl: 'pdfs/second-hand/food-processing/dough-mixer.pdf'
+            },
+            {
+                id: 'bread-slicer',
+                name: {
+                    fa: 'نان‌بر دست دوم',
+                    en: 'Second-Hand Bread Slicer',
+                    ps: 'دوهم ځل نان بر'
+                },
+                pdfUrl: 'pdfs/second-hand/food-processing/bread-slicer.pdf'
+            },
+            {
+                id: 'milk-pasteurizer',
+                name: {
+                    fa: 'پاستوریزاتور شیر دست دوم',
+                    en: 'Second-Hand Milk Pasteurizer',
+                    ps: 'دوهم ځل شیر پاستوریزر'
+                },
+                pdfUrl: 'pdfs/second-hand/food-processing/milk-pasteurizer.pdf'
+            },
+            {
+                id: 'cheese-press',
+                name: {
+                    fa: 'پرس پنیر دست دوم',
+                    en: 'Second-Hand Cheese Press',
+                    ps: 'دوهم ځل پنیر پریس'
+                },
+                pdfUrl: 'pdfs/second-hand/food-processing/cheese-press.pdf'
+            },
+            {
+                id: 'yogurt-machine',
+                name: {
+                    fa: 'ماشین ماست دست دوم',
+                    en: 'Second-Hand Yogurt Machine',
+                    ps: 'دوهم ځل ماست ماشین'
+                },
+                pdfUrl: 'pdfs/second-hand/food-processing/yogurt-machine.pdf'
+            },
+            {
+                id: 'juice-filling-machine',
+                name: {
+                    fa: 'ماشین پرکن آبمیوه دست دوم',
+                    en: 'Second-Hand Juice Filling Machine',
+                    ps: 'دوهم ځل آبمیوه ډکول ماشین'
+                },
+                pdfUrl: 'pdfs/second-hand/food-processing/juice-filling-machine.pdf'
+            },
+            {
+                id: 'water-treatment-plant',
+                name: {
+                    fa: 'تصفیه‌خانه آب دست دوم',
+                    en: 'Second-Hand Water Treatment Plant',
+                    ps: 'دوهم ځل اوبه تصفیه کوونکی'
+                },
+                pdfUrl: 'pdfs/second-hand/food-processing/water-treatment-plant.pdf'
+            }
+        ]
+    },
+    'packaging-machinery': {
+        icon: '📦',
+        title: {
+            fa: 'ماشین‌آلات بسته‌بندی دست دوم',
+            en: 'Second-Hand Packaging Machinery',
+            ps: 'د بسته بندۍ دوهم لاس ماشینونه'
+        },
+        description: {
+            fa: 'ماشین‌های پرکن، درزگیر، لیبل‌زن و وکیوم با سرویس کامل.',
+            en: 'Filling, sealing, labelling, and vacuum packaging systems with full servicing.',
+            ps: 'د ډکولو، سیل کولو، لیبل کولو او ویکیوم بسته بندۍ سیسټمونه د بشپړ خدمت سره.'
+        },
+        items: [
+            {
+                id: 'filling-machine',
+                name: {
+                    fa: 'ماشین پرکن دست دوم',
+                    en: 'Second-Hand Filling Machine',
+                    ps: 'دوهم ځل ډکول ماشین'
+                },
+                pdfUrl: 'pdfs/second-hand/packaging-machinery/filling-machine.pdf'
+            },
+            {
+                id: 'sealing-machine',
+                name: {
+                    fa: 'ماشین درزگیر دست دوم',
+                    en: 'Second-Hand Sealing Machine',
+                    ps: 'دوهم ځل سیلر ماشین'
+                },
+                pdfUrl: 'pdfs/second-hand/packaging-machinery/sealing-machine.pdf'
+            },
+            {
+                id: 'labeling-machine',
+                name: {
+                    fa: 'ماشین برچسب‌زن دست دوم',
+                    en: 'Second-Hand Labelling Machine',
+                    ps: 'دوهم ځل ليبل ماشین'
+                },
+                pdfUrl: 'pdfs/second-hand/packaging-machinery/labeling-machine.pdf'
+            },
+            {
+                id: 'vacuum-packaging-machine',
+                name: {
+                    fa: 'ماشین بسته‌بندی وکیوم دست دوم',
+                    en: 'Second-Hand Vacuum Packaging Machine',
+                    ps: 'دوهم ځل وکیوم بسته‌بندي ماشین'
+                },
+                pdfUrl: 'pdfs/second-hand/packaging-machinery/vacuum-packaging-machine.pdf'
+            },
+            {
+                id: 'shrink-wrapping-machine',
+                name: {
+                    fa: 'ماشین بسته‌بندی انقباضی دست دوم',
+                    en: 'Second-Hand Shrink Wrapping Machine',
+                    ps: 'دوهم ځل شرنک رپینګ ماشین'
+                },
+                pdfUrl: 'pdfs/second-hand/packaging-machinery/shrink-wrapping-machine.pdf'
+            },
+            {
+                id: 'strapping-machine',
+                name: {
+                    fa: 'ماشین تسمه‌کشی دست دوم',
+                    en: 'Second-Hand Strapping Machine',
+                    ps: 'دوهم ځل تسمه ماشین'
+                },
+                pdfUrl: 'pdfs/second-hand/packaging-machinery/strapping-machine.pdf'
+            }
+        ]
+    },
+    'chemical-pharma': {
+        icon: '⚗️',
+        title: {
+            fa: 'ماشین‌آلات شیمیایی و دارویی دست دوم',
+            en: 'Second-Hand Chemical & Pharma Machinery',
+            ps: 'د کیمیا او درمل جوړولو دوهم لاس ماشینونه'
+        },
+        description: {
+            fa: 'راکتور، میکسر، گرانولاتور و ماشین‌آلات قرص‌سازی با تضمین عملکرد.',
+            en: 'Reactors, mixers, granulators, and tablet equipment delivered with performance assurance.',
+            ps: 'ری اکشن ټانکونه، مکسرونه، ګرینولیټرونه او د ګولیو ماشینونه د تضمین سره.'
+        },
+        items: [
+            {
+                id: 'reaction-tank',
+                name: {
+                    fa: 'تانک واکنش دست دوم',
+                    en: 'Second-Hand Reaction Tank',
+                    ps: 'دوهم ځل ری اکشن ټانک'
+                },
+                pdfUrl: 'pdfs/second-hand/chemical-pharma/reaction-tank.pdf'
+            },
+            {
+                id: 'mixer',
+                name: {
+                    fa: 'مخلوط‌کن دست دوم',
+                    en: 'Second-Hand Mixer',
+                    ps: 'دوهم ځل مخلوط کن'
+                },
+                pdfUrl: 'pdfs/second-hand/chemical-pharma/mixer.pdf'
+            },
+            {
+                id: 'granulator',
+                name: {
+                    fa: 'دانه‌ساز دست دوم',
+                    en: 'Second-Hand Granulator',
+                    ps: 'دوهم ځل ګرینولیټر'
+                },
+                pdfUrl: 'pdfs/second-hand/chemical-pharma/granulator.pdf'
+            },
+            {
+                id: 'tablet-press',
+                name: {
+                    fa: 'پرس قرص دست دوم',
+                    en: 'Second-Hand Tablet Press',
+                    ps: 'دوهم ځل قرص پریس'
+                },
+                pdfUrl: 'pdfs/second-hand/chemical-pharma/tablet-press.pdf'
+            },
+            {
+                id: 'capsule-filling-machine',
+                name: {
+                    fa: 'ماشین پرکن کپسول دست دوم',
+                    en: 'Second-Hand Capsule Filling Machine',
+                    ps: 'دوهم ځل کپسول ډکول ماشین'
+                },
+                pdfUrl: 'pdfs/second-hand/chemical-pharma/capsule-filling-machine.pdf'
+            },
+            {
+                id: 'blister-packing-machine',
+                name: {
+                    fa: 'ماشین بسته‌بندی بلستر دست دوم',
+                    en: 'Second-Hand Blister Packing Machine',
+                    ps: 'دوهم ځل بلستر بسته‌بندي ماشین'
+                },
+                pdfUrl: 'pdfs/second-hand/chemical-pharma/blister-packing-machine.pdf'
+            }
+        ]
+    },
+    'paper-pulp': {
+        icon: '📄',
+        title: {
+            fa: 'ماشین‌آلات کاغذ و سلولوز دست دوم',
+            en: 'Second-Hand Paper & Pulp Machinery',
+            ps: 'د کاغذ او سلولوز دوهم لاس ماشینونه'
+        },
+        description: {
+            fa: 'پالپر، ماشین کاغذ، برش و خطوط ساخت کیسه و پاکت بازرسی شده.',
+            en: 'Pulper, paper machines, cutting, and bag or envelope lines with inspection reports.',
+            ps: 'پالپرونه، د کاغذ ماشینونه، پرې کول او د کڅوړې او لفافې جوړولو لینونه د تفتیش راپورونو سره.'
+        },
+        items: [
+            {
+                id: 'pulping-machine',
+                name: {
+                    fa: 'ماشین خمیرسازی دست دوم',
+                    en: 'Second-Hand Pulping Machine',
+                    ps: 'دوهم ځل پلپ ماشین'
+                },
+                pdfUrl: 'pdfs/second-hand/paper-pulp/pulping-machine.pdf'
+            },
+            {
+                id: 'paper-machine',
+                name: {
+                    fa: 'ماشین کاغذسازی دست دوم',
+                    en: 'Second-Hand Paper Machine',
+                    ps: 'دوهم ځل کاغذ ماشین'
+                },
+                pdfUrl: 'pdfs/second-hand/paper-pulp/paper-machine.pdf'
+            },
+            {
+                id: 'paper-cutting-machine',
+                name: {
+                    fa: 'ماشین برش کاغذ دست دوم',
+                    en: 'Second-Hand Paper Cutting Machine',
+                    ps: 'دوهم ځل کاغذ برش ماشین'
+                },
+                pdfUrl: 'pdfs/second-hand/paper-pulp/paper-cutting-machine.pdf'
+            },
+            {
+                id: 'paper-bag-making-machine',
+                name: {
+                    fa: 'ماشین ساخت کیسه کاغذی دست دوم',
+                    en: 'Second-Hand Paper Bag Making Machine',
+                    ps: 'دوهم ځل کاغذي کيسه جوړول ماشین'
+                },
+                pdfUrl: 'pdfs/second-hand/paper-pulp/paper-bag-making-machine.pdf'
+            },
+            {
+                id: 'envelope-making-machine',
+                name: {
+                    fa: 'ماشین ساخت پاکت نامه دست دوم',
+                    en: 'Second-Hand Envelope Making Machine',
+                    ps: 'دوهم ځل پاکت جوړول ماشین'
+                },
+                pdfUrl: 'pdfs/second-hand/paper-pulp/envelope-making-machine.pdf'
+            }
+        ]
+    },
+    'electronic-machinery': {
+        icon: '💡',
+        title: {
+            fa: 'ماشین‌آلات الکترونیکی دست دوم',
+            en: 'Second-Hand Electronic Machinery',
+            ps: 'د الکترونیک دوهم لاس ماشینونه'
+        },
+        description: {
+            fa: 'خطوط مونتاژ SMT، لحیم‌کاری موجی و تست مدارهای چاپی تایید شده.',
+            en: 'Certified SMT assembly, wave soldering, and PCB or IC testing equipment.',
+            ps: 'د SMT اسمبلۍ، ویو سولډرینګ او د PCB او IC د ازموینې تایید شوي تجهیزات.'
+        },
+        items: [
+            {
+                id: 'smt-machine',
+                name: {
+                    fa: 'ماشین SMT دست دوم',
+                    en: 'Second-Hand SMT Machine',
+                    ps: 'دوهم ځل SMT ماشین'
+                },
+                pdfUrl: 'pdfs/second-hand/electronic-machinery/smt-machine.pdf'
+            },
+            {
+                id: 'wave-soldering-machine',
+                name: {
+                    fa: 'ماشین جوشکاری موجی دست دوم',
+                    en: 'Second-Hand Wave Soldering Machine',
+                    ps: 'دوهم ځل ویو سولډرینګ ماشین'
+                },
+                pdfUrl: 'pdfs/second-hand/electronic-machinery/wave-soldering-machine.pdf'
+            },
+            {
+                id: 'pcb-testing-machine',
+                name: {
+                    fa: 'ماشین تست PCB دست دوم',
+                    en: 'Second-Hand PCB Testing Machine',
+                    ps: 'دوهم ځل PCB ازمول ماشین'
+                },
+                pdfUrl: 'pdfs/second-hand/electronic-machinery/pcb-testing-machine.pdf'
+            },
+            {
+                id: 'ic-testing-machine',
+                name: {
+                    fa: 'ماشین تست IC دست دوم',
+                    en: 'Second-Hand IC Testing Machine',
+                    ps: 'دوهم ځل IC ازمول ماشین'
+                },
+                pdfUrl: 'pdfs/second-hand/electronic-machinery/ic-testing-machine.pdf'
+            },
+            {
+                id: 'cable-assembly-machine',
+                name: {
+                    fa: 'ماشین مونتاژ کابل دست دوم',
+                    en: 'Second-Hand Cable Assembly Machine',
+                    ps: 'دوهم ځل کابل مونټاژ ماشین'
+                },
+                pdfUrl: 'pdfs/second-hand/electronic-machinery/cable-assembly-machine.pdf'
+            }
+        ]
+    },
+    'cooling-heating': {
+        icon: '❄️',
+        title: {
+            fa: 'تجهیزات سرمایش و گرمایش دست دوم',
+            en: 'Second-Hand Cooling & Heating Equipment',
+            ps: 'د سړولو او تودوخې دوهم لاس تجهیزات'
+        },
+        description: {
+            fa: 'چیلر، بویلر، برج خنک‌کن و مبدل حرارتی با سرویس و آماده راه‌اندازی.',
+            en: 'Serviced chillers, boilers, cooling towers, and heat exchangers ready for deployment.',
+            ps: 'چیلرونه، بویلرونه، د یخولو برجونه او د تودوخې تبادله کوونکي د کار لپاره چمتو.'
+        },
+        items: [
+            {
+                id: 'chiller',
+                name: {
+                    fa: 'چیلر دست دوم',
+                    en: 'Second-Hand Chiller',
+                    ps: 'دوهم ځل چیلر'
+                },
+                pdfUrl: 'pdfs/second-hand/cooling-heating/chiller.pdf'
+            },
+            {
+                id: 'boiler',
+                name: {
+                    fa: 'بویلر دست دوم',
+                    en: 'Second-Hand Boiler',
+                    ps: 'دوهم ځل بویلر'
+                },
+                pdfUrl: 'pdfs/second-hand/cooling-heating/boiler.pdf'
+            },
+            {
+                id: 'cooling-tower',
+                name: {
+                    fa: 'برج خنک‌کن دست دوم',
+                    en: 'Second-Hand Cooling Tower',
+                    ps: 'دوهم ځل برج خنک کن'
+                },
+                pdfUrl: 'pdfs/second-hand/cooling-heating/cooling-tower.pdf'
+            },
+            {
+                id: 'heat-exchanger',
+                name: {
+                    fa: 'مبدل حرارتی دست دوم',
+                    en: 'Second-Hand Heat Exchanger',
+                    ps: 'دوهم ځل هیټ ایکسچنجر'
+                },
+                pdfUrl: 'pdfs/second-hand/cooling-heating/heat-exchanger.pdf'
+            }
+        ]
+    },
+    'pumps-compressors': {
+        icon: '🧰',
+        title: {
+            fa: 'پمپ‌ها و کمپرسورهای دست دوم',
+            en: 'Second-Hand Pumps & Compressors',
+            ps: 'دوهم لاس پمپونه او کمپرسورونه'
+        },
+        description: {
+            fa: 'پمپ‌های آب، چاهی، هوا، پیچ و وکیوم بازبینی‌شده و آماده بهره‌برداری.',
+            en: 'Inspected water, submersible, air, screw, and vacuum pumps ready to run.',
+            ps: 'د اوبو، سبمرسیبل، هوا، سکرو او ویکیوم پمپونه چې د کار لپاره چمتو دي.'
+        },
+        items: [
+            {
+                id: 'water-pump',
+                name: {
+                    fa: 'پمپ آب دست دوم',
+                    en: 'Second-Hand Water Pump',
+                    ps: 'دوهم ځل اوبه پمپ'
+                },
+                pdfUrl: 'pdfs/second-hand/pumps-compressors/water-pump.pdf'
+            },
+            {
+                id: 'submersible-pump',
+                name: {
+                    fa: 'پمپ غوطه‌رو دست دوم',
+                    en: 'Second-Hand Submersible Pump',
+                    ps: 'دوهم ځل غوطه رو پمپ'
+                },
+                pdfUrl: 'pdfs/second-hand/pumps-compressors/submersible-pump.pdf'
+            },
+            {
+                id: 'air-compressor',
+                name: {
+                    fa: 'کمپرسور هوا دست دوم',
+                    en: 'Second-Hand Air Compressor',
+                    ps: 'دوهم ځل هوا کمپرسور'
+                },
+                pdfUrl: 'pdfs/second-hand/pumps-compressors/air-compressor.pdf'
+            },
+            {
+                id: 'screw-compressor',
+                name: {
+                    fa: 'کمپرسور مارپیچی دست دوم',
+                    en: 'Second-Hand Screw Compressor',
+                    ps: 'دوهم ځل مارپیچي کمپرسور'
+                },
+                pdfUrl: 'pdfs/second-hand/pumps-compressors/screw-compressor.pdf'
+            },
+            {
+                id: 'vacuum-pump',
+                name: {
+                    fa: 'پمپ وکیوم دست دوم',
+                    en: 'Second-Hand Vacuum Pump',
+                    ps: 'دوهم ځل وکیوم پمپ'
+                },
+                pdfUrl: 'pdfs/second-hand/pumps-compressors/vacuum-pump.pdf'
+            }
+        ]
+    },
+    'industrial-laser': {
+        icon: '🔦',
+        title: {
+            fa: 'لیزر صنعتی دست دوم',
+            en: 'Second-Hand Industrial Laser Systems',
+            ps: 'د صنعت لیزر دوهم لاس سیستمونه'
+        },
+        description: {
+            fa: 'ماشین‌های برش، حکاکی و جوشکاری لیزری با سرویس کامل.',
+            en: 'Laser cutting, engraving, and welding machines delivered after full servicing.',
+            ps: 'د لیزر پرې کولو، کندلو او ویلډنګ ماشینونه د بشپړ خدمت وروسته سپارل کېږي.'
+        },
+        items: [
+            {
+                id: 'laser-cutting-machine',
+                name: {
+                    fa: 'ماشین برش لیزری دست دوم',
+                    en: 'Second-Hand Laser Cutting Machine',
+                    ps: 'دوهم ځل لیزر برش ماشین'
+                },
+                pdfUrl: 'pdfs/second-hand/industrial-laser/laser-cutting-machine.pdf'
+            },
+            {
+                id: 'laser-engraving-machine',
+                name: {
+                    fa: 'ماشین حکاکی لیزری دست دوم',
+                    en: 'Second-Hand Laser Engraving Machine',
+                    ps: 'دوهم ځل ليزر حکاکي ماشین'
+                },
+                pdfUrl: 'pdfs/second-hand/industrial-laser/laser-engraving-machine.pdf'
+            },
+            {
+                id: 'laser-welding-machine',
+                name: {
+                    fa: 'ماشین جوشکاری لیزری دست دوم',
+                    en: 'Second-Hand Laser Welding Machine',
+                    ps: 'دوهم ځل ليزر جوشکاري ماشین'
+                },
+                pdfUrl: 'pdfs/second-hand/industrial-laser/laser-welding-machine.pdf'
+            }
+        ]
+    },
+    'foam-sponge': {
+        icon: '🧽',
+        title: {
+            fa: 'ماشین‌آلات فوم و اسفنج دست دوم',
+            en: 'Second-Hand Foam & Sponge Machinery',
+            ps: 'د فوم او اسفنج دوهم لاس ماشینونه'
+        },
+        description: {
+            fa: 'سیستم‌های تولید و برش فوم و اسفنج با تضمین عملکرد.',
+            en: 'Foam production and cutting systems supplied with performance guarantees.',
+            ps: 'د فوم تولید او پرې کولو سیستمونه د تضمین شوې کړنې سره وړاندې کېږي.'
+        },
+        items: [
+            {
+                id: 'foam-production-machine',
+                name: {
+                    fa: 'ماشین تولید فوم دست دوم',
+                    en: 'Second-Hand Foam Production Machine',
+                    ps: 'دوهم ځل فوم جوړول ماشین'
+                },
+                pdfUrl: 'pdfs/second-hand/foam-sponge/foam-production-machine.pdf'
+            },
+            {
+                id: 'foam-cutting-machine',
+                name: {
+                    fa: 'ماشین برش فوم دست دوم',
+                    en: 'Second-Hand Foam Cutting Machine',
+                    ps: 'دوهم ځل فوم برش ماشین'
+                },
+                pdfUrl: 'pdfs/second-hand/foam-sponge/foam-cutting-machine.pdf'
+            },
+            {
+                id: 'sponge-cutting-machine',
+                name: {
+                    fa: 'ماشین برش اسفنج دست دوم',
+                    en: 'Second-Hand Sponge Cutting Machine',
+                    ps: 'دوهم ځل اسفنج برش ماشین'
+                },
+                pdfUrl: 'pdfs/second-hand/foam-sponge/sponge-cutting-machine.pdf'
+            }
+        ]
+    },
+    'tobacco': {
+        icon: '🚬',
+        title: {
+            fa: 'ماشین‌آلات تنباکو و سیگار دست دوم',
+            en: 'Second-Hand Tobacco & Cigarette Machinery',
+            ps: 'د تنباکو او سیګار دوهم لاس ماشینونه'
+        },
+        description: {
+            fa: 'ماشین‌های ساخت سیگار و بسته‌بندی تنباکو با پشتیبانی فنی.',
+            en: 'Cigarette making and tobacco packaging machines supplied with technical support.',
+            ps: 'د سیګار جوړولو او د تنباکو بسته بندۍ ماشینونه د تخنیکي ملاتړ سره.'
+        },
+        items: [
+            {
+                id: 'cigarette-making-machine',
+                name: {
+                    fa: 'ماشین ساخت سیگار دست دوم',
+                    en: 'Second-Hand Cigarette Making Machine',
+                    ps: 'دوهم ځل سیګار جوړول ماشین'
+                },
+                pdfUrl: 'pdfs/second-hand/tobacco/cigarette-making-machine.pdf'
+            },
+            {
+                id: 'cigarette-packing-machine',
+                name: {
+                    fa: 'ماشین بسته‌بندی سیگار دست دوم',
+                    en: 'Second-Hand Cigarette Packing Machine',
+                    ps: 'دوهم ځل سیګار بسته‌بندي ماشین'
+                },
+                pdfUrl: 'pdfs/second-hand/tobacco/cigarette-packing-machine.pdf'
+            },
+            {
+                id: 'tobacco-packaging-machine',
+                name: {
+                    fa: 'ماشین بسته‌بندی تنباکو دست دوم',
+                    en: 'Second-Hand Tobacco Packaging Machine',
+                    ps: 'دوهم ځل تنباکو بسته‌بندي ماشین'
+                },
+                pdfUrl: 'pdfs/second-hand/tobacco/tobacco-packaging-machine.pdf'
+            }
+        ]
+    },
+    'paint-coating': {
+        icon: '🎨',
+        title: {
+            fa: 'ماشین‌آلات رنگ و کوتینگ دست دوم',
+            en: 'Second-Hand Paint & Coating Machinery',
+            ps: 'د رنګ او پوښښ دوهم لاس ماشینونه'
+        },
+        description: {
+            fa: 'سیستم‌های پاشش پودر و رنگ، کابین و میکسر بازرسی شده.',
+            en: 'Inspected powder coating, spray booths, guns, and paint mixing systems.',
+            ps: 'د پوډر پوښښ، سپرې خونې، تفنګچې او د رنګ مخلوط کولو سیستمونه تفتیش شوي.'
+        },
+        items: [
+            {
+                id: 'powder-coating-machine',
+                name: {
+                    fa: 'ماشین پوشش پودری دست دوم',
+                    en: 'Second-Hand Powder Coating Machine',
+                    ps: 'دوهم ځل پوډر پوشش ماشین'
+                },
+                pdfUrl: 'pdfs/second-hand/paint-coating/powder-coating-machine.pdf'
+            },
+            {
+                id: 'spray-booth',
+                name: {
+                    fa: 'کابین پاشش دست دوم',
+                    en: 'Second-Hand Spray Booth',
+                    ps: 'دوهم ځل پاشش کابین'
+                },
+                pdfUrl: 'pdfs/second-hand/paint-coating/spray-booth.pdf'
+            },
+            {
+                id: 'spray-gun',
+                name: {
+                    fa: 'تفنگ پاشش دست دوم',
+                    en: 'Second-Hand Spray Gun',
+                    ps: 'دوهم ځل پاشش تفڼه'
+                },
+                pdfUrl: 'pdfs/second-hand/paint-coating/spray-gun.pdf'
+            },
+            {
+                id: 'paint-mixing-machine',
+                name: {
+                    fa: 'ماشین مخلوط رنگ دست دوم',
+                    en: 'Second-Hand Paint Mixing Machine',
+                    ps: 'دوهم ځل رنګ مخلوط ماشین'
+                },
+                pdfUrl: 'pdfs/second-hand/paint-coating/paint-mixing-machine.pdf'
+            }
+        ]
+    },
+    'agricultural-machinery': {
+        icon: '🚜',
+        title: {
+            fa: 'ماشین‌آلات کشاورزی دست دوم',
+            en: 'Second-Hand Agricultural Machinery',
+            ps: 'د کرنې دوهم لاس ماشینونه'
+        },
+        description: {
+            fa: 'تراکتور، کمباین، بذرکار و سمپاش بازسازی‌شده برای مزارع افغانستان.',
+            en: 'Refurbished tractors, harvesters, seed drills, and sprayers for Afghan farms.',
+            ps: 'ترمیم شوي ټرکټورونه، کمباینونه، تخم شیندونکي او سپرې کوونکي د افغان فارمونو لپاره.'
+        },
+        items: [
+            {
+                id: 'tractor',
+                name: {
+                    fa: 'تراکتور دست دوم',
+                    en: 'Second-Hand Tractor',
+                    ps: 'دوهم ځل ټرکټر'
+                },
+                pdfUrl: 'pdfs/second-hand/agricultural-machinery/tractor.pdf'
+            },
+            {
+                id: 'mini-tractor',
+                name: {
+                    fa: 'تراکتور کوچک دست دوم',
+                    en: 'Second-Hand Mini Tractor',
+                    ps: 'دوهم ځل کوچنی ټرکټر'
+                },
+                pdfUrl: 'pdfs/second-hand/agricultural-machinery/mini-tractor.pdf'
+            },
+            {
+                id: 'combine-harvester',
+                name: {
+                    fa: 'دروگر کمباین دست دوم',
+                    en: 'Second-Hand Combine Harvester',
+                    ps: 'دوهم ځل کمباین دروگر'
+                },
+                pdfUrl: 'pdfs/second-hand/agricultural-machinery/combine-harvester.pdf'
+            },
+            {
+                id: 'seed-drill',
+                name: {
+                    fa: 'بذرپاش دست دوم',
+                    en: 'Second-Hand Seed Drill',
+                    ps: 'دوهم ځل بذرپاش'
+                },
+                pdfUrl: 'pdfs/second-hand/agricultural-machinery/seed-drill.pdf'
+            },
+            {
+                id: 'sprayer',
+                name: {
+                    fa: 'سمپاش دست دوم',
+                    en: 'Second-Hand Sprayer',
+                    ps: 'دوهم ځل سمپاش'
+                },
+                pdfUrl: 'pdfs/second-hand/agricultural-machinery/sprayer.pdf'
+            },
+            {
+                id: 'agri-water-pump',
+                name: {
+                    fa: 'پمپ آب کشاورزی دست دوم',
+                    en: 'Second-Hand Agricultural Water Pump',
+                    ps: 'دوهم ځل د کرنې د اوبو پمپ'
+                },
+                pdfUrl: 'pdfs/second-hand/agricultural-machinery/water-pump.pdf'
+            }
+        ]
+    },
+    'laboratory-equipment': {
+        icon: '🧪',
+        title: {
+            fa: 'تجهیزات آزمایشگاهی دست دوم',
+            en: 'Second-Hand Laboratory Equipment',
+            ps: 'د لابراتوار دوهم لاس تجهیزات'
+        },
+        description: {
+            fa: 'دستگاه‌های تست کشش، سختی‌سنج، پی‌اچ‌متر و میکروسکوپ با دقت کالیبره.',
+            en: 'Calibrated tensile testers, hardness testers, pH meters, spectrophotometers, and microscopes.',
+            ps: 'کالیبره شوي د کشش ټیسټرونه، سختي سنجونه، pH میترونه، سپیکټروفوتومیټرونه او مایکروسکوپونه.'
+        },
+        items: [
+            {
+                id: 'tensile-testing-machine',
+                name: {
+                    fa: 'ماشین تست کششی دست دوم',
+                    en: 'Second-Hand Tensile Testing Machine',
+                    ps: 'دوهم ځل کششي ازمول ماشین'
+                },
+                pdfUrl: 'pdfs/second-hand/laboratory-equipment/tensile-testing-machine.pdf'
+            },
+            {
+                id: 'hardness-tester',
+                name: {
+                    fa: 'سختی‌سنج دست دوم',
+                    en: 'Second-Hand Hardness Tester',
+                    ps: 'دوهم ځل سختی سنج'
+                },
+                pdfUrl: 'pdfs/second-hand/laboratory-equipment/hardness-tester.pdf'
+            },
+            {
+                id: 'ph-meter',
+                name: {
+                    fa: 'پی‌اچ‌متر دست دوم',
+                    en: 'Second-Hand pH Meter',
+                    ps: 'دوهم ځل پی ایچ میټر'
+                },
+                pdfUrl: 'pdfs/second-hand/laboratory-equipment/ph-meter.pdf'
+            },
+            {
+                id: 'spectrophotometer',
+                name: {
+                    fa: 'اسپکتروفتومتر دست دوم',
+                    en: 'Second-Hand Spectrophotometer',
+                    ps: 'دوهم ځل اسپکټروفتوميټر'
+                },
+                pdfUrl: 'pdfs/second-hand/laboratory-equipment/spectrophotometer.pdf'
+            },
+            {
+                id: 'microscope',
+                name: {
+                    fa: 'میکروسکوپ دست دوم',
+                    en: 'Second-Hand Microscope',
+                    ps: 'دوهم ځل مایکروسکوپ'
+                },
+                pdfUrl: 'pdfs/second-hand/laboratory-equipment/microscope.pdf'
+            }
+        ]
+    },
+    'material-handling': {
+        icon: '🏗️',
+        title: {
+            fa: 'تجهیزات جابجایی مواد دست دوم',
+            en: 'Second-Hand Material Handling Equipment',
+            ps: 'د موادو د لېږد دوهم لاس تجهیزات'
+        },
+        description: {
+            fa: 'لیفتراک، پالت تراک، نقاله و جرثقیل سقفی آماده بهره‌برداری.',
+            en: 'Forklifts, pallet trucks, conveyors, and overhead cranes ready for deployment.',
+            ps: 'فورک لیفټونه، پالټ ټرکونه، کنویرونه او د چت کرینونه د کار لپاره چمتو.'
+        },
+        items: [
+            {
+                id: 'forklift',
+                name: {
+                    fa: 'لیفتراک دست دوم',
+                    en: 'Second-Hand Forklift',
+                    ps: 'دوهم ځل لیفتراک'
+                },
+                pdfUrl: 'pdfs/second-hand/material-handling/forklift.pdf'
+            },
+            {
+                id: 'pallet-truck',
+                name: {
+                    fa: 'پالت تراک دست دوم',
+                    en: 'Second-Hand Pallet Truck',
+                    ps: 'دوهم ځل پالټر ټرک'
+                },
+                pdfUrl: 'pdfs/second-hand/material-handling/pallet-truck.pdf'
+            },
+            {
+                id: 'stacker',
+                name: {
+                    fa: 'انبارکن دست دوم',
+                    en: 'Second-Hand Stacker',
+                    ps: 'دوهم ځل سټیکر'
+                },
+                pdfUrl: 'pdfs/second-hand/material-handling/stacker.pdf'
+            },
+            {
+                id: 'conveyor-belt',
+                name: {
+                    fa: 'تسمه نقاله دست دوم',
+                    en: 'Second-Hand Conveyor Belt',
+                    ps: 'دوهم ځل کنویر بیلټ'
+                },
+                pdfUrl: 'pdfs/second-hand/material-handling/conveyor-belt.pdf'
+            },
+            {
+                id: 'roller-conveyor',
+                name: {
+                    fa: 'نقاله غلتکی دست دوم',
+                    en: 'Second-Hand Roller Conveyor',
+                    ps: 'دوهم ځل رولر کنویر'
+                },
+                pdfUrl: 'pdfs/second-hand/material-handling/roller-conveyor.pdf'
+            },
+            {
+                id: 'overhead-crane',
+                name: {
+                    fa: 'جرثقیل سقفی دست دوم',
+                    en: 'Second-Hand Overhead Crane',
+                    ps: 'دوهم ځل سقفي جرثقیل'
+                },
+                pdfUrl: 'pdfs/second-hand/material-handling/overhead-crane.pdf'
+            }
+        ]
+    },
+    'wood-working': {
+        icon: '🪚',
+        title: {
+            fa: 'ماشین‌آلات نجاری دست دوم',
+            en: 'Second-Hand Wood Working Machinery',
+            ps: 'د لرګیو د کار دوهم لاس ماشینونه'
+        },
+        description: {
+            fa: 'اره گردبر، نواری، رنده، روتر و سنباده با تنظیم و آماده نصب.',
+            en: 'Circular saws, band saws, planers, routers, and sanders tuned for installation.',
+            ps: 'دایروي ارې، بانډ سا، رنده، روټر او سنډرونه د نصب لپاره برابري شوي.'
+        },
+        items: [
+            {
+                id: 'circular-saw',
+                name: {
+                    fa: 'اره گردبر دست دوم',
+                    en: 'Second-Hand Circular Saw',
+                    ps: 'دوهم ځل دایري اره'
+                },
+                pdfUrl: 'pdfs/second-hand/wood-working/circular-saw.pdf'
+            },
+            {
+                id: 'band-saw',
+                name: {
+                    fa: 'اره نواری دست دوم',
+                    en: 'Second-Hand Band Saw',
+                    ps: 'دوهم ځل بانډ سا'
+                },
+                pdfUrl: 'pdfs/second-hand/wood-working/band-saw.pdf'
+            },
+            {
+                id: 'wood-planer',
+                name: {
+                    fa: 'سابنده چوب دست دوم',
+                    en: 'Second-Hand Wood Planer',
+                    ps: 'دوهم ځل چوب سابنده'
+                },
+                pdfUrl: 'pdfs/second-hand/wood-working/wood-planer.pdf'
+            },
+            {
+                id: 'wood-router',
+                name: {
+                    fa: 'روتر چوب دست دوم',
+                    en: 'Second-Hand Wood Router',
+                    ps: 'دوهم ځل چوب روټر'
+                },
+                pdfUrl: 'pdfs/second-hand/wood-working/wood-router.pdf'
+            },
+            {
+                id: 'sanding-machine',
+                name: {
+                    fa: 'ماشین سنباده دست دوم',
+                    en: 'Second-Hand Sanding Machine',
+                    ps: 'دوهم ځل سنباده ماشین'
+                },
+                pdfUrl: 'pdfs/second-hand/wood-working/sanding-machine.pdf'
+            }
+        ]
+    },
+    'rubber-processing': {
+        icon: '🛞',
+        title: {
+            fa: 'ماشین‌آلات فرآوری لاستیک دست دوم',
+            en: 'Second-Hand Rubber Processing Machinery',
+            ps: 'د ربړ د پروسس دوهم لاس ماشینونه'
+        },
+        description: {
+            fa: 'میکسر بنبوری، دو رول میل و پرس ولکانیزه با گزارش سرویس.',
+            en: 'Banbury mixers, two-roll mills, vulcanizing presses, and moulding machines with service records.',
+            ps: 'بنبوري مکسرونه، دوه رول ملونه، ولکانیزه پریسونه او د ربړ مولډینګ ماشینونه د خدمت ریکارډونو سره.'
+        },
+        items: [
+            {
+                id: 'banbury-mixer',
+                name: {
+                    fa: 'مخلوط‌کن بنبوری دست دوم',
+                    en: 'Second-Hand Banbury Mixer',
+                    ps: 'دوهم ځل بنبوري مخلوط کن'
+                },
+                pdfUrl: 'pdfs/second-hand/rubber-processing/banbury-mixer.pdf'
+            },
+            {
+                id: 'two-roll-mill',
+                name: {
+                    fa: 'غلتک دوغوله دست دوم',
+                    en: 'Second-Hand Two Roll Mill',
+                    ps: 'دوهم ځل دو رول میل'
+                },
+                pdfUrl: 'pdfs/second-hand/rubber-processing/two-roll-mill.pdf'
+            },
+            {
+                id: 'vulcanizing-press',
+                name: {
+                    fa: 'پرس ولکانیزه دست دوم',
+                    en: 'Second-Hand Vulcanizing Press',
+                    ps: 'دوهم ځل ولکانیزه پریس'
+                },
+                pdfUrl: 'pdfs/second-hand/rubber-processing/vulcanizing-press.pdf'
+            },
+            {
+                id: 'rubber-molding-machine',
+                name: {
+                    fa: 'ماشین قالب‌گیری لاستیک دست دوم',
+                    en: 'Second-Hand Rubber Molding Machine',
+                    ps: 'دوهم ځل لاستیک قالب ماشین'
+                },
+                pdfUrl: 'pdfs/second-hand/rubber-processing/rubber-molding-machine.pdf'
+            }
+        ]
+    },
+    'glass-ceramics': {
+        icon: '🪟',
+        title: {
+            fa: 'ماشین‌آلات شیشه و سرامیک دست دوم',
+            en: 'Second-Hand Glass & Ceramics Machinery',
+            ps: 'د ښیښې او سیرامیک دوهم لاس ماشینونه'
+        },
+        description: {
+            fa: 'کوره‌های ذوب و پخت، ماشین برش شیشه و پرس کاشی با بازسازی کامل.',
+            en: 'Refurbished glass melting furnaces, cutting machines, tile presses, and kilns.',
+            ps: 'د ښیښې د ذوب کوره، د پرې کولو ماشین، د ټایلو پریس او کوره په بشپړه توګه ترمیم شوي.'
+        },
+        items: [
+            {
+                id: 'glass-melting-furnace',
+                name: {
+                    fa: 'کوره ذوب شیشه دست دوم',
+                    en: 'Second-Hand Glass Melting Furnace',
+                    ps: 'دوهم ځل شیشه ذوب کوره'
+                },
+                pdfUrl: 'pdfs/second-hand/glass-ceramics/glass-melting-furnace.pdf'
+            },
+            {
+                id: 'glass-cutting-machine',
+                name: {
+                    fa: 'ماشین برش شیشه دست دوم',
+                    en: 'Second-Hand Glass Cutting Machine',
+                    ps: 'دوهم ځل شیشه برش ماشین'
+                },
+                pdfUrl: 'pdfs/second-hand/glass-ceramics/glass-cutting-machine.pdf'
+            },
+            {
+                id: 'tile-press',
+                name: {
+                    fa: 'پرس کاشی دست دوم',
+                    en: 'Second-Hand Tile Press',
+                    ps: 'دوهم ځل کاشي پریس'
+                },
+                pdfUrl: 'pdfs/second-hand/glass-ceramics/tile-press.pdf'
+            },
+            {
+                id: 'kiln-furnace',
+                name: {
+                    fa: 'کوره پخت دست دوم',
+                    en: 'Second-Hand Kiln Furnace',
+                    ps: 'دوهم ځل پخت کوره'
+                },
+                pdfUrl: 'pdfs/second-hand/glass-ceramics/kiln-furnace.pdf'
+            }
+        ]
+    },
+    'leather-footwear': {
+        icon: '👞',
+        title: {
+            fa: 'ماشین‌آلات چرم و کفش دست دوم',
+            en: 'Second-Hand Leather & Footwear Machinery',
+            ps: 'د چرم او بوټانو دوهم لاس ماشینونه'
+        },
+        description: {
+            fa: 'دستگاه‌های پوست‌کنی، دباغی، کفش‌دوزی و پرس کفش آماده تولید.',
+            en: 'Fleshing drums, tanning equipment, shoe lasting, and sole pressing machines ready for production.',
+            ps: 'د پوست کینلو، دباغۍ، د بوټ جوړولو او د تلي د پرس ماشینونه د تولید لپاره چمتو.'
+        },
+        items: [
+            {
+                id: 'fleshing-machine',
+                name: {
+                    fa: 'ماشین پوست‌کنی دست دوم',
+                    en: 'Second-Hand Fleshing Machine',
+                    ps: 'دوهم ځل پوست کني ماشین'
+                },
+                pdfUrl: 'pdfs/second-hand/leather-footwear/fleshing-machine.pdf'
+            },
+            {
+                id: 'tanning-drum',
+                name: {
+                    fa: 'دباغی درام دست دوم',
+                    en: 'Second-Hand Tanning Drum',
+                    ps: 'دوهم ځل چرم جوړول ډرم'
+                },
+                pdfUrl: 'pdfs/second-hand/leather-footwear/tanning-drum.pdf'
+            },
+            {
+                id: 'shoe-lasting-machine',
+                name: {
+                    fa: 'ماشین کفش‌دوزی دست دوم',
+                    en: 'Second-Hand Shoe Lasting Machine',
+                    ps: 'دوهم ځل کفش دوختل ماشین'
+                },
+                pdfUrl: 'pdfs/second-hand/leather-footwear/shoe-lasting-machine.pdf'
+            },
+            {
+                id: 'sole-press',
+                name: {
+                    fa: 'پرس کفش دست دوم',
+                    en: 'Second-Hand Sole Press',
+                    ps: 'دوهم ځل کفش پریس'
+                },
+                pdfUrl: 'pdfs/second-hand/leather-footwear/sole-press.pdf'
+            }
+        ]
+    },
+    'trucks-lorries': {
+        icon: '🚚',
+        title: {
+            fa: 'کامیون و لاری دست دوم',
+            en: 'Second-Hand Trucks & Lorries',
+            ps: 'دوهم لاس لارۍ او لاریون'
+        },
+        description: {
+            fa: 'دامپر، باری، یدک‌کش، تانکر و یخچالدار با سرویس کامل.',
+            en: 'Dump, cargo, tow, tanker, and refrigerated trucks supplied fully serviced.',
+            ps: 'ډمپر، باردار، کششي، ټانکر او یخچالي لارۍ د بشپړ خدماتو سره سپارل کېږي.'
+        },
+        items: [
+            {
+                id: 'dump-truck',
+                name: {
+                    fa: 'کامیون دامپر دست دوم',
+                    en: 'Second-Hand Dump Truck',
+                    ps: 'دوهم ځل ډمپر کامیون'
+                },
+                pdfUrl: 'pdfs/second-hand/trucks-lorries/dump-truck.pdf'
+            },
+            {
+                id: 'cargo-truck',
+                name: {
+                    fa: 'کامیون بارکش دست دوم',
+                    en: 'Second-Hand Cargo Truck',
+                    ps: 'دوهم ځل بارکش کامیون'
+                },
+                pdfUrl: 'pdfs/second-hand/trucks-lorries/cargo-truck.pdf'
+            },
+            {
+                id: 'tow-truck',
+                name: {
+                    fa: 'کامیون یدک‌کش دست دوم',
+                    en: 'Second-Hand Tow Truck',
+                    ps: 'دوهم ځل ډکړ کامیون'
+                },
+                pdfUrl: 'pdfs/second-hand/trucks-lorries/tow-truck.pdf'
+            },
+            {
+                id: 'tanker-truck',
+                name: {
+                    fa: 'کامیون تانکر دست دوم',
+                    en: 'Second-Hand Tanker Truck',
+                    ps: 'دوهم ځل تانکر کامیون'
+                },
+                pdfUrl: 'pdfs/second-hand/trucks-lorries/tanker-truck.pdf'
+            },
+            {
+                id: 'refrigerated-truck',
+                name: {
+                    fa: 'کامیون یخچالدار دست دوم',
+                    en: 'Second-Hand Refrigerated Truck',
+                    ps: 'دوهم ځل یخچال لرونکی کامیون'
+                },
+                pdfUrl: 'pdfs/second-hand/trucks-lorries/refrigerated-truck.pdf'
+            }
+        ]
+    },
+    'generators': {
+        icon: '🔌',
+        title: {
+            fa: 'ژنراتورهای دست دوم',
+            en: 'Second-Hand Generators',
+            ps: 'دوهم لاس جنراتورونه'
+        },
+        description: {
+            fa: 'ژنراتورهای دیزلی، گازی و بی‌صدا با تست بار کامل و ضمانت راه‌اندازی.',
+            en: 'Diesel, gas, and silent generators load-tested with commissioning support.',
+            ps: 'د ډیزلي، ګازي او ارامه جنراتورونه د بشپړ بار ازموینې او د فعالولو ملاتړ سره.'
+        },
+        items: [
+            {
+                id: 'diesel-generator',
+                name: {
+                    fa: 'ژنراتور دیزلی دست دوم',
+                    en: 'Second-Hand Diesel Generator',
+                    ps: 'دوهم ځل دیزلي جنریټر'
+                },
+                pdfUrl: 'pdfs/second-hand/generators/diesel-generator.pdf'
+            },
+            {
+                id: 'gas-generator',
+                name: {
+                    fa: 'ژنراتور گازی دست دوم',
+                    en: 'Second-Hand Gas Generator',
+                    ps: 'دوهم ځل ګازي جنریټر'
+                },
+                pdfUrl: 'pdfs/second-hand/generators/gas-generator.pdf'
+            },
+            {
+                id: 'silent-generator',
+                name: {
+                    fa: 'ژنراتور بی‌صدا دست دوم',
+                    en: 'Second-Hand Silent Generator',
+                    ps: 'دوهم ځل خاموش جنریټر'
+                },
+                pdfUrl: 'pdfs/second-hand/generators/silent-generator.pdf'
+            }
+        ]
+    }
+};
+
+const secondHandCategories = Object.entries(secondHandCatalog).map(([id, config]) => ({
+    id,
+    icon: config.icon,
+    title: config.title,
+    description: config.description
+}));
+
+const secondHandInventoryData = Object.entries(secondHandCatalog).flatMap(([categoryId, config]) =>
+    config.items.map(item => ({
+        id: item.id,
+        category: categoryId,
+        icon: item.icon || config.icon,
+        name: item.name,
+        description: item.description || secondHandDefaultDescription,
+        meta: item.meta || [],
+        pdfUrl: item.pdfUrl
+    }))
+);
+
+window.secondHandCategories = secondHandCategories;
 window.secondHandInventoryData = secondHandInventoryData;
+
 
 // Category keywords for search
 const categoryKeywords = {
@@ -901,6 +2037,19 @@ const categoryKeywords = {
     'cooling-heating': ['دستگاه های سرمایش و گرمایش', 'Cooling & Heating Equipment', 'سرمایش', 'cooling', 'گرمایش', 'heating', 'د سړښت او تودوخه تجهیزات', 'Cooling & Heating Equipment'],
     'pumps-compressors': ['پمپ ها و کمپرسور ها صنعتی', 'Industrial Pumps & Compressors', 'پمپ', 'pump', 'کمپرسور', 'compressor', 'د صنعت پمپونه او کمپرسورونه', 'Industrial Pumps & Compressors'],
     'industrial-laser': ['لیزر صنعتی', 'Industrial Laser', 'لیزر', 'laser', 'صنعت لیزر', 'Industrial Laser'],
+    'metallurgy-equipment': ['تجهیزات متالورژی دست دوم', 'Metallurgy Equipment', 'متالورژی', 'metallurgy', 'فلزکاری', 'metal working', 'د فلزاتو تجهیزات', 'Metallurgy Equipment'],
+    'textile-machinery': ['ماشین آلات نساجی دست دوم', 'Textile Machinery', 'نساجی', 'textile', 'ماشین بافندگی', 'weaving', 'د نساجۍ ماشینونه', 'Textile Machinery'],
+    'food-processing': ['ماشین آلات فرآوری غذا', 'Food Processing Machinery', 'غذا', 'food', 'فرآوری', 'processing', 'د خوړو پروسس', 'Food Processing Machinery'],
+    'packaging-machinery': ['ماشین آلات بسته بندی', 'Packaging Machinery', 'بسته بندی', 'packaging', 'پرکن', 'filling', 'د بسته بندۍ ماشینونه', 'Packaging Machinery'],
+    'agricultural-machinery': ['ماشین آلات کشاورزی', 'Agricultural Machinery', 'کشاورزی', 'agriculture', 'تراکتور', 'tractor', 'د کرنې ماشینونه', 'Agricultural Machinery'],
+    'laboratory-equipment': ['تجهیزات آزمایشگاهی', 'Laboratory Equipment', 'آزمایشگاه', 'laboratory', 'آزمایش', 'testing', 'لابراتوار تجهیزات', 'Laboratory Equipment'],
+    'material-handling': ['تجهیزات جابجایی مواد', 'Material Handling Equipment', 'جابجایی', 'material handling', 'لیفتراک', 'forklift', 'د موادو لېږد', 'Material Handling Equipment'],
+    'wood-working': ['ماشین آلات نجاری', 'Wood Working Machinery', 'چوب', 'wood', 'نجاری', 'carpentry', 'د لرګيو ماشینونه', 'Wood Working Machinery'],
+    'rubber-processing': ['ماشین آلات لاستیک', 'Rubber Processing Machinery', 'لاستیک', 'rubber', 'ولکانیزه', 'vulcanizing', 'د ربړ پروسس', 'Rubber Processing Machinery'],
+    'glass-ceramics': ['ماشین آلات شیشه و سرامیک', 'Glass & Ceramics Machinery', 'شیشه', 'glass', 'سرامیک', 'ceramics', 'د ښیښې او سرامیک ماشینونه', 'Glass & Ceramics Machinery'],
+    'leather-footwear': ['ماشین آلات چرم و کفش', 'Leather & Footwear Machinery', 'چرم', 'leather', 'کفش', 'footwear', 'د چرم او بوټانو ماشینونه', 'Leather & Footwear Machinery'],
+    'trucks-lorries': ['کامیون و لاری', 'Trucks & Lorries', 'کامیون', 'truck', 'لاری', 'lorry', 'لارۍ', 'trucks'],
+    'generators': ['ژنراتور دست دوم', 'Generators', 'ژنراتور', 'generator', 'برق اضطراری', 'backup power', 'جنراتورونه', 'Generators'],
     'tanks': ['مخازن', 'Tanks', 'مخزن', 'tank', 'تنکونه', 'Tanks'],
     'packaging': ['بسته بندی', 'Packaging', 'بسته', 'package', 'بسته بندي', 'Packaging'],
     'chemical-pharma': ['ماشین آلات شیمیایی و دارویی', 'Chemical & Pharmaceutical Machinery', 'شیمیایی', 'chemical', 'دارویی', 'pharmaceutical', 'د کیمیاوي او درملو ماشینونه', 'Chemical & Pharmaceutical Machinery'],
