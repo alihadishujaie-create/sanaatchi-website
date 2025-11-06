@@ -821,7 +821,10 @@ const equipmentData = {
 };
 
 // Translation dictionary
-const translations = {
+window.translations = window.translations || {};
+const translations = window.translations;
+
+Object.assign(translations, {
     // Header
     'home': { fa: 'خانه', en: 'Home', ps: 'کور' },
     'services': { fa: 'خدمات', en: 'Services', ps: 'خدمتونه' },
@@ -1042,7 +1045,12 @@ const translations = {
     'newsletter-btn': { fa: 'عضویت', en: 'Subscribe', ps: 'اشتراک' },
     'afghanistan-office': { fa: 'دفتر افغانستان', en: 'Afghanistan Office', ps: 'د افغانستان دفتر' },
     'afghanistan-address': { fa: 'کابل، افغانستان', en: 'Kabul, Afghanistan', ps: 'کابل، افغانستان' },
-    'afghanistan-phone': { fa: '+۹۳ ۷۷۹ ۸۱۹ ۸۲۰', en: '+93 779 819 820', ps: '+93 779 819 820' },
+    'afghanistan-phone': { fa: '+93 779 819 820', en: '+93 779 819 820', ps: '+93 779 819 820' },
+    'afghanistan-hours': {
+        fa: 'شنبه تا پنجشنبه: ۹:۰۰ تا ۱۸:۰۰',
+        en: 'Saturday to Thursday: 9:00 to 18:00',
+        ps: 'له شنبې تر پنجشنبې: ۹:۰۰ تر ۱۸:۰۰'
+    },
     'afghanistan-hours1': { 
         fa: 'شنبه تا چهارشنبه: ۹:۰۰ تا ۱۷:۰۰', 
         en: 'Saturday to Wednesday: 9:00 to 17:00',
@@ -1055,7 +1063,7 @@ const translations = {
     },
     'china-office': { fa: 'دفتر چین', en: 'China Office', ps: 'د چین دفتر' },
     'china-address': { fa: 'چین', en: 'China', ps: 'چین' },
-    'china-phone': { fa: '+۸۶ ۱۵۹۵۱۷۱ ۶۸۶۷', en: '+86 159 5171 6867', ps: '+86 159 5171 6867' },
+    'china-phone': { fa: '+86 159 5171 6867', en: '+86 159 5171 6867', ps: '+86 159 5171 6867' },
     'china-hours': { 
         fa: 'شنبه تا جمعه: ۹:۰۰ تا ۱۸:۰۰', 
         en: 'Saturday to Friday: 9:00 to 18:00',
@@ -1068,12 +1076,12 @@ const translations = {
     },
     
     // New translation for the search result button
-    'view-related-equipment': { 
-        fa: 'مشاهده تجهیزات مرتبط', 
+    'view-related-equipment': {
+        fa: 'مشاهده تجهیزات مرتبط',
         en: 'View Related Equipment',
         ps: 'اړوند تجهیزات وګورئ'
     }
-};
+});
 
 // Function to format phone number for href
 function formatPhoneNumberForHref(phoneNumber) {
@@ -1203,7 +1211,7 @@ function updateTranslations(lang) {
         const metaTag = document.querySelector('meta[name="description"]');
         const originalContent = metaTag ? (metaTag.dataset.originalContent || metaTag.getAttribute('content') || '') : '';
         updateCargoContent();
-        if (metaTag) {
+        if (metaTag && lang === 'fa') {
             metaTag.setAttribute('content', originalContent);
         }
     }
@@ -1383,7 +1391,7 @@ function showSalesContactModal() {
                 <div class="contact-item">
                     <i class="fas fa-phone"></i>
                     <div class="phone-container">
-                        <a href="tel:+93779819820" class="phone-link">+۹۳ ۷۷۹ ۸۱۹ ۸۲۰</a>
+                        <a href="tel:+93779819820" class="phone-link">+93 779 819 820</a>
                         <a href="https://wa.me/93779819820" target="_blank" class="whatsapp-link" title="WhatsApp" aria-label="واتساپ">
                             <i class="fab fa-whatsapp"></i>
                         </a>
@@ -1406,7 +1414,7 @@ function showSalesContactModal() {
                 <div class="contact-item">
                     <i class="fas fa-phone"></i>
                     <div class="phone-container">
-                        <a href="tel:+8615951716867" class="phone-link">+۸۶ ۱۵۹۵۱۷۱ ۶۸۶۷</a>
+                        <a href="tel:+8615951716867" class="phone-link">+86 159 5171 6867</a>
                         <a href="https://wa.me/8615951716867" target="_blank" class="whatsapp-link" title="WhatsApp" aria-label="واتساپ">
                             <i class="fab fa-whatsapp"></i>
                         </a>
