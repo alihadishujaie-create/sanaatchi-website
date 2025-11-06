@@ -78,9 +78,9 @@ const projects = [
 ];
 
 const projectsMetaDescriptions = {
-    fa: 'پروژه‌های در حال اجرا و تکمیل‌شده Sanaatchi Industrial Vision در افغانستان؛ شامل راه‌اندازی فابریکه، خطوط تولید و خدمات لجستیک.',
+    fa: 'پروژه‌های در حال اجرا و تکمیل‌شده صنعتچی Industrial Vision در افغانستان؛ شامل راه‌اندازی فابریکه، خطوط تولید و خدمات لجستیک.',
     en: 'Discover Sanaatchi Industrial Vision’s ongoing and completed industrial projects across Afghanistan, spanning factory setup, production lines and logistics services.',
-    ps: 'په افغانستان کې د Sanaatchi Industrial Vision روانې او بشپړې صنعتي پروژې وګورئ؛ د فابریکې جوړول، تولیدي لینونه او لوجستیکي خدمتونه.'
+    ps: 'په افغانستان کې د صنعتچي Industrial Vision روانې او بشپړې صنعتي پروژې وګورئ؛ د فابریکې جوړول، تولیدي لینونه او لوجستیکي خدمتونه.'
 };
 
 // Render projects grid

@@ -18,7 +18,7 @@
             ps: 'د دې کټګورۍ مهمې ګټې'
         },
         highlightsSubtitle: {
-            fa: 'تجربه Sanaatchi در طراحی و اجرای این خطوط را مرور کنید.',
+            fa: 'تجربه صنعتچی در طراحی و اجرای این خطوط را مرور کنید.',
             en: 'Explore how Sanaatchi delivers these production capabilities.',
             ps: 'وګورئ چې صنعتچي څنګه دا تولیدي وړتیاوې برابروي.'
         },
@@ -38,7 +38,7 @@
             ps: 'اړوند کټګورۍ'
         },
         relatedSubtitle: {
-            fa: 'سایر حوزه‌های صنعتی را که توسط Sanaatchi پوشش داده می‌شود بررسی کنید.',
+            fa: 'سایر حوزه‌های صنعتی را که توسط صنعتچی پوشش داده می‌شود بررسی کنید.',
             en: 'Discover other industrial domains supported by Sanaatchi.',
             ps: 'نور صنعتي سکتورونه وپلټئ چې صنعتچي یې پوښي.'
         },

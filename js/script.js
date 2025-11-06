@@ -2603,9 +2603,9 @@ Object.assign(translations, {
         ps: 'شنبه څخه جمعه پورې: ۹:۰۰ څخه ۱۸:۰۰ پورې'
     },
     'copyright': {
-        fa: '&copy; 2024 Sanaatchi Industrial Vision. تمامی حقوق محفوظ است.',
+        fa: '&copy; 2024 صنعتچی Industrial Vision. تمامی حقوق محفوظ است.',
         en: '&copy; 2024 Sanaatchi Industrial Vision. All rights reserved.',
-        ps: '&copy; 2024 Sanaatchi Industrial Vision. ټول حقونه خوندي دي.'
+        ps: '&copy; 2024 صنعتچي Industrial Vision. ټول حقونه خوندي دي.'
     },
     
     // New translation for the search result button
