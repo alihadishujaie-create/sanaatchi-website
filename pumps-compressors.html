@@ -297,7 +297,22 @@
         </div>
     </div>
 
-    <script src="js/script.js"></script>
-    <script src="js/pumps-compressors.js"></script>
+    <script src="js/script.js" defer></script>
+    <script src="js/pumps-compressors.js" defer></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        if (typeof publishEquipmentStructuredData === 'function') {
+          publishEquipmentStructuredData('pumps-compressors', {
+            collectionName: 'Sanaatchi Pumps & Compressors Library',
+            collectionDescription: 'Industrial pumps, blowers and compressed air systems sourced and engineered for Afghan factories and utilities.',
+            pageUrl: '/pumps-compressors.html',
+            breadcrumbs: [
+              { name: 'Home', url: '/' },
+              { name: 'Pumps & Compressors', url: '/pumps-compressors.html' }
+            ]
+          });
+        }
+      });
+    </script>
 </body>
 </html>

@@ -307,7 +307,22 @@
         </div>
     </div>
 
-    <script src="js/script.js"></script>
-    <script src="js/electronics-energy-systems.js"></script>
+    <script src="js/script.js" defer></script>
+    <script src="js/electronics-energy-systems.js" defer></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        if (typeof publishEquipmentStructuredData === 'function') {
+          publishEquipmentStructuredData('electronics-energy-systems', {
+            collectionName: 'Sanaatchi Electronics & Energy Systems Library',
+            collectionDescription: 'Power systems, automation controls and renewable energy equipment curated for Afghan infrastructure projects.',
+            pageUrl: '/electronics-energy-systems.html',
+            breadcrumbs: [
+              { name: 'Home', url: '/' },
+              { name: 'Electronics & Energy Systems', url: '/electronics-energy-systems.html' }
+            ]
+          });
+        }
+      });
+    </script>
 </body>
 </html>

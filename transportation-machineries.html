@@ -317,7 +317,22 @@
         </div>
     </div>
 
-    <script src="js/script.js"></script>
-    <script src="js/transportation.js"></script>
+    <script src="js/script.js" defer></script>
+    <script src="js/transportation.js" defer></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        if (typeof publishEquipmentStructuredData === 'function') {
+          publishEquipmentStructuredData('transportation', {
+            collectionName: 'Sanaatchi Transportation Machinery Library',
+            collectionDescription: 'Heavy trucks, cranes and logistics equipment supporting national infrastructure and construction delivery.',
+            pageUrl: '/transportation-machineries.html',
+            breadcrumbs: [
+              { name: 'Home', url: '/' },
+              { name: 'Transportation Machinery', url: '/transportation-machineries.html' }
+            ]
+          });
+        }
+      });
+    </script>
 </body>
 </html>

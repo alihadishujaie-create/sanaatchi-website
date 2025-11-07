@@ -307,7 +307,22 @@
         </div>
     </div>
 
-    <script src="js/script.js"></script>
-    <script src="js/machinery-parts.js"></script>
+    <script src="js/script.js" defer></script>
+    <script src="js/machinery-parts.js" defer></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        if (typeof publishEquipmentStructuredData === 'function') {
+          publishEquipmentStructuredData('machinery-parts', {
+            collectionName: 'Sanaatchi Machinery Parts Catalog',
+            collectionDescription: 'OEM and aftermarket parts kits, bearings and maintenance components curated for Sanaatchi industrial clients.',
+            pageUrl: '/machinery-parts.html',
+            breadcrumbs: [
+              { name: 'Home', url: '/' },
+              { name: 'Machinery Parts', url: '/machinery-parts.html' }
+            ]
+          });
+        }
+      });
+    </script>
 </body>
 </html>

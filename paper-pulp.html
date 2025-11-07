@@ -307,7 +307,22 @@
         </div>
     </div>
 
-    <script src="js/script.js"></script>
-    <script src="js/paper-pulp.js"></script>
+    <script src="js/script.js" defer></script>
+    <script src="js/paper-pulp.js" defer></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        if (typeof publishEquipmentStructuredData === 'function') {
+          publishEquipmentStructuredData('paper-pulp', {
+            collectionName: 'Sanaatchi Paper & Pulp Equipment Library',
+            collectionDescription: 'Fiber preparation, pulping and tissue converting machinery enabling Afghan paper manufacturing ventures.',
+            pageUrl: '/paper-pulp.html',
+            breadcrumbs: [
+              { name: 'Home', url: '/' },
+              { name: 'Paper & Pulp Lines', url: '/paper-pulp.html' }
+            ]
+          });
+        }
+      });
+    </script>
 </body>
 </html>
