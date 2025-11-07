@@ -5833,8 +5833,8 @@ function closeModal() {
 function showContactModal() {
     const modal = document.getElementById('contactModal');
     const modalContent = document.getElementById('contactModalContent');
-    
-    const title = currentLanguage === 'fa' ? 'درخواست مشاوره رایگان' : 
+
+    const title = currentLanguage === 'fa' ? 'درخواست مشاوره رایگان' :
                  currentLanguage === 'ps' ? 'رایگان مشوره غوښتنه' : 'Free Consultation Request';
     const nameLabel = currentLanguage === 'fa' ? 'نام و نام خانوادگی' : 
                      currentLanguage === 'ps' ? 'نوم او تخلص' : 'Full Name';
@@ -5872,6 +5872,9 @@ function showContactModal() {
     `;
     modal.style.display = 'block';
     modal.setAttribute('aria-hidden', 'false');
+
+    const contactForm = modalContent.querySelector('#contactForm');
+    attachConsultationFormHandler(contactForm);
 
 }
 
@@ -6167,6 +6170,100 @@ function closeEquipmentModal() {
     modal.setAttribute('aria-hidden', 'true');
 }
 
+function attachConsultationFormHandler(form) {
+    if (!form || form.dataset.bound === 'true') {
+        return;
+    }
+
+    form.dataset.bound = 'true';
+
+    form.addEventListener('submit', async function(event) {
+        event.preventDefault();
+
+        const submitButton = form.querySelector('[type="submit"]');
+        if (submitButton) {
+            submitButton.disabled = true;
+        }
+
+        try {
+            const response = await fetch(form.action, {
+                method: 'POST',
+                body: new FormData(form),
+                credentials: 'same-origin'
+            });
+
+            const responseText = (await response.text()).trim();
+
+            if (response.ok) {
+                alert(responseText || 'Thank you, your request has been sent.');
+                form.reset();
+                closeContactModal();
+            } else {
+                const fallbackMessage = 'Sorry, there was a problem sending your request.';
+                const githubNotice = response.status === 405
+                    ? ' (If you are previewing the site on GitHub Pages, PHP submissions are disabled and will return this error.)'
+                    : '';
+                alert((responseText || fallbackMessage) + githubNotice);
+            }
+        } catch (error) {
+            alert('Unable to send your request due to a network error. Please try again.');
+        } finally {
+            if (submitButton) {
+                submitButton.disabled = false;
+            }
+        }
+    });
+}
+
+function attachNewsletterFormHandler(form) {
+    if (!form || form.dataset.bound === 'true') {
+        return;
+    }
+
+    form.dataset.bound = 'true';
+
+    form.addEventListener('submit', async function(event) {
+        event.preventDefault();
+
+        const submitButton = form.querySelector('[type="submit"]');
+        if (submitButton) {
+            submitButton.disabled = true;
+        }
+
+        try {
+            const response = await fetch(form.action, {
+                method: 'POST',
+                body: new FormData(form),
+                credentials: 'same-origin'
+            });
+
+            const responseText = (await response.text()).trim();
+
+            if (response.ok) {
+                alert(responseText || 'Thank you for subscribing!');
+                form.reset();
+            } else {
+                const fallbackMessage = 'Subscription failed. Please try again.';
+                const githubNotice = response.status === 405
+                    ? ' (If you are previewing the site on GitHub Pages, PHP submissions are disabled and will return this error.)'
+                    : '';
+                alert((responseText || fallbackMessage) + githubNotice);
+            }
+        } catch (error) {
+            alert('Subscription failed because of a network error. Please try again later.');
+        } finally {
+            if (submitButton) {
+                submitButton.disabled = false;
+            }
+        }
+    });
+}
+
+function initializeNewsletterForms() {
+    const newsletterForms = document.querySelectorAll('form.newsletter-form');
+    newsletterForms.forEach(attachNewsletterFormHandler);
+}
+
 // Initialize page
 document.addEventListener('DOMContentLoaded', function() {
     // Ensure category detail pages stay off the primary navigation
@@ -6196,4 +6293,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+
+    initializeNewsletterForms();
 });
