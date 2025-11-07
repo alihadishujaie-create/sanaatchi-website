@@ -642,7 +642,6 @@
         setHero(lang);
         renderHighlights(lang);
         renderCategories(lang);
-        renderInventory(lang);
         renderAssurance(lang);
         renderProcess(lang);
     }
