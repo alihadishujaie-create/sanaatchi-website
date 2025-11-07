@@ -220,6 +220,19 @@ const categories = {
             ps: 'د متالورژي او فلزکاري صنعتونو لپاره پرمختللي ماشینونه او تجهیزات. له ذوب څخه تر فلزاتو بڼه ورکولو پورې، د لوړ دقت او کیفیت سره.'
         }
     },
+    'metallurgy-coating': {
+        icon: '🔩',
+        title: {
+            fa: 'متالورژی و کوتینگ صنعتی',
+            en: 'Metallurgy & Coating Systems',
+            ps: 'صنعتي متالورژي او پوښښ سیستمونه'
+        },
+        description: {
+            fa: 'کوره‌های ذوب، خطوط نورد، گالوانیزه و رنگ صنعتی با طراحی مهندسی و نصب کامل.',
+            en: 'Melting furnaces, rolling mills, galvanizing and industrial coating lines with full engineering and installation.',
+            ps: 'د ذوب کوره ګانې، رولینګ ملونه، ګالوانایز او صنعتي پوښښ کرښې د بشپړ انجینري او نصب سره.'
+        }
+    },
     'construction-materials': {
         icon: '🧱',
         title: {
@@ -231,6 +244,32 @@ const categories = {
             fa: 'تجهیزات تولید مصالح ساختمانی برای پروژه‌های عمرانی. از تولید بلوک تا تجهیزات بتن‌ریزی، با بهینه‌سازی مصرف انرژی.',
             en: 'Construction materials production equipment for construction projects. From block production to concrete equipment, with energy consumption optimization.',
             ps: 'د ساختماني پروژو لپاره د ساختماني موادو تولید تجهیزات. له بلوک تولید څخه تر بتن تجهیزاتو پورې، د انرژي مصرف بهینه کولو سره.'
+        }
+    },
+    'electronics-energy-systems': {
+        icon: '⚡',
+        title: {
+            fa: 'الکترونیک و سیستم‌های انرژی',
+            en: 'Electronics & Energy Systems',
+            ps: 'برېښنایي او د انرژۍ سیستمونه'
+        },
+        description: {
+            fa: 'راهکارهای مونتاژ PCB، تست، لیزر صنعتی، انرژی خورشیدی و بادی و شبکه برای کارخانه‌های افغانستان.',
+            en: 'PCB assembly, testing, industrial laser, solar & wind energy and networking solutions for Afghan factories.',
+            ps: 'د PCB اسمبلۍ، ټېسټ، صنعتي لېزر، لمریز او د باد انرژي او د شبکې حلونه د افغانستان فابریکو لپاره.'
+        }
+    },
+    'plastic-industry': {
+        icon: '🧴',
+        title: {
+            fa: 'صنعت پلاستیک و بازیافت',
+            en: 'Plastic Industry & Recycling',
+            ps: 'د پلاستیک صنعت او ریسایکل'
+        },
+        description: {
+            fa: 'خطوط اکسترودر، تزریق و بازیافت پلاستیک با طراحی قالب، اتوماسیون و خدمات پس از فروش کامل.',
+            en: 'Extrusion, injection and recycling lines with tooling design, automation and full after-sales support.',
+            ps: 'د اکسترودر، انجکشن او د پلاستیک ریسایکل لینونه د قالب ډیزاین، اتومات او بشپړ پلور وروسته ملاتړ سره.'
         }
     },
     'tires': {
@@ -2205,11 +2244,34 @@ const categoryKeywords = {
         'د میوو او سبزیو د پروسس لین',
         'Edible Oil Production Line',
         'خط تولید روغن خوراکی',
-        'د خوراکي غوړ د تولید لین'
+        'د خوراکي غوړ د تولید لین',
+        'Fiberglass Wool Production Lines',
+        'خطوط تولید پشم شیشه',
+        'د فایبر ګلاس وړۍ د تولید لینونه',
+        'PET Bottle Washing System',
+        'شستشوی بطری PET',
+        'د PET بوتل د مینځلو سیستم',
+        'Needle Punching Line',
+        'ماشین نیدل پانچ',
+        'د نیدل پانچ لاین'
     ],
     'printing-machines': ['دستگاه های چاپ', 'Printing Machines', 'چاپ', 'printing', 'چاپ ماشینونه', 'Printing Machines'],
     'sports-equipment': ['تجهیزات ورزشی', 'Sports Equipment', 'ورزشی', 'sports', 'ورزشي تجهیزات', 'Sports Equipment'],
     'metallurgy': ['متالورژی و فلزکاری', 'Metallurgy & Metalworking', 'متالورژی', 'metallurgy', 'فلزکاری', 'metalworking', 'د فلزاتو علم', 'metallurgy', 'فلزکاري', 'metalworking'],
+    'metallurgy-coating': [
+        'متالورژی و کوتینگ صنعتی',
+        'Metallurgy & Coating Systems',
+        'خط گالوانیزه',
+        'galvanizing line',
+        'پوشش پودری',
+        'powder coating',
+        'رنگ پاشی صنعتی',
+        'industrial paint booth',
+        'تیمار سطح',
+        'surface treatment',
+        'metal coating',
+        'coating equipment'
+    ],
     'construction-materials': [
         'ماشین آلات مصالح ساخت',
         'Construction Materials Machinery',
@@ -2242,6 +2304,27 @@ const categoryKeywords = {
         'ترانسپورت افغانستان',
         'Afghanistan Transport'
     ],
+    'electronics-energy-systems': [
+        'الکترونیک و سیستم‌های انرژی',
+        'Electronics & Energy Systems',
+        'سیستم‌های انرژی',
+        'electronics',
+        'energy systems',
+        'renewable energy',
+        'solar power',
+        'wind turbine',
+        'industrial laser',
+        'networking equipment',
+        'pcb assembly',
+        'مونتاژ PCB',
+        'لیزر صنعتی',
+        'انرژی خورشیدی',
+        'توربین بادی',
+        'تجهیزات شبکه',
+        'د برېښنا او انرژۍ سیستمونه',
+        'لمریزه انرژي',
+        'د باد توربین'
+    ],
     'tires': [
         'تایرهای صنعتی',
         'Industrial Tyres',
@@ -2264,6 +2347,7 @@ const categoryKeywords = {
         'Sanaatchi Tires'
     ],
     'plastic-processing': ['دستگاه های فرآوری پلاستیک', 'Plastic Processing Machines', 'پلاستیک', 'plastic', 'د پلاستیک پروسس ماشینونه', 'Plastic Processing Machines'],
+    'plastic-industry': ['صنعت پلاستیک', 'Plastic Industry', 'اکسترودر پلاستیک', 'plastic extrusion', 'تزریق پلاستیک', 'plastic injection', 'بازیافت پلاستیک', 'plastic recycling'],
     'paint-coating': ['ماشین آلات رنگ و کوتینگ', 'Paint & Coating Machinery', 'رنگ', 'paint', 'کوتینگ', 'coating', 'د رنګ او پوښښت ماشینونه', 'Paint & Coating Machinery'],
     'foam-sponge': ['ماشین آلات لوم و اسفنج', 'Foam & Sponge Machinery', 'اسفنج', 'foam', 'لوم', 'sponge', 'د فوم او اسفنج ماشینونه', 'Foam & Sponge Machinery'],
     'tobacco': ['ماشین آلات تناکو و سیگار', 'Tobacco & Cigarette Machinery', 'تناکو', 'tobacco', 'سیگار', 'cigarette', 'د توتون او سیګر ماشینونه', 'Tobacco & Cigarette Machinery'],
@@ -2284,7 +2368,22 @@ const categoryKeywords = {
     'trucks-lorries': ['کامیون و لاری', 'Trucks & Lorries', 'کامیون', 'truck', 'لاری', 'lorry', 'لارۍ', 'trucks'],
     'generators': ['ژنراتور دست دوم', 'Generators', 'ژنراتور', 'generator', 'برق اضطراری', 'backup power', 'جنراتورونه', 'Generators'],
     'tanks': ['مخازن', 'Tanks', 'مخزن', 'tank', 'تنکونه', 'Tanks'],
-    'packaging': ['بسته بندی', 'Packaging', 'بسته', 'package', 'بسته بندي', 'Packaging'],
+    'packaging': [
+        'بسته بندی',
+        'Packaging',
+        'بسته',
+        'package',
+        'بسته بندي',
+        'Packaging',
+        'پردازش و بسته‌بندی تنباکو',
+        'Tobacco Processing & Packaging',
+        'تنباکو',
+        'tobacco',
+        'سیگار',
+        'cigarette',
+        'پاکت تنباکو',
+        'tobacco pouch'
+    ],
     'chemical-pharma': ['ماشین آلات شیمیایی و دارویی', 'Chemical & Pharmaceutical Machinery', 'شیمیایی', 'chemical', 'دارویی', 'pharmaceutical', 'د کیمیاوي او درملو ماشینونه', 'Chemical & Pharmaceutical Machinery'],
     'machinery-parts': [
         'پرزه‌جات ماشین‌آلات', 'Machinery Spare Parts', 'پرزه‌جات', 'spare parts', 'د ماشینونو پرزې', 'Machinery Spare Parts',
@@ -2305,6 +2404,7 @@ const categoryKeywords = {
         'باتری صنعتی', 'Industrial Batteries', 'صنعتي بیټرۍ',
         'تسمه انتقال نیرو', 'Power Transmission Belt', 'د ځواک لېږد تسمه'
     ],
+
     'paper-pulp': ['ماشین آلات کاغذ و سلولوز', 'Paper & Pulp Machinery', 'کاغذ', 'paper', 'د کاغذ او پالپ ماشینونه', 'Paper & Pulp Machinery', 'خطوط پالپ و کاغذ', 'Pulp & Paper Lines', 'پالپ', 'pulp', 'کاغذسازی', 'paper mill', 'د پالپ او کاغذ کرښې', 'Paper & Pulp'],
     'electronic-machinery': ['ماشین آلات الکترونیکی', 'Electronic Machinery', 'الکترونیک', 'electronic', 'د الکترونیک ماشینونه', 'Electronic Machinery'],
     'telecom-parts': ['قطعات و لوازم اینترنتی و مخابراتی', 'Internet & Telecommunication Parts', 'مخابراتی', 'telecom', 'اینترنت', 'internet', 'د انترنت او مخابراتي برخې', 'Internet & Telecommunication Parts'],
@@ -3102,6 +3202,248 @@ const equipmentData = {
             pdfUrl: 'pdfs/pumps-compressors/pump-parts/pump-valve.pdf'
         }
     ],
+    'metallurgy-coating': [
+        {
+            category: 'iron-melting',
+            name: { fa: 'کوره القایی ذوب فولاد', en: 'Induction Furnace for Steel Melting', ps: 'د فولادو د ذوب انډکشن کوره' },
+            description: {
+                fa: 'کوره القایی با بوته نسوز، مبدل توان IGBT و سیستم همزن الکترومغناطیسی برای مذاب یکنواخت.',
+                en: 'Induction furnace with refractory crucible, IGBT power converter and electromagnetic stirring for uniform melts.',
+                ps: 'انډکشن کوره د نسوز بوټي، د IGBT ځواک کنورټر او برېښنایي ګډوډونکي سره د یکنواخت مذاب لپاره.'
+            },
+            pdfUrl: 'pdfs/metallurgy-coating/metallurgy/iron-melting/induction-furnace.pdf'
+        },
+        {
+            category: 'iron-melting',
+            name: { fa: 'کوره قوس الکتریکی فولادسازی', en: 'Electric Arc Furnace Steelmaking', ps: 'د فولادو جوړولو برقي قوسي کوره' },
+            description: {
+                fa: 'کوره قوس با الکترود گرافیتی، سیستم تخلیه پاتیل و غبارگیر برای تولید فولاد آلیاژی.',
+                en: 'Arc furnace with graphite electrodes, ladle tapping system and fume extraction for alloy steel production.',
+                ps: 'قوسي کوره د ګرافایټ الکترودونو، د پاتیلو تشولو سیستم او د لوګي ایستلو سره د الیاژ فولاد تولید لپاره.'
+            },
+            pdfUrl: 'pdfs/metallurgy-coating/metallurgy/iron-melting/arc-furnace.pdf'
+        },
+        {
+            category: 'iron-melting',
+            name: { fa: 'ماشین ریخته‌گری پیوسته', en: 'Continuous Casting Machine', ps: 'پرله پسې اچولو ماشین' },
+            description: {
+                fa: 'ماشین ریخته‌گری با قالب مسی آبگرد، سیستم برش و کنترل سطح مذاب برای شمش یکنواخت.',
+                en: 'Continuous caster with water-cooled copper mould, cut-off system and melt level control for uniform billets.',
+                ps: 'پرله پسې اچولو ماشین د اوبو یخ شوي مسو قالب، د پرې کولو سیستم او د مذاب د سطح کنټرول سره د یکنواخت بلیتونو لپاره.'
+            },
+            pdfUrl: 'pdfs/metallurgy-coating/metallurgy/iron-melting/casting-machine.pdf'
+        },
+        {
+            category: 'rolling-mill',
+            name: { fa: 'خط نورد گرم ورق', en: 'Hot Rolling Mill Line', ps: 'د ګرم رولینګ مل لاین' },
+            description: {
+                fa: 'قفسه‌های نورد، کوره پیشگرم و سیستم خنک‌کاری برای تولید ورق گرم با کنترل ضخامت.',
+                en: 'Rolling stands, reheating furnace and cooling beds to produce hot rolled sheet with thickness control.',
+                ps: 'د رولینګ سټېنډونه، د بیا تودولو کوره او د یخولو بسترونه د ضخامت کنټرول سره ګرم شیټ تولیدوي.'
+            },
+            pdfUrl: 'pdfs/metallurgy-coating/metallurgy/rolling-mill/hot-rolling.pdf'
+        },
+        {
+            category: 'rolling-mill',
+            name: { fa: 'خط نورد سرد دقیق', en: 'Cold Rolling Mill Stand', ps: 'د دقیق یخ رولینګ مل' },
+            description: {
+                fa: 'استند نورد چهار غلطکه با تاند و سیستم روغن‌کاری برای رسیدن به دقت سطح و سختی مورد نظر.',
+                en: 'Four-high stand with tension control and lubrication to achieve target gauge and surface finish.',
+                ps: 'څلور رول سټېنډ د تناو کنټرول او غوړولو سره د ټاکلې ضخامت او سطح کیفیت لپاره.'
+            },
+            pdfUrl: 'pdfs/metallurgy-coating/metallurgy/rolling-mill/cold-rolling.pdf'
+        },
+        {
+            category: 'rolling-mill',
+            name: { fa: 'ماشین سنگ‌زنی غلتک', en: 'Roll Grinding Machine', ps: 'د رول ګراینډنګ ماشین' },
+            description: {
+                fa: 'ماشین سنگ‌زنی CNC با بالانس دینامیکی و سیستم اندازه‌گیری آنلاین برای احیای غلتک‌ها.',
+                en: 'CNC roll grinder with dynamic balancing and in-process gauging to refurbish mill rolls.',
+                ps: 'د CNC رول ګراینډر د دینامیک بالانس او د پروسې پر مهال اندازه کولو سره د مل رولونو بیا رغونه کوي.'
+            },
+            pdfUrl: 'pdfs/metallurgy-coating/metallurgy/rolling-mill/roll-grinding.pdf'
+        },
+        {
+            category: 'steel-structure',
+            name: { fa: 'خط جوش تیر و ستون H', en: 'H-Beam Welding Line', ps: 'د H بیم ویلډنګ لاین' },
+            description: {
+                fa: 'سیستم جوش اتومات تیر با زیرپودری، میز تنظیم و صافکن برای سازه‌های سنگین.',
+                en: 'Automatic submerged arc beam welding with alignment tables and straighteners for heavy structures.',
+                ps: 'اتومات د سبمرجد قوس بیم ویلډنګ د الاین میزونو او ستریتنرونو سره د درنو جوړښتونو لپاره.'
+            },
+            pdfUrl: 'pdfs/metallurgy-coating/metallurgy/steel-structure/beam-welding.pdf'
+        },
+        {
+            category: 'steel-structure',
+            name: { fa: 'دستگاه برش CNC سازه', en: 'CNC Structure Cutting Machine', ps: 'د جوړښت CNC پرې کولو ماشین' },
+            description: {
+                fa: 'ماشین برش گانتری با مشعل پلاسما/اکسی و نرم‌افزار نِست برای برش دقیق قطعات فولادی.',
+                en: 'Gantry CNC cutting with plasma/oxy torches and nesting software for precise steel components.',
+                ps: 'د ګینټري CNC پرې کولو ماشین د پلازما/اکسي مشعلونو او نېسټینګ سافټویر سره د دقیق فولادي پرزو لپاره.'
+            },
+            pdfUrl: 'pdfs/metallurgy-coating/metallurgy/steel-structure/structure-cutting.pdf'
+        },
+        {
+            category: 'steel-structure',
+            name: { fa: 'ایستگاه مونتاژ و رگلاژ سازه', en: 'Steel Structure Assembly Station', ps: 'د فولادي جوړښت اسمبل سټېشن' },
+            description: {
+                fa: 'ایستگاه مونتاژ با جرثقیل سقفی، گیره هیدرولیک و سیستم اندازه‌گیری لیزری برای نصب سریع.',
+                en: 'Assembly bay with overhead cranes, hydraulic clamps and laser measurement for rapid erection.',
+                ps: 'اسمبل خونه د اوورهد کرینونو، هایدرولیک کلیمپونو او لیزري اندازه کولو سره د چټک نصب لپاره.'
+            },
+            pdfUrl: 'pdfs/metallurgy-coating/metallurgy/steel-structure/structure-assembly.pdf'
+        },
+        {
+            category: 'metal-coating',
+            name: { fa: 'خط گالوانیزه گرم', en: 'Hot-Dip Galvanizing Line', ps: 'د ګرم ګالوانایز لاین' },
+            description: {
+                fa: 'خط گالوانیزه با وان روی، پیش‌درمانی شیمیایی و سیستم کنترل دما برای پوشش ضدخوردگی.',
+                en: 'Galvanizing line with zinc kettle, chemical pretreatment and temperature control for corrosion protection.',
+                ps: 'د زنک حوض، کیمیاوي مخکې درملنې او د تودوخې کنټرول سره ګالوانایز لاین د زنګ پر وړاندې ساتنې لپاره.'
+            },
+            pdfUrl: 'pdfs/metallurgy-coating/metallurgy/metal-coating/galvanizing.pdf'
+        },
+        {
+            category: 'metal-coating',
+            name: { fa: 'سیستم پوشش پودری فلزی', en: 'Metal Powder Coating System', ps: 'د فلزي پوډر پوښښ سیستم' },
+            description: {
+                fa: 'کابین پاشش، بازیافت پودر و کوره پخت برای پوشش قطعات فلزی با دوام بالا.',
+                en: 'Powder spray booth, recovery cyclones and curing oven for durable metal component coating.',
+                ps: 'د پوډر شیندلو کابین، د بېرته راټولولو سایکلونونه او د پخېدو تنور د فلزي پرزو د دوامدار پوښښ لپاره.'
+            },
+            pdfUrl: 'pdfs/metallurgy-coating/metallurgy/metal-coating/powder-coating.pdf'
+        },
+        {
+            category: 'metal-coating',
+            name: { fa: 'خط آبکاری الکتریکی', en: 'Electroplating Line', ps: 'د الکترپلېټینګ لاین' },
+            description: {
+                fa: 'وان‌های آبکاری، رکتیفایر و سیستم فیلتراسیون برای پوشش نیکل/کروم با کنترل ضخامت.',
+                en: 'Electroplating tanks, rectifier and filtration system to deposit nickel/chrome with thickness control.',
+                ps: 'د الکترپلېټینګ ټانکونه، ریکتیفایر او د فلټر سیستم د نیکل/کروم د پوښښ د ضخامت کنټرول سره.'
+            },
+            pdfUrl: 'pdfs/metallurgy-coating/metallurgy/metal-coating/electroplating.pdf'
+        },
+        {
+            category: 'powder-coating',
+            name: { fa: 'سیستم مخلوط پودر رنگ', en: 'Powder Coating Mix System', ps: 'د رنګ پوډر مکس سیستم' },
+            description: {
+                fa: 'میکسر دوزینگ، غربال و ذخیره سیلو برای آماده‌سازی یکنواخت پودر پوشش.',
+                en: 'Dosing mixers, sieving and silo storage to prepare uniform powder coating batches.',
+                ps: 'د دوزینګ میکسرونه، جالۍ او سیلو ذخیره د یکنواخت پوډر پوښښ د چمتو کولو لپاره.'
+            },
+            pdfUrl: 'pdfs/metallurgy-coating/paint-coating/powder-coating/powder-mixing.pdf'
+        },
+        {
+            category: 'powder-coating',
+            name: { fa: 'دستگاه پاشش پودر الکترواستاتیک', en: 'Electrostatic Powder Spraying Booth', ps: 'د الکترواستاتیک پوډر شیندلو کابین' },
+            description: {
+                fa: 'گان الکترواستاتیک، کابین پاشش و ربات انتقال برای پوشش یکنواخت قطعات.',
+                en: 'Electrostatic guns, spray booth and transfer conveyor for uniform powder deposition.',
+                ps: 'الکترواستاتیک ټوپکونه، د شیندلو کابین او د انتقال کنوېیر د یکنواخت پوډر پوښښ لپاره.'
+            },
+            pdfUrl: 'pdfs/metallurgy-coating/paint-coating/powder-coating/powder-spraying.pdf'
+        },
+        {
+            category: 'powder-coating',
+            name: { fa: 'کوره عمل‌آوری پودر', en: 'Powder Curing Oven', ps: 'د پوډر پخېدو تنور' },
+            description: {
+                fa: 'کوره هوای گرم با کنترل PID، گردش فن و ثبت منحنی پخت برای چسبندگی پایدار.',
+                en: 'Hot-air oven with PID control, recirculation fans and cure logging for consistent adhesion.',
+                ps: 'د ګرمې هوا تنور د PID کنټرول، د هوا گردش مینه وال او د پخېدو ثبتولو سره د ثابت چسپېدو لپاره.'
+            },
+            pdfUrl: 'pdfs/metallurgy-coating/paint-coating/powder-coating/powder-curing.pdf'
+        },
+        {
+            category: 'spray-painting',
+            name: { fa: 'کابین رنگ پاشی صنعتی', en: 'Industrial Spray Paint Booth', ps: 'صنعتي د رنګ شیندلو کابین' },
+            description: {
+                fa: 'کابین با فیلتر چندمرحله، چراغ ضدانفجار و سیستم تهویه برای رنگ‌آمیزی تمیز.',
+                en: 'Spray booth with multi-stage filtration, explosion-proof lighting and ventilation for clean painting.',
+                ps: 'د څو پړاوه فلټر، د چاودنې ضد څراغونو او هوايي سیستم سره د رنګ شیندلو کابین د پاک کار لپاره.'
+            },
+            pdfUrl: 'pdfs/metallurgy-coating/paint-coating/spray-painting/spray-booth.pdf'
+        },
+        {
+            category: 'spray-painting',
+            name: { fa: 'گان رنگ پاش فشار بالا', en: 'High-Pressure Spray Gun Package', ps: 'د لوړ فشار رنګ ټوپک کټ' },
+            description: {
+                fa: 'گان ایرلس، پمپ فشار بالا و شیلنگ ضدحلال برای پوشش سطوح بزرگ.',
+                en: 'Airless gun, high-pressure pump and solvent-resistant hoses for coating large surfaces.',
+                ps: 'ایرلس ټوپک، د لوړ فشار پمپ او د محلول ضد نلونه د لویو سطحو د پوښښ لپاره.'
+            },
+            pdfUrl: 'pdfs/metallurgy-coating/paint-coating/spray-painting/spray-gun.pdf'
+        },
+        {
+            category: 'spray-painting',
+            name: { fa: 'خشک‌کن رنگ پاشی', en: 'Spray Paint Drying Tunnel', ps: 'د رنګ شیندلو وچوونکی تونل' },
+            description: {
+                fa: 'تونل خشک‌کن با جریان هوای گرم، رطوبت‌گیر و کنترل سرعت نوار نقاله.',
+                en: 'Drying tunnel with heated airflow, dehumidification and conveyor speed control.',
+                ps: 'د ګرمې هوا جریان، رطوبت ایستلو او د کنوېیر د سرعت کنټرول سره وچوونکی تونل.'
+            },
+            pdfUrl: 'pdfs/metallurgy-coating/paint-coating/spray-painting/spray-drying.pdf'
+        },
+        {
+            category: 'liquid-paint',
+            name: { fa: 'سیستم مخلوط رنگ مایع', en: 'Liquid Paint Mixing System', ps: 'د مایع رنګ مکس سیستم' },
+            description: {
+                fa: 'مخازن استیل، همزن ضدانفجار و اندازه‌گیری ویسکوزیته برای فرمولاسیون دقیق.',
+                en: 'Stainless tanks, explosion-proof agitators and viscosity measurement for precise formulations.',
+                ps: 'سټینلیس ټانکونه، د چاودنې ضد همزنونه او د واسکوزیتې اندازه کول د دقیق فورمول لپاره.'
+            },
+            pdfUrl: 'pdfs/metallurgy-coating/paint-coating/liquid-paint/paint-mixing.pdf'
+        },
+        {
+            category: 'liquid-paint',
+            name: { fa: 'دستگاه پرکن رنگ مایع', en: 'Liquid Paint Filling Machine', ps: 'د مایع رنګ ډکولو ماشین' },
+            description: {
+                fa: 'پرکن وزنی/حجمی با نازل ضدچکه و دربند برای قوطی و سطل رنگ.',
+                en: 'Weight/volume filler with anti-drip nozzles and capping for paint cans and pails.',
+                ps: 'د وزن/حجم ډکونکی د ضد څاڅکو نوزلونو او د سر بندولو سره د رنګ قوطیو لپاره.'
+            },
+            pdfUrl: 'pdfs/metallurgy-coating/paint-coating/liquid-paint/paint-filling.pdf'
+        },
+        {
+            category: 'liquid-paint',
+            name: { fa: 'خط لیبل‌زنی قوطی رنگ', en: 'Paint Can Labelling Line', ps: 'د رنګ قوطۍ لیبل لاین' },
+            description: {
+                fa: 'ماشین لیبل‌زن، جت‌پرینتر و سیستم بازرسی کد برای بسته‌بندی حرفه‌ای.',
+                en: 'Labelling machine with inkjet printer and code inspection for professional packaging.',
+                ps: 'د لیبل ماشین د انک جېټ چاپګر او د کوډ تفتیش سره د مسلکي بسته بندۍ لپاره.'
+            },
+            pdfUrl: 'pdfs/metallurgy-coating/paint-coating/liquid-paint/paint-labeling.pdf'
+        },
+        {
+            category: 'surface-treatment',
+            name: { fa: 'خط چربی‌زدایی صنعتی', en: 'Industrial Degreasing Line', ps: 'صنعتي د غوړ لرې کولو لاین' },
+            description: {
+                fa: 'حوض چربی‌زدایی، شست‌وشوی پرفشار و خشک‌کن هوایی برای آماده‌سازی سطح.',
+                en: 'Degreasing tanks, high-pressure washing and air dryers to prepare surfaces.',
+                ps: 'د غوړ لرې کولو ټانکونه، لوړ فشار مینځل او هوايي وچوونکي د سطح چمتو کولو لپاره.'
+            },
+            pdfUrl: 'pdfs/metallurgy-coating/paint-coating/surface-treatment/degreasing.pdf'
+        },
+        {
+            category: 'surface-treatment',
+            name: { fa: 'سیستم فسفاته چندمرحله‌ای', en: 'Multi-Stage Phosphating System', ps: 'د څو پړاو فاسفېټ کولو سیستم' },
+            description: {
+                fa: 'اسپری یا غوطه‌وری فسفاته با کنترل دما و PH برای افزایش چسبندگی پوشش.',
+                en: 'Spray or dip phosphating with temperature and pH control to boost coating adhesion.',
+                ps: 'د سپرې یا ډوبولو فاسفېټ کول د تودوخې او PH کنټرول سره د پوښ چسپېدو زیاتولو لپاره.'
+            },
+            pdfUrl: 'pdfs/metallurgy-coating/paint-coating/surface-treatment/phosphating.pdf'
+        },
+        {
+            category: 'surface-treatment',
+            name: { fa: 'دستگاه شات/سندبلاست', en: 'Sandblasting Machine', ps: 'د شګه پاشلو ماشین' },
+            description: {
+                fa: 'اتاق شات‌بلاست با توربین ساینده، سیستم بازیافت و فیلتراسیون گرد و غبار.',
+                en: 'Blast room with abrasive turbines, media recovery and dust filtration.',
+                ps: 'د بلاسټ خونه د سایندې توربینونو، د موادو بېرته راټولولو او دوړو فلټر کولو سره.'
+            },
+            pdfUrl: 'pdfs/metallurgy-coating/paint-coating/surface-treatment/sandblasting.pdf'
+        }
+    ],
     'paper-pulp': [
         {
             category: 'pulp-production',
@@ -3344,6 +3686,126 @@ const equipmentData = {
                 ps: 'په بشپړ ډول اتومات تسمه ماشین د پروګرام وړ کشش او تسمې لارښود سره.'
             },
             pdfUrl: 'pdfs/packaging/wrapping-packaging/strapping-machine.pdf'
+        },
+        {
+            category: 'printing-packaging',
+            name: { fa: 'ماشین چاپ فلکسو', en: 'Flexographic Printing Machine', ps: 'د فلکسو چاپ ماشین' },
+            description: {
+                fa: 'ماشین فلکسو رول به رول با رجیستر دقیق و خشک‌کن هوای گرم برای چاپ بسته‌بندی.',
+                en: 'Roll-to-roll flexo press with precise registration and hot-air dryers for packaging films.',
+                ps: 'رول په رول فلکسو پریس د دقیق رجسټر او د ګرمې هوا وچولو سره د بسته بندۍ فلمونو لپاره.'
+            },
+            pdfUrl: 'pdfs/plastic-processing/printing-packaging/flexo-printing.pdf'
+        },
+        {
+            category: 'printing-packaging',
+            name: { fa: 'خط پاکت‌سازی', en: 'Bag Making Line', ps: 'د کڅوړې جوړولو لاین' },
+            description: {
+                fa: 'از رول تا پاکت با ایستگاه‌های تا، دوخت و پانچ برای تولید پاکت‌های چندلایه.',
+                en: 'From roll to finished bag with folding, sealing and punching stations for multilayer bags.',
+                ps: 'له رول څخه تر بشپړې کڅوړې پورې د تا کولو، سیل کولو او پنچ کولو سټېشنونو سره.'
+            },
+            pdfUrl: 'pdfs/plastic-processing/printing-packaging/bag-making.pdf'
+        },
+        {
+            category: 'printing-packaging',
+            name: { fa: 'خط درزگیری و برش', en: 'Sealing & Cutting Line', ps: 'د سیل کولو او پرې کولو لاین' },
+            description: {
+                fa: 'سیستم برش و درزگیری با کنترل سروو برای تولید رول‌های بسته‌بندی باکیفیت.',
+                en: 'Servo-controlled sealing and cutting modules delivering precise packaging rolls.',
+                ps: 'د سرو کنټرول لرونکي سیل او پرې کولو ماډلونه چې دقیق بسته بندۍ رولونه جوړوي.'
+            },
+            pdfUrl: 'pdfs/plastic-processing/printing-packaging/sealing-cutting.pdf'
+        },
+        {
+            category: 'tobacco-processing',
+            name: { fa: 'خط تولید سیگار', en: 'Cigarette Making Line', ps: 'د سیګار جوړولو لاین' },
+            description: {
+                fa: 'تغذیه توتون، رول‌سازی، چسب‌زنی و برش اتوماتیک برای تولید سیگار باکیفیت.',
+                en: 'Automatic tobacco feeding, rod forming, gluing and cutting for consistent cigarettes.',
+                ps: 'اتومات توتون تغذیه، لاستي جوړونه، ګلو لګول او پرې کول د ثابتو سیګارتونو لپاره.'
+            },
+            pdfUrl: 'pdfs/packaging/tobacco-processing/cigarette-making.pdf'
+        },
+        {
+            category: 'tobacco-processing',
+            name: { fa: 'ماشین بسته‌بندی سیگار', en: 'Cigarette Packing Machine', ps: 'د سیګار بسته بندۍ ماشین' },
+            description: {
+                fa: 'چیدمان، لفاف و سلفون‌پیچ اتوماتیک با کنترل وزن و چاپ تاریخ تولید بسته.',
+                en: 'Automatic carton loading, wrapping and cellophane with weight and date coding control.',
+                ps: 'اتومات کڅوړه اچول، لفاف او سیلوفان د وزن او نیټې کوډ کنټرول سره.'
+            },
+            pdfUrl: 'pdfs/packaging/tobacco-processing/cigarette-packing.pdf'
+        },
+        {
+            category: 'tobacco-processing',
+            name: { fa: 'واحد تولید فیلتر سیگار', en: 'Cigarette Filter Production Unit', ps: 'د سیګار فلټر تولید واحد' },
+            description: {
+                fa: 'فرم‌دهی استیک، برش طولی و الصاق کاغذ برای ساخت فیلترهای فیبر سلولزی.',
+                en: 'Tow opening, rod forming and paper tipping to produce cellulose fibre cigarette filters.',
+                ps: 'د فایبر پرانیستلو، لاستي جوړولو او د کاغذ لګولو پروسې د سلولوز فلټرونو لپاره.'
+            },
+            pdfUrl: 'pdfs/packaging/tobacco-processing/cigarette-filter.pdf'
+        },
+        {
+            category: 'tobacco-processing',
+            name: { fa: 'پرکن پاکت تنباکو', en: 'Tobacco Pouch Filling Machine', ps: 'د تنباکو د کڅوړې ډکولو ماشین' },
+            description: {
+                fa: 'توزین دقیق، ویبره و پرکن چنددهانه برای بسته‌بندی پاکت‌های تنباکو و نیکوتین.',
+                en: 'Multi-head weighers with vibration feed fill tobacco and nicotine pouches accurately.',
+                ps: 'چند سری وزن سنج د ویبرېشن فیډ سره تنباکو او نیکوتین کڅوړې په دقیقه توګه ډکوي.'
+            },
+            pdfUrl: 'pdfs/packaging/tobacco-processing/pouch-filling.pdf'
+        },
+        {
+            category: 'tobacco-processing',
+            name: { fa: 'دستگاه سیل پاکت تنباکو', en: 'Tobacco Pouch Sealing Machine', ps: 'د تنباکو د کڅوړې سیل کولو ماشین' },
+            description: {
+                fa: 'سیل حرارتی یا التراسونیک با کنترل فشار و سیستم کدزن برای بسته‌های سفارشی.',
+                en: 'Thermal or ultrasonic sealing with pressure control and coding for customised pouches.',
+                ps: 'حرارتي یا الټراسونیک سیل کول د فشار کنټرول او کوډینګ سره د ځانګړو کڅوړو لپاره.'
+            },
+            pdfUrl: 'pdfs/packaging/tobacco-processing/pouch-sealing.pdf'
+        },
+        {
+            category: 'tobacco-processing',
+            name: { fa: 'ماشین چاپ روی پاکت تنباکو', en: 'Tobacco Pouch Printing Machine', ps: 'د تنباکو د کڅوړې چاپ ماشین' },
+            description: {
+                fa: 'چاپ فلکسو/دیجیتال با رجیستر دقیق و خشک‌کن UV برای پاکت‌های فویل و کاغذی.',
+                en: 'Flexo or digital printers with tight register and UV drying for foil and paper pouches.',
+                ps: 'فلکسو یا ډیجیټل چاپګر د دقیق رجسټر او UV وچولو سره د فویل او کاغذي کڅوړو لپاره.'
+            },
+            pdfUrl: 'pdfs/packaging/tobacco-processing/pouch-printing.pdf'
+        },
+        {
+            category: 'tobacco-processing',
+            name: { fa: 'خشک‌کن برگ تنباکو', en: 'Tobacco Leaf Dryer', ps: 'د تنباکو د پاڼې وچوونکی' },
+            description: {
+                fa: 'خشک‌کن طبقه‌ای با کنترل دما و رطوبت برای تثبیت کیفیت برگ‌های تنباکو.',
+                en: 'Multi-tier dryer with temperature and humidity control stabilises tobacco leaf quality.',
+                ps: 'چند پوړیز وچوونکی د تودوخې او رطوبت کنټرول سره د تنباکو پاڼو کیفیت ثابتوي.'
+            },
+            pdfUrl: 'pdfs/packaging/tobacco-processing/tobacco-drying.pdf'
+        },
+        {
+            category: 'tobacco-processing',
+            name: { fa: 'خط برش تنباکو', en: 'Tobacco Cutting Line', ps: 'د تنباکو پرې کولو لاین' },
+            description: {
+                fa: 'خردکن و اسلایسر با تنظیم ضخامت و جداساز الیاف برای تهیه برش یکنواخت توتون.',
+                en: 'Shredders and slicers with adjustable cut width and fibre separation for uniform tobacco.',
+                ps: 'شریدر او سلایسر د قطع عرض د تنظیم او فایبر بېلولو سره د یوشان توتون لپاره.'
+            },
+            pdfUrl: 'pdfs/packaging/tobacco-processing/tobacco-cutting.pdf'
+        },
+        {
+            category: 'tobacco-processing',
+            name: { fa: 'واحد طعم‌دهی تنباکو', en: 'Tobacco Flavouring Unit', ps: 'د تنباکو خوند ورکولو واحد' },
+            description: {
+                fa: 'میکسر درام و اسپری دوزینگ با کنترل رطوبت برای افزودن اسانس و مواد افزودنی.',
+                en: 'Drum mixers with spray dosing and humidity control to apply flavours and casings.',
+                ps: 'د ډرم مکسرونه د سپرې ډوزینګ او د رطوبت کنټرول سره د خوند او کوټینګ لپاره.'
+            },
+            pdfUrl: 'pdfs/packaging/tobacco-processing/tobacco-flavoring.pdf'
         }
     ],
     'plastic-processing': [
@@ -3476,6 +3938,108 @@ const equipmentData = {
                 ps: 'د سرو کنټرول لرونکي سیل او پرې کولو ماډلونه چې دقیق بسته بندۍ رولونه جوړوي.'
             },
             pdfUrl: 'pdfs/plastic-processing/printing-packaging/sealing-cutting.pdf'
+        }
+    ],
+    'plastic-industry': [
+        {
+            category: 'extruder',
+            name: { fa: 'اکسترودر لوله پلاستیکی', en: 'Plastic Pipe Extruder', ps: 'د پلاستیک پایپ اکسترودر' },
+            description: {
+                fa: 'خط اکسترودر همراه با کالیبراتور، تانک خلأ و کشنده برای تولید لوله.',
+                en: 'Extrusion line with calibrator, vacuum tank and haul-off for pipe production.',
+                ps: 'د کالیبریټر، وکیوم ټانک او کشولو واحد سره اکسترودر د پایپ تولید لپاره.'
+            },
+            pdfUrl: 'pdfs/plastic-processing/extruder/pipe-extruder.pdf'
+        },
+        {
+            category: 'extruder',
+            name: { fa: 'اکسترودر فیلم پلاستیکی', en: 'Plastic Film Extruder', ps: 'د پلاستیک فلم اکسترودر' },
+            description: {
+                fa: 'اکسترودر دمشی یا تخت برای تولید رول فیلم بسته‌بندی با ضخامت یکنواخت.',
+                en: 'Blown or cast film extruder delivering consistent gauge packaging films.',
+                ps: 'د بلو یا کاسټ فلم اکسترودر چې همغږي ضخامت لرونکي بسته بندۍ فلمونه تولیدوي.'
+            },
+            pdfUrl: 'pdfs/plastic-processing/extruder/film-extruder.pdf'
+        },
+        {
+            category: 'extruder',
+            name: { fa: 'اکسترودر پروفایل پلاستیکی', en: 'Plastic Profile Extruder', ps: 'د پلاستیک پروفایل اکسترودر' },
+            description: {
+                fa: 'تولید پروفایل و قطعات فنی با قالب‌های قابل تعویض و کنترل دقیق دما.',
+                en: 'Profile extrusion with interchangeable dies and precise temperature zoning.',
+                ps: 'د بدلېدونکو قالبونو او دقیق تودوخې زونونو سره د پروفایل اکسترودر.'
+            },
+            pdfUrl: 'pdfs/plastic-processing/extruder/profile-extruder.pdf'
+        },
+        {
+            category: 'injection',
+            name: { fa: 'ماشین تزریق پلاستیک', en: 'Plastic Injection Moulding Machine', ps: 'د پلاستیک انجکشن مولډنګ ماشین' },
+            description: {
+                fa: 'ماشین تزریق با کنترل سروو و واحد گیره قوی برای قالب‌های چند حفره.',
+                en: 'Servo-controlled injection unit with high clamping force for multi-cavity moulds.',
+                ps: 'د سرو کنټرول لرونکی انجکشن یونټ د څو حفره لرونکو قالبونو لپاره د قوي کلمپینګ ځواک سره.'
+            },
+            pdfUrl: 'pdfs/plastic-processing/injection/injection-molding.pdf'
+        },
+        {
+            category: 'injection',
+            name: { fa: 'ماشین دمشی پلاستیک', en: 'Plastic Blow Moulding Machine', ps: 'د پلاستیک بلو مولډنګ ماشین' },
+            description: {
+                fa: 'سیستم دمشی برای تولید بطری، مخزن و قطعات توخالی با کنترل ضخامت دیواره.',
+                en: 'Blow moulding system for bottles, tanks and hollow parts with wall-thickness control.',
+                ps: 'د بوتلونو، ټانکونو او تشو پرزو لپاره بلو مولډنګ د دیوال ضخامت کنټرول سره.'
+            },
+            pdfUrl: 'pdfs/plastic-processing/injection/blow-molding.pdf'
+        },
+        {
+            category: 'injection',
+            name: { fa: 'قطعات مصرفی تزریق', en: 'Injection Moulding Spare Parts', ps: 'د انجکشن مولډنګ اضافي پرزې' },
+            description: {
+                fa: 'ست نازل، پیچ، بوش و حلقه‌های آب‌بندی برای نگهداری دوره‌ای ماشین تزریق.',
+                en: 'Nozzle, screw, bushing and seal kits that keep injection moulding machines running.',
+                ps: 'د نوزل، پیچ، بوش او سیل کټونه چې د انجکشن ماشینونه فعال ساتي.'
+            },
+            pdfUrl: 'pdfs/plastic-processing/injection/injection-parts.pdf'
+        },
+        {
+            category: 'recycling',
+            name: { fa: 'خط بازیافت پلاستیک', en: 'Plastic Recycling Line', ps: 'د پلاستیک ریسایکل لاین' },
+            description: {
+                fa: 'از تفکیک تا خشک‌کن سانتریفیوژ برای بازیافت ضایعات بسته‌بندی و تولید گرانول.',
+                en: 'Complete recycling line from sorting to centrifugal drying for pellet output.',
+                ps: 'بشپړ ریسایکل لاین له تفکیک څخه تر سنټرفیوژ وچولو پورې د پلېټ تولید لپاره.'
+            },
+            pdfUrl: 'pdfs/plastic-processing/recycling/plastic-recycling.pdf'
+        },
+        {
+            category: 'recycling',
+            name: { fa: 'شردر پلاستیک صنعتی', en: 'Industrial Plastic Shredder', ps: 'صنعتي پلاستیک شریدر' },
+            description: {
+                fa: 'شردر دو شافت با تیغه‌های آلیاژی و کنترل سرعت برای آماده‌سازی خوراک بازیافت.',
+                en: 'Twin-shaft shredder with alloy blades and variable speed for recycling feedstock.',
+                ps: 'دوه شافټ لرونکی شریدر د الیاژ تیغونو او د سرعت تنظیم سره د ریسایکل موادو لپاره.'
+            },
+            pdfUrl: 'pdfs/plastic-processing/recycling/shredder.pdf'
+        },
+        {
+            category: 'recycling',
+            name: { fa: 'خط شستشو و خشک‌کن پلاستیک', en: 'Plastic Washing & Drying Line', ps: 'د پلاستیک مینځلو او وچولو لاین' },
+            description: {
+                fa: 'حوض شستشو، اسکرو انتقال و خشک‌کن حرارتی برای کاهش آلودگی ضایعات.',
+                en: 'Washing tanks, screw conveyors and thermal dryers reduce contamination before extrusion.',
+                ps: 'د مینځلو حوضونه، سکرو انتقال او حرارتي وچوونکي د اکسترودر دمخه ککړتیا کموي.'
+            },
+            pdfUrl: 'pdfs/plastic-processing/recycling/washing-line.pdf'
+        },
+        {
+            category: 'recycling',
+            name: { fa: 'خط پلت‌سازی پلاستیک', en: 'Plastic Pelletizing Line', ps: 'د پلاستیک پلېټ جوړولو لاین' },
+            description: {
+                fa: 'گرانولایزر و کاتر با سیستم خنک‌کاری برای تبدیل ضایعات به گرانول باکیفیت.',
+                en: 'Granulator and cutter with cooling loop converting scrap into uniform pellets.',
+                ps: 'ګرانیولیټر او کټر د یخولو سیسټم سره د ضایعاتو څخه منظم پلېټونه جوړوي.'
+            },
+            pdfUrl: 'pdfs/plastic-processing/recycling/pelletizing-line.pdf'
         }
     ],
     'chemical-pharma': [
@@ -3650,6 +4214,720 @@ const equipmentData = {
                 ps: 'V، ټایمینګ او فلیټ تسمې د پیاوړي ربړ سره د موترو، نوار نقالو او تولیدي لینونو لپاره.'
             },
             pdfUrl: 'pdfs/machinery-parts/general-parts/belts.pdf'
+        }
+    ],
+    'electronics-energy-systems': [
+        {
+            category: 'electronic-machinery',
+            name: { fa: 'ماشین SMT', en: 'SMT Pick-and-Place Line', ps: 'SMT ماشین' },
+            description: {
+                fa: 'خط SMT با فیڈر هوشمند، چاپ خمیر قلع و کوره ریفلو برای تولید بردهای پرتیراژ.',
+                en: 'SMT line with smart feeders, solder paste printing and reflow oven for high-volume PCB production.',
+                ps: 'د SMT لاین د هوښیار فیډرونو، د سولډر پیسټ چاپ او ريفلو تنور سره د لوړې کچې PCB تولید لپاره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/electronic-machinery/pcb-assembly/smt-machine.pdf'
+        },
+        {
+            category: 'electronic-machinery',
+            name: { fa: 'ماشین لحیم‌کاری موجی', en: 'Wave Soldering Machine', ps: 'ویو سولډرینګ ماشین' },
+            description: {
+                fa: 'سیستم لحیم‌کاری موجی با کنترل دما، فلوکس و نوار نقاله پالتی برای مونتاژ بردهای THT.',
+                en: 'Wave soldering system with controlled temperature, fluxing and pallet conveyor for THT assemblies.',
+                ps: 'د موجي سولډر کولو سیستم د تودوخې، فلوکس او پالت نقالې کنټرول سره د THT اسمبلۍ لپاره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/electronic-machinery/pcb-assembly/wave-soldering.pdf'
+        },
+        {
+            category: 'electronic-machinery',
+            name: { fa: 'تستر مدار ICT', en: 'IC In-Circuit Tester', ps: 'د IC ازموینې سټېشن' },
+            description: {
+                fa: 'تستر ICT با فیکسچر چندنقطه، سنجش پیوستگی و گزارش خودکار برای کنترل کیفیت برد.',
+                en: 'ICT tester with multi-point fixtures, continuity measurement and automated reporting for board QA.',
+                ps: 'د ICT ټېسټ ماشین د څو نقطه فکچرونو، د تسلسل اندازه کولو او اتومات راپور ورکولو سره د بورډ کیفیت لپاره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/electronic-machinery/electronic-testing/ic-testing.pdf'
+        },
+        {
+            category: 'electronic-machinery',
+            name: { fa: 'ایستگاه تست عملکردی', en: 'Functional Test Bench', ps: 'فانکشنل ټېسټ بنچ' },
+            description: {
+                fa: 'ایستگاه تست عملکردی با رک ابزار، سناریوهای نرم‌افزاری و ثبت داده برای محصولات الکترونیکی.',
+                en: 'Functional test bench with instrument rack, software scenarios and data capture for electronic products.',
+                ps: 'د وظیفوي ټېسټ بنچ د وسایلو رېک، سافټویر سناریوګانو او د معلوماتو ثبت سره د الکترونیکي محصولاتو لپاره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/electronic-machinery/electronic-testing/functional-testing.pdf'
+        },
+        {
+            category: 'electronic-machinery',
+            name: { fa: 'خط مونتاژ وایر هارنس', en: 'Wire Harness Assembly Line', ps: 'د وایر هارنس اسمبلۍ لاین' },
+            description: {
+                fa: 'کاتینگ، لخت‌سازی، کرمپ و تست پیوستگی برای تولید دسته سیم خودرو و صنعت.',
+                en: 'Cutting, stripping, crimping and continuity testing for automotive and industrial wire harnesses.',
+                ps: 'د پرې کولو، پوست کولو، کرمپس کولو او د تسلسل ټېسټ د موټرو او صنعتي وایر هارنس لپاره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/electronic-machinery/cable-assembly/wire-harness.pdf'
+        },
+        {
+            category: 'electronic-machinery',
+            name: { fa: 'ایستگاه تست کابل', en: 'Cable Testing Station', ps: 'د کابل ټېسټ سټېشن' },
+            description: {
+                fa: 'ایستگاه تست ولتاژ بالا، مقاومت عایقی و نشتی جریان برای کابل و دسته سیم.',
+                en: 'High-voltage, insulation resistance and leakage current testing station for cables and harnesses.',
+                ps: 'د لوړ ولتاژ، د عایق مقاومت او د جریان د لیک ازموینې سټېشن د کیبله او هارنسونو لپاره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/electronic-machinery/cable-assembly/cable-testing.pdf'
+        },
+        {
+            category: 'telecom-parts',
+            name: { fa: 'خط مونتاژ آنتن', en: 'Antenna Assembly Line', ps: 'د انتن اسمبلۍ لاین' },
+            description: {
+                fa: 'مونتاژ رفلکتور، فیدر و مدولایر با گشتاور کنترل‌شده و تست VSWR برای آنتن‌های مخابراتی.',
+                en: 'Antenna line assembling reflectors, feeders and modulators with torque control and VSWR testing.',
+                ps: 'د انتن لاین چې رفلکټر، فیدر او ماډول جوړوي د تورک کنټرول او VSWR ټېسټ سره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/telecom-parts/antenna-production/antenna-assembly.pdf'
+        },
+        {
+            category: 'telecom-parts',
+            name: { fa: 'تست آنتن', en: 'Antenna Testing Chamber', ps: 'د انتن ازموینې خونه' },
+            description: {
+                fa: 'اتاق تست آنتن با محدوده فرکانسی، چرخش موتوری و تحلیل الگو برای تضمین عملکرد رادیویی.',
+                en: 'Antenna test chamber with frequency range, motorised rotation and pattern analysis for RF assurance.',
+                ps: 'د انتن د ټېسټ خونه د فریکونسۍ رینج، موتري څرخول او د بڼې تحلیل سره د RF ډاډ لپاره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/telecom-parts/antenna-production/antenna-testing.pdf'
+        },
+        {
+            category: 'telecom-parts',
+            name: { fa: 'پوشش‌دهی آنتن', en: 'Antenna Coating Line', ps: 'د انتن کوټینګ لاین' },
+            description: {
+                fa: 'فرآیند پوشش و آب‌بندی قطعات آنتن با کابین اسپری، خشک‌کن و کنترل ضخامت.',
+                en: 'Coating and sealing process with spray booth, curing oven and thickness monitoring for antenna parts.',
+                ps: 'د سپرې کیبن، وچوونکي تنور او د ضخامت څارنې سره د انتن پرزو کوټینګ او سیل کولو پروسه.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/telecom-parts/antenna-production/antenna-coating.pdf'
+        },
+        {
+            category: 'telecom-parts',
+            name: { fa: 'تولید کابل فیبر نوری', en: 'Fiber Optic Cable Line', ps: 'د فایبر نوري کیبل لاین' },
+            description: {
+                fa: 'تولید فیبر با کشش دقیق، روکش UV و تست OTDR برای شبکه‌های پرسرعت.',
+                en: 'Fiber production with precise drawing, UV coating and OTDR testing for high-speed networks.',
+                ps: 'د فایبر تولید د دقیق کشولو، UV کوټینګ او د OTDR ټېسټ سره د چټکو شبکو لپاره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/telecom-parts/network-cable/fiber-optic-cable.pdf'
+        },
+        {
+            category: 'telecom-parts',
+            name: { fa: 'تولید کابل کواکسیال', en: 'Coaxial Cable Extrusion Line', ps: 'د کوکسیا کابل تولید لاین' },
+            description: {
+                fa: 'اکسترودر، شیلد بافت و تست امپدانس برای کابل‌های RF و تلویزیونی.',
+                en: 'Extrusion, braided shielding and impedance testing for RF and broadcast coaxial cables.',
+                ps: 'اکسترودر، اوبدل شوی شیلډ او د امپیدانس ټېسټ د RF او خپرونو کواکسیال کیبله لپاره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/telecom-parts/network-cable/coaxial-cable.pdf'
+        },
+        {
+            category: 'telecom-parts',
+            name: { fa: 'مونتاژ کانکتور کابل', en: 'Cable Connector Assembly', ps: 'د کابل نښلونکي اسمبلۍ' },
+            description: {
+                fa: 'ماشین‌کاری، آبکاری و تست هدایت الکتریکی برای کانکتورهای صنعتی و مخابراتی.',
+                en: 'Machining, plating and electrical continuity testing for industrial and telecom connectors.',
+                ps: 'ماشین کاري، الکترولیت پوښښ او د برقي تسلسل ټېسټ د صنعتي او مخابراتي نښلونو لپاره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/telecom-parts/network-cable/cable-connector.pdf'
+        },
+        {
+            category: 'telecom-parts',
+            name: { fa: 'مونتاژ برج مخابراتی', en: 'Telecom Tower Assembly', ps: 'د مخابراتي برجه اسمبلۍ' },
+            description: {
+                fa: 'مونتاژ سکشن‌های فولادی، پیچ‌کاری و سیستم بالابری برای نصب برج‌های مخابراتی.',
+                en: 'Steel section assembly, bolting and lifting systems for telecom tower erection.',
+                ps: 'د فولادو سکشن اسمبلۍ، بولټ لګول او د پورته کولو سیستمونه د مخابراتي برجه درولو لپاره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/telecom-parts/telecom-tower/tower-assembly.pdf'
+        },
+        {
+            category: 'telecom-parts',
+            name: { fa: 'فونداسیون برج مخابراتی', en: 'Tower Foundation Works', ps: 'د برج بنسټ جوړول' },
+            description: {
+                fa: 'قالب‌بندی، آرماتور و بتن‌ریزی پایه‌های برج با آنالیز ژئوتکنیک و بولت آنکر.',
+                en: 'Formwork, rebar and concrete casting for tower bases with geotechnical analysis and anchor bolts.',
+                ps: 'د فارم ورک، اوسپنې میش او کانکریټ اچول د برج د بنسټ لپاره د جیوتخنیکي تحلیل او انکر بولټونو سره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/telecom-parts/telecom-tower/tower-foundation.pdf'
+        },
+        {
+            category: 'telecom-parts',
+            name: { fa: 'نگهداری برج مخابراتی', en: 'Telecom Tower Maintenance', ps: 'د مخابراتي برجه ساتنه' },
+            description: {
+                fa: 'بازرسی طناب‌کار، تعویض کابل، پوشش ضدزنگ و تست پایداری ساختار برج.',
+                en: 'Rope access inspections, cable replacement, anti-corrosion coating and structural stability checks.',
+                ps: 'د رسی له لارې معاینات، د کابل بدلول، د زنګ ضد کوټینګ او د جوړښت ثبات معاینات.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/telecom-parts/telecom-tower/tower-maintenance.pdf'
+        },
+        {
+            category: 'industrial-laser',
+            name: { fa: 'لیزر فیبری برش', en: 'Fiber Laser Cutting Machine', ps: 'د فایبر لیزر پرې کوونکی' },
+            description: {
+                fa: 'لیزر فیبری با هد اتوفوکوس، میز تبادل و کنترل CNC برای برش استیل و آلومینیوم.',
+                en: 'Fiber laser cutter with auto-focus head, shuttle table and CNC control for stainless and aluminium.',
+                ps: 'د فایبر لیزر پرې کوونکی د اتومات فوکس سر، شاتل مېز او CNC کنټرول سره د سټینلیس او المونیم لپاره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/industrial-laser/laser-cutting/fiber-laser.pdf'
+        },
+        {
+            category: 'industrial-laser',
+            name: { fa: 'لیزر CO2 برش', en: 'CO₂ Laser Cutting Machine', ps: 'د CO₂ لیزر پرې کولو ماشین' },
+            description: {
+                fa: 'لیزر CO₂ با میز بزرگ، کنترل گالوانومتر و سیستم اگزوز برای مواد غیر فلزی.',
+                en: 'CO₂ laser with large bed, galvanometer control and exhaust system for non-metal materials.',
+                ps: 'د CO₂ لیزر د لوی بستر، ګالوانومیټر کنټرول او د ایستلو سیستم سره د غیر فلزي موادو لپاره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/industrial-laser/laser-cutting/co2-laser.pdf'
+        },
+        {
+            category: 'industrial-laser',
+            name: { fa: 'علامت‌زنی لیزری', en: 'Laser Marking Station', ps: 'د لیزري نښان وهلو سټېشن' },
+            description: {
+                fa: 'ایستگاه مارکینگ فیبری با فیکسچر چرخشی، نرم‌افزار کدگذاری و کنترل کیفیت آنلاین.',
+                en: 'Fiber marking station with rotary fixtures, coding software and inline quality monitoring.',
+                ps: 'د فایبر نښان وهلو سټېشن د څرخول فکچرونو، کوډ سافټویر او آنلاین کیفیت څارنې سره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/industrial-laser/laser-engraving/laser-marking.pdf'
+        },
+        {
+            category: 'industrial-laser',
+            name: { fa: 'حکاکی لیزری', en: 'Laser Etching Machine', ps: 'د لیزر حکاکۍ ماشین' },
+            description: {
+                fa: 'دستگاه حکاکی دقیق برای پلاستیک و فلز با محورهای XYZ و کنترل عمق پرتو.',
+                en: 'Precision etching system for plastics and metals with XYZ axes and beam depth control.',
+                ps: 'د پلاستیک او فلز لپاره دقیق حکاکي سیستم د XYZ محورونو او د وړانګې د ژورتیا کنټرول سره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/industrial-laser/laser-engraving/laser-etching.pdf'
+        },
+        {
+            category: 'industrial-laser',
+            name: { fa: 'سلول برازینگ لیزری', en: 'Laser Brazing Cell', ps: 'د لیزر بریزینګ سیل' },
+            description: {
+                fa: 'سلول برازینگ لیزری با منبع تغذیه روباتی، سیم تغذیه و کنترل جوش برای قطعات خودرویی.',
+                en: 'Laser brazing cell with robotic power source, wire feed and weld control for automotive parts.',
+                ps: 'د لیزر بریزینګ سیل د روبوټ ځواک سرچینې، د تار خوراک او د ویلډ کنټرول سره د موټرو پرزو لپاره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/industrial-laser/laser-welding/laser-brazing.pdf'
+        },
+        {
+            category: 'industrial-laser',
+            name: { fa: 'پوشش‌دهی لیزری', en: 'Laser Cladding System', ps: 'د لیزر کلډینګ سیستم' },
+            description: {
+                fa: 'سیستم کلڈینگ با نازل پودر، لیزر پرقدرت و اسکنر برای بازسازی سطوح صنعتی.',
+                en: 'Cladding system with powder nozzle, high-power laser and scanner for industrial surface repair.',
+                ps: 'د پودر نوزل، لوړ ځواک لیزر او سکینر سره کلډینګ سیستم د صنعتي سطحو ترمیم لپاره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/industrial-laser/laser-welding/laser-cladding.pdf'
+        },
+        {
+            category: 'printing-machines',
+            name: { fa: 'دستگاه افست ورقی', en: 'Sheet-Fed Offset Press', ps: 'ورقي افست پریس' },
+            description: {
+                fa: 'ماشین افست ورقی با واحد چهاررنگ، سیستم رجیستر خودکار و کنترل رطوبت برای چاپ تجاری.',
+                en: 'Sheet-fed offset press with four-colour units, automatic register and dampening control for commercial print.',
+                ps: 'ورقي افست پریس د څلور رنګه واحدونو، اتومات راجسټر او د رطوبت کنټرول سره د تجارتي چاپ لپاره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/printing-machines/offset-printing/sheet-fed-offset.pdf'
+        },
+        {
+            category: 'printing-machines',
+            name: { fa: 'پرس افست رولی', en: 'Web Offset Press', ps: 'رولي افست پریس' },
+            description: {
+                fa: 'پرس رولی با دوات، خشک‌کن وب و فولدر برای مجلات، روزنامه و بسته‌بندی انعطاف‌پذیر.',
+                en: 'Web offset press with inking, web dryer and folder for magazines, newspapers and flexible packaging.',
+                ps: 'رولي افست پریس د رنګ ورکولو، ویب وچوونکي او فولډر سره د مجلو، ورځپاڼو او انعطاف وړ بسته بندۍ لپاره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/printing-machines/offset-printing/web-offset.pdf'
+        },
+        {
+            category: 'printing-machines',
+            name: { fa: 'سیستم خشک‌کن افست', en: 'Offset Drying System', ps: 'د افست وچولو سیستم' },
+            description: {
+                fa: 'خشک‌کن IR/هوای گرم با کنترل انرژی و بازیافت گرما برای خطوط چاپ افست.',
+                en: 'IR/hot-air dryer with energy control and heat recovery for offset printing lines.',
+                ps: 'د IR/ګرمې هوا وچوونکی د انرژۍ کنټرول او د تودوخې بیا راټولولو سره د افست چاپ لینونو لپاره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/printing-machines/offset-printing/offset-drying.pdf'
+        },
+        {
+            category: 'printing-machines',
+            name: { fa: 'چاپگر جوهرافشان صنعتی', en: 'Industrial Inkjet Printer', ps: 'صنعتي انکجټ چاپګر' },
+            description: {
+                fa: 'پرینتر جوهرافشان صنعتی با هد پیزو، مدیریت رنگ و RIP برای چاپ دیجیتال سریع.',
+                en: 'Industrial inkjet printer with piezo heads, colour management and RIP for fast digital runs.',
+                ps: 'صنعتي انکجټ چاپګر د پیزو سری، د رنګ مدیریت او RIP سره د چټکو ډیجیټل چاپونو لپاره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/printing-machines/digital-printing/inkjet-printing.pdf'
+        },
+        {
+            category: 'printing-machines',
+            name: { fa: 'پرینتر لیزری صنعتی', en: 'Digital Laser Printer', ps: 'ډیجیټل لیزري چاپګر' },
+            description: {
+                fa: 'پرینتر لیزری با کیفیت بالا، تونر با ثبات و فینیشینگ خودکار برای چاپ بر اساس تقاضا.',
+                en: 'High-quality laser printer with durable toner and automated finishing for print-on-demand.',
+                ps: 'لوړ کیفیت لیزري چاپګر د دوامدار ټونر او اتومات فینشینګ سره د غوښتنې پر اساس چاپ لپاره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/printing-machines/digital-printing/laser-printing.pdf'
+        },
+        {
+            category: 'printing-machines',
+            name: { fa: 'سیستم چاپ فرمت بزرگ', en: 'Large Format Printing System', ps: 'لوی فارمیټ چاپ سیستم' },
+            description: {
+                fa: 'سیستم چاپ فرمت بزرگ با هد UV، میز خلأ و مدیریت مدیا برای بنر و گرافیک فضای باز.',
+                en: 'Large-format UV printing system with vacuum table and media management for banners and outdoor graphics.',
+                ps: 'لوی فارمیټ UV چاپ سیستم د ویکیوم مېز او د میډیا مدیریت سره د بنر او بهرني ګرافیک لپاره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/printing-machines/digital-printing/large-format-printing.pdf'
+        },
+        {
+            category: 'printing-machines',
+            name: { fa: 'پرس چاپ فلکسو', en: 'Flexographic Printing Press', ps: 'فلیکسو چاپ پریس' },
+            description: {
+                fa: 'پرس فلکسو CI با واحدهای آنیلوکس، خشک‌کن هوا و کنترل کشش برای بسته‌بندی انعطاف‌پذیر.',
+                en: 'CI flexo press with anilox stations, hot-air dryers and tension control for flexible packaging.',
+                ps: 'CI فلیکسو پریس د انیلوکس واحدونو، ګرمې هوا وچوونکو او د کشش کنټرول سره د انعطاف وړ بسته بندۍ لپاره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/printing-machines/flexo-printing/flexo-printing.pdf'
+        },
+        {
+            category: 'printing-machines',
+            name: { fa: 'سیستم ساخت کلیشه فلکسو', en: 'Flexo Plate Making System', ps: 'د فلیکسو پلیټ جوړولو سیستم' },
+            description: {
+                fa: 'سیستم شست‌وشو، نوردهی و پلیمر برای تولید کلیشه فلکسو با دقت بالا.',
+                en: 'Washout, exposure and polymer processing system for high-precision flexo plates.',
+                ps: 'د مینځلو، روښانولو او پولیمر پروسس سیستم د لوړ دقیق فلیکسو پلیټونو لپاره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/printing-machines/flexo-printing/flexo-plate-making.pdf'
+        },
+        {
+            category: 'printing-machines',
+            name: { fa: 'لاین برش و ریوایند فلکسو', en: 'Flexo Slitting & Rewinding Line', ps: 'د فلیکسو پرې او ریوایند لاین' },
+            description: {
+                fa: 'لاین برش و ریوایند با کنترل تنشن و تیغه دقیق برای رول‌های چاپ فلکسو.',
+                en: 'Slitting and rewinding line with tension control and precision blades for flexo printed rolls.',
+                ps: 'د پرې کولو او ریوایند لاین د تنشن کنټرول او دقیق تیغونو سره د فلیکسو چاپ رولونو لپاره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/printing-machines/flexo-printing/flexo-slitting.pdf'
+        },
+        {
+            category: 'printing-machines',
+            name: { fa: 'پرس چاپ سیلک', en: 'Screen Printing Press', ps: 'سیلک چاپ پریس' },
+            description: {
+                fa: 'ماشین چاپ سیلک با میز وکیوم، ثبات رجیستر و خشک‌کن UV برای منسوجات و تبلیغات.',
+                en: 'Screen printing press with vacuum table, register stability and UV dryer for textiles and signage.',
+                ps: 'د سیلک چاپ پریس د ویکیوم مېز، د راجسټر ثبات او UV وچوونکي سره د ټوکر او اعلانونو لپاره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/printing-machines/screen-printing/screen-printing.pdf'
+        },
+        {
+            category: 'printing-machines',
+            name: { fa: 'تجهیزات ساخت شابلون سیلک', en: 'Screen Making Equipment', ps: 'د سکرین جوړولو تجهیزات' },
+            description: {
+                fa: 'تجهیزات پوشش امولسیون، نوردهی و شست‌وشو برای آماده‌سازی شابلون چاپ سیلک.',
+                en: 'Emulsion coating, exposure and washout equipment for preparing screen printing stencils.',
+                ps: 'د امولشن کوټ، روښانولو او مینځلو تجهیزات د سیلک چاپ د شابلون چمتو کولو لپاره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/printing-machines/screen-printing/screen-making.pdf'
+        },
+        {
+            category: 'printing-machines',
+            name: { fa: 'سیستم شست‌وشوی سیلک', en: 'Screen Cleaning System', ps: 'د سکرین پاکولو سیستم' },
+            description: {
+                fa: 'سیستم شست‌وشو و بازسازی توری چاپ با پمپ فشار، مواد شوینده و خشک‌کن.',
+                en: 'Screen reclaim system with pressure pumps, detergents and drying for reusable mesh.',
+                ps: 'د سکرین بیا رغونې سیستم د فشار پمپونو، پاکوونکو او وچوونکي سره د بیا کارېدونکي جال لپاره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/printing-machines/screen-printing/screen-cleaning.pdf'
+        },
+        {
+            category: 'renewable-energy',
+            name: { fa: 'پنل خورشیدی', en: 'Solar PV Module Package', ps: 'لمریز پینل پکیج' },
+            description: {
+                fa: 'ماژول‌های خورشیدی با راندمان بالا، فریم آلومینیومی و گارانتی عملکرد برای نیروگاه‌های تجاری.',
+                en: 'High-efficiency PV modules with aluminium frames and performance warranty for commercial plants.',
+                ps: 'د لوړ موثریت لمریز ماډولونه د المونیم چوکاټ او د کارکرد ضمانت سره د تجارتي فابریکو لپاره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/renewable-energy/solar-power/solar-panel.pdf'
+        },
+        {
+            category: 'renewable-energy',
+            name: { fa: 'اینورتر خورشیدی', en: 'Solar Inverter System', ps: 'لمریز انورټر سیستم' },
+            description: {
+                fa: 'اینورتر استرینگ/سنترال با MPPT چندگانه، مانیتورینگ آنلاین و حفاظت شبکه.',
+                en: 'String/central inverters with multi-MPPT, online monitoring and grid protection.',
+                ps: 'د سترینګ/سنټرل انورټرونه د څو MPPT، آنلاین څارنې او د شبکې خوندیتوب سره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/renewable-energy/solar-power/solar-inverter.pdf'
+        },
+        {
+            category: 'renewable-energy',
+            name: { fa: 'سازه نصب پنل خورشیدی', en: 'Solar Mounting Structure', ps: 'د لمریز پینل د نصب جوړښت' },
+            description: {
+                fa: 'استراکچر گالوانیزه یا آلومینیومی با طراحی استاتیکی و کیت نصب برای پشت‌بام و زمین.',
+                en: 'Galvanised or aluminium mounting structures with static design and installation kits for roof and ground.',
+                ps: 'ګلوانیز یا المونیم جوړښتونه د سټېټیک ډیزاین او د نصب کټونو سره د بام او ځمکې لپاره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/renewable-energy/solar-power/solar-mounting-structure.pdf'
+        },
+        {
+            category: 'renewable-energy',
+            name: { fa: 'توربین بادی', en: 'Wind Turbine Package', ps: 'د باد توربین پکیج' },
+            description: {
+                fa: 'توربین بادی با ژنراتور، کنترل زاویه پره و سیستم ترمز برای تولید برق پایدار.',
+                en: 'Wind turbine with generator, blade pitch control and braking system for stable power generation.',
+                ps: 'د باد توربین د جنراتور، د بلیډ زاویې کنټرول او د بریک سیستم سره د ثابتې برېښنا لپاره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/renewable-energy/wind-power/wind-turbine.pdf'
+        },
+        {
+            category: 'renewable-energy',
+            name: { fa: 'سازه برج بادی', en: 'Wind Tower Structure', ps: 'د باد برج جوړښت' },
+            description: {
+                fa: 'ستون فولادی ماژولار با پلتفرم دسترسی، نردبان و آسانسور سرویس برای نصب توربین.',
+                en: 'Modular steel tower with access platforms, ladders and service lift for turbine installation.',
+                ps: 'ماډولر فولادي برج د لاسرسي پلیټفارمونو، زینو او د خدمت لفټ سره د توربین نصب لپاره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/renewable-energy/wind-power/wind-tower-structure.pdf'
+        },
+        {
+            category: 'renewable-energy',
+            name: { fa: 'کنترلر توربین بادی', en: 'Wind Turbine Controller', ps: 'د باد توربین کنټرولر' },
+            description: {
+                fa: 'کنترلر توربین با مانیتورینگ SCADA، حفاظت ولتاژ و مدیریت شارژ باتری.',
+                en: 'Turbine controller with SCADA monitoring, voltage protection and battery charge management.',
+                ps: 'د توربین کنټرولر د SCADA څارنې، د ولتاژ خوندیتوب او د بیټرۍ د چارج مدیریت سره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/renewable-energy/wind-power/wind-controller.pdf'
+        },
+        {
+            category: 'electrical-distribution',
+            name: { fa: 'تابلو برق فشار ضعیف', en: 'LV Switchgear Panel', ps: 'د ټیټ فشار سویچ ګیر' },
+            description: {
+                fa: 'تابلو LV با بریکر هوایی/قالبی، باس‌داکت و مدارک تست روتین برای کارخانه.',
+                en: 'LV switchgear with ACB/MCCB breakers, bus ducts and routine test dossiers for plants.',
+                ps: 'د ټیټ فشار سویچ ګیر د ACB/MCCB بریکرونو، بس ډکټ او د منظم ټېسټ اسنادو سره د فابریکو لپاره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/electrical-distribution/lv-switchgear.pdf'
+        },
+        {
+            category: 'electrical-distribution',
+            name: { fa: 'تابلو توزیع برق', en: 'Power Distribution Panel', ps: 'د برېښنا وېش پینل' },
+            description: {
+                fa: 'تابلو توزیع با مدول‌های MCC، اندازه‌گیری انرژی و حفاظت اضافه‌بار برای خطوط تولید.',
+                en: 'Distribution panel with MCC modules, energy metering and overload protection for production lines.',
+                ps: 'د وېش پینل د MCC ماډولونو، د انرژۍ اندازه کولو او د اضافه بار خوندیتوب سره د تولید لینونو لپاره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/electrical-distribution/distribution-panel.pdf'
+        },
+        {
+            category: 'electrical-distribution',
+            name: { fa: 'کلید ATS', en: 'Automatic Transfer Switch', ps: 'اتومات لیږد سویچ' },
+            description: {
+                fa: 'کلید ATS با کنترلر میکروپروسسوری، مانیتورینگ ژنراتور و حفاظت سنکرون.',
+                en: 'ATS unit with microprocessor controller, generator monitoring and synchronisation protection.',
+                ps: 'ATS واحد د مایکروپروسسر کنټرولر، د جنراتور څارنې او د سنکرون خوندیتوب سره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/electrical-distribution/ats-switch.pdf'
+        },
+        {
+            category: 'networking-equipment',
+            name: { fa: 'سوئیچ شبکه مدیریت‌شونده', en: 'Managed Network Switch', ps: 'د شبکې مدیر سوئچ' },
+            description: {
+                fa: 'سوئیچ لایه 2/3 با پورت گیگابیت، PoE و مدیریت از راه دور برای دیتاسنتر و کارخانه.',
+                en: 'Layer 2/3 switch with gigabit ports, PoE and remote management for data centers and plants.',
+                ps: 'د ۲/۳ طبقې سوئچ د ګیګابېټ بندرونو، PoE او لرې مدیریت سره د ډیټا سنتر او فابریکو لپاره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/networking-equipment/network-switch.pdf'
+        },
+        {
+            category: 'networking-equipment',
+            name: { fa: 'روتر صنعتی', en: 'Industrial Router', ps: 'صنعتي روټر' },
+            description: {
+                fa: 'روتر صنعتی با VPN، فایروال و پورت‌های WAN/LTE برای اتصال ایمن سایت‌های تولیدی.',
+                en: 'Industrial router with VPN, firewall and WAN/LTE ports for secure plant connectivity.',
+                ps: 'صنعتي روټر د VPN، فایروال او د WAN/LTE بندرونو سره د فابریکې خوندي نښلولو لپاره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/networking-equipment/router.pdf'
+        },
+        {
+            category: 'networking-equipment',
+            name: { fa: 'اکسس پوینت وای‌فای', en: 'Enterprise Wi-Fi Access Point', ps: 'د وای فای اکسس پواینټ' },
+            description: {
+                fa: 'اکسس‌پوینت دوبانده با PoE، مدیریت مرکزی و Roaming یکپارچه برای سالن‌های تولید.',
+                en: 'Dual-band access point with PoE, central management and seamless roaming for production halls.',
+                ps: 'دوه بانده اکسس پواینټ د PoE، مرکزي مدیریت او بې خنډه رومینګ سره د تولید هالونو لپاره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/networking-equipment/wifi-access-point.pdf'
+        },
+        {
+            category: 'networking-equipment',
+            name: { fa: 'رک شبکه', en: 'Network Rack & Cabling Kit', ps: 'د شبکې رېک او کیبل کټ' },
+            description: {
+                fa: 'رک 19 اینچ با تهویه، پاور ماژول و اکسسوری کابل‌کشی ساخت‌یافته برای دیتاسنتر.',
+                en: '19-inch rack with ventilation, power modules and structured cabling accessories for data centers.',
+                ps: '۱۹ انچ رېک د هواخور، د بریښنا ماډولونو او د جوړښتي کیبل لوازمو سره د ډیټا سنتر لپاره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/networking-equipment/network-rack.pdf'
+        }
+    ],
+    'mixing-equipments': [
+        {
+            category: 'chemical-pharma',
+            name: { fa: 'راکتور جکت‌دار فرایندی', en: 'Jacketed Process Reactor', ps: 'د جاکټ لرونکی پروسې ریکټور' },
+            description: {
+                fa: 'راکتور استیل با جکت حرارتی، کنترل دما و همزن سیل مکانیکی برای فرآیندهای شیمیایی و دارویی.',
+                en: 'Stainless steel reactor with heating jacket, temperature control and mechanical seal agitator for chemical and pharma batches.',
+                ps: 'سټینلیس ریکټور د تودوخې جاکټ، د تودوخې کنټرول او میخانیکي سیل همزن سره د کیمیاوي او درملو لپاره.'
+            },
+            pdfUrl: 'pdfs/mixing-equipments/chemical-pharma/reaction-tank/jacketed-reactor.pdf',
+            meta: [
+                {
+                    label: { fa: 'حجم کاری', en: 'Working Volume', ps: 'کاري حجم' },
+                    value: { fa: '۵۰۰ تا ۵۰۰۰ لیتر', en: '500–5000 L', ps: '۵۰۰ تر ۵۰۰۰ لیتر' }
+                },
+                {
+                    label: { fa: 'فشار طراحی', en: 'Design Pressure', ps: 'دیزاین فشار' },
+                    value: { fa: 'تا ۶ بار', en: 'Up to 6 bar', ps: 'تر ۶ بار پورې' }
+                }
+            ]
+        },
+        {
+            category: 'chemical-pharma',
+            name: { fa: 'راکتور شیشه‌ای', en: 'Glass-Lined Reactor', ps: 'د شیشې لاین لرونکی ریکټور' },
+            description: {
+                fa: 'راکتور پوشش شیشه‌ای با مقاومت شیمیایی بالا و قابلیت CIP برای تولید دارو و مواد حساس.',
+                en: 'Glass-lined reactor offering high chemical resistance and CIP capability for sensitive formulations.',
+                ps: 'شیشه پوښ ریکټور د لوړې کیمیاوي مقاومت او د CIP وړتیا سره د حساسو فورمولونو لپاره.'
+            },
+            pdfUrl: 'pdfs/mixing-equipments/chemical-pharma/reaction-tank/glass-lined-reactor.pdf'
+        },
+        {
+            category: 'chemical-pharma',
+            name: { fa: 'همزن راکتور', en: 'Reactor Agitator Package', ps: 'د ریکټور د همزن سیټ' },
+            description: {
+                fa: 'پکج همزن با پروانه، گیربکس و سیل مکانیکی متناسب با ویسکوزیته و فرآیند.',
+                en: 'Agitator package with impeller, gearbox and mechanical seal sized to process viscosity.',
+                ps: 'د امپیلر، ګیربکس او میخانیکي سیل لرونکی همزن چې د ویسکوسیتي سره سم جوړ شوی.'
+            },
+            pdfUrl: 'pdfs/mixing-equipments/chemical-pharma/reaction-tank/reactor-agitator.pdf'
+        },
+        {
+            category: 'chemical-pharma',
+            name: { fa: 'دستگاه بسته‌بندی بلستر', en: 'Blister Packing Machine', ps: 'د درملو د بلستر بسته بندي ماشین' },
+            description: {
+                fa: 'خط بلستر اتومات با دوزینگ دقیق، سیل حرارتی و چاپ مشخصات دارویی.',
+                en: 'Automatic blister line with precise dosing, heat sealing and pharma-grade printing.',
+                ps: 'اتومات بلستر لاین د دقیق ډوزینګ، حرارتي سیل او د درملو چاپ سره.'
+            },
+            pdfUrl: 'pdfs/mixing-equipments/chemical-pharma/pharma-packaging/blister-packing.pdf'
+        },
+        {
+            category: 'chemical-pharma',
+            name: { fa: 'دستگاه پرکن بطری دارویی', en: 'Pharma Bottle Filling Machine', ps: 'د درملو بوتل ډکولو ماشین' },
+            description: {
+                fa: 'پرکن بطری با سیستم CIP، دربندی اتومات و کنترل وزن برای شربت و محلول‌های دارویی.',
+                en: 'Bottle filler with CIP system, automatic capping and weight control for syrups and liquid medicines.',
+                ps: 'د بوتل ډکولو ماشین د CIP سیستم، اتومات سر پوښ او د وزن کنټرول سره د شربت او مایعاتو لپاره.'
+            },
+            pdfUrl: 'pdfs/mixing-equipments/chemical-pharma/pharma-packaging/bottle-filling.pdf'
+        },
+        {
+            category: 'chemical-pharma',
+            name: { fa: 'ماشین کارتن‌سازی دارویی', en: 'Pharma Cartoning Machine', ps: 'د درملو د کارتن جوړولو ماشین' },
+            description: {
+                fa: 'کارتیجر اتومات برای بسته‌بندی ثانویه با تشخیص کد و سیستم رد محصول معیوب.',
+                en: 'Automatic cartoner for secondary packaging with code detection and reject system.',
+                ps: 'اتومات کارتونې ماشین د دوهمي بسته بندۍ لپاره د کوډ کشف او د نیمګړي محصول ردولو سره.'
+            },
+            pdfUrl: 'pdfs/mixing-equipments/chemical-pharma/pharma-packaging/cartoning-machine.pdf'
+        },
+        {
+            category: 'chemical-pharma',
+            name: { fa: 'میکسر هموژنایزر', en: 'Industrial Homogenising Mixer', ps: 'صنعتي همجن ساز مکسەر' },
+            description: {
+                fa: 'میکسر با سرعت بالا و سیستم هموژنایزر برای کرم، سس و محصولات دارویی نیمه‌جامد.',
+                en: 'High-shear mixer with homogeniser for creams, sauces and semi-solid pharma products.',
+                ps: 'لوړ سرعت همجن کوونکی مکسېر د کریم، ساس او نیمه جامدو درملو محصولاتو لپاره.'
+            },
+            pdfUrl: 'pdfs/mixing-equipments/chemical-pharma/mixing-grinding/mixer.pdf'
+        },
+        {
+            category: 'chemical-pharma',
+            name: { fa: 'دانه‌ساز مرطوب', en: 'Wet Granulator System', ps: 'د لوند ګرینولیټر سیستم' },
+            description: {
+                fa: 'گرینولاتور دارویی با برش دقیق و خشک‌کن متصل برای تولید گرانول یکنواخت.',
+                en: 'Pharma granulator with precision cutter and integrated dryer for uniform granules.',
+                ps: 'د درملو ګرینولیټر د دقیق پرې کوونکي او وصل وچولو سره د یکنواخت ګرینول لپاره.'
+            },
+            pdfUrl: 'pdfs/mixing-equipments/chemical-pharma/mixing-grinding/granulator.pdf'
+        },
+        {
+            category: 'chemical-pharma',
+            name: { fa: 'ریبون بلندر', en: 'Ribbon Blender', ps: 'ربن بلنډر' },
+            description: {
+                fa: 'مخلوط‌کن نواری با طراحی U شکل و درب آب‌بند برای پودر و گرانول غذایی و شیمیایی.',
+                en: 'U-shaped ribbon blender with dust-tight cover for food and chemical powders.',
+                ps: 'د U شکل ربن بلنډر د دوړو تړلي سرپوښ سره د خوړو او کیمیاوي پوډرو لپاره.'
+            },
+            pdfUrl: 'pdfs/mixing-equipments/chemical-pharma/mixing-grinding/ribbon-blender.pdf'
+        },
+        {
+            category: 'tanks',
+            name: { fa: 'تانک آب استیل', en: 'Stainless Water Tank', ps: 'سټینلیس د اوبو ټانک' },
+            description: {
+                fa: 'تانک استیل ۳۰۴/۳۱۶ با پلیسه داخلی و خروجی‌های سفارشی برای آب آشامیدنی و صنعتی.',
+                en: '304/316 stainless steel water tank with polished interior and custom outlets for potable and process use.',
+                ps: 'د 304/316 سټینلیس اوبو ټانک د صیقل شوې داخلې او دودیزو والوګانو سره د څښاک او صنعتي کارونې لپاره.'
+            },
+            pdfUrl: 'pdfs/mixing-equipments/tanks/water-tank/stainless-tank.pdf'
+        },
+        {
+            category: 'tanks',
+            name: { fa: 'تانک پلاستیکی تقویت‌شده', en: 'Reinforced Plastic Tank', ps: 'پیاوړی پلاستیکي ټانک' },
+            description: {
+                fa: 'تانک پلی‌اتیلن چندلایه با تقویت فیبر و دریچه بازدید برای سیالات خورنده یا آب.',
+                en: 'Multilayer polyethylene tank with fibreglass reinforcement and manway for corrosive fluids or water.',
+                ps: 'چند پوړیز پولی ایتیلین ټانک د فایبر ګلاس پیاوړتیا او د معاینې دروازې سره د زهرجن مایعاتو یا اوبو لپاره.'
+            },
+            pdfUrl: 'pdfs/mixing-equipments/tanks/water-tank/plastic-tank.pdf'
+        },
+        {
+            category: 'tanks',
+            name: { fa: 'تانک ذخیره اسید', en: 'Acid Storage Tank', ps: 'د اسید ذخیرې ټانک' },
+            description: {
+                fa: 'تانک مقاوم در برابر خوردگی با آستر خاص و تجهیزات ایمنی برای ذخیره اسیدهای صنعتی.',
+                en: 'Corrosion-resistant tank with specialised lining and safety fittings for industrial acids.',
+                ps: 'د زنګ پر وړاندې مقاومت لرونکی ټانک د ځانګړي آستر او د خوندیتوب تجهیزاتو سره د صنعتي اسیدونو لپاره.'
+            },
+            pdfUrl: 'pdfs/mixing-equipments/tanks/chemical-tank/acid-tank.pdf'
+        },
+        {
+            category: 'tanks',
+            name: { fa: 'تانک ذخیره سوخت', en: 'Fuel Storage Tank', ps: 'د سونګ ذخیرې ټانک' },
+            description: {
+                fa: 'تانک دو جداره با سیستم تهویه و نشانگر سطح برای ذخیره دیزل و بنزین.',
+                en: 'Double-wall tank with venting and level gauging for diesel and petrol storage.',
+                ps: 'دوه پوړیز ټانک د هوا ایستلو او د سطحې ښودلو سیسټم سره د ډیزلو او پطرولو لپاره.'
+            },
+            pdfUrl: 'pdfs/mixing-equipments/tanks/chemical-tank/fuel-tank.pdf'
+        },
+        {
+            category: 'tanks',
+            name: { fa: 'آسترکاری و تعمیر تانک', en: 'Tank Lining & Refurbishment', ps: 'د ټانک آستر او ترمیم' },
+            description: {
+                fa: 'خدمات آستر اپوکسی، گلس‌فلیک یا رابرلاینینگ و تعمیر نشتی تانک‌های فلزی.',
+                en: 'Epoxy, glass-flake or rubber lining services with leak repair for metal tanks.',
+                ps: 'د اپوکسي، ګلز فلیک یا رابر آستر خدمتونه او د فلزي ټانکونو د لیک ترمیم.'
+            },
+            pdfUrl: 'pdfs/mixing-equipments/tanks/chemical-tank/tank-lining.pdf'
+        },
+        {
+            category: 'tanks',
+            name: { fa: 'تانک عمودی ذخیره‌سازی', en: 'Vertical Storage Tank', ps: 'عمودي ذخیره ټانک' },
+            description: {
+                fa: 'تانک عمودی با پایه تقویت‌شده، نردبان و پلتفرم ایمن برای ذخیره حجمی.',
+                en: 'Vertical tank with reinforced base, ladder and safe platform for bulk storage.',
+                ps: 'عمودي ټانک د پیاوړي بنسټ، زینې او خوندي پلیټفارم سره د ډله ییزې ذخیرې لپاره.'
+            },
+            pdfUrl: 'pdfs/mixing-equipments/tanks/storage-tank/vertical-tank.pdf'
+        },
+        {
+            category: 'tanks',
+            name: { fa: 'تانک افقی ذخیره‌سازی', en: 'Horizontal Storage Tank', ps: 'افقي ذخیره ټانک' },
+            description: {
+                fa: 'تانک افقی برای نصب روی فریم یا پایه بتنی با محاسبات استحکام و نازل‌گذاری.',
+                en: 'Horizontal tank engineered for skid or concrete foundation with nozzle layout design.',
+                ps: 'افقي ټانک د فریم یا کانکریټ بنسټ لپاره د قوت محاسبې او نوزل ترتیب سره.'
+            },
+            pdfUrl: 'pdfs/mixing-equipments/tanks/storage-tank/horizontal-tank.pdf'
+        },
+        {
+            category: 'foam-sponge',
+            name: { fa: 'میکسینگ تولید فوم', en: 'Foam Mixing Station', ps: 'د فوم د مخلوط کولو سټېشن' },
+            description: {
+                fa: 'سیستم میکسینگ با دوزینگ ایزو و پلیول، کنترل دما و ثبت داده برای تولید فوم انعطاف‌پذیر.',
+                en: 'Mixing skid with ISO and polyol dosing, temperature control and data logging for flexible foam.',
+                ps: 'د ایزو او پولیول دوزینګ، د تودوخې کنټرول او د معلوماتو ثبت سره د فوم مخلوط کولو سکیډ.'
+            },
+            pdfUrl: 'pdfs/mixing-equipments/foam-sponge/foam-production/foam-mixing.pdf'
+        },
+        {
+            category: 'foam-sponge',
+            name: { fa: 'قالب‌گیری بلوک فوم', en: 'Foam Block Moulding Machine', ps: 'د فوم بلاک قالب ماشین' },
+            description: {
+                fa: 'خط قالب‌گیری فوم با کنترل تراکم، سیستم بخار و برش اولیه برای تولید بلوک مبلمان.',
+                en: 'Foam block moulding line with density control, steam system and pre-cut for furniture blocks.',
+                ps: 'د فوم بلاک قالب لاین د کثافت کنټرول، بخار سیستم او لومړني پرې کولو سره د فرنیچر بلاکونو لپاره.'
+            },
+            pdfUrl: 'pdfs/mixing-equipments/foam-sponge/foam-production/foam-molding.pdf'
+        },
+        {
+            category: 'foam-sponge',
+            name: { fa: 'دستگاه برش فوم پیوسته', en: 'Continuous Foam Cutting Line', ps: 'د فوم د دوامداره پرې کولو لاین' },
+            description: {
+                fa: 'سیستم برش پیوسته با تیغه متحرک و میز نقاله برای برش دقیق فوم‌های ورقی.',
+                en: 'Continuous cutting system with moving blade and conveyor table for accurate slab cutting.',
+                ps: 'د خوځنده تیغ او نقاله میز لرونکی دوامدار پرې کولو سیستم د فوم پاڼو لپاره.'
+            },
+            pdfUrl: 'pdfs/mixing-equipments/foam-sponge/foam-production/foam-cutting.pdf'
+        },
+        {
+            category: 'foam-sponge',
+            name: { fa: 'برش کانتور اسفنج', en: 'Contour Sponge Cutter', ps: 'د سپنچ کانتور پرې کوونکی' },
+            description: {
+                fa: 'ماشین برش CNC با سیم یا تیغه برای تولید قطعات کانتور مبلمان و پشتی صندلی.',
+                en: 'CNC contour cutter using wire or blade for shaped furniture and seat backs.',
+                ps: 'د وایر یا تیغ کاروونکی CNC کانتور پرې کوونکی د فرنیچر او څوکۍ شاګانو لپاره.'
+            },
+            pdfUrl: 'pdfs/mixing-equipments/foam-sponge/sponge-cutting/contour-cutting.pdf'
+        },
+        {
+            category: 'foam-sponge',
+            name: { fa: 'برش افقی فوم', en: 'Horizontal Foam Cutter', ps: 'افقي د فوم پرې کوونکی' },
+            description: {
+                fa: 'دستگاه برش افقی با میز دوار یا رفت و برگشتی برای تولید ورق‌های فوم با ضخامت دقیق.',
+                en: 'Horizontal cutting machine with rotary or reciprocating table for precision foam sheets.',
+                ps: 'افقي پرې کوونکی ماشین د تاوېدونکې یا تګ راتګ مېز سره د دقیق فوم شیټونو لپاره.'
+            },
+            pdfUrl: 'pdfs/mixing-equipments/foam-sponge/sponge-cutting/horizontal-cutting.pdf'
+        },
+        {
+            category: 'foam-sponge',
+            name: { fa: 'برش عمودی فوم', en: 'Vertical Foam Saw', ps: 'عمودي د فوم پرې کولو اره' },
+            description: {
+                fa: 'اره عمودی با گاید دقیق و سیستم مکش برای برش بلوک‌های فوم به قطعات کوچکتر.',
+                en: 'Vertical band saw with precise guide and dust extraction for cutting foam blocks into smaller parts.',
+                ps: 'عمودي بانډ اره د دقیق لارښود او دوړو ایستلو سره د فوم بلاکونو د کوچنیو ټوټو کولو لپاره.'
+            },
+            pdfUrl: 'pdfs/mixing-equipments/foam-sponge/sponge-cutting/vertical-cutting.pdf'
+        },
+        {
+            category: 'foam-sponge',
+            name: { fa: 'لمینه‌کردن فوم', en: 'Foam Lamination Line', ps: 'د فوم لامینېټ لاین' },
+            description: {
+                fa: 'خط لمینه با چسب گرم، رول پرس و برش کناره برای تولید فوم‌های چندلایه.',
+                en: 'Lamination line with hot-melt adhesive, roll press and edge trimming for multi-layer foam.',
+                ps: 'د ګرم چسب، رول پرس او غاړې پرې کولو سره لامینېټ لاین د څو پوړیز فوم لپاره.'
+            },
+            pdfUrl: 'pdfs/mixing-equipments/foam-sponge/foam-packaging/foam-lamination.pdf'
+        },
+        {
+            category: 'foam-sponge',
+            name: { fa: 'شکل‌دهی و بسته‌بندی فوم', en: 'Foam Shaping & Packaging Cell', ps: 'د فوم شکل ورکولو او بسته بندۍ سیل' },
+            description: {
+                fa: 'سلول شکل‌دهی با پرس گرم، برش CNC و بسته‌بندی نهایی برای قطعات فوم شکل‌دار.',
+                en: 'Shaping cell with hot press, CNC trimming and final packaging for contoured foam parts.',
+                ps: 'د ګرم پرس، CNC پرې کولو او وروستي بسته بندۍ سره د فوم شکل ورکولو سیل.'
+            },
+            pdfUrl: 'pdfs/mixing-equipments/foam-sponge/foam-packaging/foam-shaping.pdf'
         }
     ],
     'paper-pulp': [
@@ -4126,6 +5404,7 @@ Object.assign(translations, {
     'cat-tires': { fa: 'تایرهای صنعتی', en: 'Industrial Tyres', ps: 'صنعتي ټایرونه' },
     'cat-transportation': { fa: 'ماشین آلات حمل‌ونقل', en: 'Transportation Machinery', ps: 'د ترانسپورت ماشینونه' },
     'cat-plastic-processing': { fa: 'دستگاه های فرآوری پلاستیک', en: 'Plastic Processing Machines', ps: 'د پلاستیک پروسس ماشینونه' },
+    'cat-plastic-industry': { fa: 'صنعت پلاستیک', en: 'Plastic Industry', ps: 'د پلاستیک صنعت' },
     'cat-paint-coating': { fa: 'ماشین آلات رنگ و کوتینگ', en: 'Paint & Coating Machinery', ps: 'د رنګ او پوښښت ماشینونه' },
     'cat-foam-sponge': { fa: 'ماشین آلات لوم و اسفنج', en: 'Foam & Sponge Machinery', ps: 'د فوم او اسفنج ماشینونه' },
     'cat-tobacco': { fa: 'ماشین آلات تناکو و سیگار', en: 'Tobacco & Cigarette Machinery', ps: 'د توتون او سیګر ماشینونه' },
@@ -4137,6 +5416,9 @@ Object.assign(translations, {
     'cat-packaging': { fa: 'بسته بندی', en: 'Packaging', ps: 'بسته بندي' },
     'cat-chemical-pharma': { fa: 'ماشین آلات شیمیایی و دارویی', en: 'Chemical & Pharmaceutical Machinery', ps: 'د کیمیاوي او درملو ماشینونه' },
     'cat-machinery-parts': { fa: 'پرزه‌جات ماشین‌آلات', en: 'Machinery Spare Parts', ps: 'د ماشینونو پرزې' },
+    'cat-mixing-equipments': { fa: 'تجهیزات میکسینگ و تانک‌سازی', en: 'Mixing Equipment & Process Tanks', ps: 'د مکسینګ تجهیزات او پروسې ټانکونه' },
+    'cat-metallurgy-coating': { fa: 'متالورژی و کوتینگ', en: 'Metallurgy & Coating', ps: 'د متالورژۍ او پوښښ' },
+    'cat-electronics-energy-systems': { fa: 'الکترونیک و سیستم‌های انرژی', en: 'Electronics & Energy Systems', ps: 'برېښنایي او د انرژۍ سیستمونه' },
     'cat-electronic-machinery': { fa: 'ماشین آلات الکترونیکی', en: 'Electronic Machinery', ps: 'د الکترونیک ماشینونه' },
     'cat-telecom-parts': { fa: 'قطعات و لوازم اینترنتی و مخابراتی', en: 'Internet & Telecommunication Parts', ps: 'د انترنت او مخابراتي برخې' },
     'cat-second-hand': { fa: 'ماشین آلات دست دوم', en: 'Second Hand Machinery', ps: 'د دوهم لاس ماشینونه' },
@@ -4384,6 +5666,15 @@ function updateTranslations(lang) {
     if (typeof updateMachineryPartsPage === 'function') {
         updateMachineryPartsPage();
     }
+    if (typeof updateMixingEquipmentsPage === 'function') {
+        updateMixingEquipmentsPage();
+    }
+    if (typeof updateMetallurgyCoatingPage === 'function') {
+        updateMetallurgyCoatingPage();
+    }
+    if (typeof updateElectronicsEnergySystemsPage === 'function') {
+        updateElectronicsEnergySystemsPage();
+    }
     if (typeof updatePaperPulpPage === 'function') {
         updatePaperPulpPage();
     }
@@ -4392,6 +5683,9 @@ function updateTranslations(lang) {
     }
     if (typeof updatePackagingPage === 'function') {
         updatePackagingPage();
+    }
+    if (typeof updatePlasticIndustryPage === 'function') {
+        updatePlasticIndustryPage();
     }
     if (typeof updateCoolingHeatingPage === 'function') {
         updateCoolingHeatingPage();
@@ -4456,8 +5750,24 @@ function navigateToMachineryParts() {
     window.location.href = 'machinery-parts.html';
 }
 
+function navigateToMixingEquipments() {
+    window.location.href = 'mixing-equipments.html';
+}
+
+function navigateToMetallurgyCoating() {
+    window.location.href = 'metallurgy-coating.html';
+}
+
+function navigateToElectronicsEnergySystems() {
+    window.location.href = 'electronics-energy-systems.html';
+}
+
 function navigateToConstructionMaterials() {
     window.location.href = 'construction-materials.html';
+}
+
+function navigateToPlasticIndustry() {
+    window.location.href = 'plastic-industry.html';
 }
 
 function navigateToPackaging() {
@@ -4763,8 +6073,9 @@ function performSearch(searchTerm) {
             { id: 'production-lines', key: 'cat-production' },
             { id: 'printing-machines', key: 'cat-printing' },
             { id: 'metallurgy', key: 'cat-metallurgy' },
+            { id: 'metallurgy-coating', key: 'cat-metallurgy-coating' },
             { id: 'construction-materials', key: 'cat-construction' },
-            { id: 'plastic-processing', key: 'cat-plastic' }
+            { id: 'plastic-industry', key: 'cat-plastic-industry' }
         ];
         
         popularCategories.forEach(cat => {

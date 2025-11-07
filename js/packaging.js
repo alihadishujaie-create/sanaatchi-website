@@ -2,14 +2,14 @@
     const content = {
         hero: {
             title: {
-                fa: 'راهکارهای بسته‌بندی و پردازش پلاستیک آماده استقرار',
-                en: 'Packaging & Plastic Processing Systems Ready to Deploy',
-                ps: 'د بسته بندۍ او پلاستیک پروسس سیسټمونه د نصب لپاره چمتو دي'
+                fa: 'راهکارهای بسته‌بندی صنعتی آماده استقرار',
+                en: 'Industrial Packaging Solutions Ready to Deploy',
+                ps: 'صنعتي بسته بندۍ حل لارې د نصب لپاره چمتو دي'
             },
             subtitle: {
-                fa: 'از پرکن و درزگیر تا اکسترودر، تزریق و بازیافت؛ خطوط کامل با نصب، آموزش و تضمین کیفیت ارائه می‌شود.',
-                en: 'From fillers and sealers to extrusion, injection and recycling—complete lines delivered with installation, training and QA.',
-                ps: 'له ډکونکو او سیلرونو څخه تر اکسترودر، انجکشن او ریسایکل پورې—بشپړې لینونه د نصب، روزنې او کیفیت تضمین سره برابریږي.'
+                fa: 'از پرکن و درزگیر تا وکیوم و شرینک‌پک؛ خطوط کامل با نصب، آموزش و تضمین کیفیت ارائه می‌شود.',
+                en: 'From fillers and sealers to vacuum and shrink wrapping—complete lines delivered with installation, training and QA.',
+                ps: 'له ډکونکو او سیلرونو څخه تر وکیوم او شرینک پورې—بشپړې لینونه د نصب، روزنې او کیفیت تضمین سره برابریږي.'
             },
             quote: {
                 fa: 'هر پروژه بسته‌بندی با تنظیمات محصول، مستندسازی سه‌زبانه و برنامه خدمات پس از فروش همراه است.',
@@ -38,9 +38,9 @@
             ps: 'د بسته بندۍ تجهیزاتو بنسټیزې ډلې'
         },
         categoriesSubtitle: {
-            fa: 'بسته به محصول و ظرفیت، از سیستم‌های اتوماتیک تا پردازش پلاستیک و چاپ انتخاب کنید.',
-            en: 'Select automated packaging, vacuum solutions, wrapping or plastic processing based on your capacity.',
-            ps: 'د خپلې اړتیا له مخې اتومات بسته بندي، وکیوم حلونه، لفافه کول یا د پلاستیک پروسس انتخاب کړئ.'
+            fa: 'بسته به محصول و ظرفیت، از سیستم‌های اتوماتیک تا وکیوم، لفافه و چاپ انتخاب کنید.',
+            en: 'Select automated packaging, vacuum solutions, wrapping or printing based on your capacity.',
+            ps: 'د خپلې اړتیا له مخې اتومات بسته بندي، وکیوم حلونه، لفافه کول یا چاپ انتخاب کړئ.'
         },
         inventoryTitle: {
             fa: 'فهرست فایل‌های فنی آماده دانلود',
@@ -173,48 +173,6 @@
             }
         },
         {
-            id: 'extruder',
-            icon: '🛠️',
-            title: {
-                fa: 'خطوط اکسترودر پلاستیک',
-                en: 'Plastic Extrusion Lines',
-                ps: 'د پلاستیک اکسترودر لینونه'
-            },
-            description: {
-                fa: 'اکسترودر لوله، فیلم و پروفایل برای تولید بسته‌بندی و قطعات صنعتی.',
-                en: 'Pipe, film and profile extruders serving packaging and industrial component production.',
-                ps: 'د پایپ، فلم او پروفایل اکسترودرونه چې د بسته بندۍ او صنعتي پرزو تولید ته کار کوي.'
-            }
-        },
-        {
-            id: 'injection',
-            icon: '🧩',
-            title: {
-                fa: 'تزریق و قالب‌گیری پلاستیک',
-                en: 'Plastic Injection & Blow Moulding',
-                ps: 'د پلاستیک انجکشن او بلو مولډنګ'
-            },
-            description: {
-                fa: 'ماشین‌های تزریق، دمشی و قطعات مصرفی برای قالب‌های دقیق و تولید انبوه.',
-                en: 'Injection moulding, blow moulding and consumable kits for precise, high-volume production.',
-                ps: 'د انجکشن مولډنګ، بلو مولډنګ او مصرفي کټونه د دقیق او ډیرو تولیداتو لپاره.'
-            }
-        },
-        {
-            id: 'recycling',
-            icon: '♻️',
-            title: {
-                fa: 'بازیافت و احیای پلاستیک',
-                en: 'Plastic Recycling & Reprocessing',
-                ps: 'د پلاستیک ریسایکل او بیا پروسس'
-            },
-            description: {
-                fa: 'شردر، شستشو، خشک‌کن و پلت‌سازی برای بازیافت ضایعات بسته‌بندی.',
-                en: 'Shredding, washing, drying and pelletising systems recycle packaging waste.',
-                ps: 'شریدر، مینځل، وچول او پلېټ جوړونکي سیسټمونه د بسته بندۍ پاتې شونو ته نوی ژوند ورکوي.'
-            }
-        },
-        {
             id: 'printing-packaging',
             icon: '🖨️',
             title: {
@@ -226,6 +184,20 @@
                 fa: 'فلکسو، پاکت‌سازی و خطوط دوخت و برش برای آماده‌سازی بسته‌های نهایی.',
                 en: 'Flexo printing, bag making and sealing-cutting lines finish final packaging.',
                 ps: 'د فلکسو چاپ، بکس جوړولو او سیل کولو او پرې کولو لینونه وروستۍ بسته بندي بشپړوي.'
+            }
+        },
+        {
+            id: 'tobacco-processing',
+            icon: '🍂',
+            title: {
+                fa: 'پردازش و بسته‌بندی تنباکو',
+                en: 'Tobacco Processing & Packaging',
+                ps: 'د تنباکو پروسس او بسته بندي'
+            },
+            description: {
+                fa: 'ماشین‌آلات تولید سیگار، بسته‌بندی پاکتی و آماده‌سازی برگ و تنباکو با کنترل رطوبت.',
+                en: 'Cigarette making, pouch packing and leaf conditioning systems with moisture control.',
+                ps: 'د سیګار جوړولو، د کڅوړې بسته بندۍ او د تنباکو د پاڼو د رطوبت کنټرول سیسټمونه.'
             }
         }
     ];
@@ -368,156 +340,6 @@
         },
         {
             name: {
-                fa: 'اکسترودر لوله پلاستیکی',
-                en: 'Plastic Pipe Extruder',
-                ps: 'د پلاستیک پایپ اکسترودر'
-            },
-            description: {
-                fa: 'خط اکسترودر همراه با کالیبراتور، تانک خلأ و کشنده برای تولید لوله.',
-                en: 'Extrusion line with calibrator, vacuum tank and haul-off for pipe production.',
-                ps: 'د کالیبریټر، وکیوم ټانک او کشولو واحد سره اکسترودر د پایپ تولید لپاره.'
-            },
-            pdfUrl: 'pdfs/plastic-processing/extruder/pipe-extruder.pdf',
-            category: 'extruder',
-            icon: '🧵'
-        },
-        {
-            name: {
-                fa: 'اکسترودر فیلم پلاستیکی',
-                en: 'Plastic Film Extruder',
-                ps: 'د پلاستیک فلم اکسترودر'
-            },
-            description: {
-                fa: 'اکسترودر دمشی یا تخت برای تولید رول فیلم بسته‌بندی با ضخامت یکنواخت.',
-                en: 'Blown or cast film extruder delivering consistent gauge packaging films.',
-                ps: 'د بلو یا کاسټ فلم اکسترودر چې همغږي ضخامت لرونکي بسته بندۍ فلمونه تولیدوي.'
-            },
-            pdfUrl: 'pdfs/plastic-processing/extruder/film-extruder.pdf',
-            category: 'extruder',
-            icon: '🎞️'
-        },
-        {
-            name: {
-                fa: 'اکسترودر پروفایل پلاستیکی',
-                en: 'Plastic Profile Extruder',
-                ps: 'د پلاستیک پروفایل اکسترودر'
-            },
-            description: {
-                fa: 'تولید پروفایل و قطعات فنی با قالب‌های قابل تعویض و کنترل دقیق دما.',
-                en: 'Profile extrusion with interchangeable dies and precise temperature zoning.',
-                ps: 'د بدلېدونکو قالبونو او دقیق تودوخې زونونو سره د پروفایل اکسترودر.'
-            },
-            pdfUrl: 'pdfs/plastic-processing/extruder/profile-extruder.pdf',
-            category: 'extruder',
-            icon: '📏'
-        },
-        {
-            name: {
-                fa: 'ماشین تزریق پلاستیک',
-                en: 'Plastic Injection Moulding Machine',
-                ps: 'د پلاستیک انجکشن مولډنګ ماشین'
-            },
-            description: {
-                fa: 'ماشین تزریق با کنترل سروو و واحد گیره قوی برای قالب‌های چند حفره.',
-                en: 'Servo-controlled injection unit with high clamping force for multi-cavity moulds.',
-                ps: 'د سرو کنټرول لرونکی انجکشن یونټ د څو حفره لرونکو قالبونو لپاره د قوي کلمپینګ ځواک سره.'
-            },
-            pdfUrl: 'pdfs/plastic-processing/injection/injection-molding.pdf',
-            category: 'injection',
-            icon: '🧠'
-        },
-        {
-            name: {
-                fa: 'ماشین دمشی پلاستیک',
-                en: 'Plastic Blow Moulding Machine',
-                ps: 'د پلاستیک بلو مولډنګ ماشین'
-            },
-            description: {
-                fa: 'سیستم دمشی برای تولید بطری، مخزن و قطعات توخالی با کنترل ضخامت دیواره.',
-                en: 'Blow moulding system for bottles, tanks and hollow parts with wall-thickness control.',
-                ps: 'د بوتلونو، ټانکونو او تشو پرزو لپاره بلو مولډنګ د دیوال ضخامت کنټرول سره.'
-            },
-            pdfUrl: 'pdfs/plastic-processing/injection/blow-molding.pdf',
-            category: 'injection',
-            icon: '🍶'
-        },
-        {
-            name: {
-                fa: 'قطعات مصرفی تزریق',
-                en: 'Injection Moulding Spare Parts',
-                ps: 'د انجکشن مولډنګ اضافي پرزې'
-            },
-            description: {
-                fa: 'ست نازل، پیچ، بوش و حلقه‌های آب‌بندی برای نگهداری دوره‌ای ماشین تزریق.',
-                en: 'Nozzle, screw, bushing and seal kits that keep injection moulding machines running.',
-                ps: 'د نوزل، پیچ، بوش او سیل کټونه چې د انجکشن ماشینونه فعال ساتي.'
-            },
-            pdfUrl: 'pdfs/plastic-processing/injection/injection-parts.pdf',
-            category: 'injection',
-            icon: '🧷'
-        },
-        {
-            name: {
-                fa: 'خط بازیافت پلاستیک',
-                en: 'Plastic Recycling Line',
-                ps: 'د پلاستیک ریسایکل لاین'
-            },
-            description: {
-                fa: 'از تفکیک تا خشک‌کن سانتریفیوژ برای بازیافت ضایعات بسته‌بندی و تولید گرانول.',
-                en: 'Complete recycling line from sorting to centrifugal drying for pellet output.',
-                ps: 'بشپړ ریسایکل لاین له تفکیک څخه تر سنټرفیوژ وچولو پورې د پلېټ تولید لپاره.'
-            },
-            pdfUrl: 'pdfs/plastic-processing/recycling/plastic-recycling.pdf',
-            category: 'recycling',
-            icon: '♻️'
-        },
-        {
-            name: {
-                fa: 'شردر پلاستیک صنعتی',
-                en: 'Industrial Plastic Shredder',
-                ps: 'صنعتي پلاستیک شریدر'
-            },
-            description: {
-                fa: 'شردر دو شافت با تیغه‌های آلیاژی و کنترل سرعت برای آماده‌سازی خوراک بازیافت.',
-                en: 'Twin-shaft shredder with alloy blades and variable speed for recycling feedstock.',
-                ps: 'دوه شافټ لرونکی شریدر د الیاژ تیغونو او د سرعت تنظیم سره د ریسایکل موادو لپاره.'
-            },
-            pdfUrl: 'pdfs/plastic-processing/recycling/shredder.pdf',
-            category: 'recycling',
-            icon: '🪚'
-        },
-        {
-            name: {
-                fa: 'خط شستشو و خشک‌کن پلاستیک',
-                en: 'Plastic Washing & Drying Line',
-                ps: 'د پلاستیک مینځلو او وچولو لاین'
-            },
-            description: {
-                fa: 'حوض شستشو، اسکرو انتقال و خشک‌کن حرارتی برای کاهش آلودگی ضایعات.',
-                en: 'Washing tanks, screw conveyors and thermal dryers reduce contamination before extrusion.',
-                ps: 'د مینځلو حوضونه، سکرو انتقال او حرارتي وچوونکي د اکسترودر دمخه ککړتیا کموي.'
-            },
-            pdfUrl: 'pdfs/plastic-processing/recycling/washing-line.pdf',
-            category: 'recycling',
-            icon: '💧'
-        },
-        {
-            name: {
-                fa: 'خط پلت‌سازی پلاستیک',
-                en: 'Plastic Pelletizing Line',
-                ps: 'د پلاستیک پلېټ جوړولو لاین'
-            },
-            description: {
-                fa: 'گرانولایزر و کاتر با سیستم خنک‌کاری برای تبدیل ضایعات به گرانول باکیفیت.',
-                en: 'Granulator and cutter with cooling loop converting scrap into uniform pellets.',
-                ps: 'ګرانیولیټر او کټر د یخولو سیسټم سره د ضایعاتو څخه منظم پلېټونه جوړوي.'
-            },
-            pdfUrl: 'pdfs/plastic-processing/recycling/pelletizing-line.pdf',
-            category: 'recycling',
-            icon: '🧊'
-        },
-        {
-            name: {
                 fa: 'ماشین چاپ فلکسو',
                 en: 'Flexographic Printing Machine',
                 ps: 'د فلکسو چاپ ماشین'
@@ -560,6 +382,141 @@
             pdfUrl: 'pdfs/plastic-processing/printing-packaging/sealing-cutting.pdf',
             category: 'printing-packaging',
             icon: '✂️'
+        },
+        {
+            name: {
+                fa: 'خط تولید سیگار',
+                en: 'Cigarette Making Line',
+                ps: 'د سیګار جوړولو لاین'
+            },
+            description: {
+                fa: 'تغذیه توتون، رول‌سازی، چسب‌زنی و برش اتوماتیک برای تولید سیگار باکیفیت.',
+                en: 'Automatic tobacco feeding, rod forming, gluing and cutting for consistent cigarettes.',
+                ps: 'اتومات توتون تغذیه، لاستي جوړونه، ګلو لګول او پرې کول د ثابتو سیګارتونو لپاره.'
+            },
+            pdfUrl: 'pdfs/packaging/tobacco-processing/cigarette-making.pdf',
+            category: 'tobacco-processing',
+            icon: '🚬'
+        },
+        {
+            name: {
+                fa: 'ماشین بسته‌بندی سیگار',
+                en: 'Cigarette Packing Machine',
+                ps: 'د سیګار بسته بندۍ ماشین'
+            },
+            description: {
+                fa: 'چیدمان، لفاف و سلفون‌پیچ اتوماتیک با کنترل وزن و چاپ تاریخ تولید بسته.',
+                en: 'Automatic carton loading, wrapping and cellophane with weight and date coding control.',
+                ps: 'اتومات کڅوړه اچول، لفاف او سیلوفان د وزن او نیټې کوډ کنټرول سره.'
+            },
+            pdfUrl: 'pdfs/packaging/tobacco-processing/cigarette-packing.pdf',
+            category: 'tobacco-processing',
+            icon: '📦'
+        },
+        {
+            name: {
+                fa: 'واحد تولید فیلتر سیگار',
+                en: 'Cigarette Filter Production Unit',
+                ps: 'د سیګار فلټر تولید واحد'
+            },
+            description: {
+                fa: 'فرم‌دهی استیک، برش طولی و الصاق کاغذ برای ساخت فیلترهای فیبر سلولزی.',
+                en: 'Tow opening, rod forming and paper tipping to produce cellulose fibre cigarette filters.',
+                ps: 'د فایبر پرانیستلو، لاستي جوړولو او د کاغذ لګولو پروسې د سلولوز فلټرونو لپاره.'
+            },
+            pdfUrl: 'pdfs/packaging/tobacco-processing/cigarette-filter.pdf',
+            category: 'tobacco-processing',
+            icon: '🪶'
+        },
+        {
+            name: {
+                fa: 'پرکن پاکت تنباکو',
+                en: 'Tobacco Pouch Filling Machine',
+                ps: 'د تنباکو د کڅوړې ډکولو ماشین'
+            },
+            description: {
+                fa: 'توزین دقیق، ویبره و پرکن چنددهانه برای بسته‌بندی پاکت‌های تنباکو و نیکوتین.',
+                en: 'Multi-head weighers with vibration feed fill tobacco and nicotine pouches accurately.',
+                ps: 'چند سری وزن سنج د ویبرېشن فیډ سره تنباکو او نیکوتین کڅوړې په دقیقه توګه ډکوي.'
+            },
+            pdfUrl: 'pdfs/packaging/tobacco-processing/pouch-filling.pdf',
+            category: 'tobacco-processing',
+            icon: '🧴'
+        },
+        {
+            name: {
+                fa: 'دستگاه سیل پاکت تنباکو',
+                en: 'Tobacco Pouch Sealing Machine',
+                ps: 'د تنباکو د کڅوړې سیل کولو ماشین'
+            },
+            description: {
+                fa: 'سیل حرارتی یا التراسونیک با کنترل فشار و سیستم کدزن برای بسته‌های سفارشی.',
+                en: 'Thermal or ultrasonic sealing with pressure control and coding for customised pouches.',
+                ps: 'حرارتي یا الټراسونیک سیل کول د فشار کنټرول او کوډینګ سره د ځانګړو کڅوړو لپاره.'
+            },
+            pdfUrl: 'pdfs/packaging/tobacco-processing/pouch-sealing.pdf',
+            category: 'tobacco-processing',
+            icon: '🔒'
+        },
+        {
+            name: {
+                fa: 'ماشین چاپ روی پاکت تنباکو',
+                en: 'Tobacco Pouch Printing Machine',
+                ps: 'د تنباکو د کڅوړې چاپ ماشین'
+            },
+            description: {
+                fa: 'چاپ فلکسو/دیجیتال با رجیستر دقیق و خشک‌کن UV برای پاکت‌های فویل و کاغذی.',
+                en: 'Flexo or digital printers with tight register and UV drying for foil and paper pouches.',
+                ps: 'فلکسو یا ډیجیټل چاپګر د دقیق رجسټر او UV وچولو سره د فویل او کاغذي کڅوړو لپاره.'
+            },
+            pdfUrl: 'pdfs/packaging/tobacco-processing/pouch-printing.pdf',
+            category: 'tobacco-processing',
+            icon: '🖨️'
+        },
+        {
+            name: {
+                fa: 'خشک‌کن برگ تنباکو',
+                en: 'Tobacco Leaf Dryer',
+                ps: 'د تنباکو د پاڼې وچوونکی'
+            },
+            description: {
+                fa: 'خشک‌کن طبقه‌ای با کنترل دما و رطوبت برای تثبیت کیفیت برگ‌های تنباکو.',
+                en: 'Multi-tier dryer with temperature and humidity control stabilises tobacco leaf quality.',
+                ps: 'چند پوړیز وچوونکی د تودوخې او رطوبت کنټرول سره د تنباکو پاڼو کیفیت ثابتوي.'
+            },
+            pdfUrl: 'pdfs/packaging/tobacco-processing/tobacco-drying.pdf',
+            category: 'tobacco-processing',
+            icon: '🌬️'
+        },
+        {
+            name: {
+                fa: 'خط برش تنباکو',
+                en: 'Tobacco Cutting Line',
+                ps: 'د تنباکو پرې کولو لاین'
+            },
+            description: {
+                fa: 'خردکن و اسلایسر با تنظیم ضخامت و جداساز الیاف برای تهیه برش یکنواخت توتون.',
+                en: 'Shredders and slicers with adjustable cut width and fibre separation for uniform tobacco.',
+                ps: 'شریدر او سلایسر د قطع عرض د تنظیم او فایبر بېلولو سره د یوشان توتون لپاره.'
+            },
+            pdfUrl: 'pdfs/packaging/tobacco-processing/tobacco-cutting.pdf',
+            category: 'tobacco-processing',
+            icon: '🔪'
+        },
+        {
+            name: {
+                fa: 'واحد طعم‌دهی تنباکو',
+                en: 'Tobacco Flavouring Unit',
+                ps: 'د تنباکو خوند ورکولو واحد'
+            },
+            description: {
+                fa: 'میکسر درام و اسپری دوزینگ با کنترل رطوبت برای افزودن اسانس و مواد افزودنی.',
+                en: 'Drum mixers with spray dosing and humidity control to apply flavours and casings.',
+                ps: 'د ډرم مکسرونه د سپرې ډوزینګ او د رطوبت کنټرول سره د خوند او کوټینګ لپاره.'
+            },
+            pdfUrl: 'pdfs/packaging/tobacco-processing/tobacco-flavoring.pdf',
+            category: 'tobacco-processing',
+            icon: '🍯'
         }
     ];
 
@@ -704,19 +661,18 @@
         'stretch-wrapping': '🌀',
         'shrink-wrapping': '🔥',
         'strapping-machine': '➰',
-        'pipe-extruder': '🧵',
-        'film-extruder': '🎞️',
-        'profile-extruder': '📏',
-        'injection-molding': '🧠',
-        'blow-molding': '🍶',
-        'injection-parts': '🧷',
-        'plastic-recycling': '♻️',
-        'shredder': '🪚',
-        'washing-line': '💧',
-        'pelletizing-line': '🧊',
         'flexo-printing': '🖨️',
         'bag-making': '🛍️',
-        'sealing-cutting': '✂️'
+        'sealing-cutting': '✂️',
+        'cigarette-making': '🚬',
+        'cigarette-packing': '📦',
+        'cigarette-filter': '🪶',
+        'pouch-filling': '🧴',
+        'pouch-sealing': '🔒',
+        'pouch-printing': '🖨️',
+        'tobacco-drying': '🌬️',
+        'tobacco-cutting': '🔪',
+        'tobacco-flavoring': '🍯'
     };
 
     const getLanguage = () => (typeof currentLanguage !== 'undefined' ? currentLanguage : 'fa');
@@ -859,8 +815,7 @@
         : (typeof window !== 'undefined' ? (window.equipmentData || {}) : {});
 
     const globalInventory = [
-        ...(Array.isArray(equipmentSource.packaging) ? equipmentSource.packaging : []),
-        ...(Array.isArray(equipmentSource['plastic-processing']) ? equipmentSource['plastic-processing'] : [])
+        ...(Array.isArray(equipmentSource.packaging) ? equipmentSource.packaging : [])
     ];
 
     const inventory = (globalInventory.length ? globalInventory : defaultInventory)
@@ -870,7 +825,7 @@
         window.packagingInventory = inventory;
     }
 
-    function buildInventoryCardsHtml(items, lang) {
+    function buildInventoryCardsHtml(items, lang, { wrap = true } = {}) {
         if (!items || !items.length) {
             const emptyText = lang === 'fa'
                 ? 'هیچ تجهیزی برای این دسته ثبت نشده است.'
@@ -897,7 +852,7 @@
             </div>
         `).join('');
 
-        return `<div class="equipment-grid">${cards}</div>`;
+        return wrap ? `<div class="equipment-grid">${cards}</div>` : cards;
     }
 
     function showPackagingCategoryModal(categoryId, lang = getLanguage()) {
@@ -978,10 +933,10 @@
             subtitle.textContent = localise(content.inventorySubtitle, lang);
         }
         if (section) {
-            section.setAttribute('hidden', 'true');
+            section.removeAttribute('hidden');
         }
         if (container) {
-            container.innerHTML = '';
+            container.innerHTML = buildInventoryCardsHtml(inventory, lang, { wrap: false });
         }
     }
 
