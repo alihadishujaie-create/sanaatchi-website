@@ -3688,6 +3688,36 @@ const equipmentData = {
             pdfUrl: 'pdfs/packaging/wrapping-packaging/strapping-machine.pdf'
         },
         {
+            category: 'printing-packaging',
+            name: { fa: 'ماشین چاپ فلکسو', en: 'Flexographic Printing Machine', ps: 'د فلکسو چاپ ماشین' },
+            description: {
+                fa: 'ماشین فلکسو رول به رول با رجیستر دقیق و خشک‌کن هوای گرم برای چاپ بسته‌بندی.',
+                en: 'Roll-to-roll flexo press with precise registration and hot-air dryers for packaging films.',
+                ps: 'رول په رول فلکسو پریس د دقیق رجسټر او د ګرمې هوا وچولو سره د بسته بندۍ فلمونو لپاره.'
+            },
+            pdfUrl: 'pdfs/plastic-processing/printing-packaging/flexo-printing.pdf'
+        },
+        {
+            category: 'printing-packaging',
+            name: { fa: 'خط پاکت‌سازی', en: 'Bag Making Line', ps: 'د کڅوړې جوړولو لاین' },
+            description: {
+                fa: 'از رول تا پاکت با ایستگاه‌های تا، دوخت و پانچ برای تولید پاکت‌های چندلایه.',
+                en: 'From roll to finished bag with folding, sealing and punching stations for multilayer bags.',
+                ps: 'له رول څخه تر بشپړې کڅوړې پورې د تا کولو، سیل کولو او پنچ کولو سټېشنونو سره.'
+            },
+            pdfUrl: 'pdfs/plastic-processing/printing-packaging/bag-making.pdf'
+        },
+        {
+            category: 'printing-packaging',
+            name: { fa: 'خط درزگیری و برش', en: 'Sealing & Cutting Line', ps: 'د سیل کولو او پرې کولو لاین' },
+            description: {
+                fa: 'سیستم برش و درزگیری با کنترل سروو برای تولید رول‌های بسته‌بندی باکیفیت.',
+                en: 'Servo-controlled sealing and cutting modules delivering precise packaging rolls.',
+                ps: 'د سرو کنټرول لرونکي سیل او پرې کولو ماډلونه چې دقیق بسته بندۍ رولونه جوړوي.'
+            },
+            pdfUrl: 'pdfs/plastic-processing/printing-packaging/sealing-cutting.pdf'
+        },
+        {
             category: 'tobacco-processing',
             name: { fa: 'خط تولید سیگار', en: 'Cigarette Making Line', ps: 'د سیګار جوړولو لاین' },
             description: {
