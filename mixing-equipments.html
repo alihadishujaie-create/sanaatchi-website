@@ -317,7 +317,22 @@
         </div>
     </div>
 
-    <script src="js/script.js"></script>
-    <script src="js/mixing-equipments.js"></script>
+    <script src="js/script.js" defer></script>
+    <script src="js/mixing-equipments.js" defer></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        if (typeof publishEquipmentStructuredData === 'function') {
+          publishEquipmentStructuredData('mixing-equipments', {
+            collectionName: 'Sanaatchi Mixing & Tank Systems Library',
+            collectionDescription: 'Agitators, reactors and storage tanks engineered for chemicals, food and cosmetics production lines in Afghanistan.',
+            pageUrl: '/mixing-equipments.html',
+            breadcrumbs: [
+              { name: 'Home', url: '/' },
+              { name: 'Mixing & Tank Equipment', url: '/mixing-equipments.html' }
+            ]
+          });
+        }
+      });
+    </script>
 </body>
 </html>

@@ -317,7 +317,22 @@
         </div>
     </div>
 
-    <script src="js/script.js"></script>
-    <script src="js/packaging.js"></script>
+    <script src="js/script.js" defer></script>
+    <script src="js/packaging.js" defer></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        if (typeof publishEquipmentStructuredData === 'function') {
+          publishEquipmentStructuredData('packaging', {
+            collectionName: 'Sanaatchi Packaging Solutions Library',
+            collectionDescription: 'Filling, sealing and palletising machinery sets helping Afghan FMCG and logistics operations scale.',
+            pageUrl: '/packaging.html',
+            breadcrumbs: [
+              { name: 'Home', url: '/' },
+              { name: 'Packaging Machinery', url: '/packaging.html' }
+            ]
+          });
+        }
+      });
+    </script>
 </body>
 </html>

@@ -309,7 +309,22 @@
         <div class="modal-content" id="searchResultContent"></div>
     </div>
 
-    <script src="js/cooling-heating.js"></script>
-    <script src="js/script.js"></script>
+    <script src="js/cooling-heating.js" defer></script>
+    <script src="js/script.js" defer></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        if (typeof publishEquipmentStructuredData === 'function') {
+          publishEquipmentStructuredData('cooling-heating', {
+            collectionName: 'Sanaatchi Cooling & Heating Systems Library',
+            collectionDescription: 'HVAC chillers, boilers and climate-control solutions designed for industrial facilities and cold chain logistics.',
+            pageUrl: '/cooling-heating.html',
+            breadcrumbs: [
+              { name: 'Home', url: '/' },
+              { name: 'Cooling & Heating Systems', url: '/cooling-heating.html' }
+            ]
+          });
+        }
+      });
+    </script>
 </body>
 </html>

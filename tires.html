@@ -307,7 +307,22 @@
         </div>
     </div>
 
-    <script src="js/script.js"></script>
-    <script src="js/tires.js"></script>
+    <script src="js/script.js" defer></script>
+    <script src="js/tires.js" defer></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        if (typeof publishEquipmentStructuredData === 'function') {
+          publishEquipmentStructuredData('tires', {
+            collectionName: 'Sanaatchi Tire & Rubber Equipment Library',
+            collectionDescription: 'Rubber mixing, curing and recycling lines that support tire manufacturing and retreading projects across Afghanistan.',
+            pageUrl: '/tires.html',
+            breadcrumbs: [
+              { name: 'Home', url: '/' },
+              { name: 'Tire & Rubber Machinery', url: '/tires.html' }
+            ]
+          });
+        }
+      });
+    </script>
 </body>
 </html>
