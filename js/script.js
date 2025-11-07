@@ -5852,20 +5852,21 @@ function showContactModal() {
         <h3>${title}</h3>
         <form id="contactForm" action="/consultation.php" method="POST">
             <div style="margin-bottom: 15px;">
-                <label>${nameLabel}:</label>
-                <input type="text" name="full_name" style="width: 100%; padding: 8px; margin-top: 5px;" required>
+                <label for="consultation-full-name">${nameLabel}:</label>
+                <input id="consultation-full-name" type="text" name="full_name" style="width: 100%; padding: 8px; margin-top: 5px;" required>
             </div>
             <div style="margin-bottom: 15px;">
-                <label>${phoneLabel}:</label>
-                <input type="tel" name="phone" style="width: 100%; padding: 8px; margin-top: 5px;" required>
+                <label for="consultation-phone">${phoneLabel}:</label>
+                <input id="consultation-phone" type="tel" name="phone" style="width: 100%; padding: 8px; margin-top: 5px;" required>
             </div>
             <div style="margin-bottom: 15px;">
-                <label>${emailLabel}:</label>
-                <input type="email" name="email" style="width: 100%; padding: 8px; margin-top: 5px;">
+                <label for="consultation-email">${emailLabel}:</label>
+                <input id="consultation-email" type="email" name="email" style="width: 100%; padding: 8px; margin-top: 5px;" aria-describedby="consultation-email-help">
+                <small id="consultation-email-help" style="display:block; margin-top:4px;">${currentLanguage === 'fa' ? 'اختیاری' : currentLanguage === 'ps' ? 'اختیاري' : 'Optional'}</small>
             </div>
             <div style="margin-bottom: 15px;">
-                <label>${descLabel}:</label>
-                <textarea name="request_description" style="width: 100%; padding: 8px; margin-top: 5px; height: 100px;"></textarea>
+                <label for="consultation-description">${descLabel}:</label>
+                <textarea id="consultation-description" name="request_description" style="width: 100%; padding: 8px; margin-top: 5px; height: 100px;" required></textarea>
             </div>
             <button type="submit" class="btn-primary" style="width: 100%;">${submitText}</button>
         </form>
@@ -6168,6 +6169,136 @@ function closeEquipmentModal() {
     const modal = document.getElementById('equipmentModal');
     modal.style.display = 'none';
     modal.setAttribute('aria-hidden', 'true');
+}
+
+const SITE_ORIGIN_FALLBACK = 'https://sanaatchi.com';
+
+function getSiteOrigin() {
+    if (typeof window !== 'undefined' && window.location && window.location.origin && window.location.origin !== 'null') {
+        return window.location.origin;
+    }
+    return SITE_ORIGIN_FALLBACK;
+}
+
+function toAbsoluteUrl(path) {
+    if (!path) {
+        return getSiteOrigin();
+    }
+    if (/^https?:/i.test(path)) {
+        return path;
+    }
+    if (path.startsWith('//')) {
+        return `${(typeof window !== 'undefined' && window.location ? window.location.protocol : 'https:')}${path}`;
+    }
+    const origin = getSiteOrigin();
+    if (path.startsWith('/')) {
+        return `${origin}${path}`;
+    }
+    return `${origin}/${path}`;
+}
+
+function appendJsonLd(data) {
+    if (!data || typeof document === 'undefined' || !document.head) {
+        return;
+    }
+    const script = document.createElement('script');
+    script.setAttribute('type', 'application/ld+json');
+    script.textContent = JSON.stringify(data, null, 2);
+    document.head.appendChild(script);
+}
+
+function publishItemListStructuredData(options) {
+    if (!options || typeof appendJsonLd !== 'function') {
+        return;
+    }
+
+    const items = Array.isArray(options.items) ? options.items : [];
+    if (items.length === 0) {
+        return;
+    }
+
+    const itemListElements = items.map((item, index) => {
+        const entity = {
+            '@type': item.schemaType || 'CreativeWork',
+            'name': item.name,
+            'url': toAbsoluteUrl(item.url || ''),
+        };
+        if (item.description) {
+            entity.description = item.description;
+        }
+
+        if (item.identifier) {
+            entity.identifier = item.identifier;
+        }
+
+        return {
+            '@type': 'ListItem',
+            position: index + 1,
+            item: entity
+        };
+    });
+
+    const collectionData = {
+        '@context': 'https://schema.org',
+        '@type': options.pageType || 'CollectionPage',
+        name: options.collectionName || document.title || 'Sanaatchi Catalog',
+        url: toAbsoluteUrl(options.pageUrl || window.location.pathname),
+        inLanguage: options.languages || ['fa', 'en', 'ps'],
+        mainEntity: {
+            '@type': 'ItemList',
+            itemListElement: itemListElements
+        }
+    };
+
+    if (options.collectionDescription) {
+        collectionData.description = options.collectionDescription;
+    }
+
+    appendJsonLd(collectionData);
+
+    if (Array.isArray(options.breadcrumbs) && options.breadcrumbs.length > 0) {
+        const breadcrumbItems = options.breadcrumbs.map((crumb, index) => ({
+            '@type': 'ListItem',
+            position: index + 1,
+            name: crumb.name,
+            item: toAbsoluteUrl(crumb.url)
+        }));
+
+        appendJsonLd({
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: breadcrumbItems
+        });
+    }
+}
+
+function publishEquipmentStructuredData(categoryKey, options = {}) {
+    if (typeof publishItemListStructuredData !== 'function') {
+        return;
+    }
+
+    const records = (equipmentData && equipmentData[categoryKey]) || [];
+    if (!Array.isArray(records) || records.length === 0) {
+        return;
+    }
+
+    const items = records.map(record => ({
+        name: record.name?.en || record.name?.fa || record.name || '',
+        description: record.description?.en || record.description?.fa || record.description || '',
+        url: record.pdfUrl,
+        schemaType: options.schemaType || 'Product',
+        identifier: record.category ? `${categoryKey}-${record.category}` : undefined
+    }));
+
+    publishItemListStructuredData({
+        collectionName: options.collectionName,
+        collectionDescription: options.collectionDescription,
+        pageUrl: options.pageUrl,
+        items,
+        breadcrumbs: options.breadcrumbs,
+        languages: options.languages,
+        pageType: options.pageType
+    });
 }
 
 function attachConsultationFormHandler(form) {

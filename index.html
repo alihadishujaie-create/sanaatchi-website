@@ -5,15 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>شرکت چشم‌انداز صنعتی صنعتچی | خط تولید، ماشین‌آلات و راهکارهای صنعتی در افغانستان</title>
     <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="canonical" href="https://sanaatchi.com/">
     <meta name="description" content="شرکت چشم‌انداز صنعتی صنعتچی راهکارهای جامع صنعتی برای افغانستان ارائه می‌دهد؛ از طراحی و راه‌اندازی خط تولید و فابریکه تا تأمین ماشین‌آلات نو و دست دوم، مواد اولیه و خدمات کارگو.">
     <meta name="keywords" content="صنعتچی, راه‌اندازی فابریکه در افغانستان, خط تولید افغانستان, ماشین‌آلات صنعتی افغانستان, مواد اولیه صنعتی افغانستان">
     <meta name="author" content="Sanaatchi Industrial Vision">
-    <meta property="og:title" content="شرکت چشم‌انداز صنعتی صنعتچی | راهکارهای صنعتی در افغانستان">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="شرکت چشم‌انداز صنعتی صنعتچی | خط تولید، ماشین‌آلات و راهکارهای صنعتی در افغانستان">
     <meta property="og:description" content="از ایده تا اولین محصول، صنعتچی Industrial Vision همراه شما در راه‌اندازی خط تولید و فابریکه در افغانستان است.">
-    <meta property="og:image" content="images/aiv-og-image.jpg">
-    <meta property="og:url" content="https://sanaatchi.com">
+    <meta property="og:image" content="https://sanaatchi.com/images/aiv-og-image.jpg">
+    <meta property="og:url" content="https://sanaatchi.com/">
+    <meta property="og:site_name" content="Sanaatchi">
     <meta name="twitter:card" content="summary_large_image">
-    
+    <meta name="twitter:title" content="شرکت چشم‌انداز صنعتی صنعتچی | خط تولید، ماشین‌آلات و راهکارهای صنعتی در افغانستان">
+    <meta name="twitter:description" content="از ایده تا اولین محصول، صنعتچی Industrial Vision همراه شما در راه‌اندازی خط تولید و فابریکه در افغانستان است.">
+    <meta name="twitter:image" content="https://sanaatchi.com/images/aiv-og-image.jpg">
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     
@@ -54,7 +60,7 @@
     <main id="main-content">
    <section id="hero" class="hero hero-with-search">
     <div class="hero-bg"></div>
-    <img class="hero-gif" src="images/background.webp" alt="Factory Animation" loading="lazy">
+    <img class="hero-gif" src="images/background.webp" alt="انیمیشن پس‌زمینه خط تولید صنعتی" loading="lazy">
     <div class="hero-animation"></div>
     <div class="container">
         <div class="hero-content">
@@ -143,6 +149,7 @@
                 <div class="section-title">
                     <h2 data-translate="categories-title">دسته بندی ها</h2>
                     <p data-translate="categories-subtitle">از لیست دسته بندی ها به محصولات مورد نظر خود دسترسی پیدا کنید</p>
+                    <p class="category-intro">سایت صنعتچی Industrial Vision دسترسی مستقیم به <a href="production-lines.html">خطوط تولید تخصصی</a>، <a href="second-hand.html">ماشین‌آلات دست دوم</a> و <a href="industrial-raw-materials.html">مواد اولیه صنعتی</a> را در کنار ده‌ها گروه تخصصی دیگر فراهم می‌کند.</p>
                 </div>
                 
                 <div class="categories-grid">
@@ -364,21 +371,45 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Sanaatchi Industrial Vision",
-      "url": "https://sanaatchi.com",
-      "logo": "https://sanaatchi.com/images/logo.png",
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+93779819820",
-        "contactType": "customer service",
-        "availableLanguage": ["Persian", "English", "Pashto"]
-      },
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "Afghanistan",
-        "addressLocality": "Kabul"
-      }
+      "@graph": [
+        {
+          "@type": "Organization",
+          "name": "Sanaatchi Industrial Vision",
+          "url": "https://sanaatchi.com/",
+          "logo": "https://sanaatchi.com/images/logo.png",
+          "description": "Sanaatchi Industrial Vision provides turnkey industrial machinery, production lines and raw material sourcing for Afghanistan.",
+          "email": "info@sanaatchi.com",
+          "contactPoint": [
+            {
+              "@type": "ContactPoint",
+              "telephone": "+93 779 819 820",
+              "email": "info@sanaatchi.com",
+              "contactType": "customer service",
+              "areaServed": "AF",
+              "availableLanguage": ["fa", "en", "ps"]
+            },
+            {
+              "@type": "ContactPoint",
+              "telephone": "+86 159 5171 6867",
+              "email": "china@sanaatchi.com",
+              "contactType": "sales",
+              "areaServed": "CN",
+              "availableLanguage": ["fa", "en"]
+            }
+          ],
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "AF",
+            "addressLocality": "Kabul"
+          }
+        },
+        {
+          "@type": "WebSite",
+          "name": "Sanaatchi",
+          "url": "https://sanaatchi.com/",
+          "inLanguage": ["fa", "en", "ps"]
+        }
+      ]
     }
     </script>
     
@@ -423,7 +454,7 @@
     </div>
     
     <!-- Custom JS -->
-    <script src="js/script.js"></script>
-    <script src="js/production-lines.js"></script>
+    <script src="js/script.js" defer></script>
+    <script src="js/production-lines.js" defer></script>
 </body>
 </html>

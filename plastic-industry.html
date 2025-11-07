@@ -255,7 +255,22 @@
         </div>
     </div>
 
-    <script src="js/script.js"></script>
-    <script src="js/plastic-industry.js"></script>
+    <script src="js/script.js" defer></script>
+    <script src="js/plastic-industry.js" defer></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        if (typeof publishEquipmentStructuredData === 'function') {
+          publishEquipmentStructuredData('plastic-industry', {
+            collectionName: 'Sanaatchi Plastic Industry Equipment Library',
+            collectionDescription: 'Extrusion, injection, recycling and thermoforming machinery dossiers tailored for the plastic sector in Afghanistan.',
+            pageUrl: '/plastic-industry.html',
+            breadcrumbs: [
+              { name: 'Home', url: '/' },
+              { name: 'Plastic Industry', url: '/plastic-industry.html' }
+            ]
+          });
+        }
+      });
+    </script>
 </body>
 </html>

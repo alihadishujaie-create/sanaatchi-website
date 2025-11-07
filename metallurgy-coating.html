@@ -307,7 +307,22 @@
         </div>
     </div>
 
-    <script src="js/script.js"></script>
-    <script src="js/metallurgy-coating.js"></script>
+    <script src="js/script.js" defer></script>
+    <script src="js/metallurgy-coating.js" defer></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        if (typeof publishEquipmentStructuredData === 'function') {
+          publishEquipmentStructuredData('metallurgy-coating', {
+            collectionName: 'Sanaatchi Metallurgy & Coating Equipment Library',
+            collectionDescription: 'Furnaces, surface finishing lines and metal treatment systems tailored for Afghan manufacturing.',
+            pageUrl: '/metallurgy-coating.html',
+            breadcrumbs: [
+              { name: 'Home', url: '/' },
+              { name: 'Metallurgy & Coating', url: '/metallurgy-coating.html' }
+            ]
+          });
+        }
+      });
+    </script>
 </body>
 </html>
