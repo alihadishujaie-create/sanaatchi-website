@@ -132,6 +132,7 @@ const productionLineCategoryRoutes = window.productionLineCategoryRoutes || {
     'consumer-goods-lines': 'consumer-goods-lines.html',
     'construction-materials-lines': 'construction-materials-lines.html',
     'textile-garments-lines': 'textile-garments-lines.html',
+    'fiberglas-production': 'production-lines.html#fiberglas-production',
     'recycling-lines': 'recycling-lines.html',
     'disposable-products-lines': 'disposable-products-lines.html',
     'light-industry-lines': 'light-industry-lines.html',
