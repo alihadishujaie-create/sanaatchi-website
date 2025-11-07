@@ -2921,14 +2921,172 @@ const equipmentData = {
     ],
     'pumps-compressors': [
         {
-            name: { fa: 'پمپ آب صنعتی', en: 'Industrial Water Pump', ps: 'د صنعت اوبه پمپ' },
-            description: { fa: 'پمپ آب برای مصارف صنعتی', en: 'Water pump for industrial applications', ps: 'د صنعت کارونو لپاره اوبه پمپ' },
-            pdfUrl: 'pdfs/pumps-compressors/water-pump.pdf'
+            category: 'water-pump',
+            name: {
+                fa: 'پمپ سانتریفیوژ چندمرحله',
+                en: 'Multistage Centrifugal Pump',
+                ps: 'چند پړاو سنټرفیوګ پمپ'
+            },
+            description: {
+                fa: 'پمپ افقی چندمرحله با بدنه چدنی و آب‌بندی مکانیکال سیل مناسب خطوط آبرسانی و صنعتی.',
+                en: 'Horizontal multistage unit with cast-iron casing and mechanical seal for distribution and process water.',
+                ps: 'افقي څو پړاوه واحد د کاسټ اوسپنې بدنه او میخانیک سیل سره د اوبو وېش او پروسې لپاره.'
+            },
+            pdfUrl: 'pdfs/pumps-compressors/water-pump/centrifugal-pump.pdf'
         },
         {
-            name: { fa: 'کمپرسور هوا', en: 'Air Compressor', ps: 'د هوا کمپرسور' },
-            description: { fa: 'کمپرسور هوا برای مصارف صنعتی', en: 'Air compressor for industrial applications', ps: 'د صنعت کارونو لپاره هوا کمپرسور' },
-            pdfUrl: 'pdfs/pumps-compressors/air-compressor.pdf'
+            category: 'water-pump',
+            name: {
+                fa: 'پمپ غوطه‌ور چاهی',
+                en: 'Deep-Well Submersible Pump',
+                ps: 'د څاه غوطه پمپ'
+            },
+            description: {
+                fa: 'پمپ استنلس استیل با موتور IP68 و کابل سه‌لایه برای چاه‌های عمیق و کشاورزی.',
+                en: 'Stainless submersible pump with IP68 motor and triple-shield cable for deep wells and irrigation.',
+                ps: 'سټینلیس سبمرسیبل پمپ د IP68 موټور او درې پوړیز کیبل سره د ژورو څاهګانو او خړوبولو لپاره.'
+            },
+            pdfUrl: 'pdfs/pumps-compressors/water-pump/submersible-pump.pdf'
+        },
+        {
+            category: 'water-pump',
+            name: {
+                fa: 'بوستر پمپ چند پمپی',
+                en: 'Multi-Pump Booster Set',
+                ps: 'د څو پمپونو بوستر سیټ'
+            },
+            description: {
+                fa: 'بوسترست چند پمپی بر روی شاسی استیل با کنترلر PLC و اینورتر برای حفظ فشار ثابت شبکه.',
+                en: 'Multi-pump booster skid with stainless frame, PLC controller and inverters to maintain constant network pressure.',
+                ps: 'د څو پمپونو بوستر سیټ د سټینلیس چوکاټ، PLC کنټرولر او انورټرونو سره د ثابت فشار لپاره.'
+            },
+            pdfUrl: 'pdfs/pumps-compressors/water-pump/booster-pump.pdf'
+        },
+        {
+            category: 'air-compressor',
+            name: {
+                fa: 'کمپرسور پیچ دور متغیر',
+                en: 'Variable Speed Screw Compressor',
+                ps: 'د سرعت بدلېدونکی سکرو کمپرسور'
+            },
+            description: {
+                fa: 'کمپرسور اسکرو دور متغیر با روتور نامتقارن، درایر تبریدی و سیستم بازیافت حرارت.',
+                en: 'Variable speed screw compressor with asymmetric rotors, refrigerated dryer and heat recovery package.',
+                ps: 'د سرعت بدلولو سکرو کمپرسور د غیر متقارن روتورونو، یخچالي وچوونکي او د تودوخې د بیا ترلاسه کولو پیکج سره.'
+            },
+            pdfUrl: 'pdfs/pumps-compressors/air-compressor/screw-compressor.pdf'
+        },
+        {
+            category: 'air-compressor',
+            name: {
+                fa: 'کمپرسور پیستونی صنعتی',
+                en: 'Industrial Piston Compressor',
+                ps: 'صنعتي پسټوني کمپرسور'
+            },
+            description: {
+                fa: 'کمپرسور پیستونی دو مرحله با سیلندر چدنی، مخزن ۵۰۰ لیتری و کنترل اتومات تخلیه.',
+                en: 'Two-stage piston compressor with cast-iron cylinders, 500L receiver and automatic unload control.',
+                ps: 'دوه پړاوه پسټوني کمپرسور د کاسټ اوسپنې سلنډرونو، ۵۰۰ لیټره ټانک او اتومات تخلیه کنټرول سره.'
+            },
+            pdfUrl: 'pdfs/pumps-compressors/air-compressor/piston-compressor.pdf'
+        },
+        {
+            category: 'air-compressor',
+            name: {
+                fa: 'کمپرسور سیار دیزلی',
+                en: 'Diesel Portable Compressor',
+                ps: 'دیزلي ګرځنده کمپرسور'
+            },
+            description: {
+                fa: 'کمپرسور دیزلی یدک‌کش با کاور عایق صدا و خروجی چندگانه برای پروژه‌های ساختمانی و معدنی.',
+                en: 'Towable diesel compressor with sound-insulated canopy and multi-outlet manifold for construction and mining.',
+                ps: 'د یدک وړ دیزلي کمپرسور د غږ عایق پوښ او څو برخي والو سره د ساختماني او کان کیندنې پروژو لپاره.'
+            },
+            pdfUrl: 'pdfs/pumps-compressors/air-compressor/portable-compressor.pdf'
+        },
+        {
+            category: 'vacuum-pump',
+            name: {
+                fa: 'پمپ وکیوم پره‌ای روغنی',
+                en: 'Oil-Lubricated Rotary Vane Pump',
+                ps: 'د تېلو روټري وین پمپ'
+            },
+            description: {
+                fa: 'پمپ وکیوم پره‌ای روغنی با پره‌های گرافیتی و فیلتر بخار روغن برای خطوط بسته‌بندی.',
+                en: 'Oil-lubricated rotary vane pump with graphite blades and oil mist filter for packaging lines.',
+                ps: 'د تېلو روټري وین پمپ د ګرافایټ پرخو او د تېلو بخار فلټر سره د بسته بندۍ لینونو لپاره.'
+            },
+            pdfUrl: 'pdfs/pumps-compressors/vacuum-pump/rotary-vane-pump.pdf'
+        },
+        {
+            category: 'vacuum-pump',
+            name: {
+                fa: 'پمپ وکیوم رینگ مایع',
+                en: 'Liquid Ring Vacuum Pump',
+                ps: 'د مایع حلقه ویکیوم پمپ'
+            },
+            description: {
+                fa: 'پمپ رینگ مایع با بدنه استیل و سیستم جداسازی مایع برای گازهای مرطوب و فرایندی.',
+                en: 'Stainless liquid ring pump with integrated separator for moist process gases.',
+                ps: 'سټینلیس د مایع حلقه پمپ د مدغم جداکوونکي سره د لمدو پروسې ګازونو لپاره.'
+            },
+            pdfUrl: 'pdfs/pumps-compressors/vacuum-pump/liquid-ring-pump.pdf'
+        },
+        {
+            category: 'vacuum-pump',
+            name: {
+                fa: 'پمپ وکیوم دیافراگمی خشک',
+                en: 'Dry Diaphragm Vacuum Pump',
+                ps: 'وچ ډایافرام ویکیوم پمپ'
+            },
+            description: {
+                fa: 'پمپ وکیوم دیافراگمی خشک بدون نیاز به روغن برای آزمایشگاه و بسته‌بندی حساس.',
+                en: 'Dry diaphragm vacuum pump requiring no oil, ideal for labs and sensitive packaging.',
+                ps: 'وچ ډایافرام ویکیوم پمپ چې تېل نه غواړي، د لابراتوار او حساسو بسته بندیو لپاره مناسب.'
+            },
+            pdfUrl: 'pdfs/pumps-compressors/vacuum-pump/diaphragm-pump.pdf'
+        },
+        {
+            category: 'pump-parts',
+            name: {
+                fa: 'ایمپلر و کیت سایش پمپ',
+                en: 'Pump Impeller & Wear Kit',
+                ps: 'د پمپ ایمپلر او استهلاکي کټ'
+            },
+            description: {
+                fa: 'ایمپلر برنزی بالانس‌شده به همراه رینگ‌های سایش و پیچ‌های استیل ضد خوردگی.',
+                en: 'Balanced bronze impeller supplied with wear rings and corrosion-resistant hardware.',
+                ps: 'متعادل برونزي ایمپلر د سایش کړیو او د زنګ ضد فټنرونو سره وړاندې کېږي.'
+            },
+            pdfUrl: 'pdfs/pumps-compressors/pump-parts/pump-impeller.pdf'
+        },
+        {
+            category: 'pump-parts',
+            name: {
+                fa: 'ست مکانیکال سیل',
+                en: 'Mechanical Seal Service Kit',
+                ps: 'د میخانیک سیل خدمت کټ'
+            },
+            description: {
+                fa: 'ست مکانیکال سیل با سطوح سیلیکون کاربید و الاستومر وایتون برای سیالات خورنده.',
+                en: 'Mechanical seal kit featuring silicon carbide faces and Viton elastomers for corrosive fluids.',
+                ps: 'د میخانیک سیل کټ د سیلیکون کاربایډ سطحو او ویټون الاستومرونو سره د زهرجنو سیالاتو لپاره.'
+            },
+            pdfUrl: 'pdfs/pumps-compressors/pump-parts/pump-seal.pdf'
+        },
+        {
+            category: 'pump-parts',
+            name: {
+                fa: 'کیت ولو کنترل پمپ',
+                en: 'Pump Control Valve Set',
+                ps: 'د پمپ کنټرول والو سیټ'
+            },
+            description: {
+                fa: 'کیت ولو شامل چک ولو، ولو کنترل و گیج فشار برنجی برای خطوط پمپاژ.',
+                en: 'Valve kit including check valve, control valve and brass pressure gauge for pumping lines.',
+                ps: 'د والو کټ چې چک والو، کنټرول والو او د برنج فشار ګیج لري د پمپ لاینونو لپاره.'
+            },
+            pdfUrl: 'pdfs/pumps-compressors/pump-parts/pump-valve.pdf'
         }
     ],
     'industrial-laser': [
@@ -3978,6 +4136,9 @@ function updateTranslations(lang) {
     if (typeof updateCoolingHeatingPage === 'function') {
         updateCoolingHeatingPage();
     }
+    if (typeof updatePumpsCompressorsPage === 'function') {
+        updatePumpsCompressorsPage();
+    }
     if (typeof updateTransportationPage === 'function') {
         updateTransportationPage();
     }
@@ -4045,6 +4206,10 @@ function navigateToPackaging() {
 
 function navigateToCoolingHeating() {
     window.location.href = 'cooling-heating.html';
+}
+
+function navigateToPumpsCompressors() {
+    window.location.href = 'pumps-compressors.html';
 }
 
 function navigateToTires() {
