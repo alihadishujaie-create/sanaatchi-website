@@ -220,6 +220,19 @@ const categories = {
             ps: 'د متالورژي او فلزکاري صنعتونو لپاره پرمختللي ماشینونه او تجهیزات. له ذوب څخه تر فلزاتو بڼه ورکولو پورې، د لوړ دقت او کیفیت سره.'
         }
     },
+    'metallurgy-coating': {
+        icon: '🔩',
+        title: {
+            fa: 'متالورژی و کوتینگ صنعتی',
+            en: 'Metallurgy & Coating Systems',
+            ps: 'صنعتي متالورژي او پوښښ سیستمونه'
+        },
+        description: {
+            fa: 'کوره‌های ذوب، خطوط نورد، گالوانیزه و رنگ صنعتی با طراحی مهندسی و نصب کامل.',
+            en: 'Melting furnaces, rolling mills, galvanizing and industrial coating lines with full engineering and installation.',
+            ps: 'د ذوب کوره ګانې، رولینګ ملونه، ګالوانایز او صنعتي پوښښ کرښې د بشپړ انجینري او نصب سره.'
+        }
+    },
     'construction-materials': {
         icon: '🧱',
         title: {
@@ -2223,6 +2236,20 @@ const categoryKeywords = {
     'printing-machines': ['دستگاه های چاپ', 'Printing Machines', 'چاپ', 'printing', 'چاپ ماشینونه', 'Printing Machines'],
     'sports-equipment': ['تجهیزات ورزشی', 'Sports Equipment', 'ورزشی', 'sports', 'ورزشي تجهیزات', 'Sports Equipment'],
     'metallurgy': ['متالورژی و فلزکاری', 'Metallurgy & Metalworking', 'متالورژی', 'metallurgy', 'فلزکاری', 'metalworking', 'د فلزاتو علم', 'metallurgy', 'فلزکاري', 'metalworking'],
+    'metallurgy-coating': [
+        'متالورژی و کوتینگ صنعتی',
+        'Metallurgy & Coating Systems',
+        'خط گالوانیزه',
+        'galvanizing line',
+        'پوشش پودری',
+        'powder coating',
+        'رنگ پاشی صنعتی',
+        'industrial paint booth',
+        'تیمار سطح',
+        'surface treatment',
+        'metal coating',
+        'coating equipment'
+    ],
     'construction-materials': [
         'ماشین آلات مصالح ساخت',
         'Construction Materials Machinery',
@@ -3135,6 +3162,248 @@ const equipmentData = {
                 ps: 'د والو کټ چې چک والو، کنټرول والو او د برنج فشار ګیج لري د پمپ لاینونو لپاره.'
             },
             pdfUrl: 'pdfs/pumps-compressors/pump-parts/pump-valve.pdf'
+        }
+    ],
+    'metallurgy-coating': [
+        {
+            category: 'iron-melting',
+            name: { fa: 'کوره القایی ذوب فولاد', en: 'Induction Furnace for Steel Melting', ps: 'د فولادو د ذوب انډکشن کوره' },
+            description: {
+                fa: 'کوره القایی با بوته نسوز، مبدل توان IGBT و سیستم همزن الکترومغناطیسی برای مذاب یکنواخت.',
+                en: 'Induction furnace with refractory crucible, IGBT power converter and electromagnetic stirring for uniform melts.',
+                ps: 'انډکشن کوره د نسوز بوټي، د IGBT ځواک کنورټر او برېښنایي ګډوډونکي سره د یکنواخت مذاب لپاره.'
+            },
+            pdfUrl: 'pdfs/metallurgy-coating/metallurgy/iron-melting/induction-furnace.pdf'
+        },
+        {
+            category: 'iron-melting',
+            name: { fa: 'کوره قوس الکتریکی فولادسازی', en: 'Electric Arc Furnace Steelmaking', ps: 'د فولادو جوړولو برقي قوسي کوره' },
+            description: {
+                fa: 'کوره قوس با الکترود گرافیتی، سیستم تخلیه پاتیل و غبارگیر برای تولید فولاد آلیاژی.',
+                en: 'Arc furnace with graphite electrodes, ladle tapping system and fume extraction for alloy steel production.',
+                ps: 'قوسي کوره د ګرافایټ الکترودونو، د پاتیلو تشولو سیستم او د لوګي ایستلو سره د الیاژ فولاد تولید لپاره.'
+            },
+            pdfUrl: 'pdfs/metallurgy-coating/metallurgy/iron-melting/arc-furnace.pdf'
+        },
+        {
+            category: 'iron-melting',
+            name: { fa: 'ماشین ریخته‌گری پیوسته', en: 'Continuous Casting Machine', ps: 'پرله پسې اچولو ماشین' },
+            description: {
+                fa: 'ماشین ریخته‌گری با قالب مسی آبگرد، سیستم برش و کنترل سطح مذاب برای شمش یکنواخت.',
+                en: 'Continuous caster with water-cooled copper mould, cut-off system and melt level control for uniform billets.',
+                ps: 'پرله پسې اچولو ماشین د اوبو یخ شوي مسو قالب، د پرې کولو سیستم او د مذاب د سطح کنټرول سره د یکنواخت بلیتونو لپاره.'
+            },
+            pdfUrl: 'pdfs/metallurgy-coating/metallurgy/iron-melting/casting-machine.pdf'
+        },
+        {
+            category: 'rolling-mill',
+            name: { fa: 'خط نورد گرم ورق', en: 'Hot Rolling Mill Line', ps: 'د ګرم رولینګ مل لاین' },
+            description: {
+                fa: 'قفسه‌های نورد، کوره پیشگرم و سیستم خنک‌کاری برای تولید ورق گرم با کنترل ضخامت.',
+                en: 'Rolling stands, reheating furnace and cooling beds to produce hot rolled sheet with thickness control.',
+                ps: 'د رولینګ سټېنډونه، د بیا تودولو کوره او د یخولو بسترونه د ضخامت کنټرول سره ګرم شیټ تولیدوي.'
+            },
+            pdfUrl: 'pdfs/metallurgy-coating/metallurgy/rolling-mill/hot-rolling.pdf'
+        },
+        {
+            category: 'rolling-mill',
+            name: { fa: 'خط نورد سرد دقیق', en: 'Cold Rolling Mill Stand', ps: 'د دقیق یخ رولینګ مل' },
+            description: {
+                fa: 'استند نورد چهار غلطکه با تاند و سیستم روغن‌کاری برای رسیدن به دقت سطح و سختی مورد نظر.',
+                en: 'Four-high stand with tension control and lubrication to achieve target gauge and surface finish.',
+                ps: 'څلور رول سټېنډ د تناو کنټرول او غوړولو سره د ټاکلې ضخامت او سطح کیفیت لپاره.'
+            },
+            pdfUrl: 'pdfs/metallurgy-coating/metallurgy/rolling-mill/cold-rolling.pdf'
+        },
+        {
+            category: 'rolling-mill',
+            name: { fa: 'ماشین سنگ‌زنی غلتک', en: 'Roll Grinding Machine', ps: 'د رول ګراینډنګ ماشین' },
+            description: {
+                fa: 'ماشین سنگ‌زنی CNC با بالانس دینامیکی و سیستم اندازه‌گیری آنلاین برای احیای غلتک‌ها.',
+                en: 'CNC roll grinder with dynamic balancing and in-process gauging to refurbish mill rolls.',
+                ps: 'د CNC رول ګراینډر د دینامیک بالانس او د پروسې پر مهال اندازه کولو سره د مل رولونو بیا رغونه کوي.'
+            },
+            pdfUrl: 'pdfs/metallurgy-coating/metallurgy/rolling-mill/roll-grinding.pdf'
+        },
+        {
+            category: 'steel-structure',
+            name: { fa: 'خط جوش تیر و ستون H', en: 'H-Beam Welding Line', ps: 'د H بیم ویلډنګ لاین' },
+            description: {
+                fa: 'سیستم جوش اتومات تیر با زیرپودری، میز تنظیم و صافکن برای سازه‌های سنگین.',
+                en: 'Automatic submerged arc beam welding with alignment tables and straighteners for heavy structures.',
+                ps: 'اتومات د سبمرجد قوس بیم ویلډنګ د الاین میزونو او ستریتنرونو سره د درنو جوړښتونو لپاره.'
+            },
+            pdfUrl: 'pdfs/metallurgy-coating/metallurgy/steel-structure/beam-welding.pdf'
+        },
+        {
+            category: 'steel-structure',
+            name: { fa: 'دستگاه برش CNC سازه', en: 'CNC Structure Cutting Machine', ps: 'د جوړښت CNC پرې کولو ماشین' },
+            description: {
+                fa: 'ماشین برش گانتری با مشعل پلاسما/اکسی و نرم‌افزار نِست برای برش دقیق قطعات فولادی.',
+                en: 'Gantry CNC cutting with plasma/oxy torches and nesting software for precise steel components.',
+                ps: 'د ګینټري CNC پرې کولو ماشین د پلازما/اکسي مشعلونو او نېسټینګ سافټویر سره د دقیق فولادي پرزو لپاره.'
+            },
+            pdfUrl: 'pdfs/metallurgy-coating/metallurgy/steel-structure/structure-cutting.pdf'
+        },
+        {
+            category: 'steel-structure',
+            name: { fa: 'ایستگاه مونتاژ و رگلاژ سازه', en: 'Steel Structure Assembly Station', ps: 'د فولادي جوړښت اسمبل سټېشن' },
+            description: {
+                fa: 'ایستگاه مونتاژ با جرثقیل سقفی، گیره هیدرولیک و سیستم اندازه‌گیری لیزری برای نصب سریع.',
+                en: 'Assembly bay with overhead cranes, hydraulic clamps and laser measurement for rapid erection.',
+                ps: 'اسمبل خونه د اوورهد کرینونو، هایدرولیک کلیمپونو او لیزري اندازه کولو سره د چټک نصب لپاره.'
+            },
+            pdfUrl: 'pdfs/metallurgy-coating/metallurgy/steel-structure/structure-assembly.pdf'
+        },
+        {
+            category: 'metal-coating',
+            name: { fa: 'خط گالوانیزه گرم', en: 'Hot-Dip Galvanizing Line', ps: 'د ګرم ګالوانایز لاین' },
+            description: {
+                fa: 'خط گالوانیزه با وان روی، پیش‌درمانی شیمیایی و سیستم کنترل دما برای پوشش ضدخوردگی.',
+                en: 'Galvanizing line with zinc kettle, chemical pretreatment and temperature control for corrosion protection.',
+                ps: 'د زنک حوض، کیمیاوي مخکې درملنې او د تودوخې کنټرول سره ګالوانایز لاین د زنګ پر وړاندې ساتنې لپاره.'
+            },
+            pdfUrl: 'pdfs/metallurgy-coating/metallurgy/metal-coating/galvanizing.pdf'
+        },
+        {
+            category: 'metal-coating',
+            name: { fa: 'سیستم پوشش پودری فلزی', en: 'Metal Powder Coating System', ps: 'د فلزي پوډر پوښښ سیستم' },
+            description: {
+                fa: 'کابین پاشش، بازیافت پودر و کوره پخت برای پوشش قطعات فلزی با دوام بالا.',
+                en: 'Powder spray booth, recovery cyclones and curing oven for durable metal component coating.',
+                ps: 'د پوډر شیندلو کابین، د بېرته راټولولو سایکلونونه او د پخېدو تنور د فلزي پرزو د دوامدار پوښښ لپاره.'
+            },
+            pdfUrl: 'pdfs/metallurgy-coating/metallurgy/metal-coating/powder-coating.pdf'
+        },
+        {
+            category: 'metal-coating',
+            name: { fa: 'خط آبکاری الکتریکی', en: 'Electroplating Line', ps: 'د الکترپلېټینګ لاین' },
+            description: {
+                fa: 'وان‌های آبکاری، رکتیفایر و سیستم فیلتراسیون برای پوشش نیکل/کروم با کنترل ضخامت.',
+                en: 'Electroplating tanks, rectifier and filtration system to deposit nickel/chrome with thickness control.',
+                ps: 'د الکترپلېټینګ ټانکونه، ریکتیفایر او د فلټر سیستم د نیکل/کروم د پوښښ د ضخامت کنټرول سره.'
+            },
+            pdfUrl: 'pdfs/metallurgy-coating/metallurgy/metal-coating/electroplating.pdf'
+        },
+        {
+            category: 'powder-coating',
+            name: { fa: 'سیستم مخلوط پودر رنگ', en: 'Powder Coating Mix System', ps: 'د رنګ پوډر مکس سیستم' },
+            description: {
+                fa: 'میکسر دوزینگ، غربال و ذخیره سیلو برای آماده‌سازی یکنواخت پودر پوشش.',
+                en: 'Dosing mixers, sieving and silo storage to prepare uniform powder coating batches.',
+                ps: 'د دوزینګ میکسرونه، جالۍ او سیلو ذخیره د یکنواخت پوډر پوښښ د چمتو کولو لپاره.'
+            },
+            pdfUrl: 'pdfs/metallurgy-coating/paint-coating/powder-coating/powder-mixing.pdf'
+        },
+        {
+            category: 'powder-coating',
+            name: { fa: 'دستگاه پاشش پودر الکترواستاتیک', en: 'Electrostatic Powder Spraying Booth', ps: 'د الکترواستاتیک پوډر شیندلو کابین' },
+            description: {
+                fa: 'گان الکترواستاتیک، کابین پاشش و ربات انتقال برای پوشش یکنواخت قطعات.',
+                en: 'Electrostatic guns, spray booth and transfer conveyor for uniform powder deposition.',
+                ps: 'الکترواستاتیک ټوپکونه، د شیندلو کابین او د انتقال کنوېیر د یکنواخت پوډر پوښښ لپاره.'
+            },
+            pdfUrl: 'pdfs/metallurgy-coating/paint-coating/powder-coating/powder-spraying.pdf'
+        },
+        {
+            category: 'powder-coating',
+            name: { fa: 'کوره عمل‌آوری پودر', en: 'Powder Curing Oven', ps: 'د پوډر پخېدو تنور' },
+            description: {
+                fa: 'کوره هوای گرم با کنترل PID، گردش فن و ثبت منحنی پخت برای چسبندگی پایدار.',
+                en: 'Hot-air oven with PID control, recirculation fans and cure logging for consistent adhesion.',
+                ps: 'د ګرمې هوا تنور د PID کنټرول، د هوا گردش مینه وال او د پخېدو ثبتولو سره د ثابت چسپېدو لپاره.'
+            },
+            pdfUrl: 'pdfs/metallurgy-coating/paint-coating/powder-coating/powder-curing.pdf'
+        },
+        {
+            category: 'spray-painting',
+            name: { fa: 'کابین رنگ پاشی صنعتی', en: 'Industrial Spray Paint Booth', ps: 'صنعتي د رنګ شیندلو کابین' },
+            description: {
+                fa: 'کابین با فیلتر چندمرحله، چراغ ضدانفجار و سیستم تهویه برای رنگ‌آمیزی تمیز.',
+                en: 'Spray booth with multi-stage filtration, explosion-proof lighting and ventilation for clean painting.',
+                ps: 'د څو پړاوه فلټر، د چاودنې ضد څراغونو او هوايي سیستم سره د رنګ شیندلو کابین د پاک کار لپاره.'
+            },
+            pdfUrl: 'pdfs/metallurgy-coating/paint-coating/spray-painting/spray-booth.pdf'
+        },
+        {
+            category: 'spray-painting',
+            name: { fa: 'گان رنگ پاش فشار بالا', en: 'High-Pressure Spray Gun Package', ps: 'د لوړ فشار رنګ ټوپک کټ' },
+            description: {
+                fa: 'گان ایرلس، پمپ فشار بالا و شیلنگ ضدحلال برای پوشش سطوح بزرگ.',
+                en: 'Airless gun, high-pressure pump and solvent-resistant hoses for coating large surfaces.',
+                ps: 'ایرلس ټوپک، د لوړ فشار پمپ او د محلول ضد نلونه د لویو سطحو د پوښښ لپاره.'
+            },
+            pdfUrl: 'pdfs/metallurgy-coating/paint-coating/spray-painting/spray-gun.pdf'
+        },
+        {
+            category: 'spray-painting',
+            name: { fa: 'خشک‌کن رنگ پاشی', en: 'Spray Paint Drying Tunnel', ps: 'د رنګ شیندلو وچوونکی تونل' },
+            description: {
+                fa: 'تونل خشک‌کن با جریان هوای گرم، رطوبت‌گیر و کنترل سرعت نوار نقاله.',
+                en: 'Drying tunnel with heated airflow, dehumidification and conveyor speed control.',
+                ps: 'د ګرمې هوا جریان، رطوبت ایستلو او د کنوېیر د سرعت کنټرول سره وچوونکی تونل.'
+            },
+            pdfUrl: 'pdfs/metallurgy-coating/paint-coating/spray-painting/spray-drying.pdf'
+        },
+        {
+            category: 'liquid-paint',
+            name: { fa: 'سیستم مخلوط رنگ مایع', en: 'Liquid Paint Mixing System', ps: 'د مایع رنګ مکس سیستم' },
+            description: {
+                fa: 'مخازن استیل، همزن ضدانفجار و اندازه‌گیری ویسکوزیته برای فرمولاسیون دقیق.',
+                en: 'Stainless tanks, explosion-proof agitators and viscosity measurement for precise formulations.',
+                ps: 'سټینلیس ټانکونه، د چاودنې ضد همزنونه او د واسکوزیتې اندازه کول د دقیق فورمول لپاره.'
+            },
+            pdfUrl: 'pdfs/metallurgy-coating/paint-coating/liquid-paint/paint-mixing.pdf'
+        },
+        {
+            category: 'liquid-paint',
+            name: { fa: 'دستگاه پرکن رنگ مایع', en: 'Liquid Paint Filling Machine', ps: 'د مایع رنګ ډکولو ماشین' },
+            description: {
+                fa: 'پرکن وزنی/حجمی با نازل ضدچکه و دربند برای قوطی و سطل رنگ.',
+                en: 'Weight/volume filler with anti-drip nozzles and capping for paint cans and pails.',
+                ps: 'د وزن/حجم ډکونکی د ضد څاڅکو نوزلونو او د سر بندولو سره د رنګ قوطیو لپاره.'
+            },
+            pdfUrl: 'pdfs/metallurgy-coating/paint-coating/liquid-paint/paint-filling.pdf'
+        },
+        {
+            category: 'liquid-paint',
+            name: { fa: 'خط لیبل‌زنی قوطی رنگ', en: 'Paint Can Labelling Line', ps: 'د رنګ قوطۍ لیبل لاین' },
+            description: {
+                fa: 'ماشین لیبل‌زن، جت‌پرینتر و سیستم بازرسی کد برای بسته‌بندی حرفه‌ای.',
+                en: 'Labelling machine with inkjet printer and code inspection for professional packaging.',
+                ps: 'د لیبل ماشین د انک جېټ چاپګر او د کوډ تفتیش سره د مسلکي بسته بندۍ لپاره.'
+            },
+            pdfUrl: 'pdfs/metallurgy-coating/paint-coating/liquid-paint/paint-labeling.pdf'
+        },
+        {
+            category: 'surface-treatment',
+            name: { fa: 'خط چربی‌زدایی صنعتی', en: 'Industrial Degreasing Line', ps: 'صنعتي د غوړ لرې کولو لاین' },
+            description: {
+                fa: 'حوض چربی‌زدایی، شست‌وشوی پرفشار و خشک‌کن هوایی برای آماده‌سازی سطح.',
+                en: 'Degreasing tanks, high-pressure washing and air dryers to prepare surfaces.',
+                ps: 'د غوړ لرې کولو ټانکونه، لوړ فشار مینځل او هوايي وچوونکي د سطح چمتو کولو لپاره.'
+            },
+            pdfUrl: 'pdfs/metallurgy-coating/paint-coating/surface-treatment/degreasing.pdf'
+        },
+        {
+            category: 'surface-treatment',
+            name: { fa: 'سیستم فسفاته چندمرحله‌ای', en: 'Multi-Stage Phosphating System', ps: 'د څو پړاو فاسفېټ کولو سیستم' },
+            description: {
+                fa: 'اسپری یا غوطه‌وری فسفاته با کنترل دما و PH برای افزایش چسبندگی پوشش.',
+                en: 'Spray or dip phosphating with temperature and pH control to boost coating adhesion.',
+                ps: 'د سپرې یا ډوبولو فاسفېټ کول د تودوخې او PH کنټرول سره د پوښ چسپېدو زیاتولو لپاره.'
+            },
+            pdfUrl: 'pdfs/metallurgy-coating/paint-coating/surface-treatment/phosphating.pdf'
+        },
+        {
+            category: 'surface-treatment',
+            name: { fa: 'دستگاه شات/سندبلاست', en: 'Sandblasting Machine', ps: 'د شګه پاشلو ماشین' },
+            description: {
+                fa: 'اتاق شات‌بلاست با توربین ساینده، سیستم بازیافت و فیلتراسیون گرد و غبار.',
+                en: 'Blast room with abrasive turbines, media recovery and dust filtration.',
+                ps: 'د بلاسټ خونه د سایندې توربینونو، د موادو بېرته راټولولو او دوړو فلټر کولو سره.'
+            },
+            pdfUrl: 'pdfs/metallurgy-coating/paint-coating/surface-treatment/sandblasting.pdf'
         }
     ],
     'paper-pulp': [
@@ -4887,6 +5156,7 @@ Object.assign(translations, {
     'cat-chemical-pharma': { fa: 'ماشین آلات شیمیایی و دارویی', en: 'Chemical & Pharmaceutical Machinery', ps: 'د کیمیاوي او درملو ماشینونه' },
     'cat-machinery-parts': { fa: 'پرزه‌جات ماشین‌آلات', en: 'Machinery Spare Parts', ps: 'د ماشینونو پرزې' },
     'cat-mixing-equipments': { fa: 'تجهیزات میکسینگ و تانک‌سازی', en: 'Mixing Equipment & Process Tanks', ps: 'د مکسینګ تجهیزات او پروسې ټانکونه' },
+    'cat-metallurgy-coating': { fa: 'متالورژی و کوتینگ', en: 'Metallurgy & Coating', ps: 'د متالورژۍ او پوښښ' },
     'cat-electronics-energy-systems': { fa: 'الکترونیک و سیستم‌های انرژی', en: 'Electronics & Energy Systems', ps: 'برېښنایي او د انرژۍ سیستمونه' },
     'cat-electronic-machinery': { fa: 'ماشین آلات الکترونیکی', en: 'Electronic Machinery', ps: 'د الکترونیک ماشینونه' },
     'cat-telecom-parts': { fa: 'قطعات و لوازم اینترنتی و مخابراتی', en: 'Internet & Telecommunication Parts', ps: 'د انترنت او مخابراتي برخې' },
@@ -5138,6 +5408,9 @@ function updateTranslations(lang) {
     if (typeof updateMixingEquipmentsPage === 'function') {
         updateMixingEquipmentsPage();
     }
+    if (typeof updateMetallurgyCoatingPage === 'function') {
+        updateMetallurgyCoatingPage();
+    }
     if (typeof updateElectronicsEnergySystemsPage === 'function') {
         updateElectronicsEnergySystemsPage();
     }
@@ -5215,6 +5488,10 @@ function navigateToMachineryParts() {
 
 function navigateToMixingEquipments() {
     window.location.href = 'mixing-equipments.html';
+}
+
+function navigateToMetallurgyCoating() {
+    window.location.href = 'metallurgy-coating.html';
 }
 
 function navigateToElectronicsEnergySystems() {
@@ -5528,6 +5805,7 @@ function performSearch(searchTerm) {
             { id: 'production-lines', key: 'cat-production' },
             { id: 'printing-machines', key: 'cat-printing' },
             { id: 'metallurgy', key: 'cat-metallurgy' },
+            { id: 'metallurgy-coating', key: 'cat-metallurgy-coating' },
             { id: 'construction-materials', key: 'cat-construction' },
             { id: 'plastic-processing', key: 'cat-plastic' }
         ];
