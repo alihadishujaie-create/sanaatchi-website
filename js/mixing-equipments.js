@@ -302,6 +302,8 @@
         return acc;
     }, {});
 
+    const getLanguage = () => (typeof currentLanguage !== 'undefined' ? currentLanguage : 'fa');
+
     const categoryIcons = {
         'chemical-pharma': '⚗️',
         'tanks': '🛢️',
@@ -509,7 +511,7 @@
             </div>
         `).join('');
 
-        return `<div class="second-hand-inventory-grid">${cards}</div>`;
+        return `<div class="equipment-grid">${cards}</div>`;
     }
 
     function renderInventory(lang) {
