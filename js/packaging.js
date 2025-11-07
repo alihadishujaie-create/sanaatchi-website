@@ -338,6 +338,7 @@
             category: 'wrapping-packaging',
             icon: '➰'
         },
+        {
             name: {
                 fa: 'ماشین چاپ فلکسو',
                 en: 'Flexographic Printing Machine',
