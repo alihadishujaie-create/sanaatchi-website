@@ -2339,468 +2339,6 @@ const categoryKeywords = {
         'باتری صنعتی', 'Industrial Batteries', 'صنعتي بیټرۍ',
         'تسمه انتقال نیرو', 'Power Transmission Belt', 'د ځواک لېږد تسمه'
     ],
-    'electronics-energy-systems': [
-        {
-            category: 'electronic-machinery',
-            name: { fa: 'ماشین SMT', en: 'SMT Pick-and-Place Line', ps: 'SMT ماشین' },
-            description: {
-                fa: 'خط SMT با فیڈر هوشمند، چاپ خمیر قلع و کوره ریفلو برای تولید بردهای پرتیراژ.',
-                en: 'SMT line with smart feeders, solder paste printing and reflow oven for high-volume PCB production.',
-                ps: 'د SMT لاین د هوښیار فیډرونو، د سولډر پیسټ چاپ او ريفلو تنور سره د لوړې کچې PCB تولید لپاره.'
-            },
-            pdfUrl: 'pdfs/electronics-energy-systems/electronic-machinery/pcb-assembly/smt-machine.pdf'
-        },
-        {
-            category: 'electronic-machinery',
-            name: { fa: 'ماشین لحیم‌کاری موجی', en: 'Wave Soldering Machine', ps: 'ویو سولډرینګ ماشین' },
-            description: {
-                fa: 'سیستم لحیم‌کاری موجی با کنترل دما، فلوکس و نوار نقاله پالتی برای مونتاژ بردهای THT.',
-                en: 'Wave soldering system with controlled temperature, fluxing and pallet conveyor for THT assemblies.',
-                ps: 'د موجي سولډر کولو سیستم د تودوخې، فلوکس او پالت نقالې کنټرول سره د THT اسمبلۍ لپاره.'
-            },
-            pdfUrl: 'pdfs/electronics-energy-systems/electronic-machinery/pcb-assembly/wave-soldering.pdf'
-        },
-        {
-            category: 'electronic-machinery',
-            name: { fa: 'تستر مدار ICT', en: 'IC In-Circuit Tester', ps: 'د IC ازموینې سټېشن' },
-            description: {
-                fa: 'تستر ICT با فیکسچر چندنقطه، سنجش پیوستگی و گزارش خودکار برای کنترل کیفیت برد.',
-                en: 'ICT tester with multi-point fixtures, continuity measurement and automated reporting for board QA.',
-                ps: 'د ICT ټېسټ ماشین د څو نقطه فکچرونو، د تسلسل اندازه کولو او اتومات راپور ورکولو سره د بورډ کیفیت لپاره.'
-            },
-            pdfUrl: 'pdfs/electronics-energy-systems/electronic-machinery/electronic-testing/ic-testing.pdf'
-        },
-        {
-            category: 'electronic-machinery',
-            name: { fa: 'ایستگاه تست عملکردی', en: 'Functional Test Bench', ps: 'فانکشنل ټېسټ بنچ' },
-            description: {
-                fa: 'ایستگاه تست عملکردی با رک ابزار، سناریوهای نرم‌افزاری و ثبت داده برای محصولات الکترونیکی.',
-                en: 'Functional test bench with instrument rack, software scenarios and data capture for electronic products.',
-                ps: 'د وظیفوي ټېسټ بنچ د وسایلو رېک، سافټویر سناریوګانو او د معلوماتو ثبت سره د الکترونیکي محصولاتو لپاره.'
-            },
-            pdfUrl: 'pdfs/electronics-energy-systems/electronic-machinery/electronic-testing/functional-testing.pdf'
-        },
-        {
-            category: 'electronic-machinery',
-            name: { fa: 'خط مونتاژ وایر هارنس', en: 'Wire Harness Assembly Line', ps: 'د وایر هارنس اسمبلۍ لاین' },
-            description: {
-                fa: 'کاتینگ، لخت‌سازی، کرمپ و تست پیوستگی برای تولید دسته سیم خودرو و صنعت.',
-                en: 'Cutting, stripping, crimping and continuity testing for automotive and industrial wire harnesses.',
-                ps: 'د پرې کولو، پوست کولو، کرمپس کولو او د تسلسل ټېسټ د موټرو او صنعتي وایر هارنس لپاره.'
-            },
-            pdfUrl: 'pdfs/electronics-energy-systems/electronic-machinery/cable-assembly/wire-harness.pdf'
-        },
-        {
-            category: 'electronic-machinery',
-            name: { fa: 'ایستگاه تست کابل', en: 'Cable Testing Station', ps: 'د کابل ټېسټ سټېشن' },
-            description: {
-                fa: 'ایستگاه تست ولتاژ بالا، مقاومت عایقی و نشتی جریان برای کابل و دسته سیم.',
-                en: 'High-voltage, insulation resistance and leakage current testing station for cables and harnesses.',
-                ps: 'د لوړ ولتاژ، د عایق مقاومت او د جریان د لیک ازموینې سټېشن د کیبله او هارنسونو لپاره.'
-            },
-            pdfUrl: 'pdfs/electronics-energy-systems/electronic-machinery/cable-assembly/cable-testing.pdf'
-        },
-        {
-            category: 'telecom-parts',
-            name: { fa: 'خط مونتاژ آنتن', en: 'Antenna Assembly Line', ps: 'د انتن اسمبلۍ لاین' },
-            description: {
-                fa: 'مونتاژ رفلکتور، فیدر و مدولایر با گشتاور کنترل‌شده و تست VSWR برای آنتن‌های مخابراتی.',
-                en: 'Antenna line assembling reflectors, feeders and modulators with torque control and VSWR testing.',
-                ps: 'د انتن لاین چې رفلکټر، فیدر او ماډول جوړوي د تورک کنټرول او VSWR ټېسټ سره.'
-            },
-            pdfUrl: 'pdfs/electronics-energy-systems/telecom-parts/antenna-production/antenna-assembly.pdf'
-        },
-        {
-            category: 'telecom-parts',
-            name: { fa: 'تست آنتن', en: 'Antenna Testing Chamber', ps: 'د انتن ازموینې خونه' },
-            description: {
-                fa: 'اتاق تست آنتن با محدوده فرکانسی، چرخش موتوری و تحلیل الگو برای تضمین عملکرد رادیویی.',
-                en: 'Antenna test chamber with frequency range, motorised rotation and pattern analysis for RF assurance.',
-                ps: 'د انتن د ټېسټ خونه د فریکونسۍ رینج، موتري څرخول او د بڼې تحلیل سره د RF ډاډ لپاره.'
-            },
-            pdfUrl: 'pdfs/electronics-energy-systems/telecom-parts/antenna-production/antenna-testing.pdf'
-        },
-        {
-            category: 'telecom-parts',
-            name: { fa: 'پوشش‌دهی آنتن', en: 'Antenna Coating Line', ps: 'د انتن کوټینګ لاین' },
-            description: {
-                fa: 'فرآیند پوشش و آب‌بندی قطعات آنتن با کابین اسپری، خشک‌کن و کنترل ضخامت.',
-                en: 'Coating and sealing process with spray booth, curing oven and thickness monitoring for antenna parts.',
-                ps: 'د سپرې کیبن، وچوونکي تنور او د ضخامت څارنې سره د انتن پرزو کوټینګ او سیل کولو پروسه.'
-            },
-            pdfUrl: 'pdfs/electronics-energy-systems/telecom-parts/antenna-production/antenna-coating.pdf'
-        },
-        {
-            category: 'telecom-parts',
-            name: { fa: 'تولید کابل فیبر نوری', en: 'Fiber Optic Cable Line', ps: 'د فایبر نوري کیبل لاین' },
-            description: {
-                fa: 'تولید فیبر با کشش دقیق، روکش UV و تست OTDR برای شبکه‌های پرسرعت.',
-                en: 'Fiber production with precise drawing, UV coating and OTDR testing for high-speed networks.',
-                ps: 'د فایبر تولید د دقیق کشولو، UV کوټینګ او د OTDR ټېسټ سره د چټکو شبکو لپاره.'
-            },
-            pdfUrl: 'pdfs/electronics-energy-systems/telecom-parts/network-cable/fiber-optic-cable.pdf'
-        },
-        {
-            category: 'telecom-parts',
-            name: { fa: 'تولید کابل کواکسیال', en: 'Coaxial Cable Extrusion Line', ps: 'د کوکسیا کابل تولید لاین' },
-            description: {
-                fa: 'اکسترودر، شیلد بافت و تست امپدانس برای کابل‌های RF و تلویزیونی.',
-                en: 'Extrusion, braided shielding and impedance testing for RF and broadcast coaxial cables.',
-                ps: 'اکسترودر، اوبدل شوی شیلډ او د امپیدانس ټېسټ د RF او خپرونو کواکسیال کیبله لپاره.'
-            },
-            pdfUrl: 'pdfs/electronics-energy-systems/telecom-parts/network-cable/coaxial-cable.pdf'
-        },
-        {
-            category: 'telecom-parts',
-            name: { fa: 'مونتاژ کانکتور کابل', en: 'Cable Connector Assembly', ps: 'د کابل نښلونکي اسمبلۍ' },
-            description: {
-                fa: 'ماشین‌کاری، آبکاری و تست هدایت الکتریکی برای کانکتورهای صنعتی و مخابراتی.',
-                en: 'Machining, plating and electrical continuity testing for industrial and telecom connectors.',
-                ps: 'ماشین کاري، الکترولیت پوښښ او د برقي تسلسل ټېسټ د صنعتي او مخابراتي نښلونو لپاره.'
-            },
-            pdfUrl: 'pdfs/electronics-energy-systems/telecom-parts/network-cable/cable-connector.pdf'
-        },
-        {
-            category: 'telecom-parts',
-            name: { fa: 'مونتاژ برج مخابراتی', en: 'Telecom Tower Assembly', ps: 'د مخابراتي برجه اسمبلۍ' },
-            description: {
-                fa: 'مونتاژ سکشن‌های فولادی، پیچ‌کاری و سیستم بالابری برای نصب برج‌های مخابراتی.',
-                en: 'Steel section assembly, bolting and lifting systems for telecom tower erection.',
-                ps: 'د فولادو سکشن اسمبلۍ، بولټ لګول او د پورته کولو سیستمونه د مخابراتي برجه درولو لپاره.'
-            },
-            pdfUrl: 'pdfs/electronics-energy-systems/telecom-parts/telecom-tower/tower-assembly.pdf'
-        },
-        {
-            category: 'telecom-parts',
-            name: { fa: 'فونداسیون برج مخابراتی', en: 'Tower Foundation Works', ps: 'د برج بنسټ جوړول' },
-            description: {
-                fa: 'قالب‌بندی، آرماتور و بتن‌ریزی پایه‌های برج با آنالیز ژئوتکنیک و بولت آنکر.',
-                en: 'Formwork, rebar and concrete casting for tower bases with geotechnical analysis and anchor bolts.',
-                ps: 'د فارم ورک، اوسپنې میش او کانکریټ اچول د برج د بنسټ لپاره د جیوتخنیکي تحلیل او انکر بولټونو سره.'
-            },
-            pdfUrl: 'pdfs/electronics-energy-systems/telecom-parts/telecom-tower/tower-foundation.pdf'
-        },
-        {
-            category: 'telecom-parts',
-            name: { fa: 'نگهداری برج مخابراتی', en: 'Telecom Tower Maintenance', ps: 'د مخابراتي برجه ساتنه' },
-            description: {
-                fa: 'بازرسی طناب‌کار، تعویض کابل، پوشش ضدزنگ و تست پایداری ساختار برج.',
-                en: 'Rope access inspections, cable replacement, anti-corrosion coating and structural stability checks.',
-                ps: 'د رسی له لارې معاینات، د کابل بدلول، د زنګ ضد کوټینګ او د جوړښت ثبات معاینات.'
-            },
-            pdfUrl: 'pdfs/electronics-energy-systems/telecom-parts/telecom-tower/tower-maintenance.pdf'
-        },
-        {
-            category: 'industrial-laser',
-            name: { fa: 'لیزر فیبری برش', en: 'Fiber Laser Cutting Machine', ps: 'د فایبر لیزر پرې کوونکی' },
-            description: {
-                fa: 'لیزر فیبری با هد اتوفوکوس، میز تبادل و کنترل CNC برای برش استیل و آلومینیوم.',
-                en: 'Fiber laser cutter with auto-focus head, shuttle table and CNC control for stainless and aluminium.',
-                ps: 'د فایبر لیزر پرې کوونکی د اتومات فوکس سر، شاتل مېز او CNC کنټرول سره د سټینلیس او المونیم لپاره.'
-            },
-            pdfUrl: 'pdfs/electronics-energy-systems/industrial-laser/laser-cutting/fiber-laser.pdf'
-        },
-        {
-            category: 'industrial-laser',
-            name: { fa: 'لیزر CO2 برش', en: 'CO₂ Laser Cutting Machine', ps: 'د CO₂ لیزر پرې کولو ماشین' },
-            description: {
-                fa: 'لیزر CO₂ با میز بزرگ، کنترل گالوانومتر و سیستم اگزوز برای مواد غیر فلزی.',
-                en: 'CO₂ laser with large bed, galvanometer control and exhaust system for non-metal materials.',
-                ps: 'د CO₂ لیزر د لوی بستر، ګالوانومیټر کنټرول او د ایستلو سیستم سره د غیر فلزي موادو لپاره.'
-            },
-            pdfUrl: 'pdfs/electronics-energy-systems/industrial-laser/laser-cutting/co2-laser.pdf'
-        },
-        {
-            category: 'industrial-laser',
-            name: { fa: 'علامت‌زنی لیزری', en: 'Laser Marking Station', ps: 'د لیزري نښان وهلو سټېشن' },
-            description: {
-                fa: 'ایستگاه مارکینگ فیبری با فیکسچر چرخشی، نرم‌افزار کدگذاری و کنترل کیفیت آنلاین.',
-                en: 'Fiber marking station with rotary fixtures, coding software and inline quality monitoring.',
-                ps: 'د فایبر نښان وهلو سټېشن د څرخول فکچرونو، کوډ سافټویر او آنلاین کیفیت څارنې سره.'
-            },
-            pdfUrl: 'pdfs/electronics-energy-systems/industrial-laser/laser-engraving/laser-marking.pdf'
-        },
-        {
-            category: 'industrial-laser',
-            name: { fa: 'حکاکی لیزری', en: 'Laser Etching Machine', ps: 'د لیزر حکاکۍ ماشین' },
-            description: {
-                fa: 'دستگاه حکاکی دقیق برای پلاستیک و فلز با محورهای XYZ و کنترل عمق پرتو.',
-                en: 'Precision etching system for plastics and metals with XYZ axes and beam depth control.',
-                ps: 'د پلاستیک او فلز لپاره دقیق حکاکي سیستم د XYZ محورونو او د وړانګې د ژورتیا کنټرول سره.'
-            },
-            pdfUrl: 'pdfs/electronics-energy-systems/industrial-laser/laser-engraving/laser-etching.pdf'
-        },
-        {
-            category: 'industrial-laser',
-            name: { fa: 'سلول برازینگ لیزری', en: 'Laser Brazing Cell', ps: 'د لیزر بریزینګ سیل' },
-            description: {
-                fa: 'سلول برازینگ لیزری با منبع تغذیه روباتی، سیم تغذیه و کنترل جوش برای قطعات خودرویی.',
-                en: 'Laser brazing cell with robotic power source, wire feed and weld control for automotive parts.',
-                ps: 'د لیزر بریزینګ سیل د روبوټ ځواک سرچینې، د تار خوراک او د ویلډ کنټرول سره د موټرو پرزو لپاره.'
-            },
-            pdfUrl: 'pdfs/electronics-energy-systems/industrial-laser/laser-welding/laser-brazing.pdf'
-        },
-        {
-            category: 'industrial-laser',
-            name: { fa: 'پوشش‌دهی لیزری', en: 'Laser Cladding System', ps: 'د لیزر کلډینګ سیستم' },
-            description: {
-                fa: 'سیستم کلڈینگ با نازل پودر، لیزر پرقدرت و اسکنر برای بازسازی سطوح صنعتی.',
-                en: 'Cladding system with powder nozzle, high-power laser and scanner for industrial surface repair.',
-                ps: 'د پودر نوزل، لوړ ځواک لیزر او سکینر سره کلډینګ سیستم د صنعتي سطحو ترمیم لپاره.'
-            },
-            pdfUrl: 'pdfs/electronics-energy-systems/industrial-laser/laser-welding/laser-cladding.pdf'
-        },
-        {
-            category: 'printing-machines',
-            name: { fa: 'دستگاه افست ورقی', en: 'Sheet-Fed Offset Press', ps: 'ورقي افست پریس' },
-            description: {
-                fa: 'ماشین افست ورقی با واحد چهاررنگ، سیستم رجیستر خودکار و کنترل رطوبت برای چاپ تجاری.',
-                en: 'Sheet-fed offset press with four-colour units, automatic register and dampening control for commercial print.',
-                ps: 'ورقي افست پریس د څلور رنګه واحدونو، اتومات راجسټر او د رطوبت کنټرول سره د تجارتي چاپ لپاره.'
-            },
-            pdfUrl: 'pdfs/electronics-energy-systems/printing-machines/offset-printing/sheet-fed-offset.pdf'
-        },
-        {
-            category: 'printing-machines',
-            name: { fa: 'پرس افست رولی', en: 'Web Offset Press', ps: 'رولي افست پریس' },
-            description: {
-                fa: 'پرس رولی با دوات، خشک‌کن وب و فولدر برای مجلات، روزنامه و بسته‌بندی انعطاف‌پذیر.',
-                en: 'Web offset press with inking, web dryer and folder for magazines, newspapers and flexible packaging.',
-                ps: 'رولي افست پریس د رنګ ورکولو، ویب وچوونکي او فولډر سره د مجلو، ورځپاڼو او انعطاف وړ بسته بندۍ لپاره.'
-            },
-            pdfUrl: 'pdfs/electronics-energy-systems/printing-machines/offset-printing/web-offset.pdf'
-        },
-        {
-            category: 'printing-machines',
-            name: { fa: 'سیستم خشک‌کن افست', en: 'Offset Drying System', ps: 'د افست وچولو سیستم' },
-            description: {
-                fa: 'خشک‌کن IR/هوای گرم با کنترل انرژی و بازیافت گرما برای خطوط چاپ افست.',
-                en: 'IR/hot-air dryer with energy control and heat recovery for offset printing lines.',
-                ps: 'د IR/ګرمې هوا وچوونکی د انرژۍ کنټرول او د تودوخې بیا راټولولو سره د افست چاپ لینونو لپاره.'
-            },
-            pdfUrl: 'pdfs/electronics-energy-systems/printing-machines/offset-printing/offset-drying.pdf'
-        },
-        {
-            category: 'printing-machines',
-            name: { fa: 'چاپگر جوهرافشان صنعتی', en: 'Industrial Inkjet Printer', ps: 'صنعتي انکجټ چاپګر' },
-            description: {
-                fa: 'پرینتر جوهرافشان صنعتی با هد پیزو، مدیریت رنگ و RIP برای چاپ دیجیتال سریع.',
-                en: 'Industrial inkjet printer with piezo heads, colour management and RIP for fast digital runs.',
-                ps: 'صنعتي انکجټ چاپګر د پیزو سری، د رنګ مدیریت او RIP سره د چټکو ډیجیټل چاپونو لپاره.'
-            },
-            pdfUrl: 'pdfs/electronics-energy-systems/printing-machines/digital-printing/inkjet-printing.pdf'
-        },
-        {
-            category: 'printing-machines',
-            name: { fa: 'پرینتر لیزری صنعتی', en: 'Digital Laser Printer', ps: 'ډیجیټل لیزري چاپګر' },
-            description: {
-                fa: 'پرینتر لیزری با کیفیت بالا، تونر با ثبات و فینیشینگ خودکار برای چاپ بر اساس تقاضا.',
-                en: 'High-quality laser printer with durable toner and automated finishing for print-on-demand.',
-                ps: 'لوړ کیفیت لیزري چاپګر د دوامدار ټونر او اتومات فینشینګ سره د غوښتنې پر اساس چاپ لپاره.'
-            },
-            pdfUrl: 'pdfs/electronics-energy-systems/printing-machines/digital-printing/laser-printing.pdf'
-        },
-        {
-            category: 'printing-machines',
-            name: { fa: 'سیستم چاپ فرمت بزرگ', en: 'Large Format Printing System', ps: 'لوی فارمیټ چاپ سیستم' },
-            description: {
-                fa: 'سیستم چاپ فرمت بزرگ با هد UV، میز خلأ و مدیریت مدیا برای بنر و گرافیک فضای باز.',
-                en: 'Large-format UV printing system with vacuum table and media management for banners and outdoor graphics.',
-                ps: 'لوی فارمیټ UV چاپ سیستم د ویکیوم مېز او د میډیا مدیریت سره د بنر او بهرني ګرافیک لپاره.'
-            },
-            pdfUrl: 'pdfs/electronics-energy-systems/printing-machines/digital-printing/large-format-printing.pdf'
-        },
-        {
-            category: 'printing-machines',
-            name: { fa: 'پرس چاپ فلکسو', en: 'Flexographic Printing Press', ps: 'فلیکسو چاپ پریس' },
-            description: {
-                fa: 'پرس فلکسو CI با واحدهای آنیلوکس، خشک‌کن هوا و کنترل کشش برای بسته‌بندی انعطاف‌پذیر.',
-                en: 'CI flexo press with anilox stations, hot-air dryers and tension control for flexible packaging.',
-                ps: 'CI فلیکسو پریس د انیلوکس واحدونو، ګرمې هوا وچوونکو او د کشش کنټرول سره د انعطاف وړ بسته بندۍ لپاره.'
-            },
-            pdfUrl: 'pdfs/electronics-energy-systems/printing-machines/flexo-printing/flexo-printing.pdf'
-        },
-        {
-            category: 'printing-machines',
-            name: { fa: 'سیستم ساخت کلیشه فلکسو', en: 'Flexo Plate Making System', ps: 'د فلیکسو پلیټ جوړولو سیستم' },
-            description: {
-                fa: 'سیستم شست‌وشو، نوردهی و پلیمر برای تولید کلیشه فلکسو با دقت بالا.',
-                en: 'Washout, exposure and polymer processing system for high-precision flexo plates.',
-                ps: 'د مینځلو، روښانولو او پولیمر پروسس سیستم د لوړ دقیق فلیکسو پلیټونو لپاره.'
-            },
-            pdfUrl: 'pdfs/electronics-energy-systems/printing-machines/flexo-printing/flexo-plate-making.pdf'
-        },
-        {
-            category: 'printing-machines',
-            name: { fa: 'لاین برش و ریوایند فلکسو', en: 'Flexo Slitting & Rewinding Line', ps: 'د فلیکسو پرې او ریوایند لاین' },
-            description: {
-                fa: 'لاین برش و ریوایند با کنترل تنشن و تیغه دقیق برای رول‌های چاپ فلکسو.',
-                en: 'Slitting and rewinding line with tension control and precision blades for flexo printed rolls.',
-                ps: 'د پرې کولو او ریوایند لاین د تنشن کنټرول او دقیق تیغونو سره د فلیکسو چاپ رولونو لپاره.'
-            },
-            pdfUrl: 'pdfs/electronics-energy-systems/printing-machines/flexo-printing/flexo-slitting.pdf'
-        },
-        {
-            category: 'printing-machines',
-            name: { fa: 'پرس چاپ سیلک', en: 'Screen Printing Press', ps: 'سیلک چاپ پریس' },
-            description: {
-                fa: 'ماشین چاپ سیلک با میز وکیوم، ثبات رجیستر و خشک‌کن UV برای منسوجات و تبلیغات.',
-                en: 'Screen printing press with vacuum table, register stability and UV dryer for textiles and signage.',
-                ps: 'د سیلک چاپ پریس د ویکیوم مېز، د راجسټر ثبات او UV وچوونکي سره د ټوکر او اعلانونو لپاره.'
-            },
-            pdfUrl: 'pdfs/electronics-energy-systems/printing-machines/screen-printing/screen-printing.pdf'
-        },
-        {
-            category: 'printing-machines',
-            name: { fa: 'تجهیزات ساخت شابلون سیلک', en: 'Screen Making Equipment', ps: 'د سکرین جوړولو تجهیزات' },
-            description: {
-                fa: 'تجهیزات پوشش امولسیون، نوردهی و شست‌وشو برای آماده‌سازی شابلون چاپ سیلک.',
-                en: 'Emulsion coating, exposure and washout equipment for preparing screen printing stencils.',
-                ps: 'د امولشن کوټ، روښانولو او مینځلو تجهیزات د سیلک چاپ د شابلون چمتو کولو لپاره.'
-            },
-            pdfUrl: 'pdfs/electronics-energy-systems/printing-machines/screen-printing/screen-making.pdf'
-        },
-        {
-            category: 'printing-machines',
-            name: { fa: 'سیستم شست‌وشوی سیلک', en: 'Screen Cleaning System', ps: 'د سکرین پاکولو سیستم' },
-            description: {
-                fa: 'سیستم شست‌وشو و بازسازی توری چاپ با پمپ فشار، مواد شوینده و خشک‌کن.',
-                en: 'Screen reclaim system with pressure pumps, detergents and drying for reusable mesh.',
-                ps: 'د سکرین بیا رغونې سیستم د فشار پمپونو، پاکوونکو او وچوونکي سره د بیا کارېدونکي جال لپاره.'
-            },
-            pdfUrl: 'pdfs/electronics-energy-systems/printing-machines/screen-printing/screen-cleaning.pdf'
-        },
-        {
-            category: 'renewable-energy',
-            name: { fa: 'پنل خورشیدی', en: 'Solar PV Module Package', ps: 'لمریز پینل پکیج' },
-            description: {
-                fa: 'ماژول‌های خورشیدی با راندمان بالا، فریم آلومینیومی و گارانتی عملکرد برای نیروگاه‌های تجاری.',
-                en: 'High-efficiency PV modules with aluminium frames and performance warranty for commercial plants.',
-                ps: 'د لوړ موثریت لمریز ماډولونه د المونیم چوکاټ او د کارکرد ضمانت سره د تجارتي فابریکو لپاره.'
-            },
-            pdfUrl: 'pdfs/electronics-energy-systems/renewable-energy/solar-power/solar-panel.pdf'
-        },
-        {
-            category: 'renewable-energy',
-            name: { fa: 'اینورتر خورشیدی', en: 'Solar Inverter System', ps: 'لمریز انورټر سیستم' },
-            description: {
-                fa: 'اینورتر استرینگ/سنترال با MPPT چندگانه، مانیتورینگ آنلاین و حفاظت شبکه.',
-                en: 'String/central inverters with multi-MPPT, online monitoring and grid protection.',
-                ps: 'د سترینګ/سنټرل انورټرونه د څو MPPT، آنلاین څارنې او د شبکې خوندیتوب سره.'
-            },
-            pdfUrl: 'pdfs/electronics-energy-systems/renewable-energy/solar-power/solar-inverter.pdf'
-        },
-        {
-            category: 'renewable-energy',
-            name: { fa: 'سازه نصب پنل خورشیدی', en: 'Solar Mounting Structure', ps: 'د لمریز پینل د نصب جوړښت' },
-            description: {
-                fa: 'استراکچر گالوانیزه یا آلومینیومی با طراحی استاتیکی و کیت نصب برای پشت‌بام و زمین.',
-                en: 'Galvanised or aluminium mounting structures with static design and installation kits for roof and ground.',
-                ps: 'ګلوانیز یا المونیم جوړښتونه د سټېټیک ډیزاین او د نصب کټونو سره د بام او ځمکې لپاره.'
-            },
-            pdfUrl: 'pdfs/electronics-energy-systems/renewable-energy/solar-power/solar-mounting-structure.pdf'
-        },
-        {
-            category: 'renewable-energy',
-            name: { fa: 'توربین بادی', en: 'Wind Turbine Package', ps: 'د باد توربین پکیج' },
-            description: {
-                fa: 'توربین بادی با ژنراتور، کنترل زاویه پره و سیستم ترمز برای تولید برق پایدار.',
-                en: 'Wind turbine with generator, blade pitch control and braking system for stable power generation.',
-                ps: 'د باد توربین د جنراتور، د بلیډ زاویې کنټرول او د بریک سیستم سره د ثابتې برېښنا لپاره.'
-            },
-            pdfUrl: 'pdfs/electronics-energy-systems/renewable-energy/wind-power/wind-turbine.pdf'
-        },
-        {
-            category: 'renewable-energy',
-            name: { fa: 'سازه برج بادی', en: 'Wind Tower Structure', ps: 'د باد برج جوړښت' },
-            description: {
-                fa: 'ستون فولادی ماژولار با پلتفرم دسترسی، نردبان و آسانسور سرویس برای نصب توربین.',
-                en: 'Modular steel tower with access platforms, ladders and service lift for turbine installation.',
-                ps: 'ماډولر فولادي برج د لاسرسي پلیټفارمونو، زینو او د خدمت لفټ سره د توربین نصب لپاره.'
-            },
-            pdfUrl: 'pdfs/electronics-energy-systems/renewable-energy/wind-power/wind-tower-structure.pdf'
-        },
-        {
-            category: 'renewable-energy',
-            name: { fa: 'کنترلر توربین بادی', en: 'Wind Turbine Controller', ps: 'د باد توربین کنټرولر' },
-            description: {
-                fa: 'کنترلر توربین با مانیتورینگ SCADA، حفاظت ولتاژ و مدیریت شارژ باتری.',
-                en: 'Turbine controller with SCADA monitoring, voltage protection and battery charge management.',
-                ps: 'د توربین کنټرولر د SCADA څارنې، د ولتاژ خوندیتوب او د بیټرۍ د چارج مدیریت سره.'
-            },
-            pdfUrl: 'pdfs/electronics-energy-systems/renewable-energy/wind-power/wind-controller.pdf'
-        },
-        {
-            category: 'electrical-distribution',
-            name: { fa: 'تابلو برق فشار ضعیف', en: 'LV Switchgear Panel', ps: 'د ټیټ فشار سویچ ګیر' },
-            description: {
-                fa: 'تابلو LV با بریکر هوایی/قالبی، باس‌داکت و مدارک تست روتین برای کارخانه.',
-                en: 'LV switchgear with ACB/MCCB breakers, bus ducts and routine test dossiers for plants.',
-                ps: 'د ټیټ فشار سویچ ګیر د ACB/MCCB بریکرونو، بس ډکټ او د منظم ټېسټ اسنادو سره د فابریکو لپاره.'
-            },
-            pdfUrl: 'pdfs/electronics-energy-systems/electrical-distribution/lv-switchgear.pdf'
-        },
-        {
-            category: 'electrical-distribution',
-            name: { fa: 'تابلو توزیع برق', en: 'Power Distribution Panel', ps: 'د برېښنا وېش پینل' },
-            description: {
-                fa: 'تابلو توزیع با مدول‌های MCC، اندازه‌گیری انرژی و حفاظت اضافه‌بار برای خطوط تولید.',
-                en: 'Distribution panel with MCC modules, energy metering and overload protection for production lines.',
-                ps: 'د وېش پینل د MCC ماډولونو، د انرژۍ اندازه کولو او د اضافه بار خوندیتوب سره د تولید لینونو لپاره.'
-            },
-            pdfUrl: 'pdfs/electronics-energy-systems/electrical-distribution/distribution-panel.pdf'
-        },
-        {
-            category: 'electrical-distribution',
-            name: { fa: 'کلید ATS', en: 'Automatic Transfer Switch', ps: 'اتومات لیږد سویچ' },
-            description: {
-                fa: 'کلید ATS با کنترلر میکروپروسسوری، مانیتورینگ ژنراتور و حفاظت سنکرون.',
-                en: 'ATS unit with microprocessor controller, generator monitoring and synchronisation protection.',
-                ps: 'ATS واحد د مایکروپروسسر کنټرولر، د جنراتور څارنې او د سنکرون خوندیتوب سره.'
-            },
-            pdfUrl: 'pdfs/electronics-energy-systems/electrical-distribution/ats-switch.pdf'
-        },
-        {
-            category: 'networking-equipment',
-            name: { fa: 'سوئیچ شبکه مدیریت‌شونده', en: 'Managed Network Switch', ps: 'د شبکې مدیر سوئچ' },
-            description: {
-                fa: 'سوئیچ لایه 2/3 با پورت گیگابیت، PoE و مدیریت از راه دور برای دیتاسنتر و کارخانه.',
-                en: 'Layer 2/3 switch with gigabit ports, PoE and remote management for data centers and plants.',
-                ps: 'د ۲/۳ طبقې سوئچ د ګیګابېټ بندرونو، PoE او لرې مدیریت سره د ډیټا سنتر او فابریکو لپاره.'
-            },
-            pdfUrl: 'pdfs/electronics-energy-systems/networking-equipment/network-switch.pdf'
-        },
-        {
-            category: 'networking-equipment',
-            name: { fa: 'روتر صنعتی', en: 'Industrial Router', ps: 'صنعتي روټر' },
-            description: {
-                fa: 'روتر صنعتی با VPN، فایروال و پورت‌های WAN/LTE برای اتصال ایمن سایت‌های تولیدی.',
-                en: 'Industrial router with VPN, firewall and WAN/LTE ports for secure plant connectivity.',
-                ps: 'صنعتي روټر د VPN، فایروال او د WAN/LTE بندرونو سره د فابریکې خوندي نښلولو لپاره.'
-            },
-            pdfUrl: 'pdfs/electronics-energy-systems/networking-equipment/router.pdf'
-        },
-        {
-            category: 'networking-equipment',
-            name: { fa: 'اکسس پوینت وای‌فای', en: 'Enterprise Wi-Fi Access Point', ps: 'د وای فای اکسس پواینټ' },
-            description: {
-                fa: 'اکسس‌پوینت دوبانده با PoE، مدیریت مرکزی و Roaming یکپارچه برای سالن‌های تولید.',
-                en: 'Dual-band access point with PoE, central management and seamless roaming for production halls.',
-                ps: 'دوه بانده اکسس پواینټ د PoE، مرکزي مدیریت او بې خنډه رومینګ سره د تولید هالونو لپاره.'
-            },
-            pdfUrl: 'pdfs/electronics-energy-systems/networking-equipment/wifi-access-point.pdf'
-        },
-        {
-            category: 'networking-equipment',
-            name: { fa: 'رک شبکه', en: 'Network Rack & Cabling Kit', ps: 'د شبکې رېک او کیبل کټ' },
-            description: {
-                fa: 'رک 19 اینچ با تهویه، پاور ماژول و اکسسوری کابل‌کشی ساخت‌یافته برای دیتاسنتر.',
-                en: '19-inch rack with ventilation, power modules and structured cabling accessories for data centers.',
-                ps: '۱۹ انچ رېک د هواخور، د بریښنا ماډولونو او د جوړښتي کیبل لوازمو سره د ډیټا سنتر لپاره.'
-            },
-            pdfUrl: 'pdfs/electronics-energy-systems/networking-equipment/network-rack.pdf'
-        }
-    ],
 
     'paper-pulp': ['ماشین آلات کاغذ و سلولوز', 'Paper & Pulp Machinery', 'کاغذ', 'paper', 'د کاغذ او پالپ ماشینونه', 'Paper & Pulp Machinery', 'خطوط پالپ و کاغذ', 'Pulp & Paper Lines', 'پالپ', 'pulp', 'کاغذسازی', 'paper mill', 'د پالپ او کاغذ کرښې', 'Paper & Pulp'],
     'electronic-machinery': ['ماشین آلات الکترونیکی', 'Electronic Machinery', 'الکترونیک', 'electronic', 'د الکترونیک ماشینونه', 'Electronic Machinery'],
@@ -4147,6 +3685,468 @@ const equipmentData = {
                 ps: 'V، ټایمینګ او فلیټ تسمې د پیاوړي ربړ سره د موترو، نوار نقالو او تولیدي لینونو لپاره.'
             },
             pdfUrl: 'pdfs/machinery-parts/general-parts/belts.pdf'
+        }
+    ],
+    'electronics-energy-systems': [
+        {
+            category: 'electronic-machinery',
+            name: { fa: 'ماشین SMT', en: 'SMT Pick-and-Place Line', ps: 'SMT ماشین' },
+            description: {
+                fa: 'خط SMT با فیڈر هوشمند، چاپ خمیر قلع و کوره ریفلو برای تولید بردهای پرتیراژ.',
+                en: 'SMT line with smart feeders, solder paste printing and reflow oven for high-volume PCB production.',
+                ps: 'د SMT لاین د هوښیار فیډرونو، د سولډر پیسټ چاپ او ريفلو تنور سره د لوړې کچې PCB تولید لپاره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/electronic-machinery/pcb-assembly/smt-machine.pdf'
+        },
+        {
+            category: 'electronic-machinery',
+            name: { fa: 'ماشین لحیم‌کاری موجی', en: 'Wave Soldering Machine', ps: 'ویو سولډرینګ ماشین' },
+            description: {
+                fa: 'سیستم لحیم‌کاری موجی با کنترل دما، فلوکس و نوار نقاله پالتی برای مونتاژ بردهای THT.',
+                en: 'Wave soldering system with controlled temperature, fluxing and pallet conveyor for THT assemblies.',
+                ps: 'د موجي سولډر کولو سیستم د تودوخې، فلوکس او پالت نقالې کنټرول سره د THT اسمبلۍ لپاره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/electronic-machinery/pcb-assembly/wave-soldering.pdf'
+        },
+        {
+            category: 'electronic-machinery',
+            name: { fa: 'تستر مدار ICT', en: 'IC In-Circuit Tester', ps: 'د IC ازموینې سټېشن' },
+            description: {
+                fa: 'تستر ICT با فیکسچر چندنقطه، سنجش پیوستگی و گزارش خودکار برای کنترل کیفیت برد.',
+                en: 'ICT tester with multi-point fixtures, continuity measurement and automated reporting for board QA.',
+                ps: 'د ICT ټېسټ ماشین د څو نقطه فکچرونو، د تسلسل اندازه کولو او اتومات راپور ورکولو سره د بورډ کیفیت لپاره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/electronic-machinery/electronic-testing/ic-testing.pdf'
+        },
+        {
+            category: 'electronic-machinery',
+            name: { fa: 'ایستگاه تست عملکردی', en: 'Functional Test Bench', ps: 'فانکشنل ټېسټ بنچ' },
+            description: {
+                fa: 'ایستگاه تست عملکردی با رک ابزار، سناریوهای نرم‌افزاری و ثبت داده برای محصولات الکترونیکی.',
+                en: 'Functional test bench with instrument rack, software scenarios and data capture for electronic products.',
+                ps: 'د وظیفوي ټېسټ بنچ د وسایلو رېک، سافټویر سناریوګانو او د معلوماتو ثبت سره د الکترونیکي محصولاتو لپاره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/electronic-machinery/electronic-testing/functional-testing.pdf'
+        },
+        {
+            category: 'electronic-machinery',
+            name: { fa: 'خط مونتاژ وایر هارنس', en: 'Wire Harness Assembly Line', ps: 'د وایر هارنس اسمبلۍ لاین' },
+            description: {
+                fa: 'کاتینگ، لخت‌سازی، کرمپ و تست پیوستگی برای تولید دسته سیم خودرو و صنعت.',
+                en: 'Cutting, stripping, crimping and continuity testing for automotive and industrial wire harnesses.',
+                ps: 'د پرې کولو، پوست کولو، کرمپس کولو او د تسلسل ټېسټ د موټرو او صنعتي وایر هارنس لپاره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/electronic-machinery/cable-assembly/wire-harness.pdf'
+        },
+        {
+            category: 'electronic-machinery',
+            name: { fa: 'ایستگاه تست کابل', en: 'Cable Testing Station', ps: 'د کابل ټېسټ سټېشن' },
+            description: {
+                fa: 'ایستگاه تست ولتاژ بالا، مقاومت عایقی و نشتی جریان برای کابل و دسته سیم.',
+                en: 'High-voltage, insulation resistance and leakage current testing station for cables and harnesses.',
+                ps: 'د لوړ ولتاژ، د عایق مقاومت او د جریان د لیک ازموینې سټېشن د کیبله او هارنسونو لپاره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/electronic-machinery/cable-assembly/cable-testing.pdf'
+        },
+        {
+            category: 'telecom-parts',
+            name: { fa: 'خط مونتاژ آنتن', en: 'Antenna Assembly Line', ps: 'د انتن اسمبلۍ لاین' },
+            description: {
+                fa: 'مونتاژ رفلکتور، فیدر و مدولایر با گشتاور کنترل‌شده و تست VSWR برای آنتن‌های مخابراتی.',
+                en: 'Antenna line assembling reflectors, feeders and modulators with torque control and VSWR testing.',
+                ps: 'د انتن لاین چې رفلکټر، فیدر او ماډول جوړوي د تورک کنټرول او VSWR ټېسټ سره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/telecom-parts/antenna-production/antenna-assembly.pdf'
+        },
+        {
+            category: 'telecom-parts',
+            name: { fa: 'تست آنتن', en: 'Antenna Testing Chamber', ps: 'د انتن ازموینې خونه' },
+            description: {
+                fa: 'اتاق تست آنتن با محدوده فرکانسی، چرخش موتوری و تحلیل الگو برای تضمین عملکرد رادیویی.',
+                en: 'Antenna test chamber with frequency range, motorised rotation and pattern analysis for RF assurance.',
+                ps: 'د انتن د ټېسټ خونه د فریکونسۍ رینج، موتري څرخول او د بڼې تحلیل سره د RF ډاډ لپاره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/telecom-parts/antenna-production/antenna-testing.pdf'
+        },
+        {
+            category: 'telecom-parts',
+            name: { fa: 'پوشش‌دهی آنتن', en: 'Antenna Coating Line', ps: 'د انتن کوټینګ لاین' },
+            description: {
+                fa: 'فرآیند پوشش و آب‌بندی قطعات آنتن با کابین اسپری، خشک‌کن و کنترل ضخامت.',
+                en: 'Coating and sealing process with spray booth, curing oven and thickness monitoring for antenna parts.',
+                ps: 'د سپرې کیبن، وچوونکي تنور او د ضخامت څارنې سره د انتن پرزو کوټینګ او سیل کولو پروسه.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/telecom-parts/antenna-production/antenna-coating.pdf'
+        },
+        {
+            category: 'telecom-parts',
+            name: { fa: 'تولید کابل فیبر نوری', en: 'Fiber Optic Cable Line', ps: 'د فایبر نوري کیبل لاین' },
+            description: {
+                fa: 'تولید فیبر با کشش دقیق، روکش UV و تست OTDR برای شبکه‌های پرسرعت.',
+                en: 'Fiber production with precise drawing, UV coating and OTDR testing for high-speed networks.',
+                ps: 'د فایبر تولید د دقیق کشولو، UV کوټینګ او د OTDR ټېسټ سره د چټکو شبکو لپاره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/telecom-parts/network-cable/fiber-optic-cable.pdf'
+        },
+        {
+            category: 'telecom-parts',
+            name: { fa: 'تولید کابل کواکسیال', en: 'Coaxial Cable Extrusion Line', ps: 'د کوکسیا کابل تولید لاین' },
+            description: {
+                fa: 'اکسترودر، شیلد بافت و تست امپدانس برای کابل‌های RF و تلویزیونی.',
+                en: 'Extrusion, braided shielding and impedance testing for RF and broadcast coaxial cables.',
+                ps: 'اکسترودر، اوبدل شوی شیلډ او د امپیدانس ټېسټ د RF او خپرونو کواکسیال کیبله لپاره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/telecom-parts/network-cable/coaxial-cable.pdf'
+        },
+        {
+            category: 'telecom-parts',
+            name: { fa: 'مونتاژ کانکتور کابل', en: 'Cable Connector Assembly', ps: 'د کابل نښلونکي اسمبلۍ' },
+            description: {
+                fa: 'ماشین‌کاری، آبکاری و تست هدایت الکتریکی برای کانکتورهای صنعتی و مخابراتی.',
+                en: 'Machining, plating and electrical continuity testing for industrial and telecom connectors.',
+                ps: 'ماشین کاري، الکترولیت پوښښ او د برقي تسلسل ټېسټ د صنعتي او مخابراتي نښلونو لپاره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/telecom-parts/network-cable/cable-connector.pdf'
+        },
+        {
+            category: 'telecom-parts',
+            name: { fa: 'مونتاژ برج مخابراتی', en: 'Telecom Tower Assembly', ps: 'د مخابراتي برجه اسمبلۍ' },
+            description: {
+                fa: 'مونتاژ سکشن‌های فولادی، پیچ‌کاری و سیستم بالابری برای نصب برج‌های مخابراتی.',
+                en: 'Steel section assembly, bolting and lifting systems for telecom tower erection.',
+                ps: 'د فولادو سکشن اسمبلۍ، بولټ لګول او د پورته کولو سیستمونه د مخابراتي برجه درولو لپاره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/telecom-parts/telecom-tower/tower-assembly.pdf'
+        },
+        {
+            category: 'telecom-parts',
+            name: { fa: 'فونداسیون برج مخابراتی', en: 'Tower Foundation Works', ps: 'د برج بنسټ جوړول' },
+            description: {
+                fa: 'قالب‌بندی، آرماتور و بتن‌ریزی پایه‌های برج با آنالیز ژئوتکنیک و بولت آنکر.',
+                en: 'Formwork, rebar and concrete casting for tower bases with geotechnical analysis and anchor bolts.',
+                ps: 'د فارم ورک، اوسپنې میش او کانکریټ اچول د برج د بنسټ لپاره د جیوتخنیکي تحلیل او انکر بولټونو سره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/telecom-parts/telecom-tower/tower-foundation.pdf'
+        },
+        {
+            category: 'telecom-parts',
+            name: { fa: 'نگهداری برج مخابراتی', en: 'Telecom Tower Maintenance', ps: 'د مخابراتي برجه ساتنه' },
+            description: {
+                fa: 'بازرسی طناب‌کار، تعویض کابل، پوشش ضدزنگ و تست پایداری ساختار برج.',
+                en: 'Rope access inspections, cable replacement, anti-corrosion coating and structural stability checks.',
+                ps: 'د رسی له لارې معاینات، د کابل بدلول، د زنګ ضد کوټینګ او د جوړښت ثبات معاینات.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/telecom-parts/telecom-tower/tower-maintenance.pdf'
+        },
+        {
+            category: 'industrial-laser',
+            name: { fa: 'لیزر فیبری برش', en: 'Fiber Laser Cutting Machine', ps: 'د فایبر لیزر پرې کوونکی' },
+            description: {
+                fa: 'لیزر فیبری با هد اتوفوکوس، میز تبادل و کنترل CNC برای برش استیل و آلومینیوم.',
+                en: 'Fiber laser cutter with auto-focus head, shuttle table and CNC control for stainless and aluminium.',
+                ps: 'د فایبر لیزر پرې کوونکی د اتومات فوکس سر، شاتل مېز او CNC کنټرول سره د سټینلیس او المونیم لپاره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/industrial-laser/laser-cutting/fiber-laser.pdf'
+        },
+        {
+            category: 'industrial-laser',
+            name: { fa: 'لیزر CO2 برش', en: 'CO₂ Laser Cutting Machine', ps: 'د CO₂ لیزر پرې کولو ماشین' },
+            description: {
+                fa: 'لیزر CO₂ با میز بزرگ، کنترل گالوانومتر و سیستم اگزوز برای مواد غیر فلزی.',
+                en: 'CO₂ laser with large bed, galvanometer control and exhaust system for non-metal materials.',
+                ps: 'د CO₂ لیزر د لوی بستر، ګالوانومیټر کنټرول او د ایستلو سیستم سره د غیر فلزي موادو لپاره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/industrial-laser/laser-cutting/co2-laser.pdf'
+        },
+        {
+            category: 'industrial-laser',
+            name: { fa: 'علامت‌زنی لیزری', en: 'Laser Marking Station', ps: 'د لیزري نښان وهلو سټېشن' },
+            description: {
+                fa: 'ایستگاه مارکینگ فیبری با فیکسچر چرخشی، نرم‌افزار کدگذاری و کنترل کیفیت آنلاین.',
+                en: 'Fiber marking station with rotary fixtures, coding software and inline quality monitoring.',
+                ps: 'د فایبر نښان وهلو سټېشن د څرخول فکچرونو، کوډ سافټویر او آنلاین کیفیت څارنې سره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/industrial-laser/laser-engraving/laser-marking.pdf'
+        },
+        {
+            category: 'industrial-laser',
+            name: { fa: 'حکاکی لیزری', en: 'Laser Etching Machine', ps: 'د لیزر حکاکۍ ماشین' },
+            description: {
+                fa: 'دستگاه حکاکی دقیق برای پلاستیک و فلز با محورهای XYZ و کنترل عمق پرتو.',
+                en: 'Precision etching system for plastics and metals with XYZ axes and beam depth control.',
+                ps: 'د پلاستیک او فلز لپاره دقیق حکاکي سیستم د XYZ محورونو او د وړانګې د ژورتیا کنټرول سره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/industrial-laser/laser-engraving/laser-etching.pdf'
+        },
+        {
+            category: 'industrial-laser',
+            name: { fa: 'سلول برازینگ لیزری', en: 'Laser Brazing Cell', ps: 'د لیزر بریزینګ سیل' },
+            description: {
+                fa: 'سلول برازینگ لیزری با منبع تغذیه روباتی، سیم تغذیه و کنترل جوش برای قطعات خودرویی.',
+                en: 'Laser brazing cell with robotic power source, wire feed and weld control for automotive parts.',
+                ps: 'د لیزر بریزینګ سیل د روبوټ ځواک سرچینې، د تار خوراک او د ویلډ کنټرول سره د موټرو پرزو لپاره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/industrial-laser/laser-welding/laser-brazing.pdf'
+        },
+        {
+            category: 'industrial-laser',
+            name: { fa: 'پوشش‌دهی لیزری', en: 'Laser Cladding System', ps: 'د لیزر کلډینګ سیستم' },
+            description: {
+                fa: 'سیستم کلڈینگ با نازل پودر، لیزر پرقدرت و اسکنر برای بازسازی سطوح صنعتی.',
+                en: 'Cladding system with powder nozzle, high-power laser and scanner for industrial surface repair.',
+                ps: 'د پودر نوزل، لوړ ځواک لیزر او سکینر سره کلډینګ سیستم د صنعتي سطحو ترمیم لپاره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/industrial-laser/laser-welding/laser-cladding.pdf'
+        },
+        {
+            category: 'printing-machines',
+            name: { fa: 'دستگاه افست ورقی', en: 'Sheet-Fed Offset Press', ps: 'ورقي افست پریس' },
+            description: {
+                fa: 'ماشین افست ورقی با واحد چهاررنگ، سیستم رجیستر خودکار و کنترل رطوبت برای چاپ تجاری.',
+                en: 'Sheet-fed offset press with four-colour units, automatic register and dampening control for commercial print.',
+                ps: 'ورقي افست پریس د څلور رنګه واحدونو، اتومات راجسټر او د رطوبت کنټرول سره د تجارتي چاپ لپاره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/printing-machines/offset-printing/sheet-fed-offset.pdf'
+        },
+        {
+            category: 'printing-machines',
+            name: { fa: 'پرس افست رولی', en: 'Web Offset Press', ps: 'رولي افست پریس' },
+            description: {
+                fa: 'پرس رولی با دوات، خشک‌کن وب و فولدر برای مجلات، روزنامه و بسته‌بندی انعطاف‌پذیر.',
+                en: 'Web offset press with inking, web dryer and folder for magazines, newspapers and flexible packaging.',
+                ps: 'رولي افست پریس د رنګ ورکولو، ویب وچوونکي او فولډر سره د مجلو، ورځپاڼو او انعطاف وړ بسته بندۍ لپاره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/printing-machines/offset-printing/web-offset.pdf'
+        },
+        {
+            category: 'printing-machines',
+            name: { fa: 'سیستم خشک‌کن افست', en: 'Offset Drying System', ps: 'د افست وچولو سیستم' },
+            description: {
+                fa: 'خشک‌کن IR/هوای گرم با کنترل انرژی و بازیافت گرما برای خطوط چاپ افست.',
+                en: 'IR/hot-air dryer with energy control and heat recovery for offset printing lines.',
+                ps: 'د IR/ګرمې هوا وچوونکی د انرژۍ کنټرول او د تودوخې بیا راټولولو سره د افست چاپ لینونو لپاره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/printing-machines/offset-printing/offset-drying.pdf'
+        },
+        {
+            category: 'printing-machines',
+            name: { fa: 'چاپگر جوهرافشان صنعتی', en: 'Industrial Inkjet Printer', ps: 'صنعتي انکجټ چاپګر' },
+            description: {
+                fa: 'پرینتر جوهرافشان صنعتی با هد پیزو، مدیریت رنگ و RIP برای چاپ دیجیتال سریع.',
+                en: 'Industrial inkjet printer with piezo heads, colour management and RIP for fast digital runs.',
+                ps: 'صنعتي انکجټ چاپګر د پیزو سری، د رنګ مدیریت او RIP سره د چټکو ډیجیټل چاپونو لپاره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/printing-machines/digital-printing/inkjet-printing.pdf'
+        },
+        {
+            category: 'printing-machines',
+            name: { fa: 'پرینتر لیزری صنعتی', en: 'Digital Laser Printer', ps: 'ډیجیټل لیزري چاپګر' },
+            description: {
+                fa: 'پرینتر لیزری با کیفیت بالا، تونر با ثبات و فینیشینگ خودکار برای چاپ بر اساس تقاضا.',
+                en: 'High-quality laser printer with durable toner and automated finishing for print-on-demand.',
+                ps: 'لوړ کیفیت لیزري چاپګر د دوامدار ټونر او اتومات فینشینګ سره د غوښتنې پر اساس چاپ لپاره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/printing-machines/digital-printing/laser-printing.pdf'
+        },
+        {
+            category: 'printing-machines',
+            name: { fa: 'سیستم چاپ فرمت بزرگ', en: 'Large Format Printing System', ps: 'لوی فارمیټ چاپ سیستم' },
+            description: {
+                fa: 'سیستم چاپ فرمت بزرگ با هد UV، میز خلأ و مدیریت مدیا برای بنر و گرافیک فضای باز.',
+                en: 'Large-format UV printing system with vacuum table and media management for banners and outdoor graphics.',
+                ps: 'لوی فارمیټ UV چاپ سیستم د ویکیوم مېز او د میډیا مدیریت سره د بنر او بهرني ګرافیک لپاره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/printing-machines/digital-printing/large-format-printing.pdf'
+        },
+        {
+            category: 'printing-machines',
+            name: { fa: 'پرس چاپ فلکسو', en: 'Flexographic Printing Press', ps: 'فلیکسو چاپ پریس' },
+            description: {
+                fa: 'پرس فلکسو CI با واحدهای آنیلوکس، خشک‌کن هوا و کنترل کشش برای بسته‌بندی انعطاف‌پذیر.',
+                en: 'CI flexo press with anilox stations, hot-air dryers and tension control for flexible packaging.',
+                ps: 'CI فلیکسو پریس د انیلوکس واحدونو، ګرمې هوا وچوونکو او د کشش کنټرول سره د انعطاف وړ بسته بندۍ لپاره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/printing-machines/flexo-printing/flexo-printing.pdf'
+        },
+        {
+            category: 'printing-machines',
+            name: { fa: 'سیستم ساخت کلیشه فلکسو', en: 'Flexo Plate Making System', ps: 'د فلیکسو پلیټ جوړولو سیستم' },
+            description: {
+                fa: 'سیستم شست‌وشو، نوردهی و پلیمر برای تولید کلیشه فلکسو با دقت بالا.',
+                en: 'Washout, exposure and polymer processing system for high-precision flexo plates.',
+                ps: 'د مینځلو، روښانولو او پولیمر پروسس سیستم د لوړ دقیق فلیکسو پلیټونو لپاره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/printing-machines/flexo-printing/flexo-plate-making.pdf'
+        },
+        {
+            category: 'printing-machines',
+            name: { fa: 'لاین برش و ریوایند فلکسو', en: 'Flexo Slitting & Rewinding Line', ps: 'د فلیکسو پرې او ریوایند لاین' },
+            description: {
+                fa: 'لاین برش و ریوایند با کنترل تنشن و تیغه دقیق برای رول‌های چاپ فلکسو.',
+                en: 'Slitting and rewinding line with tension control and precision blades for flexo printed rolls.',
+                ps: 'د پرې کولو او ریوایند لاین د تنشن کنټرول او دقیق تیغونو سره د فلیکسو چاپ رولونو لپاره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/printing-machines/flexo-printing/flexo-slitting.pdf'
+        },
+        {
+            category: 'printing-machines',
+            name: { fa: 'پرس چاپ سیلک', en: 'Screen Printing Press', ps: 'سیلک چاپ پریس' },
+            description: {
+                fa: 'ماشین چاپ سیلک با میز وکیوم، ثبات رجیستر و خشک‌کن UV برای منسوجات و تبلیغات.',
+                en: 'Screen printing press with vacuum table, register stability and UV dryer for textiles and signage.',
+                ps: 'د سیلک چاپ پریس د ویکیوم مېز، د راجسټر ثبات او UV وچوونکي سره د ټوکر او اعلانونو لپاره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/printing-machines/screen-printing/screen-printing.pdf'
+        },
+        {
+            category: 'printing-machines',
+            name: { fa: 'تجهیزات ساخت شابلون سیلک', en: 'Screen Making Equipment', ps: 'د سکرین جوړولو تجهیزات' },
+            description: {
+                fa: 'تجهیزات پوشش امولسیون، نوردهی و شست‌وشو برای آماده‌سازی شابلون چاپ سیلک.',
+                en: 'Emulsion coating, exposure and washout equipment for preparing screen printing stencils.',
+                ps: 'د امولشن کوټ، روښانولو او مینځلو تجهیزات د سیلک چاپ د شابلون چمتو کولو لپاره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/printing-machines/screen-printing/screen-making.pdf'
+        },
+        {
+            category: 'printing-machines',
+            name: { fa: 'سیستم شست‌وشوی سیلک', en: 'Screen Cleaning System', ps: 'د سکرین پاکولو سیستم' },
+            description: {
+                fa: 'سیستم شست‌وشو و بازسازی توری چاپ با پمپ فشار، مواد شوینده و خشک‌کن.',
+                en: 'Screen reclaim system with pressure pumps, detergents and drying for reusable mesh.',
+                ps: 'د سکرین بیا رغونې سیستم د فشار پمپونو، پاکوونکو او وچوونکي سره د بیا کارېدونکي جال لپاره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/printing-machines/screen-printing/screen-cleaning.pdf'
+        },
+        {
+            category: 'renewable-energy',
+            name: { fa: 'پنل خورشیدی', en: 'Solar PV Module Package', ps: 'لمریز پینل پکیج' },
+            description: {
+                fa: 'ماژول‌های خورشیدی با راندمان بالا، فریم آلومینیومی و گارانتی عملکرد برای نیروگاه‌های تجاری.',
+                en: 'High-efficiency PV modules with aluminium frames and performance warranty for commercial plants.',
+                ps: 'د لوړ موثریت لمریز ماډولونه د المونیم چوکاټ او د کارکرد ضمانت سره د تجارتي فابریکو لپاره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/renewable-energy/solar-power/solar-panel.pdf'
+        },
+        {
+            category: 'renewable-energy',
+            name: { fa: 'اینورتر خورشیدی', en: 'Solar Inverter System', ps: 'لمریز انورټر سیستم' },
+            description: {
+                fa: 'اینورتر استرینگ/سنترال با MPPT چندگانه، مانیتورینگ آنلاین و حفاظت شبکه.',
+                en: 'String/central inverters with multi-MPPT, online monitoring and grid protection.',
+                ps: 'د سترینګ/سنټرل انورټرونه د څو MPPT، آنلاین څارنې او د شبکې خوندیتوب سره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/renewable-energy/solar-power/solar-inverter.pdf'
+        },
+        {
+            category: 'renewable-energy',
+            name: { fa: 'سازه نصب پنل خورشیدی', en: 'Solar Mounting Structure', ps: 'د لمریز پینل د نصب جوړښت' },
+            description: {
+                fa: 'استراکچر گالوانیزه یا آلومینیومی با طراحی استاتیکی و کیت نصب برای پشت‌بام و زمین.',
+                en: 'Galvanised or aluminium mounting structures with static design and installation kits for roof and ground.',
+                ps: 'ګلوانیز یا المونیم جوړښتونه د سټېټیک ډیزاین او د نصب کټونو سره د بام او ځمکې لپاره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/renewable-energy/solar-power/solar-mounting-structure.pdf'
+        },
+        {
+            category: 'renewable-energy',
+            name: { fa: 'توربین بادی', en: 'Wind Turbine Package', ps: 'د باد توربین پکیج' },
+            description: {
+                fa: 'توربین بادی با ژنراتور، کنترل زاویه پره و سیستم ترمز برای تولید برق پایدار.',
+                en: 'Wind turbine with generator, blade pitch control and braking system for stable power generation.',
+                ps: 'د باد توربین د جنراتور، د بلیډ زاویې کنټرول او د بریک سیستم سره د ثابتې برېښنا لپاره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/renewable-energy/wind-power/wind-turbine.pdf'
+        },
+        {
+            category: 'renewable-energy',
+            name: { fa: 'سازه برج بادی', en: 'Wind Tower Structure', ps: 'د باد برج جوړښت' },
+            description: {
+                fa: 'ستون فولادی ماژولار با پلتفرم دسترسی، نردبان و آسانسور سرویس برای نصب توربین.',
+                en: 'Modular steel tower with access platforms, ladders and service lift for turbine installation.',
+                ps: 'ماډولر فولادي برج د لاسرسي پلیټفارمونو، زینو او د خدمت لفټ سره د توربین نصب لپاره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/renewable-energy/wind-power/wind-tower-structure.pdf'
+        },
+        {
+            category: 'renewable-energy',
+            name: { fa: 'کنترلر توربین بادی', en: 'Wind Turbine Controller', ps: 'د باد توربین کنټرولر' },
+            description: {
+                fa: 'کنترلر توربین با مانیتورینگ SCADA، حفاظت ولتاژ و مدیریت شارژ باتری.',
+                en: 'Turbine controller with SCADA monitoring, voltage protection and battery charge management.',
+                ps: 'د توربین کنټرولر د SCADA څارنې، د ولتاژ خوندیتوب او د بیټرۍ د چارج مدیریت سره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/renewable-energy/wind-power/wind-controller.pdf'
+        },
+        {
+            category: 'electrical-distribution',
+            name: { fa: 'تابلو برق فشار ضعیف', en: 'LV Switchgear Panel', ps: 'د ټیټ فشار سویچ ګیر' },
+            description: {
+                fa: 'تابلو LV با بریکر هوایی/قالبی، باس‌داکت و مدارک تست روتین برای کارخانه.',
+                en: 'LV switchgear with ACB/MCCB breakers, bus ducts and routine test dossiers for plants.',
+                ps: 'د ټیټ فشار سویچ ګیر د ACB/MCCB بریکرونو، بس ډکټ او د منظم ټېسټ اسنادو سره د فابریکو لپاره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/electrical-distribution/lv-switchgear.pdf'
+        },
+        {
+            category: 'electrical-distribution',
+            name: { fa: 'تابلو توزیع برق', en: 'Power Distribution Panel', ps: 'د برېښنا وېش پینل' },
+            description: {
+                fa: 'تابلو توزیع با مدول‌های MCC، اندازه‌گیری انرژی و حفاظت اضافه‌بار برای خطوط تولید.',
+                en: 'Distribution panel with MCC modules, energy metering and overload protection for production lines.',
+                ps: 'د وېش پینل د MCC ماډولونو، د انرژۍ اندازه کولو او د اضافه بار خوندیتوب سره د تولید لینونو لپاره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/electrical-distribution/distribution-panel.pdf'
+        },
+        {
+            category: 'electrical-distribution',
+            name: { fa: 'کلید ATS', en: 'Automatic Transfer Switch', ps: 'اتومات لیږد سویچ' },
+            description: {
+                fa: 'کلید ATS با کنترلر میکروپروسسوری، مانیتورینگ ژنراتور و حفاظت سنکرون.',
+                en: 'ATS unit with microprocessor controller, generator monitoring and synchronisation protection.',
+                ps: 'ATS واحد د مایکروپروسسر کنټرولر، د جنراتور څارنې او د سنکرون خوندیتوب سره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/electrical-distribution/ats-switch.pdf'
+        },
+        {
+            category: 'networking-equipment',
+            name: { fa: 'سوئیچ شبکه مدیریت‌شونده', en: 'Managed Network Switch', ps: 'د شبکې مدیر سوئچ' },
+            description: {
+                fa: 'سوئیچ لایه 2/3 با پورت گیگابیت، PoE و مدیریت از راه دور برای دیتاسنتر و کارخانه.',
+                en: 'Layer 2/3 switch with gigabit ports, PoE and remote management for data centers and plants.',
+                ps: 'د ۲/۳ طبقې سوئچ د ګیګابېټ بندرونو، PoE او لرې مدیریت سره د ډیټا سنتر او فابریکو لپاره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/networking-equipment/network-switch.pdf'
+        },
+        {
+            category: 'networking-equipment',
+            name: { fa: 'روتر صنعتی', en: 'Industrial Router', ps: 'صنعتي روټر' },
+            description: {
+                fa: 'روتر صنعتی با VPN، فایروال و پورت‌های WAN/LTE برای اتصال ایمن سایت‌های تولیدی.',
+                en: 'Industrial router with VPN, firewall and WAN/LTE ports for secure plant connectivity.',
+                ps: 'صنعتي روټر د VPN، فایروال او د WAN/LTE بندرونو سره د فابریکې خوندي نښلولو لپاره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/networking-equipment/router.pdf'
+        },
+        {
+            category: 'networking-equipment',
+            name: { fa: 'اکسس پوینت وای‌فای', en: 'Enterprise Wi-Fi Access Point', ps: 'د وای فای اکسس پواینټ' },
+            description: {
+                fa: 'اکسس‌پوینت دوبانده با PoE، مدیریت مرکزی و Roaming یکپارچه برای سالن‌های تولید.',
+                en: 'Dual-band access point with PoE, central management and seamless roaming for production halls.',
+                ps: 'دوه بانده اکسس پواینټ د PoE، مرکزي مدیریت او بې خنډه رومینګ سره د تولید هالونو لپاره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/networking-equipment/wifi-access-point.pdf'
+        },
+        {
+            category: 'networking-equipment',
+            name: { fa: 'رک شبکه', en: 'Network Rack & Cabling Kit', ps: 'د شبکې رېک او کیبل کټ' },
+            description: {
+                fa: 'رک 19 اینچ با تهویه، پاور ماژول و اکسسوری کابل‌کشی ساخت‌یافته برای دیتاسنتر.',
+                en: '19-inch rack with ventilation, power modules and structured cabling accessories for data centers.',
+                ps: '۱۹ انچ رېک د هواخور، د بریښنا ماډولونو او د جوړښتي کیبل لوازمو سره د ډیټا سنتر لپاره.'
+            },
+            pdfUrl: 'pdfs/electronics-energy-systems/networking-equipment/network-rack.pdf'
         }
     ],
     'mixing-equipments': [

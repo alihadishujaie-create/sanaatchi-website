@@ -366,6 +366,8 @@
         }
     ];
 
+    const getLanguage = () => (typeof currentLanguage !== 'undefined' ? currentLanguage : 'fa');
+
     const categoryIcons = categories.reduce((acc, category) => {
         acc[category.id] = category.icon;
         return acc;
