@@ -2231,7 +2231,16 @@ const categoryKeywords = {
         'د میوو او سبزیو د پروسس لین',
         'Edible Oil Production Line',
         'خط تولید روغن خوراکی',
-        'د خوراکي غوړ د تولید لین'
+        'د خوراکي غوړ د تولید لین',
+        'Fiberglass Wool Production Lines',
+        'خطوط تولید پشم شیشه',
+        'د فایبر ګلاس وړۍ د تولید لینونه',
+        'PET Bottle Washing System',
+        'شستشوی بطری PET',
+        'د PET بوتل د مینځلو سیستم',
+        'Needle Punching Line',
+        'ماشین نیدل پانچ',
+        'د نیدل پانچ لاین'
     ],
     'printing-machines': ['دستگاه های چاپ', 'Printing Machines', 'چاپ', 'printing', 'چاپ ماشینونه', 'Printing Machines'],
     'sports-equipment': ['تجهیزات ورزشی', 'Sports Equipment', 'ورزشی', 'sports', 'ورزشي تجهیزات', 'Sports Equipment'],
@@ -2345,7 +2354,22 @@ const categoryKeywords = {
     'trucks-lorries': ['کامیون و لاری', 'Trucks & Lorries', 'کامیون', 'truck', 'لاری', 'lorry', 'لارۍ', 'trucks'],
     'generators': ['ژنراتور دست دوم', 'Generators', 'ژنراتور', 'generator', 'برق اضطراری', 'backup power', 'جنراتورونه', 'Generators'],
     'tanks': ['مخازن', 'Tanks', 'مخزن', 'tank', 'تنکونه', 'Tanks'],
-    'packaging': ['بسته بندی', 'Packaging', 'بسته', 'package', 'بسته بندي', 'Packaging'],
+    'packaging': [
+        'بسته بندی',
+        'Packaging',
+        'بسته',
+        'package',
+        'بسته بندي',
+        'Packaging',
+        'پردازش و بسته‌بندی تنباکو',
+        'Tobacco Processing & Packaging',
+        'تنباکو',
+        'tobacco',
+        'سیگار',
+        'cigarette',
+        'پاکت تنباکو',
+        'tobacco pouch'
+    ],
     'chemical-pharma': ['ماشین آلات شیمیایی و دارویی', 'Chemical & Pharmaceutical Machinery', 'شیمیایی', 'chemical', 'دارویی', 'pharmaceutical', 'د کیمیاوي او درملو ماشینونه', 'Chemical & Pharmaceutical Machinery'],
     'machinery-parts': [
         'پرزه‌جات ماشین‌آلات', 'Machinery Spare Parts', 'پرزه‌جات', 'spare parts', 'د ماشینونو پرزې', 'Machinery Spare Parts',
@@ -3648,6 +3672,96 @@ const equipmentData = {
                 ps: 'په بشپړ ډول اتومات تسمه ماشین د پروګرام وړ کشش او تسمې لارښود سره.'
             },
             pdfUrl: 'pdfs/packaging/wrapping-packaging/strapping-machine.pdf'
+        },
+        {
+            category: 'tobacco-processing',
+            name: { fa: 'خط تولید سیگار', en: 'Cigarette Making Line', ps: 'د سیګار جوړولو لاین' },
+            description: {
+                fa: 'تغذیه توتون، رول‌سازی، چسب‌زنی و برش اتوماتیک برای تولید سیگار باکیفیت.',
+                en: 'Automatic tobacco feeding, rod forming, gluing and cutting for consistent cigarettes.',
+                ps: 'اتومات توتون تغذیه، لاستي جوړونه، ګلو لګول او پرې کول د ثابتو سیګارتونو لپاره.'
+            },
+            pdfUrl: 'pdfs/packaging/tobacco-processing/cigarette-making.pdf'
+        },
+        {
+            category: 'tobacco-processing',
+            name: { fa: 'ماشین بسته‌بندی سیگار', en: 'Cigarette Packing Machine', ps: 'د سیګار بسته بندۍ ماشین' },
+            description: {
+                fa: 'چیدمان، لفاف و سلفون‌پیچ اتوماتیک با کنترل وزن و چاپ تاریخ تولید بسته.',
+                en: 'Automatic carton loading, wrapping and cellophane with weight and date coding control.',
+                ps: 'اتومات کڅوړه اچول، لفاف او سیلوفان د وزن او نیټې کوډ کنټرول سره.'
+            },
+            pdfUrl: 'pdfs/packaging/tobacco-processing/cigarette-packing.pdf'
+        },
+        {
+            category: 'tobacco-processing',
+            name: { fa: 'واحد تولید فیلتر سیگار', en: 'Cigarette Filter Production Unit', ps: 'د سیګار فلټر تولید واحد' },
+            description: {
+                fa: 'فرم‌دهی استیک، برش طولی و الصاق کاغذ برای ساخت فیلترهای فیبر سلولزی.',
+                en: 'Tow opening, rod forming and paper tipping to produce cellulose fibre cigarette filters.',
+                ps: 'د فایبر پرانیستلو، لاستي جوړولو او د کاغذ لګولو پروسې د سلولوز فلټرونو لپاره.'
+            },
+            pdfUrl: 'pdfs/packaging/tobacco-processing/cigarette-filter.pdf'
+        },
+        {
+            category: 'tobacco-processing',
+            name: { fa: 'پرکن پاکت تنباکو', en: 'Tobacco Pouch Filling Machine', ps: 'د تنباکو د کڅوړې ډکولو ماشین' },
+            description: {
+                fa: 'توزین دقیق، ویبره و پرکن چنددهانه برای بسته‌بندی پاکت‌های تنباکو و نیکوتین.',
+                en: 'Multi-head weighers with vibration feed fill tobacco and nicotine pouches accurately.',
+                ps: 'چند سری وزن سنج د ویبرېشن فیډ سره تنباکو او نیکوتین کڅوړې په دقیقه توګه ډکوي.'
+            },
+            pdfUrl: 'pdfs/packaging/tobacco-processing/pouch-filling.pdf'
+        },
+        {
+            category: 'tobacco-processing',
+            name: { fa: 'دستگاه سیل پاکت تنباکو', en: 'Tobacco Pouch Sealing Machine', ps: 'د تنباکو د کڅوړې سیل کولو ماشین' },
+            description: {
+                fa: 'سیل حرارتی یا التراسونیک با کنترل فشار و سیستم کدزن برای بسته‌های سفارشی.',
+                en: 'Thermal or ultrasonic sealing with pressure control and coding for customised pouches.',
+                ps: 'حرارتي یا الټراسونیک سیل کول د فشار کنټرول او کوډینګ سره د ځانګړو کڅوړو لپاره.'
+            },
+            pdfUrl: 'pdfs/packaging/tobacco-processing/pouch-sealing.pdf'
+        },
+        {
+            category: 'tobacco-processing',
+            name: { fa: 'ماشین چاپ روی پاکت تنباکو', en: 'Tobacco Pouch Printing Machine', ps: 'د تنباکو د کڅوړې چاپ ماشین' },
+            description: {
+                fa: 'چاپ فلکسو/دیجیتال با رجیستر دقیق و خشک‌کن UV برای پاکت‌های فویل و کاغذی.',
+                en: 'Flexo or digital printers with tight register and UV drying for foil and paper pouches.',
+                ps: 'فلکسو یا ډیجیټل چاپګر د دقیق رجسټر او UV وچولو سره د فویل او کاغذي کڅوړو لپاره.'
+            },
+            pdfUrl: 'pdfs/packaging/tobacco-processing/pouch-printing.pdf'
+        },
+        {
+            category: 'tobacco-processing',
+            name: { fa: 'خشک‌کن برگ تنباکو', en: 'Tobacco Leaf Dryer', ps: 'د تنباکو د پاڼې وچوونکی' },
+            description: {
+                fa: 'خشک‌کن طبقه‌ای با کنترل دما و رطوبت برای تثبیت کیفیت برگ‌های تنباکو.',
+                en: 'Multi-tier dryer with temperature and humidity control stabilises tobacco leaf quality.',
+                ps: 'چند پوړیز وچوونکی د تودوخې او رطوبت کنټرول سره د تنباکو پاڼو کیفیت ثابتوي.'
+            },
+            pdfUrl: 'pdfs/packaging/tobacco-processing/tobacco-drying.pdf'
+        },
+        {
+            category: 'tobacco-processing',
+            name: { fa: 'خط برش تنباکو', en: 'Tobacco Cutting Line', ps: 'د تنباکو پرې کولو لاین' },
+            description: {
+                fa: 'خردکن و اسلایسر با تنظیم ضخامت و جداساز الیاف برای تهیه برش یکنواخت توتون.',
+                en: 'Shredders and slicers with adjustable cut width and fibre separation for uniform tobacco.',
+                ps: 'شریدر او سلایسر د قطع عرض د تنظیم او فایبر بېلولو سره د یوشان توتون لپاره.'
+            },
+            pdfUrl: 'pdfs/packaging/tobacco-processing/tobacco-cutting.pdf'
+        },
+        {
+            category: 'tobacco-processing',
+            name: { fa: 'واحد طعم‌دهی تنباکو', en: 'Tobacco Flavouring Unit', ps: 'د تنباکو خوند ورکولو واحد' },
+            description: {
+                fa: 'میکسر درام و اسپری دوزینگ با کنترل رطوبت برای افزودن اسانس و مواد افزودنی.',
+                en: 'Drum mixers with spray dosing and humidity control to apply flavours and casings.',
+                ps: 'د ډرم مکسرونه د سپرې ډوزینګ او د رطوبت کنټرول سره د خوند او کوټینګ لپاره.'
+            },
+            pdfUrl: 'pdfs/packaging/tobacco-processing/tobacco-flavoring.pdf'
         }
     ],
     'plastic-processing': [

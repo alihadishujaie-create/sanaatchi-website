@@ -227,6 +227,20 @@
                 en: 'Flexo printing, bag making and sealing-cutting lines finish final packaging.',
                 ps: 'د فلکسو چاپ، بکس جوړولو او سیل کولو او پرې کولو لینونه وروستۍ بسته بندي بشپړوي.'
             }
+        },
+        {
+            id: 'tobacco-processing',
+            icon: '🍂',
+            title: {
+                fa: 'پردازش و بسته‌بندی تنباکو',
+                en: 'Tobacco Processing & Packaging',
+                ps: 'د تنباکو پروسس او بسته بندي'
+            },
+            description: {
+                fa: 'ماشین‌آلات تولید سیگار، بسته‌بندی پاکتی و آماده‌سازی برگ و تنباکو با کنترل رطوبت.',
+                en: 'Cigarette making, pouch packing and leaf conditioning systems with moisture control.',
+                ps: 'د سیګار جوړولو، د کڅوړې بسته بندۍ او د تنباکو د پاڼو د رطوبت کنټرول سیسټمونه.'
+            }
         }
     ];
 
@@ -560,6 +574,141 @@
             pdfUrl: 'pdfs/plastic-processing/printing-packaging/sealing-cutting.pdf',
             category: 'printing-packaging',
             icon: '✂️'
+        },
+        {
+            name: {
+                fa: 'خط تولید سیگار',
+                en: 'Cigarette Making Line',
+                ps: 'د سیګار جوړولو لاین'
+            },
+            description: {
+                fa: 'تغذیه توتون، رول‌سازی، چسب‌زنی و برش اتوماتیک برای تولید سیگار باکیفیت.',
+                en: 'Automatic tobacco feeding, rod forming, gluing and cutting for consistent cigarettes.',
+                ps: 'اتومات توتون تغذیه، لاستي جوړونه، ګلو لګول او پرې کول د ثابتو سیګارتونو لپاره.'
+            },
+            pdfUrl: 'pdfs/packaging/tobacco-processing/cigarette-making.pdf',
+            category: 'tobacco-processing',
+            icon: '🚬'
+        },
+        {
+            name: {
+                fa: 'ماشین بسته‌بندی سیگار',
+                en: 'Cigarette Packing Machine',
+                ps: 'د سیګار بسته بندۍ ماشین'
+            },
+            description: {
+                fa: 'چیدمان، لفاف و سلفون‌پیچ اتوماتیک با کنترل وزن و چاپ تاریخ تولید بسته.',
+                en: 'Automatic carton loading, wrapping and cellophane with weight and date coding control.',
+                ps: 'اتومات کڅوړه اچول، لفاف او سیلوفان د وزن او نیټې کوډ کنټرول سره.'
+            },
+            pdfUrl: 'pdfs/packaging/tobacco-processing/cigarette-packing.pdf',
+            category: 'tobacco-processing',
+            icon: '📦'
+        },
+        {
+            name: {
+                fa: 'واحد تولید فیلتر سیگار',
+                en: 'Cigarette Filter Production Unit',
+                ps: 'د سیګار فلټر تولید واحد'
+            },
+            description: {
+                fa: 'فرم‌دهی استیک، برش طولی و الصاق کاغذ برای ساخت فیلترهای فیبر سلولزی.',
+                en: 'Tow opening, rod forming and paper tipping to produce cellulose fibre cigarette filters.',
+                ps: 'د فایبر پرانیستلو، لاستي جوړولو او د کاغذ لګولو پروسې د سلولوز فلټرونو لپاره.'
+            },
+            pdfUrl: 'pdfs/packaging/tobacco-processing/cigarette-filter.pdf',
+            category: 'tobacco-processing',
+            icon: '🪶'
+        },
+        {
+            name: {
+                fa: 'پرکن پاکت تنباکو',
+                en: 'Tobacco Pouch Filling Machine',
+                ps: 'د تنباکو د کڅوړې ډکولو ماشین'
+            },
+            description: {
+                fa: 'توزین دقیق، ویبره و پرکن چنددهانه برای بسته‌بندی پاکت‌های تنباکو و نیکوتین.',
+                en: 'Multi-head weighers with vibration feed fill tobacco and nicotine pouches accurately.',
+                ps: 'چند سری وزن سنج د ویبرېشن فیډ سره تنباکو او نیکوتین کڅوړې په دقیقه توګه ډکوي.'
+            },
+            pdfUrl: 'pdfs/packaging/tobacco-processing/pouch-filling.pdf',
+            category: 'tobacco-processing',
+            icon: '🧴'
+        },
+        {
+            name: {
+                fa: 'دستگاه سیل پاکت تنباکو',
+                en: 'Tobacco Pouch Sealing Machine',
+                ps: 'د تنباکو د کڅوړې سیل کولو ماشین'
+            },
+            description: {
+                fa: 'سیل حرارتی یا التراسونیک با کنترل فشار و سیستم کدزن برای بسته‌های سفارشی.',
+                en: 'Thermal or ultrasonic sealing with pressure control and coding for customised pouches.',
+                ps: 'حرارتي یا الټراسونیک سیل کول د فشار کنټرول او کوډینګ سره د ځانګړو کڅوړو لپاره.'
+            },
+            pdfUrl: 'pdfs/packaging/tobacco-processing/pouch-sealing.pdf',
+            category: 'tobacco-processing',
+            icon: '🔒'
+        },
+        {
+            name: {
+                fa: 'ماشین چاپ روی پاکت تنباکو',
+                en: 'Tobacco Pouch Printing Machine',
+                ps: 'د تنباکو د کڅوړې چاپ ماشین'
+            },
+            description: {
+                fa: 'چاپ فلکسو/دیجیتال با رجیستر دقیق و خشک‌کن UV برای پاکت‌های فویل و کاغذی.',
+                en: 'Flexo or digital printers with tight register and UV drying for foil and paper pouches.',
+                ps: 'فلکسو یا ډیجیټل چاپګر د دقیق رجسټر او UV وچولو سره د فویل او کاغذي کڅوړو لپاره.'
+            },
+            pdfUrl: 'pdfs/packaging/tobacco-processing/pouch-printing.pdf',
+            category: 'tobacco-processing',
+            icon: '🖨️'
+        },
+        {
+            name: {
+                fa: 'خشک‌کن برگ تنباکو',
+                en: 'Tobacco Leaf Dryer',
+                ps: 'د تنباکو د پاڼې وچوونکی'
+            },
+            description: {
+                fa: 'خشک‌کن طبقه‌ای با کنترل دما و رطوبت برای تثبیت کیفیت برگ‌های تنباکو.',
+                en: 'Multi-tier dryer with temperature and humidity control stabilises tobacco leaf quality.',
+                ps: 'چند پوړیز وچوونکی د تودوخې او رطوبت کنټرول سره د تنباکو پاڼو کیفیت ثابتوي.'
+            },
+            pdfUrl: 'pdfs/packaging/tobacco-processing/tobacco-drying.pdf',
+            category: 'tobacco-processing',
+            icon: '🌬️'
+        },
+        {
+            name: {
+                fa: 'خط برش تنباکو',
+                en: 'Tobacco Cutting Line',
+                ps: 'د تنباکو پرې کولو لاین'
+            },
+            description: {
+                fa: 'خردکن و اسلایسر با تنظیم ضخامت و جداساز الیاف برای تهیه برش یکنواخت توتون.',
+                en: 'Shredders and slicers with adjustable cut width and fibre separation for uniform tobacco.',
+                ps: 'شریدر او سلایسر د قطع عرض د تنظیم او فایبر بېلولو سره د یوشان توتون لپاره.'
+            },
+            pdfUrl: 'pdfs/packaging/tobacco-processing/tobacco-cutting.pdf',
+            category: 'tobacco-processing',
+            icon: '🔪'
+        },
+        {
+            name: {
+                fa: 'واحد طعم‌دهی تنباکو',
+                en: 'Tobacco Flavouring Unit',
+                ps: 'د تنباکو خوند ورکولو واحد'
+            },
+            description: {
+                fa: 'میکسر درام و اسپری دوزینگ با کنترل رطوبت برای افزودن اسانس و مواد افزودنی.',
+                en: 'Drum mixers with spray dosing and humidity control to apply flavours and casings.',
+                ps: 'د ډرم مکسرونه د سپرې ډوزینګ او د رطوبت کنټرول سره د خوند او کوټینګ لپاره.'
+            },
+            pdfUrl: 'pdfs/packaging/tobacco-processing/tobacco-flavoring.pdf',
+            category: 'tobacco-processing',
+            icon: '🍯'
         }
     ];
 
@@ -716,7 +865,16 @@
         'pelletizing-line': '🧊',
         'flexo-printing': '🖨️',
         'bag-making': '🛍️',
-        'sealing-cutting': '✂️'
+        'sealing-cutting': '✂️',
+        'cigarette-making': '🚬',
+        'cigarette-packing': '📦',
+        'cigarette-filter': '🪶',
+        'pouch-filling': '🧴',
+        'pouch-sealing': '🔒',
+        'pouch-printing': '🖨️',
+        'tobacco-drying': '🌬️',
+        'tobacco-cutting': '🔪',
+        'tobacco-flavoring': '🍯'
     };
 
     const getLanguage = () => (typeof currentLanguage !== 'undefined' ? currentLanguage : 'fa');

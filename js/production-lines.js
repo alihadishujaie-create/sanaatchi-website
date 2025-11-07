@@ -56,6 +56,20 @@ const productionLineGroups = [
         }
     },
     {
+        id: 'fiberglas-production',
+        icon: '🧶',
+        title: {
+            fa: 'خطوط تولید پشم شیشه',
+            en: 'Fiberglass Wool Production Lines',
+            ps: 'د فایبر ګلاس وړۍ د تولید لینونه'
+        },
+        description: {
+            fa: 'بازیافت بطری PET، ذوب الیاف، کاردینگ و نیدل پانچ برای تولید عایق پشم شیشه.',
+            en: 'PET bottle recycling, fibre melting, carding and needle punching for fiberglass insulation.',
+            ps: 'د PET بوتلونو بیاکارونه، فایبر خټول، کارډینګ او نیدل پینچ د فایبر ګلاس عایق لپاره.'
+        }
+    },
+    {
         id: 'recycling-lines',
         icon: '♻️',
         title: {
@@ -482,6 +496,183 @@ const productionLines = {
                     ps: 'د ماشین اوبدلو، وروستي فینش او پرې کولو سیستم د غالۍ تولید لپاره.'
                 },
                 pdfUrl: 'pdfs/production-lines/textile-garments/carpet-weaving-line.pdf'
+            }
+        ]
+    },
+    'fiberglas-production': {
+        title: {
+            fa: 'خطوط تولید پشم شیشه',
+            en: 'Fiberglass Wool Production Lines',
+            ps: 'د فایبر ګلاس وړۍ د تولید لینونه'
+        },
+        lines: [
+            {
+                id: 'fiberglas-bottle-washing',
+                title: {
+                    fa: 'شستشوی بطری PET',
+                    en: 'PET Bottle Washing System',
+                    ps: 'د PET بوتل د مینځلو سیستم'
+                },
+                description: {
+                    fa: 'خط شستشو با واحدهای تفکیک، شستشوی گرم و خشک‌کن سانتریفیوژ برای آماده‌سازی پرک.',
+                    en: 'Sorting, hot washing and centrifugal drying line that prepares clean PET flakes.',
+                    ps: 'د تفکیک، ګرم مینځلو او سنټرفیوژ وچولو لاین چې پاک PET فلېکونه برابروي.'
+                },
+                pdfUrl: 'pdfs/production-lines/fiberglas-production/bottle-washing.pdf'
+            },
+            {
+                id: 'fiberglas-bottle-crushing',
+                title: {
+                    fa: 'خرد کردن بطری PET',
+                    en: 'PET Bottle Crushing Line',
+                    ps: 'د PET بوتل د خړوبولو لاین'
+                },
+                description: {
+                    fa: 'شردر تیغه‌ای و آسیاب دانه‌ای با سیستم جداسازی فلز و گردگیر برای آماده‌سازی مواد ورودی.',
+                    en: 'Blade shredder and granulator with metal separation and dust collection for feed preparation.',
+                    ps: 'د تیغ لرونکی شریدر او ګرینولیټر د فلز بېلولو او دوړو ټولولو سره د موادو د چمتو کولو لپاره.'
+                },
+                pdfUrl: 'pdfs/production-lines/fiberglas-production/bottle-crushing.pdf'
+            },
+            {
+                id: 'fiberglas-steam-treatment',
+                title: {
+                    fa: 'بخاردهی و نرم‌سازی الیاف',
+                    en: 'Steam Fibre Conditioning',
+                    ps: 'د فایبر د بخار درملنه'
+                },
+                description: {
+                    fa: 'واحد بخاردهی و پیش‌گرمایش برای نرم‌سازی الیاف بازیافتی پیش از کاردینگ.',
+                    en: 'Steam conditioning tunnel that softens recycled fibres ahead of carding.',
+                    ps: 'د بخار درملنې تونل چې بیا کارېدلي فایبرونه د کارډینګ څخه مخکې نرموي.'
+                },
+                pdfUrl: 'pdfs/production-lines/fiberglas-production/steam-treatment.pdf'
+            },
+            {
+                id: 'fiberglas-carding-machine',
+                title: {
+                    fa: 'ماشین کاردینگ الیاف',
+                    en: 'Fiberglass Carding Machine',
+                    ps: 'د فایبر ګلاس د کارډینګ ماشین'
+                },
+                description: {
+                    fa: 'کاردینگ عرض پهن با کنترل سرعت و تراکم برای همگن‌سازی لایه الیاف.',
+                    en: 'Wide working-width carder with adjustable speed and density for uniform fibre webs.',
+                    ps: 'د پراخ عرض کارډر د سرعت او کثافت د تنظیم وړ لپاره چې یوشان فایبر جال جوړ کړي.'
+                },
+                pdfUrl: 'pdfs/production-lines/fiberglas-production/carding-machine.pdf'
+            },
+            {
+                id: 'fiberglas-padding-machine',
+                title: {
+                    fa: 'ماشین پدینگ و لایه‌سازی',
+                    en: 'Padding & Layering Machine',
+                    ps: 'د پډینګ او لایه جوړولو ماشین'
+                },
+                description: {
+                    fa: 'سامانه فشرده‌سازی و تنظیم وزن سطحی برای آماده‌سازی پدهای عایق.',
+                    en: 'Compaction line that sets basis weight and prepares insulation pads.',
+                    ps: 'د کمپکشن لاین چې د سطح وزن تنظیموي او د عایق پډونه برابروي.'
+                },
+                pdfUrl: 'pdfs/production-lines/fiberglas-production/padding-machine.pdf'
+            },
+            {
+                id: 'fiberglas-feeding-machine',
+                title: {
+                    fa: 'ماشین تغذیه الیاف',
+                    en: 'Fibre Feeding System',
+                    ps: 'د فایبر د تغذیې سیستم'
+                },
+                description: {
+                    fa: 'خوراک‌دهی حجمی با سنسور وزن و کنترل سرعت برای ورود یکنواخت الیاف به خط.',
+                    en: 'Volumetric feeders with weight sensors maintain even fibre feed into the line.',
+                    ps: 'حجمي فیډرونه د وزن سینسرونو سره چې فایبر په یوشان ډول لاین ته داخلوي.'
+                },
+                pdfUrl: 'pdfs/production-lines/fiberglas-production/feeding-machine.pdf'
+            },
+            {
+                id: 'fiberglas-cross-laping',
+                title: {
+                    fa: 'دستگاه کراس لپینگ',
+                    en: 'Cross Lapping Machine',
+                    ps: 'د کراس لاپینګ ماشین'
+                },
+                description: {
+                    fa: 'واحد لاپینگ با کنترل عرض و زاویه برای ساخت تشک الیاف چندلایه.',
+                    en: 'Cross lapper with adjustable width and lay angles to build multilayer fibre batts.',
+                    ps: 'د لاپینګ واحد د تنظیم وړ عرض او زاویو سره چې څو لایه فایبر چپرکټ جوړوي.'
+                },
+                pdfUrl: 'pdfs/production-lines/fiberglas-production/cross-laping.pdf'
+            },
+            {
+                id: 'fiberglas-needling-machine',
+                title: {
+                    fa: 'ماشین نیدل پانچ',
+                    en: 'Needle Punching Line',
+                    ps: 'د نیدل پانچ لاین'
+                },
+                description: {
+                    fa: 'نیدل‌پانچ چندمرحله‌ای با کنترل عمق و تراکم سوزن برای اتصال لایه‌های الیاف.',
+                    en: 'Multi-stage needle looms with depth and density control to bond fibre layers.',
+                    ps: 'چند پړاوه نیدل لومونه د ژوروالي او کثافت کنټرول سره چې فایبر لایه یوځای کوي.'
+                },
+                pdfUrl: 'pdfs/production-lines/fiberglas-production/needling-machine.pdf'
+            },
+            {
+                id: 'fiberglas-fiber-finishing',
+                title: {
+                    fa: 'خط فینیشینگ الیاف',
+                    en: 'Fibre Finishing Line',
+                    ps: 'د فایبر فینشنګ لاین'
+                },
+                description: {
+                    fa: 'سیستم برش، برش نهایی و رول‌پیچ برای آماده‌سازی تشک پشم شیشه.',
+                    en: 'Trimming, surface finishing and winding system for fiberglass wool batts.',
+                    ps: 'د پرې کولو، سطح فینش او واینډنګ سیستم د فایبر ګلاس وړۍ لپاره.'
+                },
+                pdfUrl: 'pdfs/production-lines/fiberglas-production/fiber-finishing.pdf'
+            },
+            {
+                id: 'fiberglas-cotton-spinning',
+                title: {
+                    fa: 'ریسندگی الیاف ترکیبی',
+                    en: 'Blended Fibre Spinning',
+                    ps: 'د ګډو فایبرو سپننه'
+                },
+                description: {
+                    fa: 'ریسندگی رینگ/روتور برای ترکیب الیاف شیشه با الیاف طبیعی جهت تولید نخ تقویتی.',
+                    en: 'Ring/rotor spinning that blends glass fibres with natural fibres for reinforcement yarns.',
+                    ps: 'د رنګ/روتور سپننه چې د فایبر ګلاس فایبرونه له طبیعي فایبرو سره ګډوي د تقویتي تارونو لپاره.'
+                },
+                pdfUrl: 'pdfs/production-lines/fiberglas-production/cotton-spinning.pdf'
+            },
+            {
+                id: 'fiberglas-cotton-weaving',
+                title: {
+                    fa: 'بافندگی الیاف ترکیبی',
+                    en: 'Blended Fibre Weaving Loom',
+                    ps: 'د ګډو فایبرو اوبدلو ماشین'
+                },
+                description: {
+                    fa: 'ماشین بافندگی عرض پهن با کنترل تنش و ضربدری برای تولید پارچه تقویتی.',
+                    en: 'Wide-width loom with precise tension and beat-up control for reinforcement fabrics.',
+                    ps: 'د پراخ عرض اوبدلو ماشین د دقیق تناو او ضرب تنظیم سره د تقویتي ټوکر لپاره.'
+                },
+                pdfUrl: 'pdfs/production-lines/fiberglas-production/cotton-weaving.pdf'
+            },
+            {
+                id: 'fiberglas-cotton-dyeing',
+                title: {
+                    fa: 'رنگ‌آمیزی الیاف ترکیبی',
+                    en: 'Blended Fibre Dyeing Unit',
+                    ps: 'د ګډو فایبرو رنګولو واحد'
+                },
+                description: {
+                    fa: 'خط رنگرزی جت و پد-استف برای تثبیت رنگ روی ترکیب الیاف شیشه و پنبه.',
+                    en: 'Jet and pad-steam dye range that fixes colour on glass and cotton fibre blends.',
+                    ps: 'د جټ او پد-سټیم رنګرزي لاین چې د فایبر ګلاس او پنبه ګډو فایبرو رنګ ثابتوي.'
+                },
+                pdfUrl: 'pdfs/production-lines/fiberglas-production/cotton-dyeing.pdf'
             }
         ]
     },
