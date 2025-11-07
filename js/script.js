@@ -324,6 +324,19 @@ const categories = {
             ps: 'د صنعتي او سوداګریز سړښت او تودوخې تجهیزات. له چیلر څخه تر بویلر پورې، د انرژي مصرف بهینه کولو سره.'
         }
     },
+    'paper-pulp': {
+        icon: '📄',
+        title: {
+            fa: 'خطوط پالپ و کاغذ',
+            en: 'Pulp & Paper Lines',
+            ps: 'د پالپ او کاغذ کرښې'
+        },
+        description: {
+            fa: 'خطوط خمیرسازی، ماشین کاغذ و تبدیل نهایی با مهندسی، نصب و پشتیبانی کامل برای کارخانجات کاغذ.',
+            en: 'Pulping, paper machine and converting lines delivered with engineering, installation and full operational support.',
+            ps: 'د خمیر جوړولو، د کاغذ ماشین او د بدلون کرښې د انجینري، نصب او بشپړ عملیاتي ملاتړ سره وړاندې کېږي.'
+        }
+    },
     'pumps-compressors': {
         icon: '🔧',
         title: {
@@ -2292,7 +2305,7 @@ const categoryKeywords = {
         'باتری صنعتی', 'Industrial Batteries', 'صنعتي بیټرۍ',
         'تسمه انتقال نیرو', 'Power Transmission Belt', 'د ځواک لېږد تسمه'
     ],
-    'paper-pulp': ['ماشین آلات کاغذ و سلولوز', 'Paper & Pulp Machinery', 'کاغذ', 'paper', 'د کاغذ او پالپ ماشینونه', 'Paper & Pulp Machinery'],
+    'paper-pulp': ['ماشین آلات کاغذ و سلولوز', 'Paper & Pulp Machinery', 'کاغذ', 'paper', 'د کاغذ او پالپ ماشینونه', 'Paper & Pulp Machinery', 'خطوط پالپ و کاغذ', 'Pulp & Paper Lines', 'پالپ', 'pulp', 'کاغذسازی', 'paper mill', 'د پالپ او کاغذ کرښې', 'Paper & Pulp'],
     'electronic-machinery': ['ماشین آلات الکترونیکی', 'Electronic Machinery', 'الکترونیک', 'electronic', 'د الکترونیک ماشینونه', 'Electronic Machinery'],
     'telecom-parts': ['قطعات و لوازم اینترنتی و مخابراتی', 'Internet & Telecommunication Parts', 'مخابراتی', 'telecom', 'اینترنت', 'internet', 'د انترنت او مخابراتي برخې', 'Internet & Telecommunication Parts'],
     'second-hand': ['ماشین آلات دست دوم', 'Second Hand Machinery', 'دست دوم', 'second hand', 'د دوهم لاس ماشینونه', 'Second Hand Machinery'],
@@ -3089,6 +3102,134 @@ const equipmentData = {
             pdfUrl: 'pdfs/pumps-compressors/pump-parts/pump-valve.pdf'
         }
     ],
+    'paper-pulp': [
+        {
+            category: 'pulp-production',
+            name: {
+                fa: 'ماشین خمیرسازی پیوسته',
+                en: 'Continuous Pulping Machine',
+                ps: 'د دوامداره خمیر جوړولو ماشین'
+            },
+            description: {
+                fa: 'دیفیوزر فشار با کنترل دما و تزریق شیمی برای تولید پالپ یکنواخت از چیپس چوب.',
+                en: 'Pressure diffuser with temperature control and chemical dosing for uniform pulp from wood chips.',
+                ps: 'د فشار ډیفیوزر د تودوخې کنټرول او د کیمیاوي انجیکشن سره چې له لرګي چپس څخه یکنواخت پالپ برابروي.'
+            },
+            pdfUrl: 'pdfs/paper-pulp/pulp-production/pulping-machine.pdf'
+        },
+        {
+            category: 'pulp-production',
+            name: {
+                fa: 'خط شست‌وشوی پالپ چندمرحله‌ای',
+                en: 'Multi-Stage Pulp Washing Line',
+                ps: 'د پالپ څو پړاوه مینځلو لاین'
+            },
+            description: {
+                fa: 'پرس واشر، فیلتر و سیستم بازیافت مایع سفید برای کاهش مصرف آب و حفظ کیفیت الیاف.',
+                en: 'Press washers, filters and white liquor recovery system to cut water use and preserve fibre quality.',
+                ps: 'پرس واشرونه، فلټرونه او د سپین مایع د بیا راټولولو سیستم د اوبو مصرف د کمولو او د فایبر کیفیت ساتلو لپاره.'
+            },
+            pdfUrl: 'pdfs/paper-pulp/pulp-production/pulp-washing.pdf'
+        },
+        {
+            category: 'pulp-production',
+            name: {
+                fa: 'برج سفیدکننده پالپ',
+                en: 'Pulp Bleaching Tower',
+                ps: 'د پالپ سپینولو برج'
+            },
+            description: {
+                fa: 'واحد سفیدکننده کلر دی‌اکسید یا پراکساید با کنترل آنلاین قلیائیت و میزان سفیدی خروجی.',
+                en: 'Chlorine dioxide or peroxide bleaching stage with online alkalinity and brightness control.',
+                ps: 'د کلورین ډای اکساید یا پراکسايد سپینولو واحد د آنلاین الکلاینیت او روښانتیا کنټرول سره.'
+            },
+            pdfUrl: 'pdfs/paper-pulp/pulp-production/pulp-bleaching.pdf'
+        },
+        {
+            category: 'paper-production',
+            name: {
+                fa: 'ماشین کاغذ فوردرینیه',
+                en: 'Fourdrinier Paper Machine',
+                ps: 'د فوردرینیر کاغذ ماشین'
+            },
+            description: {
+                fa: 'هدباکس، سکشن و پرس، خشک‌کن سیلندر و کنترل پروفایل ضخامت و رطوبت برای تولید رول پایدار.',
+                en: 'Headbox, vacuum section, press and cylinder dryers with thickness and moisture profile control for stable rolls.',
+                ps: 'هدباکس، د ویکیوم برخه، پرس او سلنډري وچوونکي د ضخامت او رطوبت پروفایل کنټرول سره د ثابت رول تولید لپاره.'
+            },
+            pdfUrl: 'pdfs/paper-pulp/paper-production/paper-machine.pdf'
+        },
+        {
+            category: 'paper-production',
+            name: {
+                fa: 'خط کوتینگ و سایز پرس',
+                en: 'Paper Coating & Size Press Line',
+                ps: 'د کاغذ کوټینګ او سایز پرېس لاین'
+            },
+            description: {
+                fa: 'اپلیکاتور دوطرفه، خشک‌کن هوای داغ و سیستم کنترل ویسکوزیته برای بهبود کیفیت سطح.',
+                en: 'Dual-side applicators, hot-air dryers and viscosity control system to upgrade surface quality.',
+                ps: 'د دواړو خواوو اپلیکاتورونه، د ګرمو هوا وچوونکي او د واسکوزیتې کنټرول سیستم د سطحې کیفیت ښه کولو لپاره.'
+            },
+            pdfUrl: 'pdfs/paper-pulp/paper-production/paper-coating.pdf'
+        },
+        {
+            category: 'paper-production',
+            name: {
+                fa: 'سیستم برش و رول‌رَو',
+                en: 'Sheeter & Rewinder System',
+                ps: 'د پرې کولو او ریوایندر سیستم'
+            },
+            description: {
+                fa: 'ماشین برش عرضی و وایندر خودکار برای تنظیم طول، عرض و قطر رول‌های خروجی.',
+                en: 'Cross-cut sheeter and automatic rewinder to adjust finished roll length, width and diameter.',
+                ps: 'د عرضي پرې کولو ماشین او اتومات ریوایندر د وروستي رول اوږدوالی، پلنوالی او قطر عیارولو لپاره.'
+            },
+            pdfUrl: 'pdfs/paper-pulp/paper-production/paper-cutting.pdf'
+        },
+        {
+            category: 'paper-converting',
+            name: {
+                fa: 'دستگاه کیسه کاغذی با ته مربعی',
+                en: 'Square Bottom Paper Bag Machine',
+                ps: 'د مربع تل لرونکي کاغذي کڅوړې ماشین'
+            },
+            description: {
+                fa: 'فرم‌دهی، چسب‌زنی و شمارش اتوماتیک برای تولید کیسه‌های حمل فروشگاهی و بسته‌بندی صنعتی.',
+                en: 'Automatic forming, gluing and counting to produce retail carrier and industrial paper bags.',
+                ps: 'اتومات شکل ورکول، ګنډل او شمېرنه د پلورنځیو د وړونکو او صنعتي کاغذي کڅوړو د تولید لپاره.'
+            },
+            pdfUrl: 'pdfs/paper-pulp/paper-converting/paper-bag-making.pdf'
+        },
+        {
+            category: 'paper-converting',
+            name: {
+                fa: 'دستگاه تولید پاکت نامه',
+                en: 'Envelope Making Machine',
+                ps: 'د لفاف جوړولو ماشین'
+            },
+            description: {
+                fa: 'برش، تا، چسب گرم و خشک‌کن برای تولید پاکت‌های اداری و اختصاصی با ظرفیت بالا.',
+                en: 'Cutting, folding, hot glue and drying stages for high-volume office and bespoke envelopes.',
+                ps: 'د پرې کولو، تا کولو، ګرم ګلو او وچولو مرحلې د اداري او ځانګړو لفافو د لوړ ظرفیت تولید لپاره.'
+            },
+            pdfUrl: 'pdfs/paper-pulp/paper-converting/envelope-making.pdf'
+        },
+        {
+            category: 'paper-converting',
+            name: {
+                fa: 'خط تبدیل دستمال کاغذی',
+                en: 'Tissue Converting Line',
+                ps: 'د دستمال کاغذ بدلون لاین'
+            },
+            description: {
+                fa: 'امباس و تا زن، رولر برش و بسته‌بندی شرینک برای تولید رول دستمال و دستمال جیبی.',
+                en: 'Embossing and folding, log saw cutting and shrink packaging to produce tissue rolls and pocket packs.',
+                ps: 'امباس او تا کول، د لاګ پرې کول او شرینک بسته بندي د دستمال رولونو او جېبي بسته بندیو د تولید لپاره.'
+            },
+            pdfUrl: 'pdfs/paper-pulp/paper-converting/tissue-converting.pdf'
+        }
+    ],
     'industrial-laser': [
         {
             name: { fa: 'دستگاه لیزر برش', en: 'Laser Cutting Machine', ps: 'د لیزر سکه ماشین' },
@@ -3874,12 +4015,12 @@ Object.assign(translations, {
     'cat-tobacco': { fa: 'ماشین آلات تناکو و سیگار', en: 'Tobacco & Cigarette Machinery', ps: 'د توتون او سیګر ماشینونه' },
     'cat-cooling-heating': { fa: 'دستگاه های سرمایش و گرمایش', en: 'Cooling & Heating Equipment', ps: 'د سړښت او تودوخه تجهیزات' },
     'cat-pumps-compressors': { fa: 'پمپ ها و کمپرسور ها صنعتی', en: 'Industrial Pumps & Compressors', ps: 'د صنعت پمپونه او کمپرسورونه' },
+    'cat-paper-pulp': { fa: 'خطوط پالپ و کاغذ', en: 'Pulp & Paper Lines', ps: 'د پالپ او کاغذ کرښې' },
     'cat-industrial-laser': { fa: 'لیزر صنعتی', en: 'Industrial Laser', ps: 'صنعت لیزر' },
     'cat-tanks': { fa: 'مخازن', en: 'Tanks', ps: 'تنکونه' },
     'cat-packaging': { fa: 'بسته بندی', en: 'Packaging', ps: 'بسته بندي' },
     'cat-chemical-pharma': { fa: 'ماشین آلات شیمیایی و دارویی', en: 'Chemical & Pharmaceutical Machinery', ps: 'د کیمیاوي او درملو ماشینونه' },
     'cat-machinery-parts': { fa: 'پرزه‌جات ماشین‌آلات', en: 'Machinery Spare Parts', ps: 'د ماشینونو پرزې' },
-    'cat-paper-pulp': { fa: 'ماشین آلات کاغذ و سلولوز', en: 'Paper & Pulp Machinery', ps: 'د کاغذ او پالپ ماشینونه' },
     'cat-electronic-machinery': { fa: 'ماشین آلات الکترونیکی', en: 'Electronic Machinery', ps: 'د الکترونیک ماشینونه' },
     'cat-telecom-parts': { fa: 'قطعات و لوازم اینترنتی و مخابراتی', en: 'Internet & Telecommunication Parts', ps: 'د انترنت او مخابراتي برخې' },
     'cat-second-hand': { fa: 'ماشین آلات دست دوم', en: 'Second Hand Machinery', ps: 'د دوهم لاس ماشینونه' },
@@ -4127,6 +4268,9 @@ function updateTranslations(lang) {
     if (typeof updateMachineryPartsPage === 'function') {
         updateMachineryPartsPage();
     }
+    if (typeof updatePaperPulpPage === 'function') {
+        updatePaperPulpPage();
+    }
     if (typeof updateConstructionMaterialsPage === 'function') {
         updateConstructionMaterialsPage();
     }
@@ -4210,6 +4354,10 @@ function navigateToCoolingHeating() {
 
 function navigateToPumpsCompressors() {
     window.location.href = 'pumps-compressors.html';
+}
+
+function navigateToPaperPulp() {
+    window.location.href = 'paper-pulp.html';
 }
 
 function navigateToTires() {
