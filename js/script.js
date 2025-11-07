@@ -3652,6 +3652,258 @@ const equipmentData = {
             pdfUrl: 'pdfs/machinery-parts/general-parts/belts.pdf'
         }
     ],
+    'mixing-equipments': [
+        {
+            category: 'chemical-pharma',
+            name: { fa: 'راکتور جکت‌دار فرایندی', en: 'Jacketed Process Reactor', ps: 'د جاکټ لرونکی پروسې ریکټور' },
+            description: {
+                fa: 'راکتور استیل با جکت حرارتی، کنترل دما و همزن سیل مکانیکی برای فرآیندهای شیمیایی و دارویی.',
+                en: 'Stainless steel reactor with heating jacket, temperature control and mechanical seal agitator for chemical and pharma batches.',
+                ps: 'سټینلیس ریکټور د تودوخې جاکټ، د تودوخې کنټرول او میخانیکي سیل همزن سره د کیمیاوي او درملو لپاره.'
+            },
+            pdfUrl: 'pdfs/mixing-equipments/chemical-pharma/reaction-tank/jacketed-reactor.pdf',
+            meta: [
+                {
+                    label: { fa: 'حجم کاری', en: 'Working Volume', ps: 'کاري حجم' },
+                    value: { fa: '۵۰۰ تا ۵۰۰۰ لیتر', en: '500–5000 L', ps: '۵۰۰ تر ۵۰۰۰ لیتر' }
+                },
+                {
+                    label: { fa: 'فشار طراحی', en: 'Design Pressure', ps: 'دیزاین فشار' },
+                    value: { fa: 'تا ۶ بار', en: 'Up to 6 bar', ps: 'تر ۶ بار پورې' }
+                }
+            ]
+        },
+        {
+            category: 'chemical-pharma',
+            name: { fa: 'راکتور شیشه‌ای', en: 'Glass-Lined Reactor', ps: 'د شیشې لاین لرونکی ریکټور' },
+            description: {
+                fa: 'راکتور پوشش شیشه‌ای با مقاومت شیمیایی بالا و قابلیت CIP برای تولید دارو و مواد حساس.',
+                en: 'Glass-lined reactor offering high chemical resistance and CIP capability for sensitive formulations.',
+                ps: 'شیشه پوښ ریکټور د لوړې کیمیاوي مقاومت او د CIP وړتیا سره د حساسو فورمولونو لپاره.'
+            },
+            pdfUrl: 'pdfs/mixing-equipments/chemical-pharma/reaction-tank/glass-lined-reactor.pdf'
+        },
+        {
+            category: 'chemical-pharma',
+            name: { fa: 'همزن راکتور', en: 'Reactor Agitator Package', ps: 'د ریکټور د همزن سیټ' },
+            description: {
+                fa: 'پکج همزن با پروانه، گیربکس و سیل مکانیکی متناسب با ویسکوزیته و فرآیند.',
+                en: 'Agitator package with impeller, gearbox and mechanical seal sized to process viscosity.',
+                ps: 'د امپیلر، ګیربکس او میخانیکي سیل لرونکی همزن چې د ویسکوسیتي سره سم جوړ شوی.'
+            },
+            pdfUrl: 'pdfs/mixing-equipments/chemical-pharma/reaction-tank/reactor-agitator.pdf'
+        },
+        {
+            category: 'chemical-pharma',
+            name: { fa: 'دستگاه بسته‌بندی بلستر', en: 'Blister Packing Machine', ps: 'د درملو د بلستر بسته بندي ماشین' },
+            description: {
+                fa: 'خط بلستر اتومات با دوزینگ دقیق، سیل حرارتی و چاپ مشخصات دارویی.',
+                en: 'Automatic blister line with precise dosing, heat sealing and pharma-grade printing.',
+                ps: 'اتومات بلستر لاین د دقیق ډوزینګ، حرارتي سیل او د درملو چاپ سره.'
+            },
+            pdfUrl: 'pdfs/mixing-equipments/chemical-pharma/pharma-packaging/blister-packing.pdf'
+        },
+        {
+            category: 'chemical-pharma',
+            name: { fa: 'دستگاه پرکن بطری دارویی', en: 'Pharma Bottle Filling Machine', ps: 'د درملو بوتل ډکولو ماشین' },
+            description: {
+                fa: 'پرکن بطری با سیستم CIP، دربندی اتومات و کنترل وزن برای شربت و محلول‌های دارویی.',
+                en: 'Bottle filler with CIP system, automatic capping and weight control for syrups and liquid medicines.',
+                ps: 'د بوتل ډکولو ماشین د CIP سیستم، اتومات سر پوښ او د وزن کنټرول سره د شربت او مایعاتو لپاره.'
+            },
+            pdfUrl: 'pdfs/mixing-equipments/chemical-pharma/pharma-packaging/bottle-filling.pdf'
+        },
+        {
+            category: 'chemical-pharma',
+            name: { fa: 'ماشین کارتن‌سازی دارویی', en: 'Pharma Cartoning Machine', ps: 'د درملو د کارتن جوړولو ماشین' },
+            description: {
+                fa: 'کارتیجر اتومات برای بسته‌بندی ثانویه با تشخیص کد و سیستم رد محصول معیوب.',
+                en: 'Automatic cartoner for secondary packaging with code detection and reject system.',
+                ps: 'اتومات کارتونې ماشین د دوهمي بسته بندۍ لپاره د کوډ کشف او د نیمګړي محصول ردولو سره.'
+            },
+            pdfUrl: 'pdfs/mixing-equipments/chemical-pharma/pharma-packaging/cartoning-machine.pdf'
+        },
+        {
+            category: 'chemical-pharma',
+            name: { fa: 'میکسر هموژنایزر', en: 'Industrial Homogenising Mixer', ps: 'صنعتي همجن ساز مکسەر' },
+            description: {
+                fa: 'میکسر با سرعت بالا و سیستم هموژنایزر برای کرم، سس و محصولات دارویی نیمه‌جامد.',
+                en: 'High-shear mixer with homogeniser for creams, sauces and semi-solid pharma products.',
+                ps: 'لوړ سرعت همجن کوونکی مکسېر د کریم، ساس او نیمه جامدو درملو محصولاتو لپاره.'
+            },
+            pdfUrl: 'pdfs/mixing-equipments/chemical-pharma/mixing-grinding/mixer.pdf'
+        },
+        {
+            category: 'chemical-pharma',
+            name: { fa: 'دانه‌ساز مرطوب', en: 'Wet Granulator System', ps: 'د لوند ګرینولیټر سیستم' },
+            description: {
+                fa: 'گرینولاتور دارویی با برش دقیق و خشک‌کن متصل برای تولید گرانول یکنواخت.',
+                en: 'Pharma granulator with precision cutter and integrated dryer for uniform granules.',
+                ps: 'د درملو ګرینولیټر د دقیق پرې کوونکي او وصل وچولو سره د یکنواخت ګرینول لپاره.'
+            },
+            pdfUrl: 'pdfs/mixing-equipments/chemical-pharma/mixing-grinding/granulator.pdf'
+        },
+        {
+            category: 'chemical-pharma',
+            name: { fa: 'ریبون بلندر', en: 'Ribbon Blender', ps: 'ربن بلنډر' },
+            description: {
+                fa: 'مخلوط‌کن نواری با طراحی U شکل و درب آب‌بند برای پودر و گرانول غذایی و شیمیایی.',
+                en: 'U-shaped ribbon blender with dust-tight cover for food and chemical powders.',
+                ps: 'د U شکل ربن بلنډر د دوړو تړلي سرپوښ سره د خوړو او کیمیاوي پوډرو لپاره.'
+            },
+            pdfUrl: 'pdfs/mixing-equipments/chemical-pharma/mixing-grinding/ribbon-blender.pdf'
+        },
+        {
+            category: 'tanks',
+            name: { fa: 'تانک آب استیل', en: 'Stainless Water Tank', ps: 'سټینلیس د اوبو ټانک' },
+            description: {
+                fa: 'تانک استیل ۳۰۴/۳۱۶ با پلیسه داخلی و خروجی‌های سفارشی برای آب آشامیدنی و صنعتی.',
+                en: '304/316 stainless steel water tank with polished interior and custom outlets for potable and process use.',
+                ps: 'د 304/316 سټینلیس اوبو ټانک د صیقل شوې داخلې او دودیزو والوګانو سره د څښاک او صنعتي کارونې لپاره.'
+            },
+            pdfUrl: 'pdfs/mixing-equipments/tanks/water-tank/stainless-tank.pdf'
+        },
+        {
+            category: 'tanks',
+            name: { fa: 'تانک پلاستیکی تقویت‌شده', en: 'Reinforced Plastic Tank', ps: 'پیاوړی پلاستیکي ټانک' },
+            description: {
+                fa: 'تانک پلی‌اتیلن چندلایه با تقویت فیبر و دریچه بازدید برای سیالات خورنده یا آب.',
+                en: 'Multilayer polyethylene tank with fibreglass reinforcement and manway for corrosive fluids or water.',
+                ps: 'چند پوړیز پولی ایتیلین ټانک د فایبر ګلاس پیاوړتیا او د معاینې دروازې سره د زهرجن مایعاتو یا اوبو لپاره.'
+            },
+            pdfUrl: 'pdfs/mixing-equipments/tanks/water-tank/plastic-tank.pdf'
+        },
+        {
+            category: 'tanks',
+            name: { fa: 'تانک ذخیره اسید', en: 'Acid Storage Tank', ps: 'د اسید ذخیرې ټانک' },
+            description: {
+                fa: 'تانک مقاوم در برابر خوردگی با آستر خاص و تجهیزات ایمنی برای ذخیره اسیدهای صنعتی.',
+                en: 'Corrosion-resistant tank with specialised lining and safety fittings for industrial acids.',
+                ps: 'د زنګ پر وړاندې مقاومت لرونکی ټانک د ځانګړي آستر او د خوندیتوب تجهیزاتو سره د صنعتي اسیدونو لپاره.'
+            },
+            pdfUrl: 'pdfs/mixing-equipments/tanks/chemical-tank/acid-tank.pdf'
+        },
+        {
+            category: 'tanks',
+            name: { fa: 'تانک ذخیره سوخت', en: 'Fuel Storage Tank', ps: 'د سونګ ذخیرې ټانک' },
+            description: {
+                fa: 'تانک دو جداره با سیستم تهویه و نشانگر سطح برای ذخیره دیزل و بنزین.',
+                en: 'Double-wall tank with venting and level gauging for diesel and petrol storage.',
+                ps: 'دوه پوړیز ټانک د هوا ایستلو او د سطحې ښودلو سیسټم سره د ډیزلو او پطرولو لپاره.'
+            },
+            pdfUrl: 'pdfs/mixing-equipments/tanks/chemical-tank/fuel-tank.pdf'
+        },
+        {
+            category: 'tanks',
+            name: { fa: 'آسترکاری و تعمیر تانک', en: 'Tank Lining & Refurbishment', ps: 'د ټانک آستر او ترمیم' },
+            description: {
+                fa: 'خدمات آستر اپوکسی، گلس‌فلیک یا رابرلاینینگ و تعمیر نشتی تانک‌های فلزی.',
+                en: 'Epoxy, glass-flake or rubber lining services with leak repair for metal tanks.',
+                ps: 'د اپوکسي، ګلز فلیک یا رابر آستر خدمتونه او د فلزي ټانکونو د لیک ترمیم.'
+            },
+            pdfUrl: 'pdfs/mixing-equipments/tanks/chemical-tank/tank-lining.pdf'
+        },
+        {
+            category: 'tanks',
+            name: { fa: 'تانک عمودی ذخیره‌سازی', en: 'Vertical Storage Tank', ps: 'عمودي ذخیره ټانک' },
+            description: {
+                fa: 'تانک عمودی با پایه تقویت‌شده، نردبان و پلتفرم ایمن برای ذخیره حجمی.',
+                en: 'Vertical tank with reinforced base, ladder and safe platform for bulk storage.',
+                ps: 'عمودي ټانک د پیاوړي بنسټ، زینې او خوندي پلیټفارم سره د ډله ییزې ذخیرې لپاره.'
+            },
+            pdfUrl: 'pdfs/mixing-equipments/tanks/storage-tank/vertical-tank.pdf'
+        },
+        {
+            category: 'tanks',
+            name: { fa: 'تانک افقی ذخیره‌سازی', en: 'Horizontal Storage Tank', ps: 'افقي ذخیره ټانک' },
+            description: {
+                fa: 'تانک افقی برای نصب روی فریم یا پایه بتنی با محاسبات استحکام و نازل‌گذاری.',
+                en: 'Horizontal tank engineered for skid or concrete foundation with nozzle layout design.',
+                ps: 'افقي ټانک د فریم یا کانکریټ بنسټ لپاره د قوت محاسبې او نوزل ترتیب سره.'
+            },
+            pdfUrl: 'pdfs/mixing-equipments/tanks/storage-tank/horizontal-tank.pdf'
+        },
+        {
+            category: 'foam-sponge',
+            name: { fa: 'میکسینگ تولید فوم', en: 'Foam Mixing Station', ps: 'د فوم د مخلوط کولو سټېشن' },
+            description: {
+                fa: 'سیستم میکسینگ با دوزینگ ایزو و پلیول، کنترل دما و ثبت داده برای تولید فوم انعطاف‌پذیر.',
+                en: 'Mixing skid with ISO and polyol dosing, temperature control and data logging for flexible foam.',
+                ps: 'د ایزو او پولیول دوزینګ، د تودوخې کنټرول او د معلوماتو ثبت سره د فوم مخلوط کولو سکیډ.'
+            },
+            pdfUrl: 'pdfs/mixing-equipments/foam-sponge/foam-production/foam-mixing.pdf'
+        },
+        {
+            category: 'foam-sponge',
+            name: { fa: 'قالب‌گیری بلوک فوم', en: 'Foam Block Moulding Machine', ps: 'د فوم بلاک قالب ماشین' },
+            description: {
+                fa: 'خط قالب‌گیری فوم با کنترل تراکم، سیستم بخار و برش اولیه برای تولید بلوک مبلمان.',
+                en: 'Foam block moulding line with density control, steam system and pre-cut for furniture blocks.',
+                ps: 'د فوم بلاک قالب لاین د کثافت کنټرول، بخار سیستم او لومړني پرې کولو سره د فرنیچر بلاکونو لپاره.'
+            },
+            pdfUrl: 'pdfs/mixing-equipments/foam-sponge/foam-production/foam-molding.pdf'
+        },
+        {
+            category: 'foam-sponge',
+            name: { fa: 'دستگاه برش فوم پیوسته', en: 'Continuous Foam Cutting Line', ps: 'د فوم د دوامداره پرې کولو لاین' },
+            description: {
+                fa: 'سیستم برش پیوسته با تیغه متحرک و میز نقاله برای برش دقیق فوم‌های ورقی.',
+                en: 'Continuous cutting system with moving blade and conveyor table for accurate slab cutting.',
+                ps: 'د خوځنده تیغ او نقاله میز لرونکی دوامدار پرې کولو سیستم د فوم پاڼو لپاره.'
+            },
+            pdfUrl: 'pdfs/mixing-equipments/foam-sponge/foam-production/foam-cutting.pdf'
+        },
+        {
+            category: 'foam-sponge',
+            name: { fa: 'برش کانتور اسفنج', en: 'Contour Sponge Cutter', ps: 'د سپنچ کانتور پرې کوونکی' },
+            description: {
+                fa: 'ماشین برش CNC با سیم یا تیغه برای تولید قطعات کانتور مبلمان و پشتی صندلی.',
+                en: 'CNC contour cutter using wire or blade for shaped furniture and seat backs.',
+                ps: 'د وایر یا تیغ کاروونکی CNC کانتور پرې کوونکی د فرنیچر او څوکۍ شاګانو لپاره.'
+            },
+            pdfUrl: 'pdfs/mixing-equipments/foam-sponge/sponge-cutting/contour-cutting.pdf'
+        },
+        {
+            category: 'foam-sponge',
+            name: { fa: 'برش افقی فوم', en: 'Horizontal Foam Cutter', ps: 'افقي د فوم پرې کوونکی' },
+            description: {
+                fa: 'دستگاه برش افقی با میز دوار یا رفت و برگشتی برای تولید ورق‌های فوم با ضخامت دقیق.',
+                en: 'Horizontal cutting machine with rotary or reciprocating table for precision foam sheets.',
+                ps: 'افقي پرې کوونکی ماشین د تاوېدونکې یا تګ راتګ مېز سره د دقیق فوم شیټونو لپاره.'
+            },
+            pdfUrl: 'pdfs/mixing-equipments/foam-sponge/sponge-cutting/horizontal-cutting.pdf'
+        },
+        {
+            category: 'foam-sponge',
+            name: { fa: 'برش عمودی فوم', en: 'Vertical Foam Saw', ps: 'عمودي د فوم پرې کولو اره' },
+            description: {
+                fa: 'اره عمودی با گاید دقیق و سیستم مکش برای برش بلوک‌های فوم به قطعات کوچکتر.',
+                en: 'Vertical band saw with precise guide and dust extraction for cutting foam blocks into smaller parts.',
+                ps: 'عمودي بانډ اره د دقیق لارښود او دوړو ایستلو سره د فوم بلاکونو د کوچنیو ټوټو کولو لپاره.'
+            },
+            pdfUrl: 'pdfs/mixing-equipments/foam-sponge/sponge-cutting/vertical-cutting.pdf'
+        },
+        {
+            category: 'foam-sponge',
+            name: { fa: 'لمینه‌کردن فوم', en: 'Foam Lamination Line', ps: 'د فوم لامینېټ لاین' },
+            description: {
+                fa: 'خط لمینه با چسب گرم، رول پرس و برش کناره برای تولید فوم‌های چندلایه.',
+                en: 'Lamination line with hot-melt adhesive, roll press and edge trimming for multi-layer foam.',
+                ps: 'د ګرم چسب، رول پرس او غاړې پرې کولو سره لامینېټ لاین د څو پوړیز فوم لپاره.'
+            },
+            pdfUrl: 'pdfs/mixing-equipments/foam-sponge/foam-packaging/foam-lamination.pdf'
+        },
+        {
+            category: 'foam-sponge',
+            name: { fa: 'شکل‌دهی و بسته‌بندی فوم', en: 'Foam Shaping & Packaging Cell', ps: 'د فوم شکل ورکولو او بسته بندۍ سیل' },
+            description: {
+                fa: 'سلول شکل‌دهی با پرس گرم، برش CNC و بسته‌بندی نهایی برای قطعات فوم شکل‌دار.',
+                en: 'Shaping cell with hot press, CNC trimming and final packaging for contoured foam parts.',
+                ps: 'د ګرم پرس، CNC پرې کولو او وروستي بسته بندۍ سره د فوم شکل ورکولو سیل.'
+            },
+            pdfUrl: 'pdfs/mixing-equipments/foam-sponge/foam-packaging/foam-shaping.pdf'
+        }
+    ],
     'paper-pulp': [
         {
             category: 'pulp-production',
@@ -4137,6 +4389,7 @@ Object.assign(translations, {
     'cat-packaging': { fa: 'بسته بندی', en: 'Packaging', ps: 'بسته بندي' },
     'cat-chemical-pharma': { fa: 'ماشین آلات شیمیایی و دارویی', en: 'Chemical & Pharmaceutical Machinery', ps: 'د کیمیاوي او درملو ماشینونه' },
     'cat-machinery-parts': { fa: 'پرزه‌جات ماشین‌آلات', en: 'Machinery Spare Parts', ps: 'د ماشینونو پرزې' },
+    'cat-mixing-equipments': { fa: 'تجهیزات میکسینگ و تانک‌سازی', en: 'Mixing Equipment & Process Tanks', ps: 'د مکسینګ تجهیزات او پروسې ټانکونه' },
     'cat-electronic-machinery': { fa: 'ماشین آلات الکترونیکی', en: 'Electronic Machinery', ps: 'د الکترونیک ماشینونه' },
     'cat-telecom-parts': { fa: 'قطعات و لوازم اینترنتی و مخابراتی', en: 'Internet & Telecommunication Parts', ps: 'د انترنت او مخابراتي برخې' },
     'cat-second-hand': { fa: 'ماشین آلات دست دوم', en: 'Second Hand Machinery', ps: 'د دوهم لاس ماشینونه' },
@@ -4384,6 +4637,9 @@ function updateTranslations(lang) {
     if (typeof updateMachineryPartsPage === 'function') {
         updateMachineryPartsPage();
     }
+    if (typeof updateMixingEquipmentsPage === 'function') {
+        updateMixingEquipmentsPage();
+    }
     if (typeof updatePaperPulpPage === 'function') {
         updatePaperPulpPage();
     }
@@ -4454,6 +4710,10 @@ function navigateToIndustrialRawMaterials() {
 
 function navigateToMachineryParts() {
     window.location.href = 'machinery-parts.html';
+}
+
+function navigateToMixingEquipments() {
+    window.location.href = 'mixing-equipments.html';
 }
 
 function navigateToConstructionMaterials() {
