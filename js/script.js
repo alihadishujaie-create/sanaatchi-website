@@ -3654,14 +3654,130 @@ const equipmentData = {
     ],
     'paper-pulp': [
         {
-            name: { fa: 'دستگاه تولید خمیر کاغذ', en: 'Pulp Production Machine', ps: 'د پالپ تولید ماشین' },
-            description: { fa: 'دستگاه تولید خمیر کاغذ', en: 'Pulp production machine', ps: 'د پالپ تولید ماشین' },
-            pdfUrl: 'pdfs/paper-pulp/pulp-production.pdf'
+            category: 'pulp-production',
+            name: {
+                fa: 'ماشین خمیرسازی پیوسته',
+                en: 'Continuous Pulping Machine',
+                ps: 'د دوامداره خمیر جوړولو ماشین'
+            },
+            description: {
+                fa: 'دیفیوزر فشار با کنترل دما و تزریق شیمی برای تولید پالپ یکنواخت از چیپس چوب.',
+                en: 'Pressure diffuser with temperature control and chemical dosing for uniform pulp from wood chips.',
+                ps: 'د فشار ډیفیوزر د تودوخې کنټرول او د کیمیاوي انجیکشن سره چې له لرګي چپس څخه یکنواخت پالپ برابروي.'
+            },
+            pdfUrl: 'pdfs/paper-pulp/pulp-production/pulping-machine.pdf'
         },
         {
-            name: { fa: 'دستگاه تولید کاغذ', en: 'Paper Production Machine', ps: 'د کاغذ تولید ماشین' },
-            description: { fa: 'دستگاه تولید کاغذ', en: 'Paper production machine', ps: 'د کاغذ تولید ماشین' },
-            pdfUrl: 'pdfs/paper-pulp/paper-production.pdf'
+            category: 'pulp-production',
+            name: {
+                fa: 'خط شست‌وشوی پالپ چندمرحله‌ای',
+                en: 'Multi-Stage Pulp Washing Line',
+                ps: 'د پالپ څو پړاوه مینځلو لاین'
+            },
+            description: {
+                fa: 'پرس واشر، فیلتر و سیستم بازیافت مایع سفید برای کاهش مصرف آب و حفظ کیفیت الیاف.',
+                en: 'Press washers, filters and white liquor recovery system to cut water use and preserve fibre quality.',
+                ps: 'پرس واشرونه، فلټرونه او د سپین مایع د بیا راټولولو سیستم د اوبو مصرف د کمولو او د فایبر کیفیت ساتلو لپاره.'
+            },
+            pdfUrl: 'pdfs/paper-pulp/pulp-production/pulp-washing.pdf'
+        },
+        {
+            category: 'pulp-production',
+            name: {
+                fa: 'برج سفیدکننده پالپ',
+                en: 'Pulp Bleaching Tower',
+                ps: 'د پالپ سپینولو برج'
+            },
+            description: {
+                fa: 'واحد سفیدکننده کلر دی‌اکسید یا پراکساید با کنترل آنلاین قلیائیت و میزان سفیدی خروجی.',
+                en: 'Chlorine dioxide or peroxide bleaching stage with online alkalinity and brightness control.',
+                ps: 'د کلورین ډای اکساید یا پراکسايد سپینولو واحد د آنلاین الکلاینیت او روښانتیا کنټرول سره.'
+            },
+            pdfUrl: 'pdfs/paper-pulp/pulp-production/pulp-bleaching.pdf'
+        },
+        {
+            category: 'paper-production',
+            name: {
+                fa: 'ماشین کاغذ فوردرینیه',
+                en: 'Fourdrinier Paper Machine',
+                ps: 'د فوردرینیر کاغذ ماشین'
+            },
+            description: {
+                fa: 'هدباکس، سکشن و پرس، خشک‌کن سیلندر و کنترل پروفایل ضخامت و رطوبت برای تولید رول پایدار.',
+                en: 'Headbox, vacuum section, press and cylinder dryers with thickness and moisture profile control for stable rolls.',
+                ps: 'هدباکس، د ویکیوم برخه، پرس او سلنډري وچوونکي د ضخامت او رطوبت پروفایل کنټرول سره د ثابت رول تولید لپاره.'
+            },
+            pdfUrl: 'pdfs/paper-pulp/paper-production/paper-machine.pdf'
+        },
+        {
+            category: 'paper-production',
+            name: {
+                fa: 'خط کوتینگ و سایز پرس',
+                en: 'Paper Coating & Size Press Line',
+                ps: 'د کاغذ کوټینګ او سایز پرېس لاین'
+            },
+            description: {
+                fa: 'اپلیکاتور دوطرفه، خشک‌کن هوای داغ و سیستم کنترل ویسکوزیته برای بهبود کیفیت سطح.',
+                en: 'Dual-side applicators, hot-air dryers and viscosity control system to upgrade surface quality.',
+                ps: 'د دواړو خواوو اپلیکاتورونه، د ګرمو هوا وچوونکي او د واسکوزیتې کنټرول سیستم د سطحې کیفیت ښه کولو لپاره.'
+            },
+            pdfUrl: 'pdfs/paper-pulp/paper-production/paper-coating.pdf'
+        },
+        {
+            category: 'paper-production',
+            name: {
+                fa: 'سیستم برش و رول‌رَو',
+                en: 'Sheeter & Rewinder System',
+                ps: 'د پرې کولو او ریوایندر سیستم'
+            },
+            description: {
+                fa: 'ماشین برش عرضی و وایندر خودکار برای تنظیم طول، عرض و قطر رول‌های خروجی.',
+                en: 'Cross-cut sheeter and automatic rewinder to adjust finished roll length, width and diameter.',
+                ps: 'د عرضي پرې کولو ماشین او اتومات ریوایندر د وروستي رول اوږدوالی، پلنوالی او قطر عیارولو لپاره.'
+            },
+            pdfUrl: 'pdfs/paper-pulp/paper-production/paper-cutting.pdf'
+        },
+        {
+            category: 'paper-converting',
+            name: {
+                fa: 'دستگاه کیسه کاغذی با ته مربعی',
+                en: 'Square Bottom Paper Bag Machine',
+                ps: 'د مربع تل لرونکي کاغذي کڅوړې ماشین'
+            },
+            description: {
+                fa: 'فرم‌دهی، چسب‌زنی و شمارش اتوماتیک برای تولید کیسه‌های حمل فروشگاهی و بسته‌بندی صنعتی.',
+                en: 'Automatic forming, gluing and counting to produce retail carrier and industrial paper bags.',
+                ps: 'اتومات شکل ورکول، ګنډل او شمېرنه د پلورنځیو د وړونکو او صنعتي کاغذي کڅوړو د تولید لپاره.'
+            },
+            pdfUrl: 'pdfs/paper-pulp/paper-converting/paper-bag-making.pdf'
+        },
+        {
+            category: 'paper-converting',
+            name: {
+                fa: 'دستگاه تولید پاکت نامه',
+                en: 'Envelope Making Machine',
+                ps: 'د لفاف جوړولو ماشین'
+            },
+            description: {
+                fa: 'برش، تا، چسب گرم و خشک‌کن برای تولید پاکت‌های اداری و اختصاصی با ظرفیت بالا.',
+                en: 'Cutting, folding, hot glue and drying stages for high-volume office and bespoke envelopes.',
+                ps: 'د پرې کولو، تا کولو، ګرم ګلو او وچولو مرحلې د اداري او ځانګړو لفافو د لوړ ظرفیت تولید لپاره.'
+            },
+            pdfUrl: 'pdfs/paper-pulp/paper-converting/envelope-making.pdf'
+        },
+        {
+            category: 'paper-converting',
+            name: {
+                fa: 'خط تبدیل دستمال کاغذی',
+                en: 'Tissue Converting Line',
+                ps: 'د دستمال کاغذ بدلون لاین'
+            },
+            description: {
+                fa: 'امباس و تا زن، رولر برش و بسته‌بندی شرینک برای تولید رول دستمال و دستمال جیبی.',
+                en: 'Embossing and folding, log saw cutting and shrink packaging to produce tissue rolls and pocket packs.',
+                ps: 'امباس او تا کول، د لاګ پرې کول او شرینک بسته بندي د دستمال رولونو او جېبي بسته بندیو د تولید لپاره.'
+            },
+            pdfUrl: 'pdfs/paper-pulp/paper-converting/tissue-converting.pdf'
         }
     ],
     'electronic-machinery': [
