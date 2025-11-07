@@ -4268,6 +4268,9 @@ function updateTranslations(lang) {
     if (typeof updateMachineryPartsPage === 'function') {
         updateMachineryPartsPage();
     }
+    if (typeof updatePaperPulpPage === 'function') {
+        updatePaperPulpPage();
+    }
     if (typeof updateConstructionMaterialsPage === 'function') {
         updateConstructionMaterialsPage();
     }

@@ -338,6 +338,11 @@
     const inventory = (Array.isArray(equipmentSource['paper-pulp']) ? equipmentSource['paper-pulp'] : [])
         .map(normaliseInventoryItem);
 
+    const categoryMap = categories.reduce((acc, category) => {
+        acc[category.id] = category;
+        return acc;
+    }, {});
+
     const getLanguage = () => (typeof currentLanguage !== 'undefined' ? currentLanguage : 'fa');
 
     function localise(textObject, lang) {
@@ -446,6 +451,7 @@
             if (link) {
                 const handle = event => {
                     event.preventDefault();
+                    event.stopPropagation();
                     openModal();
                 };
                 link.addEventListener('click', handle);
@@ -484,7 +490,7 @@
         const viewText = lang === 'fa' ? 'مشاهده PDF' : (lang === 'ps' ? 'PDF وګورئ' : 'View PDF');
         const downloadText = lang === 'fa' ? 'دانلود' : (lang === 'ps' ? 'ډاونلوډ' : 'Download');
 
-        return items.map(item => `
+        const cards = items.map(item => `
             <div class="equipment-card">
                 <div class="equipment-icon">${item.icon || '📄'}</div>
                 <h4>${localise(item.name, lang)}</h4>
@@ -500,6 +506,8 @@
                 </div>
             </div>
         `).join('');
+
+        return `<div class="equipment-grid">${cards}</div>`;
     }
 
     function renderInventory(lang) {
@@ -601,7 +609,7 @@
 
         const grouped = groupInventoryByCategory();
         const items = grouped[categoryId] || [];
-        const category = categories.find(entry => entry.id === categoryId);
+        const category = categoryMap[categoryId];
         const backText = lang === 'fa' ? 'بازگشت' : (lang === 'ps' ? 'بیرته' : 'Back');
         const sectionTitle = category ? localise(category.title, lang) : '';
 
@@ -629,11 +637,11 @@
 
         const grouped = groupInventoryByCategory();
         const categoryOrder = categories.map(category => category.id);
-        const backText = lang === 'fa' ? 'بازگشت' : (lang === 'ps' ? 'بیرته' : 'Back');
+        const backText = lang === 'fa' ? 'بستن' : (lang === 'ps' ? 'بندول' : 'Close');
         const sectionTitle = localise(content.inventoryTitle, lang);
 
         const sectionsHtml = categoryOrder.map(categoryId => {
-            const category = categories.find(entry => entry.id === categoryId);
+            const category = categoryMap[categoryId];
             const items = grouped[categoryId] || [];
             const categoryTitle = category ? localise(category.title, lang) : '';
             return `
@@ -658,14 +666,14 @@
         modal.setAttribute('aria-hidden', 'false');
     }
 
-    function updatePage() {
-        const lang = getLanguage();
-        setHero(lang);
-        renderHighlights(lang);
-        renderCategories(lang);
-        renderInventory(lang);
-        renderAssurance(lang);
-        renderProcess(lang);
+    function updatePaperPulpPage(lang = getLanguage()) {
+        const activeLang = lang || getLanguage();
+        setHero(activeLang);
+        renderHighlights(activeLang);
+        renderCategories(activeLang);
+        renderInventory(activeLang);
+        renderAssurance(activeLang);
+        renderProcess(activeLang);
     }
 
     function setupInteractions() {
@@ -680,14 +688,11 @@
     }
 
     document.addEventListener('DOMContentLoaded', () => {
-        updatePage();
+        updatePaperPulpPage();
         setupInteractions();
     });
 
-    window.updatePaperPulpPage = () => {
-        updatePage();
-        setupInteractions();
-    };
+    window.updatePaperPulpPage = updatePaperPulpPage;
 
     window.showPaperPulpCategoryModal = showPaperPulpCategoryModal;
     window.showPaperPulpInventoryModal = showPaperPulpInventoryModal;
