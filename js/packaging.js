@@ -2,14 +2,14 @@
     const content = {
         hero: {
             title: {
-                fa: 'راهکارهای بسته‌بندی و پردازش پلاستیک آماده استقرار',
-                en: 'Packaging & Plastic Processing Systems Ready to Deploy',
-                ps: 'د بسته بندۍ او پلاستیک پروسس سیسټمونه د نصب لپاره چمتو دي'
+                fa: 'راهکارهای بسته‌بندی صنعتی آماده استقرار',
+                en: 'Industrial Packaging Solutions Ready to Deploy',
+                ps: 'صنعتي بسته بندۍ حل لارې د نصب لپاره چمتو دي'
             },
             subtitle: {
-                fa: 'از پرکن و درزگیر تا اکسترودر، تزریق و بازیافت؛ خطوط کامل با نصب، آموزش و تضمین کیفیت ارائه می‌شود.',
-                en: 'From fillers and sealers to extrusion, injection and recycling—complete lines delivered with installation, training and QA.',
-                ps: 'له ډکونکو او سیلرونو څخه تر اکسترودر، انجکشن او ریسایکل پورې—بشپړې لینونه د نصب، روزنې او کیفیت تضمین سره برابریږي.'
+                fa: 'از پرکن و درزگیر تا وکیوم و شرینک‌پک؛ خطوط کامل با نصب، آموزش و تضمین کیفیت ارائه می‌شود.',
+                en: 'From fillers and sealers to vacuum and shrink wrapping—complete lines delivered with installation, training and QA.',
+                ps: 'له ډکونکو او سیلرونو څخه تر وکیوم او شرینک پورې—بشپړې لینونه د نصب، روزنې او کیفیت تضمین سره برابریږي.'
             },
             quote: {
                 fa: 'هر پروژه بسته‌بندی با تنظیمات محصول، مستندسازی سه‌زبانه و برنامه خدمات پس از فروش همراه است.',
@@ -38,9 +38,9 @@
             ps: 'د بسته بندۍ تجهیزاتو بنسټیزې ډلې'
         },
         categoriesSubtitle: {
-            fa: 'بسته به محصول و ظرفیت، از سیستم‌های اتوماتیک تا پردازش پلاستیک و چاپ انتخاب کنید.',
-            en: 'Select automated packaging, vacuum solutions, wrapping or plastic processing based on your capacity.',
-            ps: 'د خپلې اړتیا له مخې اتومات بسته بندي، وکیوم حلونه، لفافه کول یا د پلاستیک پروسس انتخاب کړئ.'
+            fa: 'بسته به محصول و ظرفیت، از سیستم‌های اتوماتیک تا وکیوم، لفافه و چاپ انتخاب کنید.',
+            en: 'Select automated packaging, vacuum solutions, wrapping or printing based on your capacity.',
+            ps: 'د خپلې اړتیا له مخې اتومات بسته بندي، وکیوم حلونه، لفافه کول یا چاپ انتخاب کړئ.'
         },
         inventoryTitle: {
             fa: 'فهرست فایل‌های فنی آماده دانلود',
@@ -170,48 +170,6 @@
                 fa: 'ماشین‌های استرچ، شرینک و تسمه‌کشی برای آماده‌سازی حمل و انبارداری.',
                 en: 'Stretch, shrink and strapping machines prepare loads for logistics and warehousing.',
                 ps: 'د سټریچ، شرینک او تسمه ماشینونه بارونه د لوژستیک او ګودام لپاره چمتو کوي.'
-            }
-        },
-        {
-            id: 'extruder',
-            icon: '🛠️',
-            title: {
-                fa: 'خطوط اکسترودر پلاستیک',
-                en: 'Plastic Extrusion Lines',
-                ps: 'د پلاستیک اکسترودر لینونه'
-            },
-            description: {
-                fa: 'اکسترودر لوله، فیلم و پروفایل برای تولید بسته‌بندی و قطعات صنعتی.',
-                en: 'Pipe, film and profile extruders serving packaging and industrial component production.',
-                ps: 'د پایپ، فلم او پروفایل اکسترودرونه چې د بسته بندۍ او صنعتي پرزو تولید ته کار کوي.'
-            }
-        },
-        {
-            id: 'injection',
-            icon: '🧩',
-            title: {
-                fa: 'تزریق و قالب‌گیری پلاستیک',
-                en: 'Plastic Injection & Blow Moulding',
-                ps: 'د پلاستیک انجکشن او بلو مولډنګ'
-            },
-            description: {
-                fa: 'ماشین‌های تزریق، دمشی و قطعات مصرفی برای قالب‌های دقیق و تولید انبوه.',
-                en: 'Injection moulding, blow moulding and consumable kits for precise, high-volume production.',
-                ps: 'د انجکشن مولډنګ، بلو مولډنګ او مصرفي کټونه د دقیق او ډیرو تولیداتو لپاره.'
-            }
-        },
-        {
-            id: 'recycling',
-            icon: '♻️',
-            title: {
-                fa: 'بازیافت و احیای پلاستیک',
-                en: 'Plastic Recycling & Reprocessing',
-                ps: 'د پلاستیک ریسایکل او بیا پروسس'
-            },
-            description: {
-                fa: 'شردر، شستشو، خشک‌کن و پلت‌سازی برای بازیافت ضایعات بسته‌بندی.',
-                en: 'Shredding, washing, drying and pelletising systems recycle packaging waste.',
-                ps: 'شریدر، مینځل، وچول او پلېټ جوړونکي سیسټمونه د بسته بندۍ پاتې شونو ته نوی ژوند ورکوي.'
             }
         },
         {
@@ -380,157 +338,6 @@
             category: 'wrapping-packaging',
             icon: '➰'
         },
-        {
-            name: {
-                fa: 'اکسترودر لوله پلاستیکی',
-                en: 'Plastic Pipe Extruder',
-                ps: 'د پلاستیک پایپ اکسترودر'
-            },
-            description: {
-                fa: 'خط اکسترودر همراه با کالیبراتور، تانک خلأ و کشنده برای تولید لوله.',
-                en: 'Extrusion line with calibrator, vacuum tank and haul-off for pipe production.',
-                ps: 'د کالیبریټر، وکیوم ټانک او کشولو واحد سره اکسترودر د پایپ تولید لپاره.'
-            },
-            pdfUrl: 'pdfs/plastic-processing/extruder/pipe-extruder.pdf',
-            category: 'extruder',
-            icon: '🧵'
-        },
-        {
-            name: {
-                fa: 'اکسترودر فیلم پلاستیکی',
-                en: 'Plastic Film Extruder',
-                ps: 'د پلاستیک فلم اکسترودر'
-            },
-            description: {
-                fa: 'اکسترودر دمشی یا تخت برای تولید رول فیلم بسته‌بندی با ضخامت یکنواخت.',
-                en: 'Blown or cast film extruder delivering consistent gauge packaging films.',
-                ps: 'د بلو یا کاسټ فلم اکسترودر چې همغږي ضخامت لرونکي بسته بندۍ فلمونه تولیدوي.'
-            },
-            pdfUrl: 'pdfs/plastic-processing/extruder/film-extruder.pdf',
-            category: 'extruder',
-            icon: '🎞️'
-        },
-        {
-            name: {
-                fa: 'اکسترودر پروفایل پلاستیکی',
-                en: 'Plastic Profile Extruder',
-                ps: 'د پلاستیک پروفایل اکسترودر'
-            },
-            description: {
-                fa: 'تولید پروفایل و قطعات فنی با قالب‌های قابل تعویض و کنترل دقیق دما.',
-                en: 'Profile extrusion with interchangeable dies and precise temperature zoning.',
-                ps: 'د بدلېدونکو قالبونو او دقیق تودوخې زونونو سره د پروفایل اکسترودر.'
-            },
-            pdfUrl: 'pdfs/plastic-processing/extruder/profile-extruder.pdf',
-            category: 'extruder',
-            icon: '📏'
-        },
-        {
-            name: {
-                fa: 'ماشین تزریق پلاستیک',
-                en: 'Plastic Injection Moulding Machine',
-                ps: 'د پلاستیک انجکشن مولډنګ ماشین'
-            },
-            description: {
-                fa: 'ماشین تزریق با کنترل سروو و واحد گیره قوی برای قالب‌های چند حفره.',
-                en: 'Servo-controlled injection unit with high clamping force for multi-cavity moulds.',
-                ps: 'د سرو کنټرول لرونکی انجکشن یونټ د څو حفره لرونکو قالبونو لپاره د قوي کلمپینګ ځواک سره.'
-            },
-            pdfUrl: 'pdfs/plastic-processing/injection/injection-molding.pdf',
-            category: 'injection',
-            icon: '🧠'
-        },
-        {
-            name: {
-                fa: 'ماشین دمشی پلاستیک',
-                en: 'Plastic Blow Moulding Machine',
-                ps: 'د پلاستیک بلو مولډنګ ماشین'
-            },
-            description: {
-                fa: 'سیستم دمشی برای تولید بطری، مخزن و قطعات توخالی با کنترل ضخامت دیواره.',
-                en: 'Blow moulding system for bottles, tanks and hollow parts with wall-thickness control.',
-                ps: 'د بوتلونو، ټانکونو او تشو پرزو لپاره بلو مولډنګ د دیوال ضخامت کنټرول سره.'
-            },
-            pdfUrl: 'pdfs/plastic-processing/injection/blow-molding.pdf',
-            category: 'injection',
-            icon: '🍶'
-        },
-        {
-            name: {
-                fa: 'قطعات مصرفی تزریق',
-                en: 'Injection Moulding Spare Parts',
-                ps: 'د انجکشن مولډنګ اضافي پرزې'
-            },
-            description: {
-                fa: 'ست نازل، پیچ، بوش و حلقه‌های آب‌بندی برای نگهداری دوره‌ای ماشین تزریق.',
-                en: 'Nozzle, screw, bushing and seal kits that keep injection moulding machines running.',
-                ps: 'د نوزل، پیچ، بوش او سیل کټونه چې د انجکشن ماشینونه فعال ساتي.'
-            },
-            pdfUrl: 'pdfs/plastic-processing/injection/injection-parts.pdf',
-            category: 'injection',
-            icon: '🧷'
-        },
-        {
-            name: {
-                fa: 'خط بازیافت پلاستیک',
-                en: 'Plastic Recycling Line',
-                ps: 'د پلاستیک ریسایکل لاین'
-            },
-            description: {
-                fa: 'از تفکیک تا خشک‌کن سانتریفیوژ برای بازیافت ضایعات بسته‌بندی و تولید گرانول.',
-                en: 'Complete recycling line from sorting to centrifugal drying for pellet output.',
-                ps: 'بشپړ ریسایکل لاین له تفکیک څخه تر سنټرفیوژ وچولو پورې د پلېټ تولید لپاره.'
-            },
-            pdfUrl: 'pdfs/plastic-processing/recycling/plastic-recycling.pdf',
-            category: 'recycling',
-            icon: '♻️'
-        },
-        {
-            name: {
-                fa: 'شردر پلاستیک صنعتی',
-                en: 'Industrial Plastic Shredder',
-                ps: 'صنعتي پلاستیک شریدر'
-            },
-            description: {
-                fa: 'شردر دو شافت با تیغه‌های آلیاژی و کنترل سرعت برای آماده‌سازی خوراک بازیافت.',
-                en: 'Twin-shaft shredder with alloy blades and variable speed for recycling feedstock.',
-                ps: 'دوه شافټ لرونکی شریدر د الیاژ تیغونو او د سرعت تنظیم سره د ریسایکل موادو لپاره.'
-            },
-            pdfUrl: 'pdfs/plastic-processing/recycling/shredder.pdf',
-            category: 'recycling',
-            icon: '🪚'
-        },
-        {
-            name: {
-                fa: 'خط شستشو و خشک‌کن پلاستیک',
-                en: 'Plastic Washing & Drying Line',
-                ps: 'د پلاستیک مینځلو او وچولو لاین'
-            },
-            description: {
-                fa: 'حوض شستشو، اسکرو انتقال و خشک‌کن حرارتی برای کاهش آلودگی ضایعات.',
-                en: 'Washing tanks, screw conveyors and thermal dryers reduce contamination before extrusion.',
-                ps: 'د مینځلو حوضونه، سکرو انتقال او حرارتي وچوونکي د اکسترودر دمخه ککړتیا کموي.'
-            },
-            pdfUrl: 'pdfs/plastic-processing/recycling/washing-line.pdf',
-            category: 'recycling',
-            icon: '💧'
-        },
-        {
-            name: {
-                fa: 'خط پلت‌سازی پلاستیک',
-                en: 'Plastic Pelletizing Line',
-                ps: 'د پلاستیک پلېټ جوړولو لاین'
-            },
-            description: {
-                fa: 'گرانولایزر و کاتر با سیستم خنک‌کاری برای تبدیل ضایعات به گرانول باکیفیت.',
-                en: 'Granulator and cutter with cooling loop converting scrap into uniform pellets.',
-                ps: 'ګرانیولیټر او کټر د یخولو سیسټم سره د ضایعاتو څخه منظم پلېټونه جوړوي.'
-            },
-            pdfUrl: 'pdfs/plastic-processing/recycling/pelletizing-line.pdf',
-            category: 'recycling',
-            icon: '🧊'
-        },
-        {
             name: {
                 fa: 'ماشین چاپ فلکسو',
                 en: 'Flexographic Printing Machine',
@@ -853,16 +660,6 @@
         'stretch-wrapping': '🌀',
         'shrink-wrapping': '🔥',
         'strapping-machine': '➰',
-        'pipe-extruder': '🧵',
-        'film-extruder': '🎞️',
-        'profile-extruder': '📏',
-        'injection-molding': '🧠',
-        'blow-molding': '🍶',
-        'injection-parts': '🧷',
-        'plastic-recycling': '♻️',
-        'shredder': '🪚',
-        'washing-line': '💧',
-        'pelletizing-line': '🧊',
         'flexo-printing': '🖨️',
         'bag-making': '🛍️',
         'sealing-cutting': '✂️',
@@ -1017,8 +814,7 @@
         : (typeof window !== 'undefined' ? (window.equipmentData || {}) : {});
 
     const globalInventory = [
-        ...(Array.isArray(equipmentSource.packaging) ? equipmentSource.packaging : []),
-        ...(Array.isArray(equipmentSource['plastic-processing']) ? equipmentSource['plastic-processing'] : [])
+        ...(Array.isArray(equipmentSource.packaging) ? equipmentSource.packaging : [])
     ];
 
     const inventory = (globalInventory.length ? globalInventory : defaultInventory)

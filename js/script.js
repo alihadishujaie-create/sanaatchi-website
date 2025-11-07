@@ -259,6 +259,19 @@ const categories = {
             ps: 'د PCB اسمبلۍ، ټېسټ، صنعتي لېزر، لمریز او د باد انرژي او د شبکې حلونه د افغانستان فابریکو لپاره.'
         }
     },
+    'plastic-industry': {
+        icon: '🧴',
+        title: {
+            fa: 'صنعت پلاستیک و بازیافت',
+            en: 'Plastic Industry & Recycling',
+            ps: 'د پلاستیک صنعت او ریسایکل'
+        },
+        description: {
+            fa: 'خطوط اکسترودر، تزریق و بازیافت پلاستیک با طراحی قالب، اتوماسیون و خدمات پس از فروش کامل.',
+            en: 'Extrusion, injection and recycling lines with tooling design, automation and full after-sales support.',
+            ps: 'د اکسترودر، انجکشن او د پلاستیک ریسایکل لینونه د قالب ډیزاین، اتومات او بشپړ پلور وروسته ملاتړ سره.'
+        }
+    },
     'tires': {
         icon: '🛞',
         title: {
@@ -2334,6 +2347,7 @@ const categoryKeywords = {
         'Sanaatchi Tires'
     ],
     'plastic-processing': ['دستگاه های فرآوری پلاستیک', 'Plastic Processing Machines', 'پلاستیک', 'plastic', 'د پلاستیک پروسس ماشینونه', 'Plastic Processing Machines'],
+    'plastic-industry': ['صنعت پلاستیک', 'Plastic Industry', 'اکسترودر پلاستیک', 'plastic extrusion', 'تزریق پلاستیک', 'plastic injection', 'بازیافت پلاستیک', 'plastic recycling'],
     'paint-coating': ['ماشین آلات رنگ و کوتینگ', 'Paint & Coating Machinery', 'رنگ', 'paint', 'کوتینگ', 'coating', 'د رنګ او پوښښت ماشینونه', 'Paint & Coating Machinery'],
     'foam-sponge': ['ماشین آلات لوم و اسفنج', 'Foam & Sponge Machinery', 'اسفنج', 'foam', 'لوم', 'sponge', 'د فوم او اسفنج ماشینونه', 'Foam & Sponge Machinery'],
     'tobacco': ['ماشین آلات تناکو و سیگار', 'Tobacco & Cigarette Machinery', 'تناکو', 'tobacco', 'سیگار', 'cigarette', 'د توتون او سیګر ماشینونه', 'Tobacco & Cigarette Machinery'],
@@ -3896,6 +3910,108 @@ const equipmentData = {
             pdfUrl: 'pdfs/plastic-processing/printing-packaging/sealing-cutting.pdf'
         }
     ],
+    'plastic-industry': [
+        {
+            category: 'extruder',
+            name: { fa: 'اکسترودر لوله پلاستیکی', en: 'Plastic Pipe Extruder', ps: 'د پلاستیک پایپ اکسترودر' },
+            description: {
+                fa: 'خط اکسترودر همراه با کالیبراتور، تانک خلأ و کشنده برای تولید لوله.',
+                en: 'Extrusion line with calibrator, vacuum tank and haul-off for pipe production.',
+                ps: 'د کالیبریټر، وکیوم ټانک او کشولو واحد سره اکسترودر د پایپ تولید لپاره.'
+            },
+            pdfUrl: 'pdfs/plastic-processing/extruder/pipe-extruder.pdf'
+        },
+        {
+            category: 'extruder',
+            name: { fa: 'اکسترودر فیلم پلاستیکی', en: 'Plastic Film Extruder', ps: 'د پلاستیک فلم اکسترودر' },
+            description: {
+                fa: 'اکسترودر دمشی یا تخت برای تولید رول فیلم بسته‌بندی با ضخامت یکنواخت.',
+                en: 'Blown or cast film extruder delivering consistent gauge packaging films.',
+                ps: 'د بلو یا کاسټ فلم اکسترودر چې همغږي ضخامت لرونکي بسته بندۍ فلمونه تولیدوي.'
+            },
+            pdfUrl: 'pdfs/plastic-processing/extruder/film-extruder.pdf'
+        },
+        {
+            category: 'extruder',
+            name: { fa: 'اکسترودر پروفایل پلاستیکی', en: 'Plastic Profile Extruder', ps: 'د پلاستیک پروفایل اکسترودر' },
+            description: {
+                fa: 'تولید پروفایل و قطعات فنی با قالب‌های قابل تعویض و کنترل دقیق دما.',
+                en: 'Profile extrusion with interchangeable dies and precise temperature zoning.',
+                ps: 'د بدلېدونکو قالبونو او دقیق تودوخې زونونو سره د پروفایل اکسترودر.'
+            },
+            pdfUrl: 'pdfs/plastic-processing/extruder/profile-extruder.pdf'
+        },
+        {
+            category: 'injection',
+            name: { fa: 'ماشین تزریق پلاستیک', en: 'Plastic Injection Moulding Machine', ps: 'د پلاستیک انجکشن مولډنګ ماشین' },
+            description: {
+                fa: 'ماشین تزریق با کنترل سروو و واحد گیره قوی برای قالب‌های چند حفره.',
+                en: 'Servo-controlled injection unit with high clamping force for multi-cavity moulds.',
+                ps: 'د سرو کنټرول لرونکی انجکشن یونټ د څو حفره لرونکو قالبونو لپاره د قوي کلمپینګ ځواک سره.'
+            },
+            pdfUrl: 'pdfs/plastic-processing/injection/injection-molding.pdf'
+        },
+        {
+            category: 'injection',
+            name: { fa: 'ماشین دمشی پلاستیک', en: 'Plastic Blow Moulding Machine', ps: 'د پلاستیک بلو مولډنګ ماشین' },
+            description: {
+                fa: 'سیستم دمشی برای تولید بطری، مخزن و قطعات توخالی با کنترل ضخامت دیواره.',
+                en: 'Blow moulding system for bottles, tanks and hollow parts with wall-thickness control.',
+                ps: 'د بوتلونو، ټانکونو او تشو پرزو لپاره بلو مولډنګ د دیوال ضخامت کنټرول سره.'
+            },
+            pdfUrl: 'pdfs/plastic-processing/injection/blow-molding.pdf'
+        },
+        {
+            category: 'injection',
+            name: { fa: 'قطعات مصرفی تزریق', en: 'Injection Moulding Spare Parts', ps: 'د انجکشن مولډنګ اضافي پرزې' },
+            description: {
+                fa: 'ست نازل، پیچ، بوش و حلقه‌های آب‌بندی برای نگهداری دوره‌ای ماشین تزریق.',
+                en: 'Nozzle, screw, bushing and seal kits that keep injection moulding machines running.',
+                ps: 'د نوزل، پیچ، بوش او سیل کټونه چې د انجکشن ماشینونه فعال ساتي.'
+            },
+            pdfUrl: 'pdfs/plastic-processing/injection/injection-parts.pdf'
+        },
+        {
+            category: 'recycling',
+            name: { fa: 'خط بازیافت پلاستیک', en: 'Plastic Recycling Line', ps: 'د پلاستیک ریسایکل لاین' },
+            description: {
+                fa: 'از تفکیک تا خشک‌کن سانتریفیوژ برای بازیافت ضایعات بسته‌بندی و تولید گرانول.',
+                en: 'Complete recycling line from sorting to centrifugal drying for pellet output.',
+                ps: 'بشپړ ریسایکل لاین له تفکیک څخه تر سنټرفیوژ وچولو پورې د پلېټ تولید لپاره.'
+            },
+            pdfUrl: 'pdfs/plastic-processing/recycling/plastic-recycling.pdf'
+        },
+        {
+            category: 'recycling',
+            name: { fa: 'شردر پلاستیک صنعتی', en: 'Industrial Plastic Shredder', ps: 'صنعتي پلاستیک شریدر' },
+            description: {
+                fa: 'شردر دو شافت با تیغه‌های آلیاژی و کنترل سرعت برای آماده‌سازی خوراک بازیافت.',
+                en: 'Twin-shaft shredder with alloy blades and variable speed for recycling feedstock.',
+                ps: 'دوه شافټ لرونکی شریدر د الیاژ تیغونو او د سرعت تنظیم سره د ریسایکل موادو لپاره.'
+            },
+            pdfUrl: 'pdfs/plastic-processing/recycling/shredder.pdf'
+        },
+        {
+            category: 'recycling',
+            name: { fa: 'خط شستشو و خشک‌کن پلاستیک', en: 'Plastic Washing & Drying Line', ps: 'د پلاستیک مینځلو او وچولو لاین' },
+            description: {
+                fa: 'حوض شستشو، اسکرو انتقال و خشک‌کن حرارتی برای کاهش آلودگی ضایعات.',
+                en: 'Washing tanks, screw conveyors and thermal dryers reduce contamination before extrusion.',
+                ps: 'د مینځلو حوضونه، سکرو انتقال او حرارتي وچوونکي د اکسترودر دمخه ککړتیا کموي.'
+            },
+            pdfUrl: 'pdfs/plastic-processing/recycling/washing-line.pdf'
+        },
+        {
+            category: 'recycling',
+            name: { fa: 'خط پلت‌سازی پلاستیک', en: 'Plastic Pelletizing Line', ps: 'د پلاستیک پلېټ جوړولو لاین' },
+            description: {
+                fa: 'گرانولایزر و کاتر با سیستم خنک‌کاری برای تبدیل ضایعات به گرانول باکیفیت.',
+                en: 'Granulator and cutter with cooling loop converting scrap into uniform pellets.',
+                ps: 'ګرانیولیټر او کټر د یخولو سیسټم سره د ضایعاتو څخه منظم پلېټونه جوړوي.'
+            },
+            pdfUrl: 'pdfs/plastic-processing/recycling/pelletizing-line.pdf'
+        }
+    ],
     'chemical-pharma': [
         {
             name: { fa: 'دستگاه مخزن واکنش', en: 'Reaction Tank Machine', ps: 'د تعامل تنک ماشین' },
@@ -5258,6 +5374,7 @@ Object.assign(translations, {
     'cat-tires': { fa: 'تایرهای صنعتی', en: 'Industrial Tyres', ps: 'صنعتي ټایرونه' },
     'cat-transportation': { fa: 'ماشین آلات حمل‌ونقل', en: 'Transportation Machinery', ps: 'د ترانسپورت ماشینونه' },
     'cat-plastic-processing': { fa: 'دستگاه های فرآوری پلاستیک', en: 'Plastic Processing Machines', ps: 'د پلاستیک پروسس ماشینونه' },
+    'cat-plastic-industry': { fa: 'صنعت پلاستیک', en: 'Plastic Industry', ps: 'د پلاستیک صنعت' },
     'cat-paint-coating': { fa: 'ماشین آلات رنگ و کوتینگ', en: 'Paint & Coating Machinery', ps: 'د رنګ او پوښښت ماشینونه' },
     'cat-foam-sponge': { fa: 'ماشین آلات لوم و اسفنج', en: 'Foam & Sponge Machinery', ps: 'د فوم او اسفنج ماشینونه' },
     'cat-tobacco': { fa: 'ماشین آلات تناکو و سیگار', en: 'Tobacco & Cigarette Machinery', ps: 'د توتون او سیګر ماشینونه' },
@@ -5537,6 +5654,9 @@ function updateTranslations(lang) {
     if (typeof updatePackagingPage === 'function') {
         updatePackagingPage();
     }
+    if (typeof updatePlasticIndustryPage === 'function') {
+        updatePlasticIndustryPage();
+    }
     if (typeof updateCoolingHeatingPage === 'function') {
         updateCoolingHeatingPage();
     }
@@ -5614,6 +5734,10 @@ function navigateToElectronicsEnergySystems() {
 
 function navigateToConstructionMaterials() {
     window.location.href = 'construction-materials.html';
+}
+
+function navigateToPlasticIndustry() {
+    window.location.href = 'plastic-industry.html';
 }
 
 function navigateToPackaging() {
@@ -5921,7 +6045,7 @@ function performSearch(searchTerm) {
             { id: 'metallurgy', key: 'cat-metallurgy' },
             { id: 'metallurgy-coating', key: 'cat-metallurgy-coating' },
             { id: 'construction-materials', key: 'cat-construction' },
-            { id: 'plastic-processing', key: 'cat-plastic' }
+            { id: 'plastic-industry', key: 'cat-plastic-industry' }
         ];
         
         popularCategories.forEach(cat => {
