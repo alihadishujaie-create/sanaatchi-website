@@ -5833,8 +5833,8 @@ function closeModal() {
 function showContactModal() {
     const modal = document.getElementById('contactModal');
     const modalContent = document.getElementById('contactModalContent');
-    
-    const title = currentLanguage === 'fa' ? 'درخواست مشاوره رایگان' : 
+
+    const title = currentLanguage === 'fa' ? 'درخواست مشاوره رایگان' :
                  currentLanguage === 'ps' ? 'رایگان مشوره غوښتنه' : 'Free Consultation Request';
     const nameLabel = currentLanguage === 'fa' ? 'نام و نام خانوادگی' : 
                      currentLanguage === 'ps' ? 'نوم او تخلص' : 'Full Name';
@@ -5850,59 +5850,32 @@ function showContactModal() {
     modalContent.innerHTML = `
         <div class="modal-icon">📞</div>
         <h3>${title}</h3>
-        <form id="contactForm">
+        <form id="contactForm" action="/consultation.php" method="POST">
             <div style="margin-bottom: 15px;">
                 <label>${nameLabel}:</label>
-                <input type="text" style="width: 100%; padding: 8px; margin-top: 5px;" required>
+                <input type="text" name="full_name" style="width: 100%; padding: 8px; margin-top: 5px;" required>
             </div>
             <div style="margin-bottom: 15px;">
                 <label>${phoneLabel}:</label>
-                <input type="tel" style="width: 100%; padding: 8px; margin-top: 5px;" required>
+                <input type="tel" name="phone" style="width: 100%; padding: 8px; margin-top: 5px;" required>
             </div>
             <div style="margin-bottom: 15px;">
                 <label>${emailLabel}:</label>
-                <input type="email" style="width: 100%; padding: 8px; margin-top: 5px;">
+                <input type="email" name="email" style="width: 100%; padding: 8px; margin-top: 5px;">
             </div>
             <div style="margin-bottom: 15px;">
                 <label>${descLabel}:</label>
-                <textarea style="width: 100%; padding: 8px; margin-top: 5px; height: 100px;"></textarea>
+                <textarea name="request_description" style="width: 100%; padding: 8px; margin-top: 5px; height: 100px;"></textarea>
             </div>
             <button type="submit" class="btn-primary" style="width: 100%;">${submitText}</button>
         </form>
     `;
     modal.style.display = 'block';
     modal.setAttribute('aria-hidden', 'false');
-    
-    // Add form submission handler
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        const name = this.querySelector('input[type="text"]').value.trim();
-        const phone = this.querySelector('input[type="tel"]').value.trim();
-        const email = this.querySelector('input[type="email"]').value.trim();
-        
-        // Validation
-        if (!name || !phone) {
-            const errorMsg = currentLanguage === 'fa' ? 'لطفاً نام و شماره تماس را وارد کنید' : 
-                           currentLanguage === 'ps' ? 'مهرباني کړه نوم او اړیکه شمیره ننوئ' : 'Please enter name and phone number';
-            alert(errorMsg);
-            return;
-        }
-        
-        // Email validation (if provided)
-        if (email && !isValidEmail(email)) {
-            const errorMsg = currentLanguage === 'fa' ? 'لطفاً یک ایمیل معتبر وارد کنید' : 
-                           currentLanguage === 'ps' ? 'مهرباني کړه یو معتبر بریښنالیک ننوئ' : 'Please enter a valid email';
-            alert(errorMsg);
-            return;
-        }
-        
-        // Success message
-        const successMsg = currentLanguage === 'fa' ? 'درخواست شما با موفقیت ارسال شد.' : 
-                         currentLanguage === 'ps' ? 'ستاسو غوښتنه په بریالیتوب استول شوه.' : 'Your request has been submitted successfully.';
-        alert(successMsg);
-        closeContactModal();
-    });
+
+    const contactForm = modalContent.querySelector('#contactForm');
+    attachConsultationFormHandler(contactForm);
+
 }
 
 // Close contact modal
@@ -6197,6 +6170,100 @@ function closeEquipmentModal() {
     modal.setAttribute('aria-hidden', 'true');
 }
 
+function attachConsultationFormHandler(form) {
+    if (!form || form.dataset.bound === 'true') {
+        return;
+    }
+
+    form.dataset.bound = 'true';
+
+    form.addEventListener('submit', async function(event) {
+        event.preventDefault();
+
+        const submitButton = form.querySelector('[type="submit"]');
+        if (submitButton) {
+            submitButton.disabled = true;
+        }
+
+        try {
+            const response = await fetch(form.action, {
+                method: 'POST',
+                body: new FormData(form),
+                credentials: 'same-origin'
+            });
+
+            const responseText = (await response.text()).trim();
+
+            if (response.ok) {
+                alert(responseText || 'Thank you, your request has been sent.');
+                form.reset();
+                closeContactModal();
+            } else {
+                const fallbackMessage = 'Sorry, there was a problem sending your request.';
+                const githubNotice = response.status === 405
+                    ? ' (If you are previewing the site on GitHub Pages, PHP submissions are disabled and will return this error.)'
+                    : '';
+                alert((responseText || fallbackMessage) + githubNotice);
+            }
+        } catch (error) {
+            alert('Unable to send your request due to a network error. Please try again.');
+        } finally {
+            if (submitButton) {
+                submitButton.disabled = false;
+            }
+        }
+    });
+}
+
+function attachNewsletterFormHandler(form) {
+    if (!form || form.dataset.bound === 'true') {
+        return;
+    }
+
+    form.dataset.bound = 'true';
+
+    form.addEventListener('submit', async function(event) {
+        event.preventDefault();
+
+        const submitButton = form.querySelector('[type="submit"]');
+        if (submitButton) {
+            submitButton.disabled = true;
+        }
+
+        try {
+            const response = await fetch(form.action, {
+                method: 'POST',
+                body: new FormData(form),
+                credentials: 'same-origin'
+            });
+
+            const responseText = (await response.text()).trim();
+
+            if (response.ok) {
+                alert(responseText || 'Thank you for subscribing!');
+                form.reset();
+            } else {
+                const fallbackMessage = 'Subscription failed. Please try again.';
+                const githubNotice = response.status === 405
+                    ? ' (If you are previewing the site on GitHub Pages, PHP submissions are disabled and will return this error.)'
+                    : '';
+                alert((responseText || fallbackMessage) + githubNotice);
+            }
+        } catch (error) {
+            alert('Subscription failed because of a network error. Please try again later.');
+        } finally {
+            if (submitButton) {
+                submitButton.disabled = false;
+            }
+        }
+    });
+}
+
+function initializeNewsletterForms() {
+    const newsletterForms = document.querySelectorAll('form.newsletter-form');
+    newsletterForms.forEach(attachNewsletterFormHandler);
+}
+
 // Initialize page
 document.addEventListener('DOMContentLoaded', function() {
     // Ensure category detail pages stay off the primary navigation
@@ -6217,39 +6284,6 @@ document.addEventListener('DOMContentLoaded', function() {
         switchLanguage(savedLanguage);
     }
     
-    // Add event listener for newsletter form
-    const newsletterForm = document.getElementById('newsletterForm');
-    if (newsletterForm) {
-        newsletterForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const email = this.querySelector('input[type="email"]').value.trim();
-            
-            // Email validation
-            if (!email) {
-                const errorMsg = currentLanguage === 'fa' ? 'لطفاً آدرس ایمیل خود را وارد کنید' : 
-                               currentLanguage === 'ps' ? 'مهرباني کړه خپل بریښنالیک پته ننوئ' : 'Please enter your email address';
-                alert(errorMsg);
-                return;
-            }
-            
-            if (!isValidEmail(email)) {
-                const errorMsg = currentLanguage === 'fa' ? 'لطفاً یک آدرس ایمیل معتبر وارد کنید' : 
-                               currentLanguage === 'ps' ? 'مهرباني کړه یو معتبر بریښنالیک پته ننوئ' : 'Please enter a valid email address';
-                alert(errorMsg);
-                return;
-            }
-            
-            // Success message
-            const successMsg = currentLanguage === 'fa' ? 'شما با موفقیت در خبرنامه عضو شدید.' : 
-                             currentLanguage === 'ps' ? 'تاسو په بریالیتوب سره د خبرنامې غړی شئ.' : 'You have successfully subscribed to the newsletter.';
-            alert(successMsg);
-            
-            // Reset form
-            this.reset();
-        });
-    }
-    
     // Add event listener for search input (Enter key)
     const searchInput = document.getElementById('searchInput');
     if (searchInput) {
@@ -6259,4 +6293,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+
+    initializeNewsletterForms();
 });
