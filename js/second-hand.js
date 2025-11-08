@@ -1,0 +1,535 @@
+(function() {
+    const content = {
+        hero: {
+            title: {
+                fa: 'ماشین‌آلات دست دوم تایید شده برای خطوط تولید افغانستان',
+                en: 'Certified Second-Hand Machinery',
+                ps: 'د افغانستان د تولیدي لینونو لپاره تایید شوي دوهم لاس ماشینونه'
+            },
+            subtitle: {
+                fa: 'از چاپ و بسته‌بندی تا تجهیزات سنگین؛ هر دستگاه با گزارش فنی، سرویس کامل و تضمین راه‌اندازی تحویل می‌شود.',
+                en: 'From printing and packaging to heavy equipment—each asset arrives with technical reports, full servicing, and commissioning support.',
+                ps: 'له چاپ او بسته بندۍ څخه تر درنو تجهیزاتو پورې — هر ماشین له تخنیکي راپور، بشپړ سرویس او د فعالولو ملاتړ سره سپارل کېږي.'
+            },
+            quote: {
+                fa: 'پیش از ارسال، ماشین‌آلات توسط تیم بازرسی صنعتچی در کارخانه فروشنده تست، به‌روزرسانی و آماده نصب می‌شوند.',
+                en: 'Before shipping, every machine is inspected, upgraded, and prepared for installation by Sanaatchi’s on-site auditors.',
+                ps: 'د لېږد وړاندې هر ماشین زموږ د صنعتچي د پلټنې ټیم له خوا ازمویل، نوى کېږي او د نصب لپاره چمتو کېږي.'
+            },
+            secondaryCta: {
+                fa: 'مشاهده موجودی دست دوم',
+                en: 'Browse Available Inventory',
+                ps: 'شته دوهم لاس وسایل وګورئ'
+            }
+        },
+        categoriesTitle: {
+            fa: 'دسته‌بندی ماشین‌آلات دست دوم',
+            en: 'Second-Hand Machinery Categories',
+            ps: 'د دوهم لاس ماشینونو کټګورۍ'
+        },
+        categoriesSubtitle: {
+            fa: 'بر اساس حوزه فعالیت تجهیزات بازبینی شده را مرور کنید.',
+            en: 'Explore refurbished equipment grouped by industrial focus.',
+            ps: 'ترمیم شوي وسایل د صنعتي تمرکز له مخې وپلټئ.'
+        },
+        inventoryTitle: {
+            fa: 'موجودی تایید شده برای تحویل سریع',
+            en: 'Certified Inventory Ready to Deploy',
+            ps: 'تاييد شوې زیرمې د چټک نصب لپاره چمتو'
+        },
+        inventorySubtitle: {
+            fa: 'برای هر دستگاه خلاصه فنی و فایل PDF دفترچه را بررسی کنید.',
+            en: 'Review technical summaries and download the dossier PDF for each asset.',
+            ps: 'د هر ماشین تخنیکي لنډیز وګورئ او د PDF دوسیه ډاونلوډ کړئ.'
+        },
+        assuranceTitle: {
+            fa: 'چه چیزی همراه ماشین‌آلات تحویل می‌دهیم؟',
+            en: 'What Accompanies Every Machine?',
+            ps: 'له هر ماشین سره څه درکوو؟'
+        },
+        assuranceSubtitle: {
+            fa: 'از بازرسی مستقل تا نصب مجدد و آموزش، صنعتچی تمام مراحل را پوشش می‌دهد.',
+            en: 'From independent inspection to recommissioning and training, Sanaatchi covers every step.',
+            ps: 'له خپلواکې پلټنې څخه تر بیا فعالولو او روزنې پورې، صنعتچي ټول پړاوونه سمبالوي.'
+        },
+        processTitle: {
+            fa: 'روند تأمین ماشین‌آلات دست دوم',
+            en: 'Second-Hand Procurement Roadmap',
+            ps: 'د دوهم لاس تجهیزاتو د تدارک بهیر'
+        },
+        processSubtitle: {
+            fa: 'گام‌به‌گام همراه شما از تعریف نیاز تا راه‌اندازی در افغانستان.',
+            en: 'Step-by-step guidance from defining requirements to commissioning in Afghanistan.',
+            ps: 'له اړتیا ټاکلو څخه تر په افغانستان کې فعالولو پورې ګام په ګام ملاتړ.'
+        }
+    };
+
+    const categories = (Array.isArray(window.secondHandCategories) ? window.secondHandCategories : [])
+        .filter(category => category?.id !== 'industrial-raw-materials');
+
+    const assuranceHighlights = [
+        {
+            icon: '🛠️',
+            title: {
+                fa: 'بازسازی و سرویس کامل',
+                en: 'Full Refurbishment & Servicing',
+                ps: 'بشپړه رغول او خدمت'
+            },
+            description: {
+                fa: 'ماشین‌آلات پس از تعویض قطعات مصرفی و سرویس استاندارد به همراه لیست کارهای انجام‌شده تحویل می‌گردد.',
+                en: 'Machines are delivered after replacing consumables and completing standard servicing with a documented checklist.',
+                ps: 'ماشینونه د مصرفي پرزو له بدلون او معیاري خدمت وروسته د ترسره شویو کارونو له لېست سره سپارل کېږي.'
+            }
+        },
+        {
+            icon: '🧾',
+            title: {
+                fa: 'گزارش بازرسی مستقل',
+                en: 'Independent Inspection Report',
+                ps: 'مستقل تفتیش راپور'
+            },
+            description: {
+                fa: 'کارشناسان صنعتچی وضعیت فنی، لرزش، آلودگی روغن و عمر باقیمانده قطعات کلیدی را مستند می‌کنند.',
+                en: 'Sanaatchi experts document mechanics, vibration, oil contamination, and remaining life of critical parts.',
+                ps: 'د صنعتچي متخصصین میخانیک، ارتعاش، د تېلو ککړتیا او د مهمو پرزو پاتې عمر مستندوي.'
+            }
+        },
+        {
+            icon: '⚓',
+            title: {
+                fa: 'هماهنگی لجستیک و گمرک',
+                en: 'Coordinated Logistics & Customs',
+                ps: 'همغږي لوژستیک او ګمرک'
+            },
+            description: {
+                fa: 'از بسته‌بندی تا بیمه حمل، رزرو کانتینر و ترخیص گمرکی در افغانستان، همه توسط تیم ما مدیریت می‌شود.',
+                en: 'From packing and cargo insurance to container booking and Afghan customs clearance, our team handles everything.',
+                ps: 'له بسته بندۍ، د بار بیمه، کانټینر رزرف تر د افغانستان ګمرکي تصفیې پورې، ټول زموږ ټیم سمبالوي.'
+            }
+        },
+        {
+            icon: '🎯',
+            title: {
+                fa: 'راه‌اندازی و آموزش در محل',
+                en: 'On-Site Commissioning & Training',
+                ps: 'په ساحه کې فعالول او روزنه'
+            },
+            description: {
+                fa: 'تکنسین‌های صنعتچی نصب، هم‌راستایی، تست تولید و انتقال دانش به اپراتورها را انجام می‌دهند.',
+                en: 'Sanaatchi technicians perform installation, alignment, production tests, and operator handover training.',
+                ps: 'د صنعتچي تخنیکران نصب، الاینمنټ، د تولید ټسټ او د اپریټرانو روزنه ترسره کوي.'
+            }
+        }
+    ];
+
+    const processStages = [
+        {
+            step: '01',
+            title: {
+                fa: 'تعریف نیاز و بودجه',
+                en: 'Requirement & Budget Definition',
+                ps: 'د اړتیا او بودجې ټاکل'
+            },
+            description: {
+                fa: 'لیست دستگاه‌های موردنیاز، ظرفیت و محدودیت بودجه را مشخص می‌کنیم و گزینه‌های مناسب را کوتاه‌لیست می‌کنیم.',
+                en: 'We capture required machinery, throughput, and budget limits, then shortlist the best-fit options.',
+                ps: 'اړین ماشینونه، ظرفیت او بودجه راټولوو او مناسب انتخابونه لنډ لست کوو.'
+            },
+            bullets: [
+                {
+                    fa: 'بررسی اولویت خطوط تولید و برندهای مورد اعتماد',
+                    en: 'Review production priorities and trusted brands',
+                    ps: 'د تولید لومړیتوبونه او د باور وړ برانډونه ارزونه'
+                },
+                {
+                    fa: 'بررسی هزینه راه‌اندازی، حمل و نصب مجدد',
+                    en: 'Assess commissioning, freight, and reinstallation costs',
+                    ps: 'د فعالولو، لېږد او بیا نصب لګښتونه ارزونه'
+                }
+            ]
+        },
+        {
+            step: '02',
+            title: {
+                fa: 'بازرسی و تضمین سلامت',
+                en: 'Inspection & Condition Assurance',
+                ps: 'تفتیش او د حالت تضمین'
+            },
+            description: {
+                fa: 'بازدید حضوری، تست عملکرد، نمونه‌گیری روغن و ویدیو از دستگاه در حال کار برای تصمیم قطعی.',
+                en: 'On-site visit, performance testing, oil sampling, and live operation video for confident decisions.',
+                ps: 'حضوري کتنه، د فعالیت ټسټ، د تېلو نمونې او د کار ویډیو د باوري پرېکړې لپاره.'
+            },
+            bullets: [
+                {
+                    fa: 'تهیه گزارش فنی چندزبانه',
+                    en: 'Deliver multilingual technical dossier',
+                    ps: 'چند ژبه تخنیکي دوسیه وړاندې کول'
+                },
+                {
+                    fa: 'بررسی قطعات یدکی و خدمات پس از فروش',
+                    en: 'Evaluate spare parts and after-sales support',
+                    ps: 'د سپیر پارټو او وروسته خدمت ارزونه'
+                }
+            ]
+        },
+        {
+            step: '03',
+            title: {
+                fa: 'خرید، لجستیک و گمرک',
+                en: 'Purchase, Logistics & Customs',
+                ps: 'پېرود، لوژستیک او ګمرک'
+            },
+            description: {
+                fa: 'قرارداد فروش، بیمه حمل، رزرو کانتینر، فوم‌پک و آماده‌سازی اسناد گمرکی انجام می‌شود.',
+                en: 'Manage sales contract, cargo insurance, container booking, protective packing, and customs paperwork.',
+                ps: 'د پلور قرارداد، د بار بیمه، کانټینر رزرف، ساتندوی بسته بندي او ګمرکي اسناد چمتو کوو.'
+            },
+            bullets: [
+                {
+                    fa: 'نظارت بر بارگیری و ارسال به افغانستان',
+                    en: 'Supervise loading and dispatch to Afghanistan',
+                    ps: 'بار چک او افغانستان ته لېږد څارنه'
+                },
+                {
+                    fa: 'هماهنگی ترخیص در گمرک افغانستان',
+                    en: 'Coordinate clearance with Afghan customs',
+                    ps: 'د افغانستان له ګمرک سره د تصفیې همغږي'
+                }
+            ]
+        },
+        {
+            step: '04',
+            title: {
+                fa: 'نصب، تست و آموزش',
+                en: 'Installation, Testing & Training',
+                ps: 'نصب، ټسټ او روزنه'
+            },
+            description: {
+                fa: 'تیم صنعتچی نصب، هم‌راستایی، تست تولید و آموزش اپراتورها را در محل شما انجام می‌دهد.',
+                en: 'Sanaatchi deploys technicians for installation, alignment, production tests, and operator training on site.',
+                ps: 'صنعتچي خپل تخنیکران ټاکي تر څو نصب، الاینمنټ، د تولید ټسټ او د اپریټرانو روزنه په ساحه کې ترسره کړي.'
+            },
+            bullets: [
+                {
+                    fa: 'تحویل مستندات بهره‌برداری و نگهداری',
+                    en: 'Provide operation and maintenance documentation',
+                    ps: 'د چلولو او ساتنې مستندات سپارل'
+                },
+                {
+                    fa: 'پشتیبانی پس از راه‌اندازی برای تامین قطعات',
+                    en: 'Post-startup support for spare parts sourcing',
+                    ps: 'له فعالېدو وروسته د سپیر پارټو ملاتړ'
+                }
+            ]
+        }
+    ];
+
+    const inventory = (Array.isArray(window.secondHandInventoryData) ? window.secondHandInventoryData : [])
+        .filter(item => item?.category !== 'industrial-raw-materials');
+
+    const getLanguage = () => (typeof currentLanguage !== 'undefined' ? currentLanguage : 'fa');
+
+    function setHero(lang) {
+        const title = document.getElementById('secondHandHeroTitle');
+        const subtitle = document.getElementById('secondHandHeroSubtitle');
+        const quote = document.getElementById('secondHandHeroQuote');
+        const viewInventoryButton = document.getElementById('viewInventoryButton');
+
+        if (title) {
+            title.textContent = content.hero.title[lang] || content.hero.title.fa;
+        }
+        if (subtitle) {
+            subtitle.textContent = content.hero.subtitle[lang] || content.hero.subtitle.fa;
+        }
+        if (quote) {
+            quote.textContent = content.hero.quote[lang] || content.hero.quote.fa;
+        }
+        if (viewInventoryButton) {
+            viewInventoryButton.textContent = content.hero.secondaryCta[lang] || content.hero.secondaryCta.fa;
+        }
+    }
+
+    function buildInventoryCardsHtml(items, lang) {
+        if (!items || !items.length) {
+            const emptyText = lang === 'fa'
+                ? 'هیچ دستگاهی در این دسته موجود نیست.'
+                : (lang === 'ps'
+                    ? 'په دې کټګورۍ کې کوم ماشین شتون نلري.'
+                    : 'No equipment available in this category.');
+            return `<div class="no-equipment">${emptyText}</div>`;
+        }
+
+        const viewText = lang === 'fa' ? 'مشاهده PDF' : (lang === 'ps' ? 'PDF وګورئ' : 'View PDF');
+        const downloadText = lang === 'fa' ? 'دانلود' : (lang === 'ps' ? 'ډاونلوډ' : 'Download');
+
+        const cards = items.map(item => `
+            <div class="equipment-card">
+                <div class="equipment-icon">${item.icon || '📄'}</div>
+                <h4>${item.name[lang] || item.name.fa}</h4>
+                <p>${item.description[lang] || item.description.fa}</p>
+                ${buildMetaList(item.meta, lang)}
+                <div class="equipment-actions">
+                    <a href="${item.pdfUrl}" target="_blank" class="btn-primary">
+                        <i class="fas fa-file-pdf"></i> ${viewText}
+                    </a>
+                    <a href="${item.pdfUrl}" download class="btn-secondary">
+                        <i class="fas fa-download"></i> ${downloadText}
+                    </a>
+                </div>
+            </div>
+        `).join('');
+
+        return `<div class="equipment-grid">${cards}</div>`;
+    }
+
+    function showSecondHandCategoryModal(categoryId, lang = getLanguage()) {
+        const modal = document.getElementById('equipmentModal');
+        const modalContent = document.getElementById('equipmentModalContent');
+        const category = categories.find(entry => entry.id === categoryId);
+        const items = inventory.filter(item => item.category === categoryId);
+
+        if (!modal || !modalContent || !category) {
+            return;
+        }
+
+        const title = category.title[lang] || category.title.fa;
+        const backText = lang === 'fa' ? 'بازگشت' : (lang === 'ps' ? 'بیرته' : 'Back');
+        const cardsHtml = buildInventoryCardsHtml(items, lang);
+
+        modalContent.innerHTML = `
+            <div class="equipment-modal-header">
+                <button class="back-btn" onclick="closeEquipmentModal()">${backText}</button>
+                <h3>${title}</h3>
+            </div>
+            ${cardsHtml}
+        `;
+
+        modal.style.display = 'block';
+        modal.setAttribute('aria-hidden', 'false');
+    }
+
+    function showSecondHandInventoryModal(lang = getLanguage()) {
+        const modal = document.getElementById('equipmentModal');
+        const modalContent = document.getElementById('equipmentModalContent');
+
+        if (!modal || !modalContent) {
+            return;
+        }
+
+        const backText = lang === 'fa' ? 'بازگشت' : (lang === 'ps' ? 'بیرته' : 'Back');
+        const sectionTitle = content.inventoryTitle[lang] || content.inventoryTitle.fa;
+
+        const sectionsHtml = categories.map(category => {
+            const items = inventory.filter(item => item.category === category.id);
+            const categoryTitle = `${category.icon} ${category.title[lang] || category.title.fa}`;
+            return `
+                <section class="second-hand-inventory-category">
+                    <h4 class="inventory-category-title">${categoryTitle}</h4>
+                    ${buildInventoryCardsHtml(items, lang)}
+                </section>
+            `;
+        }).join('');
+
+        modalContent.innerHTML = `
+            <div class="equipment-modal-header">
+                <button class="back-btn" onclick="closeEquipmentModal()">${backText}</button>
+                <h3>${sectionTitle}</h3>
+            </div>
+            <div class="second-hand-inventory-modal">
+                ${sectionsHtml}
+            </div>
+        `;
+
+        modal.style.display = 'block';
+        modal.setAttribute('aria-hidden', 'false');
+    }
+
+    function renderCategories(lang) {
+        const wrapper = document.getElementById('secondHandCategories');
+        const title = document.getElementById('secondHandCategoriesTitle');
+        const subtitle = document.getElementById('secondHandCategoriesSubtitle');
+
+        if (title) {
+            title.textContent = content.categoriesTitle[lang] || content.categoriesTitle.fa;
+        }
+        if (subtitle) {
+            subtitle.textContent = content.categoriesSubtitle[lang] || content.categoriesSubtitle.fa;
+        }
+        if (!wrapper) {
+            return;
+        }
+
+        wrapper.innerHTML = '';
+        categories.forEach(category => {
+            const card = document.createElement('div');
+            card.className = 'category-card';
+            card.setAttribute('role', 'button');
+            card.setAttribute('tabindex', '0');
+
+            const titleText = category.title[lang] || category.title.fa;
+            const descriptionText = category.description[lang] || category.description.fa;
+            const detailText = lang === 'fa' ? 'مشاهده جزئیات' : (lang === 'ps' ? 'جزییات وګورئ' : 'View Details');
+            const detailLabel = lang === 'fa'
+                ? `مشاهده جزئیات ${titleText}`
+                : (lang === 'ps' ? `د ${titleText} جزییات وګورئ` : `View details for ${titleText}`);
+
+            card.innerHTML = `
+                <span class="icon">${category.icon}</span>
+                <h4>${titleText}</h4>
+                <p>${descriptionText}</p>
+                <div class="category-card-actions">
+                    <a class="category-card-link" href="#" role="button" aria-label="${detailLabel}">
+                        <span>${detailText}</span>
+                        <i class="fas fa-arrow-left"></i>
+                    </a>
+                </div>
+            `;
+
+            const openModal = () => showSecondHandCategoryModal(category.id, lang);
+
+            card.addEventListener('click', openModal);
+            card.addEventListener('keypress', event => {
+                if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    openModal();
+                }
+            });
+
+            const link = card.querySelector('.category-card-link');
+            if (link) {
+                const handleLinkInteraction = event => {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    openModal();
+                };
+                link.addEventListener('click', handleLinkInteraction);
+                link.addEventListener('keypress', event => {
+                    if (event.key === 'Enter' || event.key === ' ') {
+                        handleLinkInteraction(event);
+                    }
+                });
+            }
+
+            wrapper.appendChild(card);
+        });
+    }
+
+    function buildMetaList(meta, lang) {
+        if (!meta || !meta.length) {
+            return '';
+        }
+        const items = meta.map(entry => {
+            const label = entry.label?.[lang] || entry.label?.fa || '';
+            const value = entry.value?.[lang] || entry.value?.fa || '';
+            return `<li><span>${label}</span><strong>${value}</strong></li>`;
+        }).join('');
+        return `<ul class="second-hand-meta">${items}</ul>`;
+    }
+
+    function renderInventory(lang) {
+        const wrapper = document.getElementById('secondHandInventoryGrid');
+        const title = document.getElementById('secondHandInventoryTitle');
+        const subtitle = document.getElementById('secondHandInventorySubtitle');
+        const section = document.getElementById('second-hand-inventory');
+
+        if (title) {
+            title.textContent = content.inventoryTitle[lang] || content.inventoryTitle.fa;
+        }
+        if (subtitle) {
+            subtitle.textContent = content.inventorySubtitle[lang] || content.inventorySubtitle.fa;
+        }
+        if (section) {
+            section.setAttribute('hidden', 'true');
+        }
+        if (!wrapper) {
+            return;
+        }
+
+        wrapper.innerHTML = '';
+    }
+
+    function renderAssurance(lang) {
+        const title = document.getElementById('secondHandAssuranceTitle');
+        const subtitle = document.getElementById('secondHandAssuranceSubtitle');
+        const grid = document.getElementById('secondHandAssuranceGrid');
+
+        if (title) {
+            title.textContent = content.assuranceTitle[lang] || content.assuranceTitle.fa;
+        }
+        if (subtitle) {
+            subtitle.textContent = content.assuranceSubtitle[lang] || content.assuranceSubtitle.fa;
+        }
+        if (!grid) {
+            return;
+        }
+
+        grid.innerHTML = '';
+        assuranceHighlights.forEach(item => {
+            const card = document.createElement('div');
+            card.className = 'feature-card';
+            card.innerHTML = `
+                <span class="feature-icon">${item.icon}</span>
+                <h3>${item.title[lang] || item.title.fa}</h3>
+                <p>${item.description[lang] || item.description.fa}</p>
+            `;
+            grid.appendChild(card);
+        });
+    }
+
+    function renderProcess(lang) {
+        const title = document.getElementById('secondHandProcessTitle');
+        const subtitle = document.getElementById('secondHandProcessSubtitle');
+        const timeline = document.getElementById('secondHandProcessTimeline');
+
+        if (title) {
+            title.textContent = content.processTitle[lang] || content.processTitle.fa;
+        }
+        if (subtitle) {
+            subtitle.textContent = content.processSubtitle[lang] || content.processSubtitle.fa;
+        }
+        if (!timeline) {
+            return;
+        }
+
+        timeline.innerHTML = '';
+        processStages.forEach(stage => {
+            const card = document.createElement('div');
+            card.className = 'process-card';
+            const bullets = stage.bullets?.map(bullet => `<li>${bullet[lang] || bullet.fa}</li>`).join('') || '';
+            card.innerHTML = `
+                <div class="step">${stage.step}</div>
+                <h3>${stage.title[lang] || stage.title.fa}</h3>
+                <p>${stage.description[lang] || stage.description.fa}</p>
+                ${bullets ? `<ul>${bullets}</ul>` : ''}
+            `;
+            timeline.appendChild(card);
+        });
+    }
+
+    function updateSecondHandPage(lang = getLanguage()) {
+        setHero(lang);
+        renderCategories(lang);
+        renderInventory(lang);
+        renderAssurance(lang);
+        renderProcess(lang);
+    }
+
+    function setupInteractions() {
+        const viewInventoryButton = document.getElementById('viewInventoryButton');
+        if (viewInventoryButton) {
+            viewInventoryButton.addEventListener('click', event => {
+                event.preventDefault();
+                showSecondHandInventoryModal(getLanguage());
+            });
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        updateSecondHandPage();
+        setupInteractions();
+    });
+
+    window.updateSecondHandPage = updateSecondHandPage;
+    window.showSecondHandCategoryModal = showSecondHandCategoryModal;
+})();
