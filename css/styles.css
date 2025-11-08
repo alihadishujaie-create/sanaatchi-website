@@ -422,10 +422,6 @@ body {
     .hero-with-search .hero-content {
         grid-template-columns: 1fr;
     }
-
-    [dir="ltr"] .hero-with-search .hero-content {
-        grid-template-columns: 1fr;
-    }
     
     .hero-text h1 {
         font-size: 2.5rem;
