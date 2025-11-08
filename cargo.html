@@ -366,12 +366,98 @@
               <input type="text" id="searchInput" data-translate-placeholder="search-placeholder" placeholder="دنبال چه محصولی هستید؟" aria-label="جستجو برای محصولات">
               <button onclick="performSearch()" data-translate="search-btn">جستجو</button>
             </div>
-            <div class="popular-categories" data-translate="popular-categories">دسته‌بندی‌های محبوب:</div>
-            <div class="category-tags">
-              <span class="category-tag" onclick="performSearch('کارگو')" data-translate="cargo-tag-logistics">مسیرهای کارگو</span>
-              <span class="category-tag" onclick="performSearch('حمل ریلی')" data-translate="cargo-tag-rail">حمل ریلی</span>
-              <span class="category-tag" onclick="performSearch('حمل دریایی')" data-translate="cargo-tag-sea">حمل دریایی</span>
-              <span class="category-tag" onclick="performSearch('حمل جاده‌ای')" data-translate="cargo-tag-road">حمل جاده‌ای</span>
+        </section>
+    </main>
+
+    <footer id="footer" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="images/logo.png" alt="لوگوی Sanaatchi Industrial Vision">
+                    </div>
+                    <p class="footer-description" data-translate="footer-description">
+                        گروه چشم‌انداز صنعتی صنعتچی با سال‌ها تجربه در زمینه ارائه راهکارهای صنعتی، آماده همکاری با شماست. ما از ایده تا اجرا، تمام مراحل پروژه‌های صنعتی شما را مدیریت می‌کنیم.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" title="فیس‌بوک" aria-label="فیس‌بوک">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" title="توییتر" aria-label="توییتر">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" title="اینستاگرام" aria-label="اینستاگرام">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" title="لینکدین" aria-label="لینکدین">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" title="یوتیوب" aria-label="یوتیوب">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="#" title="تلگرام" aria-label="تلگرام">
+                            <i class="fab fa-telegram-plane"></i>
+                        </a>
+                    </div>
+                    <div class="footer-newsletter">
+                        <h4 data-translate="newsletter-title">عضویت در خبرنامه</h4>
+                        <p data-translate="newsletter-subtitle">برای دریافت آخرین اخبار و به‌روزرسانی‌ها عضو خبرامه ما شوید.</p>
+                        <form class="newsletter-form" id="newsletterForm">
+                            <input type="email" data-translate-placeholder="newsletter-placeholder" placeholder="آدرس ایمیل خود را وارد کنید" aria-label="آدرس ایمیل">
+                            <button type="submit" data-translate="newsletter-btn">عضویت</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3 data-translate="afghanistan-office">دفتر افغانستان</h3>
+                    <div class="footer-contact-group">
+                        <div class="footer-contact">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span data-translate="afghanistan-address">کابل، افغانستان</span>
+                        </div>
+                        <div class="footer-contact phone-container">
+                            <i class="fas fa-phone-alt"></i>
+                            <a href="tel:+93779819820" class="phone-link" data-translate="afghanistan-phone">+۹۳ ۷۷۹ ۸۱۹ ۸۲۰</a>
+                            <a href="https://wa.me/93779819820" class="whatsapp-link" target="_blank" rel="noopener" aria-label="WhatsApp">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                        <div class="footer-contact">
+                            <i class="fas fa-envelope"></i>
+                            <span data-translate="afghanistan-email">info@sanaatchi.com</span>
+                        </div>
+                        <div class="footer-contact">
+                            <i class="fas fa-clock"></i>
+                            <span data-translate="afghanistan-hours">شنبه تا پنجشنبه: ۹:۰۰ تا ۱۸:۰۰</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3 data-translate="china-office">تیم پشتیبانی واردات و چین</h3>
+                    <div class="footer-contact-group">
+                        <div class="footer-contact">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span data-translate="china-address">شنژن، چین</span>
+                        </div>
+                        <div class="footer-contact phone-container">
+                            <i class="fas fa-phone-alt"></i>
+                            <a href="tel:+8615951716867" class="phone-link" data-translate="china-phone">+۸۶ ۱۵۹۵۱۷۱ ۶۸۶۷</a>
+                            <a href="https://wa.me/8615951716867" class="whatsapp-link" target="_blank" rel="noopener" aria-label="WhatsApp">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                        <div class="footer-contact">
+                            <i class="fas fa-envelope"></i>
+                            <span>china@sanaatchi.com</span>
+                        </div>
+                        <div class="footer-contact">
+                            <i class="fas fa-clock"></i>
+                            <span data-translate="china-hours">شنبه تا جمعه: ۹:۰۰ تا ۱۸:۰۰</span>
+                        </div>
+                    </div>
+                </div>
             </div>
           </div>
         </div>
