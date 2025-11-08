@@ -5386,6 +5386,33 @@ Object.assign(translations, {
         en: 'Access your desired products from the category list',
         ps: 'د کټګوري لیست څخه خپل غوښتلي محصولاتو ته لاسرسی پیدا کړئ'
     },
+    'categories-intro-prefix': {
+        fa: 'سایت صنعتی صنعتچی دسترسی مستقیم به ',
+        en: 'Sanaatchi\'s industrial platform provides direct access to ',
+        ps: 'د صنعتچي صنعتي پلاتفورم مستقیم لاسرسی برابروي تر '
+    },
+    'categories-intro-separator1': { fa: '، ', en: ', ', ps: '، ' },
+    'categories-intro-conjunction': { fa: ' و ', en: ', and ', ps: ' او ' },
+    'categories-intro-suffix': {
+        fa: ' در کنار ده‌ها گروه تخصصی دیگر فراهم می‌کند.',
+        en: ' alongside dozens of other specialist groups.',
+        ps: ' د لسګونو نورو متخصصو ډلو تر څنګ وړاندې کوي.'
+    },
+    'categories-intro-link-production-lines': {
+        fa: 'خطوط تولید تخصصی',
+        en: 'specialized production lines',
+        ps: 'تخصصي تولیدي لینونه'
+    },
+    'categories-intro-link-second-hand': {
+        fa: 'ماشین‌آلات دست دوم',
+        en: 'second-hand machinery',
+        ps: 'د دوهم لاس ماشینونه'
+    },
+    'categories-intro-link-raw-materials': {
+        fa: 'مواد اولیه صنعتی',
+        en: 'industrial raw materials',
+        ps: 'صنعتي خام مواد'
+    },
     'production-lines-categories-title': {
         fa: 'گروه‌های خطوط تولید',
         en: 'Production Line Groups',
@@ -5395,6 +5422,41 @@ Object.assign(translations, {
         fa: 'صنایع کلیدی را انتخاب کنید تا خطوط تولید و فایل‌های فنی مرتبط نمایش داده شود',
         en: 'Select a key industry to view the related production lines and technical PDFs',
         ps: 'کلیدي صنعت وټاکئ تر څو اړوند تولیدي لینونه او تخنیکي PDF فایلونه ښکاره شي'
+    },
+    'production-lines-intro-prefix': {
+        fa: 'از اینجا به پرونده‌های فنی ',
+        en: 'Here you can access technical dossiers for ',
+        ps: 'دلته تاسو د تخنیکي دوسیو لاسرسی لرئ د '
+    },
+    'production-lines-intro-industries': {
+        fa: 'خطوط تولید صنایع غذایی، کالاهای مصرفی و بازیافت',
+        en: 'food, consumer goods, and recycling production lines',
+        ps: 'د خوراکي توکو، مصرفي توکو او ریسایکلینګ تولیدي لینونه'
+    },
+    'production-lines-intro-access': {
+        fa: ' دسترسی دارید و می‌توانید برای تأمین ',
+        en: ', and you can also source ',
+        ps: ' ته لاسرسی لرئ او هم کولی شئ چې د تأمین لپاره '
+    },
+    'production-lines-intro-raw-materials': {
+        fa: 'مواد اولیه صنعتی',
+        en: 'industrial raw materials',
+        ps: 'صنعتي خام مواد'
+    },
+    'production-lines-intro-connector': {
+        fa: ' یا تکمیل با ',
+        en: ' or complement your project with ',
+        ps: ' یا خپل پروژه بشپړه کړئ د '
+    },
+    'production-lines-intro-second-hand': {
+        fa: 'ماشین‌آلات دست دوم بازسازی شده',
+        en: 'refurbished second-hand machinery',
+        ps: 'بیارغول شوي دوهم لاس ماشینونه'
+    },
+    'production-lines-intro-suffix': {
+        fa: ' نیز اقدام کنید.',
+        en: '.',
+        ps: ' هم ترسره کړئ.'
     },
     'cat-production-lines': { fa: 'خطوط تولید و راه‌اندازی فابریکه', en: 'Production Lines & Factory Setup', ps: 'د تولید لینونه او د فابریکې جوړول' },
     'cat-printing-machines': { fa: 'دستگاه های چاپ', en: 'Printing Machines', ps: 'چاپ ماشینونه' },
@@ -5423,6 +5485,58 @@ Object.assign(translations, {
     'cat-telecom-parts': { fa: 'قطعات و لوازم اینترنتی و مخابراتی', en: 'Internet & Telecommunication Parts', ps: 'د انترنت او مخابراتي برخې' },
     'cat-second-hand': { fa: 'ماشین آلات دست دوم', en: 'Second Hand Machinery', ps: 'د دوهم لاس ماشینونه' },
     'cat-industrial-raw-materials': { fa: 'مواد اولیه صنعتی', en: 'Industrial Raw Materials', ps: 'صنعتي خام مواد' },
+
+    'second-hand-intro-prefix': {
+        fa: 'هر دستگاه بازبینی‌شده صنعتچی با گزارش فنی، سرویس کامل و گزینه تأمین ',
+        en: 'Every Sanaatchi refurbished machine comes with a technical report, full servicing, and the option to source ',
+        ps: 'هر د صنعتچي بیاکتل شوی ماشین له تخنیکي راپور، بشپړ خدمت او د تأمین اختیار سره د '
+    },
+    'second-hand-intro-spare-parts': {
+        fa: 'قطعات یدکی',
+        en: 'spare parts',
+        ps: 'پرزې'
+    },
+    'second-hand-intro-connector': {
+        fa: ' ارائه می‌شود و می‌توانید خطوط مکمل را در ',
+        en: ', and you can review complementary lines in the ',
+        ps: ' برابریږي او تاسو کولی شئ بشپړونکي لینونه وګورئ په '
+    },
+    'second-hand-intro-library': {
+        fa: 'کتابخانه خطوط تولید',
+        en: 'production line library',
+        ps: 'د تولید لین کتابتون'
+    },
+    'second-hand-intro-suffix': {
+        fa: ' بررسی کنید.',
+        en: '.',
+        ps: ' وڅیړئ.'
+    },
+
+    'raw-materials-intro-prefix': {
+        fa: 'تمام مواد پیشنهادی با خطوط تولید پیشنهادی در ',
+        en: 'All recommended materials are aligned with the suggested production lines in the ',
+        ps: 'ټولې وړاندیز شوې مواد له وړاندیز شویو تولیدي لینونو سره په '
+    },
+    'raw-materials-intro-library': {
+        fa: 'کتابخانه خطوط تولید',
+        en: 'production line library',
+        ps: 'د تولید لین کتابتون'
+    },
+    'raw-materials-intro-connector': {
+        fa: ' و نیز پروژه‌های ',
+        en: ' and our ',
+        ps: ' او زموږ د '
+    },
+    'raw-materials-intro-recycling': {
+        fa: 'بازیافت صنعتی',
+        en: 'industrial recycling projects',
+        ps: 'صنعتي ریسایکلینګ پروژې'
+    },
+    'raw-materials-intro-suffix': {
+        fa: ' هماهنگ شده‌اند تا زنجیره تأمین شما کامل شود.',
+        en: ' so your supply chain stays complete.',
+        ps: ' سره همغږي شوي تر څو ستاسو عرضه زنځیر بشپړ پاتې شي.'
+    },
 
     // CTA
     'cta-title': {
