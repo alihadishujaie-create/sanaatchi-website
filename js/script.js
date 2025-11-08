@@ -6103,7 +6103,7 @@ function showContactModal() {
     modalContent.innerHTML = `
         <div class="modal-icon">📞</div>
         <h3>${title}</h3>
-        <form id="contactForm" action="/consultation.php" method="POST">
+        <form id="contactForm" action="consultation.php" method="POST">
             <div style="margin-bottom: 15px;">
                 <label for="consultation-full-name">${nameLabel}:</label>
                 <input id="consultation-full-name" type="text" name="full_name" style="width: 100%; padding: 8px; margin-top: 5px;" required>
