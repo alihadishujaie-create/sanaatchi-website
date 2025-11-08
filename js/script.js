@@ -2300,247 +2300,6 @@ const categoryKeywords = {
         'mixing equipment'
     ],
     'construction-materials': [
-        'ماشین آلات مصالح ساخت',
-        'Construction Materials Machinery',
-        'مصالح ساختمانی',
-        'construction materials',
-        'تجهیزات بتن',
-        'concrete block',
-        'asphalt plant',
-        'ماشین آلات بتن',
-        'جرثقیل ساختمانی',
-        'tower crane',
-        'لودر ساختمانی',
-        'wheel loader'
-    ],
-    'plastic-processing': [
-        'ماشین آلات فرآوری پلاستیک',
-        'Plastic Processing Machines',
-        'پلاستیک پروسس',
-        'plastic recycling',
-        'extruder',
-        'injection molding'
-    ],
-    'paint-coating': [
-        'ماشین آلات رنگ و کوتینگ',
-        'Paint & Coating Machinery',
-        'د رنګ او پوښښت ماشینونه',
-        'paint line',
-        'powder coating',
-        'spray painting'
-    ],
-    'foam-sponge': [
-        'ماشین آلات فوم و اسفنج',
-        'Foam & Sponge Machines',
-        'د فوم او اسفنج ماشینونه',
-        'foam production',
-        'sponge cutting',
-        'foam cutting'
-    ],
-    'tobacco': [
-        'ماشین آلات دخانیات',
-        'Tobacco Machinery',
-        'د توتون ماشینونه',
-        'cigarette production',
-        'tobacco packaging',
-        'تجهیزات تنباکو'
-    ],
-    'cooling-heating': [
-        'دستگاه های سرمایش و گرمایش',
-        'Cooling & Heating Equipment',
-        'د سړښت او تودوخې تجهیزات',
-        'industrial chiller',
-        'industrial boiler',
-        'HVAC equipment'
-    ],
-    'pumps-compressors': [
-        'پمپ و کمپرسور صنعتی',
-        'Pumps & Compressors',
-        'صنعتي پمپونه او کمپرسورونه',
-        'water pump',
-        'air compressor',
-        'industrial pump'
-    ],
-    'industrial-laser': [
-        'لیزر صنعتی',
-        'Industrial Laser Machines',
-        'صنعتي لیزر ماشینونه',
-        'laser cutting',
-        'laser engraving',
-        'laser welding'
-    ],
-    'tanks': [
-        'مخازن صنعتی',
-        'Industrial Tanks',
-        'صنعتي ټانکونه',
-        'water tank',
-        'chemical tank',
-        'storage tank'
-    ],
-    'packaging': [
-        'ماشین آلات بسته بندی',
-        'Packaging Machines',
-        'د بسته بندۍ ماشینونه',
-        'automatic packaging',
-        'vacuum packaging',
-        'packing machine'
-    ],
-    'chemical-pharma': [
-        'ماشین آلات شیمیایی و دارویی',
-        'Chemical & Pharma Equipment',
-        'د کیمیاوي او درمل جوړونې تجهیزات',
-        'reaction tank',
-        'pharma packaging',
-        'pharmaceutical equipment'
-    ],
-    'machinery-parts': [
-        'قطعات ماشین آلات',
-        'Machinery Parts',
-        'د ماشین الاتو پرزې',
-        'industrial spare parts',
-        'construction parts',
-        'equipment spares'
-    ],
-    'paper-pulp': [
-        'ماشین آلات کاغذ و پالپ',
-        'Paper & Pulp Machines',
-        'د کاغذ او پالپ ماشینونه',
-        'pulp production',
-        'paper production',
-        'paper machinery'
-    ],
-    'electronic-machinery': [
-        'ماشین آلات الکترونیک',
-        'Electronic Manufacturing Machines',
-        'د الکترونیک تولید ماشینونه',
-        'PCB assembly',
-        'electronic testing',
-        'SMT equipment'
-    ],
-    'telecom-parts': [
-        'قطعات مخابراتی',
-        'Telecom Parts',
-        'مخابراتي برخې',
-        'antenna production',
-        'network cable',
-        'telecom equipment'
-    ],
-    'industrial-raw-materials': [
-        'مواد اولیه صنعتی',
-        'Industrial Raw Materials',
-        'صنعتي خام مواد',
-        'steel coils',
-        'plastic granules',
-        'chemical raw material'
-    ],
-    'second-hand': [
-        'ماشین آلات دست دوم',
-        'Second Hand Machinery',
-        'د دوهم لاس ماشینونه',
-        'used equipment',
-        'refurbished machinery',
-        'pre-owned machines'
-    ],
-};
-
-const equipmentData = window.equipmentData || {
-    'plastic-processing': [
-        {
-            name: { fa: 'دستگاه اکسترودر پلاستیک', en: 'Plastic Extruder Machine', ps: 'د پلاستیک اکسترودر ماشین' },
-            description: { fa: 'دستگاه اکسترودر برای فرآوری پلاستیک', en: 'Extruder machine for plastic processing', ps: 'د پلاستیک پروسس لپاره اکسترودر ماشین' },
-            pdfUrl: 'pdfs/plastic-processing/extruder.pdf'
-        },
-        {
-            name: { fa: 'دستگاه تزریق پلاستیک', en: 'Plastic Injection Machine', ps: 'د پلاستیک تزریق ماشین' },
-            description: { fa: 'دستگاه تزریق برای تولید قطعات پلاستیکی', en: 'Injection machine for producing plastic parts', ps: 'د پلاستیکي برخو تولید لپاره تزریق ماشین' },
-            pdfUrl: 'pdfs/plastic-processing/injection.pdf'
-        }
-    ],
-    'paint-coating': [
-        {
-            name: { fa: 'دستگاه پودرپاشی', en: 'Powder Coating Machine', ps: 'د پوډر پوښښت ماشین' },
-            description: { fa: 'دستگاه پودرپاشی برای پوشش‌دهی', en: 'Powder coating machine for surface coating', ps: 'د سطحي پوښښت لپاره پوډر پوښښت ماشین' },
-            pdfUrl: 'pdfs/paint-coating/powder-coating.pdf'
-        },
-        {
-            name: { fa: 'دستگاه رنگ‌پاشی', en: 'Spray Painting Machine', ps: 'د رنګ پاشۍ ماشین' },
-            description: { fa: 'دستگاه رنگ‌پاشی صنعتی', en: 'Industrial spray painting machine', ps: 'د صنعت رنګ پاشۍ ماشین' },
-            pdfUrl: 'pdfs/paint-coating/spray-painting.pdf'
-        }
-    ],
-    'foam-sponge': [
-        {
-            name: { fa: 'دستگاه تولید فوم', en: 'Foam Production Machine', ps: 'د فوم تولید ماشین' },
-            description: { fa: 'دستگاه تولید فوم برای صنایع مختلف', en: 'Foam production machine for various industries', ps: 'د مختلفو صنعتونو لپاره د فوم تولید ماشین' },
-            pdfUrl: 'pdfs/foam-sponge/foam-production.pdf'
-        },
-        {
-            name: { fa: 'دستگاه برش اسفنج', en: 'Sponge Cutting Machine', ps: 'د اسفنج سکه ماشین' },
-            description: { fa: 'دستگاه برش برای اسفنج و فوم', en: 'Cutting machine for sponge and foam', ps: 'د اسفنج او فوم لپاره سکه ماشین' },
-            pdfUrl: 'pdfs/foam-sponge/sponge-cutting.pdf'
-        }
-    ],
-    'tobacco': [
-        {
-            name: { fa: 'دستگاه تولید سیگار', en: 'Cigarette Production Machine', ps: 'د سیګر تولید ماشین' },
-            description: { fa: 'دستگاه تولید کامل سیگار', en: 'Complete cigarette production machine', ps: 'د سیګر بشپړ تولید ماشین' },
-            pdfUrl: 'pdfs/tobacco/cigarette-machine.pdf'
-        },
-        {
-            name: { fa: 'دستگاه بسته‌بندی تنباکو', en: 'Tobacco Packaging Machine', ps: 'د توتون بسته بندي ماشین' },
-            description: { fa: 'دستگاه بسته‌بندی برای محصولات تنباکو', en: 'Packaging machine for tobacco products', ps: 'د توتون محصولاتو لپاره بسته بندي ماشین' },
-            pdfUrl: 'pdfs/tobacco/tobacco-packaging.pdf'
-        }
-    ],
-    'cooling-heating': [
-        {
-            name: { fa: 'دستگاه چیلر', en: 'Chiller Unit', ps: 'د چیلر واحد' },
-            description: { fa: 'دستگاه چیلر برای سرمایش صنعتی', en: 'Chiller unit for industrial cooling', ps: 'د صنعت سړښت لپاره چیلر واحد' },
-            pdfUrl: 'pdfs/cooling-heating/chiller.pdf'
-        },
-        {
-            name: { fa: 'دستگاه بویلر', en: 'Boiler Unit', ps: 'د بویلر واحد' },
-            description: { fa: 'دستگاه بویلر برای گرمایش صنعتی', en: 'Boiler unit for industrial heating', ps: 'د صنعت تودوخې لپاره بویلر واحد' },
-            pdfUrl: 'pdfs/cooling-heating/boiler.pdf'
-        }
-    ],
-    'pumps-compressors': [
-        {
-            name: { fa: 'پمپ آب صنعتی', en: 'Industrial Water Pump', ps: 'د صنعت اوبه پمپ' },
-            description: { fa: 'پمپ آب برای مصارف صنعتی', en: 'Water pump for industrial applications', ps: 'د صنعت کارونو لپاره اوبه پمپ' },
-            pdfUrl: 'pdfs/pumps-compressors/water-pump.pdf'
-        },
-        {
-            name: { fa: 'کمپرسور هوا', en: 'Air Compressor', ps: 'د هوا کمپرسور' },
-            description: { fa: 'کمپرسور هوا برای مصارف صنعتی', en: 'Air compressor for industrial applications', ps: 'د صنعت کارونو لپاره هوا کمپرسور' },
-            pdfUrl: 'pdfs/pumps-compressors/air-compressor.pdf'
-        }
-    ],
-    'industrial-laser': [
-        {
-            name: { fa: 'دستگاه لیزر برش', en: 'Laser Cutting Machine', ps: 'د لیزر سکه ماشین' },
-            description: { fa: 'دستگاه لیزر برای برش فلزات', en: 'Laser machine for metal cutting', ps: 'د فلزاتو سکولو لپاره لیزر ماشین' },
-            pdfUrl: 'pdfs/industrial-laser/laser-cutting.pdf'
-        },
-        {
-            name: { fa: 'دستگاه لیزر حکاکی', en: 'Laser Engraving Machine', ps: 'د لیزر کنګر ماشین' },
-            description: { fa: 'دستگاه لیزر برای حکاکی', en: 'Laser machine for engraving', ps: 'د کنګرولو لپاره لیزر ماشین' },
-            pdfUrl: 'pdfs/industrial-laser/laser-engraving.pdf'
-        }
-    ],
-    'tanks': [
-        {
-            name: { fa: 'مخزن آب', en: 'Water Tank', ps: 'د اوبو تنک' },
-            description: { fa: 'مخزن ذخیره آب', en: 'Water storage tank', ps: 'د اوبو خوندي کولو تنک' },
-            pdfUrl: 'pdfs/tanks/water-tank.pdf'
-        },
-        {
-            name: { fa: 'مخزن شیمیایی', en: 'Chemical Tank', ps: 'د کیمیاوي تنک' },
-            description: { fa: 'مخزن ذخیره مواد شیمیایی', en: 'Chemical storage tank', ps: 'د کیمیاوي موادو خوندي کولو تنک' },
-            pdfUrl: 'pdfs/tanks/chemical-tank.pdf'
-        }
-    ],
-    'construction-materials': [
         {
             name: { fa: 'قالب‌گیری بلوک بتنی', en: 'Concrete Block Molding Station', ps: 'د کانکریټ بلاک قالب جوړولو سټېشن' },
             description: { fa: 'پرس هیدرولیک، قالب‌های استاندارد و سیستم تغذیه مواد برای تولید بلوک توپر و توخالی.', en: 'Hydraulic press, standard mould sets and aggregate feed system for solid and hollow block production.', ps: 'هایډرولیک پرس، معیاري قالبونه او د موادو تغذیه سیستم د کلک او تشو بلاکونو تولید لپاره.' },
@@ -2561,7 +2320,7 @@ const equipmentData = window.equipmentData || {
         },
         {
             name: { fa: 'بچینگ و میکسینگ آسفالت', en: 'Asphalt Mixing Plant', ps: 'د اسفالټ د مخلوط فابریکه' },
-            description: { fa: 'بچینگ گرم با سیستم توزین دقیق، کنترل PLC و فیلتر کیسه‌ای برای کاهش آلودگی.', en: 'Hot-mix batching plant with precise weighing, PLC control and baghouse filtration.', ps: 'د دقیق وزن، PLC کنټرول او د دوړو د فلټر کولو سیستم لرونکې ګرمې مخلوط فابریکه.' },
+            description: { fa: 'بچینگ گرم با سیستم توزین دقیق، کنترل PLC و فیلتر کیسه‌ای برای کاهش آلودگی.', en: 'Hot-mix batching plant with precise weighing, PLC control and baghouse filtration.', ps: 'د دقیق وزن، PLC کنټرول او د دوړو د فلټر کولو سیسټم لرونکې ګرمې مخلوط فابریکه.' },
             pdfUrl: 'pdfs/construction-materials/asphalt/asphalt-mixing.pdf',
             category: 'asphalt'
         },
@@ -2852,6 +2611,102 @@ const equipmentData = window.equipmentData || {
             description: { fa: 'گیره، بولت، اسپیسر و روغن قالب برای نگهداری و افزایش عمر سیستم.', en: 'Clamps, bolts, spacers and release oils to maintain and extend formwork life.', ps: 'کلپونه، بولټونه، سپېسرونه او د قالب غوړي د سیستم د ساتنې او اوږد عمر لپاره.' },
             pdfUrl: 'pdfs/construction-materials/formwork/formwork-accessories.pdf',
             category: 'formwork'
+        }
+    ],
+    'plastic-processing': [
+        {
+            name: { fa: 'دستگاه اکسترودر پلاستیک', en: 'Plastic Extruder Machine', ps: 'د پلاستیک اکسترودر ماشین' },
+            description: { fa: 'دستگاه اکسترودر برای فرآوری پلاستیک', en: 'Extruder machine for plastic processing', ps: 'د پلاستیک پروسس لپاره اکسترودر ماشین' },
+            pdfUrl: 'pdfs/plastic-processing/extruder.pdf'
+        },
+        {
+            name: { fa: 'دستگاه تزریق پلاستیک', en: 'Plastic Injection Machine', ps: 'د پلاستیک تزریق ماشین' },
+            description: { fa: 'دستگاه تزریق برای تولید قطعات پلاستیکی', en: 'Injection machine for producing plastic parts', ps: 'د پلاستیکي برخو تولید لپاره تزریق ماشین' },
+            pdfUrl: 'pdfs/plastic-processing/injection.pdf'
+        }
+    ],
+    'paint-coating': [
+        {
+            name: { fa: 'دستگاه پودرپاشی', en: 'Powder Coating Machine', ps: 'د پوډر پوښښت ماشین' },
+            description: { fa: 'دستگاه پودرپاشی برای پوشش‌دهی', en: 'Powder coating machine for surface coating', ps: 'د سطحي پوښښت لپاره پوډر پوښښت ماشین' },
+            pdfUrl: 'pdfs/paint-coating/powder-coating.pdf'
+        },
+        {
+            name: { fa: 'دستگاه رنگ‌پاشی', en: 'Spray Painting Machine', ps: 'د رنګ پاشۍ ماشین' },
+            description: { fa: 'دستگاه رنگ‌پاشی صنعتی', en: 'Industrial spray painting machine', ps: 'د صنعت رنګ پاشۍ ماشین' },
+            pdfUrl: 'pdfs/paint-coating/spray-painting.pdf'
+        }
+    ],
+    'foam-sponge': [
+        {
+            name: { fa: 'دستگاه تولید فوم', en: 'Foam Production Machine', ps: 'د فوم تولید ماشین' },
+            description: { fa: 'دستگاه تولید فوم برای صنایع مختلف', en: 'Foam production machine for various industries', ps: 'د مختلفو صنعتونو لپاره د فوم تولید ماشین' },
+            pdfUrl: 'pdfs/foam-sponge/foam-production.pdf'
+        },
+        {
+            name: { fa: 'دستگاه برش اسفنج', en: 'Sponge Cutting Machine', ps: 'د اسفنج سکه ماشین' },
+            description: { fa: 'دستگاه برش برای اسفنج و فوم', en: 'Cutting machine for sponge and foam', ps: 'د اسفنج او فوم لپاره سکه ماشین' },
+            pdfUrl: 'pdfs/foam-sponge/sponge-cutting.pdf'
+        }
+    ],
+    'tobacco': [
+        {
+            name: { fa: 'دستگاه تولید سیگار', en: 'Cigarette Production Machine', ps: 'د سیګر تولید ماشین' },
+            description: { fa: 'دستگاه تولید کامل سیگار', en: 'Complete cigarette production machine', ps: 'د سیګر بشپړ تولید ماشین' },
+            pdfUrl: 'pdfs/tobacco/cigarette-machine.pdf'
+        },
+        {
+            name: { fa: 'دستگاه بسته‌بندی تنباکو', en: 'Tobacco Packaging Machine', ps: 'د توتون بسته بندي ماشین' },
+            description: { fa: 'دستگاه بسته‌بندی برای محصولات تنباکو', en: 'Packaging machine for tobacco products', ps: 'د توتون محصولاتو لپاره بسته بندي ماشین' },
+            pdfUrl: 'pdfs/tobacco/tobacco-packaging.pdf'
+        }
+    ],
+    'cooling-heating': [
+        {
+            name: { fa: 'دستگاه چیلر', en: 'Chiller Unit', ps: 'د چیلر واحد' },
+            description: { fa: 'دستگاه چیلر برای سرمایش صنعتی', en: 'Chiller unit for industrial cooling', ps: 'د صنعت سړښت لپاره چیلر واحد' },
+            pdfUrl: 'pdfs/cooling-heating/chiller.pdf'
+        },
+        {
+            name: { fa: 'دستگاه بویلر', en: 'Boiler Unit', ps: 'د بویلر واحد' },
+            description: { fa: 'دستگاه بویلر برای گرمایش صنعتی', en: 'Boiler unit for industrial heating', ps: 'د صنعت تودوخې لپاره بویلر واحد' },
+            pdfUrl: 'pdfs/cooling-heating/boiler.pdf'
+        }
+    ],
+    'pumps-compressors': [
+        {
+            name: { fa: 'پمپ آب صنعتی', en: 'Industrial Water Pump', ps: 'د صنعت اوبه پمپ' },
+            description: { fa: 'پمپ آب برای مصارف صنعتی', en: 'Water pump for industrial applications', ps: 'د صنعت کارونو لپاره اوبه پمپ' },
+            pdfUrl: 'pdfs/pumps-compressors/water-pump.pdf'
+        },
+        {
+            name: { fa: 'کمپرسور هوا', en: 'Air Compressor', ps: 'د هوا کمپرسور' },
+            description: { fa: 'کمپرسور هوا برای مصارف صنعتی', en: 'Air compressor for industrial applications', ps: 'د صنعت کارونو لپاره هوا کمپرسور' },
+            pdfUrl: 'pdfs/pumps-compressors/air-compressor.pdf'
+        }
+    ],
+    'industrial-laser': [
+        {
+            name: { fa: 'دستگاه لیزر برش', en: 'Laser Cutting Machine', ps: 'د لیزر سکه ماشین' },
+            description: { fa: 'دستگاه لیزر برای برش فلزات', en: 'Laser machine for metal cutting', ps: 'د فلزاتو سکولو لپاره لیزر ماشین' },
+            pdfUrl: 'pdfs/industrial-laser/laser-cutting.pdf'
+        },
+        {
+            name: { fa: 'دستگاه لیزر حکاکی', en: 'Laser Engraving Machine', ps: 'د لیزر کنګر ماشین' },
+            description: { fa: 'دستگاه لیزر برای حکاکی', en: 'Laser machine for engraving', ps: 'د کنګرولو لپاره لیزر ماشین' },
+            pdfUrl: 'pdfs/industrial-laser/laser-engraving.pdf'
+        }
+    ],
+    'tanks': [
+        {
+            name: { fa: 'مخزن آب', en: 'Water Tank', ps: 'د اوبو تنک' },
+            description: { fa: 'مخزن ذخیره آب', en: 'Water storage tank', ps: 'د اوبو خوندي کولو تنک' },
+            pdfUrl: 'pdfs/tanks/water-tank.pdf'
+        },
+        {
+            name: { fa: 'مخزن شیمیایی', en: 'Chemical Tank', ps: 'د کیمیاوي تنک' },
+            description: { fa: 'مخزن ذخیره مواد شیمیایی', en: 'Chemical storage tank', ps: 'د کیمیاوي موادو خوندي کولو تنک' },
+            pdfUrl: 'pdfs/tanks/chemical-tank.pdf'
         }
     ],
     'packaging': [
