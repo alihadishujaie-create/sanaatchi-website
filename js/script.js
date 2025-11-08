@@ -233,6 +233,19 @@ const categories = {
             ps: 'د ذوب کوره ګانې، رولینګ ملونه، ګالوانایز او صنعتي پوښښ کرښې د بشپړ انجینري او نصب سره.'
         }
     },
+    'mixing-equipments': {
+        icon: '⚗️',
+        title: {
+            fa: 'تجهیزات میکسینگ و تانک‌سازی',
+            en: 'Mixing Equipment & Process Tanks',
+            ps: 'د مکسینګ تجهیزات او پروسې ټانکونه'
+        },
+        description: {
+            fa: 'میکسرهای صنعتی، راکتورهای شیمیایی و تانک‌های ذخیره با طراحی سفارشی و نصب کامل برای تولید پیوسته.',
+            en: 'Industrial mixers, chemical reactors and storage tanks delivered with custom engineering and turnkey installation for continuous production.',
+            ps: 'صنعتي مکسېرونه، کیمیاوي ریکټورونه او د ذخیرې ټانکونه د دودیز انجینري او بشپړ نصب سره د دوامدار تولید لپاره.'
+        }
+    },
     'construction-materials': {
         icon: '🧱',
         title: {
@@ -2249,6 +2262,20 @@ const categoryKeywords = {
         'surface treatment',
         'metal coating',
         'coating equipment'
+    ],
+    'mixing-equipments': [
+        'تجهیزات میکسینگ و تانک‌سازی',
+        'Mixing Equipment & Process Tanks',
+        'میکسر صنعتی',
+        'industrial mixer',
+        'راکتور شیمیایی',
+        'chemical reactor',
+        'تانک ذخیره',
+        'storage tank',
+        'تجهیزات فوم',
+        'foam mixing',
+        'process tank',
+        'mixing equipment'
     ],
     'construction-materials': [
         'ماشین آلات مصالح ساخت',
