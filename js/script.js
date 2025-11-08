@@ -4388,19 +4388,12 @@ function showSalesContactModal() {
                  currentLanguage === 'ps' ? 'د پلور برخې سره اړیکه' : 'Contact Sales Department';
     const subtitle = currentLanguage === 'fa' ? 'برای شروع همکاری با ما، لطفاً با یکی از دفاتر ما تماس بگیرید' : 
                     currentLanguage === 'ps' ? 'د موږ سره د همکاري پیل لپاره، مهرباني کړه د موږ د یو دفتر سره اړیکه ونیسئ' : 'To start cooperation with us, please contact one of our offices';
-    const afghanistanOffice = currentLanguage === 'fa' ? 'دفتر افغانستان' :
+    const afghanistanOffice = currentLanguage === 'fa' ? 'دفتر افغانستان' : 
                              currentLanguage === 'ps' ? 'د افغانستان دفتر' : 'Afghanistan Office';
-    const chinaOffice = currentLanguage === 'fa' ? 'دفتر چین' :
+    const chinaOffice = currentLanguage === 'fa' ? 'دفتر چین' : 
                         currentLanguage === 'ps' ? 'د چین دفتر' : 'China Office';
     const backText = currentLanguage === 'fa' ? 'بازگشت' :
                     currentLanguage === 'ps' ? 'بیرته' : 'Back';
-
-    const afghanistanPhoneTranslation = translations['afghanistan-phone'] || {};
-    const afghanistanPhone = afghanistanPhoneTranslation[currentLanguage] ||
-                             afghanistanPhoneTranslation.en ||
-                             '+93 779 819 820';
-    const afghanistanPhoneHref = `tel:${formatPhoneNumberForHref(afghanistanPhone)}`;
-    const afghanistanWhatsAppUrl = getWhatsAppUrl(afghanistanPhone);
 
     const chinaPhoneTranslation = translations['china-phone'] || {};
     const chinaPhone = chinaPhoneTranslation[currentLanguage] || chinaPhoneTranslation.en || '+86 159 5171 6867';
@@ -4418,8 +4411,8 @@ function showSalesContactModal() {
                 <div class="contact-item">
                     <i class="fas fa-phone"></i>
                     <div class="phone-container">
-                        <a href="${afghanistanPhoneHref}" class="phone-link" data-translate="afghanistan-phone">${afghanistanPhone}</a>
-                        <a href="${afghanistanWhatsAppUrl}" target="_blank" class="whatsapp-link" title="WhatsApp" aria-label="واتساپ">
+                        <a href="tel:+93779819820" class="phone-link">+۹۳ ۷۷۹ ۸۱۹ ۸۲۰</a>
+                        <a href="https://wa.me/93779819820" target="_blank" class="whatsapp-link" title="WhatsApp" aria-label="واتساپ">
                             <i class="fab fa-whatsapp"></i>
                         </a>
                     </div>
