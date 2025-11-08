@@ -422,10 +422,6 @@ body {
     .hero-with-search .hero-content {
         grid-template-columns: 1fr;
     }
-
-    [dir="ltr"] .hero-with-search .hero-content {
-        grid-template-columns: 1fr;
-    }
     
     .hero-text h1 {
         font-size: 2.5rem;
@@ -1603,8 +1599,10 @@ body {
 [dir="ltr"] .nav {
     flex-direction: row;
 }
-[dir="ltr"] .hero-with-search .hero-content {
-    grid-template-columns: 1fr 400px;
+@media (min-width: 769px) {
+    [dir="ltr"] .hero-with-search .hero-content {
+        grid-template-columns: 1fr 400px;
+    }
 }
 [dir="ltr"] .cargo-hero .hero-content {
     grid-template-columns: 1fr;
