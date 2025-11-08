@@ -209,8 +209,8 @@
                     <div class="footer-newsletter">
                         <h4 data-translate="newsletter-title">عضویت در خبرنامه</h4>
                         <p data-translate="newsletter-subtitle">برای دریافت آخرین اخبار و به‌روزرسانی‌ها عضو خبرنامه ما شوید.</p>
-                        <form class="newsletter-form" id="newsletterForm">
-                            <input type="email" data-translate-placeholder="newsletter-placeholder" placeholder="آدرس ایمیل خود را وارد کنید" aria-label="آدرس ایمیل">
+                        <form class="newsletter-form" id="newsletterForm" action="/newsletter-subscribe.php" method="POST">
+                            <input type="email" name="newsletter_email" data-translate-placeholder="newsletter-placeholder" placeholder="آدرس ایمیل خود را وارد کنید" aria-label="آدرس ایمیل">
                             <button type="submit" data-translate="newsletter-btn">عضویت</button>
                         </form>
                     </div>
@@ -307,7 +307,22 @@
         </div>
     </div>
 
-    <script src="js/script.js"></script>
-    <script src="js/tires.js"></script>
+    <script src="js/script.js" defer></script>
+    <script src="js/tires.js" defer></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        if (typeof publishEquipmentStructuredData === 'function') {
+          publishEquipmentStructuredData('tires', {
+            collectionName: 'Sanaatchi Tire & Rubber Equipment Library',
+            collectionDescription: 'Rubber mixing, curing and recycling lines that support tire manufacturing and retreading projects across Afghanistan.',
+            pageUrl: '/tires.html',
+            breadcrumbs: [
+              { name: 'Home', url: '/' },
+              { name: 'Tire & Rubber Machinery', url: '/tires.html' }
+            ]
+          });
+        }
+      });
+    </script>
 </body>
 </html>

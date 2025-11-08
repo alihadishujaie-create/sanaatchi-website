@@ -209,8 +209,8 @@
                     <div class="footer-newsletter">
                         <h4 data-translate="newsletter-title">عضویت در خبرنامه</h4>
                         <p data-translate="newsletter-subtitle">برای دریافت آخرین اخبار و به‌روزرسانی‌ها عضو خبرنامه ما شوید.</p>
-                        <form class="newsletter-form" id="newsletterForm">
-                            <input type="email" data-translate-placeholder="newsletter-placeholder" placeholder="آدرس ایمیل خود را وارد کنید" aria-label="آدرس ایمیل">
+                        <form class="newsletter-form" id="newsletterForm" action="/newsletter-subscribe.php" method="POST">
+                            <input type="email" name="newsletter_email" data-translate-placeholder="newsletter-placeholder" placeholder="آدرس ایمیل خود را وارد کنید" aria-label="آدرس ایمیل">
                             <button type="submit" data-translate="newsletter-btn">عضویت</button>
                         </form>
                     </div>
@@ -307,7 +307,22 @@
         </div>
     </div>
 
-    <script src="js/script.js"></script>
-    <script src="js/electronics-energy-systems.js"></script>
+    <script src="js/script.js" defer></script>
+    <script src="js/electronics-energy-systems.js" defer></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        if (typeof publishEquipmentStructuredData === 'function') {
+          publishEquipmentStructuredData('electronics-energy-systems', {
+            collectionName: 'Sanaatchi Electronics & Energy Systems Library',
+            collectionDescription: 'Power systems, automation controls and renewable energy equipment curated for Afghan infrastructure projects.',
+            pageUrl: '/electronics-energy-systems.html',
+            breadcrumbs: [
+              { name: 'Home', url: '/' },
+              { name: 'Electronics & Energy Systems', url: '/electronics-energy-systems.html' }
+            ]
+          });
+        }
+      });
+    </script>
 </body>
 </html>

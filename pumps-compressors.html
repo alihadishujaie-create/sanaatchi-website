@@ -205,8 +205,8 @@
                 <div class="footer-section">
                     <h3 data-translate="newsletter-title">خبرنامه صنعتچی</h3>
                     <p data-translate="newsletter-description">برای دریافت جدیدترین به‌روزرسانی‌ها و پیشنهادهای ویژه عضو شوید.</p>
-                    <form class="newsletter-form">
-                        <input type="email" placeholder="ایمیل خود را وارد کنید" aria-label="ایمیل" data-translate-placeholder="newsletter-placeholder">
+                    <form class="newsletter-form" action="/newsletter-subscribe.php" method="POST">
+                        <input type="email" name="newsletter_email" placeholder="ایمیل خود را وارد کنید" aria-label="ایمیل" data-translate-placeholder="newsletter-placeholder">
                         <button type="submit" data-translate="subscribe">عضویت</button>
                     </form>
                 </div>
@@ -297,7 +297,22 @@
         </div>
     </div>
 
-    <script src="js/script.js"></script>
-    <script src="js/pumps-compressors.js"></script>
+    <script src="js/script.js" defer></script>
+    <script src="js/pumps-compressors.js" defer></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        if (typeof publishEquipmentStructuredData === 'function') {
+          publishEquipmentStructuredData('pumps-compressors', {
+            collectionName: 'Sanaatchi Pumps & Compressors Library',
+            collectionDescription: 'Industrial pumps, blowers and compressed air systems sourced and engineered for Afghan factories and utilities.',
+            pageUrl: '/pumps-compressors.html',
+            breadcrumbs: [
+              { name: 'Home', url: '/' },
+              { name: 'Pumps & Compressors', url: '/pumps-compressors.html' }
+            ]
+          });
+        }
+      });
+    </script>
 </body>
 </html>

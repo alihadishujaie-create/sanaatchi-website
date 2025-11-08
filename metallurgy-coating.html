@@ -209,8 +209,8 @@
                     <div class="footer-newsletter">
                         <h4 data-translate="newsletter-title">عضویت در خبرنامه</h4>
                         <p data-translate="newsletter-subtitle">برای دریافت آخرین اخبار و به‌روزرسانی‌ها عضو خبرنامه ما شوید.</p>
-                        <form class="newsletter-form" id="newsletterForm">
-                            <input type="email" data-translate-placeholder="newsletter-placeholder" placeholder="آدرس ایمیل خود را وارد کنید" aria-label="آدرس ایمیل">
+                        <form class="newsletter-form" id="newsletterForm" action="/newsletter-subscribe.php" method="POST">
+                            <input type="email" name="newsletter_email" data-translate-placeholder="newsletter-placeholder" placeholder="آدرس ایمیل خود را وارد کنید" aria-label="آدرس ایمیل">
                             <button type="submit" data-translate="newsletter-btn">عضویت</button>
                         </form>
                     </div>
@@ -307,7 +307,22 @@
         </div>
     </div>
 
-    <script src="js/script.js"></script>
-    <script src="js/metallurgy-coating.js"></script>
+    <script src="js/script.js" defer></script>
+    <script src="js/metallurgy-coating.js" defer></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        if (typeof publishEquipmentStructuredData === 'function') {
+          publishEquipmentStructuredData('metallurgy-coating', {
+            collectionName: 'Sanaatchi Metallurgy & Coating Equipment Library',
+            collectionDescription: 'Furnaces, surface finishing lines and metal treatment systems tailored for Afghan manufacturing.',
+            pageUrl: '/metallurgy-coating.html',
+            breadcrumbs: [
+              { name: 'Home', url: '/' },
+              { name: 'Metallurgy & Coating', url: '/metallurgy-coating.html' }
+            ]
+          });
+        }
+      });
+    </script>
 </body>
 </html>

@@ -825,7 +825,7 @@
         window.packagingInventory = inventory;
     }
 
-    function buildInventoryCardsHtml(items, lang) {
+    function buildInventoryCardsHtml(items, lang, { wrap = true } = {}) {
         if (!items || !items.length) {
             const emptyText = lang === 'fa'
                 ? 'هیچ تجهیزی برای این دسته ثبت نشده است.'
@@ -852,7 +852,7 @@
             </div>
         `).join('');
 
-        return `<div class="equipment-grid">${cards}</div>`;
+        return wrap ? `<div class="equipment-grid">${cards}</div>` : cards;
     }
 
     function showPackagingCategoryModal(categoryId, lang = getLanguage()) {
@@ -933,10 +933,10 @@
             subtitle.textContent = localise(content.inventorySubtitle, lang);
         }
         if (section) {
-            section.setAttribute('hidden', 'true');
+            section.removeAttribute('hidden');
         }
         if (container) {
-            container.innerHTML = '';
+            container.innerHTML = buildInventoryCardsHtml(inventory, lang, { wrap: false });
         }
     }
 

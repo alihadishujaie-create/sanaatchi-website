@@ -3688,6 +3688,36 @@ const equipmentData = {
             pdfUrl: 'pdfs/packaging/wrapping-packaging/strapping-machine.pdf'
         },
         {
+            category: 'printing-packaging',
+            name: { fa: 'ماشین چاپ فلکسو', en: 'Flexographic Printing Machine', ps: 'د فلکسو چاپ ماشین' },
+            description: {
+                fa: 'ماشین فلکسو رول به رول با رجیستر دقیق و خشک‌کن هوای گرم برای چاپ بسته‌بندی.',
+                en: 'Roll-to-roll flexo press with precise registration and hot-air dryers for packaging films.',
+                ps: 'رول په رول فلکسو پریس د دقیق رجسټر او د ګرمې هوا وچولو سره د بسته بندۍ فلمونو لپاره.'
+            },
+            pdfUrl: 'pdfs/plastic-processing/printing-packaging/flexo-printing.pdf'
+        },
+        {
+            category: 'printing-packaging',
+            name: { fa: 'خط پاکت‌سازی', en: 'Bag Making Line', ps: 'د کڅوړې جوړولو لاین' },
+            description: {
+                fa: 'از رول تا پاکت با ایستگاه‌های تا، دوخت و پانچ برای تولید پاکت‌های چندلایه.',
+                en: 'From roll to finished bag with folding, sealing and punching stations for multilayer bags.',
+                ps: 'له رول څخه تر بشپړې کڅوړې پورې د تا کولو، سیل کولو او پنچ کولو سټېشنونو سره.'
+            },
+            pdfUrl: 'pdfs/plastic-processing/printing-packaging/bag-making.pdf'
+        },
+        {
+            category: 'printing-packaging',
+            name: { fa: 'خط درزگیری و برش', en: 'Sealing & Cutting Line', ps: 'د سیل کولو او پرې کولو لاین' },
+            description: {
+                fa: 'سیستم برش و درزگیری با کنترل سروو برای تولید رول‌های بسته‌بندی باکیفیت.',
+                en: 'Servo-controlled sealing and cutting modules delivering precise packaging rolls.',
+                ps: 'د سرو کنټرول لرونکي سیل او پرې کولو ماډلونه چې دقیق بسته بندۍ رولونه جوړوي.'
+            },
+            pdfUrl: 'pdfs/plastic-processing/printing-packaging/sealing-cutting.pdf'
+        },
+        {
             category: 'tobacco-processing',
             name: { fa: 'خط تولید سیگار', en: 'Cigarette Making Line', ps: 'د سیګار جوړولو لاین' },
             description: {
@@ -5803,8 +5833,8 @@ function closeModal() {
 function showContactModal() {
     const modal = document.getElementById('contactModal');
     const modalContent = document.getElementById('contactModalContent');
-    
-    const title = currentLanguage === 'fa' ? 'درخواست مشاوره رایگان' : 
+
+    const title = currentLanguage === 'fa' ? 'درخواست مشاوره رایگان' :
                  currentLanguage === 'ps' ? 'رایگان مشوره غوښتنه' : 'Free Consultation Request';
     const nameLabel = currentLanguage === 'fa' ? 'نام و نام خانوادگی' : 
                      currentLanguage === 'ps' ? 'نوم او تخلص' : 'Full Name';
@@ -5820,59 +5850,33 @@ function showContactModal() {
     modalContent.innerHTML = `
         <div class="modal-icon">📞</div>
         <h3>${title}</h3>
-        <form id="contactForm">
+        <form id="contactForm" action="/consultation.php" method="POST">
             <div style="margin-bottom: 15px;">
-                <label>${nameLabel}:</label>
-                <input type="text" style="width: 100%; padding: 8px; margin-top: 5px;" required>
+                <label for="consultation-full-name">${nameLabel}:</label>
+                <input id="consultation-full-name" type="text" name="full_name" style="width: 100%; padding: 8px; margin-top: 5px;" required>
             </div>
             <div style="margin-bottom: 15px;">
-                <label>${phoneLabel}:</label>
-                <input type="tel" style="width: 100%; padding: 8px; margin-top: 5px;" required>
+                <label for="consultation-phone">${phoneLabel}:</label>
+                <input id="consultation-phone" type="tel" name="phone" style="width: 100%; padding: 8px; margin-top: 5px;" required>
             </div>
             <div style="margin-bottom: 15px;">
-                <label>${emailLabel}:</label>
-                <input type="email" style="width: 100%; padding: 8px; margin-top: 5px;">
+                <label for="consultation-email">${emailLabel}:</label>
+                <input id="consultation-email" type="email" name="email" style="width: 100%; padding: 8px; margin-top: 5px;" aria-describedby="consultation-email-help">
+                <small id="consultation-email-help" style="display:block; margin-top:4px;">${currentLanguage === 'fa' ? 'اختیاری' : currentLanguage === 'ps' ? 'اختیاري' : 'Optional'}</small>
             </div>
             <div style="margin-bottom: 15px;">
-                <label>${descLabel}:</label>
-                <textarea style="width: 100%; padding: 8px; margin-top: 5px; height: 100px;"></textarea>
+                <label for="consultation-description">${descLabel}:</label>
+                <textarea id="consultation-description" name="request_description" style="width: 100%; padding: 8px; margin-top: 5px; height: 100px;" required></textarea>
             </div>
             <button type="submit" class="btn-primary" style="width: 100%;">${submitText}</button>
         </form>
     `;
     modal.style.display = 'block';
     modal.setAttribute('aria-hidden', 'false');
-    
-    // Add form submission handler
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        const name = this.querySelector('input[type="text"]').value.trim();
-        const phone = this.querySelector('input[type="tel"]').value.trim();
-        const email = this.querySelector('input[type="email"]').value.trim();
-        
-        // Validation
-        if (!name || !phone) {
-            const errorMsg = currentLanguage === 'fa' ? 'لطفاً نام و شماره تماس را وارد کنید' : 
-                           currentLanguage === 'ps' ? 'مهرباني کړه نوم او اړیکه شمیره ننوئ' : 'Please enter name and phone number';
-            alert(errorMsg);
-            return;
-        }
-        
-        // Email validation (if provided)
-        if (email && !isValidEmail(email)) {
-            const errorMsg = currentLanguage === 'fa' ? 'لطفاً یک ایمیل معتبر وارد کنید' : 
-                           currentLanguage === 'ps' ? 'مهرباني کړه یو معتبر بریښنالیک ننوئ' : 'Please enter a valid email';
-            alert(errorMsg);
-            return;
-        }
-        
-        // Success message
-        const successMsg = currentLanguage === 'fa' ? 'درخواست شما با موفقیت ارسال شد.' : 
-                         currentLanguage === 'ps' ? 'ستاسو غوښتنه په بریالیتوب استول شوه.' : 'Your request has been submitted successfully.';
-        alert(successMsg);
-        closeContactModal();
-    });
+
+    const contactForm = modalContent.querySelector('#contactForm');
+    attachConsultationFormHandler(contactForm);
+
 }
 
 // Close contact modal
@@ -6167,6 +6171,230 @@ function closeEquipmentModal() {
     modal.setAttribute('aria-hidden', 'true');
 }
 
+const SITE_ORIGIN_FALLBACK = 'https://sanaatchi.com';
+
+function getSiteOrigin() {
+    if (typeof window !== 'undefined' && window.location && window.location.origin && window.location.origin !== 'null') {
+        return window.location.origin;
+    }
+    return SITE_ORIGIN_FALLBACK;
+}
+
+function toAbsoluteUrl(path) {
+    if (!path) {
+        return getSiteOrigin();
+    }
+    if (/^https?:/i.test(path)) {
+        return path;
+    }
+    if (path.startsWith('//')) {
+        return `${(typeof window !== 'undefined' && window.location ? window.location.protocol : 'https:')}${path}`;
+    }
+    const origin = getSiteOrigin();
+    if (path.startsWith('/')) {
+        return `${origin}${path}`;
+    }
+    return `${origin}/${path}`;
+}
+
+function appendJsonLd(data) {
+    if (!data || typeof document === 'undefined' || !document.head) {
+        return;
+    }
+    const script = document.createElement('script');
+    script.setAttribute('type', 'application/ld+json');
+    script.textContent = JSON.stringify(data, null, 2);
+    document.head.appendChild(script);
+}
+
+function publishItemListStructuredData(options) {
+    if (!options || typeof appendJsonLd !== 'function') {
+        return;
+    }
+
+    const items = Array.isArray(options.items) ? options.items : [];
+    if (items.length === 0) {
+        return;
+    }
+
+    const itemListElements = items.map((item, index) => {
+        const entity = {
+            '@type': item.schemaType || 'CreativeWork',
+            'name': item.name,
+            'url': toAbsoluteUrl(item.url || ''),
+        };
+        if (item.description) {
+            entity.description = item.description;
+        }
+
+        if (item.identifier) {
+            entity.identifier = item.identifier;
+        }
+
+        return {
+            '@type': 'ListItem',
+            position: index + 1,
+            item: entity
+        };
+    });
+
+    const collectionData = {
+        '@context': 'https://schema.org',
+        '@type': options.pageType || 'CollectionPage',
+        name: options.collectionName || document.title || 'Sanaatchi Catalog',
+        url: toAbsoluteUrl(options.pageUrl || window.location.pathname),
+        inLanguage: options.languages || ['fa', 'en', 'ps'],
+        mainEntity: {
+            '@type': 'ItemList',
+            itemListElement: itemListElements
+        }
+    };
+
+    if (options.collectionDescription) {
+        collectionData.description = options.collectionDescription;
+    }
+
+    appendJsonLd(collectionData);
+
+    if (Array.isArray(options.breadcrumbs) && options.breadcrumbs.length > 0) {
+        const breadcrumbItems = options.breadcrumbs.map((crumb, index) => ({
+            '@type': 'ListItem',
+            position: index + 1,
+            name: crumb.name,
+            item: toAbsoluteUrl(crumb.url)
+        }));
+
+        appendJsonLd({
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: breadcrumbItems
+        });
+    }
+}
+
+function publishEquipmentStructuredData(categoryKey, options = {}) {
+    if (typeof publishItemListStructuredData !== 'function') {
+        return;
+    }
+
+    const records = (equipmentData && equipmentData[categoryKey]) || [];
+    if (!Array.isArray(records) || records.length === 0) {
+        return;
+    }
+
+    const items = records.map(record => ({
+        name: record.name?.en || record.name?.fa || record.name || '',
+        description: record.description?.en || record.description?.fa || record.description || '',
+        url: record.pdfUrl,
+        schemaType: options.schemaType || 'Product',
+        identifier: record.category ? `${categoryKey}-${record.category}` : undefined
+    }));
+
+    publishItemListStructuredData({
+        collectionName: options.collectionName,
+        collectionDescription: options.collectionDescription,
+        pageUrl: options.pageUrl,
+        items,
+        breadcrumbs: options.breadcrumbs,
+        languages: options.languages,
+        pageType: options.pageType
+    });
+}
+
+function attachConsultationFormHandler(form) {
+    if (!form || form.dataset.bound === 'true') {
+        return;
+    }
+
+    form.dataset.bound = 'true';
+
+    form.addEventListener('submit', async function(event) {
+        event.preventDefault();
+
+        const submitButton = form.querySelector('[type="submit"]');
+        if (submitButton) {
+            submitButton.disabled = true;
+        }
+
+        try {
+            const response = await fetch(form.action, {
+                method: 'POST',
+                body: new FormData(form),
+                credentials: 'same-origin'
+            });
+
+            const responseText = (await response.text()).trim();
+
+            if (response.ok) {
+                alert(responseText || 'Thank you, your request has been sent.');
+                form.reset();
+                closeContactModal();
+            } else {
+                const fallbackMessage = 'Sorry, there was a problem sending your request.';
+                const githubNotice = response.status === 405
+                    ? ' (If you are previewing the site on GitHub Pages, PHP submissions are disabled and will return this error.)'
+                    : '';
+                alert((responseText || fallbackMessage) + githubNotice);
+            }
+        } catch (error) {
+            alert('Unable to send your request due to a network error. Please try again.');
+        } finally {
+            if (submitButton) {
+                submitButton.disabled = false;
+            }
+        }
+    });
+}
+
+function attachNewsletterFormHandler(form) {
+    if (!form || form.dataset.bound === 'true') {
+        return;
+    }
+
+    form.dataset.bound = 'true';
+
+    form.addEventListener('submit', async function(event) {
+        event.preventDefault();
+
+        const submitButton = form.querySelector('[type="submit"]');
+        if (submitButton) {
+            submitButton.disabled = true;
+        }
+
+        try {
+            const response = await fetch(form.action, {
+                method: 'POST',
+                body: new FormData(form),
+                credentials: 'same-origin'
+            });
+
+            const responseText = (await response.text()).trim();
+
+            if (response.ok) {
+                alert(responseText || 'Thank you for subscribing!');
+                form.reset();
+            } else {
+                const fallbackMessage = 'Subscription failed. Please try again.';
+                const githubNotice = response.status === 405
+                    ? ' (If you are previewing the site on GitHub Pages, PHP submissions are disabled and will return this error.)'
+                    : '';
+                alert((responseText || fallbackMessage) + githubNotice);
+            }
+        } catch (error) {
+            alert('Subscription failed because of a network error. Please try again later.');
+        } finally {
+            if (submitButton) {
+                submitButton.disabled = false;
+            }
+        }
+    });
+}
+
+function initializeNewsletterForms() {
+    const newsletterForms = document.querySelectorAll('form.newsletter-form');
+    newsletterForms.forEach(attachNewsletterFormHandler);
+}
+
 // Initialize page
 document.addEventListener('DOMContentLoaded', function() {
     // Ensure category detail pages stay off the primary navigation
@@ -6187,39 +6415,6 @@ document.addEventListener('DOMContentLoaded', function() {
         switchLanguage(savedLanguage);
     }
     
-    // Add event listener for newsletter form
-    const newsletterForm = document.getElementById('newsletterForm');
-    if (newsletterForm) {
-        newsletterForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const email = this.querySelector('input[type="email"]').value.trim();
-            
-            // Email validation
-            if (!email) {
-                const errorMsg = currentLanguage === 'fa' ? 'لطفاً آدرس ایمیل خود را وارد کنید' : 
-                               currentLanguage === 'ps' ? 'مهرباني کړه خپل بریښنالیک پته ننوئ' : 'Please enter your email address';
-                alert(errorMsg);
-                return;
-            }
-            
-            if (!isValidEmail(email)) {
-                const errorMsg = currentLanguage === 'fa' ? 'لطفاً یک آدرس ایمیل معتبر وارد کنید' : 
-                               currentLanguage === 'ps' ? 'مهرباني کړه یو معتبر بریښنالیک پته ننوئ' : 'Please enter a valid email address';
-                alert(errorMsg);
-                return;
-            }
-            
-            // Success message
-            const successMsg = currentLanguage === 'fa' ? 'شما با موفقیت در خبرنامه عضو شدید.' : 
-                             currentLanguage === 'ps' ? 'تاسو په بریالیتوب سره د خبرنامې غړی شئ.' : 'You have successfully subscribed to the newsletter.';
-            alert(successMsg);
-            
-            // Reset form
-            this.reset();
-        });
-    }
-    
     // Add event listener for search input (Enter key)
     const searchInput = document.getElementById('searchInput');
     if (searchInput) {
@@ -6229,4 +6424,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+
+    initializeNewsletterForms();
 });

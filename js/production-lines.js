@@ -1058,8 +1058,21 @@ function updateProductionLineCards() {
     renderProductionLineGroups(lang);
 }
 
+function publishProductionLinesStructuredData() {
+    publishEquipmentStructuredData('production-lines', {
+        collectionName: 'Sanaatchi Production Lines Dossier Library',
+        collectionDescription: 'Technical dossiers and production line equipment for food, consumer goods, construction materials and recycling projects sourced by Sanaatchi.',
+        pageUrl: '/production-lines.html',
+        breadcrumbs: [
+            { name: 'Home', url: '/' },
+            { name: 'Production Lines', url: '/production-lines.html' }
+        ]
+    });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     updateProductionLineCards();
+    publishProductionLinesStructuredData();
 });
 
 window.showProductionLineModal = showProductionLineModal;

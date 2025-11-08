@@ -214,8 +214,8 @@
                 <div class="footer-section">
                     <h3 data-translate="footer-newsletter-title">عضویت در خبرنامه</h3>
                     <p data-translate="footer-newsletter-desc">با وارد کردن ایمیل خود از جدیدترین اخبار و پروژه‌ها مطلع شوید.</p>
-                    <form class="newsletter-form">
-                        <input type="email" placeholder="ایمیل شما" aria-label="ایمیل" required>
+                    <form class="newsletter-form" action="/newsletter-subscribe.php" method="POST">
+                        <input type="email" name="newsletter_email" placeholder="ایمیل شما" aria-label="ایمیل" required>
                         <button type="submit" data-translate="footer-newsletter-btn">عضویت</button>
                     </form>
                 </div>
