@@ -1075,17 +1075,44 @@ const translations = {
     }
 };
 
+function convertToAsciiDigits(input) {
+    const digitMap = {
+        '۰': '0', '۱': '1', '۲': '2', '۳': '3', '۴': '4', '۵': '5', '۶': '6', '۷': '7', '۸': '8', '۹': '9',
+        '٠': '0', '١': '1', '٢': '2', '٣': '3', '٤': '4', '٥': '5', '٦': '6', '٧': '7', '٨': '8', '٩': '9'
+    };
+
+    return input.replace(/[۰-۹٠-٩]/g, digit => digitMap[digit] || digit);
+}
+
 // Function to format phone number for href
 function formatPhoneNumberForHref(phoneNumber) {
     // Remove all non-digit characters except the leading +
-    return phoneNumber.replace(/[^0-9+]/g, '');
+    const normalized = convertToAsciiDigits(phoneNumber);
+    return normalized.replace(/[^0-9+]/g, '');
 }
 
 // Function to get WhatsApp URL from phone number
 function getWhatsAppUrl(phoneNumber) {
     // Remove all non-digit characters including the +
-    const cleanNumber = phoneNumber.replace(/[^0-9]/g, '');
+    const normalized = convertToAsciiDigits(phoneNumber);
+    const cleanNumber = normalized.replace(/[^0-9]/g, '');
     return `https://wa.me/${cleanNumber}`;
+}
+
+function updatePhoneLinks(element, phoneNumber) {
+    const phoneContainer = element.closest('.phone-container');
+    const phoneLink = element.classList.contains('phone-link')
+        ? element
+        : (phoneContainer ? phoneContainer.querySelector('.phone-link') : null);
+
+    if (phoneLink) {
+        phoneLink.setAttribute('href', `tel:${formatPhoneNumberForHref(phoneNumber)}`);
+    }
+
+    const whatsappLink = phoneContainer ? phoneContainer.querySelector('.whatsapp-link') : null;
+    if (whatsappLink) {
+        whatsappLink.setAttribute('href', getWhatsAppUrl(phoneNumber));
+    }
 }
 
 // Function to validate email
@@ -1149,50 +1176,30 @@ function switchLanguage(lang) {
 
 // Function to update translations without page reload
 function updateTranslations(lang) {
+    const overrideKey = `translate${lang.charAt(0).toUpperCase()}${lang.slice(1)}`;
+
     // Update all translatable elements
     document.querySelectorAll('[data-translate]').forEach(element => {
         const key = element.getAttribute('data-translate');
-        if (translations[key] && translations[key][lang]) {
-            element.textContent = translations[key][lang];
+        const override = element.dataset[overrideKey];
+        const translatedText = override !== undefined
+            ? override
+            : (translations[key] && translations[key][lang] ? translations[key][lang] : undefined);
+
+        if (translatedText !== undefined) {
+            element.textContent = translatedText;
+
+            if (key === 'afghanistan-phone' || key === 'china-phone') {
+                updatePhoneLinks(element, translatedText);
+            }
         }
     });
-    
+
     // Update placeholders
     document.querySelectorAll('[data-translate-placeholder]').forEach(element => {
         const key = element.getAttribute('data-translate-placeholder');
         if (translations[key] && translations[key][lang]) {
             element.setAttribute('placeholder', translations[key][lang]);
-        }
-    });
-    
-    // Update phone numbers
-    document.querySelectorAll('[data-translate]').forEach(element => {
-        const key = element.getAttribute('data-translate');
-        if (key === 'afghanistan-phone' && translations[key] && translations[key][lang]) {
-            element.textContent = translations[key][lang];
-            // Update href for phone link
-            const phoneLink = element.closest('.phone-container').querySelector('.phone-link');
-            if (phoneLink) {
-                phoneLink.setAttribute('href', `tel:${formatPhoneNumberForHref(translations[key][lang])}`);
-            }
-            // Update href for WhatsApp link
-            const whatsappLink = element.closest('.phone-container').querySelector('.whatsapp-link');
-            if (whatsappLink) {
-                whatsappLink.setAttribute('href', getWhatsAppUrl(translations[key][lang]));
-            }
-        }
-        if (key === 'china-phone' && translations[key] && translations[key][lang]) {
-            element.textContent = translations[key][lang];
-            // Update href for phone link
-            const phoneLink = element.closest('.phone-container').querySelector('.phone-link');
-            if (phoneLink) {
-                phoneLink.setAttribute('href', `tel:${formatPhoneNumberForHref(translations[key][lang])}`);
-            }
-            // Update href for WhatsApp link
-            const whatsappLink = element.closest('.phone-container').querySelector('.whatsapp-link');
-            if (whatsappLink) {
-                whatsappLink.setAttribute('href', getWhatsAppUrl(translations[key][lang]));
-            }
         }
     });
 
