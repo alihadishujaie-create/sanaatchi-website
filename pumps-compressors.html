@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پمپ‌ها و کمپرسورهای صنعتی | صنعتچی</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <meta name="description" content="سامانه‌های پمپ آب، کمپرسور هوا، وکیوم و قطعات یدکی با نصب و پشتیبانی کامل برای صنایع افغانستان.">
+    <meta name="keywords" content="پمپ صنعتی, کمپرسور صنعتی, وکیوم صنعتی افغانستان, sanaatchi">
+    <meta name="author" content="Sanaatchi Industrial Vision">
+    <meta property="og:title" content="پمپ‌ها و کمپرسورهای صنعتی | صنعتچی">
+    <meta property="og:description" content="پمپ‌های سانتریفیوژ، کمپرسورهای پیچ و پیستونی و سیستم‌های وکیوم با خدمات مهندسی و نگهداری کامل.">
+    <meta property="og:image" content="images/aiv-og-image.jpg">
+    <meta property="og:url" content="https://sanaatchi.com/pumps-compressors">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="pumps-compressors-page">
+    <a href="#main-content" class="skip-link">پرش به محتوای اصلی</a>
+
+    <header class="header">
+        <div class="container">
+            <div class="main-header">
+                <img src="images/logo.png" alt="لوگوی صنعتچی Industrial Vision" class="logo">
+
+                <nav class="nav" id="mainNav">
+                    <a href="index.html#hero" onclick="return goToIndex(event, 'hero')" data-translate="home">خانه</a>
+                    <a href="index.html#services" onclick="return goToIndex(event, 'services')" data-translate="services">خدمات</a>
+                    <a href="index.html#why-aiv" onclick="return goToIndex(event, 'why-aiv')" data-translate="about">درباره ما</a>
+                    <a href="projects.html" data-translate="projects">پروژه های تحت کار</a>
+                    <a href="cargo.html" data-translate="nav_cargo">کارگو و حمل‌ونقل</a>
+                    <a href="industrial-raw-materials.html" data-translate="cat-industrial-raw-materials">مواد اولیه صنعتی</a>
+                    <a href="index.html#footer" onclick="return goToIndex(event, 'footer')" data-translate="contact">تماس با ما</a>
+                </nav>
+
+                <div class="header-actions">
+                    <select class="language-switcher" onchange="switchLanguage(this.value)" aria-label="تغییر زبان">
+                        <option value="fa">فارسی (fa)</option>
+                        <option value="en">English (en)</option>
+                        <option value="ps">پشتو (ps)</option>
+                    </select>
+                    <button class="cta-button" onclick="showContactModal()" aria-label="درخواست مشاوره رایگان" data-translate="free-consultation">مشاوره رایگان</button>
+                    <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="منوی موبایل">☰</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section id="hero" class="hero hero-with-search category-hero pumps-compressors-hero">
+            <div class="hero-bg"></div>
+            <img class="hero-gif" src="images/background.webp" alt="Industrial Background" loading="lazy">
+            <div class="hero-animation"></div>
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1 id="pumpsCompressorsHeroTitle">راهکارهای پمپ و کمپرسور آماده استقرار</h1>
+                        <p id="pumpsCompressorsHeroSubtitle">از پمپ‌های سانتریفیوژ و تقویتی تا کمپرسورهای پیچ، پیستونی و سیستم‌های وکیوم؛ همه با نصب و سرویس ارائه می‌شوند.</p>
+
+                        <div class="quote-box">
+                            <p id="pumpsCompressorsHeroQuote">هر پروژه با اندازه‌گیری دبی، مستندسازی سه‌زبانه و برنامه نگهداری دوره‌ای تحویل می‌شود.</p>
+                        </div>
+
+                        <div class="hero-buttons">
+                            <button class="btn-primary" onclick="showSalesContactModal()" data-translate="start-cooperation">شروع همکاری</button>
+                            <button class="btn-secondary" id="viewPumpsCompressorsButton">مشاهده فهرست تجهیزات</button>
+                        </div>
+                    </div>
+
+                    <div class="hero-search">
+                        <h3 data-translate="search-title">دستگاه یا کالای مورد نظرتان را بین دسته بندی صنعتی</h3>
+                        <p data-translate="search-subtitle">جستجو کنید و بهترین ها را بیابید.</p>
+
+                        <div class="search-box">
+                            <input type="text" id="searchInput" data-translate-placeholder="search-placeholder" placeholder="دنبال چه محصولی هستید؟" aria-label="جستجو برای محصولات">
+                            <button onclick="performSearch()" data-translate="search-btn" aria-label="جستجو">جستجو</button>
+                        </div>
+
+                        <div class="popular-categories" data-translate="popular-categories">دسته‌بندی‌های محبوب:</div>
+                        <div class="category-tags">
+                            <span class="category-tag" onclick="performSearch('پمپ سانتریفیوژ')" role="button" tabindex="0" onkeypress="if(event.key==='Enter') performSearch('پمپ سانتریفیوژ')">پمپ سانتریفیوژ</span>
+                            <span class="category-tag" onclick="performSearch('کمپرسور پیچ')" role="button" tabindex="0" onkeypress="if(event.key==='Enter') performSearch('کمپرسور پیچ')">کمپرسور پیچ</span>
+                            <span class="category-tag" onclick="performSearch('سیستم وکیوم')" role="button" tabindex="0" onkeypress="if(event.key==='Enter') performSearch('سیستم وکیوم')">سیستم وکیوم</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="category-overview pumps-compressors-overview">
+            <div class="container">
+                <div class="section-title">
+                    <h2 id="pumpsCompressorsHighlightsTitle">چرا پمپ و کمپرسور را با صنعتچی اجرا کنیم؟</h2>
+                    <p id="pumpsCompressorsHighlightsSubtitle">از تحلیل دبی و فشار تا انتخاب متریال، هر سامانه با گارانتی عملکرد و پشتیبانی میدانی ارائه می‌شود.</p>
+                </div>
+                <div id="pumpsCompressorsHighlightsGrid" class="features-grid"></div>
+            </div>
+        </section>
+
+        <section id="pumps-compressors-categories" class="categories pumps-compressors-categories">
+            <div class="container">
+                <div class="section-title">
+                    <h2 id="pumpsCompressorsCategoriesTitle">گروه‌های اصلی تجهیزات پمپ و کمپرسور</h2>
+                    <p id="pumpsCompressorsCategoriesSubtitle">براساس نوع سیال و کاربری خود از پمپ‌های آب، کمپرسورهای هوا، سیستم‌های وکیوم یا قطعات یدکی انتخاب کنید.</p>
+                </div>
+                <div id="pumpsCompressorsCategoriesGrid" class="categories-grid"></div>
+            </div>
+        </section>
+
+        <section class="second-hand-overview pumps-compressors-assurance">
+            <div class="container">
+                <div class="section-title">
+                    <h2 id="pumpsCompressorsAssuranceTitle">خدمات همراه سامانه‌های پمپ و کمپرسور</h2>
+                    <p id="pumpsCompressorsAssuranceSubtitle">از تست عملکرد و تنظیمات VFD تا آموزش اپراتور، تیم صنعتچی کنار شماست.</p>
+                </div>
+                <div id="pumpsCompressorsAssuranceGrid" class="features-grid"></div>
+            </div>
+        </section>
+
+        <section id="pumps-compressors-process" class="second-hand-process pumps-compressors-process">
+            <div class="container">
+                <div class="section-title">
+                    <h2 id="pumpsCompressorsProcessTitle">روند اجرای پروژه پمپ و کمپرسور</h2>
+                    <p id="pumpsCompressorsProcessSubtitle">چهار گام مهندسی از ارزیابی سایت تا تحویل مستندات نگهداری را با ما طی کنید.</p>
+                </div>
+                <div id="pumpsCompressorsProcessTimeline" class="process-grid"></div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <h2 data-translate="cta-title">قول ما در صنعتچی ساده است</h2>
+                <p data-translate="cta-subtitle">شما چشم‌انداز را مشخص کنید، ما تمام مسیر تحقق آن را هموار می‌سازیم</p>
+                <div class="cta-buttons">
+                    <button class="btn-primary" onclick="showSalesContactModal()" data-translate="start-cooperation">شروع همکاری</button>
+                    <button class="btn-secondary" onclick="showContactModal()" data-translate="free-consultation">مشاوره رایگان</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="why-aiv" class="why-aiv">
+            <div class="container">
+                <div class="section-title">
+                    <h2 data-translate="why-title">چرا صنعتچی؟</h2>
+                    <p data-translate="why-subtitle">مزایای همکاری با گروه چشم‌انداز صنعتچی </p>
+                </div>
+
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <span class="feature-icon">✓</span>
+                        <h3 data-translate="why-trust">اعتماد مشتریان</h3>
+                        <p data-translate="why-trust-desc">سابقه درخشان ما در اجرای موفق پروژه‌ها، بزرگترین تضمین برای آرامش خاطر شماست.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <span class="feature-icon">💰</span>
+                        <h3 data-translate="why-transparency">شفافیت و قیمت رقابتی</h3>
+                        <p data-translate="why-transparency-desc">ما با ارائه تحلیل دقیق هزینه‌ها و قیمت‌های رقابتی، فرآیند تصمیم‌گیری را برای شما آسان و شفاف می‌سازیم.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <span class="feature-icon">⏰</span>
+                        <h3 data-translate="why-timeline">تعهد به زمان‌بندی</h3>
+                        <p data-translate="why-timeline-desc">ما برای وقت شما ارزش قائلیم و متعهد به تکمیل و تحویل پروژه‌ها در کوتاه‌ترین زمان ممکن هستیم.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <span class="feature-icon">🌍</span>
+                        <h3 data-translate="why-network">شبکه تامین جهانی</h3>
+                        <p data-translate="why-network-desc">با پیگیری مستمر و ارتباط مستقیم با معتبرترین تامین‌کنندگان جهانی، کیفیت و اصالت تجهیزات شما را تضمین می‌کنیم.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="images/logo.png" alt="لوگوی صنعتچی Industrial Vision">
+                    </div>
+                    <p class="footer-description" data-translate="footer-description">
+                        گروه چشم‌انداز صنعتی صنعتچی با سال‌ها تجربه در زمینه ارائه راهکارهای صنعتی، آماده همکاری با شماست. ما از ایده تا اجرا، تمام مراحل پروژه‌های صنعتی شما را مدیریت می‌کنیم.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" title="فیس‌بوک" aria-label="فیس‌بوک">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" title="توییتر" aria-label="توییتر">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" title="اینستاگرام" aria-label="اینستاگرام">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" title="لینکدین" aria-label="لینکدین">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3 data-translate="newsletter-title">خبرنامه صنعتچی</h3>
+                    <p data-translate="newsletter-description">برای دریافت جدیدترین به‌روزرسانی‌ها و پیشنهادهای ویژه عضو شوید.</p>
+                    <form class="newsletter-form" action="/newsletter-subscribe.php" method="POST">
+                        <input type="email" name="newsletter_email" placeholder="ایمیل خود را وارد کنید" aria-label="ایمیل" data-translate-placeholder="newsletter-placeholder">
+                        <button type="submit" data-translate="subscribe">عضویت</button>
+                    </form>
+                </div>
+
+                <div class="footer-section offices">
+                    <h3 data-translate="contact">تماس با ما</h3>
+                    <div class="office-box">
+                        <div class="footer-contact">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span data-translate="afghanistan-address">افغانستان</span>
+                        </div>
+                        <div class="footer-contact">
+                            <i class="fas fa-phone"></i>
+                            <div class="phone-container">
+                                <a href="tel:+93786000424" class="phone-link" data-translate="afghanistan-phone">+93 786 000 424</a>
+                                <a href="https://wa.me/93786000424" target="_blank" class="whatsapp-link" title="WhatsApp" aria-label="واتساپ">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="footer-contact">
+                            <i class="fas fa-envelope"></i>
+                            <span>info@sanaatchi.com</span>
+                        </div>
+                        <div class="footer-contact">
+                            <i class="fas fa-clock"></i>
+                            <span data-translate="afghanistan-hours">شنبه تا پنج‌شنبه: ۹:۰۰ تا ۱۸:۰۰</span>
+                        </div>
+                    </div>
+
+                    <div class="office-box">
+                        <div class="footer-contact">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span data-translate="china-address">چین</span>
+                        </div>
+                        <div class="footer-contact">
+                            <i class="fas fa-phone"></i>
+                            <div class="phone-container">
+                                <a href="tel:+8615951716867" class="phone-link" data-translate="china-phone">+86 159 5171 6867</a>
+                                <a href="https://wa.me/8615951716867" target="_blank" class="whatsapp-link" title="WhatsApp" aria-label="واتساپ">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="footer-contact">
+                            <i class="fas fa-envelope"></i>
+                            <span>china@sanaatchi.com</span>
+                        </div>
+                        <div class="footer-contact">
+                            <i class="fas fa-clock"></i>
+                            <span data-translate="china-hours">شنبه تا جمعه: ۹:۰۰ تا ۱۸:۰۰</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p data-translate="copyright">&copy; 2024 صنعتچی Industrial Vision. تمامی حقوق محفوظ است.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="contactModal" class="modal" role="dialog" aria-labelledby="contactModalTitle" aria-hidden="true">
+        <div class="modal-content contact-modal-content">
+            <span class="modal-close" onclick="closeContactModal()" aria-label="بستن">&times;</span>
+            <div id="contactModalContent"></div>
+        </div>
+    </div>
+
+    <div id="salesContactModal" class="modal" role="dialog" aria-labelledby="salesContactModalTitle" aria-hidden="true">
+        <div class="modal-content sales-contact-modal-content">
+            <span class="modal-close" onclick="closeSalesContactModal()" aria-label="بستن">&times;</span>
+            <div id="salesContactModalContent"></div>
+        </div>
+    </div>
+
+    <div id="searchResultModal" class="modal" role="dialog" aria-labelledby="searchResultModalTitle" aria-hidden="true">
+        <div class="modal-content search-result-modal-content">
+            <span class="modal-close" onclick="closeSearchResultModal()" aria-label="بستن">&times;</span>
+            <div id="searchResultModalContent"></div>
+        </div>
+    </div>
+
+    <div id="equipmentModal" class="modal" role="dialog" aria-labelledby="equipmentModalTitle" aria-hidden="true">
+        <div class="equipment-modal-content">
+            <span class="modal-close" onclick="closeEquipmentModal()" aria-label="بستن">&times;</span>
+            <div id="equipmentModalContent"></div>
+        </div>
+    </div>
+
+    <script src="js/script.js" defer></script>
+    <script src="js/pumps-compressors.js" defer></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        if (typeof publishEquipmentStructuredData === 'function') {
+          publishEquipmentStructuredData('pumps-compressors', {
+            collectionName: 'Sanaatchi Pumps & Compressors Library',
+            collectionDescription: 'Industrial pumps, blowers and compressed air systems sourced and engineered for Afghan factories and utilities.',
+            pageUrl: '/pumps-compressors.html',
+            breadcrumbs: [
+              { name: 'Home', url: '/' },
+              { name: 'Pumps & Compressors', url: '/pumps-compressors.html' }
+            ]
+          });
+        }
+      });
+    </script>
+</body>
+</html>

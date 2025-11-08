@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>خطوط تولید کالاهای مصرفی | صنعتچی</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <meta name="description" content="طراحی و اجرای خطوط تولید شوینده، محصولات بهداشتی شخصی و آرایشی با استانداردهای جهانی برای بازار افغانستان.">
+    <meta name="keywords" content="خط تولید شوینده, خط تولید محصولات آرایشی, صنعتچی, تولید کالاهای مصرفی افغانستان">
+    <meta name="author" content="Sanaatchi Industrial Vision">
+    <meta property="og:title" content="خطوط تولید کالاهای مصرفی | صنعتچی">
+    <meta property="og:description" content="راه‌اندازی خطوط تولید شوینده، بهداشتی و آرایشی با تمرکز بر کیفیت و انطباق مقررات.">
+    <meta property="og:image" content="images/aiv-og-image.jpg">
+    <meta property="og:url" content="https://sanaatchi.com/production-lines/consumer-goods">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-group-id="consumer-goods-lines">
+    <a href="#main-content" class="skip-link">پرش به محتوای اصلی</a>
+
+    <header class="header">
+        <div class="container">
+            <div class="main-header">
+                <img src="images/logo.png" alt="لوگوی صنعتچی Industrial Vision" class="logo">
+
+                <nav class="nav" id="mainNav">
+                    <a href="index.html#hero" onclick="return goToIndex(event, 'hero')" data-translate="home">خانه</a>
+                    <a href="index.html#services" onclick="return goToIndex(event, 'services')" data-translate="services">خدمات</a>
+                    <a href="index.html#why-aiv" onclick="return goToIndex(event, 'why-aiv')" data-translate="about">درباره ما</a>
+                    <a href="projects.html" data-translate="projects">پروژه های تحت کار</a>
+                    <a href="cargo.html" data-translate="nav_cargo">کارگو و حمل‌ونقل</a>
+                    <a href="index.html#footer" onclick="return goToIndex(event, 'footer')" data-translate="contact">تماس با ما</a>
+                </nav>
+
+                <div class="header-actions">
+                    <select class="language-switcher" onchange="switchLanguage(this.value)" aria-label="تغییر زبان">
+                        <option value="fa">فارسی (fa)</option>
+                        <option value="en">English (en)</option>
+                        <option value="ps">پشتو (ps)</option>
+                    </select>
+                    <button class="cta-button" onclick="showContactModal()" aria-label="درخواست مشاوره رایگان" data-translate="free-consultation">مشاوره رایگان</button>
+                    <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="منوی موبایل">☰</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section id="hero" class="hero hero-with-search category-hero">
+            <div class="hero-bg"></div>
+            <img class="hero-gif" src="images/background.webp" alt="Factory Animation" loading="lazy">
+            <div class="hero-animation"></div>
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1 id="categoryHeroTitle">خطوط تولید کالاهای مصرفی</h1>
+                        <p id="categoryHeroSubtitle">راهکارهای تولید شوینده، محصولات بهداشتی و آرایشی برای بازار افغانستان.</p>
+
+                        <div class="quote-box">
+                            <p id="categoryHeroQuote">محصولات بهداشتی و آرایشی شما با فرمولاسیون دقیق و خطوط استاندارد جهانی تولید می‌شوند.</p>
+                        </div>
+
+                        <div class="hero-buttons">
+                            <button class="btn-primary" onclick="showSalesContactModal()" data-translate="start-cooperation">شروع همکاری</button>
+                            <a href="production-lines.html" class="btn-secondary" id="backToAllLines">بازگشت به تمام خطوط تولید</a>
+                        </div>
+                    </div>
+
+                    <div class="hero-search">
+                        <h3 data-translate="search-title">دستگاه یا کالای مورد نظرتان را بین دسته بندی صنعتی</h3>
+                        <p data-translate="search-subtitle">جستجو کنید و بهترین ها را بیابید.</p>
+
+                        <div class="search-box">
+                            <input type="text" id="searchInput" data-translate-placeholder="search-placeholder" placeholder="دنبال چه محصولی هستید؟" aria-label="جستجو برای محصولات">
+                            <button onclick="performSearch()" data-translate="search-btn" aria-label="جستجو">جستجو</button>
+                        </div>
+
+                        <div class="popular-categories" data-translate="popular-categories">دسته‌بندی‌های محبوب:</div>
+                        <div class="category-tags">
+                            <span class="category-tag" onclick="performSearch('بازیافت پلاستیک')" data-translate="cat-plastic" role="button" tabindex="0" onkeypress="if(event.key==='Enter') performSearch('بازیافت پلاستیک')">بازیافت پلاستیک</span>
+                            <span class="category-tag" onclick="performSearch('مصالح ساختمانی')" data-translate="cat-construction" role="button" tabindex="0" onkeypress="if(event.key==='Enter') performSearch('مصالح ساختمانی')">مصالح ساختمانی</span>
+                            <span class="category-tag" onclick="performSearch('چاپ')" data-translate="cat-printing" role="button" tabindex="0" onkeypress="if(event.key==='Enter') performSearch('چاپ')">چاپ</span>
+                            <span class="category-tag" onclick="performSearch('متالورژی')" data-translate="cat-metallurgy" role="button" tabindex="0" onkeypress="if(event.key==='Enter') performSearch('متالورژی')">متالورژی</span>
+                            <span class="category-tag" onclick="performSearch('خط تولید')" data-translate="cat-production" role="button" tabindex="0" onkeypress="if(event.key==='Enter') performSearch('خط تولید')">خط تولید</span>
+                            <span class="category-tag" onclick="performSearch('الکترونیکی')" data-translate="cat-electronic" role="button" tabindex="0" onkeypress="if(event.key==='Enter') performSearch('الکترونیکی')">الکترونیکی</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="category-overview">
+            <div class="container">
+                <div class="section-title">
+                    <h2 id="categoryHighlightsTitle">مزیت‌های کلیدی این دسته</h2>
+                    <p id="categoryHighlightsSubtitle">تجربه صنعتچی در طراحی و اجرای این خطوط را مرور کنید.</p>
+                </div>
+                <div id="categoryHighlightsGrid" class="features-grid"></div>
+            </div>
+        </section>
+
+        <section id="category-lines" class="category-lines">
+            <div class="container">
+                <div class="section-title">
+                    <h2 id="categoryLinesHeading">خطوط تخصصی آماده اجرا</h2>
+                    <p id="categoryLinesDescription">فایل‌های فنی و توضیحات هر خط تولید در دسترس است.</p>
+                </div>
+                <div id="categoryLinesGrid" class="equipment-grid"></div>
+            </div>
+        </section>
+
+        <section class="related-categories">
+            <div class="container">
+                <div class="section-title">
+                    <h2 id="relatedCategoriesTitle">دسته‌های مرتبط</h2>
+                    <p id="relatedCategoriesSubtitle">سایر حوزه‌های صنعتی را که توسط صنعتچی پوشش داده می‌شود بررسی کنید.</p>
+                </div>
+                <div id="relatedCategoriesGrid" class="categories-grid"></div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <h2 data-translate="cta-title">قول ما در صنعتچی ساده است</h2>
+                <p data-translate="cta-subtitle">شما چشم‌انداز را مشخص کنید، ما تمام مسیر تحقق آن را هموار می‌سازیم</p>
+                <div class="cta-buttons">
+                    <button class="btn-primary" onclick="showSalesContactModal()" data-translate="start-cooperation">شروع همکاری</button>
+                    <button class="btn-secondary" onclick="showContactModal()" data-translate="free-consultation">مشاوره رایگان</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="why-aiv" class="why-aiv">
+            <div class="container">
+                <div class="section-title">
+                    <h2 data-translate="why-title">چرا صنعتچی؟</h2>
+                    <p data-translate="why-subtitle">مزایای همکاری با گروه چشم‌انداز صنعتچی </p>
+                </div>
+
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <span class="feature-icon">✓</span>
+                        <h3 data-translate="why-trust">اعتماد مشتریان</h3>
+                        <p data-translate="why-trust-desc">سابقه درخشان ما در اجرای موفق پروژه‌ها، بزرگترین تضمین برای آرامش خاطر شماست.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <span class="feature-icon">💰</span>
+                        <h3 data-translate="why-transparency">شفافیت و قیمت رقابتی</h3>
+                        <p data-translate="why-transparency-desc">ما با ارائه تحلیل دقیق هزینه‌ها و قیمت‌های رقابتی، فرآیند تصمیم‌گیری را برای شما آسان و شفاف می‌سازیم.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <span class="feature-icon">⏰</span>
+                        <h3 data-translate="why-timeline">تعهد به زمان‌بندی</h3>
+                        <p data-translate="why-timeline-desc">ما برای وقت شما ارزش قائلیم و متعهد به تکمیل و تحویل پروژه‌ها در کوتاه‌ترین زمان ممکن هستیم.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <span class="feature-icon">🌍</span>
+                        <h3 data-translate="why-network">شبکه تامین جهانی</h3>
+                        <p data-translate="why-network-desc">با پیگیری مستمر و ارتباط مستقیم با معتبرترین تامین‌کنندگان جهانی، کیفیت و اصالت تجهیزات شما را تضمین می‌کنیم.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="images/logo.png" alt="لوگوی صنعتچی Industrial Vision">
+                    </div>
+                    <p class="footer-description" data-translate="footer-description">
+                        گروه چشم‌انداز صنعتی صنعتچی با سال‌ها تجربه در زمینه ارائه راهکارهای صنعتی، آماده همکاری با شماست. ما از ایده تا اجرا، تمام مراحل پروژه‌های صنعتی شما را مدیریت می‌کنیم.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" title="فیس‌بوک" aria-label="فیس‌بوک">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" title="توییتر" aria-label="توییتر">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" title="اینستاگرام" aria-label="اینستاگرام">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" title="لینکدین" aria-label="لینکدین">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" title="یوتیوب" aria-label="یوتیوب">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="#" title="تلگرام" aria-label="تلگرام">
+                            <i class="fab fa-telegram-plane"></i>
+                        </a>
+                    </div>
+                    <div class="footer-newsletter">
+                        <h4 data-translate="newsletter-title">عضویت در خبرنامه</h4>
+                        <p data-translate="newsletter-subtitle">برای دریافت آخرین اخبار و به‌روزرسانی‌ها عضو خبرنامه ما شوید.</p>
+                        <form class="newsletter-form" id="newsletterForm" action="/newsletter-subscribe.php" method="POST">
+                            <input type="email" name="newsletter_email" data-translate-placeholder="newsletter-placeholder" placeholder="آدرس ایمیل خود را وارد کنید" aria-label="آدرس ایمیل">
+                            <button type="submit" data-translate="newsletter-btn">عضویت</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3 data-translate="afghanistan-office">دفتر افغانستان</h3>
+                    <div class="office-box">
+                        <h4 data-translate="afghanistan-address">کابل، افغانستان</h4>
+                        <div class="footer-contact">
+                            <i class="fas fa-phone"></i>
+                            <div class="phone-container">
+                                <a href="tel:+93779819820" class="phone-link" data-translate="afghanistan-phone">+93 779 819 820</a>
+                                <a href="https://wa.me/93779819820" class="whatsapp-link" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                            </div>
+                        </div>
+                        <div class="footer-contact">
+                            <i class="fas fa-clock"></i>
+                            <span data-translate="afghanistan-hours">شنبه تا پنجشنبه: ۹:۰۰ تا ۱۸:۰۰</span>
+                        </div>
+                    </div>
+
+                    <h3 data-translate="china-office">دفتر چین</h3>
+                    <div class="office-box">
+                        <h4 data-translate="china-address">گوانگژو، چین</h4>
+                        <div class="footer-contact">
+                            <i class="fas fa-phone"></i>
+                            <div class="phone-container">
+                                <a href="tel:+8613711172187" class="phone-link" data-translate="china-phone">+86 137 1117 2187</a>
+                                <a href="https://wa.me/8613711172187" class="whatsapp-link" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                            </div>
+                        </div>
+                        <div class="footer-contact">
+                            <i class="fas fa-clock"></i>
+                            <span data-translate="china-hours">دوشنبه تا جمعه: ۹:۰۰ تا ۱۸:۰۰</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3 data-translate="quick-links">لینک های سریع</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html#services" data-translate="services">خدمات</a></li>
+                        <li><a href="projects.html" data-translate="projects">پروژه ها</a></li>
+                        <li><a href="cargo.html" data-translate="nav_cargo">کارگو و حمل‌ونقل</a></li>
+                        <li><a href="index.html#categories" data-translate="categories">دسته‌بندی‌ها</a></li>
+                        <li><a href="index.html#footer" data-translate="contact">تماس با ما</a></li>
+                    </ul>
+
+                    <h3 data-translate="newsletter">با ما همراه باشید</h3>
+                    <p data-translate="newsletter-desc">برای دریافت پیشنهادهای ویژه و مشاوره‌های تخصصی در خبرنامه ما عضو شوید.</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> صنعتچی Industrial Vision. <span data-translate="all-rights">تمام حقوق محفوظ است.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <div id="contactModal" class="modal" role="dialog" aria-labelledby="contactModalTitle" aria-hidden="true">
+        <div class="modal-content contact-modal-content">
+            <span class="modal-close" onclick="closeContactModal()" aria-label="بستن">&times;</span>
+            <div id="contactModalContent"></div>
+        </div>
+    </div>
+
+    <div id="salesContactModal" class="modal" role="dialog" aria-labelledby="salesContactModalTitle" aria-hidden="true">
+        <div class="modal-content sales-contact-modal-content">
+            <span class="modal-close" onclick="closeSalesContactModal()" aria-label="بستن">&times;</span>
+            <div id="salesContactModalContent"></div>
+        </div>
+    </div>
+
+    <div id="searchResultModal" class="modal" role="dialog" aria-labelledby="searchResultModalTitle" aria-hidden="true">
+        <div class="modal-content search-result-modal-content">
+            <span class="modal-close" onclick="closeSearchResultModal()" aria-label="بستن">&times;</span>
+            <div id="searchResultModalContent"></div>
+        </div>
+    </div>
+
+    <div id="equipmentModal" class="modal" role="dialog" aria-labelledby="equipmentModalTitle" aria-hidden="true">
+        <div class="equipment-modal-content">
+            <span class="modal-close" onclick="closeEquipmentModal()" aria-label="بستن">&times;</span>
+            <div id="equipmentModalContent"></div>
+        </div>
+    </div>
+
+    <script src="js/script.js" defer></script>
+    <script src="js/production-lines.js" defer></script>
+    <script src="js/production-line-category.js" defer></script>
+</body>
+</html>
