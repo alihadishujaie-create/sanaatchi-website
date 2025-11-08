@@ -5582,6 +5582,53 @@ function formatPhoneNumberForHref(phoneNumber) {
     return phoneNumber.replace(/[^0-9+]/g, '');
 }
 
+function localizeDigits(value, lang) {
+    if (!value) {
+        return value;
+    }
+
+    const englishToPersianMap = {
+        '0': '۰',
+        '1': '۱',
+        '2': '۲',
+        '3': '۳',
+        '4': '۴',
+        '5': '۵',
+        '6': '۶',
+        '7': '۷',
+        '8': '۸',
+        '9': '۹'
+    };
+    const localizedToEnglishMap = {
+        '۰': '0',
+        '۱': '1',
+        '۲': '2',
+        '۳': '3',
+        '۴': '4',
+        '۵': '5',
+        '۶': '6',
+        '۷': '7',
+        '۸': '8',
+        '۹': '9',
+        '٠': '0',
+        '١': '1',
+        '٢': '2',
+        '٣': '3',
+        '٤': '4',
+        '٥': '5',
+        '٦': '6',
+        '٧': '7',
+        '٨': '8',
+        '٩': '9'
+    };
+
+    if (lang === 'fa' || lang === 'ps') {
+        return value.replace(/[0-9]/g, digit => englishToPersianMap[digit]);
+    }
+
+    return value.replace(/[۰-۹٠-٩]/g, digit => localizedToEnglishMap[digit] || digit);
+}
+
 // Function to get WhatsApp URL from phone number
 function getWhatsAppUrl(phoneNumber) {
     // Remove all non-digit characters including the +
@@ -5670,16 +5717,18 @@ function updateTranslations(lang) {
     document.querySelectorAll('[data-translate]').forEach(element => {
         const key = element.getAttribute('data-translate');
         if (key === 'afghanistan-phone' && translations[key] && translations[key][lang]) {
-            element.textContent = translations[key][lang];
+            const phoneDisplay = localizeDigits(translations[key][lang], lang);
+            const phoneForLinks = localizeDigits(translations[key].en || translations[key][lang], 'en');
+            element.textContent = phoneDisplay;
             // Update href for phone link
             const phoneLink = element.closest('.phone-container').querySelector('.phone-link');
             if (phoneLink) {
-                phoneLink.setAttribute('href', `tel:${formatPhoneNumberForHref(translations[key][lang])}`);
+                phoneLink.setAttribute('href', `tel:${formatPhoneNumberForHref(phoneForLinks)}`);
             }
             // Update href for WhatsApp link
             const whatsappLink = element.closest('.phone-container').querySelector('.whatsapp-link');
             if (whatsappLink) {
-                whatsappLink.setAttribute('href', getWhatsAppUrl(translations[key][lang]));
+                whatsappLink.setAttribute('href', getWhatsAppUrl(phoneForLinks));
             }
         }
         if (key === 'china-phone' && translations[key] && translations[key][lang]) {
@@ -5936,17 +5985,25 @@ function closeContactModal() {
 function showSalesContactModal() {
     const modal = document.getElementById('salesContactModal');
     const modalContent = document.getElementById('salesContactModalContent');
-    
-    const title = currentLanguage === 'fa' ? 'تماس با بخش فروش' : 
+
+    const title = currentLanguage === 'fa' ? 'تماس با بخش فروش' :
                  currentLanguage === 'ps' ? 'د پلور برخې سره اړیکه' : 'Contact Sales Department';
-    const subtitle = currentLanguage === 'fa' ? 'برای شروع همکاری با ما، لطفاً با یکی از دفاتر ما تماس بگیرید' : 
+    const subtitle = currentLanguage === 'fa' ? 'برای شروع همکاری با ما، لطفاً با یکی از دفاتر ما تماس بگیرید' :
                     currentLanguage === 'ps' ? 'د موږ سره د همکاري پیل لپاره، مهرباني کړه د موږ د یو دفتر سره اړیکه ونیسئ' : 'To start cooperation with us, please contact one of our offices';
-    const afghanistanOffice = currentLanguage === 'fa' ? 'دفتر افغانستان' : 
+    const afghanistanOffice = currentLanguage === 'fa' ? 'دفتر افغانستان' :
                              currentLanguage === 'ps' ? 'د افغانستان دفتر' : 'Afghanistan Office';
-    const chinaOffice = currentLanguage === 'fa' ? 'دفتر چین' : 
+    const chinaOffice = currentLanguage === 'fa' ? 'دفتر چین' :
                         currentLanguage === 'ps' ? 'د چین دفتر' : 'China Office';
-    const backText = currentLanguage === 'fa' ? 'بازگشت' : 
+    const backText = currentLanguage === 'fa' ? 'بازگشت' :
                     currentLanguage === 'ps' ? 'بیرته' : 'Back';
+
+    const afghanistanPhoneTranslation = translations['afghanistan-phone'] || {};
+    const afghanistanPhoneBase = afghanistanPhoneTranslation.en || '+93 779 819 820';
+    const afghanistanPhoneForLinks = localizeDigits(afghanistanPhoneBase, 'en');
+    const afghanistanPhoneDisplaySource = afghanistanPhoneTranslation[currentLanguage] || afghanistanPhoneBase;
+    const afghanistanPhoneDisplay = localizeDigits(afghanistanPhoneDisplaySource, currentLanguage);
+    const afghanistanPhoneHref = `tel:${formatPhoneNumberForHref(afghanistanPhoneForLinks)}`;
+    const afghanistanWhatsAppUrl = getWhatsAppUrl(afghanistanPhoneForLinks);
 
     const chinaPhoneTranslation = translations['china-phone'] || {};
     const chinaPhone = chinaPhoneTranslation[currentLanguage] || chinaPhoneTranslation.en || '+86 159 5171 6867';
@@ -5964,8 +6021,8 @@ function showSalesContactModal() {
                 <div class="contact-item">
                     <i class="fas fa-phone"></i>
                     <div class="phone-container">
-                        <a href="tel:+93779819820" class="phone-link">+۹۳ ۷۷۹ ۸۱۹ ۸۲۰</a>
-                        <a href="https://wa.me/93779819820" target="_blank" class="whatsapp-link" title="WhatsApp" aria-label="واتساپ">
+                        <a href="${afghanistanPhoneHref}" class="phone-link">${afghanistanPhoneDisplay}</a>
+                        <a href="${afghanistanWhatsAppUrl}" target="_blank" class="whatsapp-link" title="WhatsApp" aria-label="واتساپ">
                             <i class="fab fa-whatsapp"></i>
                         </a>
                     </div>
