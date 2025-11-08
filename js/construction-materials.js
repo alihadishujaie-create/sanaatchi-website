@@ -230,6 +230,317 @@
         }
     ];
 
+    const defaultInventory = [
+        {
+            name: {
+                fa: 'قالب‌گیری بلوک بتنی',
+                en: 'Concrete Block Molding Station',
+                ps: 'د کانکریټ بلاک قالب جوړولو سټېشن'
+            },
+            description: {
+                fa: 'پرس هیدرولیک، قالب‌های استاندارد و سیستم تغذیه مواد برای تولید بلوک توپر و توخالی.',
+                en: 'Hydraulic press, standard mould sets and aggregate feed system for solid and hollow block production.',
+                ps: 'هایډرولیک پرس، معیاري قالبونه او د موادو تغذیه سیستم د کلک او تشو بلاکونو تولید لپاره.'
+            },
+            pdfUrl: 'pdfs/construction-materials/concrete-block/block-molding.pdf',
+            category: 'concrete-block'
+        },
+        {
+            name: {
+                fa: 'عمل‌آوری و بخاردهی بلوک',
+                en: 'Concrete Block Curing System',
+                ps: 'د کانکریټ بلاک د عمل آوري سیستم'
+            },
+            description: {
+                fa: 'تونل عمل‌آوری با کنترل رطوبت و دما برای تسریع مقاومت نهایی بلوک.',
+                en: 'Curing tunnel with humidity and temperature control to accelerate final block strength.',
+                ps: 'د رطوبت او تودوخې کنټرول لرونکی تونل چې د بلاک وروستۍ مقاومت چټکوي.'
+            },
+            pdfUrl: 'pdfs/construction-materials/concrete-block/block-curing.pdf',
+            category: 'concrete-block'
+        },
+        {
+            name: {
+                fa: 'سیستم پالت‌گذاری و بسته‌بندی بلوک',
+                en: 'Concrete Block Palletising Line',
+                ps: 'د کانکریټ بلاک د پالت کولو لاین'
+            },
+            description: {
+                fa: 'انتقال، چیدمان و تسمه‌پیچی خودکار برای آماده‌سازی حمل بلوک.',
+                en: 'Automated transfer, stacking and strapping for dispatch-ready block bundles.',
+                ps: 'د بلاکونو د لېږلو لپاره اتومات انتقال، څپېړل او تسمه کول.'
+            },
+            pdfUrl: 'pdfs/construction-materials/concrete-block/block-palletizing.pdf',
+            category: 'concrete-block'
+        },
+        {
+            name: {
+                fa: 'بچینگ و میکسینگ آسفالت',
+                en: 'Asphalt Mixing Plant',
+                ps: 'د اسفالټ د مخلوط فابریکه'
+            },
+            description: {
+                fa: 'بچینگ گرم با سیستم توزین دقیق، کنترل PLC و فیلتر کیسه‌ای برای کاهش آلودگی.',
+                en: 'Hot-mix batching plant with precise weighing, PLC control and baghouse filtration.',
+                ps: 'د دقیق وزن، PLC کنټرول او د دوړو د فلټر کولو سیستم لرونکې ګرمې مخلوط فابریکه.'
+            },
+            pdfUrl: 'pdfs/construction-materials/asphalt/asphalt-mixing.pdf',
+            category: 'asphalt'
+        },
+        {
+            name: {
+                fa: 'فینیشر و آسفالت‌ریز',
+                en: 'Asphalt Paver',
+                ps: 'د اسفالټ ایښودلو ماشین'
+            },
+            description: {
+                fa: 'فینیشر زنجیری با سیستم توزیع یکنواخت و کنترل ضخامت لایه آسفالت.',
+                en: 'Tracked asphalt paver with uniform distribution and layer thickness control.',
+                ps: 'د زنځیر لرونکی اسفالټ فینیشر چې یکنواخت توزیع او د طبقي ضخامت کنټرول لري.'
+            },
+            pdfUrl: 'pdfs/construction-materials/asphalt/asphalt-paving.pdf',
+            category: 'asphalt'
+        },
+        {
+            name: {
+                fa: 'غلتک فشرده‌سازی آسفالت',
+                en: 'Asphalt Compaction Roller',
+                ps: 'د اسفالټ کمپکشن رولر'
+            },
+            description: {
+                fa: 'غلتک ویبره‌ای دو درام با سیستم پاشش آب و مانیتورینگ تراکم.',
+                en: 'Dual-drum vibratory roller with water spray and compaction monitoring.',
+                ps: 'دوه ډرم لرونکی ویبرېشن رولر د اوبو د شیندلو او تراکم څارنې سره.'
+            },
+            pdfUrl: 'pdfs/construction-materials/asphalt/asphalt-compacting.pdf',
+            category: 'asphalt'
+        },
+        {
+            name: {
+                fa: 'بیل مکانیکی ۲۰ تنی',
+                en: '20-Ton Crawler Excavator',
+                ps: '۲۰ ټنه چینجي اکسکاویټر'
+            },
+            description: {
+                fa: 'بیل مکانیکی استاندارد با موتور کم‌مصرف، سیستم هیدرولیک پیشرفته و کابین محافظ.',
+                en: 'Standard crawler excavator featuring fuel-efficient engine, advanced hydraulics and ROPS cabin.',
+                ps: 'معیاري چینجي اکسکاویټر د کم مصرف انجن، پرمختللي هایدرولیک او خوندي کابین سره.'
+            },
+            pdfUrl: 'pdfs/construction-materials/excavator/excavator.pdf',
+            category: 'excavator'
+        },
+        {
+            name: {
+                fa: 'مینی بیل مکانیکی',
+                en: 'Mini Excavator 5-Ton',
+                ps: '۵ ټنه میني اکسکاویټر'
+            },
+            description: {
+                fa: 'مناسب برای پروژه‌های شهری با شعاع چرخش کم، قابلیت حمل آسان و ابزار متنوع.',
+                en: 'Compact excavator with tight swing radius, easy transport and versatile attachments for urban jobs.',
+                ps: 'کمپکټ اکسکاویټر چې کوچنی تاو، اسانه لېږد او بېلابېل ملحقات د ښاري پروژو لپاره لري.'
+            },
+            pdfUrl: 'pdfs/construction-materials/excavator/mini-excavator.pdf',
+            category: 'excavator'
+        },
+        {
+            name: {
+                fa: 'کیت و قطعات بیل مکانیکی',
+                en: 'Excavator Wear Parts Kit',
+                ps: 'د اکسکاویټر د استهلاکي پرزو کټ'
+            },
+            description: {
+                fa: 'ست کامل بوش، باکت، دندانه و شیلنگ هیدرولیک برای نگهداری دوره‌ای.',
+                en: 'Complete kit of bushes, buckets, teeth and hydraulic hoses for planned maintenance.',
+                ps: 'د بوشونو، باکت، غاښونو او هایدرولیک نلونو بشپړ کټ د منظم ساتنې لپاره.'
+            },
+            pdfUrl: 'pdfs/construction-materials/excavator/excavator-parts.pdf',
+            category: 'excavator'
+        },
+        {
+            name: {
+                fa: 'جرثقیل کارگاهی ۵۰ تنی',
+                en: '50-Ton Mobile Crane',
+                ps: '۵۰ ټنه ګرځنده جرثقیل'
+            },
+            description: {
+                fa: 'جرثقیل بوم تلسکوپی با سیستم تثبیت، کنترل ایمنی لحظه‌ای و کابین دوگانه.',
+                en: 'Telescopic mobile crane with outrigger stabilisation, real-time safety control and dual cab.',
+                ps: 'د تلسکوپي بوم ګرځنده جرثقیل د تثبیت برښو، د خوندیتوب سمدستي کنټرول او دوه ګونه کابین سره.'
+            },
+            pdfUrl: 'pdfs/construction-materials/crane/crane.pdf',
+            category: 'crane'
+        },
+        {
+            name: {
+                fa: 'تاور کرین پروژه‌های بلندمرتبه',
+                en: 'Tower Crane for High-Rise Projects',
+                ps: 'د لوړ پوړو پروژو لپاره تاور کرین'
+            },
+            description: {
+                fa: 'تاورکرین با طول فلش متغیر، کابین اپراتوری پیشرفته و سیستم ضد باد.',
+                en: 'Tower crane with variable jib lengths, advanced operator cabin and wind resistance system.',
+                ps: 'تاور کرین د بدلېدونکي بازو، پرمختللي کابین او د باد پر وړاندې د خوندیتوب سیستم سره.'
+            },
+            pdfUrl: 'pdfs/construction-materials/crane/tower-crane.pdf',
+            category: 'crane'
+        },
+        {
+            name: {
+                fa: 'قطعات و اسلیو جرثقیل',
+                en: 'Crane Spare Parts & Slewing Rings',
+                ps: 'د جرثقیل سپیر پرزې او سلوی رینګونه'
+            },
+            description: {
+                fa: 'مجموعه گیربکس، موتور، اسلیو و کابل‌های جرثقیل برای کاهش توقف پروژه.',
+                en: 'Gearboxes, motors, slewing rings and cabling packages to minimise crane downtime.',
+                ps: 'ګیربکسونه، موټورونه، سلوی رینګونه او کیبل پیکجونه د جرثقیل د درېدو مخنیوي لپاره.'
+            },
+            pdfUrl: 'pdfs/construction-materials/crane/crane-parts.pdf',
+            category: 'crane'
+        },
+        {
+            name: {
+                fa: 'لودر چرخ‌دار صنعتی',
+                en: 'Industrial Wheel Loader',
+                ps: 'صنعتي څرخ لرونکی لوډر'
+            },
+            description: {
+                fa: 'لودر با سطل چندمنظوره، سیستم توزین دیجیتال و محور تقویت‌شده.',
+                en: 'Wheel loader with multi-purpose bucket, digital weighing and reinforced axles.',
+                ps: 'د څو منظوره سطل، ډیجیټل وزن او پیاوړي محورونو لرونکی څرخ لرونکی لوډر.'
+            },
+            pdfUrl: 'pdfs/construction-materials/loader/loader.pdf',
+            category: 'loader'
+        },
+        {
+            name: {
+                fa: 'لودر چرخ‌دار معدنی',
+                en: 'Heavy-Duty Wheel Loader',
+                ps: 'دروند څرخ لرونکی لوډر'
+            },
+            description: {
+                fa: 'لودر پرقدرت برای معادن و پروژه‌های حجیم با سیستم خنک‌کاری تقویت‌شده.',
+                en: 'High-power loader for mining and bulk projects with reinforced cooling system.',
+                ps: 'د کانونو او درنو پروژو لپاره قوي لوډر د پیاوړي یخول سیستم سره.'
+            },
+            pdfUrl: 'pdfs/construction-materials/loader/wheel-loader.pdf',
+            category: 'loader'
+        },
+        {
+            name: {
+                fa: 'قطعات و الحاقات لودر',
+                en: 'Loader Attachments & Spares',
+                ps: 'د لوډر ملحقات او سپیر پرزې'
+            },
+            description: {
+                fa: 'ست کامل تایر، جک، بوش و الحاقات ویژه برای کاربری‌های مختلف.',
+                en: 'Full kit of tyres, cylinders, bushings and specialised attachments for varied operations.',
+                ps: 'د ټایرونو، جکونو، بوشونو او ځانګړو ملحقاتو بشپړ کټ د بېلابېلو کاروو لپاره.'
+            },
+            pdfUrl: 'pdfs/construction-materials/loader/loader-parts.pdf',
+            category: 'loader'
+        },
+        {
+            name: {
+                fa: 'سیمان پرتلند تیپ ۱/۲',
+                en: 'Portland Cement Type 1/2',
+                ps: 'د پورټلنډ سمنټ ۱/۲ ډول'
+            },
+            description: {
+                fa: 'کیسه و بگ‌های فله‌ای سیمان مطابق استاندارد ASTM با گواهی کیفیت.',
+                en: 'Bagged and bulk Portland cement meeting ASTM standards with quality certification.',
+                ps: 'بوجۍ او بلک پورټلنډ سمنټ چې د ASTM معیارونه پوره کوي او د کیفیت سند لري.'
+            },
+            pdfUrl: 'pdfs/construction-materials/materials/cement.pdf',
+            category: 'materials'
+        },
+        {
+            name: {
+                fa: 'میلگرد و فولاد تقویتی',
+                en: 'Steel Rebar & Reinforcement',
+                ps: 'د فولادو میلونه او ارمر'
+            },
+            description: {
+                fa: 'میلگرد آجدار در سایزهای مختلف با تست کشش و خم برای سازه‌های بتنی.',
+                en: 'Deformed steel rebar in multiple sizes supplied with tensile and bend tests for RC structures.',
+                ps: 'اېښکل شوي فولادي میلونه په بېلابېلو اندازو کې د کشش او تاو ازموینو سره د کانکریټ جوړښتونو لپاره.'
+            },
+            pdfUrl: 'pdfs/construction-materials/materials/steel-rebar.pdf',
+            category: 'materials'
+        },
+        {
+            name: {
+                fa: 'شن و ماسه شسته و دانه‌بندی',
+                en: 'Washed Sand & Aggregates',
+                ps: 'منځل شوي شګه او جغل'
+            },
+            description: {
+                fa: 'شن و ماسه شسته، دانه‌بندی شده و کنترل شده برای بتن‌ریزی و راهسازی.',
+                en: 'Washed, graded aggregates ensuring consistent mix design for concrete and road works.',
+                ps: 'منځل شوي او درجه بندي شوی جغل چې د کانکریټ او سړک جوړولو لپاره ثابت ترکیب برابروي.'
+            },
+            pdfUrl: 'pdfs/construction-materials/materials/sand-aggregate.pdf',
+            category: 'materials'
+        },
+        {
+            name: {
+                fa: 'سیستم‌های عایق رطوبتی',
+                en: 'Waterproofing Systems',
+                ps: 'د اوبو ضد کولو سیستمونه'
+            },
+            description: {
+                fa: 'ایزوگام، پوشش‌های مایع و افزودنی‌های ضد رطوبت برای فونداسیون و سقف.',
+                en: 'Membranes, liquid coatings and additives for waterproofing foundations and roofs.',
+                ps: 'د ایزوګام ورقې، مایع پوښونه او اضافي مواد د بنسټ او چت د اوبو ضد کولو لپاره.'
+            },
+            pdfUrl: 'pdfs/construction-materials/materials/waterproofing.pdf',
+            category: 'materials'
+        },
+        {
+            name: {
+                fa: 'قالب‌بندی فولادی مدولار',
+                en: 'Modular Steel Formwork',
+                ps: 'مدولر فولادي فارم ورک'
+            },
+            description: {
+                fa: 'سیستم قالب‌بندی فولادی با پانل‌های مدولار، قفل و پشت‌بند برای سازه‌های سنگین.',
+                en: 'Modular steel formwork panels with locks and bracing for heavy structural pours.',
+                ps: 'د فولادي مدولر قالب پینلونه د قلفونو او سپورټونو سره د درنو کانکریټ کارونو لپاره.'
+            },
+            pdfUrl: 'pdfs/construction-materials/formwork/steel-formwork.pdf',
+            category: 'formwork'
+        },
+        {
+            name: {
+                fa: 'قالب‌بندی پلاستیکی سبک',
+                en: 'Lightweight Plastic Formwork',
+                ps: 'ساده پلاستیکي فارم ورک'
+            },
+            description: {
+                fa: 'پانل‌های پلیمری سبک، قابل حمل و مقاوم در برابر خوردگی برای اجرای سریع.',
+                en: 'Lightweight polymer panels that are portable, corrosion-resistant and quick to erect.',
+                ps: 'سپک پلیمري پینلونه چې وړونکي، د زنګ پر وړاندې مقاومت او د چټک نصب وړ دي.'
+            },
+            pdfUrl: 'pdfs/construction-materials/formwork/plastic-formwork.pdf',
+            category: 'formwork'
+        },
+        {
+            name: {
+                fa: 'متعلقات و اکسسوری قالب‌بندی',
+                en: 'Formwork Accessories & Hardware',
+                ps: 'د فارم ورک لوازمات او هارډویر'
+            },
+            description: {
+                fa: 'گیره، بولت، اسپیسر و روغن قالب برای نگهداری و افزایش عمر سیستم.',
+                en: 'Clamps, bolts, spacers and release oils to maintain and extend formwork life.',
+                ps: 'کلپونه، بولټونه، سپېسرونه او د قالب غوړي د سیستم د ساتنې او اوږد عمر لپاره.'
+            },
+            pdfUrl: 'pdfs/construction-materials/formwork/formwork-accessories.pdf',
+            category: 'formwork'
+        }
+    ];
+
     const assuranceHighlights = [
         {
             icon: '🧱',
@@ -461,32 +772,51 @@
             card.className = 'category-card';
             card.setAttribute('role', 'button');
             card.setAttribute('tabindex', '0');
+            const titleText = localise(category.title, lang);
+            const descriptionText = localise(category.description, lang);
+            const detailText = lang === 'fa' ? 'مشاهده جزئیات' : (lang === 'ps' ? 'جزییات وګورئ' : 'View Details');
+            const detailLabel = lang === 'fa'
+                ? `مشاهده جزئیات ${titleText}`
+                : (lang === 'ps' ? `د ${titleText} جزییات وګورئ` : `View details for ${titleText}`);
+
             card.innerHTML = `
                 <span class="icon">${category.icon}</span>
-                <h4>${localise(category.title, lang)}</h4>
-                <p>${localise(category.description, lang)}</p>
+                <h4>${titleText}</h4>
+                <p>${descriptionText}</p>
+                <div class="category-card-actions">
+                    <a class="category-card-link" href="#" role="button" aria-label="${detailLabel}">
+                        <span>${detailText}</span>
+                        <i class="fas fa-arrow-left"></i>
+                    </a>
+                </div>
             `;
-            card.addEventListener('click', () => scrollToInventoryCategory(category.id));
+
+            const openModal = () => showConstructionMaterialsCategoryModal(category.id, lang);
+
+            card.addEventListener('click', openModal);
             card.addEventListener('keypress', (event) => {
-                if (event.key === 'Enter') {
-                    scrollToInventoryCategory(category.id);
+                if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    openModal();
                 }
             });
+
+            const link = card.querySelector('.category-card-link');
+            if (link) {
+                const handleInteraction = event => {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    openModal();
+                };
+                link.addEventListener('click', handleInteraction);
+                link.addEventListener('keypress', event => {
+                    if (event.key === 'Enter' || event.key === ' ') {
+                        handleInteraction(event);
+                    }
+                });
+            }
             grid.appendChild(card);
         });
-    }
-
-    function scrollToInventoryCategory(categoryId) {
-        const target = document.querySelector(`[data-category="${categoryId}"]`);
-        if (target) {
-            target.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            const previousOutline = target.style.outline;
-            target.style.outline = '2px solid var(--primary-color, #ff6f3c)';
-            target.style.transition = 'outline 0.3s ease';
-            setTimeout(() => {
-                target.style.outline = previousOutline || '';
-            }, 1200);
-        }
     }
 
     function normaliseInventoryItem(item) {
@@ -505,9 +835,18 @@
         ? equipmentData
         : (typeof window !== 'undefined' ? (window.equipmentData || {}) : {});
 
-    const inventory = (Array.isArray(equipmentSource['construction-materials'])
+    const globalInventory = Array.isArray(equipmentSource['construction-materials'])
         ? equipmentSource['construction-materials']
-        : []).map(normaliseInventoryItem);
+        : (typeof window !== 'undefined' && Array.isArray(window.constructionMaterialsInventory)
+            ? window.constructionMaterialsInventory
+            : []);
+
+    const inventory = (globalInventory.length ? globalInventory : defaultInventory)
+        .map(normaliseInventoryItem);
+
+    if (typeof window !== 'undefined') {
+        window.constructionMaterialsInventory = inventory;
+    }
 
     function buildInventoryCardsHtml(items, lang) {
         if (!items || !items.length) {
@@ -539,10 +878,76 @@
         return `<div class="equipment-grid">${cards}</div>`;
     }
 
+    function showConstructionMaterialsCategoryModal(categoryId, lang = getLanguage()) {
+        const modal = document.getElementById('equipmentModal');
+        const modalContent = document.getElementById('equipmentModalContent');
+        const category = categories.find(entry => entry.id === categoryId);
+        const items = inventory.filter(item => item.category === categoryId);
+
+        if (!modal || !modalContent || !category) {
+            return;
+        }
+
+        const title = localise(category.title, lang);
+        const backText = lang === 'fa' ? 'بازگشت' : (lang === 'ps' ? 'بیرته' : 'Back');
+        const cardsHtml = buildInventoryCardsHtml(items, lang);
+
+        modalContent.innerHTML = `
+            <div class="equipment-modal-header">
+                <button class="back-btn" onclick="closeEquipmentModal()">${backText}</button>
+                <h3>${title}</h3>
+            </div>
+            ${cardsHtml}
+        `;
+
+        modal.style.display = 'block';
+        modal.setAttribute('aria-hidden', 'false');
+    }
+
+    function showConstructionMaterialsInventoryModal(lang = getLanguage()) {
+        const modal = document.getElementById('equipmentModal');
+        const modalContent = document.getElementById('equipmentModalContent');
+
+        if (!modal || !modalContent) {
+            return;
+        }
+
+        const backText = lang === 'fa' ? 'بازگشت' : (lang === 'ps' ? 'بیرته' : 'Back');
+        const sectionTitle = localise(content.inventoryTitle, lang);
+
+        const sectionsHtml = categories.map(category => {
+            const items = inventory.filter(item => item.category === category.id);
+            const categoryTitle = `${category.icon} ${localise(category.title, lang)}`;
+            const description = localise(category.description, lang);
+            const descriptionMarkup = description ? `<p class="inventory-category-description">${description}</p>` : '';
+            return `
+                <section class="second-hand-inventory-category">
+                    <h4 class="inventory-category-title">${categoryTitle}</h4>
+                    ${descriptionMarkup}
+                    ${buildInventoryCardsHtml(items, lang)}
+                </section>
+            `;
+        }).join('');
+
+        modalContent.innerHTML = `
+            <div class="equipment-modal-header">
+                <button class="back-btn" onclick="closeEquipmentModal()">${backText}</button>
+                <h3>${sectionTitle}</h3>
+            </div>
+            <div class="second-hand-inventory-modal">
+                ${sectionsHtml}
+            </div>
+        `;
+
+        modal.style.display = 'block';
+        modal.setAttribute('aria-hidden', 'false');
+    }
+
     function renderInventory(lang) {
         const title = document.getElementById('constructionMaterialsInventoryTitle');
         const subtitle = document.getElementById('constructionMaterialsInventorySubtitle');
         const container = document.getElementById('constructionMaterialsInventoryGrid');
+        const section = document.getElementById('construction-materials-inventory');
 
         if (title) {
             title.textContent = localise(content.inventoryTitle, lang);
@@ -550,44 +955,12 @@
         if (subtitle) {
             subtitle.textContent = localise(content.inventorySubtitle, lang);
         }
-        if (!container) {
-            return;
+        if (section) {
+            section.setAttribute('hidden', 'true');
         }
-
-        if (inventory.length === 0) {
-            const emptyText = lang === 'fa'
-                ? 'برای این دسته‌بندی هنوز فایلی ثبت نشده است.'
-                : lang === 'ps'
-                    ? 'د دې کټګورۍ لپاره لا فایل ثبت شوی نه دی.'
-                    : 'No datasheets have been registered for this category yet.';
-            container.innerHTML = `<div class="no-equipment">${emptyText}</div>`;
-            return;
+        if (container) {
+            container.innerHTML = '';
         }
-
-        const grouped = inventory.reduce((acc, item) => {
-            const categoryId = item.category || 'materials';
-            if (!acc[categoryId]) {
-                acc[categoryId] = [];
-            }
-            acc[categoryId].push(item);
-            return acc;
-        }, {});
-
-        const sectionsHtml = Object.keys(grouped).map(categoryId => {
-            const categoryDetails = categories.find(cat => cat.id === categoryId);
-            const titleText = categoryDetails ? localise(categoryDetails.title, lang) : '';
-            const descriptionText = categoryDetails ? localise(categoryDetails.description, lang) : '';
-            const descriptionMarkup = descriptionText ? `<p class="inventory-category-description">${descriptionText}</p>` : '';
-            return `
-                <section class="second-hand-inventory-category" data-category="${categoryId}">
-                    <h4 class="inventory-category-title">${titleText}</h4>
-                    ${descriptionMarkup}
-                    ${buildInventoryCardsHtml(grouped[categoryId], lang)}
-                </section>
-            `;
-        }).join('');
-
-        container.innerHTML = `<div class="second-hand-inventory-modal">${sectionsHtml}</div>`;
     }
 
     function renderAssurance(lang) {
@@ -660,15 +1033,12 @@
 
     function setupInteractions() {
         const cta = document.getElementById('viewConstructionMaterialsButton');
-        if (cta && !cta.dataset.boundScroll) {
+        if (cta && !cta.dataset.boundModal) {
             cta.addEventListener('click', event => {
                 event.preventDefault();
-                const inventorySection = document.getElementById('construction-materials-inventory');
-                if (inventorySection) {
-                    inventorySection.scrollIntoView({ behavior: 'smooth' });
-                }
+                showConstructionMaterialsInventoryModal(getLanguage());
             });
-            cta.dataset.boundScroll = 'true';
+            cta.dataset.boundModal = 'true';
         }
     }
 
@@ -681,4 +1051,6 @@
         updatePage();
         setupInteractions();
     };
+    window.showConstructionMaterialsCategoryModal = showConstructionMaterialsCategoryModal;
+    window.showConstructionMaterialsInventoryModal = showConstructionMaterialsInventoryModal;
 })();
