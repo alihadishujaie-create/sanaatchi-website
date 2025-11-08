@@ -5055,7 +5055,7 @@ const equipmentData = {
                 en: 'Embossing and folding, log saw cutting and shrink packaging to produce tissue rolls and pocket packs.',
                 ps: 'امباس او تا کول، د لاګ پرې کول او شرینک بسته بندي د دستمال رولونو او جېبي بسته بندیو د تولید لپاره.'
             },
-            pdfUrl: 'pdfs/machinery-parts/general-parts/belts.pdf'
+            pdfUrl: 'pdfs/paper-pulp/paper-converting/tissue-converting.pdf'
         }
     ],
     'electronic-machinery': [
