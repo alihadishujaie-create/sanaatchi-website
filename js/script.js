@@ -5901,7 +5901,12 @@ function showSalesContactModal() {
                         currentLanguage === 'ps' ? 'د چین دفتر' : 'China Office';
     const backText = currentLanguage === 'fa' ? 'بازگشت' : 
                     currentLanguage === 'ps' ? 'بیرته' : 'Back';
-    
+
+    const chinaPhoneTranslation = translations['china-phone'] || {};
+    const chinaPhone = chinaPhoneTranslation[currentLanguage] || chinaPhoneTranslation.en || '+86 159 5171 6867';
+    const chinaPhoneHref = `tel:${formatPhoneNumberForHref(chinaPhone)}`;
+    const chinaWhatsAppUrl = getWhatsAppUrl(chinaPhone);
+
     modalContent.innerHTML = `
         <div class="modal-icon">📞</div>
         <h3>${title}</h3>
@@ -5913,7 +5918,7 @@ function showSalesContactModal() {
                 <div class="contact-item">
                     <i class="fas fa-phone"></i>
                     <div class="phone-container">
-                        <a href="tel:+93779819820" class="phone-link">+93 779 819 820</a>
+                        <a href="tel:+93779819820" class="phone-link">+۹۳ ۷۷۹ ۸۱۹ ۸۲۰</a>
                         <a href="https://wa.me/93779819820" target="_blank" class="whatsapp-link" title="WhatsApp" aria-label="واتساپ">
                             <i class="fab fa-whatsapp"></i>
                         </a>
