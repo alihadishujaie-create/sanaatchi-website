@@ -6193,78 +6193,494 @@ function closeSalesContactModal() {
     modal.setAttribute('aria-hidden', 'true');
 }
 
+function normalizeSearchText(text) {
+    if (!text) {
+        return '';
+    }
+
+    let normalized = text.toString().toLowerCase();
+
+    // Remove zero-width characters and tatweel
+    normalized = normalized.replace(/[\u200c\u200d\u200e\u200f]/g, '');
+    normalized = normalized.replace(/\u0640/g, '');
+
+    const persianDigitMap = {
+        '۰': '0',
+        '۱': '1',
+        '۲': '2',
+        '۳': '3',
+        '۴': '4',
+        '۵': '5',
+        '۶': '6',
+        '۷': '7',
+        '۸': '8',
+        '۹': '9'
+    };
+    const arabicDigitMap = {
+        '٠': '0',
+        '١': '1',
+        '٢': '2',
+        '٣': '3',
+        '٤': '4',
+        '٥': '5',
+        '٦': '6',
+        '٧': '7',
+        '٨': '8',
+        '٩': '9'
+    };
+
+    normalized = normalized.replace(/[۰-۹]/g, digit => persianDigitMap[digit] || digit);
+    normalized = normalized.replace(/[٠-٩]/g, digit => arabicDigitMap[digit] || digit);
+
+    if (typeof normalized.normalize === 'function') {
+        normalized = normalized.normalize('NFKD').replace(/[\u0300-\u036f]/g, '');
+    }
+
+    normalized = normalized.replace(/[_.,\/\\+=\-–—:;'"!?()[\]{}<>@#$%^&*|`~]+/g, ' ');
+    normalized = normalized.replace(/\s+/g, ' ').trim();
+
+    return normalized;
+}
+
+function tokenizeSearchTerm(term) {
+    const normalized = normalizeSearchText(term || '');
+    if (!normalized) {
+        return [];
+    }
+    return normalized.split(' ').filter(Boolean);
+}
+
+function textMatchesTokens(text, tokens) {
+    if (!text || !tokens.length) {
+        return false;
+    }
+
+    const normalized = normalizeSearchText(text);
+    if (!normalized) {
+        return false;
+    }
+
+    return tokens.every(token => normalized.includes(token));
+}
+
+function collectLocalizedStrings(value) {
+    if (!value) {
+        return [];
+    }
+    if (typeof value === 'string') {
+        return [value];
+    }
+    if (Array.isArray(value)) {
+        return value.flatMap(collectLocalizedStrings);
+    }
+    if (typeof value === 'object') {
+        return Object.values(value).flatMap(collectLocalizedStrings);
+    }
+    return [];
+}
+
+function getLocalizedText(value, lang) {
+    if (!value) {
+        return '';
+    }
+
+    if (typeof value === 'string') {
+        return value;
+    }
+
+    if (typeof value === 'object') {
+        const preferredOrder = [lang, 'fa', 'en', 'ps'];
+        for (const key of preferredOrder) {
+            if (value[key]) {
+                return value[key];
+            }
+        }
+        const fallback = Object.values(value).find(entry => typeof entry === 'string' && entry.trim());
+        if (fallback) {
+            return fallback;
+        }
+    }
+
+    return '';
+}
+
+function getTranslationByKey(key, lang = currentLanguage) {
+    if (!key || !translations[key]) {
+        return '';
+    }
+    return getLocalizedText(translations[key], lang);
+}
+
+function getCategoryDisplayName(categoryId, lang = currentLanguage) {
+    if (!categoryId) {
+        return '';
+    }
+
+    if (categories[categoryId]) {
+        return getLocalizedText(categories[categoryId].title, lang);
+    }
+
+    if (typeof productionLineGroups !== 'undefined') {
+        const productionGroup = productionLineGroups.find(group => group.id === categoryId);
+        if (productionGroup) {
+            return getLocalizedText(productionGroup.title, lang);
+        }
+    }
+
+    if (typeof secondHandCatalog !== 'undefined' && secondHandCatalog[categoryId]) {
+        return getLocalizedText(secondHandCatalog[categoryId].title, lang);
+    }
+
+    return '';
+}
+
+function renderEquipmentMeta(meta, lang = currentLanguage) {
+    if (!Array.isArray(meta) || meta.length === 0) {
+        return '';
+    }
+
+    const items = meta.map(entry => {
+        if (!entry) {
+            return '';
+        }
+        const label = getLocalizedText(entry.label, lang);
+        const value = getLocalizedText(entry.value, lang);
+
+        if (label && value) {
+            return `<li><strong>${label}:</strong> ${value}</li>`;
+        }
+        if (label) {
+            return `<li>${label}</li>`;
+        }
+        if (value) {
+            return `<li>${value}</li>`;
+        }
+        return '';
+    }).filter(Boolean);
+
+    if (!items.length) {
+        return '';
+    }
+
+    return `<ul class="equipment-meta">${items.join('')}</ul>`;
+}
+
 // Perform search
 function performSearch(searchTerm) {
     const searchInput = document.getElementById('searchInput');
     const modal = document.getElementById('searchResultModal');
     const modalContent = document.getElementById('searchResultModalContent');
-    
-    // If searchTerm is not provided, get it from the search input
-    if (!searchTerm) {
-        searchTerm = searchInput.value.trim();
+
+    if (typeof searchTerm === 'string') {
+        searchTerm = searchTerm.trim();
     }
-    
-    if (!searchTerm) {
-        const errorMsg = currentLanguage === 'fa' ? 'لطفاً یک عبارت برای جستجو وارد کنید' : 
+
+    if ((!searchTerm || !searchTerm.length) && searchInput) {
+        searchTerm = searchInput.value ? searchInput.value.trim() : '';
+    }
+
+    if (searchInput && searchTerm) {
+        searchInput.value = searchTerm;
+    }
+
+    const searchTokens = tokenizeSearchTerm(searchTerm);
+    if (!searchTokens.length) {
+        const errorMsg = currentLanguage === 'fa' ? 'لطفاً یک عبارت برای جستجو وارد کنید' :
                        currentLanguage === 'ps' ? 'مهرباني کړه د لټون لپاره یوه جمله ننوئ' : 'Please enter a term to search';
         alert(errorMsg);
         return;
     }
-    
-    // Find matching categories
+
+    const displayTerm = searchTerm || '';
+
+    const matchedCategoryIds = new Set();
     const matchingCategories = [];
-    
-    for (const [categoryId, keywords] of Object.entries(categoryKeywords)) {
-        for (const keyword of keywords) {
-            if (keyword.toLowerCase().includes(searchTerm.toLowerCase())) {
-                matchingCategories.push({
-                    id: categoryId,
-                    category: categories[categoryId]
-                });
-                break;
+    const matchingEquipment = [];
+    const seenEquipmentKeys = new Set();
+    const MAX_EQUIPMENT_RESULTS = 24;
+    let equipmentLimitReached = false;
+
+    function addCategoryResult(categoryId) {
+        if (!categoryId || matchedCategoryIds.has(categoryId)) {
+            return;
+        }
+        const category = categories[categoryId];
+        if (!category) {
+            return;
+        }
+        matchedCategoryIds.add(categoryId);
+        matchingCategories.push({ id: categoryId, category });
+    }
+
+    function addEquipmentMatch(categoryId, item, options = {}) {
+        if (!item) {
+            return;
+        }
+        if (matchingEquipment.length >= MAX_EQUIPMENT_RESULTS) {
+            equipmentLimitReached = true;
+            return;
+        }
+
+        const computeUniqueKey = (id, data) => {
+            const baseName = getLocalizedText(data.name, 'en') ||
+                getLocalizedText(data.name, 'fa') ||
+                getLocalizedText(data.name, 'ps') || '';
+            return `${id}|${data.pdfUrl || baseName}`;
+        };
+
+        const uniqueKey = computeUniqueKey(categoryId, item);
+        if (seenEquipmentKeys.has(uniqueKey)) {
+            if (options.subCategoryTitle) {
+                const existingMatch = matchingEquipment.find(match => computeUniqueKey(match.categoryId, match.item) === uniqueKey);
+                if (existingMatch && !existingMatch.subCategoryTitle) {
+                    existingMatch.subCategoryTitle = options.subCategoryTitle;
+                    if (!existingMatch.subCategoryId && options.subCategoryId) {
+                        existingMatch.subCategoryId = options.subCategoryId;
+                    }
+                }
             }
+            return;
+        }
+        seenEquipmentKeys.add(uniqueKey);
+
+        matchingEquipment.push({
+            categoryId,
+            item,
+            icon: options.icon || item.icon || '📄',
+            subCategoryId: options.subCategoryId || null,
+            subCategoryTitle: options.subCategoryTitle || null
+        });
+    }
+
+    function fieldMatches(fields) {
+        return fields.some(field => textMatchesTokens(field, searchTokens));
+    }
+
+    // Search category keywords and descriptions
+    for (const [categoryId, keywords] of Object.entries(categoryKeywords)) {
+        const fields = Array.isArray(keywords) ? [...keywords] : [];
+        const category = categories[categoryId];
+        if (category) {
+            fields.push(...collectLocalizedStrings(category.title));
+            fields.push(...collectLocalizedStrings(category.description));
+        }
+        if (fieldMatches(fields)) {
+            addCategoryResult(categoryId);
         }
     }
-    
-    // Prepare modal content
-    const title = currentLanguage === 'fa' ? 'نتایج جستجو' : 
+
+    for (const [categoryId, category] of Object.entries(categories)) {
+        if (categoryKeywords[categoryId]) {
+            continue;
+        }
+        const fields = [
+            ...collectLocalizedStrings(category.title),
+            ...collectLocalizedStrings(category.description)
+        ];
+        if (fieldMatches(fields)) {
+            addCategoryResult(categoryId);
+        }
+    }
+
+    // Search equipment data
+    for (const [categoryId, items] of Object.entries(equipmentData)) {
+        if (!Array.isArray(items)) {
+            continue;
+        }
+        items.forEach(item => {
+            const fields = [
+                ...collectLocalizedStrings(item.name),
+                ...collectLocalizedStrings(item.description)
+            ];
+
+            if (Array.isArray(item.keywords)) {
+                fields.push(...collectLocalizedStrings(item.keywords));
+            }
+
+            if (Array.isArray(item.meta)) {
+                item.meta.forEach(metaEntry => {
+                    fields.push(...collectLocalizedStrings(metaEntry && metaEntry.label));
+                    fields.push(...collectLocalizedStrings(metaEntry && metaEntry.value));
+                });
+            }
+
+            if (item.category) {
+                fields.push(item.category);
+            }
+
+            if (fieldMatches(fields)) {
+                addCategoryResult(categoryId);
+                addEquipmentMatch(categoryId, item, {
+                    icon: item.icon,
+                    subCategoryId: item.category,
+                    subCategoryTitle: item.subCategoryTitle
+                });
+            }
+        });
+    }
+
+    // Search second-hand inventory
+    if (Array.isArray(window.secondHandInventoryData)) {
+        window.secondHandInventoryData.forEach(item => {
+            const fields = [
+                ...collectLocalizedStrings(item.name),
+                ...collectLocalizedStrings(item.description)
+            ];
+
+            if (Array.isArray(item.meta)) {
+                item.meta.forEach(metaEntry => {
+                    fields.push(...collectLocalizedStrings(metaEntry && metaEntry.label));
+                    fields.push(...collectLocalizedStrings(metaEntry && metaEntry.value));
+                });
+            }
+
+            if (fieldMatches(fields)) {
+                addCategoryResult('second-hand');
+                const subCategoryTitle = (typeof secondHandCatalog !== 'undefined' && secondHandCatalog[item.category])
+                    ? secondHandCatalog[item.category].title
+                    : null;
+                addEquipmentMatch('second-hand', item, {
+                    icon: item.icon,
+                    subCategoryId: item.category,
+                    subCategoryTitle
+                });
+            }
+        });
+    }
+
+    // Search production line data if available
+    if (typeof productionLines !== 'undefined') {
+        Object.entries(productionLines).forEach(([groupId, group]) => {
+            const lines = Array.isArray(group.lines) ? group.lines : [];
+            lines.forEach(line => {
+                const fields = [
+                    ...collectLocalizedStrings(line.title),
+                    ...collectLocalizedStrings(line.description)
+                ];
+
+                if (Array.isArray(line.keywords)) {
+                    fields.push(...collectLocalizedStrings(line.keywords));
+                }
+
+                if (line.id) {
+                    fields.push(line.id);
+                }
+
+                if (fieldMatches(fields)) {
+                    addCategoryResult('production-lines');
+                    addEquipmentMatch('production-lines', {
+                        name: line.title,
+                        description: line.description,
+                        pdfUrl: line.pdfUrl,
+                        meta: line.meta
+                    }, {
+                        icon: group.icon || '🏭',
+                        subCategoryId: groupId,
+                        subCategoryTitle: group.title
+                    });
+                }
+            });
+        });
+    }
+
+    const title = currentLanguage === 'fa' ? 'نتایج جستجو' :
                  currentLanguage === 'ps' ? 'د لټون پایلې' : 'Search Results';
-    const subtitle = currentLanguage === 'fa' ? `برای "${searchTerm}" یافت شد:` : 
-                     currentLanguage === 'ps' ? `"${searchTerm}" لپاره وموندل:` : `Found for "${searchTerm}":`;
-    const noResults = currentLanguage === 'fa' ? 'هیچ نتیجه‌ای یافت نشد' : 
-                    currentLanguage === 'ps' ? 'هڅه پایله ونه موندل شوه' : 'No results found';
-    const viewText = currentLanguage === 'fa' ? 'مشاهده' : 
+    const subtitle = currentLanguage === 'fa' ? `برای "${displayTerm}" یافت شد:` :
+                     currentLanguage === 'ps' ? `"${displayTerm}" لپاره وموندل:` : `Found for "${displayTerm}":`;
+    const noResults = currentLanguage === 'fa' ? 'هیچ نتیجه‌ای یافت نشد' :
+                    currentLanguage === 'ps' ? 'هیڅ پایله ونه موندل شوه' : 'No results found';
+    const viewText = currentLanguage === 'fa' ? 'مشاهده' :
                     currentLanguage === 'ps' ? 'لیدل' : 'View';
-    const backText = currentLanguage === 'fa' ? 'بازگشت' : 
+    const backText = currentLanguage === 'fa' ? 'بازگشت' :
                     currentLanguage === 'ps' ? 'بیرته' : 'Back';
-    
+    const equipmentHeading = currentLanguage === 'fa' ? 'ماشین‌آلات و تجهیزات مرتبط:' :
+                             currentLanguage === 'ps' ? 'اړوند ماشینونه او تجهیزات:' : 'Related equipment and machinery:';
+    const viewPdfText = currentLanguage === 'fa' ? 'مشاهده PDF' :
+                        currentLanguage === 'ps' ? 'PDF وګورئ' : 'View PDF';
+    const downloadText = currentLanguage === 'fa' ? 'دانلود' :
+                         currentLanguage === 'ps' ? 'ډاونلوډ' : 'Download';
+    const limitedResultsNote = currentLanguage === 'fa' ? 'برای مشاهده نتایج بیشتر عبارت دقیق‌تری وارد کنید.' :
+                              currentLanguage === 'ps' ? 'د لا زیاتو پایلو لپاره مهرباني وکړئ لټون محدود کړئ.' :
+                              'Refine your search to see additional results.';
+    const suggestionsTitle = currentLanguage === 'fa' ? 'پیشنهادات جستجو:' :
+                             currentLanguage === 'ps' ? 'د لټون وړاندیزونه:' : 'Search Suggestions:';
+
     let contentHtml = `
         <div class="modal-icon">🔍</div>
         <h3>${title}</h3>
         <p>${subtitle}</p>
     `;
-    
+
     if (matchingCategories.length > 0) {
         contentHtml += '<div class="search-results">';
         matchingCategories.forEach(match => {
+            const categoryTitle = getLocalizedText(match.category.title, currentLanguage);
+            const categoryDescription = getLocalizedText(match.category.description, currentLanguage);
             contentHtml += `
                 <div class="search-result-item">
-                    <h4>${match.category.title[currentLanguage]}</h4>
-                    <p>${match.category.description[currentLanguage]}</p>
+                    <h4>${categoryTitle}</h4>
+                    <p>${categoryDescription}</p>
                     <button class="btn-primary" onclick="showRelatedEquipments('${match.id}')">${viewText}</button>
                 </div>
             `;
         });
         contentHtml += '</div>';
-    } else {
+    }
+
+    if (matchingEquipment.length > 0) {
+        contentHtml += `<h4 class="search-equipment-heading">${equipmentHeading}</h4>`;
+        contentHtml += '<div class="equipment-grid">';
+        matchingEquipment.forEach(match => {
+            const nameText = getLocalizedText(match.item.name, currentLanguage);
+            const descriptionText = getLocalizedText(match.item.description, currentLanguage);
+            const categoryLabel = getCategoryDisplayName(match.categoryId, currentLanguage);
+            let subCategoryLabel = getLocalizedText(match.subCategoryTitle, currentLanguage);
+            if (!subCategoryLabel) {
+                subCategoryLabel = getCategoryDisplayName(match.subCategoryId, currentLanguage);
+            }
+            const showSubCategory = subCategoryLabel && subCategoryLabel !== categoryLabel;
+            const categoryHtml = categoryLabel ? `<div class="equipment-category">${categoryLabel}</div>` : '';
+            const subCategoryHtml = showSubCategory ? `<div class="equipment-context">${subCategoryLabel}</div>` : '';
+            const metaHtml = renderEquipmentMeta(match.item.meta, currentLanguage);
+            let actionsHtml = '';
+
+            if (match.item.pdfUrl) {
+                actionsHtml = `
+                    <div class="equipment-actions">
+                        <a href="${match.item.pdfUrl}" target="_blank" class="btn-primary">
+                            <i class="fas fa-file-pdf"></i> ${viewPdfText}
+                        </a>
+                        <a href="${match.item.pdfUrl}" download class="btn-secondary">
+                            <i class="fas fa-download"></i> ${downloadText}
+                        </a>
+                    </div>
+                `;
+            }
+
+            contentHtml += `
+                <div class="equipment-card">
+                    <div class="equipment-icon">${match.icon || '📄'}</div>
+                    <h4>${nameText}</h4>
+                    ${categoryHtml}
+                    ${subCategoryHtml}
+                    <p>${descriptionText}</p>
+                    ${metaHtml}
+                    ${actionsHtml}
+                </div>
+            `;
+        });
+        contentHtml += '</div>';
+
+        if (equipmentLimitReached) {
+            contentHtml += `<p class="search-note">${limitedResultsNote}</p>`;
+        }
+    }
+
+    if (matchingCategories.length === 0 && matchingEquipment.length === 0) {
         contentHtml += `<p>${noResults}</p>`;
-        
-        // Add search suggestions
-        const suggestionsTitle = currentLanguage === 'fa' ? 'پیشنهادات جستجو:' : 
-                                 currentLanguage === 'ps' ? 'د لټون وړاندیزونه:' : 'Search Suggestions:';
         contentHtml += `<div class="search-suggestions"><h4>${suggestionsTitle}</h4>`;
-        
         contentHtml += '<div class="suggestion-tags">';
+
         const popularCategories = [
             { id: 'production-lines', key: 'cat-production' },
             { id: 'printing-machines', key: 'cat-printing' },
@@ -6273,21 +6689,24 @@ function performSearch(searchTerm) {
             { id: 'construction-materials', key: 'cat-construction' },
             { id: 'plastic-industry', key: 'cat-plastic-industry' }
         ];
-        
+
         popularCategories.forEach(cat => {
-            const catName = translations[cat.key][currentLanguage];
-            contentHtml += `<span class="suggestion-tag" onclick="performSearch('${catName}')">${catName}</span>`;
+            const catName = getTranslationByKey(cat.key, currentLanguage);
+            if (catName) {
+                const safeValue = JSON.stringify(catName);
+                contentHtml += `<span class="suggestion-tag" onclick="performSearch(${safeValue})">${catName}</span>`;
+            }
         });
-        
+
         contentHtml += '</div></div>';
     }
-    
+
     contentHtml += `
         <div class="modal-buttons">
             <button class="btn-primary" onclick="closeSearchResultModal()">${backText}</button>
         </div>
     `;
-    
+
     modalContent.innerHTML = contentHtml;
     modal.style.display = 'block';
     modal.setAttribute('aria-hidden', 'false');
@@ -6391,6 +6810,39 @@ function closeEquipmentModal() {
     const modal = document.getElementById('equipmentModal');
     modal.style.display = 'none';
     modal.setAttribute('aria-hidden', 'true');
+}
+
+function setupSearchTags() {
+    const searchInput = document.getElementById('searchInput');
+    const tags = document.querySelectorAll('.category-tag');
+
+    tags.forEach(tag => {
+        const handler = event => {
+            if (event) {
+                event.preventDefault();
+            }
+            const translateKey = tag.getAttribute('data-translate');
+            const localizedTerm = getTranslationByKey(translateKey, currentLanguage) || tag.textContent.trim();
+
+            if (searchInput && localizedTerm) {
+                searchInput.value = localizedTerm;
+                searchInput.focus();
+            }
+
+            performSearch(localizedTerm);
+        };
+
+        tag.onclick = handler;
+
+        if (tag.dataset.searchEnhanced !== 'true') {
+            tag.addEventListener('keypress', event => {
+                if (event.key === 'Enter' || event.key === ' ') {
+                    handler(event);
+                }
+            });
+            tag.dataset.searchEnhanced = 'true';
+        }
+    });
 }
 
 const SITE_ORIGIN_FALLBACK = 'https://sanaatchi.com';
@@ -6646,6 +7098,8 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+
+    setupSearchTags();
 
     initializeNewsletterForms();
 });

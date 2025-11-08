@@ -1116,6 +1116,16 @@ body {
     margin-bottom: 30px;
     font-size: 1.1rem;
 }
+.search-equipment-heading {
+    margin-top: 25px;
+    color: #1a3a5f;
+    font-size: 1.2rem;
+}
+.search-note {
+    margin-top: 15px;
+    font-size: 0.95rem;
+    color: #555;
+}
 .search-result-modal-content .btn-primary {
     margin: 0 auto;
     display: block;
@@ -1240,6 +1250,34 @@ body {
     margin-bottom: 20px;
     font-size: 0.9rem;
     line-height: 1.5;
+}
+.equipment-card .equipment-category {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #1a3a5f;
+    margin-bottom: 8px;
+}
+.equipment-card .equipment-context {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #2b5c8a;
+    margin-bottom: 8px;
+    opacity: 0.85;
+}
+.equipment-card .equipment-meta {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 15px;
+    text-align: start;
+    direction: inherit;
+}
+.equipment-card .equipment-meta li {
+    font-size: 0.85rem;
+    margin-bottom: 6px;
+    color: #444;
+}
+.equipment-card .equipment-meta li strong {
+    color: #1a3a5f;
 }
 .equipment-actions {
     display: flex;
