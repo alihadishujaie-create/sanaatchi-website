@@ -5493,11 +5493,6 @@ Object.assign(translations, {
     'afghanistan-office': { fa: 'دفتر افغانستان', en: 'Afghanistan Office', ps: 'د افغانستان دفتر' },
     'afghanistan-address': { fa: 'کابل، افغانستان', en: 'Kabul, Afghanistan', ps: 'کابل، افغانستان' },
     'afghanistan-phone': { fa: '+93 779 819 820', en: '+93 779 819 820', ps: '+93 779 819 820' },
-    'transportation-afghanistan-phone': {
-        fa: '+93 799 999 0000',
-        en: '+93 799 999 0000',
-        ps: '+93 799 999 0000'
-    },
     'afghanistan-hours': {
         fa: 'شنبه تا پنجشنبه: ۹:۰۰ تا ۱۸:۰۰',
         en: 'Saturday to Thursday: 9:00 to 18:00',
@@ -5516,11 +5511,6 @@ Object.assign(translations, {
     'china-office': { fa: 'دفتر چین', en: 'China Office', ps: 'د چین دفتر' },
     'china-address': { fa: 'چین', en: 'China', ps: 'چین' },
     'china-phone': { fa: '+86 159 5171 6867', en: '+86 159 5171 6867', ps: '+86 159 5171 6867' },
-    'transportation-china-phone': {
-        fa: '+86 138 0000 0000',
-        en: '+86 138 0000 0000',
-        ps: '+86 138 0000 0000'
-    },
     'china-hours': { 
         fa: 'شنبه تا جمعه: ۹:۰۰ تا ۱۸:۰۰', 
         en: 'Saturday to Friday: 9:00 to 18:00',
@@ -5617,23 +5607,8 @@ function updateTranslations(lang) {
     // Update all translatable elements
     document.querySelectorAll('[data-translate]').forEach(element => {
         const key = element.getAttribute('data-translate');
-        const translationEntry = translations[key];
-        if (translationEntry && translationEntry[lang]) {
-            const translation = translationEntry[lang];
-            if (element.classList.contains('phone-link')) {
-                element.textContent = translation;
-                element.setAttribute('href', `tel:${formatPhoneNumberForHref(translation)}`);
-
-                const phoneContainer = element.closest('.phone-container');
-                if (phoneContainer) {
-                    const whatsappLink = phoneContainer.querySelector('.whatsapp-link');
-                    if (whatsappLink) {
-                        whatsappLink.setAttribute('href', getWhatsAppUrl(translation));
-                    }
-                }
-            } else {
-                element.textContent = translation;
-            }
+        if (translations[key] && translations[key][lang]) {
+            element.textContent = translations[key][lang];
         }
     });
     
@@ -5645,6 +5620,37 @@ function updateTranslations(lang) {
         }
     });
     
+    // Update phone numbers
+    document.querySelectorAll('[data-translate]').forEach(element => {
+        const key = element.getAttribute('data-translate');
+        if (key === 'afghanistan-phone' && translations[key] && translations[key][lang]) {
+            element.textContent = translations[key][lang];
+            // Update href for phone link
+            const phoneLink = element.closest('.phone-container').querySelector('.phone-link');
+            if (phoneLink) {
+                phoneLink.setAttribute('href', `tel:${formatPhoneNumberForHref(translations[key][lang])}`);
+            }
+            // Update href for WhatsApp link
+            const whatsappLink = element.closest('.phone-container').querySelector('.whatsapp-link');
+            if (whatsappLink) {
+                whatsappLink.setAttribute('href', getWhatsAppUrl(translations[key][lang]));
+            }
+        }
+        if (key === 'china-phone' && translations[key] && translations[key][lang]) {
+            element.textContent = translations[key][lang];
+            // Update href for phone link
+            const phoneLink = element.closest('.phone-container').querySelector('.phone-link');
+            if (phoneLink) {
+                phoneLink.setAttribute('href', `tel:${formatPhoneNumberForHref(translations[key][lang])}`);
+            }
+            // Update href for WhatsApp link
+            const whatsappLink = element.closest('.phone-container').querySelector('.whatsapp-link');
+            if (whatsappLink) {
+                whatsappLink.setAttribute('href', getWhatsAppUrl(translations[key][lang]));
+            }
+        }
+    });
+
     if (typeof updateProductionLineCards === 'function') {
         updateProductionLineCards();
     }
