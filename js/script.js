@@ -1055,7 +1055,7 @@ const translations = {
     },
     'china-office': { fa: 'دفتر چین', en: 'China Office', ps: 'د چین دفتر' },
     'china-address': { fa: 'چین', en: 'China', ps: 'چین' },
-    'china-phone': { fa: '+۸۶ ۱۵۹۵۱۷۱ ۶۸۶۷', en: '+86 159 5171 6867', ps: '+86 159 5171 6867' },
+    'china-phone': { fa: '+۸۶ ۱۳۹ ۰۰۰۰ ۰۰۰۰', en: '+86 139 0000 0000', ps: '+86 139 0000 0000' },
     'china-hours': { 
         fa: 'شنبه تا جمعه: ۹:۰۰ تا ۱۸:۰۰', 
         en: 'Saturday to Friday: 9:00 to 18:00',
