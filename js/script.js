@@ -3652,18 +3652,6 @@ const equipmentData = {
             pdfUrl: 'pdfs/machinery-parts/general-parts/belts.pdf'
         }
     ],
-    'paper-pulp': [
-        {
-            name: { fa: 'دستگاه تولید خمیر کاغذ', en: 'Pulp Production Machine', ps: 'د پالپ تولید ماشین' },
-            description: { fa: 'دستگاه تولید خمیر کاغذ', en: 'Pulp production machine', ps: 'د پالپ تولید ماشین' },
-            pdfUrl: 'pdfs/paper-pulp/pulp-production.pdf'
-        },
-        {
-            name: { fa: 'دستگاه تولید کاغذ', en: 'Paper Production Machine', ps: 'د کاغذ تولید ماشین' },
-            description: { fa: 'دستگاه تولید کاغذ', en: 'Paper production machine', ps: 'د کاغذ تولید ماشین' },
-            pdfUrl: 'pdfs/paper-pulp/paper-production.pdf'
-        }
-    ],
     'electronic-machinery': [
         {
             name: { fa: 'دستگاه مونتاژ PCB', en: 'PCB Assembly Machine', ps: 'د PCB ټولګي ماشین' },
