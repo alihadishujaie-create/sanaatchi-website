@@ -5450,24 +5450,70 @@ Object.assign(translations, {
         ps: 'د بریالیتوب پروژو په بریالیتوب کې زموږ درخشان تاریخ، د ستاسو د آرامۍ لپاره لوی تضمین دی.'
     },
     'why-transparency': { fa: 'شفافیت و قیمت رقابتی', en: 'Transparency and Competitive Pricing', ps: 'شفافیت او سیال قیمت' },
-    'why-transparency-desc': { 
-        fa: 'ما با ارائه تحلیل دقیق هزینه‌ها و قیمت‌های رقابتی، فرآیند تصمیم‌گیری را برای شما آسان و شفاف می‌سازیم.', 
+    'why-transparency-desc': {
+        fa: 'ما با ارائه تحلیل دقیق هزینه‌ها و قیمت‌های رقابتی، فرآیند تصمیم‌گیری را برای شما آسان و شفاف می‌سازیم.',
         en: 'We make your decision-making process easy and transparent by providing detailed cost analysis and competitive prices.',
         ps: 'موږ د دقیق لګښت تحلیل او سیال قیمتونو وړاندیز کولو سره ستاسو د پرېکړې پروسه اسانه او شفاف کوو.'
     },
+    'why-support': { fa: 'پشتیبانی کامل', en: 'Comprehensive Support', ps: 'بشپړ ملاتړ' },
+    'why-support-desc': {
+        fa: 'از طراحی تا نگهداری دوره‌ای، تیم ما در تمامی مراحل کنار شماست.',
+        en: 'From design to periodic maintenance, our team stands beside you at every stage.',
+        ps: 'له ډیزاین څخه تر منظم ساتنې پورې، زموږ ټیم په هر پړاو کې درسره ولاړ دی.'
+    },
     'why-timeline': { fa: 'تعهد به زمان‌بندی', en: 'Commitment to Timelines', ps: 'د وخت جدولې ته ژمنه' },
-    'why-timeline-desc': { 
-        fa: 'ما برای وقت شما ارزش قائلیم و متعهد به تکمیل و تحویل پروژه‌ها در کوتاه‌ترین زمان ممکن هستیم.', 
+    'why-timeline-desc': {
+        fa: 'ما برای وقت شما ارزش قائلیم و متعهد به تکمیل و تحویل پروژه‌ها در کوتاه‌ترین زمان ممکن هستیم.',
         en: 'We value your time and are committed to completing and delivering projects in the shortest possible time.',
         ps: 'موږ د ستاسو وخت ارزګارو او په لنډه کې ممکن وخت کې د پروژو بشپړولو او تحویل ته ژمن یو.'
     },
     'why-network': { fa: 'شبکه تامین جهانی', en: 'Global Supply Network', ps: 'نړیوال تامین شبکه' },
-    'why-network-desc': { 
-        fa: 'با پیگیری مستمر و ارتباط مستقیم با معتبرترین تامین‌کنندگان جهانی، کیفیت و اصالت تجهیزات شما را تضمین می‌کنیم.', 
+    'why-network-desc': {
+        fa: 'با پیگیری مستمر و ارتباط مستقیم با معتبرترین تامین‌کنندگان جهانی، کیفیت و اصالت تجهیزات شما را تضمین می‌کنیم.',
         en: 'We guarantee the quality and authenticity of your equipment through continuous follow-up and direct communication with the most reputable global suppliers.',
         ps: 'د پیروي دوامداره او د معتبر نړیوال تامین کوونکو سره مستقیم اړیکې له لارې، موږ د ستاسو تجهیزاتو کیفیت او اصالت تضمین کوو.'
     },
-    
+    'why-feature-1-title': {
+        fa: 'همکاری مستقیم با بهترین کارخانه های جهانی',
+        en: 'Direct Collaboration with Leading Global Manufacturers',
+        ps: 'له مخکښو نړیوالو تولیدوونکو سره مستقیمه همکاري'
+    },
+    'why-feature-1-desc': {
+        fa: 'ما با انتخاب مطمئن ترین و معتبرترین تولیدکنندگان جهانی، خیال شما را از تامین تجهیزات راحت می کنیم.',
+        en: 'We carefully select the most trusted global manufacturers so you can rely on consistent, on-time equipment supply.',
+        ps: 'موږ تر ټولو باوري نړیوال تولیدوونکي ټاکو تر څو تاسو د تجهیزاتو پر وخت تامین ډاډه شئ.'
+    },
+    'why-feature-2-title': {
+        fa: 'دانش فنی گسترده در حوزه های مختلف صنعتی',
+        en: 'Extensive Technical Expertise Across Industrial Domains',
+        ps: 'په بېلابېلو صنعتي برخو کې پراخ تخنیکي تخصص'
+    },
+    'why-feature-2-desc': {
+        fa: 'تیم ما از مهندسان با تجربه تشکیل شده که راهکارهای اختصاصی برای نیاز شما ارائه می کنند.',
+        en: 'Our team of seasoned engineers delivers tailored solutions that match your unique operational requirements.',
+        ps: 'زموږ د باتجربه انجنیرانو ټیم ستاسو ځانګړو اړتیاوو ته سمون لرونکي حللارې برابروي.'
+    },
+    'why-feature-3-title': {
+        fa: 'پشتیبانی کامل از طراحی تا بهره برداری',
+        en: 'End-to-End Support from Design to Commissioning',
+        ps: 'له ډیزاین څخه تر فعالېدو پورې بشپړ ملاتړ'
+    },
+    'why-feature-3-desc': {
+        fa: 'از اولین جلسه مشاوره تا راه اندازی نهایی و پس از آن همراه شما هستیم.',
+        en: 'We stay with you from the first consultation through commissioning and beyond with ongoing assistance.',
+        ps: 'له لومړۍ سلا مشورې څخه تر فعالېدو او وروسته پورې له تاسو سره یوځای پاتې کېږو.'
+    },
+    'why-feature-4-title': {
+        fa: 'نتیجه گرا و متعهد به رشد کسب و کار شما',
+        en: 'Results-Driven and Committed to Your Business Growth',
+        ps: 'د پایلو ترلاسه کولو او ستاسو د سوداګرۍ ودې ته ژمن'
+    },
+    'why-feature-4-desc': {
+        fa: 'برنامه عملیاتی دقیق و قابل اندازه گیری ارائه می‌دهیم تا مطمئن شویم به هدف می‌رسید.',
+        en: 'We deliver precise, measurable action plans to ensure you reach your growth targets.',
+        ps: 'موږ دقیق او د اندازه کېدو وړ کاري پلانونه وړاندې کوو څو ډاډ ترلاسه کړو چې خپلو موخو ته رسېږئ.'
+    },
+
     // Footer
     'footer-description': {
         fa: 'شرکت چشم‌انداز صنعتی صنعتچی با سال‌ها تجربه در ارائه راهکارهای صنعتی، از مشاوره تا راه‌اندازی فابریکه در کنار شماست و تمام مراحل پروژه‌های صنعتی را مدیریت می‌کند.',
