@@ -1,5 +1,4 @@
 let currentLanguage = 'fa';
-window.currentLanguage = currentLanguage;
 
 // Preserve the original meta description so language changes do not mutate SEO copy
 const metaDescriptionTag = document.querySelector('meta[name="description"]');
@@ -5414,41 +5413,6 @@ Object.assign(translations, {
         en: 'Access your desired products from the category list',
         ps: 'د کټګوري لیست څخه خپل غوښتلي محصولاتو ته لاسرسی پیدا کړئ'
     },
-    'category-intro-prefix': {
-        fa: 'سایت صنعتی صنعتچی دسترسی مستقیم به ',
-        en: 'Sanaatchi Industrial Vision gives you direct access to ',
-        ps: 'د صنعتچي صنعتي وېبپاڼه تاسو ته مستقیم لاسرسی برابروي '
-    },
-    'category-intro-production': {
-        fa: 'خطوط تولید تخصصی',
-        en: 'specialised production lines',
-        ps: 'د تخصصي تولیدي لینونه'
-    },
-    'category-intro-separator1': {
-        fa: '، ',
-        en: ', ',
-        ps: '، '
-    },
-    'category-intro-second-hand': {
-        fa: 'ماشین‌آلات دست دوم',
-        en: 'second-hand machinery',
-        ps: 'د دوهم لاس ماشینونه'
-    },
-    'category-intro-and': {
-        fa: ' و ',
-        en: ' and ',
-        ps: ' او '
-    },
-    'category-intro-raw-materials': {
-        fa: 'مواد اولیه صنعتی',
-        en: 'industrial raw materials',
-        ps: 'صنعتي خام مواد'
-    },
-    'category-intro-suffix': {
-        fa: ' در کنار ده‌ها گروه تخصصی دیگر فراهم می‌کند.',
-        en: ' alongside dozens of other specialist groups.',
-        ps: ' د نورو لسګونو ځانګړو ډلو تر څنګ برابروي.'
-    },
     'production-lines-categories-title': {
         fa: 'گروه‌های خطوط تولید',
         en: 'Production Line Groups',
@@ -5636,7 +5600,6 @@ function closeMobileMenu() {
 // Language switching
 function switchLanguage(lang) {
     currentLanguage = lang;
-    window.currentLanguage = lang;
     const html = document.documentElement;
     const body = document.body;
     
