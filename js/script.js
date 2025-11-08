@@ -1,4 +1,5 @@
 let currentLanguage = 'fa';
+window.currentLanguage = currentLanguage;
 
 // Preserve the original meta description so language changes do not mutate SEO copy
 const metaDescriptionTag = document.querySelector('meta[name="description"]');
@@ -5812,6 +5813,7 @@ function closeMobileMenu() {
 // Language switching
 function switchLanguage(lang) {
     currentLanguage = lang;
+    window.currentLanguage = lang;
     const html = document.documentElement;
     const body = document.body;
     
