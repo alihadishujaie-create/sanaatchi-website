@@ -19,12 +19,12 @@
   <meta property="og:url" content="https://sanaatchi.com/cargo.html">
   <meta property="og:image" content="https://sanaatchi.com/images/logo.png">
   <meta property="og:locale" content="fa_AF">
-  <meta property="og:site_name" content="صنعتچی Industrial Vision">
+  <meta property="og:site_name" content="Sanaatchi">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="کارگو چین به افغانستان | صنعتچی">
-  <meta name="twitter:description" content="حمل بار و کارگو از چین به افغانستان با مسیرهای ریلی، جاده‌ای و دریایی؛ همراه با گمرک، بیمه و حمل از حیرتان به شهرهای افغانستان.">
+  <meta name="twitter:title" content="کارگو چین به افغانستان | حمل بار و کارگو چین افغانستان | صنعتچی">
+  <meta name="twitter:description" content="خدمات کارگو چین به افغانستان؛ حمل کانتینر، ماشین‌آلات و مواد اولیه از چین به افغانستان از طریق ریل، جاده و دریا با مدیریت کامل صنعتچی.">
   <meta name="twitter:image" content="https://sanaatchi.com/images/logo.png">
 
   <link rel="icon" type="image/png" href="images/favicon.png" />
@@ -470,8 +470,8 @@
           <div class="footer-newsletter">
             <h4 data-translate="newsletter-title">عضویت در خبرنامه</h4>
             <p data-translate="newsletter-subtitle">برای دریافت آخرین اخبار و به‌روزرسانی‌ها عضو خبرنامه ما شوید.</p>
-            <form class="newsletter-form" id="newsletterForm">
-              <input type="email" data-translate-placeholder="newsletter-placeholder" placeholder="آدرس ایمیل خود را وارد کنید" aria-label="آدرس ایمیل">
+            <form class="newsletter-form" id="newsletterForm" action="/newsletter-subscribe.php" method="POST">
+              <input type="email" name="newsletter_email" data-translate-placeholder="newsletter-placeholder" placeholder="آدرس ایمیل خود را وارد کنید" aria-label="آدرس ایمیل">
               <button type="submit" data-translate="newsletter-btn">عضویت</button>
             </form>
           </div>
@@ -549,8 +549,8 @@
   </div>
 
   <!-- IMPORTANT: keep these links exactly as in main site -->
-  <script src="js/script.js"></script>
-  <script src="js/cargo.js"></script>
+  <script src="js/script.js" defer></script>
+  <script src="js/cargo.js" defer></script>
 
   <!-- Binaries you need to provide:
     images/Transportation.webp

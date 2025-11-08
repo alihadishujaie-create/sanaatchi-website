@@ -216,8 +216,8 @@
                     <div class="footer-newsletter">
                         <h4 data-translate="newsletter-title">عضویت در خبرنامه</h4>
                         <p data-translate="newsletter-subtitle">برای دریافت آخرین اخبار و به‌روزرسانی‌ها عضو خبرنامه ما شوید.</p>
-                        <form class="newsletter-form" id="newsletterForm">
-                            <input type="email" data-translate-placeholder="newsletter-placeholder" placeholder="آدرس ایمیل خود را وارد کنید" aria-label="آدرس ایمیل">
+                        <form class="newsletter-form" id="newsletterForm" action="/newsletter-subscribe.php" method="POST">
+                            <input type="email" name="newsletter_email" data-translate-placeholder="newsletter-placeholder" placeholder="آدرس ایمیل خود را وارد کنید" aria-label="آدرس ایمیل">
                             <button type="submit" data-translate="newsletter-btn">عضویت</button>
                         </form>
                     </div>
@@ -309,7 +309,22 @@
         <div class="modal-content" id="searchResultContent"></div>
     </div>
 
-    <script src="js/cooling-heating.js"></script>
-    <script src="js/script.js"></script>
+    <script src="js/cooling-heating.js" defer></script>
+    <script src="js/script.js" defer></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        if (typeof publishEquipmentStructuredData === 'function') {
+          publishEquipmentStructuredData('cooling-heating', {
+            collectionName: 'Sanaatchi Cooling & Heating Systems Library',
+            collectionDescription: 'HVAC chillers, boilers and climate-control solutions designed for industrial facilities and cold chain logistics.',
+            pageUrl: '/cooling-heating.html',
+            breadcrumbs: [
+              { name: 'Home', url: '/' },
+              { name: 'Cooling & Heating Systems', url: '/cooling-heating.html' }
+            ]
+          });
+        }
+      });
+    </script>
 </body>
 </html>
