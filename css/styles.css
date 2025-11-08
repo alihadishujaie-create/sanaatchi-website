@@ -1336,8 +1336,10 @@ body {
 [dir="ltr"] .nav {
     flex-direction: row;
 }
-[dir="ltr"] .hero-with-search .hero-content {
-    grid-template-columns: 1fr 400px;
+@media (min-width: 769px) {
+    [dir="ltr"] .hero-with-search .hero-content {
+        grid-template-columns: 1fr 400px;
+    }
 }
 [dir="ltr"] .cargo-hero .hero-content {
     grid-template-columns: 1fr;
