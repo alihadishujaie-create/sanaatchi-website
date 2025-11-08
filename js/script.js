@@ -2691,8 +2691,6 @@ Object.assign(translations, {
     'projects': { fa: 'پروژه های تحت کار', en: 'Projects Underway', ps: 'د کار پروژې' },
     'nav-cargo': { fa: 'کارگو و حمل‌ونقل', en: 'Cargo & Transport', ps: 'کارګو او ترانسپورت' },
     'nav_cargo': { fa: 'کارگو و حمل‌ونقل', en: 'Cargo & Transport', ps: 'کارګو او ترانسپورت' },
-    'nav-production-lines': { fa: 'خطوط تولید', en: 'Production Lines', ps: 'د تولید لینونه' },
-    'nav_production_lines': { fa: 'خطوط تولید', en: 'Production Lines', ps: 'د تولید لینونه' },
     'categories': { fa: 'دسته‌بندی‌ها', en: 'Categories', ps: 'کټګورۍ' },
     'projects-back-link': {
         fa: 'بازگشت به صفحه اصلی',
