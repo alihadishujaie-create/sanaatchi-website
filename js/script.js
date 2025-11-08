@@ -1055,7 +1055,7 @@ const translations = {
     },
     'china-office': { fa: 'دفتر چین', en: 'China Office', ps: 'د چین دفتر' },
     'china-address': { fa: 'چین', en: 'China', ps: 'چین' },
-    'china-phone': { fa: '+۸۶ ۱۳۹ ۰۰۰۰ ۰۰۰۰', en: '+86 139 0000 0000', ps: '+86 139 0000 0000' },
+    'china-phone': { fa: '+۸۶ ۱۵۹ ۵۱۷۱ ۶۸۶۷', en: '+86 159 5171 6867', ps: '+86 159 5171 6867' },
     'china-hours': { 
         fa: 'شنبه تا جمعه: ۹:۰۰ تا ۱۸:۰۰', 
         en: 'Saturday to Friday: 9:00 to 18:00',
@@ -1075,16 +1075,34 @@ const translations = {
     }
 };
 
+// Function to normalize locale-specific digits to Western numerals
+function normalizePhoneNumberDigits(phoneNumber) {
+    if (typeof phoneNumber !== 'string') {
+        return '';
+    }
+
+    const digitMap = {
+        '۰': '0', '۱': '1', '۲': '2', '۳': '3', '۴': '4',
+        '۵': '5', '۶': '6', '۷': '7', '۸': '8', '۹': '9',
+        '٠': '0', '١': '1', '٢': '2', '٣': '3', '٤': '4',
+        '٥': '5', '٦': '6', '٧': '7', '٨': '8', '٩': '9'
+    };
+
+    return phoneNumber.replace(/[۰-۹٠-٩]/g, digit => digitMap[digit] || digit);
+}
+
 // Function to format phone number for href
 function formatPhoneNumberForHref(phoneNumber) {
+    const normalized = normalizePhoneNumberDigits(phoneNumber);
     // Remove all non-digit characters except the leading +
-    return phoneNumber.replace(/[^0-9+]/g, '');
+    return normalized.replace(/[^0-9+]/g, '');
 }
 
 // Function to get WhatsApp URL from phone number
 function getWhatsAppUrl(phoneNumber) {
+    const normalized = normalizePhoneNumberDigits(phoneNumber);
     // Remove all non-digit characters including the +
-    const cleanNumber = phoneNumber.replace(/[^0-9]/g, '');
+    const cleanNumber = normalized.replace(/[^0-9]/g, '');
     return `https://wa.me/${cleanNumber}`;
 }
 
@@ -1365,13 +1383,25 @@ function showSalesContactModal() {
                  currentLanguage === 'ps' ? 'د پلور برخې سره اړیکه' : 'Contact Sales Department';
     const subtitle = currentLanguage === 'fa' ? 'برای شروع همکاری با ما، لطفاً با یکی از دفاتر ما تماس بگیرید' : 
                     currentLanguage === 'ps' ? 'د موږ سره د همکاري پیل لپاره، مهرباني کړه د موږ د یو دفتر سره اړیکه ونیسئ' : 'To start cooperation with us, please contact one of our offices';
-    const afghanistanOffice = currentLanguage === 'fa' ? 'دفتر افغانستان' : 
+    const afghanistanOffice = currentLanguage === 'fa' ? 'دفتر افغانستان' :
                              currentLanguage === 'ps' ? 'د افغانستان دفتر' : 'Afghanistan Office';
-    const chinaOffice = currentLanguage === 'fa' ? 'دفتر چین' : 
+    const chinaOffice = currentLanguage === 'fa' ? 'دفتر چین' :
                         currentLanguage === 'ps' ? 'د چین دفتر' : 'China Office';
-    const backText = currentLanguage === 'fa' ? 'بازگشت' : 
+    const backText = currentLanguage === 'fa' ? 'بازگشت' :
                     currentLanguage === 'ps' ? 'بیرته' : 'Back';
-    
+
+    const afghanistanPhoneTranslation = translations['afghanistan-phone'] || {};
+    const afghanistanPhone = afghanistanPhoneTranslation[currentLanguage] ||
+                             afghanistanPhoneTranslation.en ||
+                             '+93 779 819 820';
+    const afghanistanPhoneHref = `tel:${formatPhoneNumberForHref(afghanistanPhone)}`;
+    const afghanistanWhatsAppUrl = getWhatsAppUrl(afghanistanPhone);
+
+    const chinaPhoneTranslation = translations['china-phone'] || {};
+    const chinaPhone = chinaPhoneTranslation[currentLanguage] || chinaPhoneTranslation.en || '+86 159 5171 6867';
+    const chinaPhoneHref = `tel:${formatPhoneNumberForHref(chinaPhone)}`;
+    const chinaWhatsAppUrl = getWhatsAppUrl(chinaPhone);
+
     modalContent.innerHTML = `
         <div class="modal-icon">📞</div>
         <h3>${title}</h3>
@@ -1383,8 +1413,8 @@ function showSalesContactModal() {
                 <div class="contact-item">
                     <i class="fas fa-phone"></i>
                     <div class="phone-container">
-                        <a href="tel:+93779819820" class="phone-link">+۹۳ ۷۷۹ ۸۱۹ ۸۲۰</a>
-                        <a href="https://wa.me/93779819820" target="_blank" class="whatsapp-link" title="WhatsApp" aria-label="واتساپ">
+                        <a href="${afghanistanPhoneHref}" class="phone-link" data-translate="afghanistan-phone">${afghanistanPhone}</a>
+                        <a href="${afghanistanWhatsAppUrl}" target="_blank" class="whatsapp-link" title="WhatsApp" aria-label="واتساپ">
                             <i class="fab fa-whatsapp"></i>
                         </a>
                     </div>
@@ -1406,8 +1436,8 @@ function showSalesContactModal() {
                 <div class="contact-item">
                     <i class="fas fa-phone"></i>
                     <div class="phone-container">
-                        <a href="tel:+8615951716867" class="phone-link">+۸۶ ۱۵۹۵۱۷۱ ۶۸۶۷</a>
-                        <a href="https://wa.me/8615951716867" target="_blank" class="whatsapp-link" title="WhatsApp" aria-label="واتساپ">
+                        <a href="${chinaPhoneHref}" class="phone-link" data-translate="china-phone">${chinaPhone}</a>
+                        <a href="${chinaWhatsAppUrl}" target="_blank" class="whatsapp-link" title="WhatsApp" aria-label="واتساپ">
                             <i class="fab fa-whatsapp"></i>
                         </a>
                     </div>
