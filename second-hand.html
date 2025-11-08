@@ -94,6 +94,7 @@
                 <div class="section-title">
                     <h2 id="secondHandCategoriesTitle"></h2>
                     <p id="secondHandCategoriesSubtitle"></p>
+                    <p class="category-intro">هر دستگاه بازبینی‌شده صنعتچی با گزارش فنی، سرویس کامل و گزینه تأمین <a href="machinery-parts.html">قطعات یدکی</a> ارائه می‌شود و می‌توانید خطوط مکمل را در <a href="production-lines.html">کتابخانه خطوط تولید</a> بررسی کنید.</p>
                 </div>
                 <div id="secondHandCategories" class="categories-grid"></div>
             </div>
@@ -209,8 +210,8 @@
                     <div class="footer-newsletter">
                         <h4 data-translate="newsletter-title">عضویت در خبرنامه</h4>
                         <p data-translate="newsletter-subtitle">برای دریافت آخرین اخبار و به‌روزرسانی‌ها عضو خبرنامه ما شوید.</p>
-                        <form class="newsletter-form" id="newsletterForm">
-                            <input type="email" data-translate-placeholder="newsletter-placeholder" placeholder="آدرس ایمیل خود را وارد کنید" aria-label="آدرس ایمیل">
+                        <form class="newsletter-form" id="newsletterForm" action="/newsletter-subscribe.php" method="POST">
+                            <input type="email" name="newsletter_email" data-translate-placeholder="newsletter-placeholder" placeholder="آدرس ایمیل خود را وارد کنید" aria-label="آدرس ایمیل">
                             <button type="submit" data-translate="newsletter-btn">عضویت</button>
                         </form>
                     </div>
@@ -299,7 +300,22 @@
         </div>
     </div>
 
-    <script src="js/script.js"></script>
-    <script src="js/second-hand.js"></script>
+    <script src="js/script.js" defer></script>
+    <script src="js/second-hand.js" defer></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        if (typeof publishEquipmentStructuredData === 'function') {
+          publishEquipmentStructuredData('second-hand', {
+            collectionName: 'Sanaatchi Second-Hand Machinery Catalog',
+            collectionDescription: 'Inspected and refurbished second-hand industrial machines with technical dossiers, ready for deployment across Afghan production lines.',
+            pageUrl: '/second-hand.html',
+            breadcrumbs: [
+              { name: 'Home', url: '/' },
+              { name: 'Second-hand Machinery', url: '/second-hand.html' }
+            ]
+          });
+        }
+      });
+    </script>
 </body>
 </html>

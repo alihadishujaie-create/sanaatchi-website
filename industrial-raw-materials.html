@@ -105,6 +105,7 @@
                 <div class="section-title">
                     <h2 id="rawMaterialsCategoriesTitle">گروه‌های اصلی مواد اولیه</h2>
                     <p id="rawMaterialsCategoriesSubtitle">براساس نیاز خط تولید خود، فلزات، پلیمرها، مواد شیمیایی یا مواد معدنی را انتخاب کنید.</p>
+                    <p class="category-intro">تمام مواد پیشنهادی با خطوط تولید پیشنهادی در <a href="production-lines.html">کتابخانه خطوط تولید</a> و نیز پروژه‌های <a href="recycling-lines.html">بازیافت صنعتی</a> هماهنگ شده‌اند تا زنجیره تأمین شما کامل شود.</p>
                 </div>
                 <div id="rawMaterialsCategoriesGrid" class="categories-grid"></div>
             </div>
@@ -256,7 +257,22 @@
         </div>
     </div>
 
-    <script src="js/script.js"></script>
-    <script src="js/industrial-raw-materials.js"></script>
+    <script src="js/script.js" defer></script>
+    <script src="js/industrial-raw-materials.js" defer></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        if (typeof publishEquipmentStructuredData === 'function') {
+          publishEquipmentStructuredData('industrial-raw-materials', {
+            collectionName: 'Sanaatchi Industrial Raw Materials Library',
+            collectionDescription: 'Specification sheets for polymers, metals, chemicals and feedstock that support Afghan production lines and recycling plants.',
+            pageUrl: '/industrial-raw-materials.html',
+            breadcrumbs: [
+              { name: 'Home', url: '/' },
+              { name: 'Industrial Raw Materials', url: '/industrial-raw-materials.html' }
+            ]
+          });
+        }
+      });
+    </script>
 </body>
 </html>

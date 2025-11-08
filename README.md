@@ -1,4 +1,4 @@
-[Complete file structure .txt](https://github.com/user-attachments/files/23327307/Complete.file.structure.txt)
+
 [SEO.txt](https://github.com/user-attachments/files/23327309/SEO.txt)
 when coding the the all the remaining of the categories pages mimic the production line structure   to display categories and items. 
 do not use the english name " Sanaatchi" in persian and pashto text use the persian "صنعتچی" across all the steps

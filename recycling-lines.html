@@ -5,14 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>خطوط بازیافت صنعتی | صنعتچی</title>
     <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="canonical" href="https://sanaatchi.com/recycling-lines.html">
     <meta name="description" content="راه‌اندازی خطوط بازیافت پلاستیک، کاغذ، تایر و فلز با تمرکز بر مدیریت پسماند و ایجاد ارزش افزوده در افغانستان.">
     <meta name="keywords" content="خط بازیافت پلاستیک, خط بازیافت تایر, صنعتچی, مدیریت پسماند افغانستان">
     <meta name="author" content="Sanaatchi Industrial Vision">
+    <meta property="og:type" content="website">
     <meta property="og:title" content="خطوط بازیافت صنعتی | صنعتچی">
     <meta property="og:description" content="با خطوط بازیافت صنعتچی، پسماندهای پلاستیک، کاغذ و فلز به سرمایه پایدار تبدیل می‌شوند.">
-    <meta property="og:image" content="images/aiv-og-image.jpg">
-    <meta property="og:url" content="https://sanaatchi.com/production-lines/recycling">
+    <meta property="og:image" content="https://sanaatchi.com/images/aiv-og-image.jpg">
+    <meta property="og:url" content="https://sanaatchi.com/recycling-lines.html">
+    <meta property="og:site_name" content="Sanaatchi">
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="خطوط بازیافت صنعتی | صنعتچی">
+    <meta name="twitter:description" content="با خطوط بازیافت صنعتچی، پسماندهای پلاستیک، کاغذ و فلز به سرمایه پایدار تبدیل می‌شوند.">
+    <meta name="twitter:image" content="https://sanaatchi.com/images/aiv-og-image.jpg">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -204,8 +210,8 @@
                     <div class="footer-newsletter">
                         <h4 data-translate="newsletter-title">عضویت در خبرنامه</h4>
                         <p data-translate="newsletter-subtitle">برای دریافت آخرین اخبار و به‌روزرسانی‌ها عضو خبرنامه ما شوید.</p>
-                        <form class="newsletter-form" id="newsletterForm">
-                            <input type="email" data-translate-placeholder="newsletter-placeholder" placeholder="آدرس ایمیل خود را وارد کنید" aria-label="آدرس ایمیل">
+                        <form class="newsletter-form" id="newsletterForm" action="/newsletter-subscribe.php" method="POST">
+                            <input type="email" name="newsletter_email" data-translate-placeholder="newsletter-placeholder" placeholder="آدرس ایمیل خود را وارد کنید" aria-label="آدرس ایمیل">
                             <button type="submit" data-translate="newsletter-btn">عضویت</button>
                         </form>
                     </div>
@@ -294,8 +300,8 @@
         </div>
     </div>
 
-    <script src="js/script.js"></script>
-    <script src="js/production-lines.js"></script>
-    <script src="js/production-line-category.js"></script>
+    <script src="js/script.js" defer></script>
+    <script src="js/production-lines.js" defer></script>
+    <script src="js/production-line-category.js" defer></script>
 </body>
 </html>
