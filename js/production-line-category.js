@@ -542,9 +542,13 @@
             const lineIconSource = typeof window !== 'undefined' && typeof window.getProductionLineIcon === 'function'
                 ? (window.getProductionLineIcon(line.iconId || line.id) || window.getProductionLineIcon(groupId))
                 : null;
+            const lineFallbackIcon = typeof window !== 'undefined' && typeof window.getProductionLineIconFallback === 'function'
+                ? (window.getProductionLineIconFallback(line.iconId || line.id) || window.getProductionLineIconFallback(groupId) || null)
+                : null;
+            const resolvedLineIcon = lineIconSource || lineFallbackIcon;
             const lineIconMarkup = (typeof window !== 'undefined' && typeof window.renderIconMarkup === 'function')
-                ? window.renderIconMarkup(lineIconSource, 'equipment-icon', lineTitle, 'div')
-                : `<div class="equipment-icon">${lineIconSource || '📄'}</div>`;
+                ? window.renderIconMarkup(resolvedLineIcon, 'equipment-icon', lineTitle, 'div', lineFallbackIcon || '📄')
+                : `<div class="equipment-icon">${resolvedLineIcon || lineFallbackIcon || '📄'}</div>`;
             card.innerHTML = `
                 ${lineIconMarkup}
                 <h4>${lineTitle}</h4>
@@ -589,9 +593,13 @@
                 const iconSource = typeof window !== 'undefined' && typeof window.getProductionLineIcon === 'function'
                     ? window.getProductionLineIcon(group.id)
                     : null;
+                const fallbackIcon = typeof window !== 'undefined' && typeof window.getProductionLineIconFallback === 'function'
+                    ? (window.getProductionLineIconFallback(group.id) || null)
+                    : null;
+                const resolvedIcon = iconSource || fallbackIcon || group.icon;
                 const iconMarkup = (typeof window !== 'undefined' && typeof window.renderIconMarkup === 'function')
-                    ? window.renderIconMarkup(iconSource || group.icon, 'icon', getText(group.title, lang))
-                    : `<span class="icon">${(iconSource || group.icon) || ''}</span>`;
+                    ? window.renderIconMarkup(resolvedIcon, 'icon', getText(group.title, lang), 'span', fallbackIcon || group.icon || '🏭')
+                    : `<span class="icon">${resolvedIcon || ''}</span>`;
                 link.innerHTML = `
                     ${iconMarkup}
                     <h4>${getText(group.title, lang)}</h4>

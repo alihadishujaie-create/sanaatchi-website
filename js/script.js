@@ -28,7 +28,13 @@ if (typeof window !== 'undefined' && typeof window.renderIconMarkup !== 'functio
     window.renderIconMarkup = function renderIconMarkup(icon, baseClass, altText = '', tag = 'span', fallback = '📄') {
         const safeClass = escapeHtml(baseClass || '');
         const safeAlt = escapeHtml(altText || '');
-        const safeFallback = escapeHtml(fallback || '📄');
+        let effectiveFallback = fallback;
+
+        if (icon && typeof icon === 'object' && icon.fallback && icon.fallback !== '') {
+            effectiveFallback = icon.fallback;
+        }
+
+        const safeFallback = escapeHtml(effectiveFallback || '📄');
 
         if (!icon) {
             return `<${tag} class="${safeClass}">${safeFallback}</${tag}>`;
@@ -38,6 +44,10 @@ if (typeof window !== 'undefined' && typeof window.renderIconMarkup !== 'functio
             const src = escapeHtml(icon.src);
             const imgAlt = escapeHtml(icon.alt || altText || '');
             return `<${tag} class="${safeClass} icon-image"><img src="${src}" alt="${imgAlt}" loading="lazy" onerror="if(window.handleIconError){window.handleIconError(this, '${safeFallback}');}"></${tag}>`;
+        }
+
+        if (typeof icon === 'object' && icon.fallback) {
+            return `<${tag} class="${safeClass}">${escapeHtml(icon.fallback)}</${tag}>`;
         }
 
         if (typeof icon === 'string') {
