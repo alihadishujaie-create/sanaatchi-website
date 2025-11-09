@@ -61,20 +61,20 @@ const productionLineIconMap = {
 
 const loggedProductionLineIcons = new Set();
 
-function getProductionLineIcon(key) {
+function normaliseIconKey(key) {
     if (!key) {
         return null;
     }
 
-    const normalised = String(key).trim().toLowerCase();
-    const mapped = productionLineIconMap[normalised];
+    return String(key)
+        .trim()
+        .toLowerCase()
+        .replace(/[^a-z0-9\-_/]/g, '-');
+}
 
+function resolveIconSourceFromMap(mapped) {
     if (!mapped) {
-        if (typeof console !== 'undefined' && !loggedProductionLineIcons.has(normalised)) {
-            console.warn(`Missing production line icon: ${normalised}`);
-            loggedProductionLineIcons.add(normalised);
-        }
-        return `${productionLineIconDirectory}/${normalised}.ico`;
+        return null;
     }
 
     if (typeof mapped === 'object' && mapped !== null) {
@@ -90,6 +90,27 @@ function getProductionLineIcon(key) {
     }
 
     return null;
+}
+
+function getProductionLineIcon(key) {
+    const normalised = normaliseIconKey(key);
+
+    if (!normalised) {
+        return null;
+    }
+
+    const mapped = productionLineIconMap[normalised];
+
+    if (!mapped) {
+        if (typeof console !== 'undefined' && !loggedProductionLineIcons.has(normalised)) {
+            console.warn(`Missing production line icon: ${normalised}`);
+            loggedProductionLineIcons.add(normalised);
+        }
+        const fallbackName = normalised.replace(/-line$/, '');
+        return `${productionLineIconDirectory}/${fallbackName}.ico`;
+    }
+
+    return resolveIconSourceFromMap(mapped);
 }
 
 if (typeof window !== 'undefined') {
@@ -1012,11 +1033,16 @@ function integrateProductionLinesWithSearch() {
         productionLineGroups.forEach(group => {
             const lines = (productionLines[group.id] && productionLines[group.id].lines) || [];
             lines.forEach(line => {
+                const iconLookupId = normaliseIconKey(line.iconId || line.id);
+                line.iconId = iconLookupId;
+                const lineIconSource = getProductionLineIcon(iconLookupId) || getProductionLineIcon(group.id);
                 aggregated.push({
                     name: line.title,
                     description: line.description,
                     pdfUrl: line.pdfUrl,
-                    icon: getProductionLineIcon(line.id)
+                    icon: lineIconSource,
+                    iconId: iconLookupId,
+                    groupId: group.id
                 });
             });
         });
@@ -1128,7 +1154,7 @@ function showProductionLineModal(groupId) {
     data.lines.forEach(line => {
         const lineTitle = line.title[lang] || line.title.fa;
         const lineDesc = line.description[lang] || line.description.fa;
-        const lineIcon = getProductionLineIcon(line.id);
+        const lineIcon = getProductionLineIcon(line.iconId || line.id) || getProductionLineIcon(groupId);
         const lineIconMarkup = (typeof window !== 'undefined' && typeof window.renderIconMarkup === 'function')
             ? window.renderIconMarkup(lineIcon, 'equipment-icon', lineTitle, 'div')
             : `<div class="equipment-icon">${lineIcon || '📄'}</div>`;

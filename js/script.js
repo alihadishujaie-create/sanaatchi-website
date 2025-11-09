@@ -6540,10 +6540,33 @@ function performSearch(searchTerm) {
         }
         seenEquipmentKeys.add(uniqueKey);
 
+        let iconSource = options.icon || item.icon || null;
+
+        if ((!iconSource || (typeof iconSource === 'string' && !iconSource.trim())) &&
+            categoryId === 'production-lines' &&
+            typeof window !== 'undefined' &&
+            typeof window.getProductionLineIcon === 'function') {
+            const potentialKeys = [
+                options.iconId,
+                item.iconId,
+                options.subCategoryId,
+                item.category,
+                options.groupId
+            ].filter(Boolean);
+
+            for (const key of potentialKeys) {
+                const resolved = window.getProductionLineIcon(key);
+                if (resolved) {
+                    iconSource = resolved;
+                    break;
+                }
+            }
+        }
+
         matchingEquipment.push({
             categoryId,
             item,
-            icon: options.icon || item.icon || '📄',
+            icon: iconSource || '📄',
             subCategoryId: options.subCategoryId || null,
             subCategoryTitle: options.subCategoryTitle || null
         });
@@ -6665,18 +6688,22 @@ function performSearch(searchTerm) {
 
                 if (fieldMatches(fields)) {
                     addCategoryResult('production-lines');
+                    const productionLineIconLookupId = line.iconId || line.id;
                     const productionLineIcon = (typeof window !== 'undefined' && typeof window.getProductionLineIcon === 'function')
-                        ? (window.getProductionLineIcon(line.id) || window.getProductionLineIcon(groupId))
+                        ? (window.getProductionLineIcon(productionLineIconLookupId) || window.getProductionLineIcon(groupId))
                         : null;
                     addEquipmentMatch('production-lines', {
                         name: line.title,
                         description: line.description,
                         pdfUrl: line.pdfUrl,
-                        meta: line.meta
+                        meta: line.meta,
+                        iconId: productionLineIconLookupId
                     }, {
                         icon: productionLineIcon || group.icon || '🏭',
+                        iconId: productionLineIconLookupId,
                         subCategoryId: groupId,
-                        subCategoryTitle: group.title
+                        subCategoryTitle: group.title,
+                        groupId
                     });
                 }
             });

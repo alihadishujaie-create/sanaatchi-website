@@ -515,7 +515,7 @@
         });
     }
 
-    function renderLines(lines, lang) {
+    function renderLines(lines, lang, groupId) {
         const container = document.getElementById('categoryLinesGrid');
         if (!container) {
             return;
@@ -540,7 +540,7 @@
             const lineTitle = getText(line.title, lang);
             const lineDescription = getText(line.description, lang);
             const lineIconSource = typeof window !== 'undefined' && typeof window.getProductionLineIcon === 'function'
-                ? window.getProductionLineIcon(line.id)
+                ? (window.getProductionLineIcon(line.iconId || line.id) || window.getProductionLineIcon(groupId))
                 : null;
             const lineIconMarkup = (typeof window !== 'undefined' && typeof window.renderIconMarkup === 'function')
                 ? window.renderIconMarkup(lineIconSource, 'equipment-icon', lineTitle, 'div')
@@ -666,7 +666,7 @@
             linesDescriptionEl.textContent = description;
         }
 
-        renderLines(data.lines || [], lang);
+        renderLines(data.lines || [], lang, groupId);
 
         const relatedTitleEl = document.getElementById('relatedCategoriesTitle');
         if (relatedTitleEl) {
