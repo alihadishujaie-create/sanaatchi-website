@@ -1,62 +1,62 @@
 const productionLineIconDirectory = 'images/icons/production-lines';
 const productionLineIconMap = {
-    'food-processing-lines': 'food-processing-lines.ico',
-    'consumer-goods-lines': 'consumer-goods-lines.ico',
-    'construction-materials-lines': 'construction-materials-lines.ico',
-    'textile-garments-lines': 'textile-garments-lines.ico',
-    'fiberglas-production': 'fiberglas-production.ico',
-    'recycling-lines': 'recycling-lines.ico',
-    'disposable-products-lines': 'disposable-products-lines.ico',
-    'light-industry-lines': 'light-industry-lines.ico',
-    'second-hand': 'second-hand.ico',
-    'cereal-production-line': 'cereal-production-line.ico',
-    'baby-food-cerelac-line': 'baby-food-cerelac-line.ico',
-    'dairy-processing-line': 'dairy-processing-line.ico',
-    'beverage-production-line': 'beverage-production-line.ico',
-    'bakery-biscuits-line': 'bakery-biscuits-line.ico',
-    'meat-processing-line': 'meat-processing-line.ico',
-    'fruit-vegetable-processing-line': 'fruit-vegetable-processing-line.ico',
-    'edible-oil-line': 'edible-oil-line.ico',
-    'shampoo-production-line': 'shampoo-production-line.ico',
-    'detergent-production-line': 'detergent-production-line.ico',
-    'soap-production-line': 'soap-production-line.ico',
-    'toothpaste-production-line': 'toothpaste-production-line.ico',
-    'cosmetics-production-line': 'cosmetics-production-line.ico',
-    'sanitary-napkins-line': 'sanitary-napkins-line.ico',
-    'cement-production-line': 'cement-production-line.ico',
-    'brick-making-line': 'brick-making-line.ico',
-    'concrete-blocks-line': 'concrete-blocks-line.ico',
-    'steel-fabrication-line': 'steel-fabrication-line.ico',
-    'gypsum-board-line': 'gypsum-board-line.ico',
-    't-shirt-production-line': 't-shirt-production-line.ico',
-    'jeans-production-line': 'jeans-production-line.ico',
-    'towel-production-line': 'towel-production-line.ico',
-    'carpet-weaving-line': 'carpet-weaving-line.ico',
-    'fiberglas-bottle-washing': 'fiberglas-bottle-washing.ico',
-    'fiberglas-bottle-crushing': 'fiberglas-bottle-crushing.ico',
-    'fiberglas-steam-treatment': 'fiberglas-steam-treatment.ico',
-    'fiberglas-carding-machine': 'fiberglas-carding-machine.ico',
-    'fiberglas-padding-machine': 'fiberglas-padding-machine.ico',
-    'fiberglas-feeding-machine': 'fiberglas-feeding-machine.ico',
-    'fiberglas-cross-laping': 'fiberglas-cross-laping.ico',
-    'fiberglas-needling-machine': 'fiberglas-needling-machine.ico',
-    'fiberglas-fiber-finishing': 'fiberglas-fiber-finishing.ico',
-    'fiberglas-cotton-spinning': 'fiberglas-cotton-spinning.ico',
-    'fiberglas-cotton-weaving': 'fiberglas-cotton-weaving.ico',
-    'fiberglas-cotton-dyeing': 'fiberglas-cotton-dyeing.ico',
-    'plastic-recycling-line': 'plastic-recycling-line.ico',
-    'paper-recycling-line': 'paper-recycling-line.ico',
-    'tire-recycling-line': 'tire-recycling-line.ico',
-    'metal-recycling-line': 'metal-recycling-line.ico',
-    'disposable-cups-line': 'disposable-cups-line.ico',
-    'disposable-plates-line': 'disposable-plates-line.ico',
-    'disposable-cutlery-line': 'disposable-cutlery-line.ico',
-    'plastic-bottles-line': 'plastic-bottles-line.ico',
-    'plastic-bags-line': 'plastic-bags-line.ico',
-    'furniture-manufacturing-line': 'furniture-manufacturing-line.ico',
-    'school-furniture-line': 'school-furniture-line.ico',
-    'office-furniture-line': 'office-furniture-line.ico',
-    'sports-equipment-line': 'sports-equipment-line.ico'
+    'food-processing-lines': '🥘',
+    'consumer-goods-lines': '🧴',
+    'construction-materials-lines': '🏗️',
+    'textile-garments-lines': '👕',
+    'fiberglas-production': '🧶',
+    'recycling-lines': '♻️',
+    'disposable-products-lines': '🥤',
+    'light-industry-lines': '🪑',
+    'second-hand': '🔄',
+    'cereal-production-line': '🥣',
+    'baby-food-cerelac-line': '🍼',
+    'dairy-processing-line': '🥛',
+    'beverage-production-line': '🥤',
+    'bakery-biscuits-line': '🍪',
+    'meat-processing-line': '🥩',
+    'fruit-vegetable-processing-line': '🥦',
+    'edible-oil-line': '🛢️',
+    'shampoo-production-line': '🧴',
+    'detergent-production-line': '🧽',
+    'soap-production-line': '🧼',
+    'toothpaste-production-line': '🪥',
+    'cosmetics-production-line': '💄',
+    'sanitary-napkins-line': '🩹',
+    'cement-production-line': '⚒️',
+    'brick-making-line': '🧱',
+    'concrete-blocks-line': '🧱',
+    'steel-fabrication-line': '🏭',
+    'gypsum-board-line': '🪚',
+    't-shirt-production-line': '👕',
+    'jeans-production-line': '👖',
+    'towel-production-line': '🧻',
+    'carpet-weaving-line': '🧶',
+    'fiberglas-bottle-washing': '🚿',
+    'fiberglas-bottle-crushing': '🧨',
+    'fiberglas-steam-treatment': '💨',
+    'fiberglas-carding-machine': '🧵',
+    'fiberglas-padding-machine': '🪡',
+    'fiberglas-feeding-machine': '🔄',
+    'fiberglas-cross-laping': '🪢',
+    'fiberglas-needling-machine': '🪡',
+    'fiberglas-fiber-finishing': '✨',
+    'fiberglas-cotton-spinning': '🧵',
+    'fiberglas-cotton-weaving': '🧶',
+    'fiberglas-cotton-dyeing': '🎨',
+    'plastic-recycling-line': '♻️',
+    'paper-recycling-line': '📄',
+    'tire-recycling-line': '🛞',
+    'metal-recycling-line': '🔩',
+    'disposable-cups-line': '🥤',
+    'disposable-plates-line': '🍽️',
+    'disposable-cutlery-line': '🍴',
+    'plastic-bottles-line': '🧴',
+    'plastic-bags-line': '🛍️',
+    'furniture-manufacturing-line': '🪑',
+    'school-furniture-line': '🏫',
+    'office-furniture-line': '💼',
+    'sports-equipment-line': '🏀'
 };
 
 const loggedProductionLineIcons = new Set();
@@ -86,7 +86,20 @@ function resolveIconSourceFromMap(mapped) {
     }
 
     if (typeof mapped === 'string') {
-        return mapped.includes('/') ? mapped : `${productionLineIconDirectory}/${mapped}`;
+        const trimmed = mapped.trim();
+        if (!trimmed) {
+            return null;
+        }
+
+        if (trimmed.includes('/') || trimmed.startsWith('data:')) {
+            return trimmed;
+        }
+
+        if (/\.(ico|png|svg|webp|jpg|jpeg)$/i.test(trimmed)) {
+            return `${productionLineIconDirectory}/${trimmed}`;
+        }
+
+        return trimmed;
     }
 
     return null;
@@ -106,8 +119,7 @@ function getProductionLineIcon(key) {
             console.warn(`Missing production line icon: ${normalised}`);
             loggedProductionLineIcons.add(normalised);
         }
-        const fallbackName = normalised.replace(/-line$/, '');
-        return `${productionLineIconDirectory}/${fallbackName}.ico`;
+        return '🏭';
     }
 
     return resolveIconSourceFromMap(mapped);
