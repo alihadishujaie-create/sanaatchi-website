@@ -6500,24 +6500,10 @@ function performSearch(searchTerm) {
 
     const displayTerm = searchTerm || '';
 
-    const matchedCategoryIds = new Set();
-    const matchingCategories = [];
     const matchingEquipment = [];
     const seenEquipmentKeys = new Set();
     const MAX_EQUIPMENT_RESULTS = 24;
     let equipmentLimitReached = false;
-
-    function addCategoryResult(categoryId) {
-        if (!categoryId || matchedCategoryIds.has(categoryId)) {
-            return;
-        }
-        const category = categories[categoryId];
-        if (!category) {
-            return;
-        }
-        matchedCategoryIds.add(categoryId);
-        matchingCategories.push({ id: categoryId, category });
-    }
 
     function addEquipmentMatch(categoryId, item, options = {}) {
         if (!item) {
@@ -6592,32 +6578,6 @@ function performSearch(searchTerm) {
         return fields.some(field => textMatchesTokens(field, searchTokens));
     }
 
-    // Search category keywords and descriptions
-    for (const [categoryId, keywords] of Object.entries(categoryKeywords)) {
-        const fields = Array.isArray(keywords) ? [...keywords] : [];
-        const category = categories[categoryId];
-        if (category) {
-            fields.push(...collectLocalizedStrings(category.title));
-            fields.push(...collectLocalizedStrings(category.description));
-        }
-        if (fieldMatches(fields)) {
-            addCategoryResult(categoryId);
-        }
-    }
-
-    for (const [categoryId, category] of Object.entries(categories)) {
-        if (categoryKeywords[categoryId]) {
-            continue;
-        }
-        const fields = [
-            ...collectLocalizedStrings(category.title),
-            ...collectLocalizedStrings(category.description)
-        ];
-        if (fieldMatches(fields)) {
-            addCategoryResult(categoryId);
-        }
-    }
-
     // Search equipment data
     for (const [categoryId, items] of Object.entries(equipmentData)) {
         if (!Array.isArray(items)) {
@@ -6645,7 +6605,6 @@ function performSearch(searchTerm) {
             }
 
             if (fieldMatches(fields)) {
-                addCategoryResult(categoryId);
                 addEquipmentMatch(categoryId, item, {
                     icon: item.icon,
                     subCategoryId: item.category,
@@ -6671,7 +6630,6 @@ function performSearch(searchTerm) {
             }
 
             if (fieldMatches(fields)) {
-                addCategoryResult('second-hand');
                 const subCategoryTitle = (typeof secondHandCatalog !== 'undefined' && secondHandCatalog[item.category])
                     ? secondHandCatalog[item.category].title
                     : null;
@@ -6703,7 +6661,6 @@ function performSearch(searchTerm) {
                 }
 
                 if (fieldMatches(fields)) {
-                    addCategoryResult('production-lines');
                     const productionLineIconLookupId = line.iconId || line.id;
                     const productionLineIcon = (typeof window !== 'undefined' && typeof window.getProductionLineIcon === 'function')
                         ? (window.getProductionLineIcon(productionLineIconLookupId) || window.getProductionLineIcon(groupId))
@@ -6732,8 +6689,6 @@ function performSearch(searchTerm) {
                      currentLanguage === 'ps' ? `"${displayTerm}" لپاره وموندل:` : `Found for "${displayTerm}":`;
     const noResults = currentLanguage === 'fa' ? 'هیچ نتیجه‌ای یافت نشد' :
                     currentLanguage === 'ps' ? 'هیڅ پایله ونه موندل شوه' : 'No results found';
-    const viewText = currentLanguage === 'fa' ? 'مشاهده' :
-                    currentLanguage === 'ps' ? 'لیدل' : 'View';
     const backText = currentLanguage === 'fa' ? 'بازگشت' :
                     currentLanguage === 'ps' ? 'بیرته' : 'Back';
     const equipmentHeading = currentLanguage === 'fa' ? 'ماشین‌آلات و تجهیزات مرتبط:' :
@@ -6753,22 +6708,6 @@ function performSearch(searchTerm) {
         <h3>${title}</h3>
         <p>${subtitle}</p>
     `;
-
-    if (matchingCategories.length > 0) {
-        contentHtml += '<div class="search-results">';
-        matchingCategories.forEach(match => {
-            const categoryTitle = getLocalizedText(match.category.title, currentLanguage);
-            const categoryDescription = getLocalizedText(match.category.description, currentLanguage);
-            contentHtml += `
-                <div class="search-result-item">
-                    <h4>${categoryTitle}</h4>
-                    <p>${categoryDescription}</p>
-                    <button class="btn-primary" onclick="showRelatedEquipments('${match.id}')">${viewText}</button>
-                </div>
-            `;
-        });
-        contentHtml += '</div>';
-    }
 
     if (matchingEquipment.length > 0) {
         contentHtml += `<h4 class="search-equipment-heading">${equipmentHeading}</h4>`;
@@ -6824,7 +6763,7 @@ function performSearch(searchTerm) {
         }
     }
 
-    if (matchingCategories.length === 0 && matchingEquipment.length === 0) {
+    if (matchingEquipment.length === 0) {
         contentHtml += `<p>${noResults}</p>`;
         contentHtml += `<div class="search-suggestions"><h4>${suggestionsTitle}</h4>`;
         contentHtml += '<div class="suggestion-tags">';
