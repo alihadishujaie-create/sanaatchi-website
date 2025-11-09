@@ -28,7 +28,13 @@ if (typeof window !== 'undefined' && typeof window.renderIconMarkup !== 'functio
     window.renderIconMarkup = function renderIconMarkup(icon, baseClass, altText = '', tag = 'span', fallback = '📄') {
         const safeClass = escapeHtml(baseClass || '');
         const safeAlt = escapeHtml(altText || '');
-        const safeFallback = escapeHtml(fallback || '📄');
+        let effectiveFallback = fallback;
+
+        if (icon && typeof icon === 'object' && icon.fallback && icon.fallback !== '') {
+            effectiveFallback = icon.fallback;
+        }
+
+        const safeFallback = escapeHtml(effectiveFallback || '📄');
 
         if (!icon) {
             return `<${tag} class="${safeClass}">${safeFallback}</${tag}>`;
@@ -38,6 +44,10 @@ if (typeof window !== 'undefined' && typeof window.renderIconMarkup !== 'functio
             const src = escapeHtml(icon.src);
             const imgAlt = escapeHtml(icon.alt || altText || '');
             return `<${tag} class="${safeClass} icon-image"><img src="${src}" alt="${imgAlt}" loading="lazy" onerror="if(window.handleIconError){window.handleIconError(this, '${safeFallback}');}"></${tag}>`;
+        }
+
+        if (typeof icon === 'object' && icon.fallback) {
+            return `<${tag} class="${safeClass}">${escapeHtml(icon.fallback)}</${tag}>`;
         }
 
         if (typeof icon === 'string') {
@@ -6540,10 +6550,39 @@ function performSearch(searchTerm) {
         }
         seenEquipmentKeys.add(uniqueKey);
 
+        let iconSource = options.icon || item.icon || null;
+
+        if ((!iconSource || (typeof iconSource === 'string' && !iconSource.trim())) &&
+            categoryId === 'production-lines' &&
+            typeof window !== 'undefined' &&
+            typeof window.getProductionLineIcon === 'function') {
+            const potentialKeys = [
+                options.iconId,
+                item.iconId,
+                options.subCategoryId,
+                item.category,
+                options.groupId
+            ].filter(Boolean);
+
+            for (const key of potentialKeys) {
+                const resolved = window.getProductionLineIcon(key);
+                if (resolved) {
+                    iconSource = resolved;
+                    break;
+                }
+            }
+        }
+
+        if ((!iconSource || (typeof iconSource === 'string' && !iconSource.trim())) &&
+            categories[categoryId] &&
+            categories[categoryId].icon) {
+            iconSource = categories[categoryId].icon;
+        }
+
         matchingEquipment.push({
             categoryId,
             item,
-            icon: options.icon || item.icon || '📄',
+            icon: iconSource || '📄',
             subCategoryId: options.subCategoryId || null,
             subCategoryTitle: options.subCategoryTitle || null
         });
@@ -6665,18 +6704,22 @@ function performSearch(searchTerm) {
 
                 if (fieldMatches(fields)) {
                     addCategoryResult('production-lines');
+                    const productionLineIconLookupId = line.iconId || line.id;
                     const productionLineIcon = (typeof window !== 'undefined' && typeof window.getProductionLineIcon === 'function')
-                        ? (window.getProductionLineIcon(line.id) || window.getProductionLineIcon(groupId))
+                        ? (window.getProductionLineIcon(productionLineIconLookupId) || window.getProductionLineIcon(groupId))
                         : null;
                     addEquipmentMatch('production-lines', {
                         name: line.title,
                         description: line.description,
                         pdfUrl: line.pdfUrl,
-                        meta: line.meta
+                        meta: line.meta,
+                        iconId: productionLineIconLookupId
                     }, {
                         icon: productionLineIcon || group.icon || '🏭',
+                        iconId: productionLineIconLookupId,
                         subCategoryId: groupId,
-                        subCategoryTitle: group.title
+                        subCategoryTitle: group.title,
+                        groupId
                     });
                 }
             });

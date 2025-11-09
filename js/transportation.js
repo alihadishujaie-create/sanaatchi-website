@@ -122,7 +122,7 @@
 
     const highlights = [
         {
-            icon: makeIcon('semi-truck', 'Mission-specific transport configuration icon'),
+            icon: makeIcon('mission-compass', 'Mission-specific transport configuration icon'),
             title: {
                 fa: 'پیکربندی متناسب با ماموریت',
                 en: 'Mission-Specific Configuration',
