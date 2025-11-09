@@ -1,5 +1,5 @@
-const productionLineIconDirectory = 'images/icons/production-lines';
 const productionLineIconMap = {
+    'production-lines': '🏭',
     'food-processing-lines': '🥘',
     'consumer-goods-lines': '🧴',
     'construction-materials-lines': '🏗️',
@@ -8,55 +8,7 @@ const productionLineIconMap = {
     'recycling-lines': '♻️',
     'disposable-products-lines': '🥤',
     'light-industry-lines': '🪑',
-    'second-hand': '🔄',
-    'cereal-production-line': '🥣',
-    'baby-food-cerelac-line': '🍼',
-    'dairy-processing-line': '🥛',
-    'beverage-production-line': '🥤',
-    'bakery-biscuits-line': '🍪',
-    'meat-processing-line': '🥩',
-    'fruit-vegetable-processing-line': '🥦',
-    'edible-oil-line': '🛢️',
-    'shampoo-production-line': '🧴',
-    'detergent-production-line': '🧽',
-    'soap-production-line': '🧼',
-    'toothpaste-production-line': '🪥',
-    'cosmetics-production-line': '💄',
-    'sanitary-napkins-line': '🩹',
-    'cement-production-line': '⚒️',
-    'brick-making-line': '🧱',
-    'concrete-blocks-line': '🧱',
-    'steel-fabrication-line': '🏭',
-    'gypsum-board-line': '🪚',
-    't-shirt-production-line': '👕',
-    'jeans-production-line': '👖',
-    'towel-production-line': '🧻',
-    'carpet-weaving-line': '🧶',
-    'fiberglas-bottle-washing': '🚿',
-    'fiberglas-bottle-crushing': '🧨',
-    'fiberglas-steam-treatment': '💨',
-    'fiberglas-carding-machine': '🧵',
-    'fiberglas-padding-machine': '🪡',
-    'fiberglas-feeding-machine': '🔄',
-    'fiberglas-cross-laping': '🪢',
-    'fiberglas-needling-machine': '🪡',
-    'fiberglas-fiber-finishing': '✨',
-    'fiberglas-cotton-spinning': '🧵',
-    'fiberglas-cotton-weaving': '🧶',
-    'fiberglas-cotton-dyeing': '🎨',
-    'plastic-recycling-line': '♻️',
-    'paper-recycling-line': '📄',
-    'tire-recycling-line': '🛞',
-    'metal-recycling-line': '🔩',
-    'disposable-cups-line': '🥤',
-    'disposable-plates-line': '🍽️',
-    'disposable-cutlery-line': '🍴',
-    'plastic-bottles-line': '🧴',
-    'plastic-bags-line': '🛍️',
-    'furniture-manufacturing-line': '🪑',
-    'school-furniture-line': '🏫',
-    'office-furniture-line': '💼',
-    'sports-equipment-line': '🏀'
+    'second-hand': '🔄'
 };
 
 const loggedProductionLineIcons = new Set();
@@ -78,28 +30,17 @@ function resolveIconSourceFromMap(mapped) {
     }
 
     if (typeof mapped === 'object' && mapped !== null) {
-        const src = mapped.src ? (mapped.src.includes('/') ? mapped.src : `${productionLineIconDirectory}/${mapped.src}`) : '';
-        if (!src) {
-            return null;
+        if (mapped.src) {
+            return mapped.alt ? { src: mapped.src, alt: mapped.alt } : mapped.src;
         }
-        return mapped.alt ? { src, alt: mapped.alt } : src;
+        if (mapped.emoji) {
+            return mapped.emoji;
+        }
+        return null;
     }
 
     if (typeof mapped === 'string') {
-        const trimmed = mapped.trim();
-        if (!trimmed) {
-            return null;
-        }
-
-        if (trimmed.includes('/') || trimmed.startsWith('data:')) {
-            return trimmed;
-        }
-
-        if (/\.(ico|png|svg|webp|jpg|jpeg)$/i.test(trimmed)) {
-            return `${productionLineIconDirectory}/${trimmed}`;
-        }
-
-        return trimmed;
+        return mapped;
     }
 
     return null;
@@ -119,7 +60,7 @@ function getProductionLineIcon(key) {
             console.warn(`Missing production line icon: ${normalised}`);
             loggedProductionLineIcons.add(normalised);
         }
-        return '🏭';
+        return null;
     }
 
     return resolveIconSourceFromMap(mapped);
@@ -1047,7 +988,7 @@ function integrateProductionLinesWithSearch() {
             lines.forEach(line => {
                 const iconLookupId = normaliseIconKey(line.iconId || line.id);
                 line.iconId = iconLookupId;
-                const lineIconSource = getProductionLineIcon(iconLookupId) || getProductionLineIcon(group.id);
+                const lineIconSource = getProductionLineIcon(iconLookupId) || getProductionLineIcon(group.id) || group.icon;
                 aggregated.push({
                     name: line.title,
                     description: line.description,
@@ -1150,6 +1091,7 @@ function showProductionLineModal(groupId) {
     const modal = document.getElementById('equipmentModal');
     const modalContent = document.getElementById('equipmentModalContent');
     const data = productionLines[groupId];
+    const group = productionLineGroups.find(item => item.id === groupId);
 
     if (!modal || !modalContent || !data) {
         return;
@@ -1166,7 +1108,7 @@ function showProductionLineModal(groupId) {
     data.lines.forEach(line => {
         const lineTitle = line.title[lang] || line.title.fa;
         const lineDesc = line.description[lang] || line.description.fa;
-        const lineIcon = getProductionLineIcon(line.iconId || line.id) || getProductionLineIcon(groupId);
+        const lineIcon = getProductionLineIcon(line.iconId || line.id) || getProductionLineIcon(groupId) || (group ? group.icon : null);
         const lineIconMarkup = (typeof window !== 'undefined' && typeof window.renderIconMarkup === 'function')
             ? window.renderIconMarkup(lineIcon, 'equipment-icon', lineTitle, 'div')
             : `<div class="equipment-icon">${lineIcon || '📄'}</div>`;
