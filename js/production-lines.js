@@ -1,62 +1,14 @@
-const productionLineIconDirectory = 'images/icons/production-lines';
 const productionLineIconMap = {
-    'food-processing-lines': 'food-processing-lines.ico',
-    'consumer-goods-lines': 'consumer-goods-lines.ico',
-    'construction-materials-lines': 'construction-materials-lines.ico',
-    'textile-garments-lines': 'textile-garments-lines.ico',
-    'fiberglas-production': 'fiberglas-production.ico',
-    'recycling-lines': 'recycling-lines.ico',
-    'disposable-products-lines': 'disposable-products-lines.ico',
-    'light-industry-lines': 'light-industry-lines.ico',
-    'second-hand': 'second-hand.ico',
-    'cereal-production-line': 'cereal-production-line.ico',
-    'baby-food-cerelac-line': 'baby-food-cerelac-line.ico',
-    'dairy-processing-line': 'dairy-processing-line.ico',
-    'beverage-production-line': 'beverage-production-line.ico',
-    'bakery-biscuits-line': 'bakery-biscuits-line.ico',
-    'meat-processing-line': 'meat-processing-line.ico',
-    'fruit-vegetable-processing-line': 'fruit-vegetable-processing-line.ico',
-    'edible-oil-line': 'edible-oil-line.ico',
-    'shampoo-production-line': 'shampoo-production-line.ico',
-    'detergent-production-line': 'detergent-production-line.ico',
-    'soap-production-line': 'soap-production-line.ico',
-    'toothpaste-production-line': 'toothpaste-production-line.ico',
-    'cosmetics-production-line': 'cosmetics-production-line.ico',
-    'sanitary-napkins-line': 'sanitary-napkins-line.ico',
-    'cement-production-line': 'cement-production-line.ico',
-    'brick-making-line': 'brick-making-line.ico',
-    'concrete-blocks-line': 'concrete-blocks-line.ico',
-    'steel-fabrication-line': 'steel-fabrication-line.ico',
-    'gypsum-board-line': 'gypsum-board-line.ico',
-    't-shirt-production-line': 't-shirt-production-line.ico',
-    'jeans-production-line': 'jeans-production-line.ico',
-    'towel-production-line': 'towel-production-line.ico',
-    'carpet-weaving-line': 'carpet-weaving-line.ico',
-    'fiberglas-bottle-washing': 'fiberglas-bottle-washing.ico',
-    'fiberglas-bottle-crushing': 'fiberglas-bottle-crushing.ico',
-    'fiberglas-steam-treatment': 'fiberglas-steam-treatment.ico',
-    'fiberglas-carding-machine': 'fiberglas-carding-machine.ico',
-    'fiberglas-padding-machine': 'fiberglas-padding-machine.ico',
-    'fiberglas-feeding-machine': 'fiberglas-feeding-machine.ico',
-    'fiberglas-cross-laping': 'fiberglas-cross-laping.ico',
-    'fiberglas-needling-machine': 'fiberglas-needling-machine.ico',
-    'fiberglas-fiber-finishing': 'fiberglas-fiber-finishing.ico',
-    'fiberglas-cotton-spinning': 'fiberglas-cotton-spinning.ico',
-    'fiberglas-cotton-weaving': 'fiberglas-cotton-weaving.ico',
-    'fiberglas-cotton-dyeing': 'fiberglas-cotton-dyeing.ico',
-    'plastic-recycling-line': 'plastic-recycling-line.ico',
-    'paper-recycling-line': 'paper-recycling-line.ico',
-    'tire-recycling-line': 'tire-recycling-line.ico',
-    'metal-recycling-line': 'metal-recycling-line.ico',
-    'disposable-cups-line': 'disposable-cups-line.ico',
-    'disposable-plates-line': 'disposable-plates-line.ico',
-    'disposable-cutlery-line': 'disposable-cutlery-line.ico',
-    'plastic-bottles-line': 'plastic-bottles-line.ico',
-    'plastic-bags-line': 'plastic-bags-line.ico',
-    'furniture-manufacturing-line': 'furniture-manufacturing-line.ico',
-    'school-furniture-line': 'school-furniture-line.ico',
-    'office-furniture-line': 'office-furniture-line.ico',
-    'sports-equipment-line': 'sports-equipment-line.ico'
+    'production-lines': '🏭',
+    'food-processing-lines': '🥘',
+    'consumer-goods-lines': '🧴',
+    'construction-materials-lines': '🏗️',
+    'textile-garments-lines': '👕',
+    'fiberglas-production': '🧶',
+    'recycling-lines': '♻️',
+    'disposable-products-lines': '🥤',
+    'light-industry-lines': '🪑',
+    'second-hand': '🔄'
 };
 
 const productionLineIconFallbacks = {
@@ -159,15 +111,17 @@ function resolveIconSourceFromMap(mapped) {
     }
 
     if (typeof mapped === 'object' && mapped !== null) {
-        const src = mapped.src ? (mapped.src.includes('/') ? mapped.src : `${productionLineIconDirectory}/${mapped.src}`) : '';
-        if (!src) {
-            return null;
+        if (mapped.src) {
+            return mapped.alt ? { src: mapped.src, alt: mapped.alt } : mapped.src;
         }
-        return mapped.alt ? { src, alt: mapped.alt } : src;
+        if (mapped.emoji) {
+            return mapped.emoji;
+        }
+        return null;
     }
 
     if (typeof mapped === 'string') {
-        return mapped.includes('/') ? mapped : `${productionLineIconDirectory}/${mapped}`;
+        return mapped;
     }
 
     return null;
@@ -188,27 +142,7 @@ function getProductionLineIcon(key) {
             console.warn(`Missing production line icon: ${normalised}`);
             loggedProductionLineIcons.add(normalised);
         }
-        return fallbackIcon || null;
-    }
-
-    const resolved = resolveIconSourceFromMap(mapped);
-
-    if (!resolved) {
-        return fallbackIcon || null;
-    }
-
-    if (typeof resolved === 'object') {
-        if (fallbackIcon && !resolved.fallback) {
-            return { ...resolved, fallback: fallbackIcon };
-        }
-        return resolved;
-    }
-
-    if (typeof resolved === 'string') {
-        if (fallbackIcon && (resolved.includes('/') || /\.(ico|png|svg|webp|jpg|jpeg)$/i.test(resolved))) {
-            return { src: resolved, fallback: fallbackIcon };
-        }
-        return resolved;
+        return null;
     }
 
     return fallbackIcon || null;
@@ -1137,8 +1071,7 @@ function integrateProductionLinesWithSearch() {
             lines.forEach(line => {
                 const iconLookupId = normaliseIconKey(line.iconId || line.id);
                 line.iconId = iconLookupId;
-                const lineFallbackIcon = getProductionLineIconFallback(iconLookupId) || getProductionLineIconFallback(group.id) || group.icon || '🏭';
-                const resolvedIconSource = getProductionLineIcon(iconLookupId) || getProductionLineIcon(group.id) || lineFallbackIcon;
+                const lineIconSource = getProductionLineIcon(iconLookupId) || getProductionLineIcon(group.id) || group.icon;
                 aggregated.push({
                     name: line.title,
                     description: line.description,
@@ -1244,9 +1177,7 @@ function showProductionLineModal(groupId) {
     const modal = document.getElementById('equipmentModal');
     const modalContent = document.getElementById('equipmentModalContent');
     const data = productionLines[groupId];
-    const group = Array.isArray(productionLineGroups)
-        ? productionLineGroups.find(item => item.id === groupId)
-        : null;
+    const group = productionLineGroups.find(item => item.id === groupId);
 
     if (!modal || !modalContent || !data) {
         return;
@@ -1263,10 +1194,7 @@ function showProductionLineModal(groupId) {
     data.lines.forEach(line => {
         const lineTitle = line.title[lang] || line.title.fa;
         const lineDesc = line.description[lang] || line.description.fa;
-        const lineFallback = (typeof window !== 'undefined' && typeof window.getProductionLineIconFallback === 'function')
-            ? (window.getProductionLineIconFallback(line.iconId || line.id) || window.getProductionLineIconFallback(groupId) || (group && group.icon) || '🏭')
-            : ((group && group.icon) || '🏭');
-        const lineIcon = getProductionLineIcon(line.iconId || line.id) || getProductionLineIcon(groupId) || lineFallback;
+        const lineIcon = getProductionLineIcon(line.iconId || line.id) || getProductionLineIcon(groupId) || (group ? group.icon : null);
         const lineIconMarkup = (typeof window !== 'undefined' && typeof window.renderIconMarkup === 'function')
             ? window.renderIconMarkup(lineIcon, 'equipment-icon', lineTitle, 'div', lineFallback)
             : `<div class="equipment-icon">${lineIcon || lineFallback || '📄'}</div>`;

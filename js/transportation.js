@@ -1,45 +1,55 @@
 (function() {
-    const defaultIconFallback = '🚚';
-    const iconDirectory = 'images/icons/transportation';
     const iconData = {
-        'cargo-truck': { fallback: '🚛' },
-        'container-trailer': { fallback: '📦' },
-        'critical-spares': { fallback: '🧰' },
-        'dump-truck': { fallback: '🚚' },
-        'excavator': { fallback: '🚜' },
-        'financing-support': { fallback: '💼' },
-        'flatbed-trailer': { fallback: '🛻' },
-        'fleet-tracking': { fallback: '📡' },
-        'floor-polisher': { fallback: '🧹' },
-        'forklift-diesel': { fallback: '🏗️' },
-        'forklift-electric': { fallback: '🏗️' },
-        'forklift-rough': { fallback: '🏗️' },
-        'forklift': { fallback: '🏗️' },
-        'furnace': { fallback: '🔥' },
-        'maintenance-team': { fallback: '🛠️' },
-        'refrigerated-trailer': { fallback: '🧊' },
-        'semi-truck': { fallback: '🚚' },
-        'tanker-trailer': { fallback: '🛢️' },
-        'tow-truck': { fallback: '🚚' }
+        'cargo-truck': '🚚',
+        'container-trailer': '📦',
+        'critical-spares': '🧰',
+        'dump-truck': '🚛',
+        'excavator': '🚜',
+        'financing-support': '💳',
+        'flatbed-trailer': '🛻',
+        'fleet-tracking': '🛰️',
+        'floor-polisher': '🧽',
+        'forklift-diesel': '⛽',
+        'forklift-electric': '⚡',
+        'forklift-rough': '🛞',
+        'forklift': '🏗️',
+        'furnace': '🔥',
+        'maintenance-team': '🛠️',
+        'refrigerated-trailer': '❄️',
+        'semi-truck': '🚛',
+        'tanker-trailer': '🛢️',
+        'tow-truck': '🚨',
     };
 
-    const makeIcon = (file, alt) => {
-        const entry = iconData[file];
-
+    const resolveIcon = (name) => {
+        const entry = iconData[name];
         if (!entry) {
-            console.warn(`Missing transportation icon: ${file}`);
-            return { alt, fallback: defaultIconFallback };
+            if (typeof console !== 'undefined' && typeof console.warn === 'function') {
+                console.warn(`Missing transportation icon: ${name}`);
+            }
+            return '';
         }
 
-        const icon = {
-            alt,
-            fallback: entry.fallback || defaultIconFallback
-        };
+        if (typeof entry === 'object' && entry !== null) {
+            if (entry.src) {
+                return entry.alt ? { src: entry.src, alt: entry.alt } : entry.src;
+            }
+            if (entry.emoji) {
+                return entry.emoji;
+            }
+        }
 
-        if (entry.file) {
-            icon.src = `${iconDirectory}/${entry.file}`;
-        } else if (entry.src) {
-            icon.src = entry.src;
+        return entry;
+    };
+
+    const makeIcon = (name, alt) => {
+        const icon = resolveIcon(name);
+        if (!icon) {
+            return '📄';
+        }
+
+        if (typeof icon === 'object' && icon.src && alt && !icon.alt) {
+            return { src: icon.src, alt };
         }
 
         return icon;
