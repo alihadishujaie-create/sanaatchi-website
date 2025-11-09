@@ -1,6 +1,59 @@
 let currentLanguage = 'fa';
 window.currentLanguage = currentLanguage;
 
+if (typeof window !== 'undefined' && typeof window.renderIconMarkup !== 'function') {
+    const escapeHtml = (value = '') => String(value)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+
+    if (typeof window.handleIconError !== 'function') {
+        window.handleIconError = function handleIconError(img, fallback = '📄') {
+            if (!img) {
+                return;
+            }
+
+            const wrapper = img.closest('.icon-image');
+            if (!wrapper) {
+                return;
+            }
+
+            wrapper.classList.remove('icon-image');
+            wrapper.innerHTML = escapeHtml(fallback);
+        };
+    }
+
+    window.renderIconMarkup = function renderIconMarkup(icon, baseClass, altText = '', tag = 'span', fallback = '📄') {
+        const safeClass = escapeHtml(baseClass || '');
+        const safeAlt = escapeHtml(altText || '');
+        const safeFallback = escapeHtml(fallback || '📄');
+
+        if (!icon) {
+            return `<${tag} class="${safeClass}">${safeFallback}</${tag}>`;
+        }
+
+        if (typeof icon === 'object' && icon.src) {
+            const src = escapeHtml(icon.src);
+            const imgAlt = escapeHtml(icon.alt || altText || '');
+            return `<${tag} class="${safeClass} icon-image"><img src="${src}" alt="${imgAlt}" loading="lazy" onerror="if(window.handleIconError){window.handleIconError(this, '${safeFallback}');}"></${tag}>`;
+        }
+
+        if (typeof icon === 'string') {
+            const trimmed = icon.trim();
+            if (trimmed.startsWith('data:') || trimmed.includes('/') || /\.(ico|png|svg|webp|jpg|jpeg)$/i.test(trimmed)) {
+                const src = escapeHtml(trimmed);
+                return `<${tag} class="${safeClass} icon-image"><img src="${src}" alt="${safeAlt}" loading="lazy" onerror="if(window.handleIconError){window.handleIconError(this, '${safeFallback}');}"></${tag}>`;
+            }
+
+            return `<${tag} class="${safeClass}">${escapeHtml(icon)}</${tag}>`;
+        }
+
+        return `<${tag} class="${safeClass}">${safeFallback}</${tag}>`;
+    };
+}
+
 // Preserve the original meta description so language changes do not mutate SEO copy
 const metaDescriptionTag = document.querySelector('meta[name="description"]');
 if (metaDescriptionTag && !metaDescriptionTag.dataset.originalContent) {
@@ -6487,10 +6540,33 @@ function performSearch(searchTerm) {
         }
         seenEquipmentKeys.add(uniqueKey);
 
+        let iconSource = options.icon || item.icon || null;
+
+        if ((!iconSource || (typeof iconSource === 'string' && !iconSource.trim())) &&
+            categoryId === 'production-lines' &&
+            typeof window !== 'undefined' &&
+            typeof window.getProductionLineIcon === 'function') {
+            const potentialKeys = [
+                options.iconId,
+                item.iconId,
+                options.subCategoryId,
+                item.category,
+                options.groupId
+            ].filter(Boolean);
+
+            for (const key of potentialKeys) {
+                const resolved = window.getProductionLineIcon(key);
+                if (resolved) {
+                    iconSource = resolved;
+                    break;
+                }
+            }
+        }
+
         matchingEquipment.push({
             categoryId,
             item,
-            icon: options.icon || item.icon || '📄',
+            icon: iconSource || '📄',
             subCategoryId: options.subCategoryId || null,
             subCategoryTitle: options.subCategoryTitle || null
         });
@@ -6612,15 +6688,22 @@ function performSearch(searchTerm) {
 
                 if (fieldMatches(fields)) {
                     addCategoryResult('production-lines');
+                    const productionLineIconLookupId = line.iconId || line.id;
+                    const productionLineIcon = (typeof window !== 'undefined' && typeof window.getProductionLineIcon === 'function')
+                        ? (window.getProductionLineIcon(productionLineIconLookupId) || window.getProductionLineIcon(groupId))
+                        : null;
                     addEquipmentMatch('production-lines', {
                         name: line.title,
                         description: line.description,
                         pdfUrl: line.pdfUrl,
-                        meta: line.meta
+                        meta: line.meta,
+                        iconId: productionLineIconLookupId
                     }, {
-                        icon: group.icon || '🏭',
+                        icon: productionLineIcon || group.icon || '🏭',
+                        iconId: productionLineIconLookupId,
                         subCategoryId: groupId,
-                        subCategoryTitle: group.title
+                        subCategoryTitle: group.title,
+                        groupId
                     });
                 }
             });
@@ -6688,6 +6771,11 @@ function performSearch(searchTerm) {
             const metaHtml = renderEquipmentMeta(match.item.meta, currentLanguage);
             let actionsHtml = '';
 
+            const equipmentIcon = match.icon || (match.item ? match.item.icon : null);
+            const iconMarkup = (typeof window !== 'undefined' && typeof window.renderIconMarkup === 'function')
+                ? window.renderIconMarkup(equipmentIcon, 'equipment-icon', nameText, 'div')
+                : `<div class="equipment-icon">${equipmentIcon || '📄'}</div>`;
+
             if (match.item.pdfUrl) {
                 actionsHtml = `
                     <div class="equipment-actions">
@@ -6703,7 +6791,7 @@ function performSearch(searchTerm) {
 
             contentHtml += `
                 <div class="equipment-card">
-                    <div class="equipment-icon">${match.icon || '📄'}</div>
+                    ${iconMarkup}
                     <h4>${nameText}</h4>
                     ${categoryHtml}
                     ${subCategoryHtml}
@@ -6812,14 +6900,27 @@ function showRelatedEquipments(categoryId) {
         if (categoryEquipmentData.length > 0) {
             equipmentHtml = '<div class="equipment-grid">';
             categoryEquipmentData.forEach(item => {
+                const nameValue = item && item.name
+                    ? (typeof item.name === 'string'
+                        ? item.name
+                        : (item.name[currentLanguage] || item.name.fa || Object.values(item.name)[0] || ''))
+                    : '';
+                const descriptionValue = item && item.description
+                    ? (typeof item.description === 'string'
+                        ? item.description
+                        : (item.description[currentLanguage] || item.description.fa || Object.values(item.description)[0] || ''))
+                    : '';
+                const iconMarkup = (typeof window !== 'undefined' && typeof window.renderIconMarkup === 'function')
+                    ? window.renderIconMarkup(item.icon, 'equipment-icon', nameValue, 'div')
+                    : `<div class="equipment-icon">${(item && item.icon) || '📄'}</div>`;
                 equipmentHtml += `
                     <div class="equipment-card">
-                        <div class="equipment-icon">📄</div>
-                        <h4>${item.name[currentLanguage]}</h4>
-                        <p>${item.description[currentLanguage]}</p>
+                        ${iconMarkup}
+                        <h4>${nameValue}</h4>
+                        <p>${descriptionValue}</p>
                         <div class="equipment-actions">
                             <a href="${item.pdfUrl}" target="_blank" class="btn-primary">
-                                <i class="fas fa-file-pdf"></i> ${currentLanguage === 'fa' ? 'مشاهده PDF' : 
+                                <i class="fas fa-file-pdf"></i> ${currentLanguage === 'fa' ? 'مشاهده PDF' :
                                                               currentLanguage === 'ps' ? 'PDF وګورئ' : 'View PDF'}
                             </a>
                             <a href="${item.pdfUrl}" download class="btn-secondary">

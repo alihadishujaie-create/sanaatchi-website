@@ -588,6 +588,15 @@ body {
     margin-bottom: 15px;
     display: block;
 }
+.category-card .icon.icon-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.category-card .icon.icon-image img {
+    width: 56px;
+    height: 56px;
+}
 .category-card h4 {
     font-size: 1.1rem;
     font-weight: 600;
@@ -723,6 +732,19 @@ body {
     font-size: 3rem;
     color: #f26522;
     margin-bottom: 20px;
+    display: block;
+}
+.feature-icon.icon-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.feature-icon.icon-image img {
+    width: 64px;
+    height: 64px;
+}
+
+.icon-image img {
     display: block;
 }
 .feature-card h3 {
@@ -1251,6 +1273,18 @@ body {
     margin-bottom: 15px;
     color: #f26522;
 }
+.equipment-icon.icon-image {
+    display: inline-flex;
+    width: 64px;
+    height: 64px;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+}
+.equipment-icon.icon-image img {
+    width: 64px;
+    height: 64px;
+}
 .equipment-card h4 {
     color: #1a3a5f;
     margin-bottom: 10px;
@@ -1357,6 +1391,17 @@ body {
     display: flex;
     align-items: center;
     gap: 12px;
+}
+.inventory-category-icon.icon-image {
+    display: inline-flex;
+    width: 48px;
+    height: 48px;
+    align-items: center;
+    justify-content: center;
+}
+.inventory-category-icon.icon-image img {
+    width: 48px;
+    height: 48px;
 }
 
 .second-hand-card .equipment-icon {

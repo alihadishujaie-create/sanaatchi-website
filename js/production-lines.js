@@ -1,3 +1,123 @@
+const productionLineIconDirectory = 'images/icons/production-lines';
+const productionLineIconMap = {
+    'food-processing-lines': 'food-processing-lines.ico',
+    'consumer-goods-lines': 'consumer-goods-lines.ico',
+    'construction-materials-lines': 'construction-materials-lines.ico',
+    'textile-garments-lines': 'textile-garments-lines.ico',
+    'fiberglas-production': 'fiberglas-production.ico',
+    'recycling-lines': 'recycling-lines.ico',
+    'disposable-products-lines': 'disposable-products-lines.ico',
+    'light-industry-lines': 'light-industry-lines.ico',
+    'second-hand': 'second-hand.ico',
+    'cereal-production-line': 'cereal-production-line.ico',
+    'baby-food-cerelac-line': 'baby-food-cerelac-line.ico',
+    'dairy-processing-line': 'dairy-processing-line.ico',
+    'beverage-production-line': 'beverage-production-line.ico',
+    'bakery-biscuits-line': 'bakery-biscuits-line.ico',
+    'meat-processing-line': 'meat-processing-line.ico',
+    'fruit-vegetable-processing-line': 'fruit-vegetable-processing-line.ico',
+    'edible-oil-line': 'edible-oil-line.ico',
+    'shampoo-production-line': 'shampoo-production-line.ico',
+    'detergent-production-line': 'detergent-production-line.ico',
+    'soap-production-line': 'soap-production-line.ico',
+    'toothpaste-production-line': 'toothpaste-production-line.ico',
+    'cosmetics-production-line': 'cosmetics-production-line.ico',
+    'sanitary-napkins-line': 'sanitary-napkins-line.ico',
+    'cement-production-line': 'cement-production-line.ico',
+    'brick-making-line': 'brick-making-line.ico',
+    'concrete-blocks-line': 'concrete-blocks-line.ico',
+    'steel-fabrication-line': 'steel-fabrication-line.ico',
+    'gypsum-board-line': 'gypsum-board-line.ico',
+    't-shirt-production-line': 't-shirt-production-line.ico',
+    'jeans-production-line': 'jeans-production-line.ico',
+    'towel-production-line': 'towel-production-line.ico',
+    'carpet-weaving-line': 'carpet-weaving-line.ico',
+    'fiberglas-bottle-washing': 'fiberglas-bottle-washing.ico',
+    'fiberglas-bottle-crushing': 'fiberglas-bottle-crushing.ico',
+    'fiberglas-steam-treatment': 'fiberglas-steam-treatment.ico',
+    'fiberglas-carding-machine': 'fiberglas-carding-machine.ico',
+    'fiberglas-padding-machine': 'fiberglas-padding-machine.ico',
+    'fiberglas-feeding-machine': 'fiberglas-feeding-machine.ico',
+    'fiberglas-cross-laping': 'fiberglas-cross-laping.ico',
+    'fiberglas-needling-machine': 'fiberglas-needling-machine.ico',
+    'fiberglas-fiber-finishing': 'fiberglas-fiber-finishing.ico',
+    'fiberglas-cotton-spinning': 'fiberglas-cotton-spinning.ico',
+    'fiberglas-cotton-weaving': 'fiberglas-cotton-weaving.ico',
+    'fiberglas-cotton-dyeing': 'fiberglas-cotton-dyeing.ico',
+    'plastic-recycling-line': 'plastic-recycling-line.ico',
+    'paper-recycling-line': 'paper-recycling-line.ico',
+    'tire-recycling-line': 'tire-recycling-line.ico',
+    'metal-recycling-line': 'metal-recycling-line.ico',
+    'disposable-cups-line': 'disposable-cups-line.ico',
+    'disposable-plates-line': 'disposable-plates-line.ico',
+    'disposable-cutlery-line': 'disposable-cutlery-line.ico',
+    'plastic-bottles-line': 'plastic-bottles-line.ico',
+    'plastic-bags-line': 'plastic-bags-line.ico',
+    'furniture-manufacturing-line': 'furniture-manufacturing-line.ico',
+    'school-furniture-line': 'school-furniture-line.ico',
+    'office-furniture-line': 'office-furniture-line.ico',
+    'sports-equipment-line': 'sports-equipment-line.ico'
+};
+
+const loggedProductionLineIcons = new Set();
+
+function normaliseIconKey(key) {
+    if (!key) {
+        return null;
+    }
+
+    return String(key)
+        .trim()
+        .toLowerCase()
+        .replace(/[^a-z0-9\-_/]/g, '-');
+}
+
+function resolveIconSourceFromMap(mapped) {
+    if (!mapped) {
+        return null;
+    }
+
+    if (typeof mapped === 'object' && mapped !== null) {
+        const src = mapped.src ? (mapped.src.includes('/') ? mapped.src : `${productionLineIconDirectory}/${mapped.src}`) : '';
+        if (!src) {
+            return null;
+        }
+        return mapped.alt ? { src, alt: mapped.alt } : src;
+    }
+
+    if (typeof mapped === 'string') {
+        return mapped.includes('/') ? mapped : `${productionLineIconDirectory}/${mapped}`;
+    }
+
+    return null;
+}
+
+function getProductionLineIcon(key) {
+    const normalised = normaliseIconKey(key);
+
+    if (!normalised) {
+        return null;
+    }
+
+    const mapped = productionLineIconMap[normalised];
+
+    if (!mapped) {
+        if (typeof console !== 'undefined' && !loggedProductionLineIcons.has(normalised)) {
+            console.warn(`Missing production line icon: ${normalised}`);
+            loggedProductionLineIcons.add(normalised);
+        }
+        const fallbackName = normalised.replace(/-line$/, '');
+        return `${productionLineIconDirectory}/${fallbackName}.ico`;
+    }
+
+    return resolveIconSourceFromMap(mapped);
+}
+
+if (typeof window !== 'undefined') {
+    window.getProductionLineIcon = getProductionLineIcon;
+    window.productionLineIconMap = productionLineIconMap;
+}
+
 const productionLineGroups = [
     {
         id: 'food-processing-lines',
@@ -913,10 +1033,16 @@ function integrateProductionLinesWithSearch() {
         productionLineGroups.forEach(group => {
             const lines = (productionLines[group.id] && productionLines[group.id].lines) || [];
             lines.forEach(line => {
+                const iconLookupId = normaliseIconKey(line.iconId || line.id);
+                line.iconId = iconLookupId;
+                const lineIconSource = getProductionLineIcon(iconLookupId) || getProductionLineIcon(group.id);
                 aggregated.push({
                     name: line.title,
                     description: line.description,
-                    pdfUrl: line.pdfUrl
+                    pdfUrl: line.pdfUrl,
+                    icon: lineIconSource,
+                    iconId: iconLookupId,
+                    groupId: group.id
                 });
             });
         });
@@ -945,8 +1071,13 @@ function buildProductionLineCard(group, lang) {
         ? `مشاهده صفحه جزئیات ${title}`
         : (lang === 'ps' ? `${title} تفصيلي پاڼه وګورئ` : `View detailed page for ${title}`);
 
+    const iconSource = getProductionLineIcon(group.id) || group.icon;
+    const iconMarkup = (typeof window !== 'undefined' && typeof window.renderIconMarkup === 'function')
+        ? window.renderIconMarkup(iconSource, 'icon', title)
+        : `<span class="icon">${iconSource || ''}</span>`;
+
     let cardHtml = `
-        <span class="icon">${group.icon}</span>
+        ${iconMarkup}
         <h4>${title}</h4>
         <p>${description}</p>
     `;
@@ -1023,9 +1154,13 @@ function showProductionLineModal(groupId) {
     data.lines.forEach(line => {
         const lineTitle = line.title[lang] || line.title.fa;
         const lineDesc = line.description[lang] || line.description.fa;
+        const lineIcon = getProductionLineIcon(line.iconId || line.id) || getProductionLineIcon(groupId);
+        const lineIconMarkup = (typeof window !== 'undefined' && typeof window.renderIconMarkup === 'function')
+            ? window.renderIconMarkup(lineIcon, 'equipment-icon', lineTitle, 'div')
+            : `<div class="equipment-icon">${lineIcon || '📄'}</div>`;
         cardsHtml += `
             <div class="equipment-card">
-                <div class="equipment-icon">📄</div>
+                ${lineIconMarkup}
                 <h4>${lineTitle}</h4>
                 <p>${lineDesc}</p>
                 <div class="equipment-actions">

@@ -1,4 +1,37 @@
 (function() {
+    const iconDirectory = 'images/icons/transportation';
+    const iconData = {
+        'cargo-truck': 'cargo-truck.ico',
+        'container-trailer': 'container-trailer.ico',
+        'critical-spares': 'critical-spares.ico',
+        'dump-truck': 'dump-truck.ico',
+        'excavator': 'excavator.ico',
+        'financing-support': 'financing-support.ico',
+        'flatbed-trailer': 'flatbed-trailer.ico',
+        'fleet-tracking': 'fleet-tracking.ico',
+        'floor-polisher': 'floor-polisher.ico',
+        'forklift-diesel': 'forklift-diesel.ico',
+        'forklift-electric': 'forklift-electric.ico',
+        'forklift-rough': 'forklift-rough.ico',
+        'forklift': 'forklift.ico',
+        'furnace': 'furnace.ico',
+        'maintenance-team': 'maintenance-team.ico',
+        'refrigerated-trailer': 'refrigerated-trailer.ico',
+        'semi-truck': 'semi-truck.ico',
+        'tanker-trailer': 'tanker-trailer.ico',
+        'tow-truck': 'tow-truck.ico',
+    };
+
+    const iconPath = (name) => {
+        const fileName = iconData[name];
+        if (!fileName) {
+            console.warn(`Missing transportation icon: ${name}`);
+            return '';
+        }
+        return `${iconDirectory}/${fileName}`;
+    };
+    const makeIcon = (file, alt) => ({ src: iconPath(file), alt });
+
     const content = {
         hero: {
             title: {
@@ -76,7 +109,7 @@
 
     const highlights = [
         {
-            icon: '🧭',
+            icon: makeIcon('semi-truck', 'Mission-specific transport configuration icon'),
             title: {
                 fa: 'پیکربندی متناسب با ماموریت',
                 en: 'Mission-Specific Configuration',
@@ -89,7 +122,7 @@
             }
         },
         {
-            icon: '🛡️',
+            icon: makeIcon('furnace', 'Industrial compliance icon'),
             title: {
                 fa: 'استانداردهای ایمنی و مدارک کامل',
                 en: 'Safety Standards & Complete Dossier',
@@ -102,7 +135,7 @@
             }
         },
         {
-            icon: '🚚',
+            icon: makeIcon('cargo-truck', 'Cross-border logistics icon'),
             title: {
                 fa: 'لجستیک فرامرزی یکپارچه',
                 en: 'Integrated Cross-Border Logistics',
@@ -115,7 +148,7 @@
             }
         },
         {
-            icon: '🎓',
+            icon: makeIcon('floor-polisher', 'Driver and maintenance training icon'),
             title: {
                 fa: 'آموزش راننده و تیم تعمیرات',
                 en: 'Driver & Maintenance Training',
@@ -132,7 +165,7 @@
     const categories = [
         {
             id: 'trailers',
-            icon: '🚛',
+            icon: makeIcon('semi-truck', 'Specialised cargo trailer icon'),
             title: {
                 fa: 'تریلرهای تخصصی حمل بار',
                 en: 'Specialised Cargo Trailers',
@@ -146,7 +179,7 @@
         },
         {
             id: 'trucks',
-            icon: '🚚',
+            icon: makeIcon('cargo-truck', 'Operational truck platform icon'),
             title: {
                 fa: 'کامیون‌های عملیاتی',
                 en: 'Operational Truck Platforms',
@@ -160,7 +193,7 @@
         },
         {
             id: 'forklifts',
-            icon: '🏗️',
+            icon: makeIcon('forklift', 'Forklift and warehouse handling icon'),
             title: {
                 fa: 'لیفتراک و تجهیزات انبارداری',
                 en: 'Forklifts & Warehouse Handling',
@@ -188,7 +221,7 @@
             },
             pdfUrl: 'pdfs/transportation/trailers/flatbed-trailer.pdf',
             category: 'trailers',
-            icon: '📦'
+            icon: makeIcon('flatbed-trailer', 'Flatbed trailer icon')
         },
         {
             name: {
@@ -203,7 +236,7 @@
             },
             pdfUrl: 'pdfs/transportation/trailers/lowbed-trailer.pdf',
             category: 'trailers',
-            icon: '🏗️'
+            icon: makeIcon('excavator', 'Heavy machinery transport icon')
         },
         {
             name: {
@@ -218,7 +251,7 @@
             },
             pdfUrl: 'pdfs/transportation/trailers/tanker-trailer.pdf',
             category: 'trailers',
-            icon: '🛢️'
+            icon: makeIcon('tanker-trailer', 'Tanker trailer icon')
         },
         {
             name: {
@@ -233,7 +266,7 @@
             },
             pdfUrl: 'pdfs/transportation/trailers/container-trailer.pdf',
             category: 'trailers',
-            icon: '📦'
+            icon: makeIcon('container-trailer', 'Container carrier trailer icon')
         },
         {
             name: {
@@ -248,7 +281,7 @@
             },
             pdfUrl: 'pdfs/transportation/trailers/refrigerated-trailer.pdf',
             category: 'trailers',
-            icon: '❄️'
+            icon: makeIcon('refrigerated-trailer', 'Refrigerated trailer icon')
         },
         {
             name: {
@@ -263,7 +296,7 @@
             },
             pdfUrl: 'pdfs/transportation/trucks/dump-truck.pdf',
             category: 'trucks',
-            icon: '🪣'
+            icon: makeIcon('dump-truck', 'Dump truck icon')
         },
         {
             name: {
@@ -278,7 +311,7 @@
             },
             pdfUrl: 'pdfs/transportation/trucks/cargo-truck.pdf',
             category: 'trucks',
-            icon: '📦'
+            icon: makeIcon('cargo-truck', 'Cargo haulage truck icon')
         },
         {
             name: {
@@ -293,7 +326,7 @@
             },
             pdfUrl: 'pdfs/transportation/trucks/tow-truck.pdf',
             category: 'trucks',
-            icon: '🚨'
+            icon: makeIcon('tow-truck', 'Tow recovery truck icon')
         },
         {
             name: {
@@ -308,7 +341,7 @@
             },
             pdfUrl: 'pdfs/transportation/forklifts/electric-forklift.pdf',
             category: 'forklifts',
-            icon: '🔌'
+            icon: makeIcon('forklift-electric', 'Electric forklift icon')
         },
         {
             name: {
@@ -323,7 +356,7 @@
             },
             pdfUrl: 'pdfs/transportation/forklifts/diesel-forklift.pdf',
             category: 'forklifts',
-            icon: '⛽'
+            icon: makeIcon('forklift-diesel', 'Diesel forklift icon')
         },
         {
             name: {
@@ -338,13 +371,13 @@
             },
             pdfUrl: 'pdfs/transportation/forklifts/rough-terrain-forklift.pdf',
             category: 'forklifts',
-            icon: '🌄'
+            icon: makeIcon('forklift-rough', 'Rough terrain forklift icon')
         }
     ];
 
     const assuranceHighlights = [
         {
-            icon: '📦',
+            icon: makeIcon('critical-spares', 'Critical spare parts icon'),
             title: {
                 fa: 'بسته قطعات یدکی بحرانی',
                 en: 'Critical Spare Parts Packs',
@@ -357,7 +390,7 @@
             }
         },
         {
-            icon: '🛠️',
+            icon: makeIcon('maintenance-team', 'Maintenance support icon'),
             title: {
                 fa: 'تیم پشتیبانی تعمیر و نگهداری',
                 en: 'Maintenance Support Team',
@@ -370,7 +403,7 @@
             }
         },
         {
-            icon: '🛰️',
+            icon: makeIcon('fleet-tracking', 'Fleet tracking icon'),
             title: {
                 fa: 'رهگیری و پایش ناوگان',
                 en: 'Fleet Tracking & Monitoring',
@@ -383,7 +416,7 @@
             }
         },
         {
-            icon: '🤝',
+            icon: makeIcon('financing-support', 'Financing coordination icon'),
             title: {
                 fa: 'تأمین مالی و بیمه',
                 en: 'Financing & Insurance Coordination',
@@ -474,17 +507,41 @@
     }, {});
 
     const itemIcons = {
-        'flatbed-trailer': '📦',
-        'lowbed-trailer': '🏗️',
-        'tanker-trailer': '🛢️',
-        'container-trailer': '📦',
-        'refrigerated-trailer': '❄️',
-        'dump-truck': '🪣',
-        'cargo-truck': '🚚',
-        'tow-truck': '🚨',
-        'electric-forklift': '🔌',
-        'diesel-forklift': '⛽',
-        'rough-terrain-forklift': '🌄'
+        'flatbed-trailer': makeIcon('flatbed-trailer', 'Flatbed trailer icon'),
+        'lowbed-trailer': makeIcon('excavator', 'Heavy machinery transport icon'),
+        'tanker-trailer': makeIcon('tanker-trailer', 'Tanker trailer icon'),
+        'container-trailer': makeIcon('container-trailer', 'Container carrier trailer icon'),
+        'refrigerated-trailer': makeIcon('refrigerated-trailer', 'Refrigerated trailer icon'),
+        'dump-truck': makeIcon('dump-truck', 'Dump truck icon'),
+        'cargo-truck': makeIcon('cargo-truck', 'Cargo haulage truck icon'),
+        'tow-truck': makeIcon('tow-truck', 'Tow recovery truck icon'),
+        'electric-forklift': makeIcon('forklift-electric', 'Electric forklift icon'),
+        'diesel-forklift': makeIcon('forklift-diesel', 'Diesel forklift icon'),
+        'rough-terrain-forklift': makeIcon('forklift-rough', 'Rough terrain forklift icon')
+    };
+
+    const escapeHtml = (value = '') => String(value)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+
+    const renderIconMarkup = (icon, baseClass, altText = '') => {
+        if (!icon) {
+            return '';
+        }
+
+        if (typeof icon === 'object' && icon.src) {
+            const safeAlt = escapeHtml(icon.alt || altText);
+            return `<span class="${baseClass} icon-image"><img src="${escapeHtml(icon.src)}" alt="${safeAlt}" loading="lazy"></span>`;
+        }
+
+        if (typeof icon === 'string' && (icon.endsWith('.ico') || icon.includes('/'))) {
+            return `<span class="${baseClass} icon-image"><img src="${escapeHtml(icon)}" alt="${escapeHtml(altText)}" loading="lazy"></span>`;
+        }
+
+        return `<span class="${baseClass}">${escapeHtml(icon)}</span>`;
     };
 
     const getLanguage = () => (typeof currentLanguage !== 'undefined' ? currentLanguage : 'fa');
@@ -530,12 +587,13 @@
 
         grid.innerHTML = '';
         highlights.forEach(item => {
+            const titleText = localise(item.title, lang);
             const card = document.createElement('div');
             card.className = 'feature-card';
             card.innerHTML = `
-                <span class="feature-icon">${item.icon}</span>
-                <h3>${localise(item.title, lang)}</h3>
-                <p>${localise(item.description, lang)}</p>
+                ${renderIconMarkup(item.icon, 'feature-icon', titleText)}
+                <h3>${escapeHtml(titleText)}</h3>
+                <p>${escapeHtml(localise(item.description, lang))}</p>
             `;
             grid.appendChild(card);
         });
@@ -570,12 +628,12 @@
                 : (lang === 'ps' ? `د ${titleText} جزییات وګورئ` : `View details for ${titleText}`);
 
             card.innerHTML = `
-                <span class="icon">${category.icon}</span>
-                <h4>${titleText}</h4>
-                <p>${descriptionText}</p>
+                ${renderIconMarkup(category.icon, 'icon', titleText)}
+                <h4>${escapeHtml(titleText)}</h4>
+                <p>${escapeHtml(descriptionText)}</p>
                 <div class="category-card-actions">
-                    <a class="category-card-link" href="#" role="button" aria-label="${detailLabel}">
-                        <span>${detailText}</span>
+                    <a class="category-card-link" href="#" role="button" aria-label="${escapeHtml(detailLabel)}">
+                        <span>${escapeHtml(detailText)}</span>
                         <i class="fas fa-arrow-left"></i>
                     </a>
                 </div>
@@ -618,7 +676,7 @@
             name: item.name,
             description: item.description,
             pdfUrl: item.pdfUrl,
-            icon: item.icon || itemIcons[pdfName] || categoryIcons[category] || '📄'
+            icon: item.icon || itemIcons[pdfName] || categoryIcons[category] || null
         };
     }
 
@@ -650,11 +708,15 @@
         const viewText = lang === 'fa' ? 'مشاهده PDF' : (lang === 'ps' ? 'PDF وګورئ' : 'View PDF');
         const downloadText = lang === 'fa' ? 'دانلود' : (lang === 'ps' ? 'ډاونلوډ' : 'Download');
 
-        const cards = items.map(item => `
+        const cards = items.map(item => {
+            const nameText = localise(item.name, lang);
+            const descriptionText = localise(item.description, lang);
+            const iconMarkup = renderIconMarkup(item.icon, 'equipment-icon', nameText);
+            return `
             <div class="equipment-card">
-                <div class="equipment-icon">${item.icon || '📄'}</div>
-                <h4>${localise(item.name, lang)}</h4>
-                <p>${localise(item.description, lang)}</p>
+                ${iconMarkup}
+                <h4>${escapeHtml(nameText)}</h4>
+                <p>${escapeHtml(descriptionText)}</p>
                 <div class="equipment-actions">
                     <a href="${item.pdfUrl}" target="_blank" class="btn-primary">
                         <i class="fas fa-file-pdf"></i> ${viewText}
@@ -664,7 +726,8 @@
                     </a>
                 </div>
             </div>
-        `).join('');
+        `;
+        }).join('');
 
         return `<div class="equipment-grid">${cards}</div>`;
     }
@@ -685,8 +748,8 @@
 
         modalContent.innerHTML = `
             <div class="equipment-modal-header">
-                <button class="back-btn" onclick="closeEquipmentModal()">${backText}</button>
-                <h3>${title}</h3>
+                <button class="back-btn" onclick="closeEquipmentModal()">${escapeHtml(backText)}</button>
+                <h3>${escapeHtml(title)}</h3>
             </div>
             ${cardsHtml}
         `;
@@ -708,12 +771,15 @@
 
         const sectionsHtml = categories.map(category => {
             const items = inventory.filter(item => item.category === category.id);
-            const categoryTitle = `${category.icon} ${localise(category.title, lang)}`;
+            const titleText = localise(category.title, lang);
             const description = localise(category.description, lang);
-            const descriptionMarkup = description ? `<p class="inventory-category-description">${description}</p>` : '';
+            const descriptionMarkup = description ? `<p class="inventory-category-description">${escapeHtml(description)}</p>` : '';
             return `
                 <section class="second-hand-inventory-category">
-                    <h4 class="inventory-category-title">${categoryTitle}</h4>
+                    <h4 class="inventory-category-title">
+                        ${renderIconMarkup(category.icon, 'inventory-category-icon', titleText)}
+                        <span>${escapeHtml(titleText)}</span>
+                    </h4>
                     ${descriptionMarkup}
                     ${buildInventoryCardsHtml(items, lang)}
                 </section>
@@ -722,8 +788,8 @@
 
         modalContent.innerHTML = `
             <div class="equipment-modal-header">
-                <button class="back-btn" onclick="closeEquipmentModal()">${backText}</button>
-                <h3>${sectionTitle}</h3>
+                <button class="back-btn" onclick="closeEquipmentModal()">${escapeHtml(backText)}</button>
+                <h3>${escapeHtml(sectionTitle)}</h3>
             </div>
             <div class="second-hand-inventory-modal">
                 ${sectionsHtml}
@@ -771,12 +837,13 @@
 
         grid.innerHTML = '';
         assuranceHighlights.forEach(item => {
+            const titleText = localise(item.title, lang);
             const card = document.createElement('div');
             card.className = 'feature-card';
             card.innerHTML = `
-                <span class="feature-icon">${item.icon}</span>
-                <h3>${localise(item.title, lang)}</h3>
-                <p>${localise(item.description, lang)}</p>
+                ${renderIconMarkup(item.icon, 'feature-icon', titleText)}
+                <h3>${escapeHtml(titleText)}</h3>
+                <p>${escapeHtml(localise(item.description, lang))}</p>
             `;
             grid.appendChild(card);
         });
@@ -801,11 +868,11 @@
         processSteps.forEach(stage => {
             const card = document.createElement('div');
             card.className = 'process-card';
-            const bulletsHtml = (stage.bullets || []).map(bullet => `<li>${localise(bullet, lang)}</li>`).join('');
+            const bulletsHtml = (stage.bullets || []).map(bullet => `<li>${escapeHtml(localise(bullet, lang))}</li>`).join('');
             card.innerHTML = `
                 <div class="process-step">${stage.step}</div>
-                <h3>${localise(stage.title, lang)}</h3>
-                <p>${localise(stage.description, lang)}</p>
+                <h3>${escapeHtml(localise(stage.title, lang))}</h3>
+                <p>${escapeHtml(localise(stage.description, lang))}</p>
                 ${bulletsHtml ? `<ul>${bulletsHtml}</ul>` : ''}
             `;
             grid.appendChild(card);
