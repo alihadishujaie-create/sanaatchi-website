@@ -1,36 +1,49 @@
 (function() {
+    const defaultIconFallback = '🚚';
     const iconDirectory = 'images/icons/transportation';
     const iconData = {
-        'cargo-truck': 'cargo-truck.ico',
-        'container-trailer': 'container-trailer.ico',
-        'critical-spares': 'critical-spares.ico',
-        'dump-truck': 'dump-truck.ico',
-        'excavator': 'excavator.ico',
-        'financing-support': 'financing-support.ico',
-        'flatbed-trailer': 'flatbed-trailer.ico',
-        'fleet-tracking': 'fleet-tracking.ico',
-        'floor-polisher': 'floor-polisher.ico',
-        'forklift-diesel': 'forklift-diesel.ico',
-        'forklift-electric': 'forklift-electric.ico',
-        'forklift-rough': 'forklift-rough.ico',
-        'forklift': 'forklift.ico',
-        'furnace': 'furnace.ico',
-        'maintenance-team': 'maintenance-team.ico',
-        'refrigerated-trailer': 'refrigerated-trailer.ico',
-        'semi-truck': 'semi-truck.ico',
-        'tanker-trailer': 'tanker-trailer.ico',
-        'tow-truck': 'tow-truck.ico',
+        'cargo-truck': { fallback: '🚛' },
+        'container-trailer': { fallback: '📦' },
+        'critical-spares': { fallback: '🧰' },
+        'dump-truck': { fallback: '🚚' },
+        'excavator': { fallback: '🚜' },
+        'financing-support': { fallback: '💼' },
+        'flatbed-trailer': { fallback: '🛻' },
+        'fleet-tracking': { fallback: '📡' },
+        'floor-polisher': { fallback: '🧹' },
+        'forklift-diesel': { fallback: '🏗️' },
+        'forklift-electric': { fallback: '🏗️' },
+        'forklift-rough': { fallback: '🏗️' },
+        'forklift': { fallback: '🏗️' },
+        'furnace': { fallback: '🔥' },
+        'maintenance-team': { fallback: '🛠️' },
+        'refrigerated-trailer': { fallback: '🧊' },
+        'semi-truck': { fallback: '🚚' },
+        'tanker-trailer': { fallback: '🛢️' },
+        'tow-truck': { fallback: '🚚' }
     };
 
-    const iconPath = (name) => {
-        const fileName = iconData[name];
-        if (!fileName) {
-            console.warn(`Missing transportation icon: ${name}`);
-            return '';
+    const makeIcon = (file, alt) => {
+        const entry = iconData[file];
+
+        if (!entry) {
+            console.warn(`Missing transportation icon: ${file}`);
+            return { alt, fallback: defaultIconFallback };
         }
-        return `${iconDirectory}/${fileName}`;
+
+        const icon = {
+            alt,
+            fallback: entry.fallback || defaultIconFallback
+        };
+
+        if (entry.file) {
+            icon.src = `${iconDirectory}/${entry.file}`;
+        } else if (entry.src) {
+            icon.src = entry.src;
+        }
+
+        return icon;
     };
-    const makeIcon = (file, alt) => ({ src: iconPath(file), alt });
 
     const content = {
         hero: {
@@ -527,21 +540,53 @@
         .replace(/"/g, '&quot;')
         .replace(/'/g, '&#39;');
 
-    const renderIconMarkup = (icon, baseClass, altText = '') => {
-        if (!icon) {
+    const resolveIconFallback = (icon) => {
+        if (icon && typeof icon === 'object' && icon.fallback) {
+            return icon.fallback;
+        }
+
+        return defaultIconFallback;
+    };
+
+    const resolveIconSource = (icon, altText) => {
+        if (icon && typeof icon === 'object') {
+            if (icon.src) {
+                return { src: icon.src, alt: icon.alt || altText };
+            }
+
+            if (icon.emoji) {
+                return icon.emoji;
+            }
+
             return '';
         }
 
-        if (typeof icon === 'object' && icon.src) {
-            const safeAlt = escapeHtml(icon.alt || altText);
-            return `<span class="${baseClass} icon-image"><img src="${escapeHtml(icon.src)}" alt="${safeAlt}" loading="lazy"></span>`;
+        return icon;
+    };
+
+    const renderIconMarkup = (icon, baseClass, altText = '', tag = 'span') => {
+        const fallback = resolveIconFallback(icon);
+        const source = resolveIconSource(icon, altText);
+
+        if (typeof window !== 'undefined' && typeof window.renderIconMarkup === 'function') {
+            return window.renderIconMarkup(source, baseClass, altText, tag, fallback);
         }
 
-        if (typeof icon === 'string' && (icon.endsWith('.ico') || icon.includes('/'))) {
-            return `<span class="${baseClass} icon-image"><img src="${escapeHtml(icon)}" alt="${escapeHtml(altText)}" loading="lazy"></span>`;
+        const safeClass = escapeHtml(baseClass || '');
+        const safeFallback = escapeHtml(fallback);
+        const safeTag = typeof tag === 'string' && tag.trim() ? tag.trim() : 'span';
+
+        if (source && typeof source === 'object' && source.src) {
+            const safeSrc = escapeHtml(source.src);
+            const safeAlt = escapeHtml(source.alt || altText || '');
+            return `<${safeTag} class="${safeClass} icon-image"><img src="${safeSrc}" alt="${safeAlt}" loading="lazy"></${safeTag}>`;
         }
 
-        return `<span class="${baseClass}">${escapeHtml(icon)}</span>`;
+        if (typeof source === 'string' && source.trim()) {
+            return `<${safeTag} class="${safeClass}">${escapeHtml(source)}</${safeTag}>`;
+        }
+
+        return `<${safeTag} class="${safeClass}">${safeFallback}</${safeTag}>`;
     };
 
     const getLanguage = () => (typeof currentLanguage !== 'undefined' ? currentLanguage : 'fa');
