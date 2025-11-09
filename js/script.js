@@ -6573,6 +6573,12 @@ function performSearch(searchTerm) {
             }
         }
 
+        if ((!iconSource || (typeof iconSource === 'string' && !iconSource.trim())) &&
+            categories[categoryId] &&
+            categories[categoryId].icon) {
+            iconSource = categories[categoryId].icon;
+        }
+
         matchingEquipment.push({
             categoryId,
             item,
