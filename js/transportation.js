@@ -132,7 +132,7 @@
 
     const highlights = [
         {
-            icon: makeIcon('semi-truck', 'Mission-specific transport configuration icon'),
+            icon: makeIcon('mission-compass', 'Mission-specific transport configuration icon'),
             title: {
                 fa: 'پیکربندی متناسب با ماموریت',
                 en: 'Mission-Specific Configuration',
@@ -550,21 +550,53 @@
         .replace(/"/g, '&quot;')
         .replace(/'/g, '&#39;');
 
-    const renderIconMarkup = (icon, baseClass, altText = '') => {
-        if (!icon) {
+    const resolveIconFallback = (icon) => {
+        if (icon && typeof icon === 'object' && icon.fallback) {
+            return icon.fallback;
+        }
+
+        return defaultIconFallback;
+    };
+
+    const resolveIconSource = (icon, altText) => {
+        if (icon && typeof icon === 'object') {
+            if (icon.src) {
+                return { src: icon.src, alt: icon.alt || altText };
+            }
+
+            if (icon.emoji) {
+                return icon.emoji;
+            }
+
             return '';
         }
 
-        if (typeof icon === 'object' && icon.src) {
-            const safeAlt = escapeHtml(icon.alt || altText);
-            return `<span class="${baseClass} icon-image"><img src="${escapeHtml(icon.src)}" alt="${safeAlt}" loading="lazy"></span>`;
+        return icon;
+    };
+
+    const renderIconMarkup = (icon, baseClass, altText = '', tag = 'span') => {
+        const fallback = resolveIconFallback(icon);
+        const source = resolveIconSource(icon, altText);
+
+        if (typeof window !== 'undefined' && typeof window.renderIconMarkup === 'function') {
+            return window.renderIconMarkup(source, baseClass, altText, tag, fallback);
         }
 
-        if (typeof icon === 'string' && (icon.endsWith('.ico') || icon.includes('/'))) {
-            return `<span class="${baseClass} icon-image"><img src="${escapeHtml(icon)}" alt="${escapeHtml(altText)}" loading="lazy"></span>`;
+        const safeClass = escapeHtml(baseClass || '');
+        const safeFallback = escapeHtml(fallback);
+        const safeTag = typeof tag === 'string' && tag.trim() ? tag.trim() : 'span';
+
+        if (source && typeof source === 'object' && source.src) {
+            const safeSrc = escapeHtml(source.src);
+            const safeAlt = escapeHtml(source.alt || altText || '');
+            return `<${safeTag} class="${safeClass} icon-image"><img src="${safeSrc}" alt="${safeAlt}" loading="lazy"></${safeTag}>`;
         }
 
-        return `<span class="${baseClass}">${escapeHtml(icon)}</span>`;
+        if (typeof source === 'string' && source.trim()) {
+            return `<${safeTag} class="${safeClass}">${escapeHtml(source)}</${safeTag}>`;
+        }
+
+        return `<${safeTag} class="${safeClass}">${safeFallback}</${safeTag}>`;
     };
 
     const getLanguage = () => (typeof currentLanguage !== 'undefined' ? currentLanguage : 'fa');
