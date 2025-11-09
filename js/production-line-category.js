@@ -537,10 +537,18 @@
         lines.forEach(line => {
             const card = document.createElement('div');
             card.className = 'equipment-card';
+            const lineTitle = getText(line.title, lang);
+            const lineDescription = getText(line.description, lang);
+            const lineIconSource = typeof window !== 'undefined' && typeof window.getProductionLineIcon === 'function'
+                ? window.getProductionLineIcon(line.id)
+                : null;
+            const lineIconMarkup = (typeof window !== 'undefined' && typeof window.renderIconMarkup === 'function')
+                ? window.renderIconMarkup(lineIconSource, 'equipment-icon', lineTitle, 'div')
+                : `<div class="equipment-icon">${lineIconSource || '📄'}</div>`;
             card.innerHTML = `
-                <div class="equipment-icon">📄</div>
-                <h4>${getText(line.title, lang)}</h4>
-                <p>${getText(line.description, lang)}</p>
+                ${lineIconMarkup}
+                <h4>${lineTitle}</h4>
+                <p>${lineDescription}</p>
                 <div class="equipment-actions">
                     <a href="${line.pdfUrl}" target="_blank" class="btn-primary">
                         <i class="fas fa-file-pdf"></i> ${viewText}
@@ -578,8 +586,14 @@
                 } else {
                     link.href = 'production-lines.html';
                 }
+                const iconSource = typeof window !== 'undefined' && typeof window.getProductionLineIcon === 'function'
+                    ? window.getProductionLineIcon(group.id)
+                    : null;
+                const iconMarkup = (typeof window !== 'undefined' && typeof window.renderIconMarkup === 'function')
+                    ? window.renderIconMarkup(iconSource || group.icon, 'icon', getText(group.title, lang))
+                    : `<span class="icon">${(iconSource || group.icon) || ''}</span>`;
                 link.innerHTML = `
-                    <span class="icon">${group.icon}</span>
+                    ${iconMarkup}
                     <h4>${getText(group.title, lang)}</h4>
                     <p>${getText(group.description, lang)}</p>
                 `;
