@@ -1745,7 +1745,11 @@ body {
     [dir="ltr"] .hero-content {
         grid-template-columns: 1fr;
     }
-    
+
+    [dir="ltr"] .nav {
+        flex-direction: column;
+    }
+
     [dir="ltr"] .mobile-menu-btn {
         order: 3;
     }
