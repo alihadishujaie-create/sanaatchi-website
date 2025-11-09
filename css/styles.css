@@ -1671,6 +1671,33 @@ body {
 [dir="ltr"] .search-box button {
     border-radius: 5px 0 0 5px;
 }
+
+@media (max-width: 768px) {
+    [dir="ltr"] .hero-with-search .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    [dir="ltr"] .hero-with-search .hero-search {
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto 20px;
+        padding: 20px;
+    }
+
+    [dir="ltr"] .hero-text {
+        text-align: center;
+    }
+
+    [dir="ltr"] .hero-buttons {
+        justify-content: center;
+    }
+
+    [dir="ltr"] .search-box input,
+    [dir="ltr"] .search-box button {
+        border-radius: 8px;
+    }
+}
 [dir="ltr"] .modal-close {
     float: right;
     right: 20px;
