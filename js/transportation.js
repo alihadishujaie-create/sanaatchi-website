@@ -1,36 +1,59 @@
 (function() {
-    const iconDirectory = 'images/icons/transportation';
     const iconData = {
-        'cargo-truck': 'cargo-truck.ico',
-        'container-trailer': 'container-trailer.ico',
-        'critical-spares': 'critical-spares.ico',
-        'dump-truck': 'dump-truck.ico',
-        'excavator': 'excavator.ico',
-        'financing-support': 'financing-support.ico',
-        'flatbed-trailer': 'flatbed-trailer.ico',
-        'fleet-tracking': 'fleet-tracking.ico',
-        'floor-polisher': 'floor-polisher.ico',
-        'forklift-diesel': 'forklift-diesel.ico',
-        'forklift-electric': 'forklift-electric.ico',
-        'forklift-rough': 'forklift-rough.ico',
-        'forklift': 'forklift.ico',
-        'furnace': 'furnace.ico',
-        'maintenance-team': 'maintenance-team.ico',
-        'refrigerated-trailer': 'refrigerated-trailer.ico',
-        'semi-truck': 'semi-truck.ico',
-        'tanker-trailer': 'tanker-trailer.ico',
-        'tow-truck': 'tow-truck.ico',
+        'cargo-truck': '🚚',
+        'container-trailer': '📦',
+        'critical-spares': '🧰',
+        'dump-truck': '🚛',
+        'excavator': '🚜',
+        'financing-support': '💳',
+        'flatbed-trailer': '🛻',
+        'fleet-tracking': '🛰️',
+        'floor-polisher': '🧽',
+        'forklift-diesel': '⛽',
+        'forklift-electric': '⚡',
+        'forklift-rough': '🛞',
+        'forklift': '🏗️',
+        'furnace': '🔥',
+        'maintenance-team': '🛠️',
+        'refrigerated-trailer': '❄️',
+        'semi-truck': '🚛',
+        'tanker-trailer': '🛢️',
+        'tow-truck': '🚨',
     };
 
-    const iconPath = (name) => {
-        const fileName = iconData[name];
-        if (!fileName) {
-            console.warn(`Missing transportation icon: ${name}`);
+    const resolveIcon = (name) => {
+        const entry = iconData[name];
+        if (!entry) {
+            if (typeof console !== 'undefined' && typeof console.warn === 'function') {
+                console.warn(`Missing transportation icon: ${name}`);
+            }
             return '';
         }
-        return `${iconDirectory}/${fileName}`;
+
+        if (typeof entry === 'object' && entry !== null) {
+            if (entry.src) {
+                return entry.alt ? { src: entry.src, alt: entry.alt } : entry.src;
+            }
+            if (entry.emoji) {
+                return entry.emoji;
+            }
+        }
+
+        return entry;
     };
-    const makeIcon = (file, alt) => ({ src: iconPath(file), alt });
+
+    const makeIcon = (name, alt) => {
+        const icon = resolveIcon(name);
+        if (!icon) {
+            return '📄';
+        }
+
+        if (typeof icon === 'object' && icon.src && alt && !icon.alt) {
+            return { src: icon.src, alt };
+        }
+
+        return icon;
+    };
 
     const content = {
         hero: {
