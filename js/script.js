@@ -6946,6 +6946,7 @@ function setupSearchTags() {
 }
 
 const SITE_ORIGIN_FALLBACK = 'https://sanaatchi.com';
+const DEFAULT_ITEM_SCHEMA_TYPE = 'Service';
 
 function getSiteOrigin() {
     if (typeof window !== 'undefined' && window.location && window.location.origin && window.location.origin !== 'null') {
@@ -6993,7 +6994,7 @@ function publishItemListStructuredData(options) {
 
     const itemListElements = items.map((item, index) => {
         const entity = {
-            '@type': item.schemaType || 'CreativeWork',
+            '@type': item.schemaType || DEFAULT_ITEM_SCHEMA_TYPE,
             'name': item.name,
             'url': toAbsoluteUrl(item.url || ''),
         };
@@ -7060,7 +7061,7 @@ function publishEquipmentStructuredData(categoryKey, options = {}) {
         name: record.name?.en || record.name?.fa || record.name || '',
         description: record.description?.en || record.description?.fa || record.description || '',
         url: record.pdfUrl,
-        schemaType: options.schemaType || 'Service',
+        schemaType: options.schemaType || DEFAULT_ITEM_SCHEMA_TYPE,
         identifier: record.category ? `${categoryKey}-${record.category}` : undefined
     }));
 
