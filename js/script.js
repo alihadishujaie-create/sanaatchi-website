@@ -6300,6 +6300,49 @@ function closeSalesContactModal() {
     modal.setAttribute('aria-hidden', 'true');
 }
 
+const searchSynonymMap = {
+    tyres: 'tire',
+    tyre: 'tire',
+    tires: 'tire',
+    machineries: 'machinery',
+    machinerys: 'machinery',
+    equipments: 'equipment',
+    industries: 'industry',
+    materials: 'material',
+    lines: 'line',
+    machines: 'machine',
+    systems: 'system',
+    solutions: 'solution',
+    services: 'service',
+    extrusions: 'extruder',
+    extrusion: 'extruder',
+    extruders: 'extruder',
+    molding: 'moulding',
+    moldings: 'moulding',
+    mouldings: 'moulding',
+    molds: 'mould',
+    moulds: 'mould',
+    plastics: 'plastic'
+};
+
+const searchSynonymRegex = new RegExp(`\\b(${Object.keys(searchSynonymMap).sort((a, b) => b.length - a.length).join('|')})\\b`, 'g');
+
+const searchStopWords = new Set([
+    'line',
+    'lines',
+    'machine',
+    'machines',
+    'machinery',
+    'equipment',
+    'equipments',
+    'system',
+    'systems',
+    'solution',
+    'solutions',
+    'service',
+    'services'
+]);
+
 function normalizeSearchText(text) {
     if (!text) {
         return '';
@@ -6346,6 +6389,10 @@ function normalizeSearchText(text) {
     normalized = normalized.replace(/[_.,\/\\+=\-–—:;'"!?()[\]{}<>@#$%^&*|`~]+/g, ' ');
     normalized = normalized.replace(/\s+/g, ' ').trim();
 
+    if (searchSynonymRegex) {
+        normalized = normalized.replace(searchSynonymRegex, match => searchSynonymMap[match] || match);
+    }
+
     return normalized;
 }
 
@@ -6354,7 +6401,12 @@ function tokenizeSearchTerm(term) {
     if (!normalized) {
         return [];
     }
-    return normalized.split(' ').filter(Boolean);
+    const tokens = normalized.split(' ').filter(Boolean);
+    if (!tokens.length) {
+        return tokens;
+    }
+    const filtered = tokens.filter(token => !searchStopWords.has(token));
+    return filtered.length ? filtered : tokens;
 }
 
 function textMatchesTokens(text, tokens) {
@@ -6504,6 +6556,40 @@ function performSearch(searchTerm) {
     const seenEquipmentKeys = new Set();
     const MAX_EQUIPMENT_RESULTS = 24;
     let equipmentLimitReached = false;
+    const matchedCategories = new Set();
+
+    if (searchTokens.length) {
+        if (categoryKeywords && typeof categoryKeywords === 'object') {
+            Object.entries(categoryKeywords).forEach(([categoryId, keywords]) => {
+                if (!keywords) {
+                    return;
+                }
+                const keywordList = Array.isArray(keywords) ? keywords : [keywords];
+                const hasMatch = keywordList.some(keyword => textMatchesTokens(keyword, searchTokens));
+                if (hasMatch) {
+                    matchedCategories.add(categoryId);
+                }
+            });
+        }
+
+        if (categories && typeof categories === 'object') {
+            Object.entries(categories).forEach(([categoryId, data]) => {
+                if (!data) {
+                    return;
+                }
+                const fields = [];
+                if (data.title) {
+                    fields.push(...collectLocalizedStrings(data.title));
+                }
+                if (data.description) {
+                    fields.push(...collectLocalizedStrings(data.description));
+                }
+                if (fields.some(field => textMatchesTokens(field, searchTokens))) {
+                    matchedCategories.add(categoryId);
+                }
+            });
+        }
+    }
 
     function addEquipmentMatch(categoryId, item, options = {}) {
         if (!item) {
@@ -6680,6 +6766,65 @@ function performSearch(searchTerm) {
                     });
                 }
             });
+        });
+    }
+
+    if (matchingEquipment.length === 0 && matchedCategories.size > 0) {
+        matchedCategories.forEach(categoryId => {
+            if (categoryId === 'production-lines') {
+                if (typeof productionLines !== 'undefined') {
+                    Object.entries(productionLines).forEach(([groupId, group]) => {
+                        const lines = Array.isArray(group.lines) ? group.lines : [];
+                        lines.forEach(line => {
+                            const productionLineIconLookupId = line.iconId || line.id;
+                            const productionLineIcon = (typeof window !== 'undefined' && typeof window.getProductionLineIcon === 'function')
+                                ? (window.getProductionLineIcon(productionLineIconLookupId) || window.getProductionLineIcon(groupId))
+                                : null;
+                            addEquipmentMatch('production-lines', {
+                                name: line.title,
+                                description: line.description,
+                                pdfUrl: line.pdfUrl,
+                                meta: line.meta,
+                                iconId: productionLineIconLookupId
+                            }, {
+                                icon: productionLineIcon || (group && group.icon) || '🏭',
+                                iconId: productionLineIconLookupId,
+                                subCategoryId: groupId,
+                                subCategoryTitle: group ? group.title : null,
+                                groupId
+                            });
+                        });
+                    });
+                }
+                return;
+            }
+
+            if (categoryId === 'second-hand') {
+                if (Array.isArray(window.secondHandInventoryData)) {
+                    window.secondHandInventoryData.forEach(item => {
+                        const subCategoryTitle = (typeof secondHandCatalog !== 'undefined' && secondHandCatalog[item.category])
+                            ? secondHandCatalog[item.category].title
+                            : null;
+                        addEquipmentMatch('second-hand', item, {
+                            icon: item.icon,
+                            subCategoryId: item.category,
+                            subCategoryTitle
+                        });
+                    });
+                }
+                return;
+            }
+
+            const categoryItems = equipmentData && equipmentData[categoryId];
+            if (Array.isArray(categoryItems)) {
+                categoryItems.forEach(item => {
+                    addEquipmentMatch(categoryId, item, {
+                        icon: item.icon,
+                        subCategoryId: item.category,
+                        subCategoryTitle: item.subCategoryTitle
+                    });
+                });
+            }
         });
     }
 
