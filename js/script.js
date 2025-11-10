@@ -7060,7 +7060,7 @@ function publishEquipmentStructuredData(categoryKey, options = {}) {
         name: record.name?.en || record.name?.fa || record.name || '',
         description: record.description?.en || record.description?.fa || record.description || '',
         url: record.pdfUrl,
-        schemaType: options.schemaType || 'Product',
+        schemaType: options.schemaType || 'Service',
         identifier: record.category ? `${categoryKey}-${record.category}` : undefined
     }));
 
