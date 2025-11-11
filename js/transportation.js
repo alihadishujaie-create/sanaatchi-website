@@ -1,4 +1,6 @@
 (function() {
+    const defaultIconFallback = '📄';
+
     const iconData = {
         'cargo-truck': '🚚',
         'container-trailer': '📦',
@@ -14,6 +16,7 @@
         'forklift-rough': '🛞',
         'forklift': '🏗️',
         'furnace': '🔥',
+        'mission-compass': '🧭',
         'maintenance-team': '🛠️',
         'refrigerated-trailer': '❄️',
         'semi-truck': '🚛',
