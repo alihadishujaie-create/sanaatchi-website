@@ -1076,7 +1076,7 @@ function integrateProductionLinesWithSearch() {
                     name: line.title,
                     description: line.description,
                     pdfUrl: line.pdfUrl,
-                    icon: resolvedIconSource,
+                    icon: lineIconSource,
                     iconId: iconLookupId,
                     groupId: group.id
                 });
