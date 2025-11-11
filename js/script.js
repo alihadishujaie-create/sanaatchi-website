@@ -6204,6 +6204,10 @@ function closeContactModal() {
 
 // Show sales contact modal
 function showSalesContactModal() {
+    if (typeof closeSearchResultModal === 'function') {
+        closeSearchResultModal();
+    }
+
     const modal = document.getElementById('salesContactModal');
     const modalContent = document.getElementById('salesContactModalContent');
 
