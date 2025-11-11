@@ -416,7 +416,190 @@ const productionLines = {
                     ps: 'د خوراکي نباتي غوړ لپاره استخراج، تصفیه، بوی لرې کول او بوتل بندي.'
                 },
                 pdfUrl: 'pdfs/production-lines/food-processing/edible-oil-line.pdf'
+            },
+            {
+                id: 'potato-chips-snacks-line',
+                title: {
+                    fa: 'خط تولید چپس کچالو و اسنک',
+                    en: 'Potato Chips & Snacks Line',
+                    ps: 'د کچالو چپس او سنېک تولید لین'
+                },
+                description: {
+                    fa: 'شست‌وشو و پوست‌کنی کچالو، برش یکنواخت، سرخ‌کن دوامدار، طعم‌دهی و بسته‌بندی چپس و اسنک.',
+                    en: 'Potato washing and peeling, uniform slicing, continuous frying, seasoning drums and packaging for chips and snacks.',
+                    ps: 'د کچالو مینځل او پوست کښل، یوشان پرې کول، دوامداره غوړپخول، خوند ورکول او د چپس او سنېک بسته بندي.'
+                },
+                pdfUrl: 'pdfs/production-lines/food-processing/potato-chips-snacks-line.pdf'
+            },
+            {
+                id: 'tomato-paste-ketchup-line',
+                title: {
+                    fa: 'خط تولید رب بادنجان رومی و کیچپ',
+                    en: 'Tomato Paste & Ketchup Line',
+                    ps: 'د رومي رب او کیچپ تولید لین'
+                },
+                description: {
+                    fa: 'دریافت و شست‌وشوی بادنجان رومی، سورت، خردکردن، پیش‌پخت، غلیظ‌سازی تحت خلأ و بسته‌بندی رب و کیچپ.',
+                    en: 'Tomato receiving and washing, sorting, crushing, pre-cooking, vacuum concentration and filling for paste and ketchup.',
+                    ps: 'د روميانو ترلاسه کول او مینځل، سورت، ميده کول، مخکې پخول، د ویکیوم لاندې غلیظول او د رب او کیچپ ډکول او بسته بندي.'
+                },
+                pdfUrl: 'pdfs/production-lines/food-processing/tomato-paste-ketchup-line.pdf'
+            },
+            {
+                id: 'macaroni-noodle-line',
+                title: {
+                    fa: 'خط تولید ماکارونی و نودل / مگی',
+                    en: 'Macaroni & Instant Noodle Line',
+                    ps: 'د ماکاروني او نوډل / مګي تولید لین'
+                },
+                description: {
+                    fa: 'مخلوط‌سازی آرد و آب، اکسترودر، برش، خشک‌کن طبقاتی، سردکردن و بسته‌بندی انواع ماکارونی و نودل.',
+                    en: 'Flour and water mixing, extrusion, cutting, multi-tier drying, cooling and packing for macaroni and instant noodles.',
+                    ps: 'د اوړو او اوبو مخلوط، اکسترودر، پرې کول، طبقې وچول، یخول او د ماکاروني او فوري نوډل بسته بندي.'
+                },
+                pdfUrl: 'pdfs/production-lines/food-processing/macaroni-noodle-line.pdf'
+            },
+            {
+                id: 'chocolate-production-line',
+                title: {
+                    fa: 'خط تولید چاکلیت',
+                    en: 'Chocolate Production Line',
+                    ps: 'د چاکلېټ تولید لین'
+                },
+                description: {
+                    fa: 'آماده‌سازی و ریفاین توده چاکلیت، کونچ، قالب‌گیری، تونل سردکن و بسته‌بندی عصری.',
+                    en: 'Chocolate mass preparation and refining, conching, moulding, cooling tunnel and modern packaging.',
+                    ps: 'د چاکلېټ موادو چمتو کول او ریفاین، کونچ، قالب اچول، د یخولو تونل او عصري بسته بندي.'
+                },
+                pdfUrl: 'pdfs/production-lines/food-processing/chocolate-production-line.pdf'
+            },
+            {
+                id: 'salt-refining-packaging-line',
+                title: {
+                    fa: 'خط تصفیۀ و بسته‌بندی نمک خوراکی (Mechanical / MVR / Vacuum)',
+                    en: 'Edible Salt Refining & Packaging Line (Mechanical/MVR/Vacuum)',
+                    ps: 'د خوراکي مالګې تصفیه او بسته بندۍ لین (میکانیکي/MVR/ویکیوم)'
+                },
+                description: {
+                    fa: 'تصفیۀ نمک با شست‌وشوی مکانیکی، تبخیر MVR و تبلور خلأ، سپس سانتریفیوژ، خشک‌کن، یدزنی و بسته‌بندی.',
+                    en: 'Mechanical washing, MVR evaporation and vacuum crystallisation of salt followed by centrifuging, drying, iodising and packing.',
+                    ps: 'د مالګې میخانیکي مینځل، د MVR تبخیر او د ویکیوم کرسټال کول، وروسته سانتریفیوژ، وچول، آیوډین اچول او بسته بندي.'
+                },
+                pdfUrl: 'pdfs/production-lines/food-processing/salt-refining-packaging-line.pdf'
+            },
+            {
+                id: 'canned-food-compote-line',
+                title: {
+                    fa: 'خط تولید کنسرو و کمپوت',
+                    en: 'Canned Food & Compote Line',
+                    ps: 'د کنسرو او کمپوټ تولید لین'
+                },
+                description: {
+                    fa: 'آماده‌سازی مواد، پرکردن در بوتل یا قوطی، هواگیری، درب‌بندی، سترلیزاسیون اتوکلاو و لیبل‌زنی.',
+                    en: 'Ingredient preparation, filling into bottles or cans, deaeration, seaming, autoclave sterilisation and labelling.',
+                    ps: 'د موادو چمتو کول، په بوتل یا قوطۍ ډکول، هوا ایستل، درب تړل، په اتوکلاو کې سترلېزه او لیبل لګول.'
+                },
+                pdfUrl: 'pdfs/production-lines/food-processing/canned-food-compote-line.pdf'
+            },
+            {
+                id: 'ice-cream-production-line',
+                title: {
+                    fa: 'خط تولید شیریخ',
+                    en: 'Ice Cream Production Line',
+                    ps: 'د شير يخ تولید لین'
+                },
+                description: {
+                    fa: 'پاستوریزه و هموژنیزه‌کردن مخلوط، مچوریشن، یخ‌سازی دوامدار، اضافه‌کردن مواد و بسته‌بندی در سایزهای مختلف.',
+                    en: 'Pasteurising and homogenising mix, ageing, continuous freezing, inclusion dosing and packaging in retail and family sizes.',
+                    ps: 'د شیدو او شکر مخلوط پاستور او همجنس کول، مچوریشن، دوامداره یخول، د موادو اضافه کول او په بېلابېلو اندازو بسته بندي.'
+                },
+                pdfUrl: 'pdfs/production-lines/food-processing/ice-cream-production-line.pdf'
+            },
+            {
+                id: 'fruit-chips-line',
+                title: {
+                    fa: 'خط تولید چپس میوه',
+                    en: 'Fruit Chips Production Line',
+                    ps: 'د میوو چپس تولید لین'
+                },
+                description: {
+                    fa: 'شست‌وشو، برش نازک، خشک‌کردن با هوا یا خلأ، سردکردن و بسته‌بندی با ماندگاری بلند.',
+                    en: 'Washing, thin slicing, hot air or vacuum drying, cooling and long shelf-life packaging for fruit chips.',
+                    ps: 'د میوو مینځل، نری پرې کول، د تودې هوا یا ویکیوم وچول، یخول او د اوږدې مودې لپاره بسته بندي.'
+                },
+                pdfUrl: 'pdfs/production-lines/food-processing/fruit-chips-line.pdf'
+            },
+            {
+                id: 'nuts-dried-fruits-processing-line',
+                title: {
+                    fa: 'خط پروسس خشکبار و مغزها',
+                    en: 'Nuts & Dried Fruits Processing Line',
+                    ps: 'د وچو میوو او مغزو پروسس لین'
+                },
+                description: {
+                    fa: 'پاک‌کاری، سورت، برشته‌کردن، مزه‌دهی و بسته‌بندی خشکبار و مغزهای صادراتی.',
+                    en: 'Cleaning, sorting, roasting, seasoning and packaging of nuts and dried fruits for domestic or export markets.',
+                    ps: 'د وچو میوو او مغزو پاکول، سورت، برغلول، خوند ورکول او د کورني او صادراتي بازار لپاره بسته بندي.'
+                },
+                pdfUrl: 'pdfs/production-lines/food-processing/nuts-dried-fruits-processing-line.pdf'
+            },
+            {
+                id: 'poultry-feed-line',
+                title: {
+                    fa: 'خط تولید خوراک مرغ و مالداری',
+                    en: 'Poultry & Livestock Feed Line',
+                    ps: 'د چرګو او مالدارۍ د خوراک تولید لین'
+                },
+                description: {
+                    fa: 'خردکردن غلات، میکس فارمول، پلت‌سازی، سردکردن و بسته‌بندی خوراک طیور و مواشی.',
+                    en: 'Grain grinding, formula mixing, pelleting, cooling and bagging of poultry and livestock feed.',
+                    ps: 'د غلو ميده کول، د فارمول مخلوط، پلېټ جوړول، یخول او د چرګو او څارویو د خوراک کڅوړه بندي.'
+                },
+                pdfUrl: 'pdfs/production-lines/food-processing/poultry-feed-line.pdf'
+            },
+            {
+                id: 'spice-processing-packaging-line',
+                title: {
+                    fa: 'خط پروسس و بسته‌بندی ادویه و مساله',
+                    en: 'Spice Processing & Packaging Line',
+                    ps: 'د مصالحو پروسس او بسته بندۍ لین'
+                },
+                description: {
+                    fa: 'آسیاب، الک، مخلوط‌سازی ترکیبات، اندازه‌گیری دقیق و بسته‌بندی ادویه در پاکت یا بوتل.',
+                    en: 'Grinding, sieving, blending spice mixes, precise dosing and packing into pouches or jars.',
+                    ps: 'د مصالحو مېده کول، جالۍ کول، مخلوط کول، کره اندازه کول او په پاکټ یا بوتلونو کې بسته بندي.'
+                },
+                pdfUrl: 'pdfs/production-lines/food-processing/spice-processing-packaging-line.pdf'
+            },
+            {
+                id: 'jam-processing-line',
+                title: {
+                    fa: 'خط پروسس و بسته‌بندی مربا',
+                    en: 'Jam Processing & Packaging Line',
+                    ps: 'د مربا پروسس او بسته بندۍ لین'
+                },
+                description: {
+                    fa: 'آماده‌سازی میوه، پخت با شکر، غلیظ‌سازی، پرکردن داغ در بوتل شیشه‌ای و درب‌بندی و لیبل‌زنی.',
+                    en: 'Fruit preparation, cooking with sugar, concentration, hot filling into glass jars, capping and labelling.',
+                    ps: 'د میوو چمتو کول، له بوره سره پخلی، غلیظول، په ښیښه يي بوتلونو کې ګرم ډکول، درب تړل او لیبل لګول.'
+                },
+                pdfUrl: 'pdfs/production-lines/food-processing/jam-processing-line.pdf'
+            },
+            {
+                id: 'bottled-water-line',
+                title: {
+                    fa: 'خط تولید آب منرال و آب آشامیدنی بوتل‌شده',
+                    en: 'Bottled Mineral & Drinking Water Line',
+                    ps: 'د منرال او څښاک اوبو بوتل بندۍ لین'
+                },
+                description: {
+                    fa: 'تصفیۀ چندمرحله‌ای آب، ضدعفونی اوزون/UV، پرکردن، درب‌بندی و لیبل‌زنی بوتل‌های آب.',
+                    en: 'Multi-stage water purification, ozonisation/UV disinfection, bottle filling, capping and labelling.',
+                    ps: 'د اوبو څو پړاوه تصفیه، د اوزون/UV ضدعفوني، بوتل ډکول، درب لګول او لیبل کول.'
+                },
+                pdfUrl: 'pdfs/production-lines/food-processing/bottled-water-line.pdf'
             }
+
         ]
     },
     'consumer-goods-lines': {
