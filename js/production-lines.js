@@ -1194,10 +1194,22 @@ function showProductionLineModal(groupId) {
     data.lines.forEach(line => {
         const lineTitle = line.title[lang] || line.title.fa;
         const lineDesc = line.description[lang] || line.description.fa;
-        const lineIcon = getProductionLineIcon(line.iconId || line.id) || getProductionLineIcon(groupId) || (group ? group.icon : null);
+        const lineIconKey = line.iconId || line.id;
+        const lineFallbackIcon = (typeof window !== 'undefined' && typeof window.getProductionLineIconFallback === 'function')
+            ? window.getProductionLineIconFallback(lineIconKey)
+            : null;
+        const groupFallbackIcon = (typeof window !== 'undefined' && typeof window.getProductionLineIconFallback === 'function')
+            ? window.getProductionLineIconFallback(groupId)
+            : null;
+        const resolvedLineIcon = getProductionLineIcon(lineIconKey)
+            || lineFallbackIcon
+            || getProductionLineIcon(groupId)
+            || groupFallbackIcon
+            || (group ? group.icon : null);
+        const iconFallbackForMarkup = lineFallbackIcon || groupFallbackIcon || (group ? group.icon : '📄');
         const lineIconMarkup = (typeof window !== 'undefined' && typeof window.renderIconMarkup === 'function')
-            ? window.renderIconMarkup(lineIcon, 'equipment-icon', lineTitle, 'div', lineFallback)
-            : `<div class="equipment-icon">${lineIcon || lineFallback || '📄'}</div>`;
+            ? window.renderIconMarkup(resolvedLineIcon, 'equipment-icon', lineTitle, 'div', iconFallbackForMarkup || '📄')
+            : `<div class="equipment-icon">${resolvedLineIcon || iconFallbackForMarkup || '📄'}</div>`;
         cardsHtml += `
             <div class="equipment-card">
                 ${lineIconMarkup}
