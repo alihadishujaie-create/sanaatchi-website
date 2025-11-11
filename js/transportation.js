@@ -1,4 +1,6 @@
 (function() {
+    const defaultIconFallback = '📄';
+
     const iconData = {
         'cargo-truck': '🚚',
         'container-trailer': '📦',
@@ -14,6 +16,7 @@
         'forklift-rough': '🛞',
         'forklift': '🏗️',
         'furnace': '🔥',
+        'mission-compass': '🧭',
         'maintenance-team': '🛠️',
         'refrigerated-trailer': '❄️',
         'semi-truck': '🚛',
@@ -45,7 +48,7 @@
     const makeIcon = (name, alt) => {
         const icon = resolveIcon(name);
         if (!icon) {
-            return '📄';
+            return defaultIconFallback;
         }
 
         if (typeof icon === 'object' && icon.src && alt && !icon.alt) {
@@ -955,16 +958,22 @@
         }
     }
 
-    document.addEventListener('DOMContentLoaded', () => {
-        updatePage();
-        setupInteractions();
-    });
-
-    window.updateTransportationPage = () => {
+    const initialiseTransportationPage = () => {
         updatePage();
         setupInteractions();
     };
 
-    window.showTransportationCategoryModal = showTransportationCategoryModal;
-    window.showTransportationInventoryModal = showTransportationInventoryModal;
+    if (typeof document !== 'undefined') {
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initialiseTransportationPage, { once: true });
+        } else {
+            initialiseTransportationPage();
+        }
+    }
+
+    if (typeof window !== 'undefined') {
+        window.updateTransportationPage = initialiseTransportationPage;
+        window.showTransportationCategoryModal = showTransportationCategoryModal;
+        window.showTransportationInventoryModal = showTransportationInventoryModal;
+    }
 })();
