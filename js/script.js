@@ -6204,6 +6204,10 @@ function closeContactModal() {
 
 // Show sales contact modal
 function showSalesContactModal() {
+    if (typeof closeSearchResultModal === 'function') {
+        closeSearchResultModal();
+    }
+
     const modal = document.getElementById('salesContactModal');
     const modalContent = document.getElementById('salesContactModalContent');
 
@@ -6342,6 +6346,28 @@ const searchStopWords = new Set([
     'service',
     'services'
 ]);
+
+const looseSearchReplacementRules = [
+    { pattern: /\bfrench fries\b/g, replacement: 'chips' },
+    { pattern: /\bice[-\s]?cream\b/g, replacement: 'sheerikh' },
+    { pattern: /\bsalt\s+plant(s)?\b/g, replacement: 'salt' },
+    { pattern: /\bsalt\s+factory\b/g, replacement: 'salt' },
+    { pattern: /\bsweet\s+corn\b/g, replacement: 'corn' },
+    { pattern: /\bpolypropylene\b/g, replacement: 'pp' },
+    { pattern: /\bpolyethylene\b/g, replacement: 'pe' }
+];
+
+function applyLooseSearchReplacements(query) {
+    if (!query) {
+        return '';
+    }
+
+    let processed = query.toString().toLowerCase();
+    looseSearchReplacementRules.forEach(rule => {
+        processed = processed.replace(rule.pattern, rule.replacement);
+    });
+    return processed;
+}
 
 function normalizeSearchText(text) {
     if (!text) {
@@ -6551,21 +6577,110 @@ function performSearch(searchTerm) {
     }
 
     const displayTerm = searchTerm || '';
-
-    const matchingEquipment = [];
-    const seenEquipmentKeys = new Set();
     const MAX_EQUIPMENT_RESULTS = 24;
-    let equipmentLimitReached = false;
-    const matchedCategories = new Set();
 
-    if (searchTokens.length) {
+    function runSearchWithMatcher(options = {}) {
+        const tokens = Array.isArray(options.tokens) ? options.tokens.filter(Boolean) : [];
+        const baseMatchText = typeof options.matchText === 'function'
+            ? options.matchText
+            : (normalized => tokens.length ? tokens.every(token => normalized.includes(token)) : false);
+
+        const matchingEquipment = [];
+        const seenEquipmentKeys = new Set();
+        let equipmentLimitReached = false;
+        const matchedCategories = new Set();
+
+        function textMatcher(text) {
+            if (!text) {
+                return false;
+            }
+            const normalized = normalizeSearchText(text);
+            if (!normalized) {
+                return false;
+            }
+            return baseMatchText(normalized);
+        }
+
+        function fieldMatches(fields) {
+            return fields.some(field => textMatcher(field));
+        }
+
+        function addEquipmentMatch(categoryId, item, options = {}) {
+            if (!item) {
+                return;
+            }
+            if (matchingEquipment.length >= MAX_EQUIPMENT_RESULTS) {
+                equipmentLimitReached = true;
+                return;
+            }
+
+            const computeUniqueKey = (id, data) => {
+                const baseName = getLocalizedText(data.name, 'en') ||
+                    getLocalizedText(data.name, 'fa') ||
+                    getLocalizedText(data.name, 'ps') || '';
+                return `${id}|${data.pdfUrl || baseName}`;
+            };
+
+            const uniqueKey = computeUniqueKey(categoryId, item);
+            if (seenEquipmentKeys.has(uniqueKey)) {
+                if (options.subCategoryTitle) {
+                    const existingMatch = matchingEquipment.find(match => computeUniqueKey(match.categoryId, match.item) === uniqueKey);
+                    if (existingMatch && !existingMatch.subCategoryTitle) {
+                        existingMatch.subCategoryTitle = options.subCategoryTitle;
+                        if (!existingMatch.subCategoryId && options.subCategoryId) {
+                            existingMatch.subCategoryId = options.subCategoryId;
+                        }
+                    }
+                }
+                return;
+            }
+            seenEquipmentKeys.add(uniqueKey);
+
+            let iconSource = options.icon || item.icon || null;
+
+            if ((!iconSource || (typeof iconSource === 'string' && !iconSource.trim())) &&
+                categoryId === 'production-lines' &&
+                typeof window !== 'undefined' &&
+                typeof window.getProductionLineIcon === 'function') {
+                const potentialKeys = [
+                    options.iconId,
+                    item.iconId,
+                    options.subCategoryId,
+                    item.category,
+                    options.groupId
+                ].filter(Boolean);
+
+                for (const key of potentialKeys) {
+                    const resolved = window.getProductionLineIcon(key);
+                    if (resolved) {
+                        iconSource = resolved;
+                        break;
+                    }
+                }
+            }
+
+            if ((!iconSource || (typeof iconSource === 'string' && !iconSource.trim())) &&
+                categories[categoryId] &&
+                categories[categoryId].icon) {
+                iconSource = categories[categoryId].icon;
+            }
+
+            matchingEquipment.push({
+                categoryId,
+                item,
+                icon: iconSource || '📄',
+                subCategoryId: options.subCategoryId || null,
+                subCategoryTitle: options.subCategoryTitle || null
+            });
+        }
+
         if (categoryKeywords && typeof categoryKeywords === 'object') {
             Object.entries(categoryKeywords).forEach(([categoryId, keywords]) => {
                 if (!keywords) {
                     return;
                 }
                 const keywordList = Array.isArray(keywords) ? keywords : [keywords];
-                const hasMatch = keywordList.some(keyword => textMatchesTokens(keyword, searchTokens));
+                const hasMatch = keywordList.some(keyword => textMatcher(keyword));
                 if (hasMatch) {
                     matchedCategories.add(categoryId);
                 }
@@ -6584,260 +6699,236 @@ function performSearch(searchTerm) {
                 if (data.description) {
                     fields.push(...collectLocalizedStrings(data.description));
                 }
-                if (fields.some(field => textMatchesTokens(field, searchTokens))) {
+                if (fields.some(field => textMatcher(field))) {
                     matchedCategories.add(categoryId);
                 }
             });
         }
-    }
 
-    function addEquipmentMatch(categoryId, item, options = {}) {
-        if (!item) {
-            return;
-        }
-        if (matchingEquipment.length >= MAX_EQUIPMENT_RESULTS) {
-            equipmentLimitReached = true;
-            return;
-        }
-
-        const computeUniqueKey = (id, data) => {
-            const baseName = getLocalizedText(data.name, 'en') ||
-                getLocalizedText(data.name, 'fa') ||
-                getLocalizedText(data.name, 'ps') || '';
-            return `${id}|${data.pdfUrl || baseName}`;
-        };
-
-        const uniqueKey = computeUniqueKey(categoryId, item);
-        if (seenEquipmentKeys.has(uniqueKey)) {
-            if (options.subCategoryTitle) {
-                const existingMatch = matchingEquipment.find(match => computeUniqueKey(match.categoryId, match.item) === uniqueKey);
-                if (existingMatch && !existingMatch.subCategoryTitle) {
-                    existingMatch.subCategoryTitle = options.subCategoryTitle;
-                    if (!existingMatch.subCategoryId && options.subCategoryId) {
-                        existingMatch.subCategoryId = options.subCategoryId;
-                    }
-                }
+        for (const [categoryId, items] of Object.entries(equipmentData)) {
+            if (!Array.isArray(items)) {
+                continue;
             }
-            return;
-        }
-        seenEquipmentKeys.add(uniqueKey);
-
-        let iconSource = options.icon || item.icon || null;
-
-        if ((!iconSource || (typeof iconSource === 'string' && !iconSource.trim())) &&
-            categoryId === 'production-lines' &&
-            typeof window !== 'undefined' &&
-            typeof window.getProductionLineIcon === 'function') {
-            const potentialKeys = [
-                options.iconId,
-                item.iconId,
-                options.subCategoryId,
-                item.category,
-                options.groupId
-            ].filter(Boolean);
-
-            for (const key of potentialKeys) {
-                const resolved = window.getProductionLineIcon(key);
-                if (resolved) {
-                    iconSource = resolved;
-                    break;
-                }
-            }
-        }
-
-        if ((!iconSource || (typeof iconSource === 'string' && !iconSource.trim())) &&
-            categories[categoryId] &&
-            categories[categoryId].icon) {
-            iconSource = categories[categoryId].icon;
-        }
-
-        matchingEquipment.push({
-            categoryId,
-            item,
-            icon: iconSource || '📄',
-            subCategoryId: options.subCategoryId || null,
-            subCategoryTitle: options.subCategoryTitle || null
-        });
-    }
-
-    function fieldMatches(fields) {
-        return fields.some(field => textMatchesTokens(field, searchTokens));
-    }
-
-    // Search equipment data
-    for (const [categoryId, items] of Object.entries(equipmentData)) {
-        if (!Array.isArray(items)) {
-            continue;
-        }
-        items.forEach(item => {
-            const fields = [
-                ...collectLocalizedStrings(item.name),
-                ...collectLocalizedStrings(item.description)
-            ];
-
-            if (Array.isArray(item.keywords)) {
-                fields.push(...collectLocalizedStrings(item.keywords));
-            }
-
-            if (Array.isArray(item.meta)) {
-                item.meta.forEach(metaEntry => {
-                    fields.push(...collectLocalizedStrings(metaEntry && metaEntry.label));
-                    fields.push(...collectLocalizedStrings(metaEntry && metaEntry.value));
-                });
-            }
-
-            if (item.category) {
-                fields.push(item.category);
-            }
-
-            if (fieldMatches(fields)) {
-                addEquipmentMatch(categoryId, item, {
-                    icon: item.icon,
-                    subCategoryId: item.category,
-                    subCategoryTitle: item.subCategoryTitle
-                });
-            }
-        });
-    }
-
-    // Search second-hand inventory
-    if (Array.isArray(window.secondHandInventoryData)) {
-        window.secondHandInventoryData.forEach(item => {
-            const fields = [
-                ...collectLocalizedStrings(item.name),
-                ...collectLocalizedStrings(item.description)
-            ];
-
-            if (Array.isArray(item.meta)) {
-                item.meta.forEach(metaEntry => {
-                    fields.push(...collectLocalizedStrings(metaEntry && metaEntry.label));
-                    fields.push(...collectLocalizedStrings(metaEntry && metaEntry.value));
-                });
-            }
-
-            if (fieldMatches(fields)) {
-                const subCategoryTitle = (typeof secondHandCatalog !== 'undefined' && secondHandCatalog[item.category])
-                    ? secondHandCatalog[item.category].title
-                    : null;
-                addEquipmentMatch('second-hand', item, {
-                    icon: item.icon,
-                    subCategoryId: item.category,
-                    subCategoryTitle
-                });
-            }
-        });
-    }
-
-    // Search production line data if available
-    if (typeof productionLines !== 'undefined') {
-        Object.entries(productionLines).forEach(([groupId, group]) => {
-            const lines = Array.isArray(group.lines) ? group.lines : [];
-            lines.forEach(line => {
+            items.forEach(item => {
                 const fields = [
-                    ...collectLocalizedStrings(line.title),
-                    ...collectLocalizedStrings(line.description)
+                    ...collectLocalizedStrings(item.name),
+                    ...collectLocalizedStrings(item.description)
                 ];
 
-                if (Array.isArray(line.keywords)) {
-                    fields.push(...collectLocalizedStrings(line.keywords));
+                if (Array.isArray(item.meta)) {
+                    item.meta.forEach(metaEntry => {
+                        fields.push(...collectLocalizedStrings(metaEntry && metaEntry.label));
+                        fields.push(...collectLocalizedStrings(metaEntry && metaEntry.value));
+                    });
                 }
 
-                if (line.id) {
-                    fields.push(line.id);
+                if (Array.isArray(item.keywords)) {
+                    fields.push(...collectLocalizedStrings(item.keywords));
+                }
+
+                if (item.category) {
+                    fields.push(item.category);
                 }
 
                 if (fieldMatches(fields)) {
-                    const productionLineIconLookupId = line.iconId || line.id;
-                    const productionLineIcon = (typeof window !== 'undefined' && typeof window.getProductionLineIcon === 'function')
-                        ? (window.getProductionLineIcon(productionLineIconLookupId) || window.getProductionLineIcon(groupId))
-                        : null;
-                    addEquipmentMatch('production-lines', {
-                        name: line.title,
-                        description: line.description,
-                        pdfUrl: line.pdfUrl,
-                        meta: line.meta,
-                        iconId: productionLineIconLookupId
-                    }, {
-                        icon: productionLineIcon || group.icon || '🏭',
-                        iconId: productionLineIconLookupId,
-                        subCategoryId: groupId,
-                        subCategoryTitle: group.title,
-                        groupId
-                    });
-                }
-            });
-        });
-    }
-
-    if (matchingEquipment.length === 0 && matchedCategories.size > 0) {
-        matchedCategories.forEach(categoryId => {
-            if (categoryId === 'production-lines') {
-                if (typeof productionLines !== 'undefined') {
-                    Object.entries(productionLines).forEach(([groupId, group]) => {
-                        const lines = Array.isArray(group.lines) ? group.lines : [];
-                        lines.forEach(line => {
-                            const productionLineIconLookupId = line.iconId || line.id;
-                            const productionLineIcon = (typeof window !== 'undefined' && typeof window.getProductionLineIcon === 'function')
-                                ? (window.getProductionLineIcon(productionLineIconLookupId) || window.getProductionLineIcon(groupId))
-                                : null;
-                            addEquipmentMatch('production-lines', {
-                                name: line.title,
-                                description: line.description,
-                                pdfUrl: line.pdfUrl,
-                                meta: line.meta,
-                                iconId: productionLineIconLookupId
-                            }, {
-                                icon: productionLineIcon || (group && group.icon) || '🏭',
-                                iconId: productionLineIconLookupId,
-                                subCategoryId: groupId,
-                                subCategoryTitle: group ? group.title : null,
-                                groupId
-                            });
-                        });
-                    });
-                }
-                return;
-            }
-
-            if (categoryId === 'second-hand') {
-                if (Array.isArray(window.secondHandInventoryData)) {
-                    window.secondHandInventoryData.forEach(item => {
-                        const subCategoryTitle = (typeof secondHandCatalog !== 'undefined' && secondHandCatalog[item.category])
-                            ? secondHandCatalog[item.category].title
-                            : null;
-                        addEquipmentMatch('second-hand', item, {
-                            icon: item.icon,
-                            subCategoryId: item.category,
-                            subCategoryTitle
-                        });
-                    });
-                }
-                return;
-            }
-
-            const categoryItems = equipmentData && equipmentData[categoryId];
-            if (Array.isArray(categoryItems)) {
-                categoryItems.forEach(item => {
                     addEquipmentMatch(categoryId, item, {
                         icon: item.icon,
                         subCategoryId: item.category,
                         subCategoryTitle: item.subCategoryTitle
                     });
+                }
+            });
+        }
+
+        if (Array.isArray(window.secondHandInventoryData)) {
+            window.secondHandInventoryData.forEach(item => {
+                const fields = [
+                    ...collectLocalizedStrings(item.name),
+                    ...collectLocalizedStrings(item.description)
+                ];
+
+                if (Array.isArray(item.meta)) {
+                    item.meta.forEach(metaEntry => {
+                        fields.push(...collectLocalizedStrings(metaEntry && metaEntry.label));
+                        fields.push(...collectLocalizedStrings(metaEntry && metaEntry.value));
+                    });
+                }
+
+                if (fieldMatches(fields)) {
+                    const subCategoryTitle = (typeof secondHandCatalog !== 'undefined' && secondHandCatalog[item.category])
+                        ? secondHandCatalog[item.category].title
+                        : null;
+                    addEquipmentMatch('second-hand', item, {
+                        icon: item.icon,
+                        subCategoryId: item.category,
+                        subCategoryTitle
+                    });
+                }
+            });
+        }
+
+        if (typeof productionLines !== 'undefined') {
+            Object.entries(productionLines).forEach(([groupId, group]) => {
+                const lines = Array.isArray(group.lines) ? group.lines : [];
+                lines.forEach(line => {
+                    const fields = [
+                        ...collectLocalizedStrings(line.title),
+                        ...collectLocalizedStrings(line.description)
+                    ];
+
+                    if (Array.isArray(line.keywords)) {
+                        fields.push(...collectLocalizedStrings(line.keywords));
+                    }
+
+                    if (line.id) {
+                        fields.push(line.id);
+                    }
+
+                    if (fieldMatches(fields)) {
+                        const productionLineIconLookupId = line.iconId || line.id;
+                        const productionLineIcon = (typeof window !== 'undefined' && typeof window.getProductionLineIcon === 'function')
+                            ? (window.getProductionLineIcon(productionLineIconLookupId) || window.getProductionLineIcon(groupId))
+                            : null;
+                        addEquipmentMatch('production-lines', {
+                            name: line.title,
+                            description: line.description,
+                            pdfUrl: line.pdfUrl,
+                            meta: line.meta,
+                            iconId: productionLineIconLookupId
+                        }, {
+                            icon: productionLineIcon || group.icon || '🏭',
+                            iconId: productionLineIconLookupId,
+                            subCategoryId: groupId,
+                            subCategoryTitle: group.title,
+                            groupId
+                        });
+                    }
                 });
-            }
-        });
+            });
+        }
+
+        if (matchingEquipment.length === 0 && matchedCategories.size > 0) {
+            matchedCategories.forEach(categoryId => {
+                if (categoryId === 'production-lines') {
+                    if (typeof productionLines !== 'undefined') {
+                        Object.entries(productionLines).forEach(([groupId, group]) => {
+                            const lines = Array.isArray(group.lines) ? group.lines : [];
+                            lines.forEach(line => {
+                                const productionLineIconLookupId = line.iconId || line.id;
+                                const productionLineIcon = (typeof window !== 'undefined' && typeof window.getProductionLineIcon === 'function')
+                                    ? (window.getProductionLineIcon(productionLineIconLookupId) || window.getProductionLineIcon(groupId))
+                                    : null;
+                                addEquipmentMatch('production-lines', {
+                                    name: line.title,
+                                    description: line.description,
+                                    pdfUrl: line.pdfUrl,
+                                    meta: line.meta,
+                                    iconId: productionLineIconLookupId
+                                }, {
+                                    icon: productionLineIcon || (group && group.icon) || '🏭',
+                                    iconId: productionLineIconLookupId,
+                                    subCategoryId: groupId,
+                                    subCategoryTitle: group ? group.title : null,
+                                    groupId
+                                });
+                            });
+                        });
+                    }
+                    return;
+                }
+
+                if (categoryId === 'second-hand') {
+                    if (Array.isArray(window.secondHandInventoryData)) {
+                        window.secondHandInventoryData.forEach(item => {
+                            const subCategoryTitle = (typeof secondHandCatalog !== 'undefined' && secondHandCatalog[item.category])
+                                ? secondHandCatalog[item.category].title
+                                : null;
+                            addEquipmentMatch('second-hand', item, {
+                                icon: item.icon,
+                                subCategoryId: item.category,
+                                subCategoryTitle
+                            });
+                        });
+                    }
+                    return;
+                }
+
+                const categoryItems = equipmentData && equipmentData[categoryId];
+                if (Array.isArray(categoryItems)) {
+                    categoryItems.forEach(item => {
+                        addEquipmentMatch(categoryId, item, {
+                            icon: item.icon,
+                            subCategoryId: item.category,
+                            subCategoryTitle: item.subCategoryTitle
+                        });
+                    });
+                }
+            });
+        }
+
+        return {
+            matches: matchingEquipment,
+            equipmentLimitReached
+        };
     }
 
+    const strictResult = runSearchWithMatcher({ tokens: searchTokens });
+    let activeResult = { ...strictResult, level: 'strict' };
+
+    if (!strictResult.matches.length) {
+        const loosePreparedTerm = applyLooseSearchReplacements(searchTerm);
+        const looseTokens = tokenizeSearchTerm(loosePreparedTerm);
+        const looseNormalizedQuery = normalizeSearchText(loosePreparedTerm);
+        const looseMatchText = normalized => {
+            if (looseNormalizedQuery && normalized.includes(looseNormalizedQuery)) {
+                return true;
+            }
+            if (looseTokens.length) {
+                return looseTokens.some(token => normalized.includes(token));
+            }
+            return false;
+        };
+
+        const looseResult = runSearchWithMatcher({
+            tokens: looseTokens,
+            matchText: looseMatchText
+        });
+
+        if (looseResult.matches.length) {
+            activeResult = { ...looseResult, level: 'loose' };
+        } else {
+            activeResult = { ...looseResult, level: 'none' };
+        }
+    }
+
+    const matchesToRender = activeResult.matches || [];
     const title = currentLanguage === 'fa' ? 'نتایج جستجو' :
                  currentLanguage === 'ps' ? 'د لټون پایلې' : 'Search Results';
-    const subtitle = currentLanguage === 'fa' ? `برای "${displayTerm}" یافت شد:` :
-                     currentLanguage === 'ps' ? `"${displayTerm}" لپاره وموندل:` : `Found for "${displayTerm}":`;
-    const noResults = currentLanguage === 'fa' ? 'هیچ نتیجه‌ای یافت نشد' :
-                    currentLanguage === 'ps' ? 'هیڅ پایله ونه موندل شوه' : 'No results found';
+    const strictSubtitle = currentLanguage === 'fa' ? `برای «${displayTerm}» یافت شد:` :
+                         currentLanguage === 'ps' ? `«${displayTerm}» لپاره وموندل:` : `Found for "${displayTerm}":`;
+    const looseSubtitle = currentLanguage === 'fa' ? 'نتیجه دقیقی یافت نشد، اما نزدیک‌ترین موارد زیر هستند.' :
+                        currentLanguage === 'ps' ? 'دقیق سمون ونه موندل شو، خو لاندې توکي ورته ډېر نږدې دي.' :
+                        'We could not find an exact match, but these are close.';
+    const closestMatchesHeading = currentLanguage === 'fa' ? `نزدیک‌ترین نتایج به «${displayTerm}»:` :
+                                 currentLanguage === 'ps' ? `«${displayTerm}» ته نږدې پایلې:` :
+                                 `Closest matches to "${displayTerm}":`;
+    const noListingTitle = currentLanguage === 'fa' ? 'هنوز این مورد را در فهرست نداریم.' :
+                           currentLanguage === 'ps' ? 'موږ لا تر اوسه دا توکی په لست کې نه لرو.' :
+                           'We don’t have this item listed yet.';
+    const noListingDescription = currentLanguage === 'fa'
+        ? `ما هیچ محصولی مطابق «${displayTerm}» در فهرست آنلاین خود پیدا نکردیم، اما بخش فروش ما می‌تواند آن را از شرکا و تامین‌کنندگانمان برای شما تهیه کند.`
+        : currentLanguage === 'ps'
+            ? `موږ په خپل انلاین کتالوګ کې د «${displayTerm}» سره سم هیڅ محصول ونه موند، خو زموږ د پلور څانګه یې زموږ له شریکانو او عرضه کوونکو څخه درته برابروي.`
+            : `We couldn’t find any products matching "${displayTerm}" in our online catalogue, but our sales department can source it for you from our partners and suppliers.`;
     const backText = currentLanguage === 'fa' ? 'بازگشت' :
                     currentLanguage === 'ps' ? 'بیرته' : 'Back';
     const equipmentHeading = currentLanguage === 'fa' ? 'ماشین‌آلات و تجهیزات مرتبط:' :
                              currentLanguage === 'ps' ? 'اړوند ماشینونه او تجهیزات:' : 'Related equipment and machinery:';
+    const contactPrompt = currentLanguage === 'fa' ? 'دقیقاً مورد دلخواه‌تان را پیدا نکردید؟' :
+                          currentLanguage === 'ps' ? 'هغه څه مو ونه موندل چې غواړي؟' :
+                          'Can’t find exactly what you need?';
+    const contactSalesText = currentLanguage === 'fa' ? 'تماس با بخش فروش' :
+                             currentLanguage === 'ps' ? 'د پلور برخې سره اړیکه' : 'Contact Sales Department';
     const viewPdfText = currentLanguage === 'fa' ? 'مشاهده PDF' :
                         currentLanguage === 'ps' ? 'PDF وګورئ' : 'View PDF';
     const downloadText = currentLanguage === 'fa' ? 'دانلود' :
@@ -6845,19 +6936,28 @@ function performSearch(searchTerm) {
     const limitedResultsNote = currentLanguage === 'fa' ? 'برای مشاهده نتایج بیشتر عبارت دقیق‌تری وارد کنید.' :
                               currentLanguage === 'ps' ? 'د لا زیاتو پایلو لپاره مهرباني وکړئ لټون محدود کړئ.' :
                               'Refine your search to see additional results.';
-    const suggestionsTitle = currentLanguage === 'fa' ? 'پیشنهادات جستجو:' :
-                             currentLanguage === 'ps' ? 'د لټون وړاندیزونه:' : 'Search Suggestions:';
 
     let contentHtml = `
         <div class="modal-icon">🔍</div>
         <h3>${title}</h3>
-        <p>${subtitle}</p>
     `;
 
-    if (matchingEquipment.length > 0) {
-        contentHtml += `<h4 class="search-equipment-heading">${equipmentHeading}</h4>`;
+    if (activeResult.level === 'strict') {
+        contentHtml += `<p>${strictSubtitle}</p>`;
+    } else if (activeResult.level === 'loose') {
+        contentHtml += `<p>${looseSubtitle}</p>`;
+    } else {
+        contentHtml += `<h4 class="search-empty-title">${noListingTitle}</h4>`;
+        contentHtml += `<p>${noListingDescription}</p>`;
+    }
+
+    if (matchesToRender.length > 0) {
+        const headingText = activeResult.level === 'loose' ? closestMatchesHeading : equipmentHeading;
+        if (headingText) {
+            contentHtml += `<h4 class="search-equipment-heading">${headingText}</h4>`;
+        }
         contentHtml += '<div class="equipment-grid">';
-        matchingEquipment.forEach(match => {
+        matchesToRender.forEach(match => {
             const nameText = getLocalizedText(match.item.name, currentLanguage);
             const descriptionText = getLocalizedText(match.item.description, currentLanguage);
             const categoryLabel = getCategoryDisplayName(match.categoryId, currentLanguage);
@@ -6903,47 +7003,39 @@ function performSearch(searchTerm) {
         });
         contentHtml += '</div>';
 
-        if (equipmentLimitReached) {
+        if (activeResult.equipmentLimitReached) {
             contentHtml += `<p class="search-note">${limitedResultsNote}</p>`;
         }
     }
 
-    if (matchingEquipment.length === 0) {
-        contentHtml += `<p>${noResults}</p>`;
-        contentHtml += `<div class="search-suggestions"><h4>${suggestionsTitle}</h4>`;
-        contentHtml += '<div class="suggestion-tags">';
-
-        const popularCategories = [
-            { id: 'production-lines', key: 'cat-production' },
-            { id: 'printing-machines', key: 'cat-printing' },
-            { id: 'metallurgy', key: 'cat-metallurgy' },
-            { id: 'metallurgy-coating', key: 'cat-metallurgy-coating' },
-            { id: 'construction-materials', key: 'cat-construction' },
-            { id: 'plastic-industry', key: 'cat-plastic-industry' }
-        ];
-
-        popularCategories.forEach(cat => {
-            const catName = getTranslationByKey(cat.key, currentLanguage);
-            if (catName) {
-                const safeValue = JSON.stringify(catName);
-                contentHtml += `<span class="suggestion-tag" onclick="performSearch(${safeValue})">${catName}</span>`;
-            }
-        });
-
-        contentHtml += '</div></div>';
+    if (activeResult.level === 'loose') {
+        contentHtml += `
+            <div class="search-contact-cta">
+                <p>${contactPrompt}</p>
+                <button type="button" class="btn-primary" onclick="showSalesContactModal()">${contactSalesText}</button>
+            </div>
+        `;
     }
 
-    contentHtml += `
-        <div class="modal-buttons">
-            <button class="btn-primary" onclick="closeSearchResultModal()">${backText}</button>
-        </div>
-    `;
+    if (activeResult.level === 'none') {
+        contentHtml += `
+            <div class="modal-buttons">
+                <button type="button" class="btn-primary" onclick="showSalesContactModal()">${contactSalesText}</button>
+                <button type="button" class="btn-secondary" onclick="closeSearchResultModal()">${backText}</button>
+            </div>
+        `;
+    } else {
+        contentHtml += `
+            <div class="modal-buttons">
+                <button type="button" class="btn-primary" onclick="closeSearchResultModal()">${backText}</button>
+            </div>
+        `;
+    }
 
     modalContent.innerHTML = contentHtml;
     modal.style.display = 'block';
     modal.setAttribute('aria-hidden', 'false');
 }
-
 // Close search result modal
 function closeSearchResultModal() {
     const modal = document.getElementById('searchResultModal');
