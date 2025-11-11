@@ -8,7 +8,28 @@ const productionLineIconMap = {
     'recycling-lines': '♻️',
     'disposable-products-lines': '🥤',
     'light-industry-lines': '🪑',
-    'second-hand': '🔄'
+    'second-hand': '🔄',
+    'cereal-production-line': '🌾',
+    'baby-food-cerelac-line': '🍼',
+    'dairy-processing-line': '🥛',
+    'beverage-production-line': '🥤',
+    'bakery-biscuits-line': '🍞',
+    'meat-processing-line': '🥩',
+    'fruit-vegetable-processing-line': '🥕',
+    'edible-oil-line': '🛢️',
+    'potato-chips-snacks-line': '🍟',
+    'tomato-paste-ketchup-line': '🍅',
+    'macaroni-noodle-line': '🍝',
+    'chocolate-production-line': '🍫',
+    'salt-refining-packaging-line': '🧂',
+    'canned-food-compote-line': '🥫',
+    'ice-cream-production-line': '🍨',
+    'fruit-chips-line': '🍏',
+    'nuts-dried-fruits-processing-line': '🌰',
+    'poultry-feed-line': '🐓',
+    'spice-processing-packaging-line': '🌶️',
+    'jam-processing-line': '🍯',
+    'bottled-water-line': '💧'
 };
 
 const productionLineIconFallbacks = {
@@ -29,6 +50,19 @@ const productionLineIconFallbacks = {
     'meat-processing-line': '🥩',
     'fruit-vegetable-processing-line': '🥕',
     'edible-oil-line': '🛢️',
+    'potato-chips-snacks-line': '🍟',
+    'tomato-paste-ketchup-line': '🍅',
+    'macaroni-noodle-line': '🍝',
+    'chocolate-production-line': '🍫',
+    'salt-refining-packaging-line': '🧂',
+    'canned-food-compote-line': '🥫',
+    'ice-cream-production-line': '🍨',
+    'fruit-chips-line': '🍏',
+    'nuts-dried-fruits-processing-line': '🌰',
+    'poultry-feed-line': '🐓',
+    'spice-processing-packaging-line': '🌶️',
+    'jam-processing-line': '🍯',
+    'bottled-water-line': '💧',
     'shampoo-production-line': '🧴',
     'detergent-production-line': '🧼',
     'soap-production-line': '🫧',
@@ -134,18 +168,27 @@ function getProductionLineIcon(key) {
         return null;
     }
 
-    const mapped = productionLineIconMap[normalised];
-    const fallbackIcon = getProductionLineIconFallback(normalised);
+    const rawMapped = Object.prototype.hasOwnProperty.call(productionLineIconMap, normalised)
+        ? productionLineIconMap[normalised]
+        : null;
+    const mappedIcon = resolveIconSourceFromMap(rawMapped);
 
-    if (!mapped) {
-        if (typeof console !== 'undefined' && !loggedProductionLineIcons.has(normalised)) {
-            console.warn(`Missing production line icon: ${normalised}`);
-            loggedProductionLineIcons.add(normalised);
-        }
-        return null;
+    if (mappedIcon) {
+        return mappedIcon;
     }
 
-    return fallbackIcon || null;
+    const fallbackIcon = getProductionLineIconFallback(normalised);
+
+    if (fallbackIcon) {
+        return fallbackIcon;
+    }
+
+    if (typeof console !== 'undefined' && !loggedProductionLineIcons.has(normalised)) {
+        console.warn(`Missing production line icon: ${normalised}`);
+        loggedProductionLineIcons.add(normalised);
+    }
+
+    return null;
 }
 
 if (typeof window !== 'undefined') {
