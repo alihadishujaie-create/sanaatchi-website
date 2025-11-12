@@ -32,6 +32,11 @@ export interface HeroContent {
   quote: string;      // hero quote
 }
 
+export interface ButtonPair {
+  primary: string;
+  secondary: string;
+}
+
 export interface Card {
   title: string;      // H3
   body: string;
@@ -74,8 +79,11 @@ export interface CtaSection {
 
 export interface CargoPageContent {
   hero: HeroContent;
+  heroButtons: ButtonPair;
   integratedCargo: SectionWithCards;
   routes: SectionWithCards;
+  routeButtons: ButtonPair;
+  routeBadge: string;
   cost: SectionWithBody;
   time: SectionWithBody;          // time H2 includes مدت زمان انتقال...
   steps: StepSection;
@@ -83,6 +91,7 @@ export interface CargoPageContent {
   industries: SectionWithBody;
   faq: FaqSection;
   cta: CtaSection;
+  ctaButtons: ButtonPair;
 }
 
 /**
@@ -133,6 +142,10 @@ export const cargoPageContent: Record<Lang, CargoPageContent> = {
         'انتقال بار از چین به افغانستان از راه ریل، دریا و سرک، با مدیریت کامل تمام مراحل توسط صنعتچی و گدام‌ها در گوانگجو، ایوو، چینگ‌داو، هرات، مزار شریف، کابل و غزنی.',
       quote:
         'از تحویل‌گیری مال در چین تا رساندن آن به درب فابریکه یا گدام شما در افغانستان، تیم صنعتچی هر قدم سفر کارگو چین–افغانستان را برای شما مدیریت می‌کند.'
+    },
+    heroButtons: {
+      primary: 'درخواست نرخ حمل',
+      secondary: 'مشاهده مسیرها'
     },
 
     integratedCargo: {
@@ -205,6 +218,13 @@ export const cargoPageContent: Record<Lang, CargoPageContent> = {
         }
       ]
     },
+
+    routeButtons: {
+      primary: 'درخواست جزئیات مسیر',
+      secondary: 'تماس با تیم کارگو'
+    },
+
+    routeBadge: 'فعال',
 
     cost: {
       heading: 'هزینه حمل و نقل از چین به افغانستان – چه چیزها قیمت را تعیین می‌کند؟',
@@ -299,6 +319,11 @@ export const cargoPageContent: Record<Lang, CargoPageContent> = {
       heading: 'درخواست نرخ کارگو از چین به افغانستان',
       body:
         'آماده هستید مال را از چین به افغانستان انتقال دهید یا یک پروژۀ صنعتی را شروع نمایید؟ جزئیات مال یا پروژه را از طریق واتس‌اپ، تماس تلیفون یا فارم تماس ویب‌سایت برای ما بفرستید؛ ما برای شما گزینه‌های مسیر، هزینه حمل و مدت زمان انتقال بار از چین به افغانستان را به زودی شریک می‌سازیم.'
+    },
+
+    ctaButtons: {
+      primary: 'درخواست مشاوره حمل',
+      secondary: 'هماهنگی با تیم فروش'
     }
   },
 
@@ -310,6 +335,10 @@ export const cargoPageContent: Record<Lang, CargoPageContent> = {
         'Shipping goods from China to Afghanistan by rail, sea and road, with end-to-end management by Sanaatchi and warehouse hubs in Guangzhou, Yiwu, Qingdao, Herat, Mazar, Kabul and Ghazni.',
       quote:
         'From supplier pickup in China to factory delivery in Afghanistan, the Sanaatchi team manages every step of your China–Afghanistan cargo journey.'
+    },
+    heroButtons: {
+      primary: 'Request freight quote',
+      secondary: 'View routes'
     },
 
     integratedCargo: {
@@ -382,6 +411,13 @@ export const cargoPageContent: Record<Lang, CargoPageContent> = {
         }
       ]
     },
+
+    routeButtons: {
+      primary: 'Request route details',
+      secondary: 'Talk to the cargo team'
+    },
+
+    routeBadge: 'Active',
 
     cost: {
       heading: 'Shipping cost from China to Afghanistan – what affects the price?',
@@ -476,6 +512,11 @@ export const cargoPageContent: Record<Lang, CargoPageContent> = {
       heading: 'Request a China–Afghanistan cargo quote',
       body:
         'Ready to ship from China to Afghanistan or start an industrial project? Send us your cargo or project details via WhatsApp, phone or the contact form, and we’ll reply with route options, shipping cost and realistic transit time.'
+    },
+
+    ctaButtons: {
+      primary: 'Request logistics consultation',
+      secondary: 'Coordinate with sales team'
     }
   },
 
@@ -487,6 +528,10 @@ export const cargoPageContent: Record<Lang, CargoPageContent> = {
         'مال له چین څخه افغانستان ته د رېل، سمندر او سړک له لارې لېږدوو، د صنعتچي د ټیم په بشپړ مدیریت سره، له ګوانګجو، ایوو او چینګداو څخه تر هرات، مزار، کابل او غزني پورې.',
       quote:
         'له عرضه کوونکي څخه د مال راخستل، تر فابریکې او ګدام پورې تحویل، د چین–افغانستان د کارګو ټول پړاوونه د صنعتچي ټیم څاري او پر مخ وړي.'
+    },
+    heroButtons: {
+      primary: 'د لېږد بیه وغواړئ',
+      secondary: 'مسیرونه وګورئ'
     },
 
     integratedCargo: {
@@ -559,6 +604,13 @@ export const cargoPageContent: Record<Lang, CargoPageContent> = {
         }
       ]
     },
+
+    routeButtons: {
+      primary: 'د مسیر معلومات وغواړئ',
+      secondary: 'د کارګو له ټیم سره اړیکه'
+    },
+
+    routeBadge: 'فعال',
 
     cost: {
       heading: 'له چین څخه افغانستان ته د لېږد لګښت – کوم څه په قیمت اغېزه کوي؟',
@@ -653,6 +705,11 @@ export const cargoPageContent: Record<Lang, CargoPageContent> = {
       heading: 'د چین–افغانستان کارګو لپاره د آفر غوښتنه',
       body:
         'غواړئ له چین څخه افغانستان ته مال ولېږدئ او که صنعتي پروژه پیل کړئ؟ د مال یا پروژې معلومات مو د وېټساپ، تلفون یا د وېب‌سایټ د اړیکې فورمې له لارې راولېږئ؛ موږ به درته د لارې انتخابونه، د لېږد لګښت او اټکلي موده ژر در واستوو.'
+    },
+
+    ctaButtons: {
+      primary: 'د لېږد مشوره وغواړئ',
+      secondary: 'له د پلور ټیم سره همغږي'
     }
   }
 };

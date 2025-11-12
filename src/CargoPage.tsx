@@ -4,6 +4,7 @@ import {
   cargoPageMeta,
   cargoPageContent,
   HeroContent,
+  ButtonPair,
   SectionWithCards,
   SectionWithBody,
   StepSection,
@@ -31,10 +32,10 @@ export function CargoPage({ lang }: CargoPageProps) {
       </Head>
       */}
 
-      <CargoHero content={content.hero} />
+      <CargoHero content={content.hero} buttons={content.heroButtons} />
 
-      <SectionWithCardsComponent section={content.integratedCargo} />
-      <SectionWithCardsComponent section={content.routes} />
+      <IntegratedSection section={content.integratedCargo} />
+      <RoutesSection section={content.routes} buttons={content.routeButtons} badge={content.routeBadge} />
 
       <SectionWithBodyComponent section={content.cost} />
       <SectionWithBodyComponent section={content.time} />
@@ -44,42 +45,91 @@ export function CargoPage({ lang }: CargoPageProps) {
       <SectionWithBodyComponent section={content.industries} />
 
       <FaqSectionComponent section={content.faq} />
-      <CtaSectionComponent section={content.cta} />
+      <CtaSectionComponent section={content.cta} buttons={content.ctaButtons} />
     </div>
   );
 }
 
 interface HeroProps {
   content: HeroContent;
+  buttons: ButtonPair;
 }
 
-function CargoHero({ content }: HeroProps) {
+function CargoHero({ content, buttons }: HeroProps) {
   return (
     <header className="cargo-hero">
-      <h1>{content.title}</h1>
-      <p>{content.subtitle}</p>
-      <blockquote>{content.quote}</blockquote>
-      {/* Keep your existing hero design (buttons, background, cards) here */}
+      <div className="container">
+        <div className="hero-content">
+          <div className="hero-text">
+            <h1>{content.title}</h1>
+            <p>{content.subtitle}</p>
+            <blockquote>{content.quote}</blockquote>
+            <div className="hero-buttons">
+              <button className="btn-primary">{buttons.primary}</button>
+              <button className="btn-secondary">{buttons.secondary}</button>
+            </div>
+          </div>
+          {/* Preserve existing search/cards area from implementation when integrating */}
+        </div>
+      </div>
     </header>
   );
 }
 
-interface SectionWithCardsProps {
+const INTEGRATED_ICONS = ['fas fa-route', 'fas fa-boxes', 'fas fa-user-shield', 'fas fa-clock'];
+
+interface IntegratedSectionProps {
   section: SectionWithCards;
 }
 
-function SectionWithCardsComponent({ section }: SectionWithCardsProps) {
+function IntegratedSection({ section }: IntegratedSectionProps) {
   return (
-    <section className="cargo-section">
-      <h2>{section.heading}</h2>
-      {section.intro && <p>{section.intro}</p>}
-      <div className="card-grid">
-        {section.cards.map((card, idx) => (
-          <article key={idx} className="card">
-            <h3>{card.title}</h3>
-            <p>{card.body}</p>
-          </article>
-        ))}
+    <section className="cargo-overview">
+      <div className="container">
+        <h2>{section.heading}</h2>
+        {section.intro && <p>{section.intro}</p>}
+        <div className="overview-points">
+          {section.cards.map((card, idx) => {
+            const iconClass = INTEGRATED_ICONS[idx] ?? INTEGRATED_ICONS[INTEGRATED_ICONS.length - 1];
+            return (
+              <article key={idx} className="overview-card">
+                <i className={iconClass} aria-hidden="true" />
+                <h3>{card.title}</h3>
+                <p>{card.body}</p>
+              </article>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+interface RoutesSectionProps {
+  section: SectionWithCards;
+  buttons: ButtonPair;
+  badge: string;
+}
+
+function RoutesSection({ section, buttons, badge }: RoutesSectionProps) {
+  return (
+    <section className="cargo-routes-section">
+      <div className="container">
+        <h2>{section.heading}</h2>
+        {section.intro && <p>{section.intro}</p>}
+        <div className="cargo-routes-grid">
+          {section.cards.map((card, idx) => (
+            <article key={idx} className="cargo-card">
+              <span className="badge">{badge}</span>
+              <h3>{card.title}</h3>
+              <p>{card.body}</p>
+              <div className="card-buttons">
+                <a href="#" className="btn-primary">{buttons.primary}</a>
+                <a href="#" className="btn-secondary">{buttons.secondary}</a>
+              </div>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -92,8 +142,10 @@ interface SectionWithBodyProps {
 function SectionWithBodyComponent({ section }: SectionWithBodyProps) {
   return (
     <section className="cargo-section">
-      <h2>{section.heading}</h2>
-      <p>{section.body}</p>
+      <div className="container">
+        <h2>{section.heading}</h2>
+        <p>{section.body}</p>
+      </div>
     </section>
   );
 }
@@ -105,12 +157,14 @@ interface StepSectionProps {
 function StepSectionComponent({ section }: StepSectionProps) {
   return (
     <section className="cargo-section">
-      <h2>{section.heading}</h2>
-      <ol>
-        {section.steps.map((step, idx) => (
-          <li key={idx}>{step.body}</li>
-        ))}
-      </ol>
+      <div className="container">
+        <h2>{section.heading}</h2>
+        <ol>
+          {section.steps.map((step, idx) => (
+            <li key={idx}>{step.body}</li>
+          ))}
+        </ol>
+      </div>
     </section>
   );
 }
@@ -122,27 +176,39 @@ interface FaqSectionProps {
 function FaqSectionComponent({ section }: FaqSectionProps) {
   return (
     <section className="cargo-section">
-      <h2>{section.heading}</h2>
-      {section.items.map((item, idx) => (
-        <article key={idx} className="faq-item">
-          <h3>{item.question}</h3>
-          <p>{item.answer}</p>
-        </article>
-      ))}
+      <div className="container">
+        <h2>{section.heading}</h2>
+        <div className="cargo-faq-list">
+          {section.items.map((item, idx) => (
+            <article key={idx} className="faq-item">
+              <h3>{item.question}</h3>
+              <p>{item.answer}</p>
+            </article>
+          ))}
+        </div>
+      </div>
     </section>
   );
 }
 
 interface CtaSectionProps {
   section: CtaSection;
+  buttons: ButtonPair;
 }
 
-function CtaSectionComponent({ section }: CtaSectionProps) {
+function CtaSectionComponent({ section, buttons }: CtaSectionProps) {
   return (
-    <section className="cargo-section cta">
-      <h2>{section.heading}</h2>
-      <p>{section.body}</p>
-      {/* Add your CTA button(s) here (WhatsApp, phone, contact form) */}
+    <section className="cargo-cta">
+      <div className="container">
+        <div>
+          <h2>{section.heading}</h2>
+          <p>{section.body}</p>
+        </div>
+        <div className="cta-buttons">
+          <button className="btn-primary">{buttons.primary}</button>
+          <button className="btn-secondary">{buttons.secondary}</button>
+        </div>
+      </div>
     </section>
   );
 }

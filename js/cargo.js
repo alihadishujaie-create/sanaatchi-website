@@ -97,6 +97,11 @@
           }
         ]
       },
+      routeButtons: {
+        primary: 'درخواست جزئیات مسیر',
+        secondary: 'تماس با تیم کارگو'
+      },
+      routeBadge: 'فعال',
       cost: {
         heading: 'هزینه حمل و نقل از چین به افغانستان – چه چیزها قیمت را تعیین می‌کند؟',
         body:
@@ -271,6 +276,11 @@
           }
         ]
       },
+      routeButtons: {
+        primary: 'Request route details',
+        secondary: 'Talk to the cargo team'
+      },
+      routeBadge: 'Active',
       cost: {
         heading: 'Shipping cost from China to Afghanistan – what affects the price?',
         body:
@@ -424,6 +434,11 @@
           }
         ]
       },
+      routeButtons: {
+        primary: 'د مسیر معلومات وغواړئ',
+        secondary: 'د کارګو له ټیم سره اړیکه'
+      },
+      routeBadge: 'فعال',
       cost: {
         heading: 'له چین څخه افغانستان ته د لېږد لګښت – کوم څه په قیمت اغېزه کوي؟',
         body:
@@ -555,19 +570,89 @@
     if (secondaryBtn) secondaryBtn.textContent = content.heroButtons.secondary;
   }
 
-  function createCardElement(title, body, className) {
-    const card = document.createElement('div');
-    card.className = className;
+  const overviewIcons = ['fas fa-route', 'fas fa-boxes', 'fas fa-user-shield', 'fas fa-clock'];
+
+  function createOverviewCard(card, index) {
+    const wrapper = document.createElement('div');
+    wrapper.className = 'overview-card';
+
+    const iconClass = overviewIcons[index] || overviewIcons[overviewIcons.length - 1];
+    if (iconClass) {
+      const icon = document.createElement('i');
+      icon.className = iconClass;
+      icon.setAttribute('aria-hidden', 'true');
+      wrapper.appendChild(icon);
+    }
 
     const heading = document.createElement('h3');
-    heading.textContent = title;
-    card.appendChild(heading);
+    heading.textContent = card.title;
+    wrapper.appendChild(heading);
 
     const paragraph = document.createElement('p');
-    paragraph.textContent = body;
-    card.appendChild(paragraph);
+    paragraph.textContent = card.body;
+    wrapper.appendChild(paragraph);
 
-    return card;
+    return wrapper;
+  }
+
+  const ROUTE_BADGE = {
+    fa: cargoPageContent.fa.routeBadge,
+    en: cargoPageContent.en.routeBadge,
+    ps: cargoPageContent.ps.routeBadge
+  };
+
+  function createRouteCard(card, buttons, lang, providedBadge) {
+    const cardEl = document.createElement('div');
+    cardEl.className = 'cargo-card';
+
+    const badgeText = providedBadge || ROUTE_BADGE[lang] || ROUTE_BADGE.fa;
+    if (badgeText) {
+      const badge = document.createElement('span');
+      badge.className = 'badge';
+      badge.textContent = badgeText;
+      cardEl.appendChild(badge);
+    }
+
+    const heading = document.createElement('h3');
+    heading.textContent = card.title;
+    cardEl.appendChild(heading);
+
+    const paragraph = document.createElement('p');
+    paragraph.textContent = card.body;
+    cardEl.appendChild(paragraph);
+
+    const buttonGroup = document.createElement('div');
+    buttonGroup.className = 'card-buttons';
+
+    const primaryBtn = document.createElement('a');
+    primaryBtn.className = 'btn-primary';
+    primaryBtn.href = '#';
+    primaryBtn.setAttribute('role', 'button');
+    primaryBtn.textContent = buttons.primary;
+    primaryBtn.addEventListener('click', event => {
+      event.preventDefault();
+      if (typeof showSalesContactModal === 'function') {
+        showSalesContactModal();
+      }
+    });
+    buttonGroup.appendChild(primaryBtn);
+
+    const secondaryBtn = document.createElement('a');
+    secondaryBtn.className = 'btn-secondary';
+    secondaryBtn.href = '#';
+    secondaryBtn.setAttribute('role', 'button');
+    secondaryBtn.textContent = buttons.secondary;
+    secondaryBtn.addEventListener('click', event => {
+      event.preventDefault();
+      if (typeof showContactModal === 'function') {
+        showContactModal();
+      }
+    });
+    buttonGroup.appendChild(secondaryBtn);
+
+    cardEl.appendChild(buttonGroup);
+
+    return cardEl;
   }
 
   function renderIntegratedSection(content) {
@@ -580,8 +665,8 @@
 
     if (cardsContainer) {
       cardsContainer.innerHTML = '';
-      content.integratedCargo.cards.forEach(card => {
-        cardsContainer.appendChild(createCardElement(card.title, card.body, 'overview-card'));
+      content.integratedCargo.cards.forEach((card, index) => {
+        cardsContainer.appendChild(createOverviewCard(card, index));
       });
     }
   }
@@ -590,6 +675,7 @@
     const headingEl = document.getElementById('routesHeading');
     const introEl = document.getElementById('routesIntro');
     const cardsContainer = document.getElementById('routesCards');
+    const lang = getCurrentLang();
 
     if (headingEl) headingEl.textContent = content.routes.heading;
     if (introEl) introEl.textContent = content.routes.intro || '';
@@ -597,7 +683,7 @@
     if (cardsContainer) {
       cardsContainer.innerHTML = '';
       content.routes.cards.forEach(card => {
-        cardsContainer.appendChild(createCardElement(card.title, card.body, 'cargo-card'));
+        cardsContainer.appendChild(createRouteCard(card, content.routeButtons, lang, content.routeBadge));
       });
     }
   }
