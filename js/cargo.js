@@ -64,43 +64,43 @@
             title: 'دهلیز ریلی چین – حیرتان',
             body:
               'دهلیز ریل برای انتقال کانتینر و مال پروژه‌ای از شهرهای داخل چین تا حیرتان؛ مناسب فابریکه‌ها و پروژه‌هایی که به وقت انتقال ثابت و قیمت مناسب ضرورت دارند.',
-          pdfUrl: 'pdf/route-rail-china-hairatan-rate.pdf'
+          pdfUrl: 'pdfs/route-rail-china-hairatan-rate.pdf'
         },
           {
             title: 'ترانسپورت سرکی از چین تا حیرتان (تریلر تراک‌ها)',
             body:
               'ترانسپورت مستقیم سرکی از چین تا سرحد افغانستان با استفاده از تریلر تراک‌ها (موترهای تریلری)؛ مناسب برای مال‌هایی که حساس به وقت هستند یا امکان حرکت با ریل را ندارند.',
-          pdfUrl: 'pdf/route-road-china-hairatan-rate.pdf'
+          pdfUrl: 'pdfs/route-road-china-hairatan-rate.pdf'
         },
           {
             title: 'ترانسپورت داخلی از حیرتان به شهرهای افغانستان',
             body:
               'ترانسپورت موترهای باربری از حیرتان به شهرهایی چون مزار شریف، کابل، هرات، غزنی و سایر ساحات صنعتی افغانستان برای توزیع منظم مال در داخل کشور.',
-          pdfUrl: 'pdf/route-road-hairatan-afghanistan-rate.pdf'
+          pdfUrl: 'pdfs/route-road-hairatan-afghanistan-rate.pdf'
         },
           {
             title: 'مسیر دریایی چین – بندر عباس – افغانستان',
             body:
               'حمل دریایی از بندرهای چین تا بندر عباس و بعد ترانسپورت سرکی با تریلر تراک‌ها از داخل ایران و عبور از سرحد ابو نصر فراهی (ماهیرود) و سرحد اسلام‌قلعه (دوغارون) به داخل افغانستان؛ مناسب برای مال‌های حجیم و مواد خام با اولویت قیمت مناسب است.',
-          pdfUrl: 'pdf/route-sea-china-bandar-abbas-rate.pdf'
+          pdfUrl: 'pdfs/route-sea-china-bandar-abbas-rate.pdf'
         },
           {
             title: 'مسیر دریایی چین – چابهار – افغانستان',
             body:
               'مسیر ترکیبی دریا و سرک از طریق چابهار، با استفاده از تریلر تراک‌ها از داخل ایران و عبور از سرحد ابو نصر فراهی (ماهیرود) و سرحد اسلام‌قلعه (دوغارون) به داخل افغانستان؛ انتخاب بسیار مناسب برای مال‌هایی است که مقصد اصلی‌شان هرات و شهرهای غرب و جنوب افغانستان می‌باشد.',
-          pdfUrl: 'pdf/route-sea-china-chabahar-rate.pdf'
+          pdfUrl: 'pdfs/route-sea-china-chabahar-rate.pdf'
         },
           {
             title: 'خدمات گمرک و ترخیص محموله‌ها',
             body:
               'انجام کامل تشریفات گمرکی برای محموله‌های چین–افغانستان، شامل آماده‌سازی اسناد، HS Code و هم‌آهنگی با ادارات گمرک در نقطۀ سرحدی، تا مال شما بدون تأخیر غیرضروری وارد افغانستان شود.',
-          pdfUrl: 'pdf/customs-services-rate.pdf'
+          pdfUrl: 'pdfs/customs-services-rate.pdf'
         },
           {
             title: 'بیمۀ بین‌المللی ترانسپورت',
             body:
               'برای محموله‌های چین به افغانستان گزینه‌های مختلف بیمۀ حمل‌ونقل فراهم می‌کنیم تا ماشین‌آلات، مواد خام و جنس نهایی شما در طول راه محافظت شود.',
-          pdfUrl: 'pdf/insurance-coverage-rate.pdf'
+          pdfUrl: 'pdfs/insurance-coverage-rate.pdf'
         }
         ]
       },
@@ -112,12 +112,16 @@
       cost: {
         heading: 'هزینه حمل و نقل از چین به افغانستان – چه چیزها قیمت را تعیین می‌کند؟',
         body:
-          'هزینه حمل و نقل از چین به افغانستان به چند نکته اصلی وابسته است: وزن و حجم مال، نوع جنس، مسیر انتخاب‌شده (ریل، دریا یا سرک)، شهر مبدأ و مقصد، و خدمات اضافی مثل معاینه، گدام‌داری، بیمه و پشتیبانی پروژه. با شریک ساختن این جزئیات، ما برای شما یک پیش‌نهاد واضح و جزئی می‌فرستیم تا دقیق بدانید انتقال بار از چین به افغانستان چقدر قیمت می‌شود.'
+          'هزینه حمل و نقل از چین به افغانستان به چند نکته اصلی وابسته است: وزن و حجم مال، نوع جنس، مسیر انتخاب‌شده (ریل، دریا یا سرک)، شهر مبدأ و مقصد، و خدمات اضافی مثل معاینه، گدام‌داری، بیمه و پشتیبانی پروژه. با شریک ساختن این جزئیات، ما برای شما یک پیش‌نهاد واضح و جزئی می‌فرستیم تا دقیق بدانید انتقال بار از چین به افغانستان چقدر قیمت می‌شود.',
+        illustration: 'images/storyset-transport.svg',
+        illustrationAlt: 'تصویر هزینه‌های حمل و نقل'
       },
       time: {
         heading: 'مدت زمان انتقال بار از چین به افغانستان',
         body:
-          'وقت انتقال بار از چین به افغانستان معمولاً بین ۱۲ تا ۴۰ روز است. ریل چین–حیرتان در حدود ۱۵ تا ۲۵ روز، ترانسپورت مستقیم سرکی با تریلر تراک‌ها حدود ۱۲ تا ۲۰ روز، و مسیرهای دریایی + سرکی از طریق بندر عباس یا چابهار – با عبور از سرحدهای ابو نصر فراهی (ماهیرود) و اسلام‌قلعه (دوغارون) – در مجموع حدود ۲۵ تا ۴۰ روز وقت می‌گیرد. در هر پیش‌نهاد، ما یک بازۀ زمانی واقعی می‌دهیم تا بدانید مدت زمان انتقال بار از چین به افغانستان چقدر است و بتوانید پلان دقیق برای تجارت خود تنظیم کنید.'
+          'وقت انتقال بار از چین به افغانستان معمولاً بین ۱۲ تا ۴۰ روز است. ریل چین–حیرتان در حدود ۱۵ تا ۲۵ روز، ترانسپورت مستقیم سرکی با تریلر تراک‌ها حدود ۱۲ تا ۲۰ روز، و مسیرهای دریایی + سرکی از طریق بندر عباس یا چابهار – با عبور از سرحدهای ابو نصر فراهی (ماهیرود) و اسلام‌قلعه (دوغارون) – در مجموع حدود ۲۵ تا ۴۰ روز وقت می‌گیرد. در هر پیش‌نهاد، ما یک بازۀ زمانی واقعی می‌دهیم تا بدانید مدت زمان انتقال بار از چین به افغانستان چقدر است و بتوانید پلان دقیق برای تجارت خود تنظیم کنید.',
+        illustration: 'images/storyset-event.svg',
+        illustrationAlt: 'تصویر زمان‌بندی حمل بار'
       },
       steps: {
         heading: 'راهنمای گام‌به‌گام برای حمل مال از چین به افغانستان',
@@ -155,12 +159,16 @@
       warehouses: {
         heading: 'گدام‌های ما در گوانگجو، ایوو، چینگ‌داو، هرات، مزار شریف، کابل و غزنی',
         body:
-          'صنعتچی یک شبکۀ دوطرفه گدام را فعال ساخته است: در چین، گدام‌های ما در گوانگجو برای سفارش‌های تکراری و پرزه‌جات، در ایوو برای خرده‌بارهای مخلوط و خرید از مارکیت‌های عمده‌فروشی، و در چینگ‌داو برای مال صنعتی و پروژه‌ای از شمال و شرق چین استفاده می‌شود. در افغانستان، گدام‌های ما در هرات (برای مسیر چابهار و سرحد غرب)، مزار شریف (نزدیک ریل حیرتان)، کابل (مرکز تجارتی کشور) و غزنی (برای پروژه‌های صنعتی در مناطق مرکزی و جنوبی) قرار دارند و توزیع مال را آسان می‌سازند.'
+          'صنعتچی یک شبکۀ دوطرفه گدام را فعال ساخته است: در چین، گدام‌های ما در گوانگجو برای سفارش‌های تکراری و پرزه‌جات، در ایوو برای خرده‌بارهای مخلوط و خرید از مارکیت‌های عمده‌فروشی، و در چینگ‌داو برای مال صنعتی و پروژه‌ای از شمال و شرق چین استفاده می‌شود. در افغانستان، گدام‌های ما در هرات (برای مسیر چابهار و سرحد غرب)، مزار شریف (نزدیک ریل حیرتان)، کابل (مرکز تجارتی کشور) و غزنی (برای پروژه‌های صنعتی در مناطق مرکزی و جنوبی) قرار دارند و توزیع مال را آسان می‌سازند.',
+        illustration: 'images/storyset-work.svg',
+        illustrationAlt: 'تصویر شبکه گدام‌ها'
       },
       industries: {
         heading: 'کدام نوع مال و کدام سکتورهای صنعتی را پوشش می‌دهیم؟',
         body:
-          'ما ماشین‌آلات و خطوط تولید صنعتی، پرزه‌جات و قطعات، تجهیزات کارگاهی و ساختمانی، خطوط پروسس مواد غذایی و نوشیدنی، مواد بسته‌بندی، اجناس برقی و الکترونیکی و مال عمومی مصرفی را از چین به افغانستان حمل می‌کنیم. برای جنساتی که حساس یا محدودیت دارند، قبل از انتقال، شرایط و امکان آن را با شما بررسی می‌کنیم تا مطابق قانون و با کمترین ریسک حرکت داده شود.'
+          'ما ماشین‌آلات و خطوط تولید صنعتی، پرزه‌جات و قطعات، تجهیزات کارگاهی و ساختمانی، خطوط پروسس مواد غذایی و نوشیدنی، مواد بسته‌بندی، اجناس برقی و الکترونیکی و مال عمومی مصرفی را از چین به افغانستان حمل می‌کنیم. برای جنساتی که حساس یا محدودیت دارند، قبل از انتقال، شرایط و امکان آن را با شما بررسی می‌کنیم تا مطابق قانون و با کمترین ریسک حرکت داده شود.',
+        illustration: 'images/storyset-people.svg',
+        illustrationAlt: 'تصویر سکتورهای صنعتی'
       },
       faq: {
         heading: 'سوالات متداول درباره کارگو و حمل بار از چین به افغانستان',
@@ -250,43 +258,43 @@
             title: 'China – Hairatan rail corridor',
             body:
               'Rail freight corridor for containers and project cargo from inland China to Hairatan, ideal for factories that need stable transit times and competitive cost.',
-          pdfUrl: 'pdf/route-rail-china-hairatan-rate.pdf'
+          pdfUrl: 'pdfs/route-rail-china-hairatan-rate.pdf'
         },
           {
             title: 'Road transport China – Hairatan (trailer trucks)',
             body:
               'Direct road transport from China to the Afghan border using long-haul trailer trucks, suitable for time-sensitive cargo or goods that cannot use rail.',
-          pdfUrl: 'pdf/route-road-china-hairatan-rate.pdf'
+          pdfUrl: 'pdfs/route-road-china-hairatan-rate.pdf'
         },
           {
             title: 'Hairatan – Afghan cities trucking',
             body:
               'Domestic trucking from Hairatan to Afghan cities including Mazar-e-Sharif, Kabul, Herat, Ghazni and other industrial zones.',
-          pdfUrl: 'pdf/route-road-hairatan-afghanistan-rate.pdf'
+          pdfUrl: 'pdfs/route-road-hairatan-afghanistan-rate.pdf'
         },
           {
             title: 'China – Bandar Abbas – Afghanistan sea route',
             body:
               'Sea freight from Chinese ports to Bandar Abbas with onward trailer-truck transport through Iran via the Abu Nasr Farahi (Mahiroud) and Islam Qala (Dogharoun) borders into Afghanistan, ideal for bulky cargo and raw materials.',
-          pdfUrl: 'pdf/route-sea-china-bandar-abbas-rate.pdf'
+          pdfUrl: 'pdfs/route-sea-china-bandar-abbas-rate.pdf'
         },
           {
             title: 'China – Chabahar – Afghanistan sea route',
             body:
               'Combined sea and road route via Chabahar, using trailer trucks through Iran via the Abu Nasr Farahi (Mahiroud) and Islam Qala (Dogharoun) borders into Afghanistan – a strong option for cargo destined mainly for Herat and western or southern Afghanistan.',
-          pdfUrl: 'pdf/route-sea-china-chabahar-rate.pdf'
+          pdfUrl: 'pdfs/route-sea-china-chabahar-rate.pdf'
         },
           {
             title: 'Customs & clearance services',
             body:
               'Full customs handling for China–Afghanistan shipments, including document preparation, HS codes and coordination with border authorities.',
-          pdfUrl: 'pdf/customs-services-rate.pdf'
+          pdfUrl: 'pdfs/customs-services-rate.pdf'
         },
           {
             title: 'International transport insurance',
             body:
               'Cargo insurance options for shipments from China to Afghanistan, protecting machinery, raw materials and finished goods in transit.',
-          pdfUrl: 'pdf/insurance-coverage-rate.pdf'
+          pdfUrl: 'pdfs/insurance-coverage-rate.pdf'
         }
         ]
       },
@@ -298,12 +306,16 @@
       cost: {
         heading: 'Shipping cost from China to Afghanistan – what affects the price?',
         body:
-          'Shipping cost from China to Afghanistan depends on weight and volume, cargo type, chosen route (rail, sea or road), origin and destination cities, and extra services such as inspection, storage, insurance or project support. Share these details and we will send a clear, itemised quote so you know exactly how much it costs.'
+          'Shipping cost from China to Afghanistan depends on weight and volume, cargo type, chosen route (rail, sea or road), origin and destination cities, and extra services such as inspection, storage, insurance or project support. Share these details and we will send a clear, itemised quote so you know exactly how much it costs.',
+        illustration: 'images/storyset-transport.svg',
+        illustrationAlt: 'Illustration of shipping cost planning'
       },
       time: {
         heading: 'Transit time for cargo from China to Afghanistan',
         body:
-          'Transit time from China to Afghanistan usually ranges between 12 and 40 days. Rail China–Hairatan often takes 15–25 days, direct road by trailer trucks around 12–20 days, and sea plus road via Bandar Abbas or Chabahar – entering Afghanistan through the Abu Nasr Farahi (Mahiroud) or Islam Qala (Dogharoun) borders – around 25–40 days in total. Every quotation includes a realistic time window so you can plan confidently.'
+          'Transit time from China to Afghanistan usually ranges between 12 and 40 days. Rail China–Hairatan often takes 15–25 days, direct road by trailer trucks around 12–20 days, and sea plus road via Bandar Abbas or Chabahar – entering Afghanistan through the Abu Nasr Farahi (Mahiroud) or Islam Qala (Dogharoun) borders – around 25–40 days in total. Every quotation includes a realistic time window so you can plan confidently.',
+        illustration: 'images/storyset-event.svg',
+        illustrationAlt: 'Illustration showing transit time planning'
       },
       steps: {
         heading: 'Step-by-step guide to shipping from China to Afghanistan',
@@ -320,12 +332,16 @@
       warehouses: {
         heading: 'Warehouses in Guangzhou, Yiwu, Qingdao, Herat, Mazar, Kabul and Ghazni',
         body:
-          'Sanaatchi operates a two-way warehouse network: in China (Guangzhou for repeat orders and spare parts, Yiwu for mixed LCL and wholesale purchases, and Qingdao for industrial and project cargo from North and East China) and in Afghanistan (Herat for cargo via Chabahar and western borders, Mazar-e-Sharif near Hairatan rail, Kabul as the commercial centre, and Ghazni serving central and southern projects).'
+          'Sanaatchi operates a two-way warehouse network: in China (Guangzhou for repeat orders and spare parts, Yiwu for mixed LCL and wholesale purchases, and Qingdao for industrial and project cargo from North and East China) and in Afghanistan (Herat for cargo via Chabahar and western borders, Mazar-e-Sharif near Hairatan rail, Kabul as the commercial centre, and Ghazni serving central and southern projects).',
+        illustration: 'images/storyset-work.svg',
+        illustrationAlt: 'Illustration of the Sanaatchi warehouse network'
       },
       industries: {
         heading: 'What types of cargo and industries do we support?',
         body:
-          'We move industrial machinery and production lines, spare parts and components, workshop and construction equipment, food and beverage processing lines, packaging materials, electrical and electronic goods and general consumer products. For restricted or sensitive cargo we first check feasibility and conditions with you so that everything complies with regulations.'
+          'We move industrial machinery and production lines, spare parts and components, workshop and construction equipment, food and beverage processing lines, packaging materials, electrical and electronic goods and general consumer products. For restricted or sensitive cargo we first check feasibility and conditions with you so that everything complies with regulations.',
+        illustration: 'images/storyset-people.svg',
+        illustrationAlt: 'Illustration of industries and teams we support'
       },
       faq: {
         heading: 'Frequently asked questions about cargo and freight from China to Afghanistan',
@@ -415,43 +431,43 @@
             title: 'د چین – حیرتان د رېل دهلیز',
             body:
               'د رېل دهلیز چې کانتینرونه او پروژوي مالونه له چیني ښارونو څخه تر حیرتان پورې لېږدوي؛ د هغو فابریکو لپاره مناسب دی چې ثابته موده او مناسب لګښت غواړي.',
-          pdfUrl: 'pdf/route-rail-china-hairatan-rate.pdf'
+          pdfUrl: 'pdfs/route-rail-china-hairatan-rate.pdf'
         },
           {
             title: 'د چین – حیرتان سرک ترانسپورت (ټریلر ټرکونه)',
             body:
               'مستقیم سړکيز ترانسپورت له چین څخه تر د افغانستان تر پوله، د اوږدمهاله ټریلر ټرکونو په وسیله؛ د هغه مال لپاره چې وخت ورته مهم وي یا د رېل له لارې نه شي تلای، ښه حل دی.',
-          pdfUrl: 'pdf/route-road-china-hairatan-rate.pdf'
+          pdfUrl: 'pdfs/route-road-china-hairatan-rate.pdf'
         },
           {
             title: 'له حیرتان څخه تر افغان ښارونو موټري ترانسپورت',
             body:
               'د موټر ترانسپورت خدمتونه له حیرتان څخه مزار شریف، کابل، هرات، غزني او نورو صنعتي سیمو ته برابروو.',
-          pdfUrl: 'pdf/route-road-hairatan-afghanistan-rate.pdf'
+          pdfUrl: 'pdfs/route-road-hairatan-afghanistan-rate.pdf'
         },
           {
             title: 'د چین – بندر عباس – افغانستان سمندري لاره',
             body:
               'له چیني بندرونو څخه بندر عباس ته سمندري لېږد، او وروسته د ټریلر ټرکونو په وسیله د ایران له لارې د ابو نصر فراهی (ماهیرود) او د اسلام قلعه (دوغارون) له پولې افغانستان ته داخلېږي؛ د درنو او خامو موادو لپاره ارزانه او مناسب انتخاب دی.',
-          pdfUrl: 'pdf/route-sea-china-bandar-abbas-rate.pdf'
+          pdfUrl: 'pdfs/route-sea-china-bandar-abbas-rate.pdf'
         },
           {
             title: 'د چین – چابهار – افغانستان ګډه سمندري او سرکي لاره',
             body:
               'د چابهار له لارې د سمندر او سړک ګډ مسیر، چې ټریلر ټرکونه د ایران له لارې د ابو نصر فراهی (ماهیرود) او د اسلام قلعه (دوغارون) له پولې افغانستان ته راولي؛ د هغه مال لپاره ډېر قوي انتخاب دی چې اساسي هدف یې هرات او د افغانستان لوېدیځ او جنوبي سیمې وي.',
-          pdfUrl: 'pdf/route-sea-china-chabahar-rate.pdf'
+          pdfUrl: 'pdfs/route-sea-china-chabahar-rate.pdf'
         },
           {
             title: 'د ګمرک او ترخیص خدمتونه',
             body:
               'د چین–افغانستان محمولو لپاره د ګمرک ټول تشریفات ترسره کوو؛ اسناد چمتو کوو، HS کودونه تنظیموو او له سرحدي ادارو سره همغږي کوو.',
-          pdfUrl: 'pdf/customs-services-rate.pdf'
+          pdfUrl: 'pdfs/customs-services-rate.pdf'
         },
           {
             title: 'نړیوال د ترانسپورت بیمه',
             body:
               'له چین څخه افغانستان ته د محمولو لپاره د ترانسپورت بیمه برابروو، څو ماشین آلات، خام مواد او پای مال مو په سفر کې خوندي وي.',
-          pdfUrl: 'pdf/insurance-coverage-rate.pdf'
+          pdfUrl: 'pdfs/insurance-coverage-rate.pdf'
         }
         ]
       },
@@ -463,12 +479,16 @@
       cost: {
         heading: 'له چین څخه افغانستان ته د لېږد لګښت – کوم څه په قیمت اغېزه کوي؟',
         body:
-          'د چین څخه افغانستان ته د بار وړلو لګښت په وزن او حجم، د مال په ډول، د لارې په انتخاب (رېل، سمندر یا سړک)، د مبدأ او هدف په ښارونو او اضافي خدمتونو لکه تفتیش، ګدام، بیمه او د پروژې ملاتړ پورې تړلی دی. کله چې دا معلومات راکړئ، موږ درته روښانه او مفصل آفر لېږو.'
+          'د چین څخه افغانستان ته د بار وړلو لګښت په وزن او حجم، د مال په ډول، د لارې په انتخاب (رېل، سمندر یا سړک)، د مبدأ او هدف په ښارونو او اضافي خدمتونو لکه تفتیش، ګدام، بیمه او د پروژې ملاتړ پورې تړلی دی. کله چې دا معلومات راکړئ، موږ درته روښانه او مفصل آفر لېږو.',
+        illustration: 'images/storyset-transport.svg',
+        illustrationAlt: 'د لېږد لګښت انځور'
       },
       time: {
         heading: 'د چین څخه افغانستان ته د بار لېږد موده',
         body:
-          'عموماً له ۱۲ تر ۴۰ ورځو پورې وخت نیسي. د چین–حیرتان رېل شاوخوا ۱۵–۲۵ ورځې، د ټریلر ټرکونو مستقیم سړک شاوخوا ۱۲–۲۰ ورځې، او د بندر عباس یا چابهار له لارې د سمندر او سړک ګډ لېږد – چې د ابو نصر فراهی (ماهیرود) او اسلام قلعه (دوغارون) له سرحدونو افغانستان ته ننوځي – نږدې ۲۵–۴۰ ورځې وخت اخلي. په هر آفر کې واقعي موده درته لیکو څو وکولای شئ خپل کاروباري پلان جوړ کړئ.'
+          'عموماً له ۱۲ تر ۴۰ ورځو پورې وخت نیسي. د چین–حیرتان رېل شاوخوا ۱۵–۲۵ ورځې، د ټریلر ټرکونو مستقیم سړک شاوخوا ۱۲–۲۰ ورځې، او د بندر عباس یا چابهار له لارې د سمندر او سړک ګډ لېږد – چې د ابو نصر فراهی (ماهیرود) او اسلام قلعه (دوغارون) له سرحدونو افغانستان ته ننوځي – نږدې ۲۵–۴۰ ورځې وخت اخلي. په هر آفر کې واقعي موده درته لیکو څو وکولای شئ خپل کاروباري پلان جوړ کړئ.',
+        illustration: 'images/storyset-event.svg',
+        illustrationAlt: 'د لېږد مودې انځور'
       },
       steps: {
         heading: 'له چین څخه افغانستان ته د بار لېږد ګام په ګام لارښود',
@@ -485,12 +505,16 @@
       warehouses: {
         heading: 'زموږ ګدامونه په ګوانګجو، ایوو، چینګداو، هرات، مزار، کابل او غزني کې',
         body:
-          'صنعتچي د دوو خواوو د ګدامونو شبکه لري: په چین کې ګوانګجو د دوامدارو فرمایشونو او پرزو لپاره، ایوو د ګډو LCL او د عمده بازار د اخیستنو لپاره، او چینګداو د صنعتي او پروژوي مال لپاره، په ځانګړي ډول له شمال او ختیځ چین څخه راتلونکی مال. په افغانستان کې هرات د چابهار او لوېدیځو پولې له لارې د راتلونکي مال لپاره، مزار شریف د حیرتان د رېل تر څنګ، کابل د هېواد تجارتي زړه، او غزني د مرکزي او جنوبي پروژو لپاره کاروو.'
+          'صنعتچي د دوو خواوو د ګدامونو شبکه لري: په چین کې ګوانګجو د دوامدارو فرمایشونو او پرزو لپاره، ایوو د ګډو LCL او د عمده بازار د اخیستنو لپاره، او چینګداو د صنعتي او پروژوي مال لپاره، په ځانګړي ډول له شمال او ختیځ چین څخه راتلونکی مال. په افغانستان کې هرات د چابهار او لوېدیځو پولې له لارې د راتلونکي مال لپاره، مزار شریف د حیرتان د رېل تر څنګ، کابل د هېواد تجارتي زړه، او غزني د مرکزي او جنوبي پروژو لپاره کاروو.',
+        illustration: 'images/storyset-work.svg',
+        illustrationAlt: 'د ګدامونو د شبکې انځور'
       },
       industries: {
         heading: 'کوم ډول مال او کوم صنعتونه پوښوو؟',
         body:
-          'موږ صنعتي ماشین آلات او تولیدي لاینونه، پرزې، د ورکشاپ او ساختماني وسایل، د خوړو او مشروباتو پروسس لاینونه، د بسته بندۍ مواد، برقي او الکترونیکي اجناس او عمومي مصرفي مالونه لېږدوو. د حساس یا محدود مال لپاره، له لېږد مخکې له تاسو سره شرایط روښانه کوو څو هر څه له قانون سره سم او د امکان تر حده بې‌ریسکه وي.'
+          'موږ صنعتي ماشین آلات او تولیدي لاینونه، پرزې، د ورکشاپ او ساختماني وسایل، د خوړو او مشروباتو پروسس لاینونه، د بسته بندۍ مواد، برقي او الکترونیکي اجناس او عمومي مصرفي مالونه لېږدوو. د حساس یا محدود مال لپاره، له لېږد مخکې له تاسو سره شرایط روښانه کوو څو هر څه له قانون سره سم او د امکان تر حده بې‌ریسکه وي.',
+        illustration: 'images/storyset-people.svg',
+        illustrationAlt: 'د صنعتونو د ملاتړ انځور'
       },
       faq: {
         heading: 'عامې پوښتنې',
@@ -722,9 +746,25 @@
   function renderSectionBody(sectionId, sectionContent) {
     const headingEl = document.getElementById(`${sectionId}Heading`);
     const bodyEl = document.getElementById(`${sectionId}Body`);
+    const illustrationEl = document.getElementById(`${sectionId}Illustration`);
 
     if (headingEl) headingEl.textContent = sectionContent.heading;
     if (bodyEl) bodyEl.textContent = sectionContent.body;
+
+    if (illustrationEl && illustrationEl.tagName === 'IMG') {
+      if (sectionContent.illustration) {
+        illustrationEl.setAttribute('src', sectionContent.illustration);
+        if (sectionContent.illustrationAlt) {
+          illustrationEl.setAttribute('alt', sectionContent.illustrationAlt);
+        }
+        illustrationEl.removeAttribute('aria-hidden');
+        illustrationEl.style.display = '';
+      } else {
+        illustrationEl.setAttribute('alt', '');
+        illustrationEl.setAttribute('aria-hidden', 'true');
+        illustrationEl.style.display = 'none';
+      }
+    }
   }
 
   function renderSteps(section) {

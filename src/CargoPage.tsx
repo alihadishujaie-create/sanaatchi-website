@@ -38,12 +38,36 @@ export function CargoPage({ lang }: CargoPageProps) {
       <IntegratedSection section={content.integratedCargo} />
       <RoutesSection section={content.routes} buttons={content.routeButtons} badge={content.routeBadge} />
 
-      <SectionWithBodyComponent section={content.cost} />
-      <SectionWithBodyComponent section={content.time} />
+      <InfoSectionComponent
+        section={content.cost}
+        sectionId="cargo-cost"
+        headingId="costHeading"
+        bodyId="costBody"
+        illustrationId="costIllustration"
+      />
+      <InfoSectionComponent
+        section={content.time}
+        sectionId="cargo-time"
+        headingId="timeHeading"
+        bodyId="timeBody"
+        illustrationId="timeIllustration"
+      />
 
       <StepSectionComponent section={content.steps} />
-      <SectionWithBodyComponent section={content.warehouses} />
-      <SectionWithBodyComponent section={content.industries} />
+      <InfoSectionComponent
+        section={content.warehouses}
+        sectionId="cargo-warehouses"
+        headingId="warehousesHeading"
+        bodyId="warehousesBody"
+        illustrationId="warehousesIllustration"
+      />
+      <InfoSectionComponent
+        section={content.industries}
+        sectionId="cargo-industries"
+        headingId="industriesHeading"
+        bodyId="industriesBody"
+        illustrationId="industriesIllustration"
+      />
 
       <FaqSectionComponent section={content.faq} />
       <CtaSectionComponent section={content.cta} buttons={content.ctaButtons} />
@@ -85,11 +109,11 @@ interface IntegratedSectionProps {
 
 function IntegratedSection({ section }: IntegratedSectionProps) {
   return (
-    <section className="cargo-overview">
+    <section className="cargo-overview" id="cargo-integrated">
       <div className="container">
-        <h2>{section.heading}</h2>
-        {section.intro && <p>{section.intro}</p>}
-        <div className="overview-points">
+        <h2 id="integratedHeading">{section.heading}</h2>
+        {section.intro && <p id="integratedIntro">{section.intro}</p>}
+        <div className="overview-points" id="integratedCards">
           {section.cards.map((card, idx) => {
             const iconClass = INTEGRATED_ICONS[idx] ?? INTEGRATED_ICONS[INTEGRATED_ICONS.length - 1];
             return (
@@ -114,11 +138,11 @@ interface RoutesSectionProps {
 
 function RoutesSection({ section, buttons, badge }: RoutesSectionProps) {
   return (
-    <section className="cargo-routes-section">
+    <section className="cargo-routes-section" id="cargo-routes">
       <div className="container">
-        <h2>{section.heading}</h2>
-        {section.intro && <p>{section.intro}</p>}
-        <div className="cargo-routes-grid">
+        <h2 id="routesHeading">{section.heading}</h2>
+        {section.intro && <p id="routesIntro">{section.intro}</p>}
+        <div className="cargo-routes-grid" id="routesCards" aria-live="polite">
           {section.cards.map((card, idx) => (
             <article key={idx} className="cargo-card">
               <span className="badge">{badge}</span>
@@ -165,16 +189,29 @@ function RoutesSection({ section, buttons, badge }: RoutesSectionProps) {
   );
 }
 
-interface SectionWithBodyProps {
+interface InfoSectionProps {
   section: SectionWithBody;
+  sectionId: string;
+  headingId: string;
+  bodyId: string;
+  illustrationId: string;
 }
 
-function SectionWithBodyComponent({ section }: SectionWithBodyProps) {
+function InfoSectionComponent({ section, sectionId, headingId, bodyId, illustrationId }: InfoSectionProps) {
   return (
-    <section className="cargo-section">
+    <section className="cargo-info-section" id={sectionId}>
       <div className="container">
-        <h2>{section.heading}</h2>
-        <p>{section.body}</p>
+        <div className="info-layout">
+          <div className="info-copy">
+            <h2 id={headingId}>{section.heading}</h2>
+            <p id={bodyId}>{section.body}</p>
+          </div>
+          {section.illustration ? (
+            <figure className="info-illustration">
+              <img src={section.illustration} alt={section.illustrationAlt || ''} id={illustrationId} loading="lazy" />
+            </figure>
+          ) : null}
+        </div>
       </div>
     </section>
   );
@@ -186,10 +223,10 @@ interface StepSectionProps {
 
 function StepSectionComponent({ section }: StepSectionProps) {
   return (
-    <section className="cargo-section">
+    <section className="cargo-steps-section">
       <div className="container">
-        <h2>{section.heading}</h2>
-        <ol>
+        <h2 id="stepsHeading">{section.heading}</h2>
+        <ol id="stepsList">
           {section.steps.map((step, idx) => (
             <li key={idx}>{step.body}</li>
           ))}
@@ -205,12 +242,12 @@ interface FaqSectionProps {
 
 function FaqSectionComponent({ section }: FaqSectionProps) {
   return (
-    <section className="cargo-section">
+    <section className="cargo-faq-section">
       <div className="container">
-        <h2>{section.heading}</h2>
-        <div className="cargo-faq-list">
+        <h2 id="faqHeading">{section.heading}</h2>
+        <div className="cargo-faq-list" id="cargoFaqList" aria-live="polite">
           {section.items.map((item, idx) => (
-            <article key={idx} className="faq-item">
+            <article key={idx} className="cargo-faq-item">
               <h3>{item.question}</h3>
               <p>{item.answer}</p>
             </article>
@@ -231,8 +268,8 @@ function CtaSectionComponent({ section, buttons }: CtaSectionProps) {
     <section className="cargo-cta">
       <div className="container">
         <div>
-          <h2>{section.heading}</h2>
-          <p>{section.body}</p>
+          <h2 id="ctaHeading">{section.heading}</h2>
+          <p id="ctaBody">{section.body}</p>
         </div>
         <div className="cta-buttons">
           <button className="btn-primary">{buttons.primary}</button>
