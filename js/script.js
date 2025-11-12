@@ -5875,32 +5875,47 @@ function closeMobileMenu() {
 
 // Language switching
 function switchLanguage(lang) {
-    currentLanguage = lang;
-    window.currentLanguage = lang;
+    const supportedLangs = ['fa', 'en', 'ps'];
+    const targetLang = supportedLangs.includes(lang) ? lang : 'fa';
+
+    currentLanguage = targetLang;
+    window.currentLanguage = targetLang;
     const html = document.documentElement;
     const body = document.body;
-    
+
     // Save language preference
-    localStorage.setItem('preferredLanguage', lang);
-    
-    if (lang === 'en') {
+    localStorage.setItem('preferredLanguage', targetLang);
+
+    try {
+        const url = new URL(window.location.href);
+        if (targetLang === 'fa') {
+            url.searchParams.delete('lang');
+        } else {
+            url.searchParams.set('lang', targetLang);
+        }
+        window.history.replaceState({}, '', url.toString());
+    } catch (error) {
+        // Ignore URL errors (e.g., if URL constructor is unavailable)
+    }
+
+    if (targetLang === 'en') {
         html.setAttribute('lang', 'en');
         html.setAttribute('dir', 'ltr');
         body.style.direction = 'ltr';
         body.style.textAlign = 'left';
-        
+
         // Update all translatable elements
         updateTranslations('en');
-        
-    } else if (lang === 'ps') {
+
+    } else if (targetLang === 'ps') {
         html.setAttribute('lang', 'ps');
         html.setAttribute('dir', 'rtl');
         body.style.direction = 'rtl';
         body.style.textAlign = 'right';
-        
+
         // Update all translatable elements
         updateTranslations('ps');
-        
+
     } else {
         html.setAttribute('lang', 'fa');
         html.setAttribute('dir', 'rtl');
@@ -5909,11 +5924,14 @@ function switchLanguage(lang) {
         
         // Update all translatable elements
         updateTranslations('fa');
-        
+
     }
-    
+
     // Update the language selector to reflect the current language
-    document.querySelector('.language-switcher').value = lang;
+    const switcher = document.querySelector('.language-switcher');
+    if (switcher) {
+        switcher.value = targetLang;
+    }
 }
 
 // Function to update translations without page reload
@@ -7421,10 +7439,17 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Check for saved language preference
+    const supportedLangs = ['fa', 'en', 'ps'];
+    const urlParams = new URLSearchParams(window.location.search);
+    const urlLanguage = urlParams.get('lang');
     const savedLanguage = localStorage.getItem('preferredLanguage');
-    if (savedLanguage && (savedLanguage === 'fa' || savedLanguage === 'en' || savedLanguage === 'ps')) {
+
+    if (urlLanguage && supportedLangs.includes(urlLanguage)) {
+        switchLanguage(urlLanguage);
+    } else if (savedLanguage && supportedLangs.includes(savedLanguage)) {
         switchLanguage(savedLanguage);
+    } else {
+        switchLanguage(currentLanguage || 'fa');
     }
     
     // Add event listener for search input (Enter key)

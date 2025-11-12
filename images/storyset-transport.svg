@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" role="img" aria-labelledby="title desc">
+  <title id="title">Transport logistics illustration</title>
+  <desc id="desc">Stylised truck and containers representing global transport planning.</desc>
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e3f2ff" />
+      <stop offset="100%" stop-color="#fef6f1" />
+    </linearGradient>
+    <linearGradient id="truckBody" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1a3a5f" />
+      <stop offset="100%" stop-color="#2e5a8c" />
+    </linearGradient>
+    <linearGradient id="containerFill" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f26522" />
+      <stop offset="100%" stop-color="#f7a45d" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="320" rx="28" fill="url(#bgGradient)" />
+  <g opacity="0.2">
+    <circle cx="60" cy="70" r="32" fill="#1a3a5f" />
+    <circle cx="340" cy="80" r="40" fill="#f26522" />
+    <circle cx="120" cy="240" r="26" fill="#4db6ac" />
+  </g>
+  <g transform="translate(50 120)">
+    <rect x="20" y="44" width="200" height="78" rx="14" fill="url(#truckBody)" />
+    <rect x="158" y="12" width="96" height="60" rx="12" fill="#fff" opacity="0.85" />
+    <rect x="180" y="24" width="52" height="36" rx="6" fill="#cfe2ff" />
+    <rect x="-4" y="56" width="60" height="48" rx="10" fill="#fff" opacity="0.95" />
+    <rect x="-14" y="0" width="96" height="54" rx="12" fill="url(#containerFill)" />
+    <rect x="82" y="0" width="96" height="54" rx="12" fill="#1a3a5f" opacity="0.9" />
+    <rect x="86" y="6" width="36" height="42" rx="8" fill="#2e5a8c" />
+    <rect x="128" y="6" width="36" height="42" rx="8" fill="#244974" />
+    <circle cx="60" cy="138" r="22" fill="#1a3a5f" />
+    <circle cx="188" cy="138" r="22" fill="#1a3a5f" />
+    <circle cx="60" cy="138" r="12" fill="#fff" opacity="0.9" />
+    <circle cx="188" cy="138" r="12" fill="#fff" opacity="0.9" />
+    <path d="M234 100h28l20 38h-48z" fill="#f26522" />
+    <rect x="12" y="84" width="168" height="12" rx="6" fill="#fff" opacity="0.5" />
+  </g>
+  <path d="M52 260h296" stroke="#1a3a5f" stroke-width="6" stroke-linecap="round" opacity="0.35" />
+  <path d="M76 50h28" stroke="#1a3a5f" stroke-width="4" stroke-linecap="round" opacity="0.6" />
+  <path d="M110 50h12" stroke="#f26522" stroke-width="4" stroke-linecap="round" opacity="0.6" />
+</svg>
