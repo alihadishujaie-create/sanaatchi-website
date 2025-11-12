@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" role="img" aria-labelledby="title desc">
+  <title id="title">Warehouse network illustration</title>
+  <desc id="desc">Stylised buildings and location markers symbolising international warehouses.</desc>
+  <defs>
+    <linearGradient id="workBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ede7ff" />
+      <stop offset="100%" stop-color="#f5fcff" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="320" rx="28" fill="url(#workBg)" />
+  <g opacity="0.18">
+    <circle cx="80" cy="72" r="28" fill="#1a3a5f" />
+    <circle cx="320" cy="84" r="34" fill="#f26522" />
+    <circle cx="240" cy="250" r="24" fill="#4db6ac" />
+  </g>
+  <g transform="translate(48 88)">
+    <rect x="0" y="94" width="124" height="94" rx="18" fill="#1a3a5f" opacity="0.9" />
+    <rect x="140" y="52" width="120" height="136" rx="20" fill="#f26522" opacity="0.85" />
+    <rect x="276" y="74" width="76" height="114" rx="18" fill="#1a3a5f" opacity="0.8" />
+    <g fill="#fff" opacity="0.85">
+      <rect x="20" y="120" width="82" height="18" rx="6" />
+      <rect x="20" y="146" width="82" height="18" rx="6" />
+      <rect x="158" y="78" width="84" height="18" rx="6" />
+      <rect x="158" y="106" width="84" height="18" rx="6" />
+      <rect x="158" y="134" width="84" height="18" rx="6" />
+      <rect x="292" y="102" width="44" height="12" rx="6" />
+      <rect x="292" y="124" width="44" height="12" rx="6" />
+      <rect x="292" y="146" width="44" height="12" rx="6" />
+    </g>
+    <g transform="translate(60 -38)">
+      <path d="M38 0c18 0 34 14 34 34 0 26-34 62-34 62S4 60 4 34C4 14 20 0 38 0z" fill="#1a3a5f" />
+      <circle cx="38" cy="34" r="14" fill="#fff" />
+    </g>
+    <g transform="translate(196 -12)">
+      <path d="M36 0c18 0 32 14 32 32 0 24-32 58-32 58S4 56 4 32C4 14 18 0 36 0z" fill="#fff" opacity="0.95" />
+      <circle cx="36" cy="32" r="12" fill="#f26522" />
+    </g>
+    <g transform="translate(260 14)">
+      <path d="M28 0c15 0 28 12 28 28 0 20-28 48-28 48S0 48 0 28C0 12 13 0 28 0z" fill="#1a3a5f" opacity="0.9" />
+      <circle cx="28" cy="28" r="10" fill="#fff" />
+    </g>
+  </g>
+  <path d="M70 264h260" stroke="#1a3a5f" stroke-width="5" stroke-linecap="round" opacity="0.25" />
+</svg>
