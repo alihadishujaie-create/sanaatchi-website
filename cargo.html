@@ -50,20 +50,73 @@
     }
 
     .cargo-info-section {
-      padding: 70px 0;
-      background: #f8fafc;
+      position: relative;
+      padding: 90px 0;
+      background: linear-gradient(135deg, rgba(26,58,95,0.05) 0%, rgba(242,101,34,0.05) 100%);
+      overflow: hidden;
+    }
+
+    .cargo-info-section::before,
+    .cargo-info-section::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    .cargo-info-section::before {
+      top: 50%;
+      right: -180px;
+      bottom: auto;
+      left: auto;
+      height: 540px;
+      width: 540px;
+      background:
+        radial-gradient(circle at center, rgba(26,58,95,0.16) 0%, rgba(26,58,95,0) 68%),
+        url('images/delivery-service.svg') no-repeat center/80%;
+      transform: translateY(-50%);
+      opacity: .5;
+    }
+
+    .cargo-info-section::after {
+      background:
+        radial-gradient(circle at 15% 25%, rgba(26,58,95,0.10) 0%, transparent 60%),
+        radial-gradient(circle at 85% 85%, rgba(242,101,34,0.08) 0%, transparent 65%);
+      opacity: .7;
+    }
+
+    html[dir='rtl'] .cargo-info-section::before {
+      right: auto;
+      left: -180px;
+    }
+
+    .cargo-info-section:nth-of-type(even) {
+      background: linear-gradient(135deg, rgba(242,101,34,0.05) 0%, rgba(26,58,95,0.05) 100%);
+    }
+
+    .cargo-info-section:nth-of-type(even)::before {
+      transform: translateY(-50%) scaleX(-1);
+      opacity: .45;
+    }
+
+    .cargo-info-section .container {
+      position: relative;
+      z-index: 1;
+      max-width: 960px;
     }
 
     .cargo-info-section h2 {
-      font-size: 2rem;
+      font-size: 2.1rem;
+      font-weight: 700;
       color: #1a3a5f;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
     }
 
     .cargo-info-section p {
       color: #4a5568;
       line-height: 1.9;
       font-size: 1.05rem;
+      max-width: 820px;
     }
 
     .cargo-steps-section {
@@ -170,6 +223,9 @@
     .cargo-card .card-buttons a {
       flex: 1 1 50%;
       text-align: center;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       min-width: 0;
     }
 
@@ -178,6 +234,15 @@
       background: #1a3a5f;
       color: #ffffff;
       border: none;
+    }
+    @media (max-width: 992px) {
+      .cargo-info-section {
+        padding: 70px 0;
+      }
+      .cargo-info-section::before,
+      .cargo-info-section::after {
+        display: none;
+      }
     }
     .cargo-card .btn-secondary:hover {
       background: #16304a;

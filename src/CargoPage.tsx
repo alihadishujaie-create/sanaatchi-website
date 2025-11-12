@@ -5,6 +5,7 @@ import {
   cargoPageContent,
   HeroContent,
   ButtonPair,
+  RouteButtonLabels,
   SectionWithCards,
   SectionWithBody,
   StepSection,
@@ -107,7 +108,7 @@ function IntegratedSection({ section }: IntegratedSectionProps) {
 
 interface RoutesSectionProps {
   section: SectionWithCards;
-  buttons: ButtonPair;
+  buttons: RouteButtonLabels;
   badge: string;
 }
 
@@ -123,10 +124,39 @@ function RoutesSection({ section, buttons, badge }: RoutesSectionProps) {
               <span className="badge">{badge}</span>
               <h3>{card.title}</h3>
               <p>{card.body}</p>
-              <div className="card-buttons">
-                <a href="#" className="btn-primary">{buttons.primary}</a>
-                <a href="#" className="btn-secondary">{buttons.secondary}</a>
-              </div>
+              {(() => {
+                const pdfHref = card.pdfUrl ?? '#';
+                const hasPdf = Boolean(card.pdfUrl);
+                const handleUnavailable = (event: React.MouseEvent<HTMLAnchorElement>) => {
+                  if (!hasPdf) {
+                    event.preventDefault();
+                  }
+                };
+
+                return (
+                  <div className="card-buttons">
+                    <a
+                      href={pdfHref}
+                      className="btn-primary"
+                      onClick={handleUnavailable}
+                      target={hasPdf ? '_blank' : undefined}
+                      rel={hasPdf ? 'noopener noreferrer' : undefined}
+                      aria-disabled={hasPdf ? undefined : true}
+                    >
+                      {buttons.view}
+                    </a>
+                    <a
+                      href={pdfHref}
+                      className="btn-secondary"
+                      onClick={handleUnavailable}
+                      download={hasPdf ? '' : undefined}
+                      aria-disabled={hasPdf ? undefined : true}
+                    >
+                      {buttons.download}
+                    </a>
+                  </div>
+                );
+              })()}
             </article>
           ))}
         </div>
