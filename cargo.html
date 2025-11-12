@@ -5,16 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- Core SEO (Codex style) -->
-  <title>کارگو چین به افغانستان | حمل بار و کارگو چین افغانستان | صنعتچی</title>
-  <meta name="description" content="کارگو چین به افغانستان با صنعتچی؛ حمل بار، کارگو و فریت بار از چین به افغانستان از طریق مسیرهای ریلی، جاده‌ای و دریایی (بندر عباس و چابهار) به‌همراه ترخیص گمرکی، بیمه و حمل جاده‌ای از حیرتان به شهرهای افغانستان.">
+  <title>کارگو و حمل بار از چین به افغانستان | باربری، هزینه حمل و مدت زمان انتقال با صنعتچی</title>
+  <meta name="description" content="کارگو و حمل بار از چین به افغانستان با صنعتچی؛ انتقال بار از گوانگجو، ایوو و چینگ‌داو به هرات، مزار شریف، کابل و غزنی. باربری چین–افغانستان، هزینه حمل و مدت زمان انتقال بار از چین به افغانستان و راهنمای گام‌به‌گام ترانسپورت تا درب فابریکه یا گدام شما.">
   <meta name="keywords" content="کارگو چین افغانستان, کارگو چین به افغانستان, حمل بار چین به افغانستان, فریت بار چین افغانستان, کارگو حیرتان, مسیر ریلی چین حیرتان, کارگو بندر عباس, کارگو چابهار, حمل جاده‌ای چین حیرتان, حمل جاده‌ای حیرتان کابل, ترخیص گمرکی افغانستان, بیمه کارگو, صنعتچی">
   <meta name="robots" content="index,follow">
   <meta name="author" content="صنعتچی">
   <link rel="canonical" href="https://sanaatchi.com/cargo.html">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="کارگو چین به افغانستان | حمل بار و کارگو چین افغانستان | صنعتچی">
-  <meta property="og:description" content="خدمات کارگو چین به افغانستان؛ حمل کانتینر، ماشین‌آلات و مواد اولیه از چین به افغانستان از طریق ریل، جاده و دریا با مدیریت کامل صنعتچی.">
+  <meta property="og:title" content="کارگو و حمل بار از چین به افغانستان | باربری، هزینه حمل و مدت زمان انتقال با صنعتچی">
+  <meta property="og:description" content="کارگو و حمل بار از چین به افغانستان با صنعتچی؛ انتقال بار از گوانگجو، ایوو و چینگ‌داو به هرات، مزار شریف، کابل و غزنی. باربری چین–افغانستان، هزینه حمل و مدت زمان انتقال و پشتیبانی پروژه‌های صنعتی.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://sanaatchi.com/cargo.html">
   <meta property="og:image" content="https://sanaatchi.com/images/logo.png">
@@ -23,8 +23,8 @@
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="کارگو چین به افغانستان | حمل بار و کارگو چین افغانستان | صنعتچی">
-  <meta name="twitter:description" content="خدمات کارگو چین به افغانستان؛ حمل کانتینر، ماشین‌آلات و مواد اولیه از چین به افغانستان از طریق ریل، جاده و دریا با مدیریت کامل صنعتچی.">
+  <meta name="twitter:title" content="کارگو و حمل بار از چین به افغانستان | باربری، هزینه حمل و مدت زمان انتقال با صنعتچی">
+  <meta name="twitter:description" content="کارگو و حمل بار از چین به افغانستان با صنعتچی؛ انتقال بار از گوانگجو، ایوو و چینگ‌داو به هرات، مزار شریف، کابل و غزنی. پشتیبانی کامل ترانسپورت چین–افغانستان.">
   <meta name="twitter:image" content="https://sanaatchi.com/images/logo.png">
 
   <link rel="icon" type="image/png" href="images/favicon.png" />
@@ -47,6 +47,127 @@
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 30px;
       margin-top: 40px;
+    }
+
+    .cargo-info-section {
+      position: relative;
+      padding: 90px 0;
+      background: linear-gradient(135deg, rgba(26,58,95,0.05) 0%, rgba(242,101,34,0.05) 100%);
+      overflow: hidden;
+    }
+
+    .cargo-info-section::before,
+    .cargo-info-section::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    .cargo-info-section::before {
+      top: 50%;
+      right: -180px;
+      bottom: auto;
+      left: auto;
+      height: 540px;
+      width: 540px;
+      background:
+        radial-gradient(circle at center, rgba(26,58,95,0.16) 0%, rgba(26,58,95,0) 68%),
+        url('images/delivery-service.svg') no-repeat center/80%;
+      transform: translateY(-50%);
+      opacity: .5;
+    }
+
+    .cargo-info-section::after {
+      background:
+        radial-gradient(circle at 15% 25%, rgba(26,58,95,0.10) 0%, transparent 60%),
+        radial-gradient(circle at 85% 85%, rgba(242,101,34,0.08) 0%, transparent 65%);
+      opacity: .7;
+    }
+
+    html[dir='rtl'] .cargo-info-section::before {
+      right: auto;
+      left: -180px;
+    }
+
+    .cargo-info-section:nth-of-type(even) {
+      background: linear-gradient(135deg, rgba(242,101,34,0.05) 0%, rgba(26,58,95,0.05) 100%);
+    }
+
+    .cargo-info-section:nth-of-type(even)::before {
+      transform: translateY(-50%) scaleX(-1);
+      opacity: .45;
+    }
+
+    .cargo-info-section .container {
+      position: relative;
+      z-index: 1;
+      max-width: 960px;
+    }
+
+    .cargo-info-section h2 {
+      font-size: 2.1rem;
+      font-weight: 700;
+      color: #1a3a5f;
+      margin-bottom: 18px;
+    }
+
+    .cargo-info-section p {
+      color: #4a5568;
+      line-height: 1.9;
+      font-size: 1.05rem;
+      max-width: 820px;
+    }
+
+    .cargo-steps-section {
+      padding: 80px 0;
+      background: #ffffff;
+    }
+
+    .cargo-steps-section h2 {
+      font-size: 2rem;
+      color: #1a3a5f;
+      margin-bottom: 25px;
+      text-align: inherit;
+    }
+
+    .cargo-steps-section ol {
+      counter-reset: steps;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 18px;
+    }
+
+    .cargo-steps-section li {
+      background: #f8fafc;
+      border-radius: 14px;
+      padding: 20px 24px;
+      padding-inline-start: 72px;
+      box-shadow: 0 10px 30px rgba(26,58,95,0.08);
+      border: 1px solid rgba(26,58,95,0.08);
+      position: relative;
+      color: #2d3748;
+      line-height: 1.8;
+    }
+
+    .cargo-steps-section li::before {
+      counter-increment: steps;
+      content: counter(steps);
+      position: absolute;
+      top: -12px;
+      inset-inline-start: 20px;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #f26522;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      box-shadow: 0 6px 18px rgba(242,101,34,0.35);
     }
 
     /* Cards: flex layout so buttons stick to bottom */
@@ -102,6 +223,9 @@
     .cargo-card .card-buttons a {
       flex: 1 1 50%;
       text-align: center;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       min-width: 0;
     }
 
@@ -110,6 +234,15 @@
       background: #1a3a5f;
       color: #ffffff;
       border: none;
+    }
+    @media (max-width: 992px) {
+      .cargo-info-section {
+        padding: 70px 0;
+      }
+      .cargo-info-section::before,
+      .cargo-info-section::after {
+        display: none;
+      }
     }
     .cargo-card .btn-secondary:hover {
       background: #16304a;
@@ -189,6 +322,12 @@
       .cargo-card .card-buttons a {
         flex: 1 0 100%;
       }
+      .cargo-steps-section li::before {
+        inset-inline-start: 16px;
+      }
+      .cargo-steps-section li {
+        padding-inline-start: 60px;
+      }
     }
   </style>
 
@@ -197,8 +336,8 @@
   {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "کارگو چین به افغانستان | حمل بار و کارگو چین افغانستان | صنعتچی",
-    "description": "کارگو و حمل‌ونقل بین‌المللی از چین به افغانستان توسط صنعتچی؛ حمل ریلی، جاده‌ای و دریایی از چین تا حیرتان، بندر عباس و چابهار و سپس حمل جاده‌ای تا شهرهای افغانستان.",
+    "name": "کارگو و حمل بار از چین به افغانستان | باربری، هزینه حمل و مدت زمان انتقال با صنعتچی",
+    "description": "کارگو و حمل بار از چین به افغانستان با صنعتچی؛ انتقال بار از گوانگجو، ایوو و چینگ‌داو به هرات، مزار شریف، کابل و غزنی. باربری چین–افغانستان، هزینه حمل و مدت زمان انتقال بار از چین به افغانستان و راهنمای گام‌به‌گام ترانسپورت تا درب فابریکه یا گدام شما.",
     "url": "https://sanaatchi.com/cargo.html",
     "inLanguage": "fa-AF",
     "about": {
@@ -227,34 +366,42 @@
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "چطور بهترین مسیر کارگو چین به افغانستان را انتخاب کنیم؟",
+        "name": "چگونه می‌توانم یک کانتینر از چین به افغانستان انتقال دهم؟",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "بسته به نوع بار، وزن و حجم، شهر مبدأ در چین، شهر مقصد در افغانستان و زمان تحویل؛ ترکیب مسیر (ریل، دریا، جاده) متفاوت است. صنعتچی پس از دریافت مشخصات بار، گزینه‌ها را مقایسه و بهترین مسیر از نظر زمان و هزینه را پیشنهاد می‌دهد."
+          "text": "جزئیات مال و شهر مقصد را با ما شریک بسازید. عرضه‌کنندۀ شما جنس را به یکی از گدام‌های ما در گوانگجو، ایوو یا چینگ‌داو انتقال می‌دهد. ما کانتینر را بارگیری کرده، ترانسپورت بین‌المللی، ترخیص گمرکی و رساندن آن تا فابریکه یا گدام شما در افغانستان را مدیریت می‌کنیم."
         }
       },
       {
         "@type": "Question",
-        "name": "چقدر زمان می‌برد تا کارگو از چین به افغانستان برسد؟",
+        "name": "انتقال بار از چین به افغانستان چقدر طول می‌کشد؟",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "بسته به مسیر انتخابی (ریلی، جاده‌ای یا دریایی)، نوع بار و فصل حمل، زمان معمول بین ۱۵ تا ۴۰ روز است. پس از دریافت مشخصات بار، زمان دقیق‌تر اعلام می‌شود."
+          "text": "بسته به مسیر، معمولاً بین ۱۲ تا ۴۰ روز. ریل چین–حیرتان حدود ۱۵ تا ۲۵ روز، ترانسپورت سرکی با تریلر تراک‌ها حدود ۱۲ تا ۲۰ روز و مسیرهای دریایی + سرکی از طریق بندر عباس یا چابهار معمولاً ۲۵ تا ۴۰ روز وقت می‌گیرد."
         }
       },
       {
         "@type": "Question",
-        "name": "چه نوع بارهایی را می‌توان با صنعتچی از چین به افغانستان حمل کرد؟",
+        "name": "برای انتقال مال از چین به افغانستان چه مدارکی لازم است؟",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "ماشین‌آلات صنعتی، خطوط تولید، مواد اولیه، پرزه‌جات، تجهیزات پروژه‌ای و کانتینرهای کامل (FCL/LCL) از طریق مسیرهای ریلی، جاده‌ای و دریایی قابل حمل است."
+          "text": "معمولاً بل تجارتی، پکینگ لست، HS Code و اسناد شرکت یا شخص گیرنده در افغانستان لازم است. برای بعضی اجناس، جوازهای اضافی مانند صحی یا ستندرد نیز مورد نیاز می‌باشد که قبل از انتقال توسط تیم ما توضیح داده می‌شود."
         }
       },
       {
         "@type": "Question",
-        "name": "آیا امکان بیمه‌کردن بار در مسیر کارگو چین به افغانستان وجود دارد؟",
+        "name": "آیا خرده‌بار را هم می‌گیرید یا فقط کانتینر کامل؟",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "بله، صنعتچی امکان بیمه‌کردن بار در تمام مسیر حمل از چین تا افغانستان را فراهم می‌کند تا ریسک‌های آسیب، سرقت و حوادث احتمالی کاهش یابد."
+          "text": "بلی، ما هم خرده‌بار (LCL) و هم کانتینر کامل (FCL) را می‌پذیریم. خرده‌بار شما در گدام‌های ما در چین جمع و با محموله‌های دیگر یک‌جا می‌شود تا هزینه حمل مناسب گردد."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "کدام نوع مال را نمی‌توان انتقال داد؟",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "اجناس ممنوعه مانند کیمیاویات خطرناک، سلاح و کالاهای زیر تحریم قابل انتقال نیستند. برای هر جنس حساس، لطفاً HS Code و توضیحات آن را برای ما بفرستید تا امکان انتقال آن بررسی شود."
         }
       }
     ]
@@ -344,10 +491,10 @@
       <div class="container">
         <div class="hero-content">
           <div class="hero-text">
-            <h1 data-translate="cargo-hero-title">کارگو و حمل بار از چین به افغانستان</h1>
-            <p data-translate="cargo-hero-subtitle">مسیرهای حمل و نقل اموال از طریق ریل، دریا و جاده با مدیریت یکپارچه صنعتچی</p>
+            <h1 id="cargoHeroTitle">کارگو و حمل بار از چین به افغانستان</h1>
+            <p id="cargoHeroSubtitle">انتقال بار از چین به افغانستان از راه ریل، دریا و سرک، با مدیریت کامل تمام مراحل توسط صنعتچی و گدام‌ها در گوانگجو، ایوو، چینگ‌داو، هرات، مزار شریف، کابل و غزنی.</p>
             <div class="quote-box">
-              <p data-translate="cargo-hero-quote">«از برنامه‌ریزی حمل تا تحویل درب کارخانه، تیم صنعتچی تمامی مراحل کارگو چین – افغانستان را مدیریت می‌کند.»</p>
+              <p id="cargoHeroQuote">از تحویل‌گیری مال در چین تا رساندن آن به درب فابریکه یا گدام شما در افغانستان، تیم صنعتچی هر قدم سفر کارگو چین–افغانستان را برای شما مدیریت می‌کند.</p>
             </div>
             <div class="hero-buttons">
               <button class="btn-primary" onclick="showSalesContactModal()" data-translate="cargo-hero-cta">درخواست نرخ حمل</button>
@@ -376,34 +523,13 @@
     </section>
 
     <!-- Overview -->
-    <section class="cargo-overview" id="cargo-overview">
+    <section class="cargo-overview" id="cargo-integrated">
       <div class="container">
         <div class="section-title">
-          <h2 data-translate="cargo-overview-title">مدیریت یکپارچه کارگو چین – افغانستان</h2>
-          <p data-translate="cargo-overview-subtitle">از انتخاب مسیر تا ترخیص و تحویل، صنعتچی تمام زنجیره لجستیک شما را پوشش می‌دهد.</p>
+          <h2 id="integratedHeading">مدیریت یک‌پارچه کارگو چین به افغانستان</h2>
+          <p id="integratedIntro">صنعتچی کارگو و حمل بار از چین به افغانستان را به‌گونه‌ای مدیریت می‌کند که تمام حلقه‌های زنجیرۀ لوژستیک – از طراحی مسیر و هم‌آهنگی با عرضه‌کننده‌گان در چین، تا ترخیص گمرکی و تحویل در افغانستان – در یک چارچوب واحد و شفاف قرار می‌گیرد. تمرکز ما بر کارگو چین–افغانستان برای ماشین‌آلات، خطوط تولید، پرزه‌جات، مواد خام و مال عمومی تجارتی است.</p>
         </div>
-        <div class="overview-points">
-          <div class="overview-card">
-            <i class="fas fa-route" aria-hidden="true"></i>
-            <h3 data-translate="cargo-overview-point-1-title">سه مسیر اصلی حمل</h3>
-            <p data-translate="cargo-overview-point-1-desc">حمل ریلی چین – حیرتان، حمل دریایی از بنادر چین به بندر عباس و چابهار، و حمل جاده‌ای سراسری در افغانستان.</p>
-          </div>
-          <div class="overview-card">
-            <i class="fas fa-boxes" aria-hidden="true"></i>
-            <h3 data-translate="cargo-overview-point-2-title">پوشش تجهیزات و مواد اولیه</h3>
-            <p data-translate="cargo-overview-point-2-desc">مدیریت کارگو برای کانتینر کامل، ماشین‌آلات نو و دست دوم، خطوط تولید و مواد اولیه صنعتی.</p>
-          </div>
-          <div class="overview-card">
-            <i class="fas fa-user-shield" aria-hidden="true"></i>
-            <h3 data-translate="cargo-overview-point-3-title">پشتیبانی تیم متخصص</h3>
-            <p data-translate="cargo-overview-point-3-desc">هماهنگی با تامین‌کنندگان چینی، بیمه، تشریفات گمرکی و تحویل در مقصد با تیم عملیات صنعتچی.</p>
-          </div>
-          <div class="overview-card">
-            <i class="fas fa-clock" aria-hidden="true"></i>
-            <h3 data-translate="cargo-overview-point-4-title">برنامه‌ریزی زمان‌بندی دقیق</h3>
-            <p data-translate="cargo-overview-point-4-desc">ارائه جدول زمان‌بندی روشن برای هر مسیر و پیگیری مرحله‌به‌مرحله تا تحویل نهایی بار.</p>
-          </div>
-        </div>
+        <div class="overview-points" id="integratedCards"></div>
       </div>
     </section>
 
@@ -411,10 +537,45 @@
     <section id="cargo-routes" class="cargo-routes-section">
       <div class="container">
         <div class="section-title">
-          <h2 data-translate="cargo-routes-title">مسیرهای حمل و نقل چین – افغانستان</h2>
-          <p data-translate="cargo-routes-subtitle">در اینجا می‌توانید مسیرهای اصلی حمل کارگو، کانتینر، ماشین‌آلات و مواد اولیه از چین به افغانستان را مشاهده کنید؛ شامل حمل ریلی، دریایی و حمل جاده‌ای با کامیون از حیرتان به شهرهای افغانستان.</p>
+          <h2 id="routesHeading">مسیرهای ترانسپورت چین به افغانستان</h2>
+          <p id="routesIntro">دهلیز ریلی چین–حیرتان، ترانسپورت سرکی با تریلر تراک‌ها، و مسیرهای دریایی از بندرهای چین به بندر عباس و چابهار، با عبور از سرحدهای ابو نصر فراهی (ماهیرود) و اسلام‌قلعه (دوغارون)، اساس شبکۀ حمل چین–افغانستان را می‌سازد.</p>
         </div>
-        <div id="cargoRoutesGrid" class="cargo-routes-grid" aria-live="polite"></div>
+        <div id="routesCards" class="cargo-routes-grid" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="cargo-info-section" id="cargo-cost">
+      <div class="container">
+        <h2 id="costHeading">هزینه حمل و نقل از چین به افغانستان – چه چیزها قیمت را تعیین می‌کند؟</h2>
+        <p id="costBody">هزینه حمل و نقل از چین به افغانستان به چند نکته اصلی وابسته است: وزن و حجم مال، نوع جنس، مسیر انتخاب‌شده (ریل، دریا یا سرک)، شهر مبدأ و مقصد، و خدمات اضافی مثل معاینه، گدام‌داری، بیمه و پشتیبانی پروژه. با شریک ساختن این جزئیات، ما برای شما یک پیش‌نهاد واضح و جزئی می‌فرستیم تا دقیق بدانید انتقال بار از چین به افغانستان چقدر قیمت می‌شود.</p>
+      </div>
+    </section>
+
+    <section class="cargo-info-section" id="cargo-time">
+      <div class="container">
+        <h2 id="timeHeading">مدت زمان انتقال بار از چین به افغانستان</h2>
+        <p id="timeBody">وقت انتقال بار از چین به افغانستان معمولاً بین ۱۲ تا ۴۰ روز است. ریل چین–حیرتان در حدود ۱۵ تا ۲۵ روز، ترانسپورت مستقیم سرکی با تریلر تراک‌ها حدود ۱۲ تا ۲۰ روز، و مسیرهای دریایی + سرکی از طریق بندر عباس یا چابهار – با عبور از سرحدهای ابو نصر فراهی (ماهیرود) و اسلام‌قلعه (دوغارون) – در مجموع حدود ۲۵ تا ۴۰ روز وقت می‌گیرد. در هر پیش‌نهاد، ما یک بازۀ زمانی واقعی می‌دهیم تا بدانید مدت زمان انتقال بار از چین به افغانستان چقدر است و بتوانید پلان دقیق برای تجارت خود تنظیم کنید.</p>
+      </div>
+    </section>
+
+    <section class="cargo-steps-section" id="cargo-steps">
+      <div class="container">
+        <h2 id="stepsHeading">راهنمای گام‌به‌گام برای حمل مال از چین به افغانستان</h2>
+        <ol id="stepsList"></ol>
+      </div>
+    </section>
+
+    <section class="cargo-info-section" id="cargo-warehouses">
+      <div class="container">
+        <h2 id="warehousesHeading">گدام‌های ما در گوانگجو، ایوو، چینگ‌داو، هرات، مزار شریف، کابل و غزنی</h2>
+        <p id="warehousesBody">صنعتچی یک شبکۀ دوطرفه گدام را فعال ساخته است: در چین، گدام‌های ما در گوانگجو برای سفارش‌های تکراری و پرزه‌جات، در ایوو برای خرده‌بارهای مخلوط و خرید از مارکیت‌های عمده‌فروشی، و در چینگ‌داو برای مال صنعتی و پروژه‌ای از شمال و شرق چین استفاده می‌شود. در افغانستان، گدام‌های ما در هرات (برای مسیر چابهار و سرحد غرب)، مزار شریف (نزدیک ریل حیرتان)، کابل (مرکز تجارتی کشور) و غزنی (برای پروژه‌های صنعتی در مناطق مرکزی و جنوبی) قرار دارند و توزیع مال را آسان می‌سازند.</p>
+      </div>
+    </section>
+
+    <section class="cargo-info-section" id="cargo-industries">
+      <div class="container">
+        <h2 id="industriesHeading">کدام نوع مال و کدام سکتورهای صنعتی را پوشش می‌دهیم؟</h2>
+        <p id="industriesBody">ما ماشین‌آلات و خطوط تولید صنعتی، پرزه‌جات و قطعات، تجهیزات کارگاهی و ساختمانی، خطوط پروسس مواد غذایی و نوشیدنی، مواد بسته‌بندی، اجناس برقی و الکترونیکی و مال عمومی مصرفی را از چین به افغانستان حمل می‌کنیم. برای جنساتی که حساس یا محدودیت دارند، قبل از انتقال، شرایط و امکان آن را با شما بررسی می‌کنیم تا مطابق قانون و با کمترین ریسک حرکت داده شود.</p>
       </div>
     </section>
 
@@ -422,8 +583,8 @@
     <section class="cargo-cta">
       <div class="container">
         <div>
-          <h2 data-translate="cargo-cta-title">برای دریافت نرخ و برنامه حمل، با ما در تماس باشید</h2>
-          <p data-translate="cargo-cta-subtitle">تیم صنعتچی با ارزیابی نوع کالا، وزن، مسیر و زمان‌بندی، بهترین گزینه حمل را برای پروژه شما پیشنهاد می‌دهد.</p>
+          <h2 id="ctaHeading">درخواست نرخ کارگو از چین به افغانستان</h2>
+          <p id="ctaBody">آماده هستید مال را از چین به افغانستان انتقال دهید یا یک پروژۀ صنعتی را شروع نمایید؟ جزئیات مال یا پروژه را از طریق واتس‌اپ، تماس تلیفون یا فارم تماس ویب‌سایت برای ما بفرستید؛ ما برای شما گزینه‌های مسیر، هزینه حمل و مدت زمان انتقال بار از چین به افغانستان را به زودی شریک می‌سازیم.</p>
         </div>
         <div class="cta-buttons">
           <button class="btn-primary" onclick="showContactModal()" data-translate="cargo-cta-contact">درخواست مشاوره حمل</button>
@@ -436,8 +597,7 @@
     <section id="cargo-faq" class="cargo-faq-section">
       <div class="container">
         <div class="section-title">
-          <h2 data-translate="cargo-faq-title">سوالات متداول کارگو چین – افغانستان</h2>
-          <p data-translate="cargo-faq-subtitle">پرسش‌های پرتکرار مشتریان درباره حمل و نقل کانتینر، ماشین‌آلات و مواد اولیه از چین به افغانستان.</p>
+          <h2 id="faqHeading">سوالات متداول درباره کارگو و حمل بار از چین به افغانستان</h2>
         </div>
         <div id="cargoFaqList" class="cargo-faq-list" aria-live="polite"></div>
       </div>
