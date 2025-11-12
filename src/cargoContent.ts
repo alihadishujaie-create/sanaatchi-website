@@ -193,43 +193,43 @@ export const cargoPageContent: Record<Lang, CargoPageContent> = {
           title: 'دهلیز ریلی چین – حیرتان',
           body:
             'دهلیز ریل برای انتقال کانتینر و مال پروژه‌ای از شهرهای داخل چین تا حیرتان؛ مناسب فابریکه‌ها و پروژه‌هایی که به وقت انتقال ثابت و قیمت مناسب ضرورت دارند.',
-          pdfUrl: 'pdf/route-rail-china-hairatan-rate.pdf'
+          pdfUrl: 'pdfs/cargo/route-rail-china-hairatan-rate.pdf'
         },
         {
           title: 'ترانسپورت سرکی از چین تا حیرتان (تریلر تراک‌ها)',
           body:
             'ترانسپورت مستقیم سرکی از چین تا سرحد افغانستان با استفاده از تریلر تراک‌ها (موترهای تریلری)؛ مناسب برای مال‌هایی که حساس به وقت هستند یا امکان حرکت با ریل را ندارند.',
-          pdfUrl: 'pdf/route-road-china-hairatan-rate.pdf'
+          pdfUrl: 'pdfs/cargo/route-road-china-hairatan-rate.pdf'
         },
         {
           title: 'ترانسپورت داخلی از حیرتان به شهرهای افغانستان',
           body:
             'ترانسپورت موترهای باربری از حیرتان به شهرهایی چون مزار شریف، کابل، هرات، غزنی و سایر ساحات صنعتی افغانستان برای توزیع منظم مال در داخل کشور.',
-          pdfUrl: 'pdf/route-road-hairatan-afghanistan-rate.pdf'
+          pdfUrl: 'pdfs/cargo/route-road-hairatan-afghanistan-rate.pdf'
         },
         {
           title: 'مسیر دریایی چین – بندر عباس – افغانستان',
           body:
             'حمل دریایی از بندرهای چین تا بندر عباس و بعد ترانسپورت سرکی با تریلر تراک‌ها از داخل ایران و عبور از سرحد ابو نصر فراهی (ماهیرود) و سرحد اسلام‌قلعه (دوغارون) به داخل افغانستان؛ مناسب برای مال‌های حجیم و مواد خام با اولویت قیمت مناسب است.',
-          pdfUrl: 'pdf/route-sea-china-bandar-abbas-rate.pdf'
+          pdfUrl: 'pdfs/cargo/route-sea-china-bandar-abbas-rate.pdf'
         },
         {
           title: 'مسیر دریایی چین – چابهار – افغانستان',
           body:
             'مسیر ترکیبی دریا و سرک از طریق چابهار، با استفاده از تریلر تراک‌ها از داخل ایران و عبور از سرحد ابو نصر فراهی (ماهیرود) و سرحد اسلام‌قلعه (دوغارون) به داخل افغانستان؛ انتخاب بسیار مناسب برای مال‌هایی است که مقصد اصلی‌شان هرات و شهرهای غرب و جنوب افغانستان می‌باشد.',
-          pdfUrl: 'pdf/route-sea-china-chabahar-rate.pdf'
+          pdfUrl: 'pdfs/cargo/route-sea-china-chabahar-rate.pdf'
         },
         {
           title: 'خدمات گمرک و ترخیص محموله‌ها',
           body:
             'انجام کامل تشریفات گمرکی برای محموله‌های چین–افغانستان، شامل آماده‌سازی اسناد، HS Code و هم‌آهنگی با ادارات گمرک در نقطۀ سرحدی، تا مال شما بدون تأخیر غیرضروری وارد افغانستان شود.',
-          pdfUrl: 'pdf/customs-services-rate.pdf'
+          pdfUrl: 'pdfs/cargo/customs-services-rate.pdf'
         },
         {
           title: 'بیمۀ بین‌المللی ترانسپورت',
           body:
             'برای محموله‌های چین به افغانستان گزینه‌های مختلف بیمۀ حمل‌ونقل فراهم می‌کنیم تا ماشین‌آلات، مواد خام و جنس نهایی شما در طول راه محافظت شود.',
-          pdfUrl: 'pdf/insurance-coverage-rate.pdf'
+          pdfUrl: 'pdfs/cargo/insurance-coverage-rate.pdf'
         }
       ]
     },
@@ -401,43 +401,43 @@ export const cargoPageContent: Record<Lang, CargoPageContent> = {
           title: 'China – Hairatan rail corridor',
           body:
             'Rail freight corridor for containers and project cargo from inland China to Hairatan, ideal for factories that need stable transit times and competitive cost.',
-          pdfUrl: 'pdf/route-rail-china-hairatan-rate.pdf'
+          pdfUrl: 'pdfs/cargo/route-rail-china-hairatan-rate.pdf'
         },
         {
           title: 'Road transport China – Hairatan (trailer trucks)',
           body:
             'Direct road transport from China to the Afghan border using long-haul trailer trucks, suitable for time-sensitive cargo or goods that cannot use rail.',
-          pdfUrl: 'pdf/route-road-china-hairatan-rate.pdf'
+          pdfUrl: 'pdfs/cargo/route-road-china-hairatan-rate.pdf'
         },
         {
           title: 'Hairatan – Afghan cities trucking',
           body:
             'Domestic trucking from Hairatan to Afghan cities including Mazar-e-Sharif, Kabul, Herat, Ghazni and other industrial zones.',
-          pdfUrl: 'pdf/route-road-hairatan-afghanistan-rate.pdf'
+          pdfUrl: 'pdfs/cargo/route-road-hairatan-afghanistan-rate.pdf'
         },
         {
           title: 'China – Bandar Abbas – Afghanistan sea route',
           body:
             'Sea freight from Chinese ports to Bandar Abbas with onward trailer-truck transport through Iran via the Abu Nasr Farahi (Mahiroud) and Islam Qala (Dogharoun) borders into Afghanistan, ideal for bulky cargo and raw materials.',
-          pdfUrl: 'pdf/route-sea-china-bandar-abbas-rate.pdf'
+          pdfUrl: 'pdfs/cargo/route-sea-china-bandar-abbas-rate.pdf'
         },
         {
           title: 'China – Chabahar – Afghanistan sea route',
           body:
             'Combined sea and road route via Chabahar, using trailer trucks through Iran via the Abu Nasr Farahi (Mahiroud) and Islam Qala (Dogharoun) borders into Afghanistan – a strong option for cargo destined mainly for Herat and western or southern Afghanistan.',
-          pdfUrl: 'pdf/route-sea-china-chabahar-rate.pdf'
+          pdfUrl: 'pdfs/cargo/route-sea-china-chabahar-rate.pdf'
         },
         {
           title: 'Customs & clearance services',
           body:
             'Full customs handling for China–Afghanistan shipments, including document preparation, HS codes and coordination with border authorities.',
-          pdfUrl: 'pdf/customs-services-rate.pdf'
+          pdfUrl: 'pdfs/cargo/customs-services-rate.pdf'
         },
         {
           title: 'International transport insurance',
           body:
             'Cargo insurance options for shipments from China to Afghanistan, protecting machinery, raw materials and finished goods in transit.',
-          pdfUrl: 'pdf/insurance-coverage-rate.pdf'
+          pdfUrl: 'pdfs/cargo/insurance-coverage-rate.pdf'
         }
       ]
     },
@@ -609,43 +609,43 @@ export const cargoPageContent: Record<Lang, CargoPageContent> = {
           title: 'د چین – حیرتان د رېل دهلیز',
           body:
             'د رېل دهلیز چې کانتینرونه او پروژوي مالونه له چیني ښارونو څخه تر حیرتان پورې لېږدوي؛ د هغو فابریکو لپاره مناسب دی چې ثابته موده او مناسب لګښت غواړي.',
-          pdfUrl: 'pdf/route-rail-china-hairatan-rate.pdf'
+          pdfUrl: 'pdfs/cargo/route-rail-china-hairatan-rate.pdf'
         },
         {
           title: 'د چین – حیرتان سرک ترانسپورت (ټریلر ټرکونه)',
           body:
             'مستقیم سړکيز ترانسپورت له چین څخه تر د افغانستان تر پوله، د اوږدمهاله ټریلر ټرکونو په وسیله؛ د هغه مال لپاره چې وخت ورته مهم وي یا د رېل له لارې نه شي تلای، ښه حل دی.',
-          pdfUrl: 'pdf/route-road-china-hairatan-rate.pdf'
+          pdfUrl: 'pdfs/cargo/route-road-china-hairatan-rate.pdf'
         },
         {
           title: 'له حیرتان څخه تر افغان ښارونو موټري ترانسپورت',
           body:
             'د موټر ترانسپورت خدمتونه له حیرتان څخه مزار شریف، کابل، هرات، غزني او نورو صنعتي سیمو ته برابروو.',
-          pdfUrl: 'pdf/route-road-hairatan-afghanistan-rate.pdf'
+          pdfUrl: 'pdfs/cargo/route-road-hairatan-afghanistan-rate.pdf'
         },
         {
           title: 'د چین – بندر عباس – افغانستان سمندري لاره',
           body:
             'له چیني بندرونو څخه بندر عباس ته سمندري لېږد، او وروسته د ټریلر ټرکونو په وسیله د ایران له لارې د ابو نصر فراهی (ماهیرود) او د اسلام قلعه (دوغارون) له پولې افغانستان ته داخلېږي؛ د درنو او خامو موادو لپاره ارزانه او مناسب انتخاب دی.',
-          pdfUrl: 'pdf/route-sea-china-bandar-abbas-rate.pdf'
+          pdfUrl: 'pdfs/cargo/route-sea-china-bandar-abbas-rate.pdf'
         },
         {
           title: 'د چین – چابهار – افغانستان ګډه سمندري او سرکي لاره',
           body:
             'د چابهار له لارې د سمندر او سړک ګډ مسیر، چې ټریلر ټرکونه د ایران له لارې د ابو نصر فراهی (ماهیرود) او د اسلام قلعه (دوغارون) له پولې افغانستان ته راولي؛ د هغه مال لپاره ډېر قوي انتخاب دی چې اساسي هدف یې هرات او د افغانستان لوېدیځ او جنوبي سیمې وي.',
-          pdfUrl: 'pdf/route-sea-china-chabahar-rate.pdf'
+          pdfUrl: 'pdfs/cargo/route-sea-china-chabahar-rate.pdf'
         },
         {
           title: 'د ګمرک او ترخیص خدمتونه',
           body:
             'د چین–افغانستان محمولو لپاره د ګمرک ټول تشریفات ترسره کوو؛ اسناد چمتو کوو، HS کودونه تنظیموو او له سرحدي ادارو سره همغږي کوو.',
-          pdfUrl: 'pdf/customs-services-rate.pdf'
+          pdfUrl: 'pdfs/cargo/customs-services-rate.pdf'
         },
         {
           title: 'نړیوال د ترانسپورت بیمه',
           body:
             'له چین څخه افغانستان ته د محمولو لپاره د ترانسپورت بیمه برابروو، څو ماشین آلات، خام مواد او پای مال مو په سفر کې خوندي وي.',
-          pdfUrl: 'pdf/insurance-coverage-rate.pdf'
+          pdfUrl: 'pdfs/cargo/insurance-coverage-rate.pdf'
         }
       ]
     },
