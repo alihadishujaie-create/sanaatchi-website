@@ -3,15 +3,18 @@
 
 The script scans HTML, JavaScript, and TypeScript files for strings that look
 like ``pdfs/.../*.pdf`` references and checks whether a matching file is
-present in the repository. Any missing paths are printed to ``stdout`` and the
-script exits with a non-zero status so it can be used in automated checks.
+present in the repository. Any missing paths are reported either to ``stdout``
+or to an optional output file, making the script suitable for both manual
+checks and automated reporting.
 """
 from __future__ import annotations
 
-import os
+import argparse
+import json
 import re
 import sys
 from pathlib import Path
+from textwrap import dedent
 
 # Root of the repository (script may be executed from any working directory)
 REPO_ROOT = Path(__file__).resolve().parents[1]
@@ -55,7 +58,55 @@ def verify_pdf_paths(references: set[str]) -> list[str]:
     return missing
 
 
-def main() -> int:
+def build_report(missing: list[str], format: str) -> str:
+    """Create a serialized report summarizing missing PDF assets."""
+    if format == "json":
+        payload = {
+            "status": "missing" if missing else "ok",
+            "missing": missing,
+        }
+        return json.dumps(payload, indent=2)
+
+    if missing:
+        lines = ["Missing PDF files detected:"]
+        lines.extend(f" - {rel_path}" for rel_path in missing)
+        return "\n".join(lines)
+
+    return "All referenced PDF files exist."
+
+
+def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
+    parser = argparse.ArgumentParser(
+        description=__doc__,
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog=dedent(
+            """
+            Examples:
+              python tools/verify_pdf_links.py
+              python tools/verify_pdf_links.py --format json --output reports/pdfs.json
+
+            The command exits with a non-zero code when missing PDFs are detected,
+            making it suitable for CI usage.
+            """
+        ).strip(),
+    )
+    parser.add_argument(
+        "--format",
+        choices=("text", "json"),
+        default="text",
+        help="Output format for the report (default: text).",
+    )
+    parser.add_argument(
+        "--output",
+        type=Path,
+        help="Optional file path to write the report to instead of stdout.",
+    )
+    return parser.parse_args(argv)
+
+
+def main(argv: list[str] | None = None) -> int:
+    args = parse_args(argv)
+
     if not PDF_ROOT.exists():
         print("pdfs directory not found", file=sys.stderr)
         return 1
@@ -63,14 +114,15 @@ def main() -> int:
     references = collect_pdf_references()
     missing = verify_pdf_paths(references)
 
-    if missing:
-        print("Missing PDF files detected:")
-        for rel_path in missing:
-            print(f" - {rel_path}")
-        return 1
+    report = build_report(missing, args.format)
 
-    print("All referenced PDF files exist.")
-    return 0
+    if args.output:
+        args.output.parent.mkdir(parents=True, exist_ok=True)
+        args.output.write_text(report, encoding="utf-8")
+    else:
+        print(report)
+
+    return 1 if missing else 0
 
 
 if __name__ == "__main__":
